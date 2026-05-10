@@ -24,10 +24,20 @@ export default function StickyCTAMobile() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white/95 backdrop-blur border-t border-gray-200 sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:hidden"
+      style={{
+        background: 'rgba(10,31,64,0.92)',
+        backdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(0,194,224,0.15)',
+      }}>
       <button
         onClick={() => scrollTo('formulaire')}
-        className="w-full bg-[#00C2E0] text-[#0F2D5E] rounded-full font-bold h-12 flex items-center justify-center gap-2"
+        className="w-full rounded-full font-black h-12 flex items-center justify-center gap-2 text-sm transition-all hover:scale-[1.02]"
+        style={{
+          background: 'linear-gradient(135deg, #00C2E0, #0099b8)',
+          color: '#0A1F40',
+          boxShadow: '0 0 20px rgba(0,194,224,0.3)',
+        }}
       >
         Devenir fondateur — 49€/mois
         <ArrowRight size={16} />

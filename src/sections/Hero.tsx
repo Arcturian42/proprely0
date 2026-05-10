@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react'
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -7,19 +7,29 @@ const scrollTo = (id: string) => {
 
 export default function Hero() {
   return (
-    <section className="bg-[#0F2D5E] pt-10 sm:pt-12 pb-14 sm:pb-16 relative overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-white opacity-[0.05] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-white opacity-[0.05] pointer-events-none" />
+    <section className="relative overflow-hidden pt-12 sm:pt-16 pb-16 sm:pb-24 animated-gradient mesh-grid noise">
+      {/* Glow orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,194,224,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(26,79,175,0.2) 0%, transparent 70%)', filter: 'blur(50px)' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,194,224,0.06) 0%, transparent 70%)' }} />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 bg-white/15 text-white/90 rounded-full border border-white/20 px-4 py-1.5 text-[11px] sm:text-sm mb-6"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] sm:text-sm mb-7 badge-glow"
+          style={{
+            background: 'rgba(0,194,224,0.12)',
+            border: '1px solid rgba(0,194,224,0.3)',
+            color: '#00C2E0',
+          }}
         >
+          <Sparkles size={12} />
           Vos plannings sur Excel, vos agents sur WhatsApp ?
         </motion.div>
 
@@ -27,10 +37,12 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[26px] sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-3 sm:mb-4"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-[28px] sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-4 sm:mb-5 tracking-tight"
         >
-          L'Operating System des sociétés de nettoyage
+          <span className="text-white">L'Operating System des</span>
+          <br />
+          <span className="gradient-text-white">sociétés de nettoyage</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -38,61 +50,80 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm sm:text-lg text-white/70 mt-2 sm:mt-3 mb-6 sm:mb-8"
+          className="text-sm sm:text-lg text-white/50 mb-8 sm:mb-10 max-w-xl mx-auto"
         >
           Un seul logiciel pour planifier, intervenir, facturer et piloter votre entreprise.
         </motion.p>
 
         {/* Price box */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white/10 backdrop-blur rounded-2xl px-4 sm:px-6 py-3 sm:py-3.5 border border-white/10 inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mb-6 sm:mb-8"
+          className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 rounded-2xl px-5 sm:px-8 py-4 sm:py-5 mb-8 sm:mb-10"
+          style={{
+            background: 'rgba(255,255,255,0.06)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255,255,255,0.1)',
+          }}
         >
           <div className="text-center sm:text-left">
-            <span className="text-white/40 line-through text-sm sm:text-base">129€/mois</span>
-            <div className="text-2xl sm:text-3xl font-bold text-white">49€/mois</div>
+            <div className="text-white/30 line-through text-xs sm:text-sm mb-0.5">129€/mois</div>
+            <div className="text-3xl sm:text-4xl font-black text-white">49€<span className="text-lg font-semibold text-white/60">/mois</span></div>
           </div>
-          <div className="hidden sm:block w-px h-10 bg-white/20" />
+          <div className="hidden sm:block w-px h-12 bg-white/10" />
           <div className="text-center sm:text-left">
-            <div className="text-white/80 text-xs sm:text-sm font-medium">Tarif fondateur à vie</div>
-            <div className="text-[#00C2E0] text-xs sm:text-sm font-semibold">960€ d'économie par an</div>
-            <div className="text-[#00C2E0] text-xs font-bold mt-0.5">30 places uniquement</div>
+            <div className="text-white/60 text-xs sm:text-sm font-medium mb-1">Tarif fondateur à vie</div>
+            <div className="text-[#00C2E0] text-sm sm:text-base font-bold">960€ d'économie par an</div>
+            <div className="text-[10px] sm:text-xs text-[#00C2E0]/70 mt-0.5">30 places uniquement</div>
           </div>
         </motion.div>
 
         {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center mb-6"
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-7"
         >
           <button
             onClick={() => scrollTo('formulaire')}
-            className="bg-[#00C2E0] text-[#0F2D5E] rounded-full px-6 sm:px-8 font-bold h-11 sm:h-12 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 rounded-full px-7 sm:px-9 py-3.5 font-black text-sm sm:text-base transition-all duration-200 hover:scale-105 w-full sm:w-auto"
+            style={{
+              background: 'linear-gradient(135deg, #00C2E0 0%, #0099b8 100%)',
+              color: '#0A1F40',
+              boxShadow: '0 0 30px rgba(0,194,224,0.4), 0 8px 20px rgba(0,0,0,0.2)',
+            }}
           >
             Candidater — membre fondateur
             <ArrowRight size={16} />
           </button>
           <button
             onClick={() => scrollTo('probleme')}
-            className="border border-white/25 text-white hover:bg-white/10 rounded-full h-11 sm:h-12 px-6 sm:px-8 font-medium transition-colors w-full sm:w-auto"
+            className="rounded-full px-7 sm:px-9 py-3.5 font-semibold text-sm sm:text-base transition-all duration-200 hover:bg-white/10 w-full sm:w-auto"
+            style={{
+              border: '1px solid rgba(255,255,255,0.15)',
+              color: 'rgba(255,255,255,0.7)',
+            }}
           >
             Voir ce que Proprely change
           </button>
         </motion.div>
 
         {/* Micro-copy */}
-        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 text-[10px] sm:text-xs text-white/40">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-wrap justify-center gap-3 sm:gap-5 text-[10px] sm:text-xs text-white/30"
+        >
           {['30 places', 'Sans engagement', 'Essai gratuit'].map((item) => (
-            <span key={item} className="flex items-center gap-1">
-              <CheckCircle size={10} className="text-[#00C2E0]" />
+            <span key={item} className="flex items-center gap-1.5">
+              <CheckCircle size={11} className="text-[#00C2E0]" />
               {item}
             </span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
