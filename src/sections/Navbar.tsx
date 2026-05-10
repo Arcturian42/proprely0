@@ -6,55 +6,28 @@ const scrollTo = (id: string) => {
 
 export default function Navbar() {
   return (
-    <nav className="w-full sticky top-0 z-50" style={{
-      background: 'rgba(10, 31, 64, 0.85)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      borderBottom: '1px solid rgba(0, 194, 224, 0.12)',
-    }}>
+    <nav className="w-full bg-white/95 backdrop-blur border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{
-            background: 'linear-gradient(135deg, #00C2E0, #1A4FAF)',
-            boxShadow: '0 0 12px rgba(0,194,224,0.4)',
-          }}>
-            <span className="text-white text-xs font-black">P</span>
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded-lg bg-[#0F2D5E] flex items-center justify-center">
+            <span className="text-white text-xs font-bold">P</span>
           </div>
-          <span className="text-base sm:text-lg font-bold text-white tracking-tight">Proprely</span>
+          <span className="text-base sm:text-lg font-bold text-[#0F2D5E]">Proprely</span>
         </div>
 
         {/* Nav links - desktop */}
-        <div className="hidden md:flex items-center gap-7 text-sm">
-          {[
-            { label: 'Solution', id: 'probleme' },
-            { label: 'Fonctionnalités', id: 'univers' },
-            { label: 'Offre Fondateur', id: 'fondateur', bold: true },
-            { label: 'FAQ', id: 'faq' },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className={`transition-all duration-200 hover:text-[#00C2E0] ${
-                item.bold
-                  ? 'font-semibold text-[#00C2E0]'
-                  : 'text-white/60 hover:text-white'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
+        <div className="hidden md:flex items-center gap-6 text-sm text-[#5A6B7D]">
+          <button onClick={() => scrollTo('probleme')} className="hover:text-[#0F2D5E] transition-colors">Solution</button>
+          <button onClick={() => scrollTo('univers')} className="hover:text-[#0F2D5E] transition-colors">Fonctionnalités</button>
+          <button onClick={() => scrollTo('fondateur')} className="font-semibold text-[#0F2D5E] hover:text-[#1A4FAF] transition-colors">Offre Fondateur</button>
+          <button onClick={() => scrollTo('faq')} className="hover:text-[#0F2D5E] transition-colors">FAQ</button>
         </div>
 
         {/* CTA */}
         <button
           onClick={() => scrollTo('formulaire')}
-          className="flex items-center gap-1.5 rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-all duration-200 hover:scale-105"
-          style={{
-            background: 'linear-gradient(135deg, #00C2E0, #0099b8)',
-            color: '#0F2D5E',
-            boxShadow: '0 0 20px rgba(0,194,224,0.35)',
-          }}
+          className="bg-[#0F2D5E] text-white rounded-full px-3 sm:px-5 py-2 text-xs sm:text-sm font-semibold hover:bg-[#1A4FAF] transition-colors flex items-center gap-1.5"
         >
           Devenir fondateur
           <ArrowRight size={14} />

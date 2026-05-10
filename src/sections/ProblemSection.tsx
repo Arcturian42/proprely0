@@ -14,54 +14,32 @@ const pains = [
 
 export default function ProblemSection() {
   return (
-    <section id="probleme" className="bg-white py-14 sm:py-24">
+    <section id="probleme" className="bg-white py-12 sm:py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14">
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5"
-            style={{ background: 'rgba(239,68,68,0.08)', color: '#dc2626', border: '1px solid rgba(239,68,68,0.15)' }}
-          >
+        <div className="text-center mb-8 sm:mb-12">
+          <span className="inline-block bg-red-50 text-red-600 rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-4">
             La réalité aujourd'hui
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-2xl sm:text-4xl font-black text-[#0F2D5E] mb-3 tracking-tight"
-          >
-            Diriger une société de nettoyage,<br className="hidden sm:block" /> ce n'est pas simple
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-xs sm:text-sm text-[#5A6B7D] max-w-xl mx-auto"
-          >
-            Si l'une de ces situations vous parle, vous n'êtes pas seul.
-          </motion.p>
+          </span>
+          <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E] mb-3">
+            Diriger une société de nettoyage, ce n'est pas simple
+          </h2>
+          <p className="text-xs sm:text-sm text-[#5A6B7D] max-w-2xl mx-auto">
+            Si l'une de ces situations vous parle, vous n'êtes pas seul. C'est le quotidien de la plupart des dirigeants de PME de propreté.
+          </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-3">
+        <div className="grid sm:grid-cols-2 gap-2.5 sm:gap-3">
           {pains.map((pain, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="group rounded-2xl p-4 sm:p-5 flex items-start gap-3 card-hover cursor-default"
-              style={{
-                background: 'linear-gradient(135deg, #FEF2F2 0%, #FFF5F5 100%)',
-                border: '1px solid rgba(239,68,68,0.12)',
-              }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.4, delay: i * 0.07 }}
+              className="bg-[#FEF2F2] rounded-xl p-3 sm:p-4 border border-red-100 flex items-start gap-3"
             >
-              <XCircle size={17} className="text-red-400 mt-0.5 shrink-0 group-hover:text-red-500 transition-colors" />
-              <p className="text-xs sm:text-sm text-[#2D3E50] font-medium">{pain}</p>
+              <XCircle size={18} className="text-red-400 mt-0.5 shrink-0" />
+              <p className="text-xs sm:text-sm text-[#2D3E50]">{pain}</p>
             </motion.div>
           ))}
         </div>

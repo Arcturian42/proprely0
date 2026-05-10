@@ -7,39 +7,28 @@ const scrollTo = (id: string) => {
 
 export default function FinalCTA() {
   return (
-    <section className="py-14 sm:py-24 relative overflow-hidden animated-gradient mesh-grid noise">
-      {/* Glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[500px] h-[300px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse, rgba(0,194,224,0.12) 0%, transparent 70%)', filter: 'blur(40px)' }} />
-      </div>
-
+    <section className="bg-[#0F2D5E] py-12 sm:py-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.5 }}
-        className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center"
+        className="max-w-3xl mx-auto px-4 sm:px-6 text-center space-y-4 sm:space-y-6"
       >
-        <h2 className="text-2xl sm:text-4xl font-black text-white mb-4 tracking-tight leading-tight">
-          Votre entreprise de nettoyage<br /> mérite mieux qu'Excel et WhatsApp
+        <h2 className="text-xl sm:text-3xl font-bold text-white">
+          Votre entreprise de nettoyage mérite mieux qu'Excel et WhatsApp
         </h2>
-        <p className="text-xs sm:text-sm text-white/40 mb-8">
-          30 places seulement. Tarif fondateur à vie : <strong className="text-white/70">49 €/mois</strong> au lieu de 129 €/mois.
+        <p className="text-xs sm:text-sm text-white/60">
+          30 places seulement. Tarif fondateur à vie : 49 €/mois au lieu de 129 €/mois.
         </p>
         <button
           onClick={() => scrollTo('formulaire')}
-          className="inline-flex items-center justify-center gap-2 rounded-full px-9 sm:px-12 py-4 font-black text-sm sm:text-base transition-all duration-200 hover:scale-105 w-full sm:w-auto"
-          style={{
-            background: 'linear-gradient(135deg, #00C2E0, #0099b8)',
-            color: '#0A1F40',
-            boxShadow: '0 0 40px rgba(0,194,224,0.45), 0 12px 30px rgba(0,0,0,0.2)',
-          }}
+          className="bg-[#00C2E0] text-[#0F2D5E] rounded-full px-8 sm:px-10 py-3.5 font-bold flex items-center gap-2 mx-auto w-full sm:w-auto justify-center hover:scale-[1.02] transition-transform"
         >
           Candidater maintenant
           <ArrowRight size={16} />
         </button>
-        <p className="text-[10px] sm:text-xs text-white/25 mt-4">Sans engagement · Réponse sous 48h · Essai gratuit</p>
+        <p className="text-[10px] sm:text-xs text-white/30">Sans engagement · Réponse sous 48h · Essai gratuit</p>
       </motion.div>
     </section>
   )
