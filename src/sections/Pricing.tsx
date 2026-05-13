@@ -6,7 +6,7 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
 const plans = [
   {
     name: 'Starter',
-    price: '49',
+    price: '69',
     desc: 'L\'essentiel pour gérer vos opérations au quotidien.',
     limit: 'Jusqu\'à 7 agents',
     highlight: false,
@@ -115,11 +115,16 @@ export default function Pricing() {
                   {plan.name}
                 </p>
                 {plan.price ? (
-                  <div className="flex items-end gap-1 mb-1">
-                    <span className={`text-4xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
-                      {plan.price}€
+                  <div className="mb-1">
+                    <div className="flex items-end gap-1">
+                      <span className={`text-4xl font-black ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
+                        {plan.price}€
+                      </span>
+                      <span className={`text-sm mb-1.5 ${plan.highlight ? 'text-blue-200' : 'text-gray-400'}`}>/mois</span>
+                    </div>
+                    <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${plan.highlight ? 'bg-white/15 text-white' : 'bg-green-50 text-green-700'}`}>
+                      14 jours gratuits
                     </span>
-                    <span className={`text-sm mb-1.5 ${plan.highlight ? 'text-blue-200' : 'text-gray-400'}`}>/mois</span>
                   </div>
                 ) : (
                   <div className="text-3xl font-black text-gray-900 mb-1">Sur devis</div>
