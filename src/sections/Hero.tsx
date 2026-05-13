@@ -22,12 +22,25 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-6xl font-black text-gray-900 leading-[1.08] tracking-tight mb-6"
+          className="text-4xl sm:text-6xl font-black text-gray-900 leading-[1.08] tracking-tight mb-4"
         >
-          Le logiciel des{' '}
-          <span className="text-[#1A4FAF]">sociétés de nettoyage</span>{' '}
-          qui veulent grandir
+          Votre entreprise de nettoyage<br />
+          <span className="text-[#1A4FAF]">sur une seule plateforme</span>
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.14 }}
+          className="flex items-center justify-center gap-3 sm:gap-5 mb-6"
+        >
+          {['Commercial', 'Opérationnel', 'Admin'].map((item, i) => (
+            <span key={item} className="flex items-center gap-2 text-sm sm:text-base text-gray-400 font-semibold">
+              {i > 0 && <span className="w-1 h-1 rounded-full bg-gray-200" />}
+              {item}
+            </span>
+          ))}
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
