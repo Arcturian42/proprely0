@@ -1,98 +1,77 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
-const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
 export default function Hero() {
   return (
-    <section className="bg-[#0F2D5E] pt-10 sm:pt-12 pb-14 sm:pb-16 relative overflow-hidden">
-      {/* Decorative circles */}
-      <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-white opacity-[0.05] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-white opacity-[0.05] pointer-events-none" />
+    <section className="bg-white pt-16 sm:pt-24 pb-16 sm:pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 bg-white/15 text-white/90 rounded-full border border-white/20 px-4 py-1.5 text-[11px] sm:text-sm mb-6"
+          className="inline-flex items-center gap-2 bg-blue-50 text-[#1A4FAF] rounded-full px-3.5 py-1 text-xs font-semibold mb-8 border border-blue-100"
         >
-          Vos plannings sur Excel, vos agents sur WhatsApp ?
+          <span className="w-1.5 h-1.5 rounded-full bg-[#1A4FAF] animate-pulse" />
+          Disponible maintenant — Démarrez en 10 minutes
         </motion.div>
 
-        {/* H1 */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-[26px] sm:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-3 sm:mb-4"
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="text-4xl sm:text-6xl font-black text-gray-900 leading-[1.08] tracking-tight mb-6"
         >
-          L'Operating System des sociétés de nettoyage
+          Le logiciel des{' '}
+          <span className="text-[#1A4FAF]">sociétés de nettoyage</span>{' '}
+          qui veulent grandir
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm sm:text-lg text-white/70 mt-2 sm:mt-3 mb-6 sm:mb-8"
+          transition={{ duration: 0.4, delay: 0.16 }}
+          className="text-lg sm:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Un seul logiciel pour planifier, intervenir, facturer et piloter votre entreprise.
+          Planning, interventions, équipes, CRM, devis, facturation et pilotage — dans un seul outil conçu pour votre métier.
         </motion.p>
 
-        {/* Price box */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white/10 backdrop-blur rounded-2xl px-4 sm:px-6 py-3 sm:py-3.5 border border-white/10 inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-5 mb-6 sm:mb-8"
-        >
-          <div className="text-center sm:text-left">
-            <span className="text-white/40 line-through text-sm sm:text-base">129€/mois</span>
-            <div className="text-2xl sm:text-3xl font-bold text-white">49€/mois</div>
-          </div>
-          <div className="hidden sm:block w-px h-10 bg-white/20" />
-          <div className="text-center sm:text-left">
-            <div className="text-white/80 text-xs sm:text-sm font-medium">Tarif fondateur à vie</div>
-            <div className="text-[#00C2E0] text-xs sm:text-sm font-semibold">960€ d'économie par an</div>
-            <div className="text-[#00C2E0] text-xs font-bold mt-0.5">30 places uniquement</div>
-          </div>
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center mb-6"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.22 }}
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-10"
         >
           <button
-            onClick={() => scrollTo('formulaire')}
-            className="bg-[#00C2E0] text-[#0F2D5E] rounded-full px-6 sm:px-8 font-bold h-11 sm:h-12 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform w-full sm:w-auto"
+            onClick={() => scrollTo('pricing')}
+            className="bg-[#1A4FAF] text-white rounded-lg px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-[#0F2D5E] transition-colors flex items-center justify-center gap-2"
           >
-            Candidater — membre fondateur
+            Voir les tarifs
             <ArrowRight size={16} />
           </button>
           <button
-            onClick={() => scrollTo('probleme')}
-            className="border border-white/25 text-white hover:bg-white/10 rounded-full h-11 sm:h-12 px-6 sm:px-8 font-medium transition-colors w-full sm:w-auto"
+            onClick={() => scrollTo('features')}
+            className="border border-gray-200 text-gray-700 rounded-lg px-7 py-3.5 font-semibold text-sm sm:text-base hover:bg-gray-50 transition-colors"
           >
-            Voir ce que Proprely change
+            Découvrir les fonctionnalités
           </button>
         </motion.div>
 
-        {/* Micro-copy */}
-        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 text-[10px] sm:text-xs text-white/40">
-          {['30 places', 'Sans engagement', 'Essai gratuit'].map((item) => (
-            <span key={item} className="flex items-center gap-1">
-              <CheckCircle size={10} className="text-[#00C2E0]" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-gray-400"
+        >
+          {['Sans engagement', 'Essai gratuit 14 jours', 'Support inclus', 'Données hébergées en France'].map(item => (
+            <span key={item} className="flex items-center gap-1.5">
+              <CheckCircle size={12} className="text-[#1A4FAF]" />
               {item}
             </span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
