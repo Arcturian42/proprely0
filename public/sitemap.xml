@@ -16,7 +16,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://proprely.fr/blog/fixer-prix-nettoyage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://proprely.fr/blog/gestion-societe-nettoyage-outils</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/logiciel-societe-nettoyage-criteres</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -27,6 +37,11 @@
   </url>
   <url>
     <loc>https://proprely.fr/blog/rgpd-societe-nettoyage-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
