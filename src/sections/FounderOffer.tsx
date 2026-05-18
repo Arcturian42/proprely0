@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Award, Check, ArrowRight, Sparkles, Headphones, Lightbulb, Zap, BadgePercent } from 'lucide-react'
+import { Award, ArrowRight, Sparkles, Headphones, Lightbulb, Zap, BadgePercent } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
 import AnimatedCounter from '../components/AnimatedCounter'
 
@@ -117,31 +117,32 @@ export default function FounderOffer() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12">
+        <ol className="border-t border-white/10 mb-12">
           {advantages.map((a, i) => (
-            <motion.div
+            <motion.li
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
-              className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/[0.08] hover:border-white/20 transition-all"
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="group grid grid-cols-[40px,1fr] sm:grid-cols-[60px,150px,1fr] gap-x-4 sm:gap-x-8 gap-y-2 py-6 sm:py-7 border-b border-white/10 hover:bg-white/[0.03] transition-colors px-2 -mx-2 rounded-sm"
             >
-              <div className="flex items-start gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center shrink-0">
-                  <a.icon size={18} className="text-sky-400" />
+              <span className="font-mono text-xs sm:text-sm font-bold tabular-nums text-sky-400 pt-1.5">
+                0{i + 1}
+              </span>
+              <div className="col-span-1 sm:col-span-1 flex items-start gap-3 sm:pt-0">
+                <div className="w-9 h-9 rounded-lg bg-sky-500/15 border border-sky-400/30 flex items-center justify-center shrink-0">
+                  <a.icon size={16} className="text-sky-400" />
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    <Check size={12} className="text-sky-400 shrink-0" />
-                    <h3 className="text-base font-bold text-white">{a.title}</h3>
-                  </div>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-white leading-tight tracking-tight sm:hidden">{a.title}</h3>
               </div>
-              <p className="text-sm text-slate-300 leading-relaxed">{a.desc}</p>
-            </motion.div>
+              <div className="col-span-2 sm:col-span-1">
+                <h3 className="hidden sm:block text-lg font-bold text-white leading-tight tracking-tight mb-2">{a.title}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">{a.desc}</p>
+              </div>
+            </motion.li>
           ))}
-        </div>
+        </ol>
 
         <div className="text-center">
           <button
