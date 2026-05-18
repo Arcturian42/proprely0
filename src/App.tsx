@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import Landing from './pages/Landing'
-import RoiCalculator from './pages/RoiCalculator'
-import BlogIndex from './pages/BlogIndex'
-import BlogPost from './pages/BlogPost'
-import ThankYou from './pages/ThankYou'
 import { useRoute } from './lib/useRoute'
+
+const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
+const BlogIndex = lazy(() => import('./pages/BlogIndex'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
+const ThankYou = lazy(() => import('./pages/ThankYou'))
+const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 
 const META: Record<string, { title: string; description: string }> = {
   '/': {
@@ -39,6 +41,14 @@ function setMeta(name: string, content: string) {
   el.setAttribute('content', content)
 }
 
+function PageLoading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin" />
+    </div>
+  )
+}
+
 function App() {
   const route = useRoute()
 
@@ -50,8 +60,6 @@ function App() {
       setMeta('og:title', meta.title)
       setMeta('og:description', meta.description)
       setMeta('og:url', `https://proprely.fr${route}`)
-    } else if (route.startsWith('/blog/')) {
-      // Title is set by BlogPost itself
     }
   }, [route])
 
@@ -60,9 +68,14 @@ function App() {
   else if (route === '/blog') content = <BlogIndex />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
-  else content = <Landing />
+  else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17)} />
+  else return <div className="w-full bg-white"><Landing /></div>
 
-  return <div className="w-full bg-white">{content}</div>
+  return (
+    <div className="w-full bg-white">
+      <Suspense fallback={<PageLoading />}>{content}</Suspense>
+    </div>
+  )
 }
 
 export default App

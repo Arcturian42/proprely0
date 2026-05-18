@@ -22,21 +22,26 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Produit</h4>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Fonctionnalités</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <button onClick={() => navigate('/', { hash: 'solution' })} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Solution
+                  <button onClick={() => navigate('/fonctionnalites/planning-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    Planning
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => navigate('/', { hash: 'fondateur' })} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Membres fondateurs
+                  <button onClick={() => navigate('/fonctionnalites/devis-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    Devis
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => navigate('/', { hash: 'faq' })} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    FAQ
+                  <button onClick={() => navigate('/fonctionnalites/gestion-agents-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    Gestion agents
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/fonctionnalites/preuve-passage-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    Preuve de passage
                   </button>
                 </li>
               </ul>
