@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { FOUNDER_SPOTS, remainingSpots } from '../config'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
-const SPOTS_TAKEN = 12
-const SPOTS_TOTAL = 30
-
 export default function FinalCTA() {
-  const remaining = SPOTS_TOTAL - SPOTS_TAKEN
+  const remaining = remainingSpots()
 
   return (
     <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 py-20 sm:py-28 relative overflow-hidden">
@@ -22,7 +20,7 @@ export default function FinalCTA() {
       >
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white rounded-full px-4 py-1.5 text-xs font-bold mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-sky-300 animate-pulse" />
-          {remaining} places restantes sur {SPOTS_TOTAL}
+          {remaining} places restantes sur {FOUNDER_SPOTS.total}
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">

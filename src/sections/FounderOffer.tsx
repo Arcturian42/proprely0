@@ -1,12 +1,10 @@
 import { motion } from 'framer-motion'
 import { Award, Check, ArrowRight, Lock } from 'lucide-react'
+import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
-
-const SPOTS_TAKEN = 12
-const SPOTS_TOTAL = 30
 
 const advantages = [
   { title: 'Tarif fondateur bloqué à vie', desc: "Vous ne paierez jamais le prix public, même après la fin de la bêta." },
@@ -18,8 +16,8 @@ const advantages = [
 ]
 
 export default function FounderOffer() {
-  const remaining = SPOTS_TOTAL - SPOTS_TAKEN
-  const percentFull = (SPOTS_TAKEN / SPOTS_TOTAL) * 100
+  const remaining = remainingSpots()
+  const percentFull = progressPercent()
 
   return (
     <section id="fondateur" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-20 sm:py-28 overflow-hidden">
@@ -30,14 +28,14 @@ export default function FounderOffer() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-sky-500/15 backdrop-blur border border-sky-400/30 text-sky-300 rounded-full px-4 py-1.5 text-xs font-bold mb-5">
             <Award size={14} />
-            Offre exclusive — {SPOTS_TOTAL} places fondateurs
+            Offre exclusive — {FOUNDER_SPOTS.total} places fondateurs
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
             Devenez membre fondateur<br />
             <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">de Proprely</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Nous sélectionnons {SPOTS_TOTAL} sociétés de nettoyage pour construire Proprely avec nous. En contrepartie, vous gardez un tarif privilégié à vie et un accompagnement dédié.
+            Nous sélectionnons {FOUNDER_SPOTS.total} sociétés de nettoyage pour construire Proprely avec nous. En contrepartie, vous gardez un tarif privilégié à vie et un accompagnement dédié.
           </p>
         </div>
 
@@ -50,7 +48,7 @@ export default function FounderOffer() {
         >
           <div className="flex items-center justify-between mb-3">
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-white">{SPOTS_TAKEN} <span className="text-sky-400">/ {SPOTS_TOTAL}</span></div>
+              <div className="text-2xl sm:text-3xl font-black text-white">{FOUNDER_SPOTS.taken} <span className="text-sky-400">/ {FOUNDER_SPOTS.total}</span></div>
               <div className="text-xs text-slate-400 mt-1">dirigeants inscrits</div>
             </div>
             <div className="text-right">

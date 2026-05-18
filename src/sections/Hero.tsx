@@ -1,14 +1,12 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
-const SPOTS_TAKEN = 12
-const SPOTS_TOTAL = 30
-
 export default function Hero() {
-  const remaining = SPOTS_TOTAL - SPOTS_TAKEN
-  const percentFull = (SPOTS_TAKEN / SPOTS_TOTAL) * 100
+  const remaining = remainingSpots()
+  const percentFull = progressPercent()
 
   return (
     <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20 sm:pt-28 pb-20 sm:pb-28 overflow-hidden">
@@ -30,7 +28,7 @@ export default function Hero() {
             <span className="uppercase tracking-wider text-[10px]">Bêta privée</span>
           </span>
           <span className="w-px h-3 bg-blue-200" />
-          <span>{remaining} places restantes sur {SPOTS_TOTAL}</span>
+          <span>{remaining} places restantes sur {FOUNDER_SPOTS.total}</span>
         </motion.div>
 
         <motion.h1
@@ -95,7 +93,7 @@ export default function Hero() {
           className="mt-14 max-w-md mx-auto"
         >
           <div className="flex items-center justify-between text-xs text-slate-500 mb-2.5">
-            <span className="font-semibold text-slate-700">{SPOTS_TAKEN} dirigeants déjà inscrits</span>
+            <span className="font-semibold text-slate-700">{FOUNDER_SPOTS.taken} dirigeants déjà inscrits</span>
             <span>{remaining} places</span>
           </div>
           <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
