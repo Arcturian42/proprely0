@@ -1,0 +1,91 @@
+import { motion } from 'framer-motion'
+import { Check, X, AlertTriangle } from 'lucide-react'
+
+type Row = {
+  category: string
+  excel: { value: string; status: 'bad' | 'warn' | 'ok' }
+  proprely: { value: string; status: 'bad' | 'warn' | 'ok' }
+}
+
+const rows: Row[] = [
+  { category: 'Calcul des heures par agent', excel: { value: '4h manuel / mois sur agenda papier', status: 'bad' }, proprely: { value: 'Automatique par site et par agent', status: 'ok' } },
+  { category: 'Génération de devis', excel: { value: '15-20 min sur Word, sans logo', status: 'bad' }, proprely: { value: '2 minutes, avec votre charte', status: 'ok' } },
+  { category: 'Preuve de passage', excel: { value: 'Aucune, parole contre parole', status: 'bad' }, proprely: { value: 'QR code + photos + signature client', status: 'ok' } },
+  { category: 'Remplacements urgents', excel: { value: 'Téléphone et WhatsApp, traçabilité nulle', status: 'bad' }, proprely: { value: 'Centralisés, historique conservé', status: 'ok' } },
+  { category: 'Marge par client', excel: { value: 'Invisible jusqu\'à la clôture comptable', status: 'bad' }, proprely: { value: 'Visible en temps réel', status: 'ok' } },
+  { category: 'Planning consulté par les agents', excel: { value: 'Appels du matin, papier, SMS', status: 'bad' }, proprely: { value: 'Lien navigateur sur leur téléphone', status: 'ok' } },
+  { category: 'Sécurité des données', excel: { value: 'Sur ordinateur local, sauvegardes incertaines', status: 'warn' }, proprely: { value: 'Hébergé France (OVH), RGPD, chiffré', status: 'ok' } },
+  { category: 'Multi-sites par client', excel: { value: 'Tableaux croisés vite illisibles', status: 'bad' }, proprely: { value: 'Vue arborescence client → sites', status: 'ok' } },
+  { category: 'Documents (contrats, fiches)', excel: { value: 'Dispersés entre PC, mails, papier', status: 'bad' }, proprely: { value: 'Centralisés, recherche instantanée', status: 'ok' } },
+  { category: 'Alerte surmenage des agents', excel: { value: 'Aucune, découverte au burn-out', status: 'bad' }, proprely: { value: 'Alerte automatique dès le seuil', status: 'ok' } },
+]
+
+const statusStyle = {
+  bad: { bg: 'bg-red-50', text: 'text-red-700', icon: X, iconColor: 'text-red-500' },
+  warn: { bg: 'bg-amber-50', text: 'text-amber-700', icon: AlertTriangle, iconColor: 'text-amber-500' },
+  ok: { bg: 'bg-emerald-50', text: 'text-emerald-700', icon: Check, iconColor: 'text-emerald-500' },
+}
+
+export default function Comparison() {
+  return (
+    <section className="bg-white py-20 sm:py-28 border-t border-slate-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-14">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Comparatif</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
+            Excel + WhatsApp + Word<br />vs Proprely
+          </h2>
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            La même tâche, deux mondes. Voici ce que vous faites aujourd'hui, et ce que vous feriez demain.
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+          <div className="grid grid-cols-3 gap-px bg-slate-100">
+            <div className="bg-slate-50 px-4 sm:px-6 py-4 flex items-center">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">Au quotidien</span>
+            </div>
+            <div className="bg-white px-4 sm:px-6 py-4 flex items-center justify-between">
+              <span className="text-sm sm:text-base font-bold text-slate-900">Aujourd'hui</span>
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-red-500 bg-red-50 px-2 py-0.5 rounded">Excel + WhatsApp</span>
+            </div>
+            <div className="bg-blue-50 px-4 sm:px-6 py-4 flex items-center justify-between">
+              <span className="text-sm sm:text-base font-bold text-blue-900">Avec Proprely</span>
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Cockpit</span>
+            </div>
+          </div>
+
+          {rows.map((row, i) => {
+            const excelStyle = statusStyle[row.excel.status]
+            const proprelyStyle = statusStyle[row.proprely.status]
+            const ExcelIcon = excelStyle.icon
+            const ProprelyIcon = proprelyStyle.icon
+
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.3, delay: i * 0.04 }}
+                className="grid grid-cols-3 gap-px bg-slate-100 border-t border-slate-100"
+              >
+                <div className="bg-slate-50/50 px-4 sm:px-6 py-4 sm:py-5">
+                  <div className="text-xs sm:text-sm font-semibold text-slate-700">{row.category}</div>
+                </div>
+                <div className="bg-white px-4 sm:px-6 py-4 sm:py-5 flex items-start gap-2.5">
+                  <ExcelIcon size={16} className={`${excelStyle.iconColor} shrink-0 mt-0.5`} />
+                  <span className="text-xs sm:text-sm text-slate-600 leading-snug">{row.excel.value}</span>
+                </div>
+                <div className="bg-blue-50/30 px-4 sm:px-6 py-4 sm:py-5 flex items-start gap-2.5">
+                  <ProprelyIcon size={16} className={`${proprelyStyle.iconColor} shrink-0 mt-0.5`} />
+                  <span className="text-xs sm:text-sm text-slate-800 font-medium leading-snug">{row.proprely.value}</span>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
