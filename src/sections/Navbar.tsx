@@ -7,9 +7,6 @@ export default function Navbar() {
     <nav className="w-full bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center">
-            <span className="text-white text-xs font-black">P</span>
-          </div>
           <span className="text-base font-bold text-slate-900 tracking-tight">Proprely</span>
           <span className="hidden sm:inline ml-2 text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 border border-blue-100">Bêta</span>
         </div>
