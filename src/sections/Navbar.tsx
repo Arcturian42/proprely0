@@ -23,7 +23,7 @@ export default function Navbar() {
             onClick={() => scrollTo('formulaire')}
             className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-colors flex items-center gap-1.5 shadow-sm shadow-blue-600/20"
           >
-            Rejoindre la bêta
+            Candidater
             <ArrowRight size={14} />
           </button>
         </div>

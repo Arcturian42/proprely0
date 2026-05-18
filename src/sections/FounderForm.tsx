@@ -15,10 +15,10 @@ export default function FounderForm() {
         <div className="text-center mb-10">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Candidature</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
-            Réservez votre place de fondateur
+            Réserve ta place de fondateur
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Quelques minutes pour candidater. On revient vers vous sous 24h avec un créneau de démo si votre profil correspond.
+            Quelques minutes pour candidater. On revient vers toi sous 24h pour un premier appel si ton profil colle.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function FounderForm() {
           />
         </div>
         <p className="text-center text-xs text-slate-500 mt-5">
-          Sans engagement · Pas de carte bancaire requise · contact@proprely.fr
+          Pas de carte bancaire requise · contact@proprely.fr
         </p>
       </div>
     </section>

@@ -24,17 +24,17 @@ export default function FinalCTA() {
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
-          Prêt à arrêter de compter<br />vos heures à la main ?
+          Prêt à arrêter de compter<br />tes heures à la main ?
         </h2>
         <p className="text-blue-100 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Réservez votre place dans la bêta privée. Sélection sur dossier. Tarif fondateur bloqué à vie.
+          Réserve ta place dans la bêta. Sélection sur dossier. Ton tarif d'aujourd'hui, conservé pour toujours.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={() => scrollTo('formulaire')}
             className="group bg-white text-blue-700 rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-50 transition-all shadow-2xl flex items-center justify-center gap-2 hover:-translate-y-0.5"
           >
-            Réserver ma place
+            Candidater
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
@@ -44,7 +44,7 @@ export default function FinalCTA() {
             Lire la FAQ
           </button>
         </div>
-        <p className="text-xs text-blue-200 mt-6">Pas de carte bancaire · Démo 20 min · Réponse sous 24h</p>
+        <p className="text-xs text-blue-200 mt-6">Pas de carte bancaire · 20 min avec le fondateur · Réponse sous 24h</p>
       </motion.div>
     </section>
   )

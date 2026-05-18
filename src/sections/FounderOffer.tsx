@@ -7,12 +7,12 @@ const scrollTo = (id: string) => {
 }
 
 const advantages = [
-  { title: 'Tarif fondateur bloqué à vie', desc: "Vous ne paierez jamais le prix public, même après la fin de la bêta." },
-  { title: 'Accès complet à tous les modules', desc: "Opérations, CRM, Pilotage. Sans plan limité, sans fonctionnalité bridée." },
-  { title: 'Onboarding fait par le fondateur', desc: "Appel de configuration de 30 min. Votre entreprise est opérationnelle à la fin." },
-  { title: 'Support prioritaire sous 4h', desc: "Une question, un bug ? Réponse rapide, par un humain qui connaît votre dossier." },
-  { title: 'Influence directe sur la roadmap', desc: "1 entretien mensuel. Vos besoins deviennent les prochaines fonctionnalités." },
-  { title: "Badge fondateur sur votre profil", desc: "Visible par vos équipes et vos clients. Vous avez construit l'outil." },
+  { title: "Ton tarif d'aujourd'hui, à vie", desc: "Même quand on passera au prix public, tu gardes ton tarif fondateur. Pour toujours." },
+  { title: 'Tous les modules, sans limite', desc: "Opérations, CRM, Pilotage — tout est ouvert. Pas de quota d'agents, pas de fonction bridée." },
+  { title: 'Mise en route avec le fondateur', desc: "30 minutes d'appel pour configurer ta boîte. Tu repars opérationnel, pas avec un tutoriel à lire." },
+  { title: 'Réponse sous 4h en semaine', desc: "Un bug, une question ? Un humain qui connaît ton dossier répond, pas un ticket numéroté." },
+  { title: 'Ton avis pèse sur le produit', desc: "Un appel mensuel avec le fondateur. Tes demandes passent en haut de la liste." },
+  { title: 'Un dossier traité, pas un email perdu', desc: "Tu n'es pas dans une file d'attente. Tu as un référent qui sait qui tu es et ce que tu fais." },
 ]
 
 export default function FounderOffer() {
@@ -28,14 +28,14 @@ export default function FounderOffer() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-sky-500/15 backdrop-blur border border-sky-400/30 text-sky-300 rounded-full px-4 py-1.5 text-xs font-bold mb-5">
             <Award size={14} />
-            Offre exclusive — {FOUNDER_SPOTS.total} places fondateurs
+            Sélection fermée à {FOUNDER_SPOTS.total} entreprises
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
-            Devenez membre fondateur<br />
-            <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">de Proprely</span>
+            Construis Proprely<br />
+            <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">avec nous, pas pour nous</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Nous sélectionnons {FOUNDER_SPOTS.total} sociétés de nettoyage pour construire Proprely avec nous. En contrepartie, vous gardez un tarif privilégié à vie et un accompagnement dédié.
+            On cherche {FOUNDER_SPOTS.total} sociétés de nettoyage pour bâtir Proprely avec nous. En échange, tu gardes ton tarif fondateur pour toujours et un accès direct à l'équipe.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function FounderOffer() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <div className="text-2xl sm:text-3xl font-black text-white">{FOUNDER_SPOTS.taken} <span className="text-sky-400">/ {FOUNDER_SPOTS.total}</span></div>
-              <div className="text-xs text-slate-400 mt-1">dirigeants inscrits</div>
+              <div className="text-xs text-slate-400 mt-1">dirigeants sélectionnés</div>
             </div>
             <div className="text-right">
               <div className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
@@ -80,8 +80,8 @@ export default function FounderOffer() {
             <Lock size={18} className="text-sky-400" />
           </div>
           <div className="flex-1">
-            <div className="text-white font-semibold text-sm sm:text-base mb-0.5">Tarif fondateur communiqué lors de l'appel découverte</div>
-            <div className="text-slate-400 text-xs sm:text-sm">Bloqué à vie · Sans engagement · Annulation à tout moment</div>
+            <div className="text-white font-semibold text-sm sm:text-base mb-0.5">Ton tarif est communiqué pendant le premier appel</div>
+            <div className="text-slate-400 text-xs sm:text-sm">Conservé à vie · Sans engagement · Annulation à tout moment</div>
           </div>
         </motion.div>
 
@@ -111,7 +111,7 @@ export default function FounderOffer() {
             onClick={() => scrollTo('formulaire')}
             className="group bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-all shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
           >
-            Réserver ma place fondateur
+            Candidater à la bêta
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <p className="text-xs text-slate-400 mt-4">Pas de carte bancaire · Sélection sur dossier · Réponse sous 24h</p>

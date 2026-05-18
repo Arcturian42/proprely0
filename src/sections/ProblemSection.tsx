@@ -1,30 +1,24 @@
 import { motion } from 'framer-motion'
 
-const stats = [
-  { value: '87%', label: 'des dirigeants comptent encore les heures à la main' },
-  { value: '4,2', label: 'outils utilisés en moyenne par entreprise de nettoyage' },
-  { value: '10h', label: 'perdues par semaine en administration' },
-]
-
 const pains = [
   {
     quote: 'Le 22 du mois, je compte les heures de chaque agent depuis le 1er sur mon agenda. Ça me prend toute la soirée.',
-    label: 'Calcul des heures',
+    label: 'Le 22 du mois',
     role: 'Dirigeante · 8 agents',
   },
   {
     quote: "Mon meilleur agent, je l'ai trop usé. Dans quelques semaines, il va partir. J'aurais dû le ménager.",
-    label: 'Surmenage des équipes',
+    label: "L'agent qui craque",
     role: 'Dirigeant · 14 agents',
   },
   {
     quote: "Je sais que certains clients sont casse-couilles mais j'ai aucun moyen de le voir sur mes chiffres.",
-    label: 'Rentabilité client',
+    label: 'Le client sangsue',
     role: 'Dirigeant · 22 agents',
   },
   {
     quote: "C'est Excel et Google Agenda. Ça marche, mais t'as pas de visu. T'as pas un vrai truc.",
-    label: 'Outils inadaptés',
+    label: 'Excel partout',
     role: 'Dirigeante · 6 agents',
   },
 ]
@@ -36,35 +30,17 @@ export default function ProblemSection() {
         <div className="text-center mb-14">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Le problème</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
-            4 outils. 10 heures perdues.<br />Un dirigeant qui s'épuise.
+            4 outils. 6 heures perdues<br />par semaine. Un dimanche soir foutu.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            La plupart des sociétés de nettoyage françaises jonglent entre Excel, WhatsApp, Google Agenda et un logiciel de facturation. Résultat : du temps perdu, des heures non comptées, des agents épuisés.
+            Excel pour les heures. WhatsApp pour les remplacements. Google Agenda pour les rappels. Un logiciel de facturation pour les devis. Au final, c'est toi qui jongles.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-20">
-          {stats.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-6 sm:p-7 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
-            >
-              <div className="text-4xl sm:text-5xl font-black bg-gradient-to-br from-blue-600 to-sky-500 bg-clip-text text-transparent mb-2">
-                {s.value}
-              </div>
-              <p className="text-sm text-slate-600 leading-snug">{s.label}</p>
-            </motion.div>
-          ))}
         </div>
 
         <div className="text-center mb-10">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Sur le terrain</p>
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            Voici ce que vivent vos confrères chaque jour
+            Ce que tes confrères nous ont dit en face
           </h3>
         </div>
 
@@ -101,7 +77,7 @@ export default function ProblemSection() {
           transition={{ delay: 0.4 }}
           className="text-center text-xs text-slate-500 mt-10"
         >
-          Témoignages recueillis lors de nos entretiens utilisateurs avec des dirigeants en région lyonnaise.
+          Rencontrés en région lyonnaise pendant la construction de Proprely.
         </motion.p>
       </div>
     </section>

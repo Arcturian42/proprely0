@@ -5,29 +5,29 @@ const modules = [
   {
     icon: Calendar,
     title: 'Opérations & Planning',
-    tagline: 'Vos agents savent où aller, quand, avec quels outils.',
+    tagline: "Tes agents savent où aller, quand, avec quels outils.",
     benefits: [
-      { before: "Coups de fil et messages WhatsApp pour caler le planning", after: "Vos agents voient leur journée sur leur téléphone, sans appel" },
+      { before: "Coups de fil et messages WhatsApp pour caler le planning", after: "Tes agents voient leur journée sur leur téléphone, sans appel" },
       { before: "Heures comptées le 22 du mois sur l'agenda papier", after: "Compteur d'heures automatique, prêt pour la paie en 2 clics" },
-      { before: "Photos avant/après envoyées sur WhatsApp et perdues", after: "Photos, signatures et preuves attachées à chaque mission" },
+      { before: "Photos dispersées dans 12 conversations WhatsApp", after: "Photos, signatures et preuves attachées à chaque mission" },
     ],
   },
   {
     icon: Users,
     title: 'Équipes & Bien-être',
-    tagline: 'Évitez le surmenage. Gardez vos meilleurs agents.',
+    tagline: 'Évite le surmenage. Garde tes meilleurs agents.',
     benefits: [
-      { before: "Vous découvrez le burnout d'un agent quand il démissionne", after: "Alerte automatique quand un agent approche de sa limite" },
+      { before: "Tu découvres le burnout d'un agent quand il démissionne", after: "Alerte automatique quand un agent approche de sa limite" },
       { before: "Affectations à l'instinct selon qui répond le premier", after: "Affectation 1-clic selon spécialité, dispo et charge horaire" },
-      { before: "Remplacements gérés dans l'urgence par téléphone", after: "Gestion centralisée des remplacements, traçabilité totale" },
+      { before: "Remplacements gérés dans l'urgence par téléphone", after: "Remplacements centralisés, traçabilité totale" },
     ],
   },
   {
     icon: Target,
     title: 'CRM & Commercial',
-    tagline: 'Transformez vos demandes en clients. Sans logiciel séparé.',
+    tagline: "Transforme tes demandes en clients. Sans changer d'outil.",
     benefits: [
-      { before: "Devis rédigés sur Word, 30 min par client", after: "Devis générés en 2 clics, professionnels, avec votre logo" },
+      { before: "Devis tapés sur Word, 15-20 min par client", after: "Devis générés en 2 minutes, avec ton logo" },
       { before: "Relances oubliées, prospects perdus dans les emails", after: "Pipeline visuel avec alertes de relance automatiques" },
       { before: "Impossible de savoir quel client est vraiment rentable", after: "Marge par client, identification des clients déficitaires" },
     ],
@@ -35,11 +35,11 @@ const modules = [
   {
     icon: BarChart3,
     title: 'Pilotage & Rentabilité',
-    tagline: 'Décidez avec des chiffres réels, pas au feeling.',
+    tagline: 'Décide avec des chiffres réels, pas au feeling.',
     benefits: [
-      { before: "Vous découvrez la rentabilité du mois 45 jours après", after: "Dashboard CA, heures, marge — en temps réel" },
+      { before: "Tu découvres la rentabilité du mois 45 jours après", after: "Marge, heures et CA — visibles en temps réel" },
       { before: "Comptable et logiciel de facturation déconnectés", after: "Connexion native Pennylane / Conto, données synchronisées" },
-      { before: "Décisions prises à l'instinct, sans visibilité", after: "Rapport mensuel automatique de rentabilité par site et client" },
+      { before: "Décisions prises à l'instinct, sans visibilité", after: "Rapport mensuel automatique par site et par client" },
     ],
   },
 ]
@@ -51,10 +51,10 @@ export default function FourSpaces() {
         <div className="text-center mb-14 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">La solution</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
-            Tout ce dont vous avez besoin.<br />Rien de superflu.
+            4 douleurs. 4 modules.<br />Un dirigeant qui dort la nuit.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Chaque fonctionnalité a été construite avec des dirigeants de sociétés de nettoyage. Pas avec des développeurs dans une tour en verre.
+            Chaque fonctionnalité est née d'une vraie galère terrain. Pas d'un brainstorm en réunion.
           </p>
         </div>
 

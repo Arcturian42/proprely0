@@ -27,7 +27,7 @@ export default function StickyCTAMobile() {
         onClick={() => scrollTo('formulaire')}
         className="w-full bg-blue-600 text-white rounded-xl font-bold h-12 flex items-center justify-center gap-2 text-sm shadow-lg shadow-blue-600/25"
       >
-        Réserver ma place fondateur
+        Candidater à la bêta
         <ArrowRight size={15} />
       </button>
     </div>

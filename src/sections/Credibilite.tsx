@@ -4,23 +4,23 @@ import { Users, Check, Handshake, Headphones } from 'lucide-react'
 const items = [
   {
     icon: Users,
-    title: "6 mois d'immersion terrain",
-    desc: "Plannings matinaux, tournées avec agents, soirées de fin de mois passées à compter les heures avec les dirigeants.",
+    title: "6 mois passés sur le terrain",
+    desc: "Plannings du matin, tournées avec les agents, soirées de fin de mois passées à compter les heures avec les dirigeants.",
   },
   {
     icon: Check,
     title: 'Zéro fonction inutile',
-    desc: "Chaque feature correspond à une douleur identifiée sur le terrain. Pas de jargon SaaS, pas de complexité superflue.",
+    desc: "Chaque feature vient d'une vraie galère qu'on a vue, vécue ou entendue. Pas de jargon SaaS, pas de superflu.",
   },
   {
     icon: Handshake,
-    title: 'Construit avec vous',
-    desc: "Les fondateurs participent activement à la définition des prochaines fonctionnalités. Vous orientez la roadmap.",
+    title: 'Co-construit avec les fondateurs',
+    desc: "Tes besoins terrain orientent ce qu'on développe en priorité. Tu fais avancer le produit avec nous.",
   },
   {
     icon: Headphones,
-    title: 'Accompagnement humain',
-    desc: "Un interlocuteur par entreprise fondatrice. Pas un ticket numéroté. Un humain qui connaît votre dossier.",
+    title: 'Un interlocuteur, un dossier',
+    desc: "Pas un ticket numéroté. Pas une file d'attente. Une personne qui sait qui tu es et ce que tu fais.",
   },
 ]
 

@@ -5,22 +5,22 @@ const reasons = [
   {
     icon: Clock,
     title: 'Le tarif fondateur ferme à 30 entreprises',
-    desc: "Une seule fois. Une fois la bêta lancée, le tarif passera au prix public. Les fondateurs gardent leur tarif privilégié à vie.",
+    desc: "Après ça, on bascule au prix public. Les fondateurs gardent leur tarif d'aujourd'hui — pour toujours, même quand on monte en gamme.",
   },
   {
     icon: TrendingUp,
-    title: 'Les fondateurs influencent la roadmap',
-    desc: "Canal direct avec l'équipe produit. Vos besoins terrain deviennent les prochaines fonctionnalités. Vous co-construisez Proprely.",
+    title: 'Tes besoins deviennent nos prochaines fonctionnalités',
+    desc: "Un appel direct chaque mois avec le fondateur. Tu remontes tes galères, elles passent en haut de la pile. Tu co-construis le produit.",
   },
   {
     icon: Shield,
-    title: 'Soyez le premier de votre zone',
-    desc: "Les outils généralistes ne sont pas pensés pour le nettoyage. Adoptez le seul logiciel métier avant vos concurrents.",
+    title: 'Prends de l\'avance dans ta ville',
+    desc: "Les outils généralistes ne sont pas faits pour le nettoyage. Sois le premier de ton département à avoir un vrai logiciel métier.",
   },
   {
     icon: Headphones,
-    title: 'Accompagnement humain dédié',
-    desc: "Un interlocuteur qui connaît votre entreprise. Pas un chatbot, pas un numéro vert. Le fondateur répond au téléphone.",
+    title: 'Un humain au bout du fil',
+    desc: "Pas de chatbot, pas de numéro vert. Le fondateur connaît ton dossier et décroche quand tu appelles.",
   },
 ]
 
@@ -31,7 +31,7 @@ export default function WhyNow() {
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Pourquoi maintenant</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            La bêta ne s'ouvre qu'une fois
+            Une fenêtre. 30 places.<br />Puis on ferme.
           </h2>
         </div>
 

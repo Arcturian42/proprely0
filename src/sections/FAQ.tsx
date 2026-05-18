@@ -4,44 +4,44 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: "C'est quoi exactement la bêta privée ?",
-    a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant 3 mois, vous utilisez le produit, vous nous remontez vos besoins et vous influencez la roadmap. En contrepartie : tarif privilégié bloqué à vie, onboarding fait par le fondateur, support prioritaire.",
+    q: "C'est quoi exactement, la bêta privée ?",
+    a: "On lance Proprely avec 30 sociétés de nettoyage fondatrices. Pendant 3 mois, tu utilises le produit, tu nous remontes tes besoins, tu influences ce qu'on construit en priorité. En échange : tarif conservé à vie, mise en route faite par le fondateur, et un interlocuteur qui connaît ton dossier.",
   },
   {
-    q: 'Encore un logiciel compliqué ?',
-    a: "Mise en place en 10 minutes lors d'un appel avec le fondateur. Si vous savez utiliser Google Agenda, vous savez utiliser Proprely. L'interface a été testée avec des agents de 22 à 58 ans — aucun n'a eu besoin de formation.",
+    q: "Encore un logiciel compliqué à prendre en main ?",
+    a: "Mise en route en 30 minutes lors d'un appel avec le fondateur. On configure ta boîte ensemble. Si tu sais utiliser Google Agenda, tu sais utiliser Proprely. L'interface a été testée avec des agents de 22 à 58 ans — aucun n'a eu besoin de formation.",
   },
   {
-    q: "Je n'ai pas le temps de changer d'outil",
-    a: "Vous passez aujourd'hui environ 10h/semaine en administration. Proprely vous en fait gagner 6 dès la première semaine. ROI immédiat. Configuration faite par nous, vous n'avez rien à monter seul.",
+    q: "Je n'ai pas le temps de changer d'outil maintenant",
+    a: "Aujourd'hui tu perds environ 6h par semaine à jongler entre Excel, WhatsApp et ton logiciel de facturation. Proprely te les rend dès la première semaine. Et c'est nous qui faisons la configuration avec toi, tu n'as rien à monter seul.",
   },
   {
-    q: 'Mon entreprise est-elle assez grande ?',
-    a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Si vous avez plus d'un site à gérer, vous avez besoin de Proprely. Si vous êtes en croissance, encore plus.",
+    q: "Mon entreprise est-elle assez grande ?",
+    a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Si tu as plus d'un site à gérer, tu as besoin de Proprely. Si tu es en croissance, encore plus.",
   },
   {
-    q: 'Je gère déjà avec Excel et WhatsApp',
-    a: "Ça fonctionne — jusqu'au jour où un agent oublie un site, où un client conteste les heures, ou où vous passez votre dimanche soir à compter. Proprely élimine ces moments. Et garde tous vos historiques.",
+    q: "Je gère déjà avec Excel et WhatsApp, ça marche",
+    a: "Ça marche, oui. Jusqu'au jour où un agent oublie un site, où un client conteste les heures, ou où tu passes ton dimanche soir à compter. Proprely élimine ces moments. Et garde tous tes historiques.",
   },
   {
-    q: 'Combien ça coûte vraiment ?',
-    a: "Le tarif fondateur est communiqué lors de l'appel découverte. C'est un tarif privilégié, bloqué à vie, exclusivement pour les 30 fondateurs. Sans frais cachés, sans engagement, annulation possible à tout moment.",
+    q: "Combien ça coûte vraiment ?",
+    a: "Le tarif fondateur est communiqué pendant le premier appel. C'est un tarif privilégié, conservé à vie, exclusivement pour les 30 fondateurs. Pas de frais cachés, pas d'engagement, annulation possible à tout moment.",
   },
   {
-    q: "C'est vraiment adapté au nettoyage ?",
-    a: "Proprely n'est PAS un logiciel générique. Chaque fonctionnalité a été construite avec des dirigeants de sociétés de nettoyage : spécialités agents (vitrerie, moquette, décappage), compteur d'heures par site, gestion des récurrences clients, alertes surmenage. Pas avec des développeurs dans une tour en verre.",
+    q: "C'est vraiment fait pour le nettoyage, ou un logiciel générique repackagé ?",
+    a: "Proprely n'est PAS un logiciel générique. Chaque fonctionnalité a été construite avec des dirigeants du nettoyage : spécialités agents (vitrerie, moquette, décappage), compteur d'heures par site, gestion des récurrences, alertes surmenage. C'est venu de leurs galères, pas d'un brainstorm en réunion.",
   },
   {
-    q: 'Et si Proprely disparaît ?',
-    a: "Données hébergées en France (OVH). Export complet de vos données en 1 clic à tout moment, dans des formats standards (CSV, Excel). Vous restez propriétaire. Pas de verrouillage.",
+    q: "Et si Proprely disparaît ?",
+    a: "Données hébergées en France (OVH). Export complet en 1 clic à tout moment, dans des formats standards (CSV, Excel). Tu restes propriétaire à 100%. Pas de verrouillage.",
   },
   {
-    q: "Mes agents ne vont pas adopter ?",
-    a: "Pas d'application à installer sur les plans standards : vos agents reçoivent un lien, ouvrent leur planning, c'est tout. Si votre agent utilise WhatsApp, il utilisera Proprely. Testé avec des équipes intergénérationnelles.",
+    q: "Mes agents ne vont pas adopter, c'est sûr",
+    a: "Pas d'application à installer : tes agents reçoivent un lien, ouvrent leur planning, c'est tout. Si ton agent utilise WhatsApp, il utilisera Proprely. Testé avec des équipes de 22 à 58 ans.",
   },
   {
-    q: 'Mes données sont-elles sécurisées ?',
-    a: "Hébergement France (OVH), chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et pouvez les exporter à tout moment.",
+    q: "Mes données sont-elles sécurisées ?",
+    a: "Hébergement France (OVH), chiffrement en transit et au repos, conformité RGPD. Tu restes propriétaire de tes données à 100% et tu peux les exporter à tout moment.",
   },
 ]
 
@@ -54,7 +54,7 @@ export default function FAQ() {
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">FAQ</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Vos questions sur la bêta
+            Tes questions sur la bêta
           </h2>
         </div>
 

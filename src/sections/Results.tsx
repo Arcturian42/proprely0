@@ -6,25 +6,25 @@ const results = [
     icon: Smartphone,
     week: 'Semaine 1',
     title: '30 min gagnées chaque matin',
-    desc: "Vos agents ouvrent un lien, voient leur journée, partent. Plus d'appels du matin pour caler qui fait quoi.",
+    desc: "Tes agents ouvrent un lien, voient leur journée, partent. Plus d'appels du matin pour caler qui fait quoi.",
   },
   {
     icon: FileText,
     week: 'Semaine 2',
-    title: 'Devis en 2 minutes (vs 30)',
-    desc: "Un prospect appelle pour un devis ? Vous le générez en 2 clics, professionnel, envoyé. Plus de Word ni de calculatrice.",
+    title: 'Devis envoyés en 2 minutes',
+    desc: "Un prospect appelle ? Tu génères un devis pro en 2 clics, avec ton logo, envoyé direct. Plus de Word, plus de calculatrice.",
   },
   {
     icon: QrCode,
     week: 'Semaine 3',
-    title: 'Preuve de passage à chaque intervention',
-    desc: "QR code scanné, photos avant/après, signature client. Vos clients voient le travail. Plus de litiges.",
+    title: 'Preuve de passage à chaque mission',
+    desc: "QR code scanné, photos avant/après, signature client. Tes clients voient le travail. Plus de litiges sur les heures facturées.",
   },
   {
     icon: BarChart3,
     week: 'Semaine 4',
-    title: 'CA et rentabilité en temps réel',
-    desc: "Vous ouvrez un tableau de bord et vous savez exactement où vous en êtes. Vous pilotez avec des chiffres réels.",
+    title: 'Ta marge en temps réel',
+    desc: "Tableau de bord : ton CA du mois, les heures par site, la marge par client. Tu pilotes sans attendre le comptable.",
   },
 ]
 
@@ -35,7 +35,7 @@ export default function Results() {
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Résultats concrets</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Ce que vous gagnez<br />dès la première semaine
+            Ce que tu gagnes,<br />semaine après semaine
           </h2>
         </div>
 
