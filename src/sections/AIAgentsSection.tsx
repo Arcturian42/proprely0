@@ -61,7 +61,7 @@ export default function AIAgentsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-[box-shadow,transform] duration-300 ease-[var(--ease-out)]"
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: a.bg }}>
                 <a.icon size={18} className="text-white" />
@@ -85,14 +85,14 @@ export default function AIAgentsSection() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="bg-[#0F2D5E] text-white rounded-full px-6 sm:px-8 py-3 font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform"
+            className="bg-[#0F2D5E] text-white rounded-full px-6 sm:px-8 py-3 font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.97] transition-transform duration-200 ease-[var(--ease-out)]"
           >
             Devenir société partenaire IA
             <ArrowRight size={16} />
           </button>
           <button
             onClick={() => scrollTo('fondateur')}
-            className="border border-[#0F2D5E] text-[#0F2D5E] rounded-full px-6 sm:px-8 py-3 font-medium hover:bg-[#0F2D5E]/5 transition-colors"
+            className="border border-[#0F2D5E] text-[#0F2D5E] rounded-full px-6 sm:px-8 py-3 font-medium hover:bg-[#0F2D5E]/5 active:scale-[0.97] transition-[background-color,transform] duration-200 ease-[var(--ease-out)]"
           >
             Découvrir l'offre fondateur
           </button>

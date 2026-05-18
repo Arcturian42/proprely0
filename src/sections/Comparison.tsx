@@ -100,14 +100,14 @@ export default function Comparison() {
             </div>
             <div className="bg-red-50 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
               <span className="text-xs sm:text-sm font-bold text-red-700 leading-tight tabular-nums">
-                <AnimatedCounter to={6} duration={1.2} /> à <AnimatedCounter to={10} duration={1.4} /> h perdues
+                <AnimatedCounter to={6} duration={1.0} /> à <AnimatedCounter to={10} duration={1.0} /> h perdues
               </span>
               <span className="text-[9px] sm:text-[10px] font-semibold text-red-600/80 hidden sm:inline">en admin dispersée</span>
             </div>
             <div className="bg-gradient-to-r from-blue-600 to-sky-600 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
               <span className="text-xs sm:text-sm font-bold text-white leading-tight flex items-center gap-1.5 tabular-nums">
                 <TrendingUp size={14} className="shrink-0" />
-                <AnimatedCounter to={6} duration={1.4} suffix=" h récupérées" />
+                <AnimatedCounter to={6} duration={1.0} suffix=" h récupérées" />
               </span>
               <span className="text-[9px] sm:text-[10px] font-semibold text-sky-100 hidden sm:inline">chaque semaine</span>
             </div>
@@ -123,11 +123,11 @@ export default function Comparison() {
         >
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 overflow-hidden"
+            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Passer à Proprely</span>
-            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <p className="text-xs text-slate-500 mt-3">Gratuit pendant la bêta · Onboarding 30 min · Pas de carte bancaire</p>
         </motion.div>

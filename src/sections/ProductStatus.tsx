@@ -159,7 +159,7 @@ export default function ProductStatus() {
                 {col.liveIndicator && (
                   <div className="absolute top-5 right-5 flex items-center gap-1.5">
                     <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" />
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping-3x" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
                     </span>
                     <span className="text-[9px] font-bold uppercase tracking-wider text-blue-600">En cours</span>

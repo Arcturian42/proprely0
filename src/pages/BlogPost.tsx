@@ -272,10 +272,10 @@ export default function BlogPost({ slug }: Props) {
               </p>
               <button
                 onClick={() => navigate('/', { hash: 'formulaire' })}
-                className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 Rejoindre la bêta gratuite
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
               </button>
             </div>
           </div>
@@ -290,7 +290,7 @@ export default function BlogPost({ slug }: Props) {
                   <button
                     key={p.slug}
                     onClick={() => navigate(`/blog/${p.slug}`)}
-                    className="group block text-left bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all"
+                    className="group block text-left bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
                   >
                     <div className="flex items-center gap-3 text-[10px] text-slate-500 mb-2">
                       <span className="font-semibold text-blue-700 bg-blue-50 rounded-full px-2 py-0.5">{p.tag}</span>

@@ -37,15 +37,15 @@ export default function FinalCTA() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center mb-6">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-all shadow-2xl shadow-blue-500/20 flex items-center justify-center gap-2 hover:-translate-y-0.5 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            className="group relative bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl shadow-blue-500/20 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/40 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta gratuite</span>
-            <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <button
             onClick={() => navigate('/calculateur-roi')}
-            className="border border-white/20 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            className="border border-white/20 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             Calculer mon économie
           </button>

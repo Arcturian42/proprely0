@@ -47,7 +47,7 @@ export default function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-slate-50 rounded-2xl p-6 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-slate-100"
+              className="bg-slate-50 rounded-2xl p-6 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-[background-color,border-color,box-shadow] duration-300 ease-[var(--ease-out)] border border-transparent hover:border-slate-100"
             >
               <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-4">
                 <r.icon size={18} className="text-white" />

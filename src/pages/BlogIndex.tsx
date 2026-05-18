@@ -32,7 +32,7 @@ export default function BlogIndex() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.08 }}
-                className="group block w-full text-left bg-white rounded-2xl border border-slate-100 p-6 sm:p-7 hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all"
+                className="group block w-full text-left bg-white rounded-2xl border border-slate-100 p-6 sm:p-7 hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
               >
                 <div className="flex items-center gap-3 text-xs text-slate-500 mb-3">
                   <span className="font-semibold text-blue-700 bg-blue-50 rounded-full px-2.5 py-0.5">{p.tag}</span>

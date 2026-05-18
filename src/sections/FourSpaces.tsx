@@ -118,16 +118,16 @@ export default function FourSpaces() {
         >
           <p className="text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed">
             <strong className="text-slate-900 font-bold tabular-nums">
-              <AnimatedCounter to={12} duration={1.2} suffix=" transformations" />
+              <AnimatedCounter to={12} duration={1.0} suffix=" transformations" />
             </strong> que vous mesurez dès la première semaine d'utilisation.
           </p>
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 overflow-hidden shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta</span>
-            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
         </motion.div>
       </div>
