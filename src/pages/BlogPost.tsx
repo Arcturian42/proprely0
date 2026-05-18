@@ -177,7 +177,7 @@ function injectArticleSchema(post: BlogPostType) {
       publisher: {
         '@type': 'Organization',
         name: 'Proprely',
-        logo: { '@type': 'ImageObject', url: 'https://proprely.fr/proprely_icon.png' },
+        logo: { '@type': 'ImageObject', url: 'https://proprely.fr/proprely-icon-512.png' },
       },
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       inLanguage: 'fr-FR',

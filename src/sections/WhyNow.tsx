@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { Clock, TrendingUp, Shield, Headphones } from 'lucide-react'
+import { FOUNDER_SPOTS } from '../config'
 
 const reasons = [
   {
     icon: Clock,
-    title: 'Le tarif fondateur ferme à 30 entreprises',
+    title: `Le tarif fondateur ferme à ${FOUNDER_SPOTS.total} entreprises`,
     desc: "Après ça, on bascule au prix public. Les fondateurs gardent leur tarif d'aujourd'hui — pour toujours, même quand on monte en gamme.",
   },
   {
@@ -31,7 +32,7 @@ export default function WhyNow() {
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Pourquoi maintenant</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Une fenêtre. 30 places.<br />Puis on ferme.
+            Une fenêtre. {FOUNDER_SPOTS.total} places.<br />Puis on ferme.
           </h2>
         </div>
 
