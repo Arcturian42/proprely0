@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
-import { Calendar, Users, Target, BarChart3 } from 'lucide-react'
-import TiltCard from '../components/TiltCard'
+import { ArrowRight } from 'lucide-react'
 
 const modules = [
   {
-    icon: Calendar,
+    label: 'Opérations',
     title: 'Opérations & Planning',
     tagline: "Vos agents savent où aller, quand, avec quels outils.",
     benefits: [
@@ -14,7 +13,7 @@ const modules = [
     ],
   },
   {
-    icon: Users,
+    label: 'Équipes',
     title: 'Équipes & Spécialités',
     tagline: 'Évitez le surmenage. Gardez vos meilleurs agents.',
     benefits: [
@@ -24,7 +23,7 @@ const modules = [
     ],
   },
   {
-    icon: Target,
+    label: 'Commercial',
     title: 'Commercial & Facturation',
     tagline: "Transformez vos demandes en clients. Sans logiciel séparé.",
     benefits: [
@@ -34,71 +33,100 @@ const modules = [
     ],
   },
   {
-    icon: BarChart3,
+    label: 'Pilotage',
     title: 'Pilotage & Rentabilité',
     tagline: 'Décidez avec des chiffres, pas au feeling.',
     benefits: [
-      { before: "Vous découvrez la rentabilité du mois 45 jours après la clôture", after: "CA, heures et marge, visibles en temps réel" },
+      { before: "Vous découvrez la rentabilité du mois 45 jours après la clôture", after: "CA, heures et marge visibles en temps réel" },
       { before: "Comptable et logiciel de facturation déconnectés", after: "Connexion native Pennylane / Conto, données synchronisées" },
       { before: "Décisions prises à l'instinct, sans visibilité", after: "Rapport mensuel automatique par site et par client" },
     ],
   },
 ]
 
+const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+
 export default function FourSpaces() {
   return (
     <section id="features" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="max-w-3xl mb-14 sm:mb-20"
+        >
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Avant / Après</p>
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
-            Ce qui change concrètement<br />dans votre quotidien
+          <h2 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6">
+            Ce qui change concrètement<br />
+            <span className="text-slate-400">dans votre quotidien.</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Chaque fonctionnalité vient d'une galère terrain qu'on a vue ou vécue. Pas d'un brainstorm en réunion.
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Quatre espaces métier, trois preuves chacun. Lisez la colonne de gauche, lisez celle de droite, vous savez ce que Proprely change.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="border-t-2 border-slate-900/10">
           {modules.map((m, i) => (
-            <motion.div
+            <motion.article
               key={i}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: 0.04 * i }}
+              className="grid grid-cols-1 lg:grid-cols-[260px,1fr] gap-x-12 gap-y-6 py-12 sm:py-16 border-b border-slate-200/70"
             >
-              <TiltCard
-                intensity={3}
-                className="h-full bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] transition-shadow"
-              >
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                    <m.icon size={20} className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{m.title}</h3>
-                    <p className="text-sm text-slate-600">{m.tagline}</p>
-                  </div>
+              <header className="lg:pt-2">
+                <span className="font-mono text-xs font-bold uppercase tracking-widest text-blue-600 tabular-nums">
+                  0{i + 1} / 04 · {m.label}
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight tracking-tight mt-2 mb-3">
+                  {m.title}
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{m.tagline}</p>
+              </header>
+
+              <div>
+                <div className="grid grid-cols-2 gap-x-4 sm:gap-x-8 mb-5">
+                  <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-red-700">Aujourd'hui</div>
+                  <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-blue-700">Avec Proprely</div>
                 </div>
-                <div className="space-y-3 mt-5">
-                  {m.benefits.map((b, j) => (
-                    <div key={j} className="bg-slate-50 rounded-xl p-3.5">
-                      <div className="flex items-start gap-2 mb-1.5">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Avant</span>
-                        <span className="text-sm text-slate-500">{b.before}</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Après</span>
-                        <span className="text-sm text-slate-800 font-medium">{b.after}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </TiltCard>
-            </motion.div>
+
+                {m.benefits.map((b, j) => (
+                  <div key={j} className="grid grid-cols-2 gap-x-4 sm:gap-x-8 py-4 border-t border-slate-100 first:border-t-0">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-through decoration-red-300/60 decoration-1">
+                      {b.before}
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-900 font-medium leading-relaxed">
+                      {b.after}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.article>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+        >
+          <p className="text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed">
+            <strong className="text-slate-900 font-bold">12 transformations</strong> que vous mesurez dès la première semaine d'utilisation.
+          </p>
+          <button
+            onClick={() => scrollTo('formulaire')}
+            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 overflow-hidden shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
+            <span className="relative">Rejoindre la bêta</span>
+            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform" />
+          </button>
+        </motion.div>
       </div>
     </section>
   )
