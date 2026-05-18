@@ -1,4 +1,4 @@
-import { FileText, Calendar, Clock, Calculator, type LucideIcon } from 'lucide-react'
+import { FileText, Calendar, Clock, Calculator, Euro, type LucideIcon } from 'lucide-react'
 
 export type Resource = {
   slug: string
@@ -145,6 +145,37 @@ export const resources: Resource[] = [
     ],
     bestFor: "Donner un chiffre concret au coût de votre organisation actuelle pour décider en connaissance de cause.",
     keywords: ['calcul roi logiciel nettoyage', 'coût gestion société nettoyage', 'temps perdu administration nettoyage'],
+  },
+  {
+    slug: 'simulateur-rentabilite',
+    title: 'Simulateur de rentabilité par contrat de nettoyage',
+    shortTitle: 'Simulateur rentabilité',
+    tag: 'Outil interactif',
+    icon: Euro,
+    metaTitle: 'Simulateur de rentabilité par contrat de nettoyage · Proprely',
+    metaDescription: "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat et recommandations selon votre situation.",
+    excerpt: "Calculez la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat avec recommandations actionnables.",
+    description: "Renseignez le CA mensuel, les heures de prestation, le coût horaire chargé, les consommables, les déplacements et la quote-part frais de structure. Le simulateur donne un verdict (Très rentable / Rentable / Limite / Non rentable) avec des actions concrètes.",
+    format: 'Outil web interactif',
+    fileSize: 'Aucun téléchargement',
+    pageHref: '/simulateur-rentabilite',
+    whatsInside: [
+      "Marge brute en euros et en pourcentage",
+      "Marge nette après quote-part frais de structure",
+      "Résultat horaire — le KPI le plus utile pour comparer deux contrats",
+      "Net annuel projeté sur 12 mois",
+      "Verdict automatique : très rentable / rentable / limite / non rentable",
+      "Recommandations actionnables selon le verdict",
+    ],
+    whoFor: [
+      'Dirigeants qui veulent vérifier la rentabilité réelle de leurs contrats',
+      "Responsables d'exploitation qui préparent une renégociation tarifaire",
+      "Commerciaux qui veulent éviter de signer un contrat à perte",
+    ],
+    bestFor: "Identifier en moins d'une minute si un contrat est rentable et déclencher la bonne action : reproduire, optimiser, renégocier ou sortir.",
+    relatedFeatureSlug: 'devis-nettoyage',
+    relatedBlogSlugs: ['fixer-prix-nettoyage', 'calcul-heures-agents-nettoyage'],
+    keywords: ['simulateur rentabilité nettoyage', 'calcul marge contrat nettoyage', 'rentabilité société propreté', 'marge horaire nettoyage'],
   },
 ]
 

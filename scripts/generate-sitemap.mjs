@@ -17,16 +17,20 @@ const blogSlugs = extractSlugs(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractSlugs(resolve(root, 'src/data/features.ts'))
 const resourceSlugs = extractSlugs(resolve(root, 'src/data/resources.ts'))
 
+const TOOL_RESOURCE_SLUGS = new Set(['calculateur-roi', 'simulateur-rentabilite'])
+
 const urls = [
   { loc: `${ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${ORIGIN}/beta`, priority: '0.95', changefreq: 'weekly' },
   { loc: `${ORIGIN}/tarifs`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${ORIGIN}/proprely-vs-excel`, priority: '0.9', changefreq: 'monthly' },
   { loc: `${ORIGIN}/ressources`, priority: '0.85', changefreq: 'weekly' },
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly' },
+  { loc: `${ORIGIN}/simulateur-rentabilite`, priority: '0.8', changefreq: 'monthly' },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly' },
   ...featureSlugs.map((slug) => ({ loc: `${ORIGIN}/fonctionnalites/${slug}`, priority: '0.8', changefreq: 'monthly' })),
   ...resourceSlugs
-    .filter((slug) => slug !== 'calculateur-roi')
+    .filter((slug) => !TOOL_RESOURCE_SLUGS.has(slug))
     .map((slug) => ({ loc: `${ORIGIN}/ressources/${slug}`, priority: '0.75', changefreq: 'monthly' })),
   ...blogSlugs.map((slug) => ({ loc: `${ORIGIN}/blog/${slug}`, priority: '0.6', changefreq: 'monthly' })),
 ]
@@ -42,5 +46,5 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-const ressourcePages = resourceSlugs.filter((s) => s !== 'calculateur-roi').length
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 6 core + ${featureSlugs.length} features + ${ressourcePages} resources + ${blogSlugs.length} blog)`)
+const ressourcePages = resourceSlugs.filter((s) => !TOOL_RESOURCE_SLUGS.has(s)).length
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 8 core + ${featureSlugs.length} features + ${ressourcePages} resources + ${blogSlugs.length} blog)`)

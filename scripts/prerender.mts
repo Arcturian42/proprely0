@@ -536,7 +536,7 @@ writePage('/ressources', resourcesHtml)
 generated.push('/ressources')
 
 for (const r of resources) {
-  if (r.slug === 'calculateur-roi') continue
+  if (r.slug === 'calculateur-roi' || r.slug === 'simulateur-rentabilite') continue
   const url = `/ressources/${r.slug}`
   const insideHtml = r.whatsInside.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
   const whoForHtml = r.whoFor.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
@@ -588,6 +588,104 @@ for (const r of resources) {
   writePage(url, html)
   generated.push(url)
 }
+
+const vsExcelBody = `
+  <h1>Excel ou Proprely : à partir de quand changer ?</h1>
+  <p>Excel reste un excellent outil pour démarrer une société de nettoyage. À partir d'une certaine taille, il devient le frein principal à la croissance. Ce comparatif identifie précisément le moment où basculer, pourquoi, et comment migrer sans douleur.</p>
+  <h2>Quand Excel suffit encore</h2>
+  <ul>
+    <li>Vous êtes seul à gérer (pas de back-office)</li>
+    <li>Moins de 5 agents</li>
+    <li>Moins de 10 sites clients</li>
+    <li>Pas de preuve de passage formelle attendue</li>
+    <li>Pas de prestations récurrentes complexes</li>
+    <li>Pas d'enjeu de marge par client à suivre finement</li>
+  </ul>
+  <h2>Quand Excel devient le frein</h2>
+  <ul>
+    <li>Plus de 6 heures par semaine en admin dispersée</li>
+    <li>5 agents ou plus, sur 10 sites ou plus</li>
+    <li>Clients qui demandent des preuves de passage</li>
+    <li>Travail à 2+ personnes sur les mêmes fichiers</li>
+    <li>Erreurs de pointage ou de devis découvertes a posteriori</li>
+    <li>Plus de visibilité sur les contrats rentables</li>
+    <li>Documents difficiles à retrouver (contrat, attestation)</li>
+    <li>Agents qui oublient des passages</li>
+  </ul>
+  <h2>Coût caché d'Excel</h2>
+  <p>Quand on additionne les heures perdues, les erreurs et les risques, Excel coûte plus cher qu'une licence d'outil métier. À 45 € de coût horaire dirigeant, 6 à 10 heures perdues par semaine représentent 12 600 à 21 000 € de coût caché par an.</p>
+  <h2>Migration en 2 semaines</h2>
+  <p>Jour 1 audit des fichiers · Jour 2 configuration de l'instance · Jour 3 premier planning et premier devis · Semaine 1 validation côté agents · Semaine 2 bascule complète. Pas de big bang, pas de double saisie pendant 3 mois.</p>
+`.trim()
+
+const vsExcelFaqs = [
+  { q: "Excel est gratuit, pourquoi payer un logiciel ?", a: "Excel n'est pas gratuit dès qu'il vous coûte 6 à 10 heures par semaine d'administration dispersée. À 45 € de coût horaire dirigeant, ça représente 12 600 à 21 000 € de coût caché par an. Pendant la bêta, Proprely est aussi gratuit qu'Excel, sans ce coût caché." },
+  { q: "Mes équipes connaissent Excel par cœur, est-ce qu'elles vont adopter Proprely ?", a: "Proprely a été conçu avec des dirigeants de société de nettoyage. L'interface reprend les logiques métier qu'ils connaissent : sites, agents, missions, devis. La prise en main se fait en 30 minutes avec le fondateur." },
+  { q: "Comment je migre mes fichiers Excel existants ?", a: "Nous reprenons vos fichiers actuels et nous configurons votre instance avec vous lors de l'onboarding (30 minutes). Clients, sites, agents, fréquences : tout est importé sans que vous ayez à ressaisir." },
+  { q: "Qu'est-ce qui casse vraiment dans Excel quand on grandit ?", a: "Trois choses : la collaboration (à 2 personnes simultanées, le fichier se corrompt ou les modifications s'écrasent), la fiabilité (formules cassées, lignes décalées, données perdues), et le manque de fonctions terrain (preuve de passage, signature client, géolocalisation, application mobile pour les agents)." },
+  { q: "Et si je veux rester sur Excel ?", a: "Excel reste un excellent outil tant que vous êtes seul à gérer, avec moins de 5 agents et moins de 10 sites. Nous proposons d'ailleurs des modèles Excel gratuits sur notre page Ressources. Au-delà, le coût caché de la dispersion dépasse largement le prix d'un outil métier." },
+]
+
+const vsExcelHtml = buildHtml({
+  url: '/proprely-vs-excel',
+  title: 'Proprely vs Excel : à partir de quand changer ? · Comparatif 2026',
+  description:
+    "Excel pour gérer une société de nettoyage : jusqu'où ça tient, ce qui casse à partir de 5 agents, et combien coûte vraiment la dispersion. Comparatif honnête.",
+  schemas: [
+    webpageSchema(
+      'Proprely vs Excel',
+      "Comparatif honnête entre Excel et Proprely pour piloter une société de nettoyage B2B.",
+      `${ORIGIN}/proprely-vs-excel`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Proprely vs Excel', item: `${ORIGIN}/proprely-vs-excel` },
+      ]
+    ),
+    faqSchema(vsExcelFaqs),
+  ],
+  bodyHtml: vsExcelBody,
+})
+writePage('/proprely-vs-excel', vsExcelHtml)
+generated.push('/proprely-vs-excel')
+
+const simulateurBody = `
+  <h1>Simulateur de rentabilité par contrat de nettoyage</h1>
+  <p>Renseignez les paramètres d'un contrat de nettoyage et obtenez en une minute la marge brute, la marge nette, le résultat horaire et un verdict immédiat avec des actions concrètes.</p>
+  <h2>Ce que le simulateur calcule</h2>
+  <ul>
+    <li>Marge brute en euros et en pourcentage</li>
+    <li>Marge nette après quote-part frais de structure</li>
+    <li>Résultat horaire — le KPI le plus utile pour comparer deux contrats</li>
+    <li>Net annuel projeté sur 12 mois</li>
+    <li>Verdict automatique : très rentable, rentable, limite, non rentable</li>
+    <li>Recommandations actionnables selon le verdict</li>
+  </ul>
+  <h2>Méthode de calcul</h2>
+  <p>Marge brute = CA mensuel − (heures × coût horaire chargé + consommables + déplacements). Marge nette = marge brute − frais de structure (en pourcentage du CA). Résultat horaire = marge nette ÷ heures sur le site.</p>
+  <h2>Ce qui n'est pas pris en compte</h2>
+  <p>Le simulateur ne prend pas en compte les prestations ponctuelles facturées hors contrat, l'écart entre heures contractuelles et heures réellement effectuées, ni les coûts liés aux remplacements et absences. Le module rentabilité de Proprely intègre ces éléments avec vos données réelles.</p>
+`.trim()
+
+const simulateurHtml = buildHtml({
+  url: '/simulateur-rentabilite',
+  title: 'Simulateur de rentabilité par contrat de nettoyage · Proprely',
+  description:
+    "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat et recommandations selon votre situation.",
+  schemas: [
+    webpageSchema(
+      'Simulateur de rentabilité Proprely',
+      "Calculez la rentabilité réelle d'un contrat de nettoyage avec un verdict immédiat et des recommandations actionnables.",
+      `${ORIGIN}/simulateur-rentabilite`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Simulateur de rentabilité', item: `${ORIGIN}/simulateur-rentabilite` },
+      ]
+    ),
+  ],
+  bodyHtml: simulateurBody,
+})
+writePage('/simulateur-rentabilite', simulateurHtml)
+generated.push('/simulateur-rentabilite')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

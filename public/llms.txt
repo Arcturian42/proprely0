@@ -10,8 +10,10 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 
 - [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
 - [Bêta privée](https://proprely.fr/beta) : programme fondateurs détaillé, profil recherché, formulaire de candidature
+- [Proprely vs Excel](https://proprely.fr/proprely-vs-excel) : comparatif honnête, à partir de quand basculer d'Excel à un logiciel métier
 - [Ressources gratuites](https://proprely.fr/ressources) : modèles Excel et outils interactifs pour structurer une société de nettoyage
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
+- [Simulateur de rentabilité](https://proprely.fr/simulateur-rentabilite) : calcule la marge nette et le résultat horaire d'un contrat de nettoyage avec verdict immédiat
 - [Tarifs](https://proprely.fr/tarifs) : tarif fondateur à vie et modèle après-bêta
 - [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
 
@@ -36,6 +38,13 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 - [Calcul des heures agents nettoyage](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : méthode rigoureuse, coût horaire chargé, heures sup
 - [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : conformité, registre, sous-traitance, photos preuve de passage
 - [Fidéliser les agents nettoyage](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
+
+## Articles marché local
+
+- [Société de nettoyage à Paris : marché, prix et organisation en 2026](https://proprely.fr/blog/societe-nettoyage-paris) : tarifs réels, contraintes terrain (stationnement ZFE, haussmannien, horaires), profils clients rentables
+- [Gérer une société de nettoyage en Île-de-France](https://proprely.fr/blog/societe-nettoyage-ile-de-france) : multi-sites, logistique, turnover 35-40%, choix département et segment
+- [Nettoyage à La Défense et dans les Hauts-de-Seine](https://proprely.fr/blog/societe-nettoyage-la-defense-92) : standards ISO, preuve de passage, badges, tarifs 32-45 €/h, comment percer en PME
+- [Société de nettoyage à Bordeaux](https://proprely.fr/blog/societe-nettoyage-bordeaux) : marché en croissance, centre patrimonial UNESCO, Euratlantique, secteur viticole, tarifs et recrutement
 
 ## Programme membres fondateurs
 

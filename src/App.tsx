@@ -12,6 +12,8 @@ const Pricing = lazy(() => import('./pages/Pricing'))
 const Resources = lazy(() => import('./pages/Resources'))
 const ResourceDetail = lazy(() => import('./pages/ResourceDetail'))
 const Beta = lazy(() => import('./pages/Beta'))
+const ProprelyVsExcel = lazy(() => import('./pages/ProprelyVsExcel'))
+const SimulateurRentabilite = lazy(() => import('./pages/SimulateurRentabilite'))
 
 const META: Record<string, { title: string; description: string }> = {
   '/': {
@@ -41,6 +43,14 @@ const META: Record<string, { title: string; description: string }> = {
   '/ressources': {
     title: 'Ressources gratuites pour société de nettoyage · Proprely',
     description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI.",
+  },
+  '/proprely-vs-excel': {
+    title: 'Proprely vs Excel : à partir de quand changer ? · Comparatif 2026',
+    description: "Excel pour gérer une société de nettoyage : jusqu'où ça tient, ce qui casse à partir de 5 agents, et combien coûte vraiment la dispersion. Comparatif honnête.",
+  },
+  '/simulateur-rentabilite': {
+    title: 'Simulateur de rentabilité par contrat de nettoyage · Proprely',
+    description: "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat et recommandations selon votre situation.",
   },
 }
 
@@ -86,6 +96,8 @@ function App() {
 
   let content
   if (route === '/calculateur-roi') content = <RoiCalculator />
+  else if (route === '/simulateur-rentabilite' || route === '/simulateur-rentabilite/') content = <SimulateurRentabilite />
+  else if (route === '/proprely-vs-excel' || route === '/proprely-vs-excel/') content = <ProprelyVsExcel />
   else if (route === '/tarifs') content = <Pricing />
   else if (route === '/blog') content = <BlogIndex />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
