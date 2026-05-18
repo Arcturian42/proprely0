@@ -7,10 +7,13 @@ export default function Navbar() {
     <nav className="w-full bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-base font-bold text-slate-900 tracking-tight">Proprely</span>
-          <span className="hidden sm:inline-flex ml-2 items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 border border-blue-100">
+          <span className="relative inline-flex items-center text-base font-bold text-slate-900 tracking-tight">
+            Proprely
+            <span aria-hidden="true" className="absolute -right-1.5 top-0 w-1.5 h-1.5 rounded-full bg-cyan-400" />
+          </span>
+          <span className="hidden sm:inline-flex ml-3 items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 border border-blue-100">
             <span className="relative flex w-1.5 h-1.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75 animate-ping" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-blue-600" />
             </span>
             Bêta privée

@@ -15,6 +15,7 @@ import FAQ from '../sections/FAQ'
 import FinalCTA from '../sections/FinalCTA'
 import Footer from '../sections/Footer'
 import StickyCTAMobile from '../sections/StickyCTAMobile'
+import SectionDivider from '../components/SectionDivider'
 
 export default function Landing() {
   useEffect(() => {
@@ -34,8 +35,10 @@ export default function Landing() {
       <Hero />
       <TrustBadges />
       <ProblemSection />
+      <SectionDivider variant="wave" topColor="#f8fafc" bottomColor="#ffffff" />
       <SolutionSection />
       <Comparison />
+      <SectionDivider variant="curve" topColor="#ffffff" bottomColor="#f8fafc" />
       <FourSpaces />
       <HowItWorks />
       <ProductStatus />

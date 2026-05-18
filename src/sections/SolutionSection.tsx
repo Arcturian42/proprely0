@@ -326,7 +326,7 @@ export default function SolutionSection() {
   const active = modules.find(m => m.id === activeId) ?? modules[0]
 
   return (
-    <section id="solution" className="bg-white py-20 sm:py-28 border-t border-slate-100">
+    <section id="solution" className="bg-white py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-14">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">La solution</p>

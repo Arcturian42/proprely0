@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 import { navigate } from '../lib/useRoute'
@@ -23,11 +24,39 @@ const missions = [
 ]
 
 function ProductMockup() {
+  const ref = useRef<HTMLDivElement>(null)
+  const mvX = useMotionValue(0)
+  const mvY = useMotionValue(0)
+  const springX = useSpring(mvX, { stiffness: 140, damping: 18, mass: 0.5 })
+  const springY = useSpring(mvY, { stiffness: 140, damping: 18, mass: 0.5 })
+  const rotateY = useTransform(springX, [-0.5, 0.5], [6, -6])
+  const rotateX = useTransform(springY, [-0.5, 0.5], [-4, 4])
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    mvX.set((e.clientX - rect.left) / rect.width - 0.5)
+    mvY.set((e.clientY - rect.top) / rect.height - 0.5)
+  }
+
+  const handleMouseLeave = () => {
+    mvX.set(0)
+    mvY.set(0)
+  }
+
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative max-w-5xl mx-auto"
+      style={{ perspective: '1400px' }}
+    >
       <div className="absolute -inset-6 bg-gradient-to-br from-blue-400/20 via-sky-300/15 to-blue-500/20 blur-3xl rounded-[2.5rem] pointer-events-none" />
 
-      <div className="relative bg-white rounded-2xl shadow-[0_20px_70px_-15px_rgba(15,42,94,0.25)] border border-slate-200/80 overflow-hidden">
+      <motion.div
+        style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+        className="relative bg-white rounded-2xl shadow-[0_20px_70px_-15px_rgba(15,42,94,0.25)] border border-slate-200/80 overflow-hidden will-change-transform">
         <div className="bg-slate-50 border-b border-slate-100 px-4 py-2.5 flex items-center gap-3">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-300" />
@@ -108,7 +137,7 @@ function ProductMockup() {
             </div>
           </main>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

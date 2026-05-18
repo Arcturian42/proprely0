@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const modules = [
   {
@@ -48,7 +49,7 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
 
 export default function FourSpaces() {
   return (
-    <section id="features" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
+    <section id="features" className="bg-slate-50 py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -116,7 +117,9 @@ export default function FourSpaces() {
           className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
         >
           <p className="text-base sm:text-lg text-slate-700 max-w-xl leading-relaxed">
-            <strong className="text-slate-900 font-bold">12 transformations</strong> que vous mesurez dès la première semaine d'utilisation.
+            <strong className="text-slate-900 font-bold tabular-nums">
+              <AnimatedCounter to={12} duration={1.2} suffix=" transformations" />
+            </strong> que vous mesurez dès la première semaine d'utilisation.
           </p>
           <button
             onClick={() => scrollTo('formulaire')}
