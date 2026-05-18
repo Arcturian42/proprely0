@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Comment êtes-vous différents d'un logiciel généraliste ?",
-    a: "Proprely n'est pas un logiciel générique adapté au nettoyage. Chaque fonctionnalité a été construite avec des dirigeants du métier : spécialités agents (vitrerie, moquette, décapage), compteur d'heures par site, gestion des récurrences, alertes surmenage, preuve de passage. Le vocabulaire, les workflows, les rapports — tout est pensé pour la propreté B2B.",
+    a: "Proprely n'est pas un logiciel générique adapté au nettoyage. Chaque fonctionnalité a été pensée pour les réalités du métier : spécialités agents (vitrerie, moquette, décapage), compteur d'heures par site, gestion des récurrences, alertes surmenage, preuve de passage. Le vocabulaire, les workflows, les rapports — tout est conçu pour la propreté B2B.",
   },
   {
     q: "Combien de temps pour la mise en route ?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Mes agents vont-ils devoir installer une application ?",
-    a: "Non. Vos agents reçoivent un lien, ouvrent leur planning dans leur navigateur, et c'est tout. L'interface a été testée avec des équipes intergénérationnelles, de 22 à 58 ans, sans difficulté d'adoption.",
+    a: "Non. Vos agents reçoivent un lien, ouvrent leur planning dans leur navigateur, et c'est tout. L'interface est conçue pour être prise en main sans formation, accessible à des équipes intergénérationnelles.",
   },
   {
     q: "Mes données sont-elles sécurisées ?",
@@ -51,12 +51,18 @@ export default function FAQ() {
   return (
     <section id="faq" className="bg-white py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-center mb-12"
+        >
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">FAQ</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Vos questions sur la bêta
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-3">
           {faqs.map((faq, i) => (

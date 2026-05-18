@@ -1,9 +1,10 @@
-import type React from 'react'
+import { useEffect, useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowLeft, Clock } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
-import { getPost, posts } from '../data/blog'
+import { getPost, getRelatedPosts } from '../data/blog'
+import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import { navigate } from '../lib/useRoute'
 
 function NotFound() {
@@ -28,9 +29,9 @@ function NotFound() {
   )
 }
 
-function renderMarkdown(content: string): React.ReactElement[] {
+function renderMarkdown(content: string): ReactElement[] {
   const lines = content.split('\n')
-  const blocks: React.ReactElement[] = []
+  const blocks: ReactElement[] = []
   let key = 0
   let i = 0
 
@@ -94,13 +95,129 @@ function renderInline(text: string): string {
   return html
 }
 
+function QuickSummary({ items }: { items: string[] }) {
+  return (
+    <motion.aside
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+      className="bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-2xl p-5 sm:p-6 mb-10"
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <Sparkles size={14} className="text-blue-600" />
+        <span className="text-xs font-bold uppercase tracking-wider text-blue-700">À retenir</span>
+      </div>
+      <ul className="space-y-2">
+        {items.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-800 leading-snug">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.aside>
+  )
+}
+
+function FAQItem({ faq, defaultOpen }: { faq: BlogFAQ; defaultOpen: boolean }) {
+  const [open, setOpen] = useState(defaultOpen)
+  return (
+    <div className="border-b border-slate-100 last:border-b-0">
+      <button
+        onClick={() => setOpen((s) => !s)}
+        className="w-full flex items-center justify-between gap-4 py-4 text-left group"
+      >
+        <span className="font-bold text-slate-900 text-sm sm:text-base group-hover:text-blue-700 transition-colors">{faq.q}</span>
+        <ChevronDown size={18} className={`text-slate-400 shrink-0 transition-transform ${open ? 'rotate-180 text-blue-600' : ''}`} />
+      </button>
+      <motion.div
+        initial={false}
+        animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
+        className="overflow-hidden"
+      >
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed pb-4">{faq.a}</p>
+      </motion.div>
+    </div>
+  )
+}
+
+function FAQSection({ faq }: { faq: BlogFAQ[] }) {
+  return (
+    <section className="mt-16 pt-12 border-t border-slate-100">
+      <div className="flex items-center gap-2 mb-2">
+        <HelpCircle size={16} className="text-blue-600" />
+        <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Questions fréquentes</span>
+      </div>
+      <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-6 tracking-tight">
+        Tout ce qu'on nous demande sur ce sujet
+      </h2>
+      <div className="bg-white border border-slate-100 rounded-2xl px-5 sm:px-6 divide-y divide-slate-100">
+        {faq.map((f, i) => (
+          <FAQItem key={i} faq={f} defaultOpen={i === 0} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function injectArticleSchema(post: BlogPostType) {
+  const id = 'blog-post-schema'
+  document.getElementById(id)?.remove()
+  const url = `https://proprely.fr/blog/${post.slug}`
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      url,
+      datePublished: post.date,
+      author: { '@type': 'Organization', name: 'Proprely' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Proprely',
+        logo: { '@type': 'ImageObject', url: 'https://proprely.fr/proprely_icon.png' },
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+      inLanguage: 'fr-FR',
+      articleSection: post.tag,
+    },
+  ]
+  if (post.faq?.length) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: post.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    })
+  }
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.id = id
+  script.text = JSON.stringify(schemas.length === 1 ? schemas[0] : schemas)
+  document.head.appendChild(script)
+}
+
 type Props = { slug: string }
 
 export default function BlogPost({ slug }: Props) {
   const post = getPost(slug)
-  if (!post) return <NotFound />
+  const others = getRelatedPosts(slug, 2)
 
-  const others = posts.filter((p) => p.slug !== slug).slice(0, 2)
+  useEffect(() => {
+    if (!post) return
+    document.title = `${post.title} · Proprely`
+    injectArticleSchema(post)
+    return () => {
+      document.getElementById('blog-post-schema')?.remove()
+    }
+  }, [post])
+
+  if (!post) return <NotFound />
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -135,22 +252,26 @@ export default function BlogPost({ slug }: Props) {
               {post.title}
             </motion.h1>
 
-            <p className="text-lg text-slate-600 leading-relaxed mb-10 pb-10 border-b border-slate-100">
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
               {post.excerpt}
             </p>
+
+            <QuickSummary items={post.quickSummary} />
 
             <div className="prose-content">
               {renderMarkdown(post.content)}
             </div>
 
-            <div className="mt-12 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
+            {post.faq && post.faq.length > 0 && <FAQSection faq={post.faq} />}
+
+            <div className="mt-16 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
               <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Bêta privée</p>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Vous reconnaissez votre quotidien ?</h3>
               <p className="text-sm sm:text-base text-slate-700 mb-5">
                 Proprely centralise tout ce dont parle cet article. C'est gratuit pendant la bêta et la mise en route prend 30 minutes avec le fondateur.
               </p>
               <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/', { hash: 'formulaire' })}
                 className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5"
               >
                 Rejoindre la bêta gratuite

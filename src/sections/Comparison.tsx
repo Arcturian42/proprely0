@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
-import { Check, X, AlertTriangle } from 'lucide-react'
+import { Check, X, AlertTriangle, ArrowRight, TrendingUp } from 'lucide-react'
+
+const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
 type Row = {
   category: string
@@ -84,7 +86,48 @@ export default function Comparison() {
               </motion.div>
             )
           })}
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="grid grid-cols-3 gap-px bg-slate-100 border-t-2 border-slate-200"
+          >
+            <div className="bg-slate-900 px-4 sm:px-6 py-5 flex items-center">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Total semaine</span>
+            </div>
+            <div className="bg-red-50 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
+              <span className="text-xs sm:text-sm font-bold text-red-700 leading-tight">6 à 10 h perdues</span>
+              <span className="text-[9px] sm:text-[10px] font-semibold text-red-600/80 hidden sm:inline">en admin dispersée</span>
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-sky-600 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
+              <span className="text-xs sm:text-sm font-bold text-white leading-tight flex items-center gap-1.5">
+                <TrendingUp size={14} className="shrink-0" />
+                6 h récupérées
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-semibold text-sky-100 hidden sm:inline">chaque semaine</span>
+            </div>
+          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="mt-10 sm:mt-12 text-center"
+        >
+          <button
+            onClick={() => scrollTo('formulaire')}
+            className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 overflow-hidden"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
+            <span className="relative">Passer à Proprely</span>
+            <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform" />
+          </button>
+          <p className="text-xs text-slate-500 mt-3">Gratuit pendant la bêta · Onboarding 30 min · Pas de carte bancaire</p>
+        </motion.div>
       </div>
     </section>
   )

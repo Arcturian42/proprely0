@@ -1,3 +1,5 @@
+export type BlogFAQ = { q: string; a: string }
+
 export type BlogPost = {
   slug: string
   title: string
@@ -6,6 +8,9 @@ export type BlogPost = {
   readTime: string
   tag: string
   content: string
+  quickSummary: string[]
+  faq?: BlogFAQ[]
+  relatedSlugs?: string[]
 }
 
 export const posts: BlogPost[] = [
@@ -16,6 +21,19 @@ export const posts: BlogPost[] = [
     date: '15 mai 2026',
     readTime: '7 min',
     tag: 'Stratégie',
+    quickSummary: [
+      "La règle de base : prix de vente = 3 × coût horaire chargé (fourchette saine 2,8 à 3,2).",
+      "4 facteurs qui justifient une hausse : technicité, horaires, accessibilité, fréquence.",
+      "La méthode « prix de référence » : 3 grilles internes mises à jour 2 fois par an.",
+      "Sans visibilité sur la marge par client, vous facturez à l'aveugle.",
+    ],
+    faq: [
+      { q: "Quel est le bon multiplicateur prix / coût horaire dans le nettoyage ?", a: "La fourchette saine est de 2,8 à 3,2 fois le coût horaire chargé. Moins, vous travaillez à perte. Plus, vous êtes hors marché." },
+      { q: "Comment justifier un prix élevé sans perdre l'affaire ?", a: "Détaillez les prestations (qui fait quoi, à quelle fréquence), listez les produits utilisés et leurs certifications, intégrez la preuve de passage et les engagements de remplacement. Le client se convainc lui-même." },
+      { q: "Faut-il facturer plus pour les prestations ponctuelles ?", a: "Oui : 20 à 30% au-dessus d'un contrat récurrent équivalent, pour couvrir la mobilisation ponctuelle et l'absence d'amortissement." },
+      { q: "Quel taux de marge nette viser dans le nettoyage B2B ?", a: "15 à 20% de marge nette est la cible saine. En-dessous de 10%, votre entreprise est vulnérable au moindre imprévu (turnover, remplacement, hausse charges)." },
+    ],
+    relatedSlugs: ['calcul-heures-agents-nettoyage', 'logiciel-societe-nettoyage-criteres'],
     content: `## Le piège du prix au feeling
 
 La plupart des dirigeants de sociétés de nettoyage que nous rencontrons fixent leurs prix au feeling. Un peu en dessous du concurrent qu'ils ont en tête. Un peu au-dessus de ce que le client annonce comme budget. Sans calcul rigoureux derrière.
@@ -124,6 +142,19 @@ C'est exactement ce que fait Proprely. [Rejoignez la bêta privée](/) si vous v
     date: '12 mai 2026',
     readTime: '6 min',
     tag: 'Gestion',
+    quickSummary: [
+      "Un dirigeant utilise en moyenne 4 à 7 outils non connectés pour gérer son entreprise.",
+      "Excel, WhatsApp, Google Agenda, Word et le classeur papier : les 5 outils typiques.",
+      "Au total : 6 à 10 heures par semaine perdues en administration que personne ne calcule.",
+      "Un outil métier centralise les 5 sans configuration de mois ni formation lourde.",
+    ],
+    faq: [
+      { q: "Combien d'outils utilisent les sociétés de nettoyage en moyenne ?", a: "Entre 4 et 7 outils non connectés : Excel, WhatsApp, Google Agenda, Word, logiciel comptable, emails, classeurs papier. Aucun ne se parle." },
+      { q: "Excel fonctionne-t-il pour gérer une société de nettoyage ?", a: "Jusqu'à 2-3 agents, oui. Au-delà, c'est ingérable : multiples versions, erreurs de saisie, pas de mobile-first, pas de preuve de passage." },
+      { q: "Quel est le vrai coût caché de WhatsApp pour les remplacements ?", a: "Zéro traçabilité. Quand un client conteste un remplacement, vous n'avez aucune preuve. Et quand un agent dit avoir prévenu, vous ne pouvez pas vérifier." },
+      { q: "Combien d'heures par semaine la dispersion fait perdre ?", a: "6 à 10 heures par semaine en moyenne. Soit l'équivalent d'un mi-temps d'admin sur l'année." },
+    ],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'calcul-heures-agents-nettoyage'],
     content: `## La dispersion, ce mal silencieux
 
 La plupart des dirigeants de sociétés de nettoyage que nous avons rencontrés utilisent en moyenne **4 à 7 outils différents** pour gérer leur entreprise. Aucun ne se parle. Chacun fait une partie du travail. Personne ne fait l'ensemble.
@@ -186,6 +217,19 @@ C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [
     date: '8 mai 2026',
     readTime: '8 min',
     tag: 'Outils',
+    quickSummary: [
+      "Le nettoyage n'est ni du BTP ni du commerce : exigez un outil pensé pour le métier.",
+      "7 critères : conçu métier, mobile-first agents, preuve de passage, marge visible, RGPD réel, export 100%, mise en route < 1 jour.",
+      "Le test #0 : une période d'essai gratuite est obligatoire. Sans ça, fuyez.",
+    ],
+    faq: [
+      { q: "Comment savoir si un logiciel est vraiment conçu pour le nettoyage ?", a: "3 questions à poser : gère-t-il la notion de site en plus du client ? gère-t-il les spécialités agents (vitrerie, moquette) ? gère-t-il les fréquences variables (quotidien à mensuel) ? Si l'éditeur répond « il faudra configurer ça », passez votre chemin." },
+      { q: "Pourquoi le mobile-first est-il critique pour le nettoyage ?", a: "Vos agents ne sont pas devant un ordinateur. Ils sont sur site, avec leur téléphone personnel, parfois en sous-sol. Le logiciel doit fonctionner sans installation d'app, sans formation, sur 4G capricieuse." },
+      { q: "Que demander avant de signer pour vérifier la conformité RGPD ?", a: "L'hébergeur (et son pays), le DPA (Data Processing Agreement), la procédure d'export en cas de résiliation, et le chiffrement (transit + stockage). Pas de réponse précise = alerte rouge." },
+      { q: "Combien de temps doit prendre la mise en route ?", a: "Moins d'une journée. Au-delà, c'est qu'il est pensé pour des entreprises de 500 personnes, pas pour vous. Import CSV des clients/sites/agents en bulk, premier devis créé dans l'heure." },
+      { q: "Pourquoi exiger un export 100% des données ?", a: "Parce que vos données vous appartiennent. Test : « Si je résilie demain, je récupère quoi ? ». Tout en CSV/Excel = OK. « On verra » = piège." },
+    ],
+    relatedSlugs: ['gestion-societe-nettoyage-outils', 'fixer-prix-nettoyage'],
     content: `## Pourquoi un logiciel "standard" ne marche pas pour vous
 
 Vous avez sûrement essayé. Un CRM générique, un outil de planning pour artisans, un logiciel comptable avec module facturation. Aucun ne tient sur la durée.
@@ -296,6 +340,19 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
     date: '5 mai 2026',
     readTime: '5 min',
     tag: 'Productivité',
+    quickSummary: [
+      "3h30 à 4h30 par mois consacrées au seul calcul des heures.",
+      "Coût caché annuel pour un dirigeant : 2 400 à 3 600€.",
+      "Les erreurs de paie répétées sont le poison lent du climat social.",
+      "Un compteur automatique fait passer le calcul de 4h à 2 clics.",
+    ],
+    faq: [
+      { q: "Combien de temps prend le calcul des heures dans une société de nettoyage ?", a: "En moyenne 3h30 à 4h30 par mois, soit l'équivalent d'une demi-journée perdue à compter, croiser, vérifier les heures depuis l'agenda et les messages." },
+      { q: "Combien coûte cette tâche annuellement ?", a: "À un coût horaire dirigeant de 45-60€ chargé, c'est 200-300€ par mois, soit 2 400 à 3 600€ par an. Sans compter les erreurs de paie et heures non-facturées par oubli." },
+      { q: "Comment automatiser le calcul des heures des agents ?", a: "Avec un compteur intégré au planning : chaque intervention validée incrémente le compteur de l'agent automatiquement. Pas de saisie, pas de calcul, pas d'oubli." },
+      { q: "Les agents peuvent-ils consulter leurs heures en temps réel ?", a: "Oui, sur leur téléphone via un lien navigateur. Cette transparence règle 80% des contestations de paie avant qu'elles ne deviennent un conflit." },
+    ],
+    relatedSlugs: ['fideliser-agents-nettoyage-turnover', 'gestion-societe-nettoyage-outils'],
     content: `## Une routine que personne ne calcule
 
 C'est l'un des moments les plus emblématiques de la gestion d'une société de nettoyage. Entre le 20 et le 25 du mois, le dirigeant — ou le responsable d'exploitation — ferme la porte du bureau, ouvre l'agenda et commence à compter.
@@ -353,6 +410,19 @@ C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratu
     date: '28 avril 2026',
     readTime: '7 min',
     tag: 'Conformité',
+    quickSummary: [
+      "Vous êtes responsable du traitement des données de vos agents et clients (souvent sans le savoir).",
+      "5 obligations clés : information, finalité, durée, sécurité, hébergement.",
+      "Sanctions CNIL jusqu'à 4% du CA annuel ou 20M€.",
+      "Centraliser dans un outil RGPD-natif rend la conformité conséquence, pas charge supplémentaire.",
+    ],
+    faq: [
+      { q: "Suis-je vraiment concerné par le RGPD en tant que société de nettoyage ?", a: "Oui, dès le premier agent recruté et le premier client B2B. Vous traitez identité, paie, géolocalisation, photos de sites — toutes ces données sont personnelles." },
+      { q: "Quel hébergement choisir pour rester conforme RGPD ?", a: "Un hébergeur européen avec un DPA (Data Processing Agreement). Le stockage doit être en UE pour éviter les complications des transferts internationaux." },
+      { q: "Combien de temps conserver les données de mes agents et clients ?", a: "Généralement 5 ans après la fin du contrat, sauf obligations légales spécifiques (paie, comptabilité) qui peuvent imposer 10 ans d'archivage." },
+      { q: "Quelles sanctions en cas de manquement RGPD ?", a: "La CNIL peut prononcer des amendes jusqu'à 4% du CA annuel ou 20 millions d'euros. Pour une PME, le vrai risque est plutôt une plainte d'agent ou un refus d'appel d'offres public." },
+    ],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
     content: `## Une responsabilité souvent ignorée
 
 Le RGPD n'est pas qu'une affaire de grandes entreprises. En tant que dirigeant d'une société de nettoyage, vous êtes **responsable du traitement** de plusieurs catégories de données personnelles, parfois sans même le savoir.
@@ -436,6 +506,20 @@ C'est aussi pour ça qu'on a conçu Proprely avec le RGPD comme prérequis, pas 
     date: '21 avril 2026',
     readTime: '7 min',
     tag: 'Management',
+    quickSummary: [
+      "Turnover moyen secteur : 35% par an (3 à 5× la moyenne tertiaire).",
+      "6 leviers : suivi surmenage, planning prévisible, spécialités, remplacements, paie juste, visibilité.",
+      "Coût d'un départ : 3 500 à 5 000€. Sur 15 agents, 17 500 à 25 000€/an en frictions.",
+      "Réduire le turnover de 35% à 20% = 7 500 à 10 000€/an récupérés.",
+    ],
+    faq: [
+      { q: "Quel est le taux de turnover moyen dans le nettoyage ?", a: "Environ 35% par an, soit 3 à 5 fois plus que dans l'industrie ou les services tertiaires. Les sociétés les mieux organisées descendent sous 15%." },
+      { q: "Combien coûte un départ d'agent dans une société de nettoyage ?", a: "Entre 3 500 et 5 000€ : recrutement, formation, période de prise en main, surcharge sur les autres agents pendant la transition." },
+      { q: "Quelle est la première frustration des agents ?", a: "L'imprévisibilité du planning, pas le salaire. Un agent qui ne sait pas s'il va être appelé à 5h du matin pour un remplacement ne peut pas organiser sa vie." },
+      { q: "Comment détecter le surmenage avant le burn-out ?", a: "Suivre la charge horaire par agent en automatique, définir un seuil d'alerte (ex: 145h/mois) et rééquilibrer dès dépassement sur 2 semaines consécutives." },
+      { q: "Pourquoi reconnaître les spécialités fidélise ?", a: "Décapage, vitrerie, moquette, remise en état sont des savoir-faire. Un agent à qui on les confie se sent valorisé. Un agent qu'on bascule au hasard se sent interchangeable." },
+    ],
+    relatedSlugs: ['calcul-heures-agents-nettoyage', 'fixer-prix-nettoyage'],
     content: `## Le secret le mieux gardé du nettoyage
 
 Le turnover dans le secteur de la propreté avoisine **35% par an**. C'est 3 à 5 fois plus que dans l'industrie ou les services tertiaires.
@@ -536,4 +620,12 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
 
 export function getPost(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug)
+}
+
+export function getRelatedPosts(slug: string, max = 2): BlogPost[] {
+  const post = getPost(slug)
+  if (post?.relatedSlugs?.length) {
+    return post.relatedSlugs.map((s) => getPost(s)).filter((p): p is BlogPost => Boolean(p)).slice(0, max)
+  }
+  return posts.filter((p) => p.slug !== slug).slice(0, max)
 }
