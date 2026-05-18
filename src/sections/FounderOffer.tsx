@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, Check, ArrowRight, Lock } from 'lucide-react'
+import { Award, Check, ArrowRight, Sparkles, Headphones, Lightbulb, Zap, BadgePercent } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
 
 const scrollTo = (id: string) => {
@@ -7,12 +7,31 @@ const scrollTo = (id: string) => {
 }
 
 const advantages = [
-  { title: "Ton tarif d'aujourd'hui, à vie", desc: "Même quand on passera au prix public, tu gardes ton tarif fondateur. Pour toujours." },
-  { title: 'Tous les modules, sans limite', desc: "Opérations, CRM, Pilotage — tout est ouvert. Pas de quota d'agents, pas de fonction bridée." },
-  { title: 'Mise en route avec le fondateur', desc: "30 minutes d'appel pour configurer ta boîte. Tu repars opérationnel, pas avec un tutoriel à lire." },
-  { title: 'Réponse sous 4h en semaine', desc: "Un bug, une question ? Un humain qui connaît ton dossier répond, pas un ticket numéroté." },
-  { title: 'Ton avis pèse sur le produit', desc: "Un appel mensuel avec le fondateur. Tes demandes passent en haut de la liste." },
-  { title: 'Un dossier traité, pas un email perdu', desc: "Tu n'es pas dans une file d'attente. Tu as un référent qui sait qui tu es et ce que tu fais." },
+  {
+    icon: Sparkles,
+    title: 'Accès bêta 100% gratuit',
+    desc: "Tous les modules, sans limite d'agents ni de sites, pendant toute la durée de la bêta.",
+  },
+  {
+    icon: Headphones,
+    title: 'Onboarding accompagné',
+    desc: "Mise en route avec le fondateur. Vos sites, agents et clients configurés en 30 minutes lors d'un appel.",
+  },
+  {
+    icon: Lightbulb,
+    title: 'Influence sur la feuille de route',
+    desc: "Vos besoins remontés en direct à l'équipe produit deviennent les prochaines fonctionnalités prioritaires.",
+  },
+  {
+    icon: Zap,
+    title: 'Accès prioritaire au support',
+    desc: "Un interlocuteur dédié qui connaît votre dossier. Réponse sous 4h en semaine, sans ticket numéroté.",
+  },
+  {
+    icon: BadgePercent,
+    title: 'Conditions préférentielles à vie',
+    desc: "Quand on passera au prix public, vous gardez un tarif fondateur réservé exclusivement aux premières entreprises.",
+  },
 ]
 
 export default function FounderOffer() {
@@ -24,18 +43,18 @@ export default function FounderOffer() {
       <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-blue-500 opacity-20 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-sky-500 opacity-15 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-sky-500/15 backdrop-blur border border-sky-400/30 text-sky-300 rounded-full px-4 py-1.5 text-xs font-bold mb-5">
             <Award size={14} />
-            Sélection fermée à {FOUNDER_SPOTS.total} entreprises
+            Programme membres fondateurs · {FOUNDER_SPOTS.total} entreprises
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
-            Construis Proprely<br />
+            Construisez Proprely<br />
             <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">avec nous, pas pour nous</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            On cherche {FOUNDER_SPOTS.total} sociétés de nettoyage pour bâtir Proprely avec nous. En échange, tu gardes ton tarif fondateur pour toujours et un accès direct à l'équipe.
+            Nous sélectionnons {FOUNDER_SPOTS.total} sociétés de nettoyage pour participer à la bêta privée. Cinq avantages exclusifs, réservés aux premières entreprises sélectionnées.
           </p>
         </div>
 
@@ -44,7 +63,7 @@ export default function FounderOffer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 mb-6"
+          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 mb-10 max-w-3xl mx-auto"
         >
           <div className="flex items-center justify-between mb-3">
             <div>
@@ -69,39 +88,28 @@ export default function FounderOffer() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 mb-8 flex items-center gap-4"
-        >
-          <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center shrink-0">
-            <Lock size={18} className="text-sky-400" />
-          </div>
-          <div className="flex-1">
-            <div className="text-white font-semibold text-sm sm:text-base mb-0.5">Ton tarif est communiqué pendant le premier appel</div>
-            <div className="text-slate-400 text-xs sm:text-sm">Conservé à vie · Sans engagement · Annulation à tout moment</div>
-          </div>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12">
           {advantages.map((a, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="flex items-start gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/[0.08] transition-colors"
+              transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
+              className={`bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/[0.08] transition-colors ${i >= 3 ? 'lg:col-span-1' : ''}`}
             >
-              <div className="w-6 h-6 rounded-md bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0 mt-0.5">
-                <Check size={13} className="text-sky-400" />
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center shrink-0">
+                  <a.icon size={18} className="text-sky-400" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <Check size={12} className="text-sky-400 shrink-0" />
+                    <h3 className="text-base font-bold text-white">{a.title}</h3>
+                  </div>
+                </div>
               </div>
-              <div>
-                <div className="text-sm font-semibold text-white mb-0.5">{a.title}</div>
-                <div className="text-xs text-slate-400 leading-relaxed">{a.desc}</div>
-              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">{a.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -111,10 +119,10 @@ export default function FounderOffer() {
             onClick={() => scrollTo('formulaire')}
             className="group bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-all shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
           >
-            Candidater à la bêta
+            Devenir membre fondateur
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
-          <p className="text-xs text-slate-400 mt-4">Pas de carte bancaire · Sélection sur dossier · Réponse sous 24h</p>
+          <p className="text-xs text-slate-400 mt-4">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
         </div>
       </div>
     </section>

@@ -1,19 +1,126 @@
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
+import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
+import { FOUNDER_SPOTS, remainingSpots } from '../config'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
+const heroBenefits = [
+  { icon: Clock, value: '6h', label: 'récupérées par semaine' },
+  { icon: ShieldCheck, value: '0', label: "agent qui craque sans alerte" },
+  { icon: TrendingUp, value: '100%', label: 'de votre marge, en temps réel' },
+]
+
+const sidebarItems = [
+  { icon: LayoutDashboard, label: 'Tableau de bord' },
+  { icon: Calendar, label: 'Planning', active: true },
+  { icon: Users, label: 'Agents' },
+  { icon: Building2, label: 'Clients & sites' },
+  { icon: ClipboardList, label: 'Missions' },
+  { icon: FileText, label: 'Devis & factures' },
+  { icon: FolderOpen, label: 'Documents' },
+]
+
+const missions = [
+  { time: '07:00', site: 'Bureaux Atrium · Tour A', agent: 'Marie L.', tag: 'Récurrent', status: 'En cours', statusColor: 'bg-blue-50 text-blue-700 border-blue-100' },
+  { time: '08:30', site: 'Hôtel Vivaldi · Étages', agent: 'Karim B.', tag: 'Vitrerie', status: 'Terminé', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+  { time: '14:00', site: 'Syndic Foch · Hall', agent: 'Sofia D.', tag: 'Quotidien', status: 'À venir', statusColor: 'bg-slate-100 text-slate-600 border-slate-200' },
+  { time: '15:30', site: 'Cabinet médical Lyon 6', agent: 'Marie L.', tag: 'Remise en état', status: 'À venir', statusColor: 'bg-slate-100 text-slate-600 border-slate-200' },
+]
+
+function ProductMockup() {
+  return (
+    <div className="relative max-w-5xl mx-auto">
+      <div className="absolute -inset-6 bg-gradient-to-br from-blue-400/20 via-sky-300/15 to-blue-500/20 blur-3xl rounded-[2.5rem] pointer-events-none" />
+
+      <div className="relative bg-white rounded-2xl shadow-[0_20px_70px_-15px_rgba(15,42,94,0.25)] border border-slate-200/80 overflow-hidden">
+        <div className="bg-slate-50 border-b border-slate-100 px-4 py-2.5 flex items-center gap-3">
+          <div className="flex gap-1.5">
+            <div className="w-3 h-3 rounded-full bg-red-300" />
+            <div className="w-3 h-3 rounded-full bg-amber-300" />
+            <div className="w-3 h-3 rounded-full bg-emerald-300" />
+          </div>
+          <div className="flex-1 flex justify-center">
+            <div className="bg-white border border-slate-200 rounded-md px-3 py-1 text-[10px] text-slate-500 font-mono">
+              app.proprely.fr/planning
+            </div>
+          </div>
+          <MoreHorizontal size={14} className="text-slate-400" />
+        </div>
+
+        <div className="grid grid-cols-12 min-h-[360px] sm:min-h-[420px]">
+          <aside className="col-span-3 lg:col-span-3 bg-slate-50/60 border-r border-slate-100 p-3 space-y-0.5">
+            <div className="px-2 py-1.5 mb-2">
+              <div className="text-xs font-black tracking-tight text-slate-900">Proprely</div>
+              <div className="text-[9px] text-slate-400 uppercase tracking-wider">Cockpit</div>
+            </div>
+            {sidebarItems.map((item) => (
+              <div
+                key={item.label}
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-[10px] sm:text-[11px] ${
+                  item.active
+                    ? 'bg-blue-600 text-white font-semibold'
+                    : 'text-slate-600'
+                }`}
+              >
+                <item.icon size={12} className="shrink-0" />
+                <span className="truncate hidden sm:inline">{item.label}</span>
+              </div>
+            ))}
+          </aside>
+
+          <main className="col-span-9 lg:col-span-9 p-4 sm:p-5 bg-white">
+            <div className="flex items-end justify-between mb-4">
+              <div>
+                <h3 className="text-sm sm:text-base font-bold text-slate-900">Planning du jour</h3>
+                <p className="text-[10px] sm:text-[11px] text-slate-500 mt-0.5">Mercredi 22 octobre · 12 interventions planifiées</p>
+              </div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 hidden sm:block">Semaine 43</div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {[
+                { label: 'CA mois', value: '24 380 €', trend: '+12%' },
+                { label: 'Heures', value: '687 h', trend: '94%' },
+                { label: 'Marge', value: '31%', trend: '+3pt' },
+              ].map((k) => (
+                <div key={k.label} className="bg-slate-50 rounded-lg p-2.5 border border-slate-100">
+                  <div className="text-[8px] sm:text-[9px] uppercase text-slate-500 mb-0.5 tracking-wider">{k.label}</div>
+                  <div className="text-xs sm:text-sm font-bold text-slate-900">{k.value}</div>
+                  <div className="text-[8px] sm:text-[9px] text-emerald-600 font-semibold mt-0.5">{k.trend}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-1.5">
+              {missions.map((m, i) => (
+                <div key={i} className="flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-white border border-slate-100 rounded-lg text-[10px] sm:text-[11px] hover:border-slate-200 transition-colors">
+                  <div className="font-bold text-slate-900 w-9 sm:w-11 shrink-0">{m.time}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-slate-800 font-medium truncate">{m.site}</div>
+                    <div className="text-slate-500 text-[9px] sm:text-[10px] hidden sm:block">{m.agent} · {m.tag}</div>
+                  </div>
+                  <div className={`text-[8px] sm:text-[9px] font-bold px-1.5 sm:px-2 py-0.5 rounded border ${m.statusColor} shrink-0`}>
+                    {m.status}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Hero() {
   const remaining = remainingSpots()
-  const percentFull = progressPercent()
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20 sm:pt-28 pb-20 sm:pb-28 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20 sm:pt-28 pb-16 sm:pb-24 overflow-hidden">
       <div className="absolute top-10 -left-32 w-[28rem] h-[28rem] rounded-full bg-blue-100/40 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none" />
+      <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,82 +131,86 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60 animate-ping" />
             <span className="relative inline-flex rounded-full w-2 h-2 bg-blue-600" />
           </span>
-          <span className="uppercase tracking-wider text-[10px]">Bêta privée — sur sélection</span>
+          <span className="uppercase tracking-wider text-[10px]">Bêta privée ouverte aux sociétés de nettoyage</span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6"
+          className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
-          Fini les nuits à compter<br />
-          <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">les heures à la main.</span>
+          Le cockpit métier pour piloter<br />
+          <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">votre société de nettoyage</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.16 }}
-          className="text-lg sm:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          30 dirigeants du nettoyage construisent le logiciel{' '}
-          <span className="text-slate-900 font-semibold">qu'ils auraient voulu avoir</span>.
-          Rejoins-les. Tarif gelé à vie pour les fondateurs.
+          Centralisez vos clients, sites, agents, missions, devis, plannings et documents dans un outil simple, conçu pour les entreprises de propreté B2B.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.22 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center mb-8"
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mb-10"
+        >
+          {heroBenefits.map((b) => (
+            <div
+              key={b.label}
+              className="bg-white/80 backdrop-blur border border-slate-200/80 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left"
+            >
+              <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                <b.icon size={16} className="text-blue-600" />
+              </div>
+              <div>
+                <div className="text-lg sm:text-xl font-black text-slate-900 leading-none mb-1">{b.value}</div>
+                <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">{b.label}</div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.26 }}
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-5"
         >
           <button
             onClick={() => scrollTo('formulaire')}
             className="group bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 flex items-center justify-center gap-2"
           >
-            Candidater à la bêta
+            Rejoindre la bêta gratuite
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
-            onClick={() => scrollTo('how-it-works')}
+            onClick={() => scrollTo('formulaire')}
             className="bg-white/80 backdrop-blur border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:bg-white hover:border-slate-300 transition-all"
           >
-            Voir comment on bosse
+            Demander une démo privée
           </button>
         </motion.div>
 
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-500"
+          transition={{ duration: 0.4, delay: 0.32 }}
+          className="text-xs sm:text-sm text-slate-500 mb-14"
         >
-          <span>Pas de carte bancaire</span>
-          <span className="text-slate-300">·</span>
-          <span>Démo de 20 min avec le fondateur</span>
-          <span className="text-slate-300">·</span>
-          <span>Réponse sous 24h</span>
-        </motion.div>
+          Gratuit pendant la bêta · Pas de carte bancaire · Accès réservé aux {FOUNDER_SPOTS.total} premières entreprises sélectionnées ({remaining} places restantes)
+        </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-14 max-w-md mx-auto"
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <div className="flex items-center justify-between text-xs text-slate-500 mb-2.5">
-            <span className="font-semibold text-slate-700">{FOUNDER_SPOTS.taken} dirigeants déjà sélectionnés</span>
-            <span>{remaining} places sur {FOUNDER_SPOTS.total}</span>
-          </div>
-          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${percentFull}%` }}
-              transition={{ duration: 1.2, delay: 0.5, ease: 'easeOut' }}
-              className="h-full bg-gradient-to-r from-blue-600 to-sky-500 rounded-full"
-            />
-          </div>
+          <ProductMockup />
         </motion.div>
       </div>
     </section>

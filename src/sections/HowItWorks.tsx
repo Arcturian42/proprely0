@@ -8,18 +8,18 @@ const scrollTo = (id: string) => {
 const steps = [
   {
     n: '1',
-    title: 'Tu candidates (2 min)',
-    desc: "Un court formulaire. On te répond sous 24h pour caler un premier appel si ton profil colle.",
+    title: 'Vous candidatez (2 min)',
+    desc: "Un formulaire court. Nous revenons vers vous sous 24h pour caler un premier appel si votre profil correspond.",
   },
   {
     n: '2',
     title: 'Démo et mise en route (30 min)',
-    desc: "Un appel avec le fondateur. On configure ta boîte ensemble : tes sites, tes agents, tes fréquences. À la fin de l'appel, c'est prêt.",
+    desc: "Un appel avec le fondateur. Nous configurons votre entreprise ensemble : sites, agents, fréquences. C'est prêt à la fin de l'appel.",
   },
   {
     n: '3',
-    title: 'Tu pilotes dès la semaine 1',
-    desc: "Tes agents voient leur planning, tes heures se comptent toutes seules, tes devis sortent en 2 minutes. 6h par semaine récupérées.",
+    title: 'Vous pilotez dès la semaine 1',
+    desc: "Vos agents consultent leur planning, vos heures se comptent automatiquement, vos devis sortent en 2 minutes. Six heures récupérées chaque semaine.",
   },
 ]
 
@@ -60,7 +60,7 @@ export default function HowItWorks() {
             onClick={() => scrollTo('formulaire')}
             className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5"
           >
-            Candidater à la bêta
+            Rejoindre la bêta gratuite
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

@@ -24,27 +24,27 @@ export default function FinalCTA() {
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
-          Prêt à arrêter de compter<br />tes heures à la main ?
+          Prenez les commandes<br />de votre société de nettoyage
         </h2>
         <p className="text-blue-100 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Réserve ta place dans la bêta. Sélection sur dossier. Ton tarif d'aujourd'hui, conservé pour toujours.
+          Rejoignez les sociétés qui construisent Proprely. Accès gratuit pendant la bêta, conditions préférentielles à vie.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={() => scrollTo('formulaire')}
             className="group bg-white text-blue-700 rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-50 transition-all shadow-2xl flex items-center justify-center gap-2 hover:-translate-y-0.5"
           >
-            Candidater
+            Rejoindre la bêta gratuite
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
           <button
-            onClick={() => scrollTo('faq')}
+            onClick={() => scrollTo('formulaire')}
             className="border border-white/30 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 transition-colors"
           >
-            Lire la FAQ
+            Demander une démo privée
           </button>
         </div>
-        <p className="text-xs text-blue-200 mt-6">Pas de carte bancaire · 20 min avec le fondateur · Réponse sous 24h</p>
+        <p className="text-xs text-blue-200 mt-6">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
       </motion.div>
     </section>
   )

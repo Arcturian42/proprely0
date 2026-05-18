@@ -5,39 +5,39 @@ const modules = [
   {
     icon: Calendar,
     title: 'Opérations & Planning',
-    tagline: "Tes agents savent où aller, quand, avec quels outils.",
+    tagline: "Vos agents savent où aller, quand, avec quels outils.",
     benefits: [
-      { before: "Coups de fil et messages WhatsApp pour caler le planning", after: "Tes agents voient leur journée sur leur téléphone, sans appel" },
-      { before: "Heures comptées le 22 du mois sur l'agenda papier", after: "Compteur d'heures automatique, prêt pour la paie en 2 clics" },
-      { before: "Photos dispersées dans 12 conversations WhatsApp", after: "Photos, signatures et preuves attachées à chaque mission" },
+      { before: "Coups de fil et messages WhatsApp pour caler le planning", after: "Vos agents consultent leur planning sur leur téléphone, sans appel" },
+      { before: "Heures comptées le 22 du mois sur l'agenda papier", after: "Compteur d'heures automatique par agent et par site, prêt pour la paie" },
+      { before: "Photos avant/après dispersées dans 12 conversations WhatsApp", after: "Photos, signatures et preuves de passage attachées à chaque mission" },
     ],
   },
   {
     icon: Users,
-    title: 'Équipes & Bien-être',
-    tagline: 'Évite le surmenage. Garde tes meilleurs agents.',
+    title: 'Équipes & Spécialités',
+    tagline: 'Évitez le surmenage. Gardez vos meilleurs agents.',
     benefits: [
-      { before: "Tu découvres le burnout d'un agent quand il démissionne", after: "Alerte automatique quand un agent approche de sa limite" },
-      { before: "Affectations à l'instinct selon qui répond le premier", after: "Affectation 1-clic selon spécialité, dispo et charge horaire" },
-      { before: "Remplacements gérés dans l'urgence par téléphone", after: "Remplacements centralisés, traçabilité totale" },
+      { before: "Vous découvrez le burn-out d'un agent au moment où il démissionne", after: "Alerte automatique quand un agent dépasse son seuil de charge" },
+      { before: "Affectations à l'instinct selon qui est joignable", after: "Affectation 1-clic selon spécialité (vitrerie, moquette, décapage) et disponibilité" },
+      { before: "Remplacements gérés dans l'urgence par téléphone", after: "Remplacements centralisés, historique conservé, traçabilité complète" },
     ],
   },
   {
     icon: Target,
-    title: 'CRM & Commercial',
-    tagline: "Transforme tes demandes en clients. Sans changer d'outil.",
+    title: 'Commercial & Facturation',
+    tagline: "Transformez vos demandes en clients. Sans logiciel séparé.",
     benefits: [
-      { before: "Devis tapés sur Word, 15-20 min par client", after: "Devis générés en 2 minutes, avec ton logo" },
-      { before: "Relances oubliées, prospects perdus dans les emails", after: "Pipeline visuel avec alertes de relance automatiques" },
-      { before: "Impossible de savoir quel client est vraiment rentable", after: "Marge par client, identification des clients déficitaires" },
+      { before: "Devis tapés sur Word, 15-20 minutes par client", after: "Devis professionnels générés en 2 minutes, avec votre logo" },
+      { before: "Relances oubliées, prospects perdus dans les emails", after: "Suivi commercial avec alertes de relance automatiques" },
+      { before: "Impossible de savoir quel client est vraiment rentable", after: "Marge par client, identification des prestations déficitaires" },
     ],
   },
   {
     icon: BarChart3,
     title: 'Pilotage & Rentabilité',
-    tagline: 'Décide avec des chiffres réels, pas au feeling.',
+    tagline: 'Décidez avec des chiffres, pas au feeling.',
     benefits: [
-      { before: "Tu découvres la rentabilité du mois 45 jours après", after: "Marge, heures et CA — visibles en temps réel" },
+      { before: "Vous découvrez la rentabilité du mois 45 jours après la clôture", after: "CA, heures et marge — visibles en temps réel" },
       { before: "Comptable et logiciel de facturation déconnectés", after: "Connexion native Pennylane / Conto, données synchronisées" },
       { before: "Décisions prises à l'instinct, sans visibilité", after: "Rapport mensuel automatique par site et par client" },
     ],
@@ -46,15 +46,15 @@ const modules = [
 
 export default function FourSpaces() {
   return (
-    <section id="features" className="bg-white py-20 sm:py-28">
+    <section id="features" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14 sm:mb-16">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">La solution</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Avant / Après</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
-            4 douleurs. 4 modules.<br />Un dirigeant qui dort la nuit.
+            Ce qui change concrètement<br />dans votre quotidien
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Chaque fonctionnalité est née d'une vraie galère terrain. Pas d'un brainstorm en réunion.
+            Chaque fonctionnalité vient d'une galère terrain qu'on a vue ou vécue. Pas d'un brainstorm en réunion.
           </p>
         </div>
 

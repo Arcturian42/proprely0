@@ -5,43 +5,43 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: "C'est quoi exactement, la bêta privée ?",
-    a: "On lance Proprely avec 30 sociétés de nettoyage fondatrices. Pendant 3 mois, tu utilises le produit, tu nous remontes tes besoins, tu influences ce qu'on construit en priorité. En échange : tarif conservé à vie, mise en route faite par le fondateur, et un interlocuteur qui connaît ton dossier.",
+    a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant toute la durée de la bêta, vous utilisez le produit gratuitement, vous nous remontez vos besoins, et vous influencez les prochaines fonctionnalités. Cinq avantages exclusifs : accès gratuit, onboarding fait par le fondateur, influence sur la feuille de route, support prioritaire, et conditions préférentielles à vie une fois la bêta terminée.",
   },
   {
-    q: "Encore un logiciel compliqué à prendre en main ?",
-    a: "Mise en route en 30 minutes lors d'un appel avec le fondateur. On configure ta boîte ensemble. Si tu sais utiliser Google Agenda, tu sais utiliser Proprely. L'interface a été testée avec des agents de 22 à 58 ans — aucun n'a eu besoin de formation.",
+    q: "C'est vraiment gratuit ?",
+    a: "Oui. Aucun paiement, aucune carte bancaire demandée. Vous accédez à toute la plateforme — clients, sites, agents, planning, devis, factures, documents, pilotage — sans limite d'utilisation pendant toute la durée de la bêta.",
   },
   {
-    q: "Je n'ai pas le temps de changer d'outil maintenant",
-    a: "Aujourd'hui tu perds environ 6h par semaine à jongler entre Excel, WhatsApp et ton logiciel de facturation. Proprely te les rend dès la première semaine. Et c'est nous qui faisons la configuration avec toi, tu n'as rien à monter seul.",
+    q: "Combien ça coûtera après la bêta ?",
+    a: "Le tarif public sera communiqué en fin de bêta. Les membres fondateurs gardent un tarif privilégié, fixé à l'avance et conservé à vie. Vous ne serez jamais soumis aux augmentations futures.",
+  },
+  {
+    q: "Comment êtes-vous différents d'un logiciel généraliste ?",
+    a: "Proprely n'est pas un logiciel générique adapté au nettoyage. Chaque fonctionnalité a été construite avec des dirigeants du métier : spécialités agents (vitrerie, moquette, décapage), compteur d'heures par site, gestion des récurrences, alertes surmenage, preuve de passage. Le vocabulaire, les workflows, les rapports — tout est pensé pour la propreté B2B.",
+  },
+  {
+    q: "Combien de temps pour la mise en route ?",
+    a: "30 minutes lors d'un appel avec le fondateur. Nous configurons votre entreprise ensemble : vos sites, vos agents, vos fréquences d'intervention. À la fin de l'appel, vous êtes opérationnel.",
   },
   {
     q: "Mon entreprise est-elle assez grande ?",
-    a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Si tu as plus d'un site à gérer, tu as besoin de Proprely. Si tu es en croissance, encore plus.",
+    a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Dès que vous gérez plusieurs sites ou plusieurs agents, vous avez besoin de centraliser. La bêta est ouverte aux entreprises en croissance comme aux structures établies.",
   },
   {
-    q: "Je gère déjà avec Excel et WhatsApp, ça marche",
-    a: "Ça marche, oui. Jusqu'au jour où un agent oublie un site, où un client conteste les heures, ou où tu passes ton dimanche soir à compter. Proprely élimine ces moments. Et garde tous tes historiques.",
-  },
-  {
-    q: "Combien ça coûte vraiment ?",
-    a: "Le tarif fondateur est communiqué pendant le premier appel. C'est un tarif privilégié, conservé à vie, exclusivement pour les 30 fondateurs. Pas de frais cachés, pas d'engagement, annulation possible à tout moment.",
-  },
-  {
-    q: "C'est vraiment fait pour le nettoyage, ou un logiciel générique repackagé ?",
-    a: "Proprely n'est PAS un logiciel générique. Chaque fonctionnalité a été construite avec des dirigeants du nettoyage : spécialités agents (vitrerie, moquette, décappage), compteur d'heures par site, gestion des récurrences, alertes surmenage. C'est venu de leurs galères, pas d'un brainstorm en réunion.",
-  },
-  {
-    q: "Et si Proprely disparaît ?",
-    a: "Données hébergées en France (OVH). Export complet en 1 clic à tout moment, dans des formats standards (CSV, Excel). Tu restes propriétaire à 100%. Pas de verrouillage.",
-  },
-  {
-    q: "Mes agents ne vont pas adopter, c'est sûr",
-    a: "Pas d'application à installer : tes agents reçoivent un lien, ouvrent leur planning, c'est tout. Si ton agent utilise WhatsApp, il utilisera Proprely. Testé avec des équipes de 22 à 58 ans.",
+    q: "Mes agents vont-ils devoir installer une application ?",
+    a: "Non. Vos agents reçoivent un lien, ouvrent leur planning dans leur navigateur, et c'est tout. L'interface a été testée avec des équipes intergénérationnelles, de 22 à 58 ans, sans difficulté d'adoption.",
   },
   {
     q: "Mes données sont-elles sécurisées ?",
-    a: "Hébergement France (OVH), chiffrement en transit et au repos, conformité RGPD. Tu restes propriétaire de tes données à 100% et tu peux les exporter à tout moment.",
+    a: "Hébergement en France (OVH), chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment, dans des formats standards (CSV, Excel).",
+  },
+  {
+    q: "Et si Proprely arrête son activité ?",
+    a: "Vos données sont exportables à tout moment dans des formats standards. Pas de verrouillage propriétaire. Vous gardez vos historiques, vos contrats et vos prestations sans dépendre de nous.",
+  },
+  {
+    q: "Quelle est la prochaine étape concrète ?",
+    a: "Vous remplissez le formulaire (2 minutes). Nous étudions votre candidature et vous répondons sous 24h. Si votre profil correspond, nous calons un premier appel de découverte et de mise en route avec le fondateur.",
   },
 ]
 
@@ -49,12 +49,12 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
+    <section id="faq" className="bg-white py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">FAQ</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Tes questions sur la bêta
+            Vos questions sur la bêta
           </h2>
         </div>
 
@@ -66,17 +66,17 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.3) }}
-              className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+              className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden"
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+                className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left hover:bg-slate-100 transition-colors"
               >
                 <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">{faq.q}</span>
                 <motion.div
                   animate={{ rotate: open === i ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
-                  className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0"
+                  className="w-7 h-7 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm"
                 >
                   <ChevronDown size={14} className="text-blue-600" />
                 </motion.div>

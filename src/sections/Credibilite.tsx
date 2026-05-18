@@ -10,23 +10,23 @@ const items = [
   {
     icon: Check,
     title: 'Zéro fonction inutile',
-    desc: "Chaque feature vient d'une vraie galère qu'on a vue, vécue ou entendue. Pas de jargon SaaS, pas de superflu.",
+    desc: "Chaque fonctionnalité vient d'une galère terrain qu'on a vue, vécue ou entendue. Pas de jargon SaaS, pas de superflu.",
   },
   {
     icon: Handshake,
     title: 'Co-construit avec les fondateurs',
-    desc: "Tes besoins terrain orientent ce qu'on développe en priorité. Tu fais avancer le produit avec nous.",
+    desc: "Vos besoins terrain orientent ce que nous développons en priorité. Vous faites avancer le produit avec nous.",
   },
   {
     icon: Headphones,
     title: 'Un interlocuteur, un dossier',
-    desc: "Pas un ticket numéroté. Pas une file d'attente. Une personne qui sait qui tu es et ce que tu fais.",
+    desc: "Pas un ticket numéroté. Pas une file d'attente. Une personne qui sait qui vous êtes et ce que vous faites.",
   },
 ]
 
 export default function Credibilite() {
   return (
-    <section className="bg-slate-50 py-20 sm:py-28 border-y border-slate-100">
+    <section className="bg-white py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Notre méthode</p>
@@ -46,7 +46,7 @@ export default function Credibilite() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="text-center bg-white rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+              className="text-center bg-slate-50 rounded-2xl p-5 sm:p-6"
             >
               <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
                 <item.icon size={20} className="text-blue-600" />

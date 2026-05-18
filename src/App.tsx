@@ -1,10 +1,9 @@
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import ProblemSection from './sections/ProblemSection'
+import SolutionSection from './sections/SolutionSection'
 import FourSpaces from './sections/FourSpaces'
 import HowItWorks from './sections/HowItWorks'
-import Results from './sections/Results'
-import WhyNow from './sections/WhyNow'
 import FounderOffer from './sections/FounderOffer'
 import Credibilite from './sections/Credibilite'
 import FounderForm from './sections/FounderForm'
@@ -19,10 +18,9 @@ function App() {
       <Navbar />
       <Hero />
       <ProblemSection />
+      <SolutionSection />
       <FourSpaces />
       <HowItWorks />
-      <Results />
-      <WhyNow />
       <FounderOffer />
       <Credibilite />
       <FounderForm />
