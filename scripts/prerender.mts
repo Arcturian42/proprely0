@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { posts } from '../src/data/blog.ts'
 import { features } from '../src/data/features.ts'
+import { resources } from '../src/data/resources.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -152,6 +153,19 @@ function blogPostingSchema(p: typeof posts[number]) {
   }
 }
 
+function breadcrumbSchema(crumbs: { name: string; item: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: c.item,
+    })),
+  }
+}
+
 function faqSchema(faq: { q: string; a: string }[]) {
   return {
     '@context': 'https://schema.org',
@@ -203,7 +217,14 @@ for (const p of posts) {
     ${faqHtml ? `<h2>Questions fréquentes</h2>${faqHtml}` : ''}
   `.trim()
 
-  const schemas: object[] = [blogPostingSchema(p)]
+  const schemas: object[] = [
+    blogPostingSchema(p),
+    breadcrumbSchema([
+      { name: 'Accueil', item: `${ORIGIN}/` },
+      { name: 'Blog', item: `${ORIGIN}/blog` },
+      { name: p.title, item: `${ORIGIN}${url}` },
+    ]),
+  ]
   if (p.faq?.length) schemas.push(faqSchema(p.faq))
 
   const html = buildHtml({
@@ -409,6 +430,164 @@ const thankYouHtml = buildHtml({
 })
 writePage('/beta/merci', thankYouHtml)
 generated.push('/beta/merci')
+
+const betaBody = `
+  <h1>Bêta privée Proprely : devenez l'une des 30 sociétés fondatrices</h1>
+  <p>Accès gratuit à toute la plateforme pendant la bêta. Onboarding 30 minutes avec le fondateur. Tarif fondateur conservé à vie quand on passe au prix public.</p>
+  <h2>Cinq avantages exclusifs des membres fondateurs</h2>
+  <ul>
+    <li>Accès bêta 100% gratuit : tous les modules, sans limite d'agents ni de sites, pendant toute la durée de la bêta</li>
+    <li>Onboarding accompagné par le fondateur : mise en route en 30 minutes lors d'un appel</li>
+    <li>Influence directe sur la feuille de route : vos besoins remontés en direct deviennent les prochaines fonctionnalités</li>
+    <li>Accès prioritaire au support : réponse sous 4 heures en semaine, interlocuteur dédié</li>
+    <li>Conditions préférentielles à vie : tarif fondateur conservé après le lancement public</li>
+  </ul>
+  <h2>Profil recherché</h2>
+  <ul>
+    <li>Société de nettoyage B2B en France (bureaux, syndics, hôtels, cabinets médicaux, restaurants, copropriétés B2B)</li>
+    <li>Entre 3 et 50 agents</li>
+    <li>Au moins 5 sites clients</li>
+    <li>Vous utilisez aujourd'hui Excel, WhatsApp, Word ou papier pour piloter</li>
+    <li>Vous êtes dirigeant ou responsable d'exploitation</li>
+    <li>Vous êtes prêt à nous remonter des retours pendant 4 à 8 semaines</li>
+  </ul>
+  <h2>Comment candidater</h2>
+  <p>Remplissez le formulaire en quelques minutes : prénom, email professionnel, nom de votre entreprise, nombre d'agents, ville ou région, et votre plus gros problème actuel. Nous revenons vers vous sous 24 heures ouvrées pour un premier appel si votre profil correspond.</p>
+`.trim()
+
+const betaFaqs = [
+  { q: "C'est quoi exactement, la bêta privée Proprely ?", a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant toute la durée de la bêta, vous utilisez le produit gratuitement, vous nous remontez vos besoins, et vous influencez les prochaines fonctionnalités." },
+  { q: "C'est vraiment gratuit ?", a: "Oui. Aucun paiement, aucune carte bancaire demandée. Vous accédez à toute la plateforme sans limite d'utilisation pendant toute la durée de la bêta." },
+  { q: "Combien de temps pour la mise en route ?", a: "30 minutes lors d'un appel avec le fondateur. Nous configurons votre entreprise ensemble : sites, agents, fréquences d'intervention." },
+  { q: "Combien ça coûtera après la bêta ?", a: "Le tarif public sera communiqué en fin de bêta. Les membres fondateurs gardent un tarif privilégié, fixé à l'avance et conservé à vie." },
+  { q: "Mes données sont-elles sécurisées ?", a: "Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100 % et pouvez les exporter en 1 clic à tout moment." },
+]
+
+const betaHtml = buildHtml({
+  url: '/beta',
+  title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
+  description:
+    "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie, onboarding 30 min avec le fondateur.",
+  schemas: [
+    webpageSchema(
+      'Bêta privée Proprely',
+      "Rejoignez les 30 sociétés fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie.",
+      `${ORIGIN}/beta`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Bêta privée', item: `${ORIGIN}/beta` },
+      ]
+    ),
+    faqSchema(betaFaqs),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Offer',
+      name: 'Programme membres fondateurs Proprely',
+      description: "Accès gratuit pendant toute la bêta privée. Tarif fondateur conservé à vie. Limité à 30 sociétés.",
+      availability: 'https://schema.org/LimitedAvailability',
+      price: '0',
+      priceCurrency: 'EUR',
+      seller: { '@id': `${ORIGIN}/#organization` },
+    },
+  ],
+  bodyHtml: betaBody,
+})
+writePage('/beta', betaHtml)
+generated.push('/beta')
+
+const resourcesIndexBody = `
+  <h1>Ressources gratuites pour société de nettoyage</h1>
+  <p>Modèles Excel et outils interactifs pour structurer votre activité : devis, planning, suivi des heures, calculateur ROI. Téléchargement immédiat sans inscription.</p>
+  <h2>Modèles et outils disponibles</h2>
+  <ul>
+    ${resources.map((r) => `<li><a href="${ORIGIN}/ressources/${r.slug}"><strong>${escapeHtml(r.title)}</strong></a> — ${escapeHtml(r.excerpt)}</li>`).join('')}
+  </ul>
+`.trim()
+
+const resourcesHtml = buildHtml({
+  url: '/ressources',
+  title: 'Ressources gratuites pour société de nettoyage · Proprely',
+  description:
+    "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI. Conçu pour les dirigeants B2B.",
+  schemas: [
+    webpageSchema(
+      'Ressources Proprely',
+      "Modèles Excel et outils interactifs pour les dirigeants de société de nettoyage.",
+      `${ORIGIN}/ressources`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Ressources', item: `${ORIGIN}/ressources` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: resources.map((r, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: r.title,
+        url: `${ORIGIN}/ressources/${r.slug}`,
+      })),
+    },
+  ],
+  bodyHtml: resourcesIndexBody,
+})
+writePage('/ressources', resourcesHtml)
+generated.push('/ressources')
+
+for (const r of resources) {
+  if (r.slug === 'calculateur-roi') continue
+  const url = `/ressources/${r.slug}`
+  const insideHtml = r.whatsInside.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
+  const whoForHtml = r.whoFor.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(r.title)}</h1>
+    <p>${escapeHtml(r.description)}</p>
+    <p>Format : ${escapeHtml(r.format)} · Taille : ${escapeHtml(r.fileSize)}</p>
+    ${r.filePath ? `<p><a href="${escapeAttr(r.filePath)}" download>Télécharger le modèle</a></p>` : ''}
+    <h2>Ce qu'il y a dans le fichier</h2>
+    <ul>${insideHtml}</ul>
+    <h2>Ce modèle convient si</h2>
+    <ul>${whoForHtml}</ul>
+    <h2>Aller plus loin que le modèle</h2>
+    <p>${escapeHtml(r.bestFor)} Proprely automatise ce que ce modèle vous demande de faire à la main. <a href="${ORIGIN}/beta">Rejoindre la bêta gratuite</a>.</p>
+  `.trim()
+
+  const schemas: object[] = [
+    webpageSchema(r.title, r.metaDescription, `${ORIGIN}${url}`, [
+      { name: 'Accueil', item: `${ORIGIN}/` },
+      { name: 'Ressources', item: `${ORIGIN}/ressources` },
+      { name: r.shortTitle, item: `${ORIGIN}${url}` },
+    ]),
+  ]
+
+  if (r.filePath) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'DigitalDocument',
+      name: r.title,
+      description: r.metaDescription,
+      url: `${ORIGIN}${r.filePath}`,
+      encodingFormat: 'text/csv',
+      inLanguage: 'fr-FR',
+      isAccessibleForFree: true,
+      publisher: { '@id': `${ORIGIN}/#organization` },
+    })
+  }
+
+  const html = buildHtml({
+    url,
+    title: r.metaTitle,
+    description: r.metaDescription,
+    ogTitle: r.title,
+    ogDescription: r.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

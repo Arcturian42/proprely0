@@ -15,13 +15,19 @@ function extractSlugs(filePath) {
 
 const blogSlugs = extractSlugs(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractSlugs(resolve(root, 'src/data/features.ts'))
+const resourceSlugs = extractSlugs(resolve(root, 'src/data/resources.ts'))
 
 const urls = [
   { loc: `${ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${ORIGIN}/beta`, priority: '0.95', changefreq: 'weekly' },
   { loc: `${ORIGIN}/tarifs`, priority: '0.9', changefreq: 'monthly' },
+  { loc: `${ORIGIN}/ressources`, priority: '0.85', changefreq: 'weekly' },
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly' },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly' },
   ...featureSlugs.map((slug) => ({ loc: `${ORIGIN}/fonctionnalites/${slug}`, priority: '0.8', changefreq: 'monthly' })),
+  ...resourceSlugs
+    .filter((slug) => slug !== 'calculateur-roi')
+    .map((slug) => ({ loc: `${ORIGIN}/ressources/${slug}`, priority: '0.75', changefreq: 'monthly' })),
   ...blogSlugs.map((slug) => ({ loc: `${ORIGIN}/blog/${slug}`, priority: '0.6', changefreq: 'monthly' })),
 ]
 
@@ -36,4 +42,5 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${blogSlugs.length} blog)`)
+const ressourcePages = resourceSlugs.filter((s) => s !== 'calculateur-roi').length
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 6 core + ${featureSlugs.length} features + ${ressourcePages} resources + ${blogSlugs.length} blog)`)

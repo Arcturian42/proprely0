@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, CheckCircle, HelpCircle, Sparkles } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
+import ResourcesCTA from '../components/ResourcesCTA'
 import { getFeature, getRelatedFeatures } from '../data/features'
 import type { FeaturePage as FeaturePageType } from '../data/features'
 import { getPost } from '../data/blog'
@@ -51,6 +52,15 @@ function injectFeatureSchema(feature: FeaturePageType) {
           { '@type': 'ListItem', position: 3, name: feature.tag, item: url },
         ],
       },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 3, name: feature.tag, item: url },
+      ],
     },
   ]
   if (feature.faq?.length) {
@@ -293,6 +303,12 @@ export default function FeaturePage({ slug }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-12 sm:py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <ResourcesCTA />
           </div>
         </section>
 

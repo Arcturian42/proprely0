@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Calculator, BookOpen, Mail, ArrowUpRight, Tag } from 'lucide-react'
+import { Calculator, BookOpen, Mail, ArrowUpRight, Tag, Download, Sparkles } from 'lucide-react'
 import Modal from '../components/Modal'
 import { MentionsLegales, Confidentialite, CGU } from '../components/LegalContent'
 import { navigate } from '../lib/useRoute'
@@ -51,9 +51,9 @@ export default function Footer() {
               <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Ressources</h4>
               <ul className="space-y-2.5">
                 <li>
-                  <button onClick={() => navigate('/tarifs')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                    <Tag size={12} />
-                    Tarifs
+                  <button onClick={() => navigate('/ressources')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                    <Download size={12} />
+                    Modèles gratuits
                   </button>
                 </li>
                 <li>
@@ -66,6 +66,18 @@ export default function Footer() {
                   <button onClick={() => navigate('/blog')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                     <BookOpen size={12} />
                     Blog
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/tarifs')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                    <Tag size={12} />
+                    Tarifs
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => navigate('/beta')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                    <Sparkles size={12} />
+                    Bêta privée
                   </button>
                 </li>
                 <li>

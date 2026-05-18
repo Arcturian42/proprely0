@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
+import ResourcesCTA from '../components/ResourcesCTA'
 import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import { navigate } from '../lib/useRoute'
@@ -183,6 +184,15 @@ function injectArticleSchema(post: BlogPostType) {
       inLanguage: 'fr-FR',
       articleSection: post.tag,
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://proprely.fr/blog' },
+        { '@type': 'ListItem', position: 3, name: post.title, item: url },
+      ],
+    },
   ]
   if (post.faq?.length) {
     schemas.push({
@@ -273,7 +283,11 @@ export default function BlogPost({ slug }: Props) {
 
             {post.faq && post.faq.length > 0 && <FAQSection faq={post.faq} />}
 
-            <div className="mt-16 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
+            <div className="mt-12">
+              <ResourcesCTA />
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
               <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Bêta privée</p>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Vous reconnaissez votre quotidien ?</h3>
               <p className="text-sm sm:text-base text-slate-700 mb-5">
