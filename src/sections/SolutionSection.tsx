@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, ArrowRight, CheckCircle, AlertTriangle, QrCode, Camera, Signature, FileSignature, Receipt, FileBadge, FileLock, FileCheck } from 'lucide-react'
+import { LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, ArrowRight, CheckCircle, AlertTriangle, QrCode, Camera, Signature, FileSignature, Receipt, FileBadge, FileLock, FileCheck, Sparkles, MapPin, Battery, CalendarClock, Wand2 } from 'lucide-react'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -11,6 +11,8 @@ type Module = {
   benefit: string
   desc: string
   preview: ReactNode
+  roadmap?: boolean
+  highlightTab?: boolean
 }
 
 const ClientsPreview = () => (
@@ -224,6 +226,88 @@ const PilotagePreview = () => (
   </div>
 )
 
+const IAPreview = () => (
+  <div className="space-y-3">
+    <div className="bg-gradient-to-br from-violet-50 to-blue-50 border border-violet-100 rounded-xl p-3.5">
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center gap-1.5">
+          <Wand2 size={12} className="text-violet-600" />
+          <span className="text-[10px] font-bold uppercase tracking-wider text-violet-700">Devis intelligent</span>
+        </div>
+        <span className="text-[9px] font-bold text-violet-600 bg-white rounded px-1.5 py-0.5">IA</span>
+      </div>
+      <div className="text-xs text-slate-700 mb-2 leading-snug">
+        <span className="font-bold">DV-2024-088 · Bureaux Atrium B</span> — l'IA suggère :
+      </div>
+      <div className="flex items-center justify-between bg-white rounded-lg p-2 border border-violet-100">
+        <div>
+          <div className="text-base font-black text-slate-900">4 320 €</div>
+          <div className="text-[9px] text-slate-500">basé sur 14 devis similaires Lyon 6e</div>
+        </div>
+        <div className="text-right">
+          <div className="text-[10px] text-emerald-600 font-bold">+12% marge</div>
+          <div className="text-[9px] text-slate-400">vs vos prix actuels</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-2 gap-2.5">
+      <div className="bg-white border border-slate-100 rounded-xl p-3">
+        <div className="flex items-center gap-1.5 mb-2">
+          <MapPin size={11} className="text-blue-600" />
+          <span className="text-[9px] font-bold uppercase tracking-wider text-blue-700">Prospects locaux</span>
+        </div>
+        <div className="text-base font-black text-slate-900">12</div>
+        <div className="text-[10px] text-slate-500 leading-tight">sociétés notées 9/10 dans votre zone</div>
+        <div className="flex gap-0.5 mt-2">
+          {[9.6, 9.4, 9.2, 9.0, 8.9].map((s, i) => (
+            <div key={i} className="flex-1 h-1 rounded-full bg-blue-100 overflow-hidden">
+              <div className="h-full bg-blue-500" style={{ width: `${(s / 10) * 100}%` }} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="bg-white border border-slate-100 rounded-xl p-3">
+        <div className="flex items-center gap-1.5 mb-2">
+          <CalendarClock size={11} className="text-emerald-600" />
+          <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-700">Planning auto</span>
+        </div>
+        <div className="text-[10px] text-slate-700 leading-tight mb-1">
+          <span className="font-bold">Karim absent</span> demain
+        </div>
+        <div className="text-[10px] text-slate-700 leading-tight mb-1.5">
+          → propose <span className="font-bold text-emerald-700">Antoine R.</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 rounded px-1 py-0.5">96% match</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-white border border-amber-200 rounded-xl p-3">
+      <div className="flex items-start justify-between mb-2">
+        <div className="flex items-center gap-1.5">
+          <Battery size={12} className="text-amber-600" />
+          <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700">Fatigue prédictive</span>
+        </div>
+        <span className="text-[9px] font-bold text-amber-700 bg-amber-50 rounded px-1.5 py-0.5">Alerte</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-sky-400 flex items-center justify-center text-white text-[10px] font-bold shrink-0">KB</div>
+        <div className="flex-1 min-w-0">
+          <div className="text-xs font-bold text-slate-900">Karim B.</div>
+          <div className="text-[10px] text-slate-500">Risque élevé d'épuisement sous 12 jours</div>
+        </div>
+        <div className="text-right shrink-0">
+          <div className="text-base font-black text-amber-600">7.8</div>
+          <div className="text-[9px] text-slate-400">/10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
 const modules: Module[] = [
   { id: 'clients', icon: Building2, tab: 'Clients & sites', benefit: 'Plus jamais perdu dans vos prestations', desc: "Toutes vos prestations organisées par client et par site. Historique, contrats, fréquences, contacts.", preview: <ClientsPreview /> },
   { id: 'agents', icon: Users, tab: 'Agents', benefit: 'Gardez vos meilleurs agents', desc: "Profils avec spécialités (vitrerie, moquette, décapage), charge horaire, alertes de surmenage automatiques.", preview: <AgentsPreview /> },
@@ -232,6 +316,7 @@ const modules: Module[] = [
   { id: 'devis', icon: FileText, tab: 'Devis & factures', benefit: 'Devis envoyés en 2 minutes', desc: "Devis professionnels générés avec votre logo. Suivi des relances, alerte impayés, factures en 2 clics.", preview: <DevisPreview /> },
   { id: 'documents', icon: FolderOpen, tab: 'Documents', benefit: 'Tout retrouver en 5 secondes', desc: "Contrats, fiches sécurité, attestations URSSAF, fiches de poste — classés, centralisés, accessibles.", preview: <DocumentsPreview /> },
   { id: 'pilotage', icon: LayoutDashboard, tab: 'Pilotage', benefit: 'Votre vraie marge, en temps réel', desc: "CA, heures et marge par client et par site. Vous ne découvrez plus la rentabilité 45 jours après.", preview: <PilotagePreview /> },
+  { id: 'ia', icon: Sparkles, tab: 'IA', benefit: "L'intelligence qui anticipe à votre place", desc: "Devis suggérés au juste prix selon votre historique, prospects locaux scorés, propositions de remplacement automatiques selon spécialité et distance, alerte de fatigue avant le burn-out. L'IA embarquée fait gagner du temps sur les décisions, pas seulement sur la saisie.", preview: <IAPreview />, roadmap: true, highlightTab: true },
 ]
 
 export default function SolutionSection() {
@@ -259,19 +344,22 @@ export default function SolutionSection() {
                 key={m.id}
                 onClick={() => setActiveId(m.id)}
                 className={`relative flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors ${
-                  isActive ? 'text-white' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  isActive ? 'text-white' : m.highlightTab ? 'text-violet-700 hover:text-violet-900 hover:bg-violet-50' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="active-tab-bg"
-                    className="absolute inset-0 bg-blue-600 rounded-full shadow-lg shadow-blue-600/25"
+                    className={`absolute inset-0 rounded-full shadow-lg ${m.highlightTab ? 'bg-gradient-to-r from-violet-600 to-blue-600 shadow-violet-600/25' : 'bg-blue-600 shadow-blue-600/25'}`}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
                   <m.icon size={14} />
                   {m.tab}
+                  {m.highlightTab && !isActive && (
+                    <span className="text-[8px] font-black uppercase tracking-wider bg-gradient-to-r from-violet-600 to-blue-600 text-white rounded px-1 py-0.5">New</span>
+                  )}
                 </span>
               </button>
             )
@@ -288,7 +376,7 @@ export default function SolutionSection() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+                <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 ${active.highlightTab ? 'bg-gradient-to-r from-violet-100 to-blue-100 text-violet-700' : 'bg-blue-50 text-blue-700'}`}>
                   <active.icon size={12} />
                   {active.tab}
                 </div>
@@ -298,10 +386,17 @@ export default function SolutionSection() {
                 <p className="text-slate-600 text-base leading-relaxed mb-6">
                   {active.desc}
                 </p>
-                <div className="flex items-center gap-2 text-sm text-blue-600 font-semibold">
-                  <CheckCircle size={14} />
-                  Inclus dès l'accès bêta
-                </div>
+                {active.roadmap ? (
+                  <div className="flex items-center gap-2 text-sm text-violet-700 font-semibold">
+                    <Sparkles size={14} />
+                    Sur la feuille de route — livré pendant la bêta
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 text-sm text-blue-600 font-semibold">
+                    <CheckCircle size={14} />
+                    Inclus dès l'accès bêta
+                  </div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
