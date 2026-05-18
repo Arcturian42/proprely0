@@ -20,8 +20,7 @@ export function MentionsLegales() {
         <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">www.hostinger.fr</a>
       </p>
       <p>
-        Les données saisies dans l'application Proprely sont hébergées en France par :<br />
-        <strong>OVH SAS</strong> · 2 rue Kellermann, 59100 Roubaix, France · <a href="https://www.ovhcloud.com/fr/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">www.ovhcloud.com</a>
+        Les données saisies dans l'application Proprely sont hébergées chez un prestataire situé dans l'Union européenne, conformément au RGPD. Détails du sous-traitant communiqués sur demande à contact@proprely.fr.
       </p>
 
       <h3>Propriété intellectuelle</h3>
@@ -77,7 +76,7 @@ export function Confidentialite() {
 
       <h3>6. Destinataires</h3>
       <p>
-        Vos données sont uniquement accessibles à l'équipe Proprely. Aucune revente, aucun partage à des tiers commerciaux. Hébergeur (OVH France) lié par contrat de sous-traitance RGPD.
+        Vos données sont uniquement accessibles à l'équipe Proprely. Aucune revente, aucun partage à des tiers commerciaux. Notre hébergeur, situé dans l'Union européenne, est lié par un contrat de sous-traitance conforme au RGPD.
       </p>
 
       <h3>7. Vos droits</h3>
@@ -127,7 +126,7 @@ export function CGU() {
         <li>Fournir un service fonctionnel adapté aux sociétés de nettoyage</li>
         <li>Assurer la sécurité et la confidentialité des données saisies</li>
         <li>Informer les Membres Fondateurs des évolutions significatives</li>
-        <li>Conserver les données hébergées en France (OVH)</li>
+        <li>Conserver les données hébergées en Union européenne, conformément au RGPD</li>
       </ul>
 
       <h3>5. Engagements du Membre Fondateur</h3>

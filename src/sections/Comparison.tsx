@@ -14,7 +14,7 @@ const rows: Row[] = [
   { category: 'Remplacements urgents', excel: { value: 'Téléphone et WhatsApp, traçabilité nulle', status: 'bad' }, proprely: { value: 'Centralisés, historique conservé', status: 'ok' } },
   { category: 'Marge par client', excel: { value: 'Invisible jusqu\'à la clôture comptable', status: 'bad' }, proprely: { value: 'Visible en temps réel', status: 'ok' } },
   { category: 'Planning consulté par les agents', excel: { value: 'Appels du matin, papier, SMS', status: 'bad' }, proprely: { value: 'Lien navigateur sur leur téléphone', status: 'ok' } },
-  { category: 'Sécurité des données', excel: { value: 'Sur ordinateur local, sauvegardes incertaines', status: 'warn' }, proprely: { value: 'Hébergé France (OVH), RGPD, chiffré', status: 'ok' } },
+  { category: 'Sécurité des données', excel: { value: 'Sur ordinateur local, sauvegardes incertaines', status: 'warn' }, proprely: { value: 'Hébergement européen, RGPD, chiffré', status: 'ok' } },
   { category: 'Multi-sites par client', excel: { value: 'Tableaux croisés vite illisibles', status: 'bad' }, proprely: { value: 'Vue arborescence client → sites', status: 'ok' } },
   { category: 'Documents (contrats, fiches)', excel: { value: 'Dispersés entre PC, mails, papier', status: 'bad' }, proprely: { value: 'Centralisés, recherche instantanée', status: 'ok' } },
   { category: 'Alerte surmenage des agents', excel: { value: 'Aucune, découverte au burn-out', status: 'bad' }, proprely: { value: 'Alerte automatique dès le seuil', status: 'ok' } },

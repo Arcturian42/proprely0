@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Mes données sont-elles sécurisées ?",
-    a: "Hébergement en France (OVH), chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment, dans des formats standards (CSV, Excel).",
+    a: "Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment, dans des formats standards (CSV, Excel).",
   },
   {
     q: "Et si Proprely arrête son activité ?",

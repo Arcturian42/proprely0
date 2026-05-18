@@ -193,7 +193,7 @@ La CNIL peut prononcer des amendes jusqu'à **4% du chiffre d'affaires annuel** 
 ## Ce que ça change avec un cockpit métier
 
 Centraliser vos données dans un outil dédié simplifie radicalement la conformité :
-- Hébergement contrôlé (OVH France pour Proprely)
+- Hébergement contrôlé en Union européenne
 - Chiffrement par défaut
 - Gestion des accès par rôle
 - Export facile pour exercer les droits RGPD
