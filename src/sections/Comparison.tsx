@@ -126,7 +126,7 @@ export default function Comparison() {
             className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
-            <span className="relative">Passer à Proprely</span>
+            <span className="relative">Passer au cockpit</span>
             <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <p className="text-xs text-slate-500 mt-3">Gratuit pendant la bêta · Onboarding 30 min · Pas de carte bancaire</p>

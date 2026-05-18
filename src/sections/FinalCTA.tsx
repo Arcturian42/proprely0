@@ -26,8 +26,8 @@ export default function FinalCTA() {
         </div>
 
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[0.95] mb-6">
-          Prenez les commandes<br />
-          <span className="text-slate-400">de votre activité.</span>
+          Arrêtez de tout porter<br />
+          <span className="text-slate-400">tout seul.</span>
         </h2>
 
         <p className="text-slate-300 text-base sm:text-lg mb-12 max-w-xl mx-auto leading-relaxed">

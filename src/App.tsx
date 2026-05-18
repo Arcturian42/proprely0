@@ -11,8 +11,8 @@ const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 
 const META: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Proprely : Le cockpit métier des sociétés de nettoyage qui scalent',
-    description: "Centralisez clients, sites, agents, plannings, devis et missions dans un seul logiciel métier conçu pour les entreprises de propreté B2B. Bêta privée gratuite : 30 places fondateurs.",
+    title: 'Proprely : Le cockpit métier des sociétés de nettoyage',
+    description: "Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite : 30 places fondateurs.",
   },
   '/calculateur-roi': {
     title: 'Calculateur ROI : Combien vous coûte la dispersion ? · Proprely',

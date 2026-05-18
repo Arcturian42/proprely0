@@ -164,7 +164,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60 animate-ping-3x" />
             <span className="relative inline-flex rounded-full w-2 h-2 bg-blue-600" />
           </span>
-          <span className="uppercase tracking-wider text-[10px]">Bêta privée ouverte aux sociétés de nettoyage</span>
+          <span className="uppercase tracking-wider text-[10px]">Bêta privée · {FOUNDER_SPOTS.total} sociétés de nettoyage seulement</span>
         </motion.div>
 
         <motion.h1
@@ -173,8 +173,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
-          Le cockpit métier des sociétés de nettoyage<br />
-          <span className="text-blue-600">qui veulent scaler sans s'épuiser</span>
+          Le cockpit métier des sociétés de nettoyage.<br />
+          <span className="text-blue-600">Sans Excel, sans WhatsApp, sans nuits blanches.</span>
         </motion.h1>
 
         <motion.p
@@ -183,7 +183,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.16 }}
           className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Proprely centralise vos clients, sites, agents, plannings, devis et missions dans un seul logiciel métier conçu pour les entreprises de propreté B2B.
+          Vos clients, sites, agents, plannings et devis dans <strong className="text-slate-900 font-semibold">un seul outil</strong> — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
         </motion.p>
 
         <motion.div
@@ -225,7 +225,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="text-xs sm:text-sm text-slate-500 mb-14"
         >
-          Bêta gratuite, pas de carte bancaire, onboarding accompagné, conçu pour la propreté B2B
+          Gratuit pendant la bêta · Sans carte bancaire · Réponse sous 24h
         </motion.p>
 
         <motion.div

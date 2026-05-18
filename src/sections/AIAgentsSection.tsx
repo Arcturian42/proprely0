@@ -46,7 +46,7 @@ export default function AIAgentsSection() {
             Exclusivité fondateur, Modules IA
           </div>
           <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E] mb-3">
-            Construisez avec nous les premiers agents IA pour les sociétés de nettoyage
+            L'IA arrive dans le nettoyage.<br className="hidden sm:block" /> Vous voulez l'orienter ?
           </h2>
           <p className="text-xs sm:text-sm text-[#5A6B7D] max-w-2xl mx-auto">
             Nous sélectionnons des dirigeants partenaires pour tester, orienter et co-construire les futurs modules IA de Proprely : prospection, pilotage financier, marketing local, planning intelligent et reporting qualité.
