@@ -149,8 +149,12 @@ export default function ProductStatus() {
                 whileInView="visible"
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
-                className={`group relative bg-white rounded-2xl border ${col.borderColor} p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-shadow`}
+                whileHover={{
+                  y: -8,
+                  scale: 1.015,
+                  transition: { type: 'spring', stiffness: 280, damping: 18 },
+                }}
+                className={`group relative bg-white rounded-2xl border ${col.borderColor} p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_24px_60px_rgba(15,42,94,0.12)] transition-shadow will-change-transform`}
               >
                 {col.liveIndicator && (
                   <div className="absolute top-5 right-5 flex items-center gap-1.5">

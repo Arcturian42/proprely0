@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react'
 import Landing from './pages/Landing'
 import { useRoute } from './lib/useRoute'
+import ScrollProgress from './components/ScrollProgress'
 
 const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
 const BlogIndex = lazy(() => import('./pages/BlogIndex'))
@@ -69,10 +70,11 @@ function App() {
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17)} />
-  else return <div className="w-full bg-white"><Landing /></div>
+  else return <div className="w-full bg-white"><ScrollProgress /><Landing /></div>
 
   return (
     <div className="w-full bg-white">
+      <ScrollProgress />
       <Suspense fallback={<PageLoading />}>{content}</Suspense>
     </div>
   )

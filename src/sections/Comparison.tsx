@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Check, X, AlertTriangle, ArrowRight, TrendingUp } from 'lucide-react'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -98,13 +99,15 @@ export default function Comparison() {
               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white">Total semaine</span>
             </div>
             <div className="bg-red-50 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
-              <span className="text-xs sm:text-sm font-bold text-red-700 leading-tight">6 à 10 h perdues</span>
+              <span className="text-xs sm:text-sm font-bold text-red-700 leading-tight tabular-nums">
+                <AnimatedCounter to={6} duration={1.2} /> à <AnimatedCounter to={10} duration={1.4} /> h perdues
+              </span>
               <span className="text-[9px] sm:text-[10px] font-semibold text-red-600/80 hidden sm:inline">en admin dispersée</span>
             </div>
             <div className="bg-gradient-to-r from-blue-600 to-sky-600 px-4 sm:px-6 py-5 flex items-center justify-between gap-2">
-              <span className="text-xs sm:text-sm font-bold text-white leading-tight flex items-center gap-1.5">
+              <span className="text-xs sm:text-sm font-bold text-white leading-tight flex items-center gap-1.5 tabular-nums">
                 <TrendingUp size={14} className="shrink-0" />
-                6 h récupérées
+                <AnimatedCounter to={6} duration={1.4} suffix=" h récupérées" />
               </span>
               <span className="text-[9px] sm:text-[10px] font-semibold text-sky-100 hidden sm:inline">chaque semaine</span>
             </div>
