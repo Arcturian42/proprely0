@@ -12,7 +12,6 @@ type Module = {
   desc: string
   preview: ReactNode
   roadmap?: boolean
-  highlightTab?: boolean
 }
 
 const ClientsPreview = () => (
@@ -316,7 +315,7 @@ const modules: Module[] = [
   { id: 'devis', icon: FileText, tab: 'Devis & factures', benefit: 'Devis envoyés en 2 minutes', desc: "Devis professionnels générés avec votre logo. Suivi des relances, alerte impayés, factures en 2 clics.", preview: <DevisPreview /> },
   { id: 'documents', icon: FolderOpen, tab: 'Documents', benefit: 'Tout retrouver en 5 secondes', desc: "Contrats, fiches sécurité, attestations URSSAF, fiches de poste — classés, centralisés, accessibles.", preview: <DocumentsPreview /> },
   { id: 'pilotage', icon: LayoutDashboard, tab: 'Pilotage', benefit: 'Votre vraie marge, en temps réel', desc: "CA, heures et marge par client et par site. Vous ne découvrez plus la rentabilité 45 jours après.", preview: <PilotagePreview /> },
-  { id: 'ia', icon: Sparkles, tab: 'IA', benefit: "L'intelligence qui anticipe à votre place", desc: "Devis suggérés au juste prix selon votre historique, prospects locaux scorés, propositions de remplacement automatiques selon spécialité et distance, alerte de fatigue avant le burn-out. L'IA embarquée fait gagner du temps sur les décisions, pas seulement sur la saisie.", preview: <IAPreview />, roadmap: true, highlightTab: true },
+  { id: 'ia', icon: Sparkles, tab: 'IA', benefit: "L'intelligence qui anticipe à votre place", desc: "Devis suggérés au juste prix selon votre historique, prospects locaux scorés, propositions de remplacement automatiques selon spécialité et distance, alerte de fatigue avant le burn-out. L'IA embarquée fait gagner du temps sur les décisions, pas seulement sur la saisie.", preview: <IAPreview />, roadmap: true },
 ]
 
 export default function SolutionSection() {
@@ -344,22 +343,19 @@ export default function SolutionSection() {
                 key={m.id}
                 onClick={() => setActiveId(m.id)}
                 className={`relative flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors ${
-                  isActive ? 'text-white' : m.highlightTab ? 'text-violet-700 hover:text-violet-900 hover:bg-violet-50' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                  isActive ? 'text-white' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="active-tab-bg"
-                    className={`absolute inset-0 rounded-full shadow-lg ${m.highlightTab ? 'bg-gradient-to-r from-violet-600 to-blue-600 shadow-violet-600/25' : 'bg-blue-600 shadow-blue-600/25'}`}
+                    className="absolute inset-0 bg-blue-600 rounded-full shadow-lg shadow-blue-600/25"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
                   <m.icon size={14} />
                   {m.tab}
-                  {m.highlightTab && !isActive && (
-                    <span className="text-[8px] font-black uppercase tracking-wider bg-gradient-to-r from-violet-600 to-blue-600 text-white rounded px-1 py-0.5">New</span>
-                  )}
                 </span>
               </button>
             )
@@ -376,7 +372,7 @@ export default function SolutionSection() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 ${active.highlightTab ? 'bg-gradient-to-r from-violet-100 to-blue-100 text-violet-700' : 'bg-blue-50 text-blue-700'}`}>
+                <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
                   <active.icon size={12} />
                   {active.tab}
                 </div>
