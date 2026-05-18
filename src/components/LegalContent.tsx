@@ -3,18 +3,14 @@ export function MentionsLegales() {
     <>
       <h3>Éditeur du site</h3>
       <p>
-        <strong>Proprely</strong><br />
-        Forme juridique : <strong>[À compléter — SAS, SASU, SARL…]</strong><br />
-        Siège social : <strong>[À compléter — adresse complète]</strong><br />
-        SIRET : <strong>[À compléter]</strong><br />
-        RCS : <strong>[À compléter — ville et numéro]</strong><br />
-        Capital social : <strong>[À compléter]</strong><br />
-        TVA intracommunautaire : <strong>[À compléter]</strong><br />
+        <strong>Pershing Global Solutions LTD</strong> (éditeur de Proprely)<br />
+        Siège social : 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande<br />
+        Company number : en cours d'enregistrement<br />
         Email : contact@proprely.fr
       </p>
 
       <h3>Directeur de la publication</h3>
-      <p><strong>[À compléter — Prénom Nom du fondateur]</strong></p>
+      <p><strong>Pershing Global Solutions LTD</strong></p>
 
       <h3>Hébergement</h3>
       <p>

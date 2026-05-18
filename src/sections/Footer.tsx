@@ -93,10 +93,6 @@ export default function Footer() {
               © {new Date().getFullYear()} Proprely. Tous droits réservés.
             </p>
             <div className="flex items-center gap-4 text-xs text-slate-500">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                Hébergement France · RGPD
-              </span>
               <a href="https://proprely.fr" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1">
                 proprely.fr
                 <ArrowUpRight size={11} />
