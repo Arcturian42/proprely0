@@ -210,7 +210,16 @@ export default function BlogPost({ slug }: Props) {
 
   useEffect(() => {
     if (!post) return
-    document.title = `${post.title} · Proprely`
+    const url = `https://proprely.fr/blog/${post.slug}`
+    const title = `${post.title} · Proprely`
+    document.title = title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.excerpt)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', post.excerpt)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
     injectArticleSchema(post)
     return () => {
       document.getElementById('blog-post-schema')?.remove()

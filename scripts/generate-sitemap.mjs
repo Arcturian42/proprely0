@@ -18,6 +18,7 @@ const featureSlugs = extractSlugs(resolve(root, 'src/data/features.ts'))
 
 const urls = [
   { loc: `${ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${ORIGIN}/tarifs`, priority: '0.9', changefreq: 'monthly' },
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly' },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly' },
   ...featureSlugs.map((slug) => ({ loc: `${ORIGIN}/fonctionnalites/${slug}`, priority: '0.8', changefreq: 'monthly' })),
@@ -35,4 +36,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 3 core + ${featureSlugs.length} features + ${blogSlugs.length} blog)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${blogSlugs.length} blog)`)

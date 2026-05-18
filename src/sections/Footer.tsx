@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Calculator, BookOpen, Mail, ArrowUpRight } from 'lucide-react'
+import { Calculator, BookOpen, Mail, ArrowUpRight, Tag } from 'lucide-react'
 import Modal from '../components/Modal'
 import { MentionsLegales, Confidentialite, CGU } from '../components/LegalContent'
 import { navigate } from '../lib/useRoute'
@@ -50,6 +50,12 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Ressources</h4>
               <ul className="space-y-2.5">
+                <li>
+                  <button onClick={() => navigate('/tarifs')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                    <Tag size={12} />
+                    Tarifs
+                  </button>
+                </li>
                 <li>
                   <button onClick={() => navigate('/calculateur-roi')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                     <Calculator size={12} />

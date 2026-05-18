@@ -8,6 +8,7 @@ const BlogIndex = lazy(() => import('./pages/BlogIndex'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
+const Pricing = lazy(() => import('./pages/Pricing'))
 
 const META: Record<string, { title: string; description: string }> = {
   '/': {
@@ -25,6 +26,10 @@ const META: Record<string, { title: string; description: string }> = {
   '/beta/merci': {
     title: 'Candidature enregistrée · Proprely',
     description: "Votre candidature à la bêta privée Proprely est bien reçue. Nous revenons vers vous sous 24h ouvrées.",
+  },
+  '/tarifs': {
+    title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
+    description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.",
   },
 }
 
@@ -56,16 +61,21 @@ function App() {
   useEffect(() => {
     const meta = META[route]
     if (meta) {
+      const url = `https://proprely.fr${route}`
       document.title = meta.title
       setMeta('description', meta.description)
       setMeta('og:title', meta.title)
       setMeta('og:description', meta.description)
-      setMeta('og:url', `https://proprely.fr${route}`)
+      setMeta('og:url', url)
+      setMeta('twitter:title', meta.title)
+      setMeta('twitter:description', meta.description)
+      document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
     }
   }, [route])
 
   let content
   if (route === '/calculateur-roi') content = <RoiCalculator />
+  else if (route === '/tarifs') content = <Pricing />
   else if (route === '/blog') content = <BlogIndex />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />

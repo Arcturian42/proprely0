@@ -80,9 +80,16 @@ export default function FeaturePage({ slug }: Props) {
 
   useEffect(() => {
     if (!feature) return
-    document.title = `${feature.tag} · Proprely`
-    const desc = document.querySelector('meta[name="description"]')
-    desc?.setAttribute('content', feature.metaDescription)
+    const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
+    const title = `${feature.tag} · Proprely`
+    document.title = title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', feature.metaDescription)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', feature.title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', feature.metaDescription)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', feature.title)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', feature.metaDescription)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
     injectFeatureSchema(feature)
     return () => {
       document.getElementById('feature-schema')?.remove()
