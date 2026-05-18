@@ -1,0 +1,37 @@
+# Proprely
+
+> Le cockpit métier des sociétés de nettoyage. Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
+
+Proprely est un logiciel SaaS B2B français conçu pour les sociétés de nettoyage de 3 à 50 agents. Il centralise dans une seule interface : la gestion des clients et sites, le suivi des agents et leurs spécialités (vitrerie, moquette, décapage), le planning et l'affectation, la preuve de passage par QR code et photos, les devis et factures, les documents (contrats, fiches sécurité, attestations URSSAF) et le pilotage de la rentabilité par client.
+
+Le produit est actuellement en bêta privée, réservée à 30 sociétés fondatrices sélectionnées. L'accès est gratuit pendant la bêta, et les membres fondateurs gardent un tarif privilégié à vie. Hébergement européen, conformité RGPD, chiffrement en transit et au repos.
+
+## Pages principales
+
+- [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
+- [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
+- [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
+
+## Fonctionnalités
+
+- [Planning des agents de nettoyage](https://proprely.fr/fonctionnalites/planning-nettoyage) : affectation 1-clic selon spécialités et disponibilité, mobile-first, alertes surmenage
+- [Logiciel de devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis professionnels en 2 minutes, signature électronique, suivi commercial
+- [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités, suivi charge horaire, alertes surmenage
+- [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code, photos avant-après, signature client, PV automatique
+
+## Articles de blog
+
+- [Fixer ses prix dans le nettoyage](https://proprely.fr/blog/fixer-prix-nettoyage) : la règle des 3×, les 4 facteurs qui justifient une hausse, méthode prix de référence
+- [Gestion société nettoyage : les outils 2026](https://proprely.fr/blog/gestion-societe-nettoyage-outils) : panorama des outils utilisés et leurs limites
+- [Critères de choix d'un logiciel nettoyage](https://proprely.fr/blog/logiciel-societe-nettoyage-criteres) : les 8 critères qui comptent vraiment
+- [Calcul des heures agents nettoyage](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : méthode rigoureuse, coût horaire chargé, heures sup
+- [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : conformité, registre, sous-traitance, photos preuve de passage
+- [Fidéliser les agents nettoyage](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
+
+## Programme membres fondateurs
+
+30 sociétés de nettoyage seront sélectionnées comme membres fondateurs. Avantages exclusifs : accès bêta 100% gratuit (tous modules, sans limite), onboarding accompagné en 30 min par le fondateur, influence directe sur la feuille de route, accès prioritaire au support (réponse sous 4h), conditions préférentielles à vie après la bêta. Candidature via un formulaire court ; retour sous 24h ouvrées.
+
+## Cible
+
+Dirigeants de sociétés de nettoyage B2B en France, gérant 3 à 50 agents et plusieurs sites clients. Profils typiques : entreprises B2B (bureaux, syndics, hôtels, cabinets médicaux, copropriétés), en croissance ou en structuration. Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C), ni pour les grands groupes industriels (>200 agents).

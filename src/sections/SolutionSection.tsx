@@ -331,10 +331,10 @@ export default function SolutionSection() {
         <div className="text-center mb-12 sm:mb-14">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">La solution</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
-            Un cockpit unique<br />pour piloter votre activité
+            Sept outils, un seul écran.<br />Le métier du nettoyage, enfin centralisé.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Sept espaces, une seule interface. Cliquez sur un module pour voir ce qu'il change concrètement.
+            Cliquez sur un module pour voir ce qu'il change concrètement dans votre quotidien.
           </p>
         </div>
 
@@ -433,10 +433,10 @@ export default function SolutionSection() {
         <div className="text-center mt-12 sm:mt-14">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:scale-[0.97]"
           >
             Rejoindre la bêta gratuite
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <p className="text-xs text-slate-500 mt-3">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
         </div>

@@ -161,10 +161,10 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-blue-200/80 text-blue-700 rounded-full px-4 py-1.5 text-xs font-semibold mb-8 shadow-sm"
         >
           <span className="relative flex w-2 h-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60 animate-ping" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60 animate-ping-3x" />
             <span className="relative inline-flex rounded-full w-2 h-2 bg-blue-600" />
           </span>
-          <span className="uppercase tracking-wider text-[10px]">Bêta privée ouverte aux sociétés de nettoyage</span>
+          <span className="uppercase tracking-wider text-[10px]">Bêta privée · {FOUNDER_SPOTS.total} sociétés de nettoyage seulement</span>
         </motion.div>
 
         <motion.h1
@@ -173,8 +173,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
-          Le cockpit métier des sociétés de nettoyage<br />
-          <span className="text-blue-600">qui veulent scaler sans s'épuiser</span>
+          Le cockpit métier des sociétés de nettoyage.<br />
+          <span className="text-blue-600">Sans Excel, sans WhatsApp, sans nuits blanches.</span>
         </motion.h1>
 
         <motion.p
@@ -183,7 +183,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.16 }}
           className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Proprely centralise vos clients, sites, agents, plannings, devis et missions dans un seul logiciel métier conçu pour les entreprises de propreté B2B.
+          Vos clients, sites, agents, plannings et devis dans <strong className="text-slate-900 font-semibold">un seul outil</strong> — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
         </motion.p>
 
         <motion.div
@@ -204,15 +204,15 @@ export default function Hero() {
         >
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta privée</span>
-            <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <button
             onClick={() => navigate('/calculateur-roi')}
-            className="bg-white border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:border-slate-300 hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="bg-white border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <Calculator size={16} className="text-slate-500" />
             Calculer mon économie
@@ -225,7 +225,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="text-xs sm:text-sm text-slate-500 mb-14"
         >
-          Bêta gratuite, pas de carte bancaire, onboarding accompagné, conçu pour la propreté B2B
+          Gratuit pendant la bêta · Sans carte bancaire · Réponse sous 24h
         </motion.p>
 
         <motion.div

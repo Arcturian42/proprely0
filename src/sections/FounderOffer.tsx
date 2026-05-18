@@ -147,10 +147,10 @@ export default function FounderOffer() {
         <div className="text-center">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-all shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
+            className="group bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
           >
             Devenir membre fondateur
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
           <p className="text-xs text-slate-400 mt-4">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
         </div>
