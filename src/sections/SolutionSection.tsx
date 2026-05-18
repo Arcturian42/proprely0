@@ -228,20 +228,20 @@ const PilotagePreview = () => (
 const IAPreview = () => (
   <div className="space-y-3">
     <div className="bg-gradient-to-br from-violet-50 to-blue-50 border border-violet-100 rounded-xl p-3.5">
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-1.5">
           <Wand2 size={12} className="text-violet-600" />
           <span className="text-[10px] font-bold uppercase tracking-wider text-violet-700">Devis intelligent</span>
         </div>
         <span className="text-[9px] font-bold text-violet-600 bg-white rounded px-1.5 py-0.5">IA</span>
       </div>
-      <div className="text-xs text-slate-700 mb-2 leading-snug">
-        <span className="font-bold">DV-2024-088 · Bureaux Atrium B</span> — l'IA suggère :
+      <div className="text-[11px] text-slate-700 mb-2.5 leading-snug">
+        Créez vos devis en quelques secondes et optimisez vos marges.
       </div>
       <div className="flex items-center justify-between bg-white rounded-lg p-2 border border-violet-100">
         <div>
           <div className="text-base font-black text-slate-900">4 320 €</div>
-          <div className="text-[9px] text-slate-500">basé sur 14 devis similaires Lyon 6e</div>
+          <div className="text-[9px] text-slate-500">DV-2024-088 · Bureaux Atrium B</div>
         </div>
         <div className="text-right">
           <div className="text-[10px] text-emerald-600 font-bold">+12% marge</div>
@@ -252,12 +252,15 @@ const IAPreview = () => (
 
     <div className="grid grid-cols-2 gap-2.5">
       <div className="bg-white border border-slate-100 rounded-xl p-3">
-        <div className="flex items-center gap-1.5 mb-2">
+        <div className="flex items-center gap-1.5 mb-1.5">
           <MapPin size={11} className="text-blue-600" />
-          <span className="text-[9px] font-bold uppercase tracking-wider text-blue-700">Prospects locaux</span>
+          <span className="text-[9px] font-bold uppercase tracking-wider text-blue-700">Prospection IA</span>
         </div>
-        <div className="text-base font-black text-slate-900">12</div>
-        <div className="text-[10px] text-slate-500 leading-tight">sociétés notées 9/10 dans votre zone</div>
+        <div className="text-[10px] text-slate-600 leading-tight mb-2">On vous trouve des prospects à fort potentiel.</div>
+        <div className="flex items-baseline gap-1.5">
+          <div className="text-base font-black text-slate-900">12</div>
+          <div className="text-[9px] text-slate-500">notés 9/10 cette semaine</div>
+        </div>
         <div className="flex gap-0.5 mt-2">
           {[9.6, 9.4, 9.2, 9.0, 8.9].map((s, i) => (
             <div key={i} className="flex-1 h-1 rounded-full bg-blue-100 overflow-hidden">
