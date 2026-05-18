@@ -1,5 +1,5 @@
 export const FOUNDER_SPOTS = {
-  taken: 12,
+  taken: 4,
   total: 30,
 } as const
 
