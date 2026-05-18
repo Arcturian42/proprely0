@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from '../sections/Navbar'
 import Hero from '../sections/Hero'
+import TrustBadges from '../sections/TrustBadges'
 import ProblemSection from '../sections/ProblemSection'
 import SolutionSection from '../sections/SolutionSection'
 import Comparison from '../sections/Comparison'
@@ -31,6 +32,7 @@ export default function Landing() {
     <>
       <Navbar />
       <Hero />
+      <TrustBadges />
       <ProblemSection />
       <SolutionSection />
       <Comparison />

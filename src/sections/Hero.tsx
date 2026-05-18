@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
+import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Clock, ShieldCheck, TrendingUp, Flame } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 import AnimatedCounter from '../components/AnimatedCounter'
 
@@ -25,7 +25,7 @@ const missions = [
   { time: '07:00', site: 'Bureaux Atrium · Tour A', agent: 'Marie L.', tag: 'Récurrent', status: 'En cours', statusColor: 'bg-blue-50 text-blue-700 border-blue-100' },
   { time: '08:30', site: 'Hôtel Vivaldi · Étages', agent: 'Karim B.', tag: 'Vitrerie', status: 'Terminé', statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
   { time: '14:00', site: 'Syndic Foch · Hall', agent: 'Sofia D.', tag: 'Quotidien', status: 'À venir', statusColor: 'bg-slate-100 text-slate-600 border-slate-200' },
-  { time: '15:30', site: 'Cabinet médical Lyon 6', agent: 'Marie L.', tag: 'Remise en état', status: 'À venir', statusColor: 'bg-slate-100 text-slate-600 border-slate-200' },
+  { time: '15:30', site: 'Cabinet médical Dr Mercier', agent: 'Marie L.', tag: 'Remise en état', status: 'À venir', statusColor: 'bg-slate-100 text-slate-600 border-slate-200' },
 ]
 
 function ProductMockup() {
@@ -150,8 +150,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
-          Le cockpit métier pour piloter<br />
-          <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">votre société de nettoyage</span>
+          Le cockpit métier des sociétés de nettoyage<br />
+          <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">qui veulent scaler sans s'épuiser</span>
         </motion.h1>
 
         <motion.p
@@ -160,14 +160,14 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.16 }}
           className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Centralisez vos clients, sites, agents, missions, devis, plannings et documents dans un outil simple, conçu pour les entreprises de propreté B2B.
+          Proprely centralise vos clients, sites, agents, plannings, devis et missions dans un seul logiciel métier conçu pour les entreprises de propreté B2B.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mb-10"
+          className="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mb-8"
         >
           {heroBenefits.map((b) => (
             <div
@@ -188,17 +188,28 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, delay: 0.24 }}
+          className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5"
+        >
+          <Flame size={14} className="text-amber-600" />
+          <span>{remaining} places restantes sur {FOUNDER_SPOTS.total}</span>
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.26 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center mb-5"
+          transition={{ duration: 0.4, delay: 0.28 }}
+          className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
         >
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+            className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
           >
-            Rejoindre la bêta gratuite
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
+            <span className="relative">Rejoindre la bêta privée</span>
+            <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform" />
           </button>
           <button
             onClick={() => scrollTo('formulaire')}
@@ -211,10 +222,10 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.32 }}
+          transition={{ duration: 0.4, delay: 0.34 }}
           className="text-xs sm:text-sm text-slate-500 mb-14"
         >
-          Gratuit pendant la bêta · Pas de carte bancaire · Accès réservé aux {FOUNDER_SPOTS.total} premières entreprises sélectionnées ({remaining} places restantes)
+          Bêta gratuite · Pas de carte bancaire · Onboarding accompagné · Conçu pour la propreté B2B
         </motion.p>
 
         <motion.div

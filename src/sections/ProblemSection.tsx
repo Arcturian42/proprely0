@@ -92,9 +92,9 @@ export default function ProblemSection() {
         </div>
 
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Sur le terrain</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Le constat partagé</p>
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            Ce que les dirigeants nous ont dit en face
+            Les phrases qu'on entend partout dans le secteur
           </h3>
         </div>
 
@@ -127,7 +127,7 @@ export default function ProblemSection() {
           transition={{ delay: 0.4 }}
           className="text-center text-xs text-slate-500 mt-10"
         >
-          Entretiens menés avec des dirigeants de sociétés de nettoyage en région lyonnaise.
+          Situations typiques rencontrées par les sociétés de nettoyage B2B en France.
         </motion.p>
       </div>
     </section>

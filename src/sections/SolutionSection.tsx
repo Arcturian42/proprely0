@@ -20,7 +20,7 @@ const ClientsPreview = () => (
       { name: 'SCI Atrium', sites: '3 sites · 4 prestations', freq: 'Quotidien', tag: 'B2B' },
       { name: 'Hôtel Vivaldi', sites: '1 site · 2 prestations', freq: '3x / semaine', tag: 'B2B' },
       { name: 'Syndic Foch', sites: '8 immeubles · 12 prestations', freq: 'Hebdomadaire', tag: 'Syndic' },
-      { name: 'Cabinet médical Lyon 6', sites: '1 site · 1 prestation', freq: 'Quotidien', tag: 'B2B' },
+      { name: 'Cabinet médical Dr Mercier', sites: '1 site · 1 prestation', freq: 'Quotidien', tag: 'B2B' },
     ].map((c) => (
       <div key={c.name} className="flex items-center gap-3 p-3 bg-white border border-slate-100 rounded-lg hover:border-slate-200 transition-colors">
         <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
@@ -109,7 +109,7 @@ const MissionsPreview = () => (
     {[
       { site: 'Bureaux Atrium · Tour A', agent: 'Marie L.', time: '07:00 - 09:30', status: 'Terminé', statusBg: 'bg-emerald-50 text-emerald-700', icons: [QrCode, Camera, Signature] },
       { site: 'Hôtel Vivaldi · Étages 4-6', agent: 'Karim B.', time: '10:00 - 12:00', status: 'En cours', statusBg: 'bg-blue-50 text-blue-700', icons: [QrCode, Camera] },
-      { site: 'Cabinet médical Lyon 6', agent: 'Sofia D.', time: '14:00 - 15:30', status: 'À venir', statusBg: 'bg-slate-100 text-slate-600', icons: [] },
+      { site: 'Cabinet médical Dr Mercier', agent: 'Sofia D.', time: '14:00 - 15:30', status: 'À venir', statusBg: 'bg-slate-100 text-slate-600', icons: [] },
     ].map((m, i) => (
       <div key={i} className="p-3 bg-white border border-slate-100 rounded-lg">
         <div className="flex items-start justify-between mb-2">
@@ -169,7 +169,7 @@ const DocumentsPreview = () => (
       { name: 'Fiche sécurité décapage', type: 'Sécurité', date: '04 sept.', icon: FileLock },
       { name: 'Attestation URSSAF Q3', type: 'Légal', date: '28 août', icon: FileCheck },
       { name: 'Avenant Hôtel Vivaldi', type: 'Contrat', date: '15 août', icon: FileBadge },
-      { name: 'PV intervention - Lyon 6', type: 'Rapport', date: '14 août', icon: FileText },
+      { name: 'PV intervention - Cab. Mercier', type: 'Rapport', date: '14 août', icon: FileText },
     ].map((d, i) => (
       <div key={i} className="flex items-center gap-3 p-2.5 bg-white border border-slate-100 rounded-lg hover:border-slate-200 transition-colors">
         <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
@@ -210,7 +210,7 @@ const PilotagePreview = () => (
           { name: 'SCI Atrium', margin: 38, color: 'bg-emerald-500' },
           { name: 'Hôtel Vivaldi', margin: 32, color: 'bg-emerald-500' },
           { name: 'Syndic Foch', margin: 24, color: 'bg-amber-500' },
-          { name: 'Cabinet Lyon 6', margin: 8, color: 'bg-red-500' },
+          { name: 'Cabinet Dr Mercier', margin: 8, color: 'bg-red-500' },
         ].map((c) => (
           <div key={c.name} className="flex items-center gap-2 text-[10px]">
             <div className="w-20 truncate text-slate-700 font-medium">{c.name}</div>
@@ -235,13 +235,13 @@ const IAPreview = () => (
         </div>
         <span className="text-[9px] font-bold text-violet-600 bg-white rounded px-1.5 py-0.5">IA</span>
       </div>
-      <div className="text-[11px] text-slate-700 mb-2.5 leading-snug">
+      <div className="text-xs text-slate-700 mb-2 leading-snug">
         Créez vos devis en quelques secondes et optimisez vos marges.
       </div>
       <div className="flex items-center justify-between bg-white rounded-lg p-2 border border-violet-100">
         <div>
           <div className="text-base font-black text-slate-900">4 320 €</div>
-          <div className="text-[9px] text-slate-500">DV-2024-088 · Bureaux Atrium B</div>
+          <div className="text-[9px] text-slate-500">selon votre historique et le marché</div>
         </div>
         <div className="text-right">
           <div className="text-[10px] text-emerald-600 font-bold">+12% marge</div>

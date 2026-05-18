@@ -76,7 +76,7 @@ export default function RoiCalculator() {
                 <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">la dispersion de vos outils ?</span>
               </h1>
               <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                Ajustez les curseurs selon votre situation. Le calcul est instantané, basé sur des retours terrain de dirigeants en région lyonnaise.
+                Ajustez les curseurs selon votre situation. Le calcul est instantané, basé sur les benchmarks du secteur de la propreté B2B.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ export default function RoiCalculator() {
                   <Slider label="Coût horaire admin" value={hourlyCost} min={25} max={80} step={5} suffix=" €" onChange={setHourlyCost} />
                 </div>
                 <p className="text-[11px] text-slate-500 mt-8 leading-relaxed">
-                  L'estimation se base sur 47 semaines travaillées par an et un gain de temps moyen de 60% observé chez nos premiers utilisateurs.
+                  L'estimation se base sur 47 semaines travaillées par an et un gain de temps moyen de 60% selon les benchmarks sectoriels (réduction de la saisie manuelle, automatisation du planning, preuve de passage).
                 </p>
               </div>
 

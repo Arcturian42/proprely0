@@ -1,26 +1,26 @@
 import { motion } from 'framer-motion'
-import { Users, Check, Handshake, Headphones } from 'lucide-react'
+import { Sparkles, Check, Handshake, Headphones } from 'lucide-react'
 
 const items = [
   {
-    icon: Users,
-    title: "6 mois passés sur le terrain",
-    desc: "Plannings du matin, tournées avec les agents, soirées de fin de mois passées à compter les heures avec les dirigeants.",
+    icon: Sparkles,
+    title: "Conçu pour le nettoyage",
+    desc: "Pas un CRM générique adapté. Un outil pensé dès l'origine pour la propreté B2B : sites multiples par client, spécialités agents, remplacements, preuve de passage.",
   },
   {
     icon: Check,
     title: 'Zéro fonction inutile',
-    desc: "Chaque fonctionnalité vient d'une galère terrain qu'on a vue, vécue ou entendue. Pas de jargon SaaS, pas de superflu.",
+    desc: "Chaque fonctionnalité répond à un problème concret du secteur. Pas de jargon SaaS, pas de superflu, pas de modules pour faire joli dans une plaquette.",
   },
   {
     icon: Handshake,
     title: 'Co-construit avec les fondateurs',
-    desc: "Vos besoins terrain orientent ce que nous développons en priorité. Vous faites avancer le produit avec nous.",
+    desc: "Vos besoins terrain orientent ce que nous développons en priorité. Vous faites avancer le produit avec nous pendant toute la bêta.",
   },
   {
     icon: Headphones,
     title: 'Un interlocuteur, un dossier',
-    desc: "Pas un ticket numéroté. Pas une file d'attente. Une personne qui sait qui vous êtes et ce que vous faites.",
+    desc: "Pas un ticket numéroté. Pas une file d'attente. Une personne qui sait qui vous êtes et ce que vous faites au quotidien.",
   },
 ]
 
@@ -31,10 +31,10 @@ export default function Credibilite() {
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Notre méthode</p>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-5">
-            Construit sur le terrain.<br />Pas dans une tour en verre.
+            Conçu pour le nettoyage.<br />Pas une copie générique.
           </h2>
           <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Proprely n'est pas un logiciel générique adapté au nettoyage. C'est un outil né de 6 mois passés avec des dirigeants en région lyonnaise.
+            Proprely n'est pas un logiciel généraliste adapté au nettoyage. C'est un outil pensé spécifiquement pour les entreprises de propreté B2B et leurs réalités opérationnelles.
           </p>
         </div>
 
@@ -60,3 +60,4 @@ export default function Credibilite() {
     </section>
   )
 }
+
