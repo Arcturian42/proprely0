@@ -117,7 +117,7 @@ export const features: FeaturePage[] = [
     metaDescription: "Logiciel de gestion des agents de nettoyage : profils, spécialités (vitrerie, moquette, décapage), suivi charge horaire, alertes surmenage. Conçu pour la propreté B2B.",
     keywords: ['gestion agents nettoyage', 'suivi agents propreté', 'logiciel gestion équipe nettoyage', 'spécialités agents nettoyage'],
     problemTitle: "Vous découvrez le burn-out d'un agent le jour où il démissionne",
-    problemDescription: "Vos meilleurs agents sont aussi vos plus chargés. Vous les sollicitez pour les remplacements urgents parce qu'ils sont fiables. Au bout de quelques mois, ils craquent. Et partent — souvent chez le concurrent direct.",
+    problemDescription: "Vos meilleurs agents sont aussi vos plus chargés. Vous les sollicitez pour les remplacements urgents parce qu'ils sont fiables. Au bout de quelques mois, ils craquent. Et partent, souvent chez le concurrent direct.",
     problemBullets: [
       "Aucun suivi de la charge horaire réelle par agent",
       "Affectations à l'instinct, selon qui est joignable",

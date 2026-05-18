@@ -73,7 +73,7 @@ export default function RoiCalculator() {
               </div>
               <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
                 Combien vous coûte<br />
-                <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">la dispersion de vos outils ?</span>
+                <span className="text-blue-600">la dispersion de vos outils ?</span>
               </h1>
               <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
                 Ajustez les curseurs selon votre situation. Le calcul est instantané, basé sur les benchmarks du secteur de la propreté B2B.
@@ -177,7 +177,7 @@ export default function RoiCalculator() {
                 { value: 30, label: "Minutes pour la mise en route", suffix: ' min' },
               ].map((c) => (
                 <div key={c.label} className="bg-white rounded-2xl border border-slate-100 p-5">
-                  <div className="text-3xl font-black bg-gradient-to-br from-blue-600 to-sky-500 bg-clip-text text-transparent mb-1">
+                  <div className="text-3xl font-black text-blue-600 mb-1">
                     {c.value}{c.suffix}
                   </div>
                   <div className="text-xs text-slate-600">{c.label}</div>

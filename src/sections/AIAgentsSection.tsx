@@ -43,7 +43,7 @@ export default function AIAgentsSection() {
         <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-[#00C2E0] text-[#0F2D5E] rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-4">
             <Sparkles size={14} />
-            Exclusivité fondateur — Modules IA
+            Exclusivité fondateur, Modules IA
           </div>
           <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E] mb-3">
             Construisez avec nous les premiers agents IA pour les sociétés de nettoyage

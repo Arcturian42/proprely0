@@ -77,7 +77,7 @@ export default function FounderOffer() {
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-5">
             Construisez Proprely<br />
-            <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">avec nous, pas pour nous</span>
+            <span className="text-sky-400">avec nous, pas pour nous</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Nous sélectionnons {FOUNDER_SPOTS.total} sociétés de nettoyage pour participer à la bêta privée. Cinq avantages exclusifs, réservés aux premières entreprises sélectionnées.
@@ -100,7 +100,7 @@ export default function FounderOffer() {
               <div className="text-xs text-slate-400 mt-1">dirigeants sélectionnés</div>
             </div>
             <div className="text-right">
-              <div className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
+              <div className="text-2xl sm:text-3xl font-black text-sky-400">
                 <AnimatedCounter to={remaining} suffix=" places" duration={1.4} />
               </div>
               <div className="text-xs text-slate-400 mt-1">restantes</div>

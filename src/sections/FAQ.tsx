@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "C'est vraiment gratuit ?",
-    a: "Oui. Aucun paiement, aucune carte bancaire demandée. Vous accédez à toute la plateforme — clients, sites, agents, planning, devis, factures, documents, pilotage — sans limite d'utilisation pendant toute la durée de la bêta.",
+    a: "Oui. Aucun paiement, aucune carte bancaire demandée. Vous accédez à toute la plateforme, clients, sites, agents, planning, devis, factures, documents, pilotage, sans limite d'utilisation pendant toute la durée de la bêta.",
   },
   {
     q: "Combien ça coûtera après la bêta ?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Comment êtes-vous différents d'un logiciel généraliste ?",
-    a: "Proprely n'est pas un logiciel générique adapté au nettoyage. Chaque fonctionnalité a été pensée pour les réalités du métier : spécialités agents (vitrerie, moquette, décapage), compteur d'heures par site, gestion des récurrences, alertes surmenage, preuve de passage. Le vocabulaire, les workflows, les rapports — tout est conçu pour la propreté B2B.",
+    a: "Proprely n'est pas un logiciel générique adapté au nettoyage. Chaque fonctionnalité a été pensée pour les réalités du métier : spécialités agents (vitrerie, moquette, décapage), compteur d'heures par site, gestion des récurrences, alertes surmenage, preuve de passage. Le vocabulaire, les workflows, les rapports, tout est conçu pour la propreté B2B.",
   },
   {
     q: "Combien de temps pour la mise en route ?",

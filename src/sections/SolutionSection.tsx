@@ -316,7 +316,7 @@ const modules: Module[] = [
   { id: 'planning', icon: Calendar, tab: 'Planning', benefit: '30 min gagnées chaque matin', desc: "Vue calendrier centralisée. Affectation 1-clic selon spécialité et disponibilité. Remplacements maîtrisés.", preview: <PlanningPreview /> },
   { id: 'missions', icon: ClipboardList, tab: 'Missions', benefit: 'Preuve de passage à chaque intervention', desc: "Récurrences, check-in QR code, photos avant/après, signatures clients. Fin des litiges sur les heures.", preview: <MissionsPreview /> },
   { id: 'devis', icon: FileText, tab: 'Devis & factures', benefit: 'Devis envoyés en 2 minutes', desc: "Devis professionnels générés avec votre logo. Suivi des relances, alerte impayés, factures en 2 clics.", preview: <DevisPreview /> },
-  { id: 'documents', icon: FolderOpen, tab: 'Documents', benefit: 'Tout retrouver en 5 secondes', desc: "Contrats, fiches sécurité, attestations URSSAF, fiches de poste — classés, centralisés, accessibles.", preview: <DocumentsPreview /> },
+  { id: 'documents', icon: FolderOpen, tab: 'Documents', benefit: 'Tout retrouver en 5 secondes', desc: "Contrats, fiches sécurité, attestations URSSAF, fiches de poste, classés, centralisés, accessibles.", preview: <DocumentsPreview /> },
   { id: 'pilotage', icon: LayoutDashboard, tab: 'Pilotage', benefit: 'Votre vraie marge, en temps réel', desc: "CA, heures et marge par client et par site. Vous ne découvrez plus la rentabilité 45 jours après.", preview: <PilotagePreview /> },
   { id: 'ia', icon: Sparkles, tab: 'IA', benefit: "L'intelligence qui anticipe à votre place", desc: "Devis suggérés au juste prix selon votre historique, prospects locaux scorés, propositions de remplacement automatiques selon spécialité et distance, alerte de fatigue avant le burn-out. L'IA embarquée fait gagner du temps sur les décisions, pas seulement sur la saisie.", preview: <IAPreview />, roadmap: true },
 ]
@@ -388,7 +388,7 @@ export default function SolutionSection() {
                 {active.roadmap ? (
                   <div className="flex items-center gap-2 text-sm text-violet-700 font-semibold">
                     <Sparkles size={14} />
-                    Sur la feuille de route — livré pendant la bêta
+                    Sur la feuille de route, livré pendant la bêta
                   </div>
                 ) : (
                   <div className="flex items-center gap-2 text-sm text-blue-600 font-semibold">

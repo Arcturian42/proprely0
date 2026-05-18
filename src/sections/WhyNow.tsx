@@ -6,7 +6,7 @@ const reasons = [
   {
     icon: Clock,
     title: `Le tarif fondateur ferme à ${FOUNDER_SPOTS.total} entreprises`,
-    desc: "Après ça, on bascule au prix public. Les fondateurs gardent leur tarif d'aujourd'hui — pour toujours, même quand on monte en gamme.",
+    desc: "Après ça, on bascule au prix public. Les fondateurs gardent leur tarif d'aujourd'hui, pour toujours, même quand on monte en gamme.",
   },
   {
     icon: TrendingUp,

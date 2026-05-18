@@ -38,7 +38,7 @@ export const posts: BlogPost[] = [
 
 La plupart des dirigeants de sociétés de nettoyage que nous rencontrons fixent leurs prix au feeling. Un peu en dessous du concurrent qu'ils ont en tête. Un peu au-dessus de ce que le client annonce comme budget. Sans calcul rigoureux derrière.
 
-Résultat : **8 dirigeants sur 10 brident leur marge sans le savoir**. Ils gagnent moins que ce qu'ils pourraient — et surtout, ils ne savent pas pourquoi.
+Résultat : **8 dirigeants sur 10 brident leur marge sans le savoir**. Ils gagnent moins que ce qu'ils pourraient, et surtout, ils ne savent pas pourquoi.
 
 Voici la méthode utilisée par les sociétés qui marchent. Elle est simple, rigoureuse, basée sur du calcul, pas sur de l'intuition.
 
@@ -159,7 +159,7 @@ C'est exactement ce que fait Proprely. [Rejoignez la bêta privée](/) si vous v
 
 La plupart des dirigeants de sociétés de nettoyage que nous avons rencontrés utilisent en moyenne **4 à 7 outils différents** pour gérer leur entreprise. Aucun ne se parle. Chacun fait une partie du travail. Personne ne fait l'ensemble.
 
-Voici les cinq outils les plus fréquents — et pourquoi ils créent plus de problèmes qu'ils n'en résolvent.
+Voici les cinq outils les plus fréquents, et pourquoi ils créent plus de problèmes qu'ils n'en résolvent.
 
 ## 1. Excel pour les heures
 
@@ -208,7 +208,7 @@ Ce n'est pas "comment je peux mieux organiser Excel". C'est "pourquoi est-ce que
 
 Un outil métier conçu pour le nettoyage règle ces cinq problèmes d'un coup, sans configuration de mois, sans formation lourde.
 
-C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [rejoignez la bêta privée](/) — c'est gratuit pendant toute la phase de bêta.`,
+C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [rejoignez la bêta privée](/), c'est gratuit pendant toute la phase de bêta.`,
   },
   {
     slug: 'logiciel-societe-nettoyage-criteres',
@@ -234,7 +234,7 @@ C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [
 
 Vous avez sûrement essayé. Un CRM générique, un outil de planning pour artisans, un logiciel comptable avec module facturation. Aucun ne tient sur la durée.
 
-La raison est simple : **le nettoyage n'est ni du BTP, ni du commerce, ni du conseil**. C'est un métier avec ses propres règles — sites multiples par client, remplacements fréquents, preuve de passage, agents itinérants, marge serrée.
+La raison est simple : **le nettoyage n'est ni du BTP, ni du commerce, ni du conseil**. C'est un métier avec ses propres règles, sites multiples par client, remplacements fréquents, preuve de passage, agents itinérants, marge serrée.
 
 Voici les 7 critères qu'un logiciel de gestion doit cocher pour fonctionner dans une société de nettoyage. À tester avant de signer.
 
@@ -355,7 +355,7 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
     relatedSlugs: ['fideliser-agents-nettoyage-turnover', 'gestion-societe-nettoyage-outils'],
     content: `## Une routine que personne ne calcule
 
-C'est l'un des moments les plus emblématiques de la gestion d'une société de nettoyage. Entre le 20 et le 25 du mois, le dirigeant — ou le responsable d'exploitation — ferme la porte du bureau, ouvre l'agenda et commence à compter.
+C'est l'un des moments les plus emblématiques de la gestion d'une société de nettoyage. Entre le 20 et le 25 du mois, le dirigeant, ou le responsable d'exploitation, ferme la porte du bureau, ouvre l'agenda et commence à compter.
 
 Combien d'heures Marie a faite cette semaine ? Et la semaine d'avant ? Et le 8, c'était quel site ?
 
@@ -417,7 +417,7 @@ C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratu
       "Centraliser dans un outil RGPD-natif rend la conformité conséquence, pas charge supplémentaire.",
     ],
     faq: [
-      { q: "Suis-je vraiment concerné par le RGPD en tant que société de nettoyage ?", a: "Oui, dès le premier agent recruté et le premier client B2B. Vous traitez identité, paie, géolocalisation, photos de sites — toutes ces données sont personnelles." },
+      { q: "Suis-je vraiment concerné par le RGPD en tant que société de nettoyage ?", a: "Oui, dès le premier agent recruté et le premier client B2B. Vous traitez identité, paie, géolocalisation, photos de sites, toutes ces données sont personnelles." },
       { q: "Quel hébergement choisir pour rester conforme RGPD ?", a: "Un hébergeur européen avec un DPA (Data Processing Agreement). Le stockage doit être en UE pour éviter les complications des transferts internationaux." },
       { q: "Combien de temps conserver les données de mes agents et clients ?", a: "Généralement 5 ans après la fin du contrat, sauf obligations légales spécifiques (paie, comptabilité) qui peuvent imposer 10 ans d'archivage." },
       { q: "Quelles sanctions en cas de manquement RGPD ?", a: "La CNIL peut prononcer des amendes jusqu'à 4% du CA annuel ou 20 millions d'euros. Pour une PME, le vrai risque est plutôt une plainte d'agent ou un refus d'appel d'offres public." },
@@ -458,7 +458,7 @@ Les données doivent être supprimées ou anonymisées après un délai défini 
 
 ### 4. Sécurité
 
-C'est là que beaucoup d'entreprises pèchent. Excel sur un ordinateur portable non chiffré, WhatsApp avec photos de sites, classeurs papier accessibles à toute l'équipe — ce sont des violations potentielles.
+C'est là que beaucoup d'entreprises pèchent. Excel sur un ordinateur portable non chiffré, WhatsApp avec photos de sites, classeurs papier accessibles à toute l'équipe, ce sont des violations potentielles.
 
 ### 5. Hébergement
 
@@ -532,7 +532,7 @@ Pourtant, certaines sociétés affichent un turnover inférieur à 15%. Ce ne so
 
 Le premier indicateur de départ, c'est le surmenage. Et le surmenage ne se voit pas dans Excel : il se voit dans le **regard fatigué**, dans les retards, dans les arrêts maladie qui se multiplient.
 
-Le piège classique : envoyer toujours les mêmes agents sur les missions urgentes parce qu'ils sont "fiables". Au bout de 3 mois, ils craquent. Et ils partent — souvent chez le concurrent direct.
+Le piège classique : envoyer toujours les mêmes agents sur les missions urgentes parce qu'ils sont "fiables". Au bout de 3 mois, ils craquent. Et ils partent, souvent chez le concurrent direct.
 
 ### Le bon réflexe
 

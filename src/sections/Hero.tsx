@@ -1,15 +1,9 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Clock, ShieldCheck, TrendingUp, Flame } from 'lucide-react'
+import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
-import AnimatedCounter from '../components/AnimatedCounter'
+import { navigate } from '../lib/useRoute'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-
-const heroBenefits = [
-  { icon: Clock, value: 6, suffix: 'h', label: 'récupérées par semaine' },
-  { icon: ShieldCheck, value: 0, suffix: '', label: "agent qui craque sans alerte" },
-  { icon: TrendingUp, value: 100, suffix: '%', label: 'de votre marge, en temps réel' },
-]
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: 'Tableau de bord' },
@@ -151,7 +145,7 @@ export default function Hero() {
           className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
           Le cockpit métier des sociétés de nettoyage<br />
-          <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">qui veulent scaler sans s'épuiser</span>
+          <span className="text-blue-600">qui veulent scaler sans s'épuiser</span>
         </motion.h1>
 
         <motion.p
@@ -164,33 +158,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="grid grid-cols-3 gap-2 sm:gap-4 max-w-3xl mx-auto mb-8"
-        >
-          {heroBenefits.map((b) => (
-            <div
-              key={b.label}
-              className="bg-white/80 backdrop-blur border border-slate-200/80 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left shadow-sm"
-            >
-              <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                <b.icon size={16} className="text-blue-600" />
-              </div>
-              <div>
-                <div className="text-lg sm:text-xl font-black text-slate-900 leading-none mb-1">
-                  <AnimatedCounter to={b.value} suffix={b.suffix} duration={1.4} />
-                </div>
-                <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">{b.label}</div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.24 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5"
         >
           <Flame size={14} className="text-amber-600" />
@@ -200,32 +170,33 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.28 }}
+          transition={{ duration: 0.4, delay: 0.24 }}
           className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
         >
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden"
+            className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta privée</span>
             <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform" />
           </button>
           <button
-            onClick={() => scrollTo('formulaire')}
-            className="bg-white/80 backdrop-blur border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:bg-white hover:border-slate-300 transition-all"
+            onClick={() => navigate('/calculateur-roi')}
+            className="bg-white border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:border-slate-300 hover:bg-slate-50 transition-all inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Demander une démo privée
+            <Calculator size={16} className="text-slate-500" />
+            Calculer mon économie
           </button>
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.34 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="text-xs sm:text-sm text-slate-500 mb-14"
         >
-          Bêta gratuite · Pas de carte bancaire · Onboarding accompagné · Conçu pour la propreté B2B
+          Bêta gratuite, pas de carte bancaire, onboarding accompagné, conçu pour la propreté B2B
         </motion.p>
 
         <motion.div

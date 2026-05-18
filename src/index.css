@@ -15,6 +15,20 @@ body {
 #root { width: 100%; }
 html { scroll-behavior: smooth; }
 
+@layer base {
+  *:focus { outline: none; }
+  button:focus-visible,
+  a:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
 .section-divider {
   border: none;
   border-top: 1px solid #F0F0F0;
@@ -42,6 +56,16 @@ html { scroll-behavior: smooth; }
 .animate-blob-2 { animation: blob-2 26s ease-in-out infinite; }
 .animate-blob-3 { animation: blob-3 30s ease-in-out infinite; }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer { animation: shimmer 1.4s ease-in-out; }
+
+.seo-fallback { position: absolute; left: -10000px; top: 0; width: 1px; height: 1px; overflow: hidden; }
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-blob-1, .animate-blob-2, .animate-blob-3 { animation: none; }
+  .animate-blob-1, .animate-blob-2, .animate-blob-3, .animate-shimmer { animation: none; }
+  html { scroll-behavior: auto; }
 }
