@@ -6,10 +6,10 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   background: #fff;
-  color: #111;
+  color: #0F172A;
 }
 
 #root { width: 100%; }
@@ -18,4 +18,30 @@ html { scroll-behavior: smooth; }
 .section-divider {
   border: none;
   border-top: 1px solid #F0F0F0;
+}
+
+@keyframes blob-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(8%, 6%) scale(1.08); }
+  66% { transform: translate(-6%, 10%) scale(0.96); }
+}
+
+@keyframes blob-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-10%, 8%) scale(0.94); }
+  66% { transform: translate(6%, -8%) scale(1.06); }
+}
+
+@keyframes blob-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(6%, -10%) scale(1.05); }
+  66% { transform: translate(-8%, 6%) scale(0.95); }
+}
+
+.animate-blob-1 { animation: blob-1 22s ease-in-out infinite; }
+.animate-blob-2 { animation: blob-2 26s ease-in-out infinite; }
+.animate-blob-3 { animation: blob-3 30s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-1, .animate-blob-2, .animate-blob-3 { animation: none; }
 }

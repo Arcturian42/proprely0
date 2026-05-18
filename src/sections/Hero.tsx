@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Clock, ShieldCheck, TrendingUp } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
 const heroBenefits = [
-  { icon: Clock, value: '6h', label: 'récupérées par semaine' },
-  { icon: ShieldCheck, value: '0', label: "agent qui craque sans alerte" },
-  { icon: TrendingUp, value: '100%', label: 'de votre marge, en temps réel' },
+  { icon: Clock, value: 6, suffix: 'h', label: 'récupérées par semaine' },
+  { icon: ShieldCheck, value: 0, suffix: '', label: "agent qui craque sans alerte" },
+  { icon: TrendingUp, value: 100, suffix: '%', label: 'de votre marge, en temps réel' },
 ]
 
 const sidebarItems = [
@@ -93,7 +94,13 @@ function ProductMockup() {
 
             <div className="space-y-1.5">
               {missions.map((m, i) => (
-                <div key={i} className="flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-white border border-slate-100 rounded-lg text-[10px] sm:text-[11px] hover:border-slate-200 transition-colors">
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.7 + i * 0.08 }}
+                  className="flex items-center gap-2 sm:gap-3 p-2 sm:p-2.5 bg-white border border-slate-100 rounded-lg text-[10px] sm:text-[11px] hover:border-slate-200 transition-colors"
+                >
                   <div className="font-bold text-slate-900 w-9 sm:w-11 shrink-0">{m.time}</div>
                   <div className="flex-1 min-w-0">
                     <div className="text-slate-800 font-medium truncate">{m.site}</div>
@@ -102,7 +109,7 @@ function ProductMockup() {
                   <div className={`text-[8px] sm:text-[9px] font-bold px-1.5 sm:px-2 py-0.5 rounded border ${m.statusColor} shrink-0`}>
                     {m.status}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </main>
@@ -117,8 +124,11 @@ export default function Hero() {
 
   return (
     <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20 sm:pt-28 pb-16 sm:pb-24 overflow-hidden">
-      <div className="absolute top-10 -left-32 w-[28rem] h-[28rem] rounded-full bg-blue-100/40 blur-3xl pointer-events-none" />
-      <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[5%] left-[-10%] w-[35rem] h-[35rem] rounded-full bg-blue-300/30 blur-3xl animate-blob-1" />
+        <div className="absolute top-[25%] right-[-10%] w-[30rem] h-[30rem] rounded-full bg-sky-300/30 blur-3xl animate-blob-2" />
+        <div className="absolute top-[55%] left-[20%] w-[28rem] h-[28rem] rounded-full bg-indigo-300/20 blur-3xl animate-blob-3" />
+      </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
@@ -162,13 +172,15 @@ export default function Hero() {
           {heroBenefits.map((b) => (
             <div
               key={b.label}
-              className="bg-white/80 backdrop-blur border border-slate-200/80 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left"
+              className="bg-white/80 backdrop-blur border border-slate-200/80 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 text-center sm:text-left shadow-sm"
             >
               <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
                 <b.icon size={16} className="text-blue-600" />
               </div>
               <div>
-                <div className="text-lg sm:text-xl font-black text-slate-900 leading-none mb-1">{b.value}</div>
+                <div className="text-lg sm:text-xl font-black text-slate-900 leading-none mb-1">
+                  <AnimatedCounter to={b.value} suffix={b.suffix} duration={1.4} />
+                </div>
                 <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">{b.label}</div>
               </div>
             </div>

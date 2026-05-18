@@ -1,6 +1,8 @@
+import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Award, Check, ArrowRight, Sparkles, Headphones, Lightbulb, Zap, BadgePercent } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -37,11 +39,35 @@ const advantages = [
 export default function FounderOffer() {
   const remaining = remainingSpots()
   const percentFull = progressPercent()
+  const sectionRef = useRef<HTMLElement>(null)
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 })
+  const [spotlightVisible, setSpotlightVisible] = useState(false)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!sectionRef.current) return
+    const rect = sectionRef.current.getBoundingClientRect()
+    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top })
+  }
 
   return (
-    <section id="fondateur" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-20 sm:py-28 overflow-hidden">
+    <section
+      id="fondateur"
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setSpotlightVisible(true)}
+      onMouseLeave={() => setSpotlightVisible(false)}
+      className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-20 sm:py-28 overflow-hidden"
+    >
       <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] rounded-full bg-blue-500 opacity-20 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-sky-500 opacity-15 blur-3xl pointer-events-none" />
+
+      <div
+        className="absolute inset-0 pointer-events-none transition-opacity duration-300 hidden md:block"
+        style={{
+          opacity: spotlightVisible ? 1 : 0,
+          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(56, 189, 248, 0.18), transparent 55%)`,
+        }}
+      />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -67,12 +93,15 @@ export default function FounderOffer() {
         >
           <div className="flex items-center justify-between mb-3">
             <div>
-              <div className="text-2xl sm:text-3xl font-black text-white">{FOUNDER_SPOTS.taken} <span className="text-sky-400">/ {FOUNDER_SPOTS.total}</span></div>
+              <div className="text-2xl sm:text-3xl font-black text-white">
+                <AnimatedCounter to={FOUNDER_SPOTS.taken} duration={1.4} />
+                <span className="text-sky-400"> / {FOUNDER_SPOTS.total}</span>
+              </div>
               <div className="text-xs text-slate-400 mt-1">dirigeants sélectionnés</div>
             </div>
             <div className="text-right">
               <div className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
-                {remaining} places
+                <AnimatedCounter to={remaining} suffix=" places" duration={1.4} />
               </div>
               <div className="text-xs text-slate-400 mt-1">restantes</div>
             </div>
@@ -82,7 +111,7 @@ export default function FounderOffer() {
               initial={{ width: 0 }}
               whileInView={{ width: `${percentFull}%` }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, ease: 'easeOut' }}
+              transition={{ duration: 1.4, ease: 'easeOut' }}
               className="h-full bg-gradient-to-r from-sky-400 to-blue-500 rounded-full"
             />
           </div>
@@ -96,7 +125,7 @@ export default function FounderOffer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: (i % 3) * 0.08 }}
-              className={`bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/[0.08] transition-colors ${i >= 3 ? 'lg:col-span-1' : ''}`}
+              className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-5 sm:p-6 hover:bg-white/[0.08] hover:border-white/20 transition-all"
             >
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center shrink-0">

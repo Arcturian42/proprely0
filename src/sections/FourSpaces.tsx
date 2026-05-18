@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Calendar, Users, Target, BarChart3 } from 'lucide-react'
+import TiltCard from '../components/TiltCard'
 
 const modules = [
   {
@@ -66,31 +67,35 @@ export default function FourSpaces() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-shadow"
             >
-              <div className="flex items-start gap-4 mb-5">
-                <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                  <m.icon size={20} className="text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{m.title}</h3>
-                  <p className="text-sm text-slate-600">{m.tagline}</p>
-                </div>
-              </div>
-              <div className="space-y-3 mt-5">
-                {m.benefits.map((b, j) => (
-                  <div key={j} className="bg-slate-50 rounded-xl p-3.5">
-                    <div className="flex items-start gap-2 mb-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Avant</span>
-                      <span className="text-sm text-slate-500">{b.before}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Après</span>
-                      <span className="text-sm text-slate-800 font-medium">{b.after}</span>
-                    </div>
+              <TiltCard
+                intensity={3}
+                className="h-full bg-white rounded-2xl p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.1)] transition-shadow"
+              >
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                    <m.icon size={20} className="text-blue-600" />
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{m.title}</h3>
+                    <p className="text-sm text-slate-600">{m.tagline}</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mt-5">
+                  {m.benefits.map((b, j) => (
+                    <div key={j} className="bg-slate-50 rounded-xl p-3.5">
+                      <div className="flex items-start gap-2 mb-1.5">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-red-500 bg-red-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Avant</span>
+                        <span className="text-sm text-slate-500">{b.before}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0 mt-0.5">Après</span>
+                        <span className="text-sm text-slate-800 font-medium">{b.after}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
