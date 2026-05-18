@@ -4,39 +4,37 @@ import { Users, Check, Handshake, Headphones } from 'lucide-react'
 const items = [
   {
     icon: Users,
-    title: 'Immersions terrain',
-    desc: 'Nous avons suivi des agents sur le terrain, assisté à des plannings matinaux, et constaté les mêmes problèmes partout.',
+    title: "6 mois d'immersion terrain",
+    desc: "Plannings matinaux, tournées avec agents, soirées de fin de mois passées à compter les heures avec les dirigeants.",
   },
   {
     icon: Check,
-    title: 'Fonctionnalités utiles',
-    desc: 'Pas de fonctions inutiles. Chaque feature correspond à une douleur réelle identifiée lors de ces immersions.',
+    title: 'Zéro fonction inutile',
+    desc: "Chaque feature correspond à une douleur identifiée sur le terrain. Pas de jargon SaaS, pas de complexité superflue.",
   },
   {
     icon: Handshake,
-    title: 'Construction collaborative',
-    desc: 'Les membres fondateurs participent activement à la définition des prochaines fonctionnalités. Vous construisez avec nous.',
+    title: 'Construit avec vous',
+    desc: "Les fondateurs participent activement à la définition des prochaines fonctionnalités. Vous orientez la roadmap.",
   },
   {
     icon: Headphones,
-    title: 'Accompagnement fondateur',
-    desc: 'Un suivi personnalisé pour chaque entreprise fondatrice. Vous n\'êtes pas un numéro. Vous êtes un partenaire.',
+    title: 'Accompagnement humain',
+    desc: "Un interlocuteur par entreprise fondatrice. Pas un ticket numéroté. Un humain qui connaît votre dossier.",
   },
 ]
 
 export default function Credibilite() {
   return (
-    <section className="bg-white py-12 sm:py-20">
+    <section className="bg-slate-50 py-20 sm:py-28 border-y border-slate-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="inline-block bg-[#00C2E0]/10 text-[#0F2D5E] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-4">
-            Notre méthode
-          </span>
-          <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E] mb-3">
-            Construit avec les vrais besoins du terrain
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Notre méthode</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-5">
+            Construit sur le terrain.<br />Pas dans une tour en verre.
           </h2>
-          <p className="text-xs sm:text-sm text-[#5A6B7D] max-w-2xl mx-auto">
-            Proprely n'est pas conçu dans un bureau. Il est né de 6 mois d'immersion dans des sociétés de nettoyage en région lyonnaise.
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Proprely n'est pas un logiciel générique adapté au nettoyage. C'est un outil né de 6 mois passés avec des dirigeants en région lyonnaise.
           </p>
         </div>
 
@@ -44,17 +42,17 @@ export default function Credibilite() {
           {items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="text-center bg-white rounded-2xl p-5 sm:p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#0F2D5E]/10 flex items-center justify-center mx-auto mb-3">
-                <item.icon size={18} className="text-[#0F2D5E]" />
+              <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mx-auto mb-4">
+                <item.icon size={20} className="text-blue-600" />
               </div>
-              <h3 className="text-xs sm:text-sm font-semibold text-[#0F2D5E] mb-2">{item.title}</h3>
-              <p className="text-[10px] sm:text-xs text-[#5A6B7D]">{item.desc}</p>
+              <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

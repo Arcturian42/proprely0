@@ -3,32 +3,62 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
 const faqs = [
-  { q: 'Est-ce que Proprely remplace Excel et Google Agenda ?', a: 'Complètement. Vous n\'avez plus besoin de jongler entre un tableau Excel pour les heures, Google Agenda pour le planning, WhatsApp pour les agents et un autre outil pour les devis. Tout est centralisé dans Proprely.' },
-  { q: 'Comment fonctionne le compteur d\'heures automatique ?', a: 'Chaque intervention saisie dans Proprely est automatiquement associée à un ou plusieurs agents. Le logiciel cumule leurs heures en temps réel. En fin de mois, vous avez un récapitulatif complet par agent — sans compter manuellement sur votre agenda.' },
-  { q: 'Puis-je gérer les spécialités de mes agents ?', a: 'Oui. Chaque profil agent peut avoir des compétences associées (vitrerie, moquette, décappage, remise en état, fin de chantier…). Lors de l\'affectation d\'une mission, Proprely vous indique quels agents ont les compétences requises et leur charge horaire actuelle.' },
-  { q: 'Comment Proprely m\'aide à éviter le surmenage de mes équipes ?', a: 'Proprely affiche en permanence le nombre d\'heures effectuées par chaque agent sur la période en cours. Des alertes se déclenchent quand un agent dépasse un seuil défini. Vous pouvez ainsi rééquilibrer les affectations avant que la situation devienne critique.' },
-  { q: 'Est-ce que mes agents doivent installer une application ?', a: 'Seulement avec le plan Cruiser. L\'application mobile agents permet le check-in géolocalisé, la signature client et l\'envoi de photos depuis le terrain. Sur les plans Starter et Company, les agents accèdent à leur planning via un lien web — aucune installation requise.' },
-  { q: 'Comment fonctionne l\'analyse de rentabilité client ?', a: 'En connectant Proprely à votre logiciel comptable (Pennylane, Conto…), vous obtenez une vue croisée : heures passées par site, revenu facturé, et marge calculée. Vous identifiez en un coup d\'œil vos clients les plus rentables et ceux qui vous coûtent plus qu\'ils ne vous rapportent.' },
-  { q: 'Est-ce que je peux changer de plan ?', a: 'Oui, à tout moment. Si votre équipe grandit ou si vous avez besoin de fonctionnalités supplémentaires, vous passez au plan supérieur en quelques clics. La facturation est ajustée au prorata.' },
-  { q: 'Combien de temps dure la période d\'essai ?', a: '14 jours, sans carte bancaire requise. Vous configurez votre entreprise, importez vos agents et testez toutes les fonctionnalités du plan choisi. Au terme de l\'essai, vous décidez si vous continuez.' },
-  { q: 'Mes données sont-elles sécurisées ?', a: 'Vos données sont hébergées en France, chiffrées en transit et au repos. Proprely est conforme au RGPD. Vous restez propriétaire de vos données et pouvez les exporter à tout moment.' },
-  { q: 'Qu\'est-ce que les tokens de prospection ?', a: 'C\'est un service additionnel qui permet à notre IA d\'identifier des prospects locaux qualifiés pour votre zone (gérants de bureaux, syndics, hôtels, restaurants…) et de préparer des messages de prise de contact personnalisés. Vous achetez des crédits selon vos besoins.' },
+  {
+    q: "C'est quoi exactement la bêta privée ?",
+    a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant 3 mois, vous utilisez le produit, vous nous remontez vos besoins et vous influencez la roadmap. En contrepartie : tarif privilégié bloqué à vie, onboarding fait par le fondateur, support prioritaire.",
+  },
+  {
+    q: 'Encore un logiciel compliqué ?',
+    a: "Mise en place en 10 minutes lors d'un appel avec le fondateur. Si vous savez utiliser Google Agenda, vous savez utiliser Proprely. L'interface a été testée avec des agents de 22 à 58 ans — aucun n'a eu besoin de formation.",
+  },
+  {
+    q: "Je n'ai pas le temps de changer d'outil",
+    a: "Vous passez aujourd'hui environ 10h/semaine en administration. Proprely vous en fait gagner 6 dès la première semaine. ROI immédiat. Configuration faite par nous, vous n'avez rien à monter seul.",
+  },
+  {
+    q: 'Mon entreprise est-elle assez grande ?',
+    a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Si vous avez plus d'un site à gérer, vous avez besoin de Proprely. Si vous êtes en croissance, encore plus.",
+  },
+  {
+    q: 'Je gère déjà avec Excel et WhatsApp',
+    a: "Ça fonctionne — jusqu'au jour où un agent oublie un site, où un client conteste les heures, ou où vous passez votre dimanche soir à compter. Proprely élimine ces moments. Et garde tous vos historiques.",
+  },
+  {
+    q: 'Combien ça coûte vraiment ?',
+    a: "Le tarif fondateur est communiqué lors de l'appel découverte. C'est un tarif privilégié, bloqué à vie, exclusivement pour les 30 fondateurs. Sans frais cachés, sans engagement, annulation possible à tout moment.",
+  },
+  {
+    q: "C'est vraiment adapté au nettoyage ?",
+    a: "Proprely n'est PAS un logiciel générique. Chaque fonctionnalité a été construite avec des dirigeants de sociétés de nettoyage : spécialités agents (vitrerie, moquette, décappage), compteur d'heures par site, gestion des récurrences clients, alertes surmenage. Pas avec des développeurs dans une tour en verre.",
+  },
+  {
+    q: 'Et si Proprely disparaît ?',
+    a: "Données hébergées en France (OVH). Export complet de vos données en 1 clic à tout moment, dans des formats standards (CSV, Excel). Vous restez propriétaire. Pas de verrouillage.",
+  },
+  {
+    q: "Mes agents ne vont pas adopter ?",
+    a: "Pas d'application à installer sur les plans standards : vos agents reçoivent un lien, ouvrent leur planning, c'est tout. Si votre agent utilise WhatsApp, il utilisera Proprely. Testé avec des équipes intergénérationnelles.",
+  },
+  {
+    q: 'Mes données sont-elles sécurisées ?',
+    a: "Hébergement France (OVH), chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et pouvez les exporter à tout moment.",
+  },
 ]
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null)
+  const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="bg-gray-50 py-16 sm:py-24 border-t border-gray-100">
+    <section id="faq" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 sm:mb-14">
-          <p className="text-sm font-semibold text-[#1A4FAF] uppercase tracking-widest mb-4">FAQ</p>
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
-            Vos questions
+        <div className="text-center mb-12">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">FAQ</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Vos questions sur la bêta
           </h2>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
@@ -36,15 +66,19 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.3) }}
-              className="bg-white rounded-xl border border-gray-100 overflow-hidden"
+              className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between px-5 sm:px-6 py-5 text-left hover:bg-slate-50 transition-colors"
               >
-                <span className="text-sm font-semibold text-gray-900 pr-4">{faq.q}</span>
-                <motion.div animate={{ rotate: open === i ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                  <ChevronDown size={16} className="text-gray-400 shrink-0" />
+                <span className="text-sm sm:text-base font-bold text-slate-900 pr-4">{faq.q}</span>
+                <motion.div
+                  animate={{ rotate: open === i ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0"
+                >
+                  <ChevronDown size={14} className="text-blue-600" />
                 </motion.div>
               </button>
               <AnimatePresence>
@@ -53,10 +87,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-4 text-sm text-gray-500 leading-relaxed border-t border-gray-50 pt-3">
+                    <div className="px-5 sm:px-6 pb-5 text-sm sm:text-base text-slate-600 leading-relaxed">
                       {faq.a}
                     </div>
                   </motion.div>

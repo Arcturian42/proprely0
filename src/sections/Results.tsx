@@ -5,39 +5,37 @@ const results = [
   {
     icon: Smartphone,
     week: 'Semaine 1',
-    title: 'Vos agents voient leur planning sur téléphone',
-    desc: 'Fini les appels du matin. Vos agents ouvrent un lien, voient leur journée, et partent. Vous gagnez 30 minutes chaque matin.',
+    title: '30 min gagnées chaque matin',
+    desc: "Vos agents ouvrent un lien, voient leur journée, partent. Plus d'appels du matin pour caler qui fait quoi.",
   },
   {
     icon: FileText,
     week: 'Semaine 2',
-    title: 'Vos devis sont générés en 2 minutes',
-    desc: 'Un client demande un devis ? Vous le générez en 2 clics, professionnel, avec votre logo. Fini le Word et la calculatrice.',
+    title: 'Devis en 2 minutes (vs 30)',
+    desc: "Un prospect appelle pour un devis ? Vous le générez en 2 clics, professionnel, envoyé. Plus de Word ni de calculatrice.",
   },
   {
     icon: QrCode,
     week: 'Semaine 3',
-    title: 'Vous prouvez chaque passage client',
-    desc: 'QR code scanné, photo avant/après, signature client. Votre client sait que vous êtes passé. Fini les disputes.',
+    title: 'Preuve de passage à chaque intervention',
+    desc: "QR code scanné, photos avant/après, signature client. Vos clients voient le travail. Plus de litiges.",
   },
   {
     icon: BarChart3,
     week: 'Semaine 4',
-    title: 'Vous voyez votre CA en temps réel',
-    desc: 'Vous ouvrez votre tableau de bord et voyez votre chiffre d\'affaires, vos heures, votre rentabilité. Vous pilotez avec des chiffres.',
+    title: 'CA et rentabilité en temps réel',
+    desc: "Vous ouvrez un tableau de bord et vous savez exactement où vous en êtes. Vous pilotez avec des chiffres réels.",
   },
 ]
 
 export default function Results() {
   return (
-    <section className="bg-white py-12 sm:py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="inline-block bg-[#00C2E0]/10 text-[#0F2D5E] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-4">
-            Résultats concrets
-          </span>
-          <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E]">
-            Ce que vous gagnez dès la première semaine
+    <section className="bg-white py-20 sm:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Résultats concrets</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Ce que vous gagnez<br />dès la première semaine
           </h2>
         </div>
 
@@ -45,18 +43,20 @@ export default function Results() {
           {results.map((r, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
+              viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-[#F8FAFC] rounded-xl p-4 sm:p-5 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="bg-slate-50 rounded-2xl p-6 hover:bg-white hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 border border-transparent hover:border-slate-100"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#0F2D5E]/10 flex items-center justify-center mb-3">
-                <r.icon size={16} className="text-[#0F2D5E]" />
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center mb-4">
+                <r.icon size={18} className="text-white" />
               </div>
-              <div className="text-[10px] sm:text-xs font-semibold text-[#00C2E0] mb-1">{r.week}</div>
-              <h3 className="text-xs sm:text-sm font-semibold text-[#0F2D5E] mb-2">{r.title}</h3>
-              <p className="text-[10px] sm:text-xs text-[#5A6B7D]">{r.desc}</p>
+              <div className="inline-block text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full mb-2">
+                {r.week}
+              </div>
+              <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">{r.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{r.desc}</p>
             </motion.div>
           ))}
         </div>

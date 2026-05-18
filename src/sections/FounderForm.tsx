@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export default function ContactForm() {
+export default function FounderForm() {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://server.fillout.com/embed/v1/'
@@ -10,19 +10,19 @@ export default function ContactForm() {
   }, [])
 
   return (
-    <section id="formulaire" className="bg-white py-16 sm:py-24 border-t border-gray-100">
+    <section id="formulaire" className="bg-white py-20 sm:py-28 border-t border-slate-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-[#1A4FAF] uppercase tracking-widest mb-4">Contact</p>
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight mb-3">
-            Démarrez votre essai gratuit
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Candidature</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+            Réservez votre place de fondateur
           </h2>
-          <p className="text-gray-500 text-base">
-            Remplissez le formulaire, on vous rappelle sous 24h pour configurer votre compte ensemble.
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Quelques minutes pour candidater. On revient vers vous sous 24h avec un créneau de démo si votre profil correspond.
           </p>
         </div>
 
-        <div className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden">
+        <div className="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
           <div
             style={{ width: '100%', height: '500px' }}
             data-fillout-id="rBPhgNm42Lus"
@@ -31,8 +31,8 @@ export default function ContactForm() {
             data-fillout-dynamic-resize
           />
         </div>
-        <p className="text-center text-xs text-gray-400 mt-4">
-          Sans engagement · Essai 14 jours · contact@proprely.fr
+        <p className="text-center text-xs text-slate-500 mt-5">
+          Sans engagement · Pas de carte bancaire requise · contact@proprely.fr
         </p>
       </div>
     </section>

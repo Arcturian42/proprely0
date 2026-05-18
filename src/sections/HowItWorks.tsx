@@ -8,49 +8,49 @@ const scrollTo = (id: string) => {
 const steps = [
   {
     n: '1',
-    title: 'Vous configurez en 10 minutes',
-    desc: 'Vos sites clients, vos agents, vos fréquences d\'intervention. Pas de formation, pas de setup complexe.',
+    title: 'Vous candidatez (2 min)',
+    desc: "Un court formulaire. On vous répond sous 24h pour vérifier que Proprely correspond à votre besoin.",
   },
   {
     n: '2',
-    title: 'Vos agents travaillent simplement',
-    desc: 'Ils voient leur planning sur téléphone, scannent le QR code sur site, signent électroniquement. Fini le papier.',
+    title: 'Démo et configuration (30 min)',
+    desc: "Appel avec le fondateur. On configure votre entreprise ensemble : sites, agents, fréquences. C'est prêt à la fin de l'appel.",
   },
   {
     n: '3',
-    title: 'Vous pilotez avec des chiffres réels',
-    desc: 'Tableau de bord, CA en temps réel, heures facturées, taux de réalisation. Vous décidez avec clarté.',
+    title: 'Vous pilotez dès la semaine 1',
+    desc: "Vos agents voient leur planning. Vos heures se comptent toutes seules. Vous gagnez 3h dès la première semaine.",
   },
 ]
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-12 sm:py-20">
+    <section id="how-it-works" className="bg-slate-50 py-20 sm:py-28 border-y border-slate-100">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14">
-          <span className="inline-block bg-[#00C2E0]/10 text-[#0F2D5E] rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold mb-4">
-            Comment ça marche
-          </span>
-          <h2 className="text-xl sm:text-3xl font-bold text-[#0F2D5E]">
-            Trois étapes. Pas de formation. Pas de setup de trois mois.
+        <div className="text-center mb-14 sm:mb-16">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Comment ça marche</p>
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Trois étapes. Pas de formation.<br />Pas de setup de trois mois.
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-10">
+        <div className="grid sm:grid-cols-3 gap-8 sm:gap-6 mb-12 relative">
+          <div className="hidden sm:block absolute top-7 left-[16.66%] right-[16.66%] h-px border-t-2 border-dashed border-blue-200" />
+
           {steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.4, delay: i * 0.12 }}
+              className="text-center relative"
             >
-              <div className="w-12 h-12 rounded-full bg-[#0F2D5E] text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
+              <div className="relative inline-flex w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-black text-xl items-center justify-center mb-5 shadow-sm z-10">
                 {step.n}
               </div>
-              <h3 className="text-sm sm:text-base font-semibold text-[#0F2D5E] mb-2">{step.title}</h3>
-              <p className="text-xs sm:text-sm text-[#5A6B7D]">{step.desc}</p>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -58,10 +58,10 @@ export default function HowItWorks() {
         <div className="text-center">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="bg-[#1A4FAF] text-white rounded-full px-6 sm:px-8 py-3 font-bold flex items-center gap-2 mx-auto hover:scale-[1.02] transition-transform"
+            className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5"
           >
-            Rejoindre les 30 fondateurs
-            <ArrowRight size={16} />
+            Candidater à la bêta privée
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>

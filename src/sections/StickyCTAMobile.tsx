@@ -22,12 +22,12 @@ export default function StickyCTAMobile() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t border-gray-200 sm:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white/95 backdrop-blur border-t border-slate-200 sm:hidden">
       <button
-        onClick={() => scrollTo('pricing')}
-        className="w-full bg-[#1A4FAF] text-white rounded-xl font-bold h-12 flex items-center justify-center gap-2 text-sm"
+        onClick={() => scrollTo('formulaire')}
+        className="w-full bg-blue-600 text-white rounded-xl font-bold h-12 flex items-center justify-center gap-2 text-sm shadow-lg shadow-blue-600/25"
       >
-        Voir les tarifs
+        Réserver ma place fondateur
         <ArrowRight size={15} />
       </button>
     </div>
