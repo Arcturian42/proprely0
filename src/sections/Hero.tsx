@@ -51,6 +51,8 @@ function ProductMockup() {
       onMouseLeave={handleMouseLeave}
       className="relative max-w-5xl mx-auto"
       style={{ perspective: '1400px' }}
+      role="img"
+      aria-label="Aperçu du cockpit Proprely : tableau de bord avec planning du jour, KPI de chiffre d'affaires, heures et marge, et liste des missions en cours, à venir et terminées"
     >
       <div className="absolute -inset-6 bg-gradient-to-br from-blue-400/20 via-sky-300/15 to-blue-500/20 blur-3xl rounded-[2.5rem] pointer-events-none" />
 
@@ -185,6 +187,18 @@ export default function Hero() {
         >
           Vos clients, sites, agents, plannings et devis dans <strong className="text-slate-900 font-semibold">un seul outil</strong> — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.18 }}
+          className="max-w-2xl mx-auto mb-7 bg-white/60 backdrop-blur border border-slate-200/70 rounded-2xl px-5 py-4 text-left shadow-sm"
+        >
+          <p className="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Proprely en 1 phrase</p>
+          <p className="text-sm sm:text-[15px] text-slate-700 leading-relaxed">
+            Un <strong className="text-slate-900 font-semibold">logiciel SaaS B2B français</strong> qui centralise plannings, agents, devis, clients et preuve de passage pour les sociétés de nettoyage de <strong className="text-slate-900 font-semibold">3 à 50 agents</strong>. Hébergé en Europe, conforme RGPD. <strong className="text-slate-900 font-semibold">Bêta gratuite</strong>, 30 places fondateurs.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

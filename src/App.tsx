@@ -9,6 +9,9 @@ const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
+const ComparisonPageView = lazy(() => import('./pages/ComparisonPage'))
+const LexiconIndex = lazy(() => import('./pages/LexiconIndex'))
+const LexiconEntry = lazy(() => import('./pages/LexiconEntry'))
 
 const META: Record<string, { title: string; description: string }> = {
   '/': {
@@ -30,6 +33,10 @@ const META: Record<string, { title: string; description: string }> = {
   '/tarifs': {
     title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
     description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.",
+  },
+  '/lexique': {
+    title: 'Lexique de la propreté B2B · Proprely',
+    description: "Définitions du vocabulaire métier des sociétés de nettoyage B2B en France : preuve de passage, tournée, cahier des charges, ratio de productivité, AQAP, et plus.",
   },
 }
 
@@ -80,6 +87,9 @@ function App() {
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17)} />
+  else if (route.startsWith('/comparatif/')) content = <ComparisonPageView slug={route.slice(12)} />
+  else if (route === '/lexique' || route === '/lexique/') content = <LexiconIndex />
+  else if (route.startsWith('/lexique/')) content = <LexiconEntry slug={route.slice(9)} />
   else return <div className="w-full bg-white"><ScrollProgress /><Landing /></div>
 
   return (

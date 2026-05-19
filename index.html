@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2563EB" />
     <meta name="google-site-verification" content="PZFK32zsKqhNO68YpJ5Rx97saq2F4nRP1cfS_y8Ay5A" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <title>Proprely : Le cockpit métier des sociétés de nettoyage</title>
     <meta name="description" content="Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite, 30 places fondateurs." />
@@ -23,13 +24,18 @@
     <meta property="og:image" content="https://proprely.fr/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Proprely · le cockpit métier des sociétés de nettoyage B2B en France" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Proprely" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="proprely.fr" />
+    <meta name="twitter:url" content="https://proprely.fr/" />
     <meta name="twitter:title" content="Proprely : Le cockpit métier des sociétés de nettoyage" />
     <meta name="twitter:description" content="Bêta privée gratuite. 30 places réservées aux premières entreprises sélectionnées." />
     <meta name="twitter:image" content="https://proprely.fr/og-image.png" />
+    <meta name="twitter:image:alt" content="Proprely · le cockpit métier des sociétés de nettoyage B2B en France" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,38 +49,72 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
+          "@type": ["Organization", "LocalBusiness"],
           "@id": "https://proprely.fr/#organization",
           "name": "Proprely",
+          "legalName": "Proprely SAS",
           "url": "https://proprely.fr/",
-          "logo": "https://proprely.fr/proprely-icon-512.png",
-          "description": "Logiciel de gestion conçu pour les sociétés de nettoyage B2B en France.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://proprely.fr/proprely-icon-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://proprely.fr/og-image.png",
+          "description": "Logiciel SaaS de gestion conçu pour les sociétés de nettoyage B2B en France. Planning agents, devis, preuve de passage, pilotage marge par client.",
           "email": "contact@proprely.fr",
-          "areaServed": "FR",
-          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B"]
+          "areaServed": {
+            "@type": "Country",
+            "name": "France"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+          },
+          "priceRange": "Gratuit pendant la bêta privée",
+          "foundingDate": "2026",
+          "knowsAbout": [
+            "Logiciel de gestion société de nettoyage",
+            "Planning agents de propreté",
+            "Devis nettoyage B2B",
+            "Preuve de passage par QR code",
+            "Pilotage marge entreprise propreté",
+            "Conformité RGPD secteur nettoyage"
+          ],
+          "knowsLanguage": "fr-FR",
+          "sameAs": []
         },
         {
           "@type": "SoftwareApplication",
           "@id": "https://proprely.fr/#software",
           "name": "Proprely",
           "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "Logiciel de gestion d'entreprise de nettoyage",
           "operatingSystem": "Web",
-          "description": "Cockpit métier pour piloter une société de nettoyage : clients, sites, agents, planning, missions, devis, documents, pilotage.",
+          "description": "Cockpit métier pour piloter une société de nettoyage : clients, sites, agents, planning, missions avec preuve de passage, devis, documents, pilotage marge en temps réel.",
           "url": "https://proprely.fr/",
           "publisher": { "@id": "https://proprely.fr/#organization" },
+          "softwareVersion": "Bêta privée 2026",
+          "inLanguage": "fr-FR",
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Dirigeants de sociétés de nettoyage B2B en France, 3 à 50 agents"
+          },
           "offers": {
             "@type": "Offer",
             "availability": "https://schema.org/LimitedAvailability",
-            "description": "Accès gratuit pendant la bêta privée, sur sélection"
+            "price": "0",
+            "priceCurrency": "EUR",
+            "description": "Accès gratuit pendant la bêta privée, sur sélection. Tarif fondateur conservé à vie."
           },
           "featureList": [
-            "Clients et sites",
-            "Agents et spécialités",
-            "Planning et affectation",
-            "Missions avec preuve de passage",
-            "Devis et factures",
-            "Documents centralisés",
-            "Pilotage et rentabilité"
+            "Gestion centralisée des clients et sites",
+            "Profils agents avec spécialités (vitrerie, moquette, décapage)",
+            "Planning et affectation en 1 clic",
+            "Preuve de passage par QR code, photos et signature",
+            "Devis professionnels en 2 minutes avec signature électronique",
+            "Documents centralisés et recherche instantanée",
+            "Pilotage et marge par client en temps réel"
           ]
         },
         {
@@ -127,6 +167,30 @@
                 "@type": "Answer",
                 "text": "Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment."
               }
+            },
+            {
+              "@type": "Question",
+              "name": "Proprely fonctionne-t-il pour le nettoyage particulier ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non. Proprely est conçu spécifiquement pour le nettoyage B2B (bureaux, syndics, hôtels, cabinets médicaux, copropriétés, sites industriels). Le nettoyage particulier domestique (B2C) suit des logiques très différentes qui ne sont pas couvertes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Combien d'agents Proprely peut-il gérer ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Proprely est conçu pour les sociétés de 3 à 50 agents. Au-delà de 200 agents, les besoins spécifiques (multi-sociétés, ERP intégré) sortent du périmètre."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mes agents doivent-ils installer une application ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non. Vos agents ouvrent leur planning depuis un lien web sur leur téléphone, sans installation. L'interface fonctionne sur 4G capricieuse, sans formation."
+              }
             }
           ]
         }
@@ -142,7 +206,7 @@
     <div id="root">
       <div class="seo-fallback" aria-hidden="true">
         <h1>Le cockpit métier des sociétés de nettoyage. Sans Excel, sans WhatsApp, sans nuits blanches.</h1>
-        <p>Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.</p>
+        <p><strong>Proprely, c'est quoi ?</strong> Un logiciel SaaS qui centralise plannings, agents, devis, clients et preuve de passage pour les sociétés de nettoyage B2B en France de 3 à 50 agents. Hébergé en Europe, conforme RGPD. Accès gratuit pendant la bêta privée, réservée à 30 sociétés fondatrices.</p>
         <h2>Le problème : la dispersion entre 7 outils qui ne se parlent pas</h2>
         <p>Excel, WhatsApp, Google Agenda, Word, classeurs papier. Chaque outil fait une partie du travail. Personne ne fait l'ensemble. Résultat : 6 à 10 heures par semaine perdues en administration.</p>
         <h2>La solution : sept outils, un seul écran</h2>

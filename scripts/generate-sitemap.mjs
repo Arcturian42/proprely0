@@ -15,14 +15,19 @@ function extractSlugs(filePath) {
 
 const blogSlugs = extractSlugs(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractSlugs(resolve(root, 'src/data/features.ts'))
+const comparisonSlugs = extractSlugs(resolve(root, 'src/data/comparisons.ts'))
+const lexiconSlugs = extractSlugs(resolve(root, 'src/data/lexicon.ts'))
 
 const urls = [
   { loc: `${ORIGIN}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${ORIGIN}/tarifs`, priority: '0.9', changefreq: 'monthly' },
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly' },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly' },
+  { loc: `${ORIGIN}/lexique`, priority: '0.7', changefreq: 'monthly' },
   ...featureSlugs.map((slug) => ({ loc: `${ORIGIN}/fonctionnalites/${slug}`, priority: '0.8', changefreq: 'monthly' })),
+  ...comparisonSlugs.map((slug) => ({ loc: `${ORIGIN}/comparatif/${slug}`, priority: '0.8', changefreq: 'monthly' })),
   ...blogSlugs.map((slug) => ({ loc: `${ORIGIN}/blog/${slug}`, priority: '0.6', changefreq: 'monthly' })),
+  ...lexiconSlugs.map((slug) => ({ loc: `${ORIGIN}/lexique/${slug}`, priority: '0.5', changefreq: 'monthly' })),
 ]
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -36,4 +41,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${blogSlugs.length} blog)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 5 core + ${featureSlugs.length} features + ${comparisonSlugs.length} comparisons + ${blogSlugs.length} blog + ${lexiconSlugs.length} lexicon)`)

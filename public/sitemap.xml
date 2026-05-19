@@ -21,6 +21,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://proprely.fr/lexique</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://proprely.fr/fonctionnalites/planning-nettoyage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -39,6 +44,26 @@
     <loc>https://proprely.fr/fonctionnalites/preuve-passage-nettoyage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/comparatif/proprely-vs-excel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/comparatif/proprely-vs-trello</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/comparatif/logiciels-gestion-societe-nettoyage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/etude-digitalisation-societes-nettoyage-france-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://proprely.fr/blog/fixer-prix-nettoyage</loc>
@@ -69,5 +94,60 @@
     <loc>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/preuve-de-passage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/tournee-nettoyage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/cahier-des-charges-proprete</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/ratio-productivite</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/frequence-intervention</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/agent-qualifie-aqap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/autocontrole</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/contrat-de-proprete</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/prestation-ponctuelle</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/remise-en-etat</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/lexique/specialite-agent</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

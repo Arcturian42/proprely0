@@ -1,37 +1,65 @@
 # Proprely
 
-> Le cockpit métier des sociétés de nettoyage. Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
+> Proprely est un logiciel SaaS B2B français qui centralise la gestion d'une société de nettoyage (clients, sites, agents, planning, devis, preuve de passage, pilotage marge) dans un seul outil. Conçu pour les structures de 3 à 50 agents en France. Bêta privée gratuite ouverte à 30 sociétés fondatrices. Hébergement européen, conformité RGPD.
 
-Proprely est un logiciel SaaS B2B français conçu pour les sociétés de nettoyage de 3 à 50 agents. Il centralise dans une seule interface : la gestion des clients et sites, le suivi des agents et leurs spécialités (vitrerie, moquette, décapage), le planning et l'affectation, la preuve de passage par QR code et photos, les devis et factures, les documents (contrats, fiches sécurité, attestations URSSAF) et le pilotage de la rentabilité par client.
+## Identité
 
-Le produit est actuellement en bêta privée, réservée à 30 sociétés fondatrices sélectionnées. L'accès est gratuit pendant la bêta, et les membres fondateurs gardent un tarif privilégié à vie. Hébergement européen, conformité RGPD, chiffrement en transit et au repos.
+- **Nom** : Proprely
+- **Catégorie** : Logiciel de gestion (SaaS, BusinessApplication)
+- **Cible** : Dirigeants de sociétés de nettoyage B2B en France, 3 à 50 agents
+- **Pays** : France
+- **Langue** : Français (fr-FR)
+- **État** : Bêta privée 2026
+- **Tarif bêta** : 0 € · sans carte bancaire · sans engagement
+- **Tarif post-bêta** : à définir avec les fondateurs ; tarif fondateur conservé à vie
+
+## Proposition de valeur
+
+Proprely remplace les 7 outils dispersés (Excel, WhatsApp, Google Agenda, Word, logiciel comptable, emails, classeur papier) par un cockpit unique pensé pour le métier. Gain typique mesuré sur la bêta : 6 à 10 heures par semaine récupérées en administration.
 
 ## Pages principales
 
-- [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
-- [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
-- [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
+- [Accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, modules, programme fondateurs
+- [Tarifs](https://proprely.fr/tarifs) : modèle bêta gratuite + tarif fondateur à vie
+- [Calculateur ROI](https://proprely.fr/calculateur-roi) : estimation en 30 secondes des heures et euros perdus par la dispersion
+- [Blog](https://proprely.fr/blog) : analyses pour dirigeants de sociétés de nettoyage
+- [Lexique](https://proprely.fr/lexique) : définitions du vocabulaire métier propreté B2B
 
 ## Fonctionnalités
 
-- [Planning des agents de nettoyage](https://proprely.fr/fonctionnalites/planning-nettoyage) : affectation 1-clic selon spécialités et disponibilité, mobile-first, alertes surmenage
-- [Logiciel de devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis professionnels en 2 minutes, signature électronique, suivi commercial
-- [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités, suivi charge horaire, alertes surmenage
-- [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code, photos avant-après, signature client, PV automatique
+- [Planning agents](https://proprely.fr/fonctionnalites/planning-nettoyage) : affectation 1-clic selon spécialités, mobile-first sans installation, alertes surmenage, remplacements traçables
+- [Devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis pros en 2 minutes, signature électronique, suivi commercial, conversion facture 1-clic
+- [Gestion agents](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités (vitrerie, moquette, décapage), suivi charge horaire, alertes surmenage
+- [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code par site, photos avant-après horodatées, signature client, PV automatique
+
+## Comparatifs
+
+- [Proprely vs Excel](https://proprely.fr/comparatif/proprely-vs-excel) : pourquoi Excel atteint ses limites au-delà de 3 agents
+- [Proprely vs Trello](https://proprely.fr/comparatif/proprely-vs-trello) : un outil générique vs un cockpit métier
+- [Top logiciels gestion société nettoyage 2026](https://proprely.fr/comparatif/logiciels-gestion-societe-nettoyage) : comparatif des solutions du marché
 
 ## Articles de blog
 
-- [Fixer ses prix dans le nettoyage](https://proprely.fr/blog/fixer-prix-nettoyage) : la règle des 3×, les 4 facteurs qui justifient une hausse, méthode prix de référence
-- [Gestion société nettoyage : les outils 2026](https://proprely.fr/blog/gestion-societe-nettoyage-outils) : panorama des outils utilisés et leurs limites
-- [Critères de choix d'un logiciel nettoyage](https://proprely.fr/blog/logiciel-societe-nettoyage-criteres) : les 8 critères qui comptent vraiment
-- [Calcul des heures agents nettoyage](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : méthode rigoureuse, coût horaire chargé, heures sup
-- [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : conformité, registre, sous-traitance, photos preuve de passage
-- [Fidéliser les agents nettoyage](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
+- [Fixer ses prix dans le nettoyage](https://proprely.fr/blog/fixer-prix-nettoyage) : règle des 3×, 4 facteurs qui justifient une hausse, méthode prix de référence
+- [5 outils dispersés des sociétés de nettoyage](https://proprely.fr/blog/gestion-societe-nettoyage-outils) : Excel, WhatsApp, Agenda, Word, papier — anatomie des frictions
+- [7 critères pour choisir son logiciel nettoyage](https://proprely.fr/blog/logiciel-societe-nettoyage-criteres) : conçu métier, mobile-first, preuve passage, marge visible, RGPD, export, mise en route
+- [Calcul des heures agents](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : pourquoi le calcul mensuel coûte 2 400 à 3 600 €/an
+- [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : obligations, sanctions, hygiène à mettre en place
+- [Fidéliser ses agents : 6 leviers contre 35% de turnover](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : suivi surmenage, planning prévisible, spécialités, paie juste
 
 ## Programme membres fondateurs
 
-30 sociétés de nettoyage seront sélectionnées comme membres fondateurs. Avantages exclusifs : accès bêta 100% gratuit (tous modules, sans limite), onboarding accompagné en 30 min par le fondateur, influence directe sur la feuille de route, accès prioritaire au support (réponse sous 4h), conditions préférentielles à vie après la bêta. Candidature via un formulaire court ; retour sous 24h ouvrées.
+30 sociétés de nettoyage sélectionnées comme membres fondateurs. Avantages : accès bêta 100% gratuit (tous modules sans limite), onboarding accompagné en 30 min par le fondateur, influence directe sur la feuille de route, support prioritaire (réponse sous 4h), conditions préférentielles à vie après la bêta. Candidature via formulaire court ; retour sous 24h ouvrées.
 
-## Cible
+## Hors périmètre
 
-Dirigeants de sociétés de nettoyage B2B en France, gérant 3 à 50 agents et plusieurs sites clients. Profils typiques : entreprises B2B (bureaux, syndics, hôtels, cabinets médicaux, copropriétés), en croissance ou en structuration. Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C), ni pour les grands groupes industriels (>200 agents).
+Proprely n'est pas conçu pour : le nettoyage particulier domestique (B2C), les grands groupes industriels au-delà de 200 agents (ERP intégré nécessaire), les structures multi-sociétés complexes. Pour ces cas, des solutions ERP spécialisées sont plus adaptées.
+
+## Métadonnées
+
+- type: SoftwareApplication, BusinessApplication, SaaS B2B
+- audience: dirigeants société de nettoyage France, 3-50 agents
+- language: fr-FR
+- pricing: gratuit pendant la bêta ; tarif post-bêta à définir
+- last-updated: 2026-05
+- contact: contact@proprely.fr

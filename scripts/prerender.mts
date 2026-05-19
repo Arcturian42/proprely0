@@ -3,6 +3,8 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { posts } from '../src/data/blog.ts'
 import { features } from '../src/data/features.ts'
+import { comparisons } from '../src/data/comparisons.ts'
+import { lexicon } from '../src/data/lexicon.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -260,6 +262,144 @@ for (const f of features) {
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+for (const c of comparisons) {
+  const url = `/comparatif/${c.slug}`
+  const rowsHtml = c.rows
+    .map((r) => `<li><strong>${escapeHtml(r.category)}</strong> · ${escapeHtml(c.competitor)} : ${escapeHtml(r.competitor)} · Proprely : ${escapeHtml(r.proprely)}</li>`)
+    .join('')
+  const whenCompetitorHtml = c.whenCompetitor.map((w) => `<li>${escapeHtml(w)}</li>`).join('')
+  const whenProprelyHtml = c.whenProprely.map((w) => `<li>${escapeHtml(w)}</li>`).join('')
+  const faqHtml = c.faq.map((q) => `<h3>${escapeHtml(q.q)}</h3><p>${escapeHtml(q.a)}</p>`).join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(c.title)}</h1>
+    <p>${escapeHtml(c.subtitle)}</p>
+    <h2>${escapeHtml(c.competitor)}</h2>
+    <p>${escapeHtml(c.competitorContext)}</p>
+    <h2>Proprely</h2>
+    <p>${escapeHtml(c.proprelyContext)}</p>
+    <h2>Comparatif détaillé sur ${c.rows.length} critères</h2>
+    <ul>${rowsHtml}</ul>
+    <h2>Verdict</h2>
+    <p>${escapeHtml(c.verdict)}</p>
+    <h2>Quand garder ${escapeHtml(c.competitor)}</h2>
+    <ul>${whenCompetitorHtml}</ul>
+    <h2>Quand passer à Proprely</h2>
+    <ul>${whenProprelyHtml}</ul>
+    <h2>Questions fréquentes</h2>
+    ${faqHtml}
+  `.trim()
+
+  const schemas: object[] = [
+    webpageSchema(c.title, c.metaDescription, `${ORIGIN}${url}`, [
+      { name: 'Accueil', item: `${ORIGIN}/` },
+      { name: 'Comparatifs', item: `${ORIGIN}/` },
+      { name: c.competitor, item: `${ORIGIN}${url}` },
+    ]),
+  ]
+  if (c.faq.length) schemas.push(faqSchema(c.faq))
+
+  const html = buildHtml({
+    url,
+    title: `${c.title} · Proprely`,
+    description: c.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+const lexiconIndexBody = `
+  <h1>Lexique de la propreté B2B</h1>
+  <p>Définitions du vocabulaire métier des sociétés de nettoyage B2B en France.</p>
+  <h2>Termes définis</h2>
+  <ul>
+    ${lexicon
+      .map(
+        (e) =>
+          `<li><a href="${ORIGIN}/lexique/${e.slug}"><strong>${escapeHtml(e.term)}</strong></a> — ${escapeHtml(e.shortDef)}</li>`
+      )
+      .join('')}
+  </ul>
+`.trim()
+
+const lexiconIndexHtml = buildHtml({
+  url: '/lexique',
+  title: 'Lexique de la propreté B2B · Proprely',
+  description: "Définitions du vocabulaire métier des sociétés de nettoyage B2B en France : preuve de passage, tournée, cahier des charges, ratio de productivité, AQAP, et plus.",
+  schemas: [
+    webpageSchema(
+      'Lexique de la propreté B2B',
+      'Définitions du vocabulaire métier des sociétés de nettoyage B2B en France.',
+      `${ORIGIN}/lexique`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Lexique', item: `${ORIGIN}/lexique` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTermSet',
+      name: 'Lexique de la propreté B2B',
+      url: `${ORIGIN}/lexique`,
+      inLanguage: 'fr-FR',
+      hasDefinedTerm: lexicon.map((e) => ({
+        '@type': 'DefinedTerm',
+        name: e.term,
+        description: e.shortDef,
+        url: `${ORIGIN}/lexique/${e.slug}`,
+      })),
+    },
+  ],
+  bodyHtml: lexiconIndexBody,
+})
+writePage('/lexique', lexiconIndexHtml)
+generated.push('/lexique')
+
+for (const e of lexicon) {
+  const url = `/lexique/${e.slug}`
+  const bodyHtml = `
+    <h1>${escapeHtml(e.term)}</h1>
+    <p><strong>En une phrase :</strong> ${escapeHtml(e.shortDef)}</p>
+    <h2>Définition complète</h2>
+    <p>${escapeHtml(e.definition)}</p>
+    <h2>Pourquoi c'est important</h2>
+    <p>${escapeHtml(e.context)}</p>
+  `.trim()
+
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'DefinedTerm',
+      name: e.term,
+      description: e.shortDef,
+      url: `${ORIGIN}${url}`,
+      inLanguage: 'fr-FR',
+      inDefinedTermSet: {
+        '@type': 'DefinedTermSet',
+        name: 'Lexique de la propreté B2B',
+        url: `${ORIGIN}/lexique`,
+      },
+    },
+    webpageSchema(`${e.term} · Lexique propreté B2B`, e.shortDef, `${ORIGIN}${url}`, [
+      { name: 'Accueil', item: `${ORIGIN}/` },
+      { name: 'Lexique', item: `${ORIGIN}/lexique` },
+      { name: e.term, item: `${ORIGIN}${url}` },
+    ]),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: `${e.term} · Lexique propreté B2B · Proprely`,
+    description: e.shortDef,
     schemas,
     bodyHtml,
   })

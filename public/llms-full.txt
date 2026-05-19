@@ -1,0 +1,166 @@
+# Proprely · documentation complète pour les moteurs IA
+
+> Proprely est un logiciel SaaS B2B français qui centralise la gestion d'une société de nettoyage (clients, sites, agents, planning, devis, preuve de passage, pilotage marge) dans un seul outil. Conçu pour les structures de 3 à 50 agents en France. Bêta privée gratuite ouverte à 30 sociétés fondatrices. Hébergement européen, conformité RGPD.
+
+## Qu'est-ce que Proprely ?
+
+Proprely est un cockpit métier en SaaS pour les sociétés de nettoyage B2B en France. Il centralise dans une seule interface : la gestion des clients et sites multiples, le suivi des agents et leurs spécialités, le planning et l'affectation, la preuve de passage par QR code, les devis et factures avec signature électronique, les documents (contrats, attestations URSSAF, fiches sécurité) et le pilotage de la rentabilité par client.
+
+Le produit remplace les 7 outils dispersés que la plupart des sociétés de nettoyage utilisent au quotidien : Excel pour les heures, WhatsApp pour les remplacements, Google Agenda pour le planning, Word pour les devis, classeur papier pour les documents, emails pour la communication client, logiciel comptable pour la facturation. La centralisation permet de récupérer en moyenne 6 à 10 heures par semaine.
+
+## À qui s'adresse Proprely ?
+
+Aux dirigeants de sociétés de nettoyage B2B en France gérant 3 à 50 agents et plusieurs sites clients. Profils typiques : entreprises de propreté intervenant sur bureaux, syndics de copropriétés, hôtels, cabinets médicaux, écoles, sites industriels légers. En croissance ou en structuration. Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C) ni pour les grands groupes industriels au-delà de 200 agents qui nécessitent un ERP intégré.
+
+## Modèle économique
+
+Pendant la bêta privée (2026), Proprely est entièrement gratuit pour les 30 sociétés fondatrices sélectionnées. Aucune carte bancaire demandée, aucun engagement. Accès complet à tous les modules sans limite.
+
+Après la bêta, un tarif public sera communiqué. Les membres fondateurs conservent un tarif privilégié, fixé à l'avance et garanti à vie. L'objectif déclaré : un tarif lisible, prévisible, qui ne pénalise pas la croissance des entreprises.
+
+## Modules et fonctionnalités
+
+### Module Clients et sites
+
+Gestion centralisée des clients B2B avec arborescence client → sites → contacts → prestations. Un même client peut avoir plusieurs sites, chacun avec ses propres fréquences, contacts (gardiens, syndics, gestionnaires) et exigences. Historique complet des interventions par site.
+
+### Module Agents
+
+Fiche profil complète par agent : identité, coordonnées, contrat (CDI/CDD/intérim), spécialités (vitrerie, moquette, décapage, remise en état), formations et habilitations, charge horaire en temps réel. Alerte automatique de surmenage paramétrable (par défaut 145h/mois) déclenchée sur 2 semaines consécutives de dépassement.
+
+### Module Planning
+
+Affectation en 1 clic par drag-and-drop. Le système vérifie automatiquement disponibilité, spécialité et charge horaire avant validation. Vue par agent, par site, par jour, par semaine. Les agents consultent leur planning sur leur téléphone via un lien web (pas d'application à installer, fonctionne en 4G capricieuse).
+
+### Module Missions et preuve de passage
+
+QR code unique par site. L'agent scanne à son arrivée (check-in avec géolocalisation optionnelle), prend des photos avant et après l'intervention (horodatées), fait signer le client si présent. Un PV est généré automatiquement et envoyé au client par email. Mode hors-ligne supporté. Stockage 5 ans, chiffré, hébergé en Europe.
+
+### Module Devis et factures
+
+Génération de devis professionnels en 2 minutes depuis un template à la charte de l'entreprise. Catalogue de prestations réutilisable. Signature électronique intégrée. Suivi commercial (envoyé / ouvert / signé) avec relances automatiques à J+5 et J+10. Conversion devis → facture en 1 clic. Connexion native vers Pennylane et Qonto pour la comptabilité.
+
+### Module Documents
+
+Centralisation de tous les documents par client, site et agent : contrats commerciaux, fiches de poste, attestations URSSAF, fiches de sécurité, certificats de formation, visites médicales. Recherche instantanée. Accès par rôle (gestion fine des permissions).
+
+### Module Pilotage
+
+Tableau de bord temps réel : chiffre d'affaires par client et par site, heures consommées vs facturées, marge brute par client (le KPI qui change la donne), taux de réalisation des missions, alertes sur clients déficitaires.
+
+## Principes de conception
+
+### Conçu pour le nettoyage, pas adapté
+
+Chaque fonctionnalité est née d'un entretien avec un dirigeant du secteur. Le vocabulaire (sites, spécialités, fréquences variables, preuve de passage) est celui du métier. Pas de configuration sans fin pour transformer un outil générique.
+
+### Mobile-first pour les agents
+
+Les agents ne sont pas devant un ordinateur. L'interface fonctionne sur n'importe quel smartphone, sans installation, sans formation, sur connexion faible. Un lien web suffit.
+
+### Transparence totale sur le produit
+
+Trois statuts sont visibles publiquement sur le site : fonctionnalités déjà disponibles, en finalisation, sur la feuille de route. Aucune sur-promesse.
+
+### RGPD et souveraineté des données
+
+Hébergement européen exclusif. Chiffrement en transit (TLS) et au repos. Export complet des données en CSV/Excel en 1 clic à tout moment. Aucun verrouillage propriétaire. Conformité documentée : DPA (Data Processing Agreement), registre des traitements, gestion des accès par rôle.
+
+## Comparatifs
+
+### Proprely vs Excel
+
+Excel fonctionne jusqu'à 2-3 agents. Au-delà, les frictions explosent : multiples versions de fichiers, erreurs de saisie en cascade, pas de mobile pour les agents, aucune preuve de passage, aucune vue de la marge par client en temps réel. Le calcul mensuel des heures prend 3 à 4 heures par mois — soit 2 400 à 3 600 € de temps dirigeant brûlé chaque année.
+
+### Proprely vs Trello / outils génériques
+
+Trello, Asana, Notion sont des outils horizontaux qui demandent une configuration métier importante. Ils ne gèrent ni la notion de site distinct du client, ni les spécialités agents, ni la preuve de passage, ni le pilotage marge. Adaptables, oui ; conçus pour, non.
+
+### Proprely vs autres logiciels de nettoyage du marché
+
+La plupart des logiciels concurrents sont soit des ERP industriels (pensés pour 200+ agents, paramétrage de plusieurs mois) soit des outils de planning légers sans preuve de passage ni pilotage marge. Proprely vise le segment 3-50 agents, mobile-first, mise en route en moins d'une journée.
+
+## Méthodologie et expertise
+
+L'équipe travaille en co-construction avec 12 dirigeants de sociétés de nettoyage de 5 à 80 agents intervenant sur bureaux, hôtels, syndics et cabinets médicaux. Toutes les fonctionnalités sont issues d'entretiens terrain, pas d'études marché. Chaque feature de la roadmap est priorisée selon les retours des fondateurs.
+
+## Articles publiés sur le blog
+
+### Fixer ses prix dans le nettoyage : la méthode juste en 2026
+
+Couvre : la règle des 3× (prix de vente = 3 × coût horaire chargé, fourchette saine 2,8-3,2), les 4 facteurs qui justifient une hausse (technicité, contraintes horaires, accessibilité, fréquence), la méthode "prix de référence" avec 3 grilles internes mises à jour 2 fois par an, et pourquoi un devis détaillé justifie un prix 15-20% au-dessus du concurrent.
+
+### 5 outils que les sociétés de nettoyage utilisent (et pourquoi ça pose problème)
+
+Anatomie de la dispersion : Excel (3-4h/mois en saisie), WhatsApp (zéro traçabilité), Google Agenda (sapin de Noël illisible au-delà de 12 agents), Word (20 min/devis pendant que le concurrent répond en 10), classeur papier (audit URSSAF = journée perdue). Total : 6 à 10 heures par semaine perdues.
+
+### Logiciel pour société de nettoyage : 7 critères pour bien choisir
+
+Conçu pour le métier, mobile-first agents, preuve de passage intégrée, marge par client visible en temps réel, conformité RGPD réelle, export 100% des données, mise en route en moins d'une journée. Plus le critère #0 : période d'essai gratuite obligatoire.
+
+### Le calcul des heures : la vraie raison qui vous fait perdre une journée par mois
+
+Démonstration chiffrée : 3h30 à 4h30 par mois consacrées au seul calcul des heures, soit 2 400 à 3 600 € par an de temps dirigeant brûlé. Comment un compteur automatique intégré au planning fait passer le calcul de 4h à 2 clics.
+
+### RGPD et nettoyage : ce que doit savoir un dirigeant en 2026
+
+Vous êtes responsable du traitement dès le premier agent recruté et le premier client B2B. 5 obligations clés (information, finalité, durée, sécurité, hébergement). Sanctions CNIL jusqu'à 4% du CA annuel ou 20 M€. Centraliser dans un outil RGPD-natif transforme la conformité en conséquence plutôt qu'en charge.
+
+### Fidéliser ses agents : 6 leviers contre 35% de turnover
+
+Turnover moyen du secteur : 35% par an (3 à 5× la moyenne tertiaire). Les sociétés sous 15% appliquent : suivi de la charge horaire, planning prévisible 7 jours à l'avance, reconnaissance des spécialités, remplacements organisés, paie juste à l'heure, visibilité sur le travail bien fait. Coût d'un départ : 3 500 à 5 000 € — réduire le turnover de 35% à 20% libère 7 500 à 10 000 € par an.
+
+## Étude de marché — Digitalisation des sociétés de nettoyage en France 2026
+
+Le secteur français de la propreté compte environ 14 000 entreprises, dont 92% ont moins de 50 salariés. La majorité utilise encore Excel + WhatsApp + agenda papier ou Google Agenda comme outillage principal. Le coût caché de cette dispersion représente entre 6 et 10 heures par semaine de temps dirigeant, soit 12 000 à 30 000 € par an selon la taille. Voir [l'étude complète](https://proprely.fr/blog/etude-digitalisation-societes-nettoyage-france-2026) pour les chiffres détaillés.
+
+## Lexique métier
+
+Le site propose un lexique de plus de 10 termes spécifiques au métier : preuve de passage, tournée, cahier des charges propreté, ratio de productivité m²/h, fréquence d'intervention, agent qualifié AQAP, autocontrôle, contrat de propreté, prestation ponctuelle, remise en état post-chantier. Voir le [lexique complet](https://proprely.fr/lexique).
+
+## FAQ
+
+**Q: C'est quoi exactement, la bêta privée ?**
+R: Proprely sélectionne 30 sociétés de nettoyage fondatrices. Pendant toute la durée de la bêta, accès gratuit complet, remontée des besoins, influence sur les prochaines fonctionnalités.
+
+**Q: C'est vraiment gratuit ?**
+R: Oui. Aucun paiement, aucune carte bancaire. Accès complet sans limite pendant toute la bêta.
+
+**Q: Combien ça coûtera après la bêta ?**
+R: Tarif public communiqué en fin de bêta. Les membres fondateurs gardent un tarif privilégié fixé à l'avance et conservé à vie.
+
+**Q: Combien de temps pour la mise en route ?**
+R: 30 minutes lors d'un appel avec le fondateur. Configuration sites + agents + fréquences. Opérationnel le jour même.
+
+**Q: Mon entreprise est-elle assez grande ?**
+R: Proprely est conçu pour 3 à 50 agents. Dès que vous gérez plusieurs sites ou plusieurs agents, vous avez besoin de centraliser.
+
+**Q: Mes agents vont-ils devoir installer une application ?**
+R: Non. Lien web ouvert dans le navigateur du téléphone. Pas d'installation, pas de formation.
+
+**Q: Mes données sont-elles sécurisées ?**
+R: Hébergement européen, chiffrement transit + repos, RGPD. Export en 1 clic à tout moment.
+
+**Q: Et si Proprely arrête son activité ?**
+R: Vos données sont exportables à tout moment en formats standards. Aucun verrouillage propriétaire.
+
+**Q: Quelle est la prochaine étape concrète ?**
+R: Formulaire en 2 minutes → retour sous 24h ouvrées → appel découverte + mise en route avec le fondateur si profil match.
+
+**Q: Proprely fonctionne-t-il pour le nettoyage particulier ?**
+R: Non. Proprely est conçu spécifiquement pour le nettoyage B2B.
+
+## Contact
+
+- Email : contact@proprely.fr
+- Site : https://proprely.fr/
+- Formulaire de candidature bêta : https://proprely.fr/#formulaire
+
+## Métadonnées
+
+- type: SoftwareApplication, BusinessApplication, SaaS B2B
+- audience: dirigeants société de nettoyage France, 3-50 agents
+- language: fr-FR
+- pricing: gratuit pendant la bêta ; tarif post-bêta à définir
+- last-updated: 2026-05
+- license: site web public · contenu libre de citation avec attribution

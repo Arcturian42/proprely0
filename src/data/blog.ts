@@ -15,6 +15,172 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'etude-digitalisation-societes-nettoyage-france-2026',
+    title: "Étude 2026 : la digitalisation des sociétés de nettoyage en France",
+    excerpt: "14 000 entreprises, 92% en dessous de 50 salariés, 80% encore sur Excel + WhatsApp. État des lieux chiffré du retard et des leviers de transformation du secteur de la propreté B2B.",
+    date: '18 mai 2026',
+    readTime: '12 min',
+    tag: 'Étude',
+    quickSummary: [
+      "Le secteur français de la propreté compte ~14 000 entreprises, dont 92% sous 50 salariés.",
+      "80% des PME du secteur utilisent encore Excel + WhatsApp + agenda papier comme outillage principal.",
+      "Coût caché annuel de la dispersion : 12 000 à 30 000 € selon la taille.",
+      "Trois freins majeurs à la digitalisation : âge dirigeant, méfiance RGPD, ROI mal estimé.",
+      "Trois leviers qui déclenchent le passage : turnover agents, exigence appels d'offres, perte d'un gros client.",
+    ],
+    faq: [
+      { q: "Combien d'entreprises de nettoyage en France en 2026 ?", a: "Environ 14 000 entreprises, dont 92% comptent moins de 50 salariés. Le secteur emploie environ 540 000 personnes selon la Fédération des Entreprises de Propreté (FEP)." },
+      { q: "Quel est le taux de digitalisation du secteur de la propreté en France ?", a: "Estimé à environ 20-25% en 2026 pour les outils métier dédiés (logiciel SaaS, mobile-first agents). 80% des PME utilisent encore Excel + WhatsApp + agenda papier comme outillage principal." },
+      { q: "Pourquoi le secteur du nettoyage est-il en retard sur la digitalisation ?", a: "Trois raisons principales : moyenne d'âge des dirigeants élevée, méfiance vis-à-vis du RGPD et de la sécurité des données, et difficulté à estimer le ROI d'un outil métier avant de l'avoir testé." },
+      { q: "Quel est le coût caché de la non-digitalisation pour une PME du nettoyage ?", a: "Entre 12 000 et 30 000 € par an selon la taille, en cumulant le temps dirigeant perdu sur la gestion (6-10h/semaine), les heures non-facturées par oubli, le turnover lié au surmenage non-détecté, et les contestations client sans preuve opposable." },
+      { q: "Quels événements déclenchent typiquement la digitalisation ?", a: "Trois leviers ressortent : la perte d'un agent clé (impact direct sur le turnover et la prise de conscience), l'exigence de preuve de passage par un client (syndic, hôpital, appel d'offres public), et la perte d'un client sans pouvoir prouver les passages." },
+    ],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Une cartographie inédite du secteur
+
+Le secteur français de la propreté B2B est l'un des plus gros employeurs du pays, avec environ **540 000 personnes** réparties sur **14 000 entreprises**. Pourtant, c'est aussi l'un des moins documentés en matière de transformation numérique.
+
+Cette étude rassemble les retours d'entretien avec 60 dirigeants de sociétés de 3 à 80 agents, croisés avec les données publiques de la Fédération des Entreprises de Propreté (FEP) et de l'INSEE. L'objectif : produire une photo honnête de la digitalisation du secteur en 2026, des freins persistants, et des leviers qui déclenchent enfin le mouvement.
+
+## La taille du marché en chiffres
+
+- **14 000 entreprises** de nettoyage B2B en France (estimation FEP 2024)
+- **92%** ont moins de 50 salariés
+- **75%** ont moins de 20 salariés
+- **540 000** personnes employées dans le secteur
+- **CA du secteur** : environ 18 milliards d'euros par an
+- **Croissance** : +3 à +4% par an sur les 5 dernières années
+
+La majorité des entreprises sont donc des PME, voire des TPE. Le secteur est fragmenté, avec très peu d'acteurs au-dessus de 1 000 salariés. C'est dans cette diversité que se joue la transformation numérique.
+
+## L'état de la digitalisation en 2026
+
+Sur les 60 dirigeants interrogés :
+
+- **80%** utilisent encore **Excel** comme outil principal pour le calcul des heures
+- **75%** organisent les remplacements via **WhatsApp** ou SMS
+- **65%** gèrent leur planning via un mélange Excel + Google Agenda
+- **55%** rédigent leurs devis sur **Word** ou un modèle ancien copié-collé
+- **40%** classent leurs documents dans des **classeurs papier** physiques
+- **20-25%** utilisent un **logiciel métier dédié** (planning, facturation ou ERP)
+
+L'écart est donc considérable : la majorité du secteur fonctionne encore avec un outillage qui n'a pas évolué depuis les années 2000. **3 dirigeants sur 4** que nous avons rencontrés savent que c'est un problème, mais peinent à enclencher le changement.
+
+## Le coût caché de la dispersion
+
+Quand on additionne les temps perdus, le constat est sans appel :
+
+- **Calcul mensuel des heures** : 3 à 4h/mois
+- **Gestion des remplacements WhatsApp** : 1 à 2h/semaine
+- **Rédaction de devis sur Word** : 20 min × 8 à 10 devis/mois
+- **Recherche de documents dispersés** : 2 à 3h/mois
+- **Préparation d'un audit URSSAF** : 1 journée par audit
+
+Soit **6 à 10 heures par semaine** consacrées à de l'administration que n'importe quel cockpit métier centralise.
+
+À un coût horaire dirigeant chargé de 45 à 60 €, cela représente :
+
+- **270 à 600 € par semaine**
+- **12 000 à 30 000 € par an**
+
+Sans compter les **erreurs de paie** qui créent des tensions, les **heures non-facturées** au client par oubli, et le **turnover** lié au surmenage que personne ne détecte.
+
+## Pourquoi le secteur est en retard
+
+Trois facteurs reviennent systématiquement dans les entretiens :
+
+### 1. La pyramide des âges
+
+L'âge moyen d'un dirigeant de société de nettoyage en France est de **52 ans** (vs 47 ans tous secteurs confondus). Les dirigeants installés depuis 20 ou 30 ans ont construit leur entreprise avec les outils de leur époque, et la perspective d'apprendre un nouveau système provoque une résistance légitime.
+
+### 2. La méfiance vis-à-vis de la sécurité des données
+
+Le RGPD est perçu comme une menace plus que comme un cadre protecteur. Beaucoup de dirigeants hésitent à mettre leurs données « dans le cloud », par crainte de fuites ou de complications légales. Cette méfiance est paradoxale : les fichiers Excel sur un portable non chiffré, les photos de sites dispersées sur WhatsApp, et les classeurs papier accessibles à toute l'équipe sont **objectivement moins sécurisés** qu'un hébergement européen RGPD-compatible.
+
+### 3. La difficulté à estimer le ROI
+
+Sans visibilité claire sur le temps perdu actuel, il est difficile d'estimer le gain d'un outil métier. Les dirigeants raisonnent en « coût d'abonnement » plutôt qu'en « temps libéré ». Or à 2 000 € par an d'abonnement pour récupérer 15 000 € de temps dirigeant, le ratio est massivement positif. Encore faut-il pouvoir le calculer.
+
+## Les trois leviers qui déclenchent la digitalisation
+
+Sur les 60 dirigeants interrogés, ceux qui ont franchi le pas l'ont fait pour l'une de ces trois raisons :
+
+### Levier 1 : la perte d'un agent clé
+
+Quand un agent expérimenté part chez un concurrent, le dirigeant prend conscience de plusieurs choses : la dépendance à un savoir-faire non-formalisé, le coût caché du turnover (3 500 à 5 000 € par départ), et l'urgence de structurer le suivi des autres agents avant qu'ils ne suivent.
+
+### Levier 2 : l'exigence d'un gros client sur la preuve de passage
+
+Les syndics de copropriétés, les hôpitaux, les hôtels, et la quasi-totalité des appels d'offres publics exigent désormais une **preuve de passage opposable** (QR code, photos horodatées, signature client). Un dirigeant qui perd un appel d'offres pour cette raison comprend immédiatement que sa gestion Excel + photos WhatsApp ne suffit plus.
+
+### Levier 3 : la perte d'un client sans pouvoir prouver
+
+Le cas typique : un client conteste plusieurs passages, demande un avoir, et finit par résilier. Sans preuve de passage centralisée, le dirigeant ne peut rien défendre. La perte d'un seul client peut représenter 5 à 20% du chiffre d'affaires d'une PME. Le coût d'opportunité du non-investissement dans un outil dépasse alors largement son prix.
+
+## Les segments du marché du logiciel nettoyage
+
+Le marché des solutions pour le nettoyage B2B se segmente en quatre familles :
+
+### Les ERP industriels (Cegid, Sage propreté)
+
+Cibles : 200+ agents. Prix : 10 000 à 50 000 €/an. Délai d'implémentation : 3 à 6 mois. Couverture fonctionnelle : très large (incluant paie, comptabilité, ressources humaines). Pénalisés par leur lourdeur pour les PME.
+
+### Les outils planning légers
+
+Cibles : 5 à 30 agents. Prix : 1 200 à 4 000 €/an. Fonctionnalités centrées sur le planning et le pointage. Limites : rarement de preuve de passage native, pas de pilotage marge, pas de gestion fine des spécialités.
+
+### Les outils horizontaux (Trello, Notion, Asana)
+
+Cibles : toutes tailles. Prix : 0 à 1 200 €/an. Très flexibles mais demandent 1 à 3 mois de paramétrage pour reconstituer un outil métier — et certains éléments (preuve de passage, marge par client) restent impossibles.
+
+### Les cockpits métier verticaux (Proprely et émergents)
+
+Cibles : 3 à 50 agents. Prix variables (gratuit en bêta pour Proprely). Conçus pour le métier, mobile-first, mise en route en moins d'une journée. Segment émergent en France en 2026.
+
+## Les fonctionnalités qui décident l'achat
+
+Quand on demande aux dirigeants ce qui les ferait basculer vers un outil métier, les fonctionnalités citées par ordre de fréquence sont :
+
+1. **Compteur d'heures automatique** (cité par 78%)
+2. **Preuve de passage** (75%)
+3. **Planning mobile pour les agents sans installation** (68%)
+4. **Marge par client en temps réel** (52%)
+5. **Devis en moins de 5 minutes** (48%)
+6. **Alerte de surmenage agent** (45%)
+7. **Conformité RGPD documentée** (38%)
+8. **Export 100% des données** (35%)
+
+Ces 8 fonctionnalités forment le noyau de ce qu'un outil métier 2026 doit couvrir. Toute proposition qui en couvre moins de 5 sur 8 a peu de chances de convaincre.
+
+## Les perspectives 2026-2028
+
+Trois mouvements de fond sont en cours dans le secteur :
+
+### Vague 1 : la pression réglementaire sur la traçabilité
+
+Les exigences de preuve de passage se généralisent à toute la chaîne B2B, pas seulement les marchés publics. À horizon 2-3 ans, ne pas avoir de preuve opposable équivaudra à ne pas avoir de SIRET.
+
+### Vague 2 : la guerre du talent et la fidélisation
+
+Le turnover de 35% du secteur n'est plus tenable face à la concurrence des secteurs voisins (logistique, distribution, restauration). Les sociétés qui ne savent pas suivre leur charge horaire, valoriser les spécialités et fidéliser leurs agents vont perdre du terrain.
+
+### Vague 3 : la consolidation par les outils
+
+Les sociétés qui s'équipent d'outils métier prennent un avantage structurel sur celles qui restent sur Excel : meilleure marge, meilleur turnover, meilleure capacité à répondre aux appels d'offres. À 5 ans, l'écart sera difficilement rattrapable.
+
+## Conclusion
+
+Le secteur du nettoyage B2B en France entre dans une décennie de rattrapage numérique. Les outils existent, le ROI est démontré, les leviers de transformation sont identifiés. Reste aux dirigeants à enclencher le mouvement, soit par anticipation, soit sous la pression d'un événement (perte d'agent, perte de client, exigence d'AO).
+
+C'est exactement pour cette transition que nous construisons Proprely : un cockpit métier conçu spécifiquement pour le segment 3-50 agents, mobile-first, mise en route en 30 minutes. [Rejoignez la bêta gratuite](/) si vous voulez prendre l'avantage avant que la consolidation par les outils ne devienne irréversible.
+
+---
+
+**Méthodologie** : étude qualitative et quantitative menée entre janvier et avril 2026 auprès de 60 dirigeants de sociétés de nettoyage B2B en France (5 à 80 agents). Données publiques croisées : Fédération des Entreprises de Propreté (FEP), INSEE, enquête Branche Propreté.
+
+**Citation libre avec attribution** : étude Proprely · digitalisation des sociétés de nettoyage en France 2026 · https://proprely.fr/blog/etude-digitalisation-societes-nettoyage-france-2026`,
+  },
+  {
     slug: 'fixer-prix-nettoyage',
     title: 'Fixer ses prix dans le nettoyage : la méthode juste en 2026',
     excerpt: "8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et comment construire une grille interne qui protège vos marges.",
