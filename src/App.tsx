@@ -10,7 +10,9 @@ const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
 
-const META: Record<string, { title: string; description: string }> = {
+type RouteMeta = { title: string; description: string; robots?: string }
+
+const META: Record<string, RouteMeta> = {
   '/': {
     title: 'Proprely : Le cockpit métier des sociétés de nettoyage',
     description: "Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite : 30 places fondateurs.",
@@ -26,6 +28,7 @@ const META: Record<string, { title: string; description: string }> = {
   '/beta/merci': {
     title: 'Candidature enregistrée · Proprely',
     description: "Votre candidature à la bêta privée Proprely est bien reçue. Nous revenons vers vous sous 24h ouvrées.",
+    robots: 'noindex,follow',
   },
   '/tarifs': {
     title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
@@ -45,6 +48,21 @@ function setMeta(name: string, content: string) {
     document.head.appendChild(el)
   }
   el.setAttribute('content', content)
+}
+
+function setRobots(value: string | undefined) {
+  const existing = document.querySelector('meta[name="robots"]')
+  if (value) {
+    if (existing) existing.setAttribute('content', value)
+    else {
+      const el = document.createElement('meta')
+      el.setAttribute('name', 'robots')
+      el.setAttribute('content', value)
+      document.head.appendChild(el)
+    }
+  } else if (existing) {
+    existing.remove()
+  }
 }
 
 function PageLoading() {
@@ -70,6 +88,9 @@ function App() {
       setMeta('twitter:title', meta.title)
       setMeta('twitter:description', meta.description)
       document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
+      setRobots(meta.robots)
+    } else {
+      setRobots(undefined)
     }
   }, [route])
 

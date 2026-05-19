@@ -73,6 +73,7 @@ type PageMeta = {
   ogDescription?: string
   schemas: object[]
   bodyHtml: string
+  robots?: string
 }
 
 function buildHtml(meta: PageMeta): string {
@@ -88,10 +89,17 @@ function buildHtml(meta: PageMeta): string {
     /<meta name="description" content="[^"]*" \/>/,
     `<meta name="description" content="${escapeAttr(meta.description)}" />`
   )
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*" \/>/,
-    `<link rel="canonical" href="${escapeAttr(canonical)}" />`
-  )
+  if (meta.robots) {
+    html = html.replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<meta name="robots" content="${escapeAttr(meta.robots)}" />\n    <link rel="canonical" href="${escapeAttr(canonical)}" />`
+    )
+  } else {
+    html = html.replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<link rel="canonical" href="${escapeAttr(canonical)}" />`
+    )
+  }
   html = html.replace(
     /<meta property="og:url" content="[^"]*" \/>/,
     `<meta property="og:url" content="${escapeAttr(canonical)}" />`
@@ -394,6 +402,7 @@ const thankYouHtml = buildHtml({
   url: '/beta/merci',
   title: 'Candidature enregistrée · Proprely',
   description: 'Votre candidature à la bêta privée Proprely est bien reçue. Nous revenons vers vous sous 24h ouvrées.',
+  robots: 'noindex,follow',
   schemas: [
     webpageSchema(
       'Candidature enregistrée',
