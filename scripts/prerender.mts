@@ -250,7 +250,16 @@ for (const p of posts) {
     ${faqHtml ? `<h2>Questions fréquentes</h2>${faqHtml}` : ''}
   `.trim()
 
-  const schemas: object[] = [blogPostingSchema(p)]
+  const breadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${ORIGIN}/blog` },
+      { '@type': 'ListItem', position: 3, name: p.title, item: `${ORIGIN}${url}` },
+    ],
+  }
+  const schemas: object[] = [blogPostingSchema(p), breadcrumbs]
   if (p.faq?.length) schemas.push(faqSchema(p.faq))
   if (p.howTo) schemas.push(howToSchema(p.howTo))
 
@@ -437,6 +446,38 @@ const thankYouBody = `
   <h1>Candidature enregistrée</h1>
   <p>Votre candidature à la bêta privée Proprely est bien reçue. Nous revenons vers vous sous 24h ouvrées.</p>
 `.trim()
+
+const notFoundBody = `
+  <h1>Page introuvable (404)</h1>
+  <p>La page que vous cherchez n'existe pas ou a été déplacée.</p>
+  <h2>Où aller maintenant ?</h2>
+  <ul>
+    <li><a href="${ORIGIN}/">Accueil — Découvrir le cockpit Proprely</a></li>
+    <li><a href="${ORIGIN}/tarifs">Tarifs — Gratuit pendant la bêta</a></li>
+    <li><a href="${ORIGIN}/calculateur-roi">Calculateur ROI — Combien la dispersion vous coûte</a></li>
+    <li><a href="${ORIGIN}/blog">Blog — Analyses pour les dirigeants du nettoyage</a></li>
+  </ul>
+`.trim()
+
+const notFoundHtml = buildHtml({
+  url: '/404',
+  title: 'Page introuvable · Proprely',
+  description: "La page que vous cherchez n'existe pas ou a été déplacée.",
+  robots: 'noindex,follow',
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Page introuvable',
+      description: "La page que vous cherchez n'existe pas ou a été déplacée.",
+      url: `${ORIGIN}/404`,
+      inLanguage: 'fr-FR',
+    },
+  ],
+  bodyHtml: notFoundBody,
+})
+writeFileSync(resolve(distDir, '404.html'), notFoundHtml)
+generated.push('/404.html')
 
 const thankYouHtml = buildHtml({
   url: '/beta/merci',

@@ -9,8 +9,10 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 ## Pages principales
 
 - [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
+- [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie pour les 30 premières sociétés
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
 - [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
+- [Flux RSS](https://proprely.fr/rss.xml) : suivi des nouveaux articles
 
 ## Fonctionnalités
 

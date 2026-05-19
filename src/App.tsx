@@ -9,6 +9,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -35,6 +36,7 @@ const META: Record<string, RouteMeta> = {
     description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.",
   },
 }
+
 
 function setMeta(name: string, content: string) {
   let el = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`)
@@ -95,13 +97,23 @@ function App() {
   }, [route])
 
   let content
-  if (route === '/calculateur-roi') content = <RoiCalculator />
+  if (route === '/') content = <Landing />
+  else if (route === '/calculateur-roi') content = <RoiCalculator />
   else if (route === '/tarifs') content = <Pricing />
   else if (route === '/blog') content = <BlogIndex />
-  else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
+  else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
-  else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17)} />
-  else return <div className="w-full bg-white"><ScrollProgress /><Landing /></div>
+  else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
+  else content = <NotFound />
+
+  if (route === '/') {
+    return (
+      <div className="w-full bg-white">
+        <ScrollProgress />
+        {content}
+      </div>
+    )
+  }
 
   return (
     <div className="w-full bg-white">

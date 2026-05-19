@@ -2,32 +2,12 @@ import { useEffect, useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import NotFound from './NotFound'
 import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import { navigate } from '../lib/useRoute'
-
-function NotFound() {
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <PageNav />
-      <main className="flex-1 flex items-center justify-center py-20">
-        <div className="text-center max-w-md px-4">
-          <h1 className="text-3xl font-black text-slate-900 mb-3">Article introuvable</h1>
-          <p className="text-slate-600 mb-6">Cet article n'existe pas ou a été supprimé.</p>
-          <button
-            onClick={() => navigate('/blog')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3 font-semibold text-sm hover:bg-blue-700 transition-colors"
-          >
-            <ArrowLeft size={14} />
-            Voir tous les articles
-          </button>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
-}
 
 function renderMarkdown(content: string): ReactElement[] {
   const lines = content.split('\n')
@@ -203,6 +183,15 @@ function injectArticleSchema(post: BlogPostType) {
       articleSection: post.tag,
     },
   ]
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://proprely.fr/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url },
+    ],
+  })
   if (post.faq?.length) {
     schemas.push({
       '@context': 'https://schema.org',
@@ -269,6 +258,13 @@ export default function BlogPost({ slug }: Props) {
       <main className="flex-1">
         <article className="py-12 sm:py-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs
+              items={[
+                { name: 'Blog', href: '/blog' },
+                { name: post.title },
+              ]}
+              className="mb-6"
+            />
             <button
               onClick={() => navigate('/blog')}
               className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 transition-colors mb-8"

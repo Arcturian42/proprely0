@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, Euro, TrendingUp, Calendar } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import { navigate } from '../lib/useRoute'
 
@@ -66,6 +67,9 @@ export default function RoiCalculator() {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
 
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
+            <div className="flex justify-center mb-5">
+              <Breadcrumbs items={[{ name: 'Calculateur ROI' }]} />
+            </div>
             <div className="text-center mb-10 sm:mb-12">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-5">
                 <TrendingUp size={14} />

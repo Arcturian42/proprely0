@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proprely · Blog</title>
+    <link>https://proprely.fr/blog</link>
+    <atom:link href="https://proprely.fr/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage B2B. Productivité, RGPD, outils, prix, fidélisation.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Fri, 15 May 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Fixer ses prix dans le nettoyage : la méthode juste en 2026</title>
+      <link>https://proprely.fr/blog/fixer-prix-nettoyage</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/fixer-prix-nettoyage</guid>
+      <description>8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et comment construire une grille interne qui protège vos marges.</description>
+      <category>Stratégie</category>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>5 outils que les sociétés de nettoyage utilisent au quotidien (et pourquoi ça pose problème)</title>
+      <link>https://proprely.fr/blog/gestion-societe-nettoyage-outils</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/gestion-societe-nettoyage-outils</guid>
+      <description>Excel, WhatsApp, Google Agenda, Word, classeur papier. Cinq outils, cinq sources de friction. Anatomie de la dispersion qui fait perdre 6 heures par semaine.</description>
+      <category>Gestion</category>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Logiciel pour société de nettoyage : 7 critères pour bien choisir</title>
+      <link>https://proprely.fr/blog/logiciel-societe-nettoyage-criteres</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/logiciel-societe-nettoyage-criteres</guid>
+      <description>Conçu pour le métier, mobile-first, preuve de passage, marge par client visible, RGPD réel, export 100%, mise en route en moins d</description>
+      <category>Outils</category>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Le calcul des heures : la vraie raison qui vous fait perdre une journée par mois</title>
+      <link>https://proprely.fr/blog/calcul-heures-agents-nettoyage</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/calcul-heures-agents-nettoyage</guid>
+      <description>Le 22 du mois, vous récupérez l</description>
+      <category>Productivité</category>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>RGPD et nettoyage : ce que doit savoir un dirigeant en 2026</title>
+      <link>https://proprely.fr/blog/rgpd-societe-nettoyage-2026</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/rgpd-societe-nettoyage-2026</guid>
+      <description>Vos agents ont accès à des locaux clients. Vos planning contiennent des données nominatives. Vos rapports d</description>
+      <category>Conformité</category>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Fidéliser ses agents de nettoyage : 6 leviers contre 35% de turnover</title>
+      <link>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</guid>
+      <description>Le secteur a un turnover de 35% par an. Les sociétés qui descendent sous 15% appliquent ces 6 leviers. Indice : ce ne sont pas celles qui paient le plus.</description>
+      <category>Management</category>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
