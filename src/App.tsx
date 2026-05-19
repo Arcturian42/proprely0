@@ -9,8 +9,12 @@ const BlogPost = lazy(() => import('./pages/BlogPost'))
 const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const CityPage = lazy(() => import('./pages/CityPage'))
 
-const META: Record<string, { title: string; description: string }> = {
+type RouteMeta = { title: string; description: string; robots?: string }
+
+const META: Record<string, RouteMeta> = {
   '/': {
     title: 'Proprely : Le cockpit métier des sociétés de nettoyage',
     description: "Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite : 30 places fondateurs.",
@@ -26,12 +30,14 @@ const META: Record<string, { title: string; description: string }> = {
   '/beta/merci': {
     title: 'Candidature enregistrée · Proprely',
     description: "Votre candidature à la bêta privée Proprely est bien reçue. Nous revenons vers vous sous 24h ouvrées.",
+    robots: 'noindex,follow',
   },
   '/tarifs': {
     title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
     description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.",
   },
 }
+
 
 function setMeta(name: string, content: string) {
   let el = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`)
@@ -45,6 +51,21 @@ function setMeta(name: string, content: string) {
     document.head.appendChild(el)
   }
   el.setAttribute('content', content)
+}
+
+function setRobots(value: string | undefined) {
+  const existing = document.querySelector('meta[name="robots"]')
+  if (value) {
+    if (existing) existing.setAttribute('content', value)
+    else {
+      const el = document.createElement('meta')
+      el.setAttribute('name', 'robots')
+      el.setAttribute('content', value)
+      document.head.appendChild(el)
+    }
+  } else if (existing) {
+    existing.remove()
+  }
 }
 
 function PageLoading() {
@@ -70,17 +91,31 @@ function App() {
       setMeta('twitter:title', meta.title)
       setMeta('twitter:description', meta.description)
       document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
+      setRobots(meta.robots)
+    } else {
+      setRobots(undefined)
     }
   }, [route])
 
   let content
-  if (route === '/calculateur-roi') content = <RoiCalculator />
+  if (route === '/') content = <Landing />
+  else if (route === '/calculateur-roi') content = <RoiCalculator />
   else if (route === '/tarifs') content = <Pricing />
   else if (route === '/blog') content = <BlogIndex />
-  else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6)} />
+  else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
-  else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17)} />
-  else return <div className="w-full bg-white"><ScrollProgress /><Landing /></div>
+  else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
+  else if (route.startsWith('/villes/')) content = <CityPage slug={route.slice(8).replace(/\/$/, '')} />
+  else content = <NotFound />
+
+  if (route === '/') {
+    return (
+      <div className="w-full bg-white">
+        <ScrollProgress />
+        {content}
+      </div>
+    )
+  }
 
   return (
     <div className="w-full bg-white">

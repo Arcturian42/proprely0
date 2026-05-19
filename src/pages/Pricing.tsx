@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, Award, Shield, Users, Calculator, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 import { navigate } from '../lib/useRoute'
@@ -61,6 +62,9 @@ export default function Pricing() {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
 
           <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-5">
+              <Breadcrumbs items={[{ name: 'Tarifs' }]} />
+            </div>
             <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-4">Tarifs</p>
             <motion.h1
               initial={{ opacity: 0, y: 12 }}

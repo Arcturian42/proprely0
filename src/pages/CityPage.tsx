@@ -1,0 +1,311 @@
+import { useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowRight, MapPin, Sparkles, CheckCircle, HelpCircle, AlertCircle } from 'lucide-react'
+import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
+import Footer from '../sections/Footer'
+import NotFound from './NotFound'
+import { getCity } from '../data/cities'
+import type { CityPage as CityPageType } from '../data/cities'
+import { navigate } from '../lib/useRoute'
+
+function injectCitySchema(city: CityPageType) {
+  const id = 'city-schema'
+  document.getElementById(id)?.remove()
+  const url = `https://proprely.fr/villes/${city.slug}`
+  const today = new Date().toISOString().slice(0, 10)
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: city.title,
+      description: city.metaDescription,
+      url,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: today,
+      isPartOf: { '@type': 'WebSite', '@id': 'https://proprely.fr/#website' },
+      about: {
+        '@type': 'Service',
+        name: `Logiciel de gestion pour sociétés de nettoyage à ${city.city}`,
+        provider: { '@id': 'https://proprely.fr/#organization' },
+        areaServed: {
+          '@type': 'City',
+          name: city.city,
+          containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
+        },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 3, name: city.city, item: url },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: city.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.id = id
+  script.text = JSON.stringify(schemas)
+  document.head.appendChild(script)
+}
+
+type Props = { slug: string }
+
+export default function CityPage({ slug }: Props) {
+  const city = getCity(slug)
+
+  useEffect(() => {
+    if (!city) return
+    const url = `https://proprely.fr/villes/${city.slug}`
+    const title = `${city.title} · Proprely`
+    document.title = title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', city.metaDescription)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', city.title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', city.metaDescription)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', city.title)
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', city.metaDescription)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
+    injectCitySchema(city)
+    return () => {
+      document.getElementById('city-schema')?.remove()
+    }
+  }, [city])
+
+  if (!city) return <NotFound />
+
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <PageNav />
+
+      <main className="flex-1">
+        <section className="relative bg-gradient-to-b from-slate-50 via-white to-white pt-12 sm:pt-20 pb-14 sm:pb-20 overflow-hidden">
+          <div className="absolute top-10 -left-32 w-[28rem] h-[28rem] rounded-full bg-blue-100/40 blur-3xl pointer-events-none animate-blob-1" />
+          <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
+
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-5">
+              <Breadcrumbs items={[{ name: city.city }]} />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-5"
+            >
+              <MapPin size={12} />
+              {city.region}
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6"
+            >
+              {city.title}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.12 }}
+              className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8"
+            >
+              {city.subtitle}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center"
+            >
+              <button
+                onClick={() => navigate('/', { hash: 'formulaire' })}
+                className="group bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
+              >
+                Candidater à la bêta
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={() => navigate('/calculateur-roi')}
+                className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Calculer mon économie
+              </button>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
+              Le marché de la propreté B2B à {city.city}
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+              {city.marketIntro}
+            </p>
+            <ul className="space-y-3">
+              {city.marketBullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                  <CheckCircle size={18} className="text-blue-600 mt-0.5 shrink-0" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 bg-slate-50 border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight text-center">
+              Vos clients types à {city.city}
+            </h2>
+            <p className="text-slate-600 text-center mb-10 max-w-2xl mx-auto">
+              Les profils de clients que vous gérez au quotidien dans la métropole {city.region.toLowerCase()}.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {city.clientTypes.map((c, i) => {
+                const Icon = c.icon
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    className="bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow] duration-200"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                      <Icon size={18} />
+                    </div>
+                    <h3 className="font-bold text-slate-900 mb-2">{c.type}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{c.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">
+              Les défis spécifiques à {city.city}
+            </h2>
+            <p className="text-slate-600 mb-10 leading-relaxed">
+              Ce que vous gérez en plus, par rapport à une société de nettoyage hors {city.region.toLowerCase()}.
+            </p>
+            <div className="space-y-4">
+              {city.challenges.map((c, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="flex items-start gap-4 bg-amber-50/50 border border-amber-100 rounded-2xl p-5 sm:p-6"
+                >
+                  <AlertCircle size={20} className="text-amber-600 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-bold text-slate-900 mb-1.5">{c.title}</h3>
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{c.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 bg-gradient-to-b from-blue-50/40 to-white border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <Sparkles size={14} className="text-blue-600" />
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Pourquoi Proprely</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight text-center">
+              Comment Proprely répond aux contraintes de {city.city}
+            </h2>
+            <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+              Les fonctionnalités calibrées pour ce que vous gérez vraiment au quotidien.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {city.proprelyFit.map((f, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-7"
+                >
+                  <CheckCircle size={20} className="text-blue-600 mb-3" />
+                  <h3 className="font-bold text-slate-900 text-base sm:text-lg mb-2">{f.title}</h3>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{f.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-2 mb-3">
+              <HelpCircle size={16} className="text-blue-600" />
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Questions fréquentes</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-8 tracking-tight">
+              Ce qu'on nous demande sur {city.city}
+            </h2>
+            <div className="bg-white border border-slate-100 rounded-2xl divide-y divide-slate-100">
+              {city.faq.map((f, i) => (
+                <details key={i} className="group p-5 sm:p-6 cursor-pointer">
+                  <summary className="flex items-center justify-between gap-4 font-bold text-slate-900 list-none">
+                    <span className="text-sm sm:text-base group-open:text-blue-700 transition-colors">{f.q}</span>
+                    <span className="text-blue-600 text-xs group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-3">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-slate-950 text-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight mb-5 leading-tight">
+              Prêt à piloter votre société depuis un seul outil ?
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+              30 sociétés fondatrices, accès gratuit pendant la bêta, tarif privilégié à vie. Onboarding 30 min avec le fondateur.
+            </p>
+            <button
+              onClick={() => navigate('/', { hash: 'formulaire' })}
+              className="group bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
+            >
+              Candidater à la bêta
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <p className="text-xs text-slate-400 mt-4">Gratuit · Sans carte bancaire · Réponse sous 24h</p>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

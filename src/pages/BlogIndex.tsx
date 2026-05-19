@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import { posts } from '../data/blog'
 import { navigate } from '../lib/useRoute'
@@ -12,6 +13,7 @@ export default function BlogIndex() {
 
       <main className="flex-1 py-12 sm:py-20 bg-gradient-to-b from-slate-50 via-white to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ name: 'Blog' }]} className="mb-6" />
           <div className="mb-12 sm:mb-14">
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-5">
               Blog

@@ -9,8 +9,10 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 ## Pages principales
 
 - [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
+- [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie pour les 30 premières sociétés
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
 - [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
+- [Flux RSS](https://proprely.fr/rss.xml) : suivi des nouveaux articles
 
 ## Fonctionnalités
 
@@ -18,6 +20,12 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 - [Logiciel de devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis professionnels en 2 minutes, signature électronique, suivi commercial
 - [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités, suivi charge horaire, alertes surmenage
 - [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code, photos avant-après, signature client, PV automatique
+
+## Villes desservies
+
+- [Logiciel nettoyage Paris & Île-de-France](https://proprely.fr/villes/paris) : tertiaire QCA, copropriétés haussmanniennes, syndics nationaux, hôtellerie
+- [Logiciel nettoyage Lyon & Rhône-Alpes](https://proprely.fr/villes/lyon) : Part-Dieu, pôle santé HCL, biotech Gerland, hôtellerie presqu'île
+- [Logiciel nettoyage Marseille & PACA](https://proprely.fr/villes/marseille) : Euroméditerranée, hôtellerie saisonnière, copropriétés bord de mer
 
 ## Articles de blog
 

@@ -2,32 +2,12 @@ import { useEffect, useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import NotFound from './NotFound'
 import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import { navigate } from '../lib/useRoute'
-
-function NotFound() {
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <PageNav />
-      <main className="flex-1 flex items-center justify-center py-20">
-        <div className="text-center max-w-md px-4">
-          <h1 className="text-3xl font-black text-slate-900 mb-3">Article introuvable</h1>
-          <p className="text-slate-600 mb-6">Cet article n'existe pas ou a été supprimé.</p>
-          <button
-            onClick={() => navigate('/blog')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3 font-semibold text-sm hover:bg-blue-700 transition-colors"
-          >
-            <ArrowLeft size={14} />
-            Voir tous les articles
-          </button>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
-}
 
 function renderMarkdown(content: string): ReactElement[] {
   const lines = content.split('\n')
@@ -161,10 +141,27 @@ function FAQSection({ faq }: { faq: BlogFAQ[] }) {
   )
 }
 
+const FR_MONTHS: Record<string, string> = {
+  janvier: '01', février: '02', fevrier: '02', mars: '03', avril: '04',
+  mai: '05', juin: '06', juillet: '07', août: '08', aout: '08',
+  septembre: '09', octobre: '10', novembre: '11', décembre: '12', decembre: '12',
+}
+
+function parseFrenchDate(str: string): string | null {
+  const m = str.toLowerCase().trim().match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/)
+  if (!m) return null
+  const day = m[1].padStart(2, '0')
+  const month = FR_MONTHS[m[2]]
+  if (!month) return null
+  return `${m[3]}-${month}-${day}`
+}
+
 function injectArticleSchema(post: BlogPostType) {
   const id = 'blog-post-schema'
   document.getElementById(id)?.remove()
   const url = `https://proprely.fr/blog/${post.slug}`
+  const datePublished = parseFrenchDate(post.date) || post.date
+  const dateModified = post.dateModified ? (parseFrenchDate(post.dateModified) || post.dateModified) : datePublished
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -172,8 +169,10 @@ function injectArticleSchema(post: BlogPostType) {
       headline: post.title,
       description: post.excerpt,
       url,
-      datePublished: post.date,
-      author: { '@type': 'Organization', name: 'Proprely' },
+      datePublished,
+      dateModified,
+      image: 'https://proprely.fr/og-image.png',
+      author: { '@type': 'Organization', name: 'Proprely', url: 'https://proprely.fr' },
       publisher: {
         '@type': 'Organization',
         name: 'Proprely',
@@ -184,6 +183,15 @@ function injectArticleSchema(post: BlogPostType) {
       articleSection: post.tag,
     },
   ]
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://proprely.fr/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: url },
+    ],
+  })
   if (post.faq?.length) {
     schemas.push({
       '@context': 'https://schema.org',
@@ -192,6 +200,21 @@ function injectArticleSchema(post: BlogPostType) {
         '@type': 'Question',
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    })
+  }
+  if (post.howTo) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: post.howTo.name,
+      description: post.howTo.description,
+      inLanguage: 'fr-FR',
+      step: post.howTo.steps.map((s, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: s.name,
+        text: s.text,
       })),
     })
   }
@@ -235,6 +258,13 @@ export default function BlogPost({ slug }: Props) {
       <main className="flex-1">
         <article className="py-12 sm:py-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs
+              items={[
+                { name: 'Blog', href: '/blog' },
+                { name: post.title },
+              ]}
+              className="mb-6"
+            />
             <button
               onClick={() => navigate('/blog')}
               className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 transition-colors mb-8"

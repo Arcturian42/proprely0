@@ -2,38 +2,19 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, CheckCircle, HelpCircle, Sparkles } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import NotFound from './NotFound'
 import { getFeature, getRelatedFeatures } from '../data/features'
 import type { FeaturePage as FeaturePageType } from '../data/features'
 import { getPost } from '../data/blog'
 import { navigate } from '../lib/useRoute'
 
-function NotFound() {
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <PageNav />
-      <main className="flex-1 flex items-center justify-center py-20">
-        <div className="text-center max-w-md px-4">
-          <h1 className="text-3xl font-black text-slate-900 mb-3">Page introuvable</h1>
-          <p className="text-slate-600 mb-6">Cette fonctionnalité n'existe pas.</p>
-          <button
-            onClick={() => navigate('/')}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3 font-semibold text-sm hover:bg-blue-700 transition-colors"
-          >
-            <ArrowLeft size={14} />
-            Retour à l'accueil
-          </button>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
-}
-
 function injectFeatureSchema(feature: FeaturePageType) {
   const id = 'feature-schema'
   document.getElementById(id)?.remove()
   const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
+  const today = new Date().toISOString().slice(0, 10)
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -42,6 +23,8 @@ function injectFeatureSchema(feature: FeaturePageType) {
       description: feature.metaDescription,
       url,
       inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: today,
       isPartOf: { '@type': 'WebSite', '@id': 'https://proprely.fr/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -110,6 +93,14 @@ export default function FeaturePage({ slug }: Props) {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <div className="flex justify-center mb-5">
+              <Breadcrumbs
+                items={[
+                  { name: 'Fonctionnalités', href: '/' },
+                  { name: feature.tag },
+                ]}
+              />
+            </div>
             <motion.button
               onClick={() => navigate('/')}
               initial={{ opacity: 0, y: -8 }}

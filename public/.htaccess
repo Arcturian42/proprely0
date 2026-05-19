@@ -1,7 +1,10 @@
 # Proprely SPA — Apache rewrite for Hostinger
-# All non-file paths are routed to index.html so client-side routing works.
+# Known routes are pre-rendered as static index.html files (served via -d/-f match).
+# Unknown URLs return a real HTTP 404 with the custom 404.html page.
 
 Options -MultiViews
+ErrorDocument 404 /404.html
+
 RewriteEngine On
 RewriteBase /
 
@@ -10,8 +13,8 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Otherwise, route everything to index.html (SPA fallback)
-RewriteRule ^ index.html [L]
+# Otherwise, return a real HTTP 404 (Apache will serve /404.html via ErrorDocument)
+RewriteRule ^ - [R=404,L]
 
 # Set proper caching for static assets
 <IfModule mod_headers.c>
