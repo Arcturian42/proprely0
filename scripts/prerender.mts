@@ -9,6 +9,23 @@ const root = resolve(__dirname, '..')
 const distDir = resolve(root, 'dist')
 const ORIGIN = 'https://proprely.fr'
 
+const FR_MONTHS: Record<string, string> = {
+  janvier: '01', février: '02', fevrier: '02', mars: '03', avril: '04',
+  mai: '05', juin: '06', juillet: '07', août: '08', aout: '08',
+  septembre: '09', octobre: '10', novembre: '11', décembre: '12', decembre: '12',
+}
+
+function parseFrenchDate(str: string): string | null {
+  const m = str.toLowerCase().trim().match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/)
+  if (!m) return null
+  const day = m[1].padStart(2, '0')
+  const month = FR_MONTHS[m[2]]
+  if (!month) return null
+  return `${m[3]}-${month}-${day}`
+}
+
+const TODAY = new Date().toISOString().slice(0, 10)
+
 const baseHtml = readFileSync(resolve(distDir, 'index.html'), 'utf8')
 
 function escapeHtml(s: string): string {
@@ -141,14 +158,18 @@ function writePage(routePath: string, html: string) {
 
 function blogPostingSchema(p: typeof posts[number]) {
   const url = `${ORIGIN}/blog/${p.slug}`
+  const datePublished = parseFrenchDate(p.date) || p.date
+  const dateModified = p.dateModified ? (parseFrenchDate(p.dateModified) || p.dateModified) : datePublished
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: p.title,
     description: p.excerpt,
     url,
-    datePublished: p.date,
-    author: { '@type': 'Organization', name: 'Proprely' },
+    datePublished,
+    dateModified,
+    image: `${ORIGIN}/og-image.png`,
+    author: { '@type': 'Organization', name: 'Proprely', url: ORIGIN },
     publisher: {
       '@type': 'Organization',
       name: 'Proprely',
@@ -157,6 +178,22 @@ function blogPostingSchema(p: typeof posts[number]) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     inLanguage: 'fr-FR',
     articleSection: p.tag,
+  }
+}
+
+function howToSchema(h: NonNullable<typeof posts[number]['howTo']>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: h.name,
+    description: h.description,
+    inLanguage: 'fr-FR',
+    step: h.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
   }
 }
 
@@ -180,6 +217,8 @@ function webpageSchema(title: string, description: string, url: string, crumbs: 
     description,
     url,
     inLanguage: 'fr-FR',
+    datePublished: '2026-01-01',
+    dateModified: TODAY,
     isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -213,6 +252,7 @@ for (const p of posts) {
 
   const schemas: object[] = [blogPostingSchema(p)]
   if (p.faq?.length) schemas.push(faqSchema(p.faq))
+  if (p.howTo) schemas.push(howToSchema(p.howTo))
 
   const html = buildHtml({
     url,

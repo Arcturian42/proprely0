@@ -1,16 +1,20 @@
 export type BlogFAQ = { q: string; a: string }
 
+export type HowToStep = { name: string; text: string }
+
 export type BlogPost = {
   slug: string
   title: string
   excerpt: string
   date: string
+  dateModified?: string
   readTime: string
   tag: string
   content: string
   quickSummary: string[]
   faq?: BlogFAQ[]
   relatedSlugs?: string[]
+  howTo?: { name: string; description: string; steps: HowToStep[] }
 }
 
 export const posts: BlogPost[] = [
@@ -34,6 +38,16 @@ export const posts: BlogPost[] = [
       { q: "Quel taux de marge nette viser dans le nettoyage B2B ?", a: "15 à 20% de marge nette est la cible saine. En-dessous de 10%, votre entreprise est vulnérable au moindre imprévu (turnover, remplacement, hausse charges)." },
     ],
     relatedSlugs: ['calcul-heures-agents-nettoyage', 'logiciel-societe-nettoyage-criteres'],
+    howTo: {
+      name: "Fixer le prix d'une prestation de nettoyage B2B",
+      description: "Méthode en 4 étapes pour calculer un prix juste qui protège votre marge sans vous mettre hors marché.",
+      steps: [
+        { name: "Calculer le coût horaire chargé", text: "Additionnez le salaire brut horaire, les charges patronales (~42%), les congés et RTT (10%), les primes (panier, transport, salissure) et la mutuelle. Pour un agent au SMIC en 2026, comptez 18 à 20€ de coût horaire chargé." },
+        { name: "Appliquer le multiplicateur de base ×3", text: "Multipliez le coût horaire chargé par 3 (fourchette saine : 2,8 à 3,2). Ce multiplicateur couvre le coût direct, le temps non-facturable, les frais de structure et votre marge nette cible de 15-20%." },
+        { name: "Ajuster selon les 4 facteurs", text: "Augmentez le prix selon : la technicité (×4 à ×5 pour vitrerie, décapage, moquette), les contraintes horaires (+30 à +60% avant 6h ou après 21h), l'accessibilité (+10 à +20% en hauteur ou sites sensibles), la récurrence (+20 à +30% pour les ponctuels)." },
+        { name: "Justifier le prix par le détail", text: "Construisez un devis qui détaille les prestations, liste les produits utilisés, intègre la preuve de passage et les engagements de remplacement. Le client se convainc lui-même de la valeur." },
+      ],
+    },
     content: `## Le piège du prix au feeling
 
 La plupart des dirigeants de sociétés de nettoyage que nous rencontrons fixent leurs prix au feeling. Un peu en dessous du concurrent qu'ils ont en tête. Un peu au-dessus de ce que le client annonce comme budget. Sans calcul rigoureux derrière.

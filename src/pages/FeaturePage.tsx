@@ -34,6 +34,7 @@ function injectFeatureSchema(feature: FeaturePageType) {
   const id = 'feature-schema'
   document.getElementById(id)?.remove()
   const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
+  const today = new Date().toISOString().slice(0, 10)
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -42,6 +43,8 @@ function injectFeatureSchema(feature: FeaturePageType) {
       description: feature.metaDescription,
       url,
       inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: today,
       isPartOf: { '@type': 'WebSite', '@id': 'https://proprely.fr/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
