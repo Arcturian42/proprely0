@@ -21,6 +21,12 @@ Le produit est actuellement en bêta privée, réservée à 30 sociétés fondat
 - [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités, suivi charge horaire, alertes surmenage
 - [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code, photos avant-après, signature client, PV automatique
 
+## Villes desservies
+
+- [Logiciel nettoyage Paris & Île-de-France](https://proprely.fr/villes/paris) : tertiaire QCA, copropriétés haussmanniennes, syndics nationaux, hôtellerie
+- [Logiciel nettoyage Lyon & Rhône-Alpes](https://proprely.fr/villes/lyon) : Part-Dieu, pôle santé HCL, biotech Gerland, hôtellerie presqu'île
+- [Logiciel nettoyage Marseille & PACA](https://proprely.fr/villes/marseille) : Euroméditerranée, hôtellerie saisonnière, copropriétés bord de mer
+
 ## Articles de blog
 
 - [Fixer ses prix dans le nettoyage](https://proprely.fr/blog/fixer-prix-nettoyage) : la règle des 3×, les 4 facteurs qui justifient une hausse, méthode prix de référence

@@ -10,6 +10,7 @@ const ThankYou = lazy(() => import('./pages/ThankYou'))
 const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const CityPage = lazy(() => import('./pages/CityPage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -104,6 +105,7 @@ function App() {
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
+  else if (route.startsWith('/villes/')) content = <CityPage slug={route.slice(8).replace(/\/$/, '')} />
   else content = <NotFound />
 
   if (route === '/') {

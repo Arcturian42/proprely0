@@ -36,6 +36,7 @@ function extractBlogPosts(filePath) {
 
 const blogPosts = extractBlogPosts(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractField(resolve(root, 'src/data/features.ts'), 'slug')
+const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
 
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
@@ -54,6 +55,12 @@ const urls = [
   ...featureSlugs.map((slug) => ({
     loc: `${ORIGIN}/fonctionnalites/${slug}`,
     priority: '0.8',
+    changefreq: 'monthly',
+    lastmod: today,
+  })),
+  ...citySlugs.map((slug) => ({
+    loc: `${ORIGIN}/villes/${slug}`,
+    priority: '0.7',
     changefreq: 'monthly',
     lastmod: today,
   })),
@@ -77,4 +84,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${blogPosts.length} blog)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog)`)

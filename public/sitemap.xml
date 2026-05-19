@@ -49,6 +49,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://proprely.fr/villes/paris</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/villes/lyon</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://proprely.fr/villes/marseille</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://proprely.fr/blog/fixer-prix-nettoyage</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>

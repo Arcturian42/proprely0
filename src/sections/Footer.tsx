@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Calculator, BookOpen, Mail, ArrowUpRight, Tag } from 'lucide-react'
+import { Calculator, BookOpen, Mail, ArrowUpRight, Tag, MapPin } from 'lucide-react'
 import Modal from '../components/Modal'
 import { MentionsLegales, Confidentialite, CGU } from '../components/LegalContent'
 import { navigate } from '../lib/useRoute'
@@ -97,6 +97,30 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+          </div>
+
+          <div className="mb-12 pb-12 border-b border-slate-800">
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Logiciel nettoyage par ville</h4>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
+              <li>
+                <button onClick={() => navigate('/villes/paris')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <MapPin size={12} />
+                  Paris &amp; Île-de-France
+                </button>
+              </li>
+              <li>
+                <button onClick={() => navigate('/villes/lyon')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <MapPin size={12} />
+                  Lyon &amp; Rhône-Alpes
+                </button>
+              </li>
+              <li>
+                <button onClick={() => navigate('/villes/marseille')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <MapPin size={12} />
+                  Marseille &amp; PACA
+                </button>
+              </li>
+            </ul>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

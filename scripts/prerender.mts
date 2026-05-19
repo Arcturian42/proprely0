@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { posts } from '../src/data/blog.ts'
 import { features } from '../src/data/features.ts'
+import { cities } from '../src/data/cities.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -317,6 +318,86 @@ for (const f of features) {
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+for (const c of cities) {
+  const url = `/villes/${c.slug}`
+  const marketBulletsHtml = c.marketBullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
+  const clientTypesHtml = c.clientTypes
+    .map((ct) => `<li><strong>${escapeHtml(ct.type)}</strong> — ${escapeHtml(ct.description)}</li>`)
+    .join('')
+  const challengesHtml = c.challenges
+    .map((ch) => `<h3>${escapeHtml(ch.title)}</h3><p>${escapeHtml(ch.description)}</p>`)
+    .join('')
+  const fitHtml = c.proprelyFit
+    .map((f) => `<h3>${escapeHtml(f.title)}</h3><p>${escapeHtml(f.description)}</p>`)
+    .join('')
+  const faqHtml = c.faq
+    .map((q) => `<h3>${escapeHtml(q.q)}</h3><p>${escapeHtml(q.a)}</p>`)
+    .join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(c.title)}</h1>
+    <p>${escapeHtml(c.subtitle)}</p>
+    <h2>Le marché de la propreté B2B à ${escapeHtml(c.city)}</h2>
+    <p>${escapeHtml(c.marketIntro)}</p>
+    <ul>${marketBulletsHtml}</ul>
+    <h2>Vos clients types à ${escapeHtml(c.city)}</h2>
+    <ul>${clientTypesHtml}</ul>
+    <h2>Les défis spécifiques à ${escapeHtml(c.city)}</h2>
+    ${challengesHtml}
+    <h2>Comment Proprely répond aux contraintes de ${escapeHtml(c.city)}</h2>
+    ${fitHtml}
+    <h2>Questions fréquentes sur ${escapeHtml(c.city)}</h2>
+    ${faqHtml}
+  `.trim()
+
+  const cityUrl = `${ORIGIN}${url}`
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: c.title,
+      description: c.metaDescription,
+      url: cityUrl,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      about: {
+        '@type': 'Service',
+        name: `Logiciel de gestion pour sociétés de nettoyage à ${c.city}`,
+        provider: { '@id': `${ORIGIN}/#organization` },
+        areaServed: {
+          '@type': 'City',
+          name: c.city,
+          containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
+        },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 3, name: c.city, item: cityUrl },
+      ],
+    },
+    faqSchema(c.faq),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: `${c.title} · Proprely`,
+    description: c.metaDescription,
+    ogTitle: c.title,
+    ogDescription: c.metaDescription,
     schemas,
     bodyHtml,
   })
