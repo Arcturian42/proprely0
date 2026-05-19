@@ -15,6 +15,335 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'modele-planning-hebdomadaire-entreprise-proprete',
+    title: "Modèle de planning hebdomadaire pour une entreprise de propreté (à télécharger gratuitement)",
+    excerpt: "Un modèle gratuit prêt à l'emploi, avec exemples, formules, récap heures et marges par site. Plus les 5 sections que doit avoir un planning de société de nettoyage, et ses limites quand vous dépassez 5 agents.",
+    date: '19 mai 2026',
+    readTime: '6 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Un planning hebdomadaire mal structuré fait perdre 6 à 10 heures par semaine en clarifications et oublis.",
+      "Un bon modèle comporte 5 sections : planning agent×jour, récap heures, récap site, remplacements, notes.",
+      "Modèle CSV gratuit à télécharger, compatible Excel et Google Sheets, avec exemples et formules.",
+      "Au-delà de 5-6 agents, Excel atteint ses limites : pas de mobile, pas de preuve de passage, pas de marge temps réel.",
+    ],
+    faq: [
+      { q: "Quel est le meilleur format pour un planning hebdomadaire de société de nettoyage ?", a: "Un format structuré en 5 sections : (1) planning agent par jour, (2) récap heures par agent avec alerte surmenage, (3) récap par site avec marge brute, (4) tracé des remplacements, (5) notes libres. Le format peut être CSV/Excel pour démarrer, puis cockpit métier au-delà de 5-6 agents." },
+      { q: "Faut-il un planning hebdomadaire ou mensuel ?", a: "Hebdomadaire pour le pilotage opérationnel (qui fait quoi cette semaine), mensuel pour le récap et la paie. Les deux se déduisent du même tableau si la structure est propre." },
+      { q: "Combien de temps prend la mise à jour d'un planning hebdomadaire ?", a: "Sur un modèle Excel propre, comptez 30-45 min par semaine pour 5-10 agents. Au-delà, le temps explose (3-5h pour 20 agents) car la mise à jour cross-références devient ingérable manuellement." },
+      { q: "Peut-on partager le planning Excel avec ses agents ?", a: "Oui, via lien partagé OneDrive ou Google Sheets. Limite : pas de notifications, pas de version mobile optimisée, pas de gestion des droits par agent (un agent voit tout ou rien). Un cockpit métier règle ces 3 limites." },
+      { q: "Quand passer d'un planning Excel à un logiciel métier ?", a: "Trois signaux : (1) vous dépassez 5-6 agents ou 8-10 sites, (2) un client conteste un passage sans que vous puissiez prouver, (3) vous découvrez le burn-out d'un agent le jour où il démissionne. Si l'un de ces signaux apparaît, le coût d'un cockpit devient inférieur au coût caché d'Excel." },
+    ],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'calcul-heures-agents-nettoyage', 'gestion-societe-nettoyage-outils'],
+    content: `## Pourquoi un planning hebdomadaire structuré change tout
+
+Si vous gérez une société de nettoyage entre 3 et 30 agents, le planning hebdomadaire est votre outil le plus utilisé de la semaine. Mal structuré, il génère 6 à 10 heures perdues par semaine en clarifications, appels, oublis, doubles-bookings, remplacements ratés. Bien structuré, il devient le **point de vérité unique** pour vous, vos agents et vos clients.
+
+Nous avons compilé les meilleures pratiques de 60 dirigeants de sociétés de nettoyage en France dans un modèle gratuit, prêt à l'emploi, compatible Excel et Google Sheets.
+
+**[Télécharger le modèle de planning hebdomadaire (CSV gratuit)](/templates/planning-hebdomadaire-entreprise-proprete.csv)**
+
+Le fichier est en CSV avec encodage UTF-8 et BOM, il s'ouvre directement dans Excel (Microsoft 365 ou Office), LibreOffice et Google Sheets sans manipulation. Aucune inscription demandée, aucun email à renseigner.
+
+## Les 5 sections que doit avoir un bon planning hebdomadaire
+
+### Section 1 : Planning agent par jour
+
+C'est le cœur du planning : qui fait quoi, où, quand. Une ligne par agent, une colonne par jour de la semaine (lundi à dimanche), et dans chaque case le site + les horaires.
+
+**À éviter** : se contenter d'écrire "Atrium" dans la case. **À privilégier** : "Atrium Tour A · 06h-10h". La précision horaire est ce qui permet de détecter les chevauchements et de communiquer aux clients sans ambiguïté.
+
+Le total d'heures de la semaine se calcule en bout de ligne, soit à la main, soit avec une formule \`=SOMME(...)\` adaptée. Le modèle joint le pré-calcule pour 10 agents.
+
+### Section 2 : Récapitulatif heures par agent
+
+Cette section consolide les heures de chaque agent sur le mois en cours :
+
+- Heures contractuelles (151,67 par défaut pour un temps plein)
+- Heures réalisées (somme des 4 semaines)
+- Écart (alerte si supérieur à +20%)
+- Drapeau surmenage (seuil par défaut : 145h/mois)
+
+C'est ce qui vous permet de **détecter le surmenage avant le burn-out**. Un agent qui dépasse 145h pendant 2 semaines consécutives est un agent qui craque dans 3 à 6 semaines. Coût d'un départ : 3 500 à 5 000 €.
+
+### Section 3 : Récapitulatif par site
+
+Une ligne par site avec : nom du site, client, fréquence contractuelle, heures prévues, heures réalisées, écart, **marge brute estimée**.
+
+La marge brute est la donnée la plus stratégique du planning : c'est ce qui vous dit quel client tire votre rentabilité vers le bas. Un site qui passe de 32% à 18% de marge en 3 mois doit déclencher une renégociation immédiate.
+
+### Section 4 : Remplacements et changements
+
+Un agent absent à 6h du matin ? Vous le tracez ici : date, agent absent, site concerné, remplaçant retenu, heures, qui a validé, notes.
+
+Pourquoi c'est crucial : (1) traçabilité légale (paie, contestation), (2) climat social (éviter de toujours appeler le même remplaçant par culpabilité), (3) optimisation (identifier les sites les plus difficiles à remplacer pour anticiper).
+
+### Section 5 : Notes et points d'attention
+
+Espace libre pour : les congés en cours, les alertes client à anticiper, les arrivées de nouveaux agents, les fins de contrat. C'est ici que vous formalisez tout ce qui ne rentre pas dans les colonnes mais qui pèse sur la semaine.
+
+## Comment utiliser le modèle
+
+1. **Vendredi 18h** : remplissez Section 1 pour la semaine suivante (planning agent × jour)
+2. **Dimanche soir** : communiquez le planning aux agents (par lien Google Sheets ou par email)
+3. **Lundi matin** : mettez à jour Section 4 si un agent signale une absence dans la nuit
+4. **Vendredi 17h** : vérifiez Section 2 pour les alertes surmenage de la semaine
+5. **Fin de mois** : actualisez Section 3 (marge par site) pour identifier les clients déficitaires
+
+Ce rituel hebdomadaire prend **30 à 45 minutes** sur un modèle propre, et il économise les 6 à 10 heures perdues en frictions diverses.
+
+## Les limites d'un planning Excel
+
+Un modèle Excel bien construit emmène une société de nettoyage jusqu'à environ 5-6 agents. Au-delà, cinq limites apparaissent :
+
+**1. Pas de mobile pour les agents**
+Vos agents ne sont pas devant un ordinateur. Ils sont en sous-sol, dans le métro, sur un chantier. Un planning Excel demande soit une impression papier (perdue dès le mardi), soit un screenshot WhatsApp (mis à jour 4 fois par semaine), soit un partage Google Sheets qui demande un compte Google et une connexion stable.
+
+**2. Aucune preuve de passage**
+L'agent est-il bien passé ? À quelle heure ? Avec quels produits ? Sans QR code, photos horodatées et signature client, vous êtes vulnérable à la première contestation. La preuve de passage est devenue critère éliminatoire pour la quasi-totalité des appels d'offres en 2026.
+
+**3. Calcul manuel des heures**
+Le 22 du mois, vous comptez ligne par ligne. Erreurs régulières, contestations à la paie, 3-4 heures perdues mensuellement. Soit **2 400 à 3 600 € par an** de temps dirigeant brûlé.
+
+**4. Aucune alerte automatique de surmenage**
+Sur Excel, l'alerte surmenage demande une vérification visuelle hebdomadaire. Sur 15 agents, l'œil saute des cellules, le surmenage est détecté le jour de l'arrêt maladie. Trop tard.
+
+**5. Pas de pilotage marge en temps réel**
+La marge par client se calcule en fin de trimestre, parfois jamais. Vous découvrez qu'un client est déficitaire 3 mois après que le problème ait commencé.
+
+## Quand passer à un cockpit métier
+
+Trois signaux indiquent que votre planning Excel a atteint sa limite :
+
+- Vous dépassez **5-6 agents** ou **8-10 sites**
+- Un client a déjà contesté un passage sans que vous puissiez **prouver**
+- Vous avez découvert le **burn-out** d'un agent le jour de sa démission
+
+Si l'un de ces signaux apparaît, le coût d'opportunité d'un cockpit métier devient largement inférieur au coût caché d'Excel.
+
+[Proprely](/) est conçu exactement pour cette transition : la mise en route prend 30 minutes avec le fondateur, c'est gratuit pendant la bêta privée, et vos données restent exportables en CSV à tout moment. Vous gardez votre modèle Excel ouvert en parallèle si vous voulez, le temps de vérifier que le cockpit tient ses promesses.
+
+## Bonus : la check-list du planning prêt à l'emploi
+
+Avant de commencer à remplir le modèle, vérifiez que vous avez :
+
+- La liste à jour de vos agents avec leurs spécialités
+- Le tableau de vos clients et sites avec les fréquences contractuelles
+- Vos coûts horaires chargés par agent (pour la section marge)
+- Les contraintes horaires de chaque site (avant 6h, après 21h, week-end)
+
+Si l'un de ces éléments manque, prenez 1 heure pour les rassembler avant de toucher au planning. Un planning construit sur des données incomplètes est pire qu'un planning manquant.
+
+**[Télécharger le modèle de planning hebdomadaire (CSV gratuit)](/templates/planning-hebdomadaire-entreprise-proprete.csv)**`,
+  },
+  {
+    slug: 'comment-faire-devis-nettoyage-bureaux',
+    title: "Comment faire un devis de nettoyage pour des bureaux : méthode complète + exemple chiffré",
+    excerpt: "Les 6 sections obligatoires d'un devis bureaux, la méthode de chiffrage pas à pas, et un exemple complet pour 800 m² nettoyés 5 fois par semaine. Plus les 5 erreurs qui plombent votre conversion.",
+    date: '17 mai 2026',
+    readTime: '9 min',
+    tag: 'Commercial',
+    quickSummary: [
+      "Un devis de nettoyage bureaux structuré contient 6 sections : en-tête, périmètre, prestations, fréquences, prix HT, conditions.",
+      "Méthode de chiffrage en 4 étapes : ratio de productivité m²/h, heures totales, coût horaire chargé, prix de vente × 3.",
+      "Exemple chiffré : 800 m² bureaux nettoyés 5x/sem = environ 1 600 €/mois HT, marge brute 30%.",
+      "5 erreurs typiques : devis copié-collé, oubli des prestations ponctuelles, prix au m² fixe, pas de signature électronique, pas de relance.",
+    ],
+    faq: [
+      { q: "Combien facturer pour le nettoyage de 100 m² de bureaux ?", a: "À titre indicatif, 0,20 à 0,35 €/m²/passage pour des bureaux standards en quotidien (5x/semaine), soit environ 200 à 350 € par mois pour 100 m². La fourchette dépend du ratio de productivité de vos agents, du coût horaire local et de l'accessibilité du site." },
+      { q: "Quel est le multiplicateur prix / coût horaire dans le nettoyage de bureaux ?", a: "La règle des 3× s'applique : prix de vente horaire = 3 × coût horaire chargé. Fourchette saine : 2,8 à 3,2. Moins, vous travaillez à perte. Plus, vous êtes hors marché sur du bureau standard." },
+      { q: "Quel ratio de productivité retenir pour les bureaux ?", a: "200 à 300 m²/h pour des bureaux standards (open-space, salles de réunion, dégagements). Plus bas (150-200) pour des bureaux avec beaucoup de mobilier, sanitaires lourds, ou contraintes d'accès. Plus haut (300-400) sur des plateaux ouverts simples." },
+      { q: "Faut-il facturer les sanitaires à part dans un devis bureaux ?", a: "Pas obligatoire mais recommandé : les sanitaires consomment 2 à 3 fois plus de temps au m² que les bureaux standards. Les détacher dans le devis vous protège si le client renégocie le périmètre, et justifie un prix supérieur si la surface sanitaires augmente." },
+      { q: "Comment justifier un devis bureaux 20% au-dessus du concurrent ?", a: "Détaillez : le ratio de productivité tenu (vs un concurrent qui sur-estime), les produits certifiés écolabel (vs grand public), la preuve de passage native (QR + photos + signature), les engagements de remplacement (sous 2h ouvrées vs WhatsApp aléatoire), le contrôle qualité documenté. Le client se convainc lui-même." },
+      { q: "Quel délai de validité mettre sur un devis de nettoyage bureaux ?", a: "30 jours est standard. En-dessous (15 jours), vous pressez le client. Au-dessus (60-90 jours), vous vous exposez à l'inflation des charges sociales et matières. 30 jours permet aussi de re-prospecter naturellement si pas de réponse." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
+    content: `## Pourquoi un devis bureaux mal structuré vous fait perdre l'affaire
+
+Vous recevez une demande de devis pour 800 m² de bureaux nettoyés 5 fois par semaine. Vous ouvrez un ancien devis, vous changez les références, vous bidouillez le prix au feeling, vous envoyez par email 20 minutes plus tard. Le client reçoit 4 propositions. La plus structurée gagne, même si elle est 15% plus chère.
+
+C'est exactement ce qui se joue à chaque demande de devis bureaux. Voici la méthode complète pour gagner.
+
+## Les 6 sections obligatoires d'un devis bureaux
+
+### Section 1 : En-tête
+
+C'est ce que le client voit en premier. Doit contenir :
+
+- Logo et raison sociale du prestataire
+- Numéro SIRET, code NAF (généralement 8121Z), numéro TVA intracommunautaire
+- Coordonnées complètes (adresse, téléphone, email)
+- Numéro de devis unique, date d'émission, validité (30 jours standard)
+- Coordonnées du client (raison sociale, adresse, contact)
+
+Un devis sans numéro unique et sans validité paraît bricolé. Le client doute avant même de lire le prix.
+
+### Section 2 : Périmètre
+
+Le périmètre, c'est la photographie exacte de ce qui sera nettoyé :
+
+- Adresse complète du site
+- Surface totale en m², détaillée par zone
+- Type de revêtements (moquette, vinyle, parquet, carrelage)
+- Plages horaires autorisées (avant 6h, après 18h, week-end)
+- Contraintes d'accès (badge, alarme, gardien)
+
+Ce qui n'est pas dans le périmètre n'est pas dans le prix. C'est la base de toute discussion ultérieure sur les avenants.
+
+### Section 3 : Prestations détaillées
+
+C'est ici que vous valorisez votre savoir-faire. Chaque prestation décrite avec :
+
+- Nom de la prestation (ex : "Aspiration et lavage des sols durs")
+- Fréquence (5x/semaine, 1x/semaine, 1x/mois, ponctuel)
+- Zone concernée
+- Produits utilisés (écolabel, allergènes, marques)
+- Méthode (mono-brosse, micro-fibre, vapeur)
+
+Plus c'est détaillé, plus le client peut comparer objectivement. Et plus vous justifiez un prix premium.
+
+### Section 4 : Fréquences
+
+Tableau récapitulatif des fréquences par prestation. Modèle simple :
+
+| Prestation | Quotidien | Hebdomadaire | Mensuel | Trimestriel |
+|---|---|---|---|---|
+| Aspiration sols | ✓ | | | |
+| Lavage sols | ✓ | | | |
+| Sanitaires complet | ✓ | | | |
+| Vitres intérieures | | | ✓ | |
+| Vitres extérieures | | | | ✓ |
+| Détartrage sanitaires | | ✓ | | |
+
+Un tableau évite les ambiguïtés et facilite la comparaison entre prestataires.
+
+### Section 5 : Prix HT
+
+Trois lignes minimum :
+
+- Forfait mensuel HT
+- Décomposition (heures × taux horaire OU forfait par prestation)
+- Prestations ponctuelles à la carte (vitrerie hauteur, décapage, remise en état)
+
+Évitez de présenter un prix unique sans décomposition. Le client ne saura pas où négocier et il négociera donc partout — ou partira chez le concurrent qui aura détaillé.
+
+### Section 6 : Conditions
+
+Toute la partie contractuelle :
+
+- Durée du contrat (généralement 12 mois reconductible tacitement)
+- Conditions de révision du prix (typiquement indexée IDCC propreté, révision annuelle automatique)
+- Modalités de remplacement (sous 2h ouvrées par exemple)
+- Conditions de résiliation (préavis 1 à 3 mois)
+- Modalités de paiement (30 jours fin de mois, virement)
+- Conditions générales (souvent en annexe ou via lien)
+- Espace signature (idéalement signature électronique)
+
+## La méthode de chiffrage en 4 étapes
+
+### Étape 1 : Le ratio de productivité
+
+Pour des bureaux standards en quotidien :
+
+- **Bureaux open-space, dégagements, salles de réunion** : 200 à 300 m²/h
+- **Sanitaires** : 50 à 100 m²/h (plus complexe, plus de temps)
+- **Cuisine office / espace cafétéria** : 80 à 150 m²/h
+- **Hall d'accueil, escaliers** : 100 à 200 m²/h
+
+Calibrez ces ratios sur vos données réelles. Un ratio fantaisiste, c'est une perte assurée sur 12 mois.
+
+### Étape 2 : Heures totales par passage
+
+Sur notre exemple de 800 m² de bureaux :
+
+- 600 m² bureaux standards à 250 m²/h = 2,4 h
+- 100 m² sanitaires à 75 m²/h = 1,3 h
+- 100 m² circulations à 150 m²/h = 0,7 h
+
+**Total : 4,4 heures par passage**
+
+Sur 5 passages par semaine, soit 22 heures par semaine. Sur le mois (4,33 semaines), environ **95 heures de prestation mensuelle**.
+
+### Étape 3 : Coût horaire chargé
+
+Pour un agent au SMIC 2026, comptez environ **18 à 20 €** de coût horaire chargé (salaire brut + charges patronales + congés payés + paniers + mutuelle).
+
+Sur l'exemple, le coût direct mensuel est donc : 95 h × 19 € = **1 805 € de coût direct**.
+
+### Étape 4 : Prix de vente
+
+Application de la règle des 3× :
+
+- Prix de vente horaire = 3 × 19 € = **57 € HT/h**
+- Forfait mensuel = 95 h × 57 € = **5 415 € HT/mois**
+
+Cette fourchette est cohérente avec un site premium (cabinet d'avocats, siège société). Pour des bureaux standards plus exposés à la concurrence, le ratio peut descendre à 2,8 ou 2,9, soit environ **5 000 à 5 200 € HT/mois**.
+
+Marge brute estimée : 30 à 35%.
+
+## Les 5 erreurs typiques à éviter
+
+### Erreur 1 : Le devis copié-collé sans recalcul
+
+C'est la fuite de marge la plus fréquente. Vous prenez un ancien devis, vous changez les références client et les surfaces, vous ne touchez pas au prix horaire. Résultat : vous facturez en 2026 sur des coûts horaires 2022. Perdez 5 à 10 points de marge par an.
+
+**Le bon réflexe** : recalculez systématiquement le coût horaire chargé en fonction de votre grille interne actualisée. Mettez à jour vos grilles tous les 6 mois.
+
+### Erreur 2 : L'oubli des prestations ponctuelles
+
+Vous chiffrez le quotidien, vous oubliez les vitres mensuelles, le décapage annuel, le shampouinage moquette. Le client demande ces prestations en cours d'année, vous les facturez "au coup par coup" sans grille tarifaire claire.
+
+**Le bon réflexe** : intégrez systématiquement une grille de prestations ponctuelles dans le devis initial. Même non-cochées au démarrage, elles cadrent les prix futurs.
+
+### Erreur 3 : Le prix au m² fixe quelle que soit la complexité
+
+Annoncer "0,25 €/m²/passage" pour tout, c'est vous tirer une balle dans le pied. Les sanitaires consomment 3x plus de temps que les bureaux standards. Si vous appliquez le même tarif, vous travaillez à perte sur les sites avec beaucoup de sanitaires.
+
+**Le bon réflexe** : différenciez vos tarifs par type de surface, ou présentez un forfait global calculé sur les heures réelles.
+
+### Erreur 4 : L'absence de signature électronique
+
+Vous envoyez le devis en PDF, le client doit l'imprimer, signer, scanner, renvoyer. 80% des prospects abandonnent à cette étape. Le concurrent qui a une signature électronique gagne le contrat avant que vous ne soyez retourné voir vos emails.
+
+**Le bon réflexe** : signature électronique intégrée par défaut. Un lien sécurisé envoyé par email, signature sur n'importe quel appareil, retour automatique dans votre outil. Conversion +30% en moyenne.
+
+### Erreur 5 : Pas de relance automatique
+
+Vous envoyez le devis, vous attendez. Le prospect oublie, ou prend un autre fournisseur entre-temps. Sans relance, 40 à 50% des devis envoyés sont perdus par défaut d'attention.
+
+**Le bon réflexe** : relances automatiques à J+5 (rappel sympathique) et J+10 (relance plus directe). Sans automatisation, vous oublierez de relancer 3 devis sur 4.
+
+## Comment Proprely structure vos devis bureaux
+
+Le module devis de [Proprely](/) est conçu pour appliquer cette méthode en moins de 2 minutes :
+
+- **Catalogue de prestations** réutilisable (vous saisissez vos prestations une fois, vous les réutilisez à l'infini)
+- **Tarification suggérée** basée sur votre historique et vos ratios calibrés
+- **Marge brute affichée en temps réel** pendant la rédaction du devis
+- **Template à votre charte** appliqué automatiquement (logo, couleurs, mentions légales, CGV)
+- **Signature électronique** intégrée, le client signe en ligne sans imprimer
+- **Relances automatiques** à J+5 et J+10
+- **Conversion devis → facture en 1 clic** une fois signé
+
+Si vous voulez tester pendant la bêta privée, c'est gratuit et la mise en route prend 30 minutes avec le fondateur. [Rejoindre la bêta gratuite](/).
+
+## Bonus : la check-list du devis bureaux prêt à envoyer
+
+Avant d'appuyer sur envoyer, vérifiez :
+
+- [ ] En-tête complet (SIRET, NAF, TVA intra, validité 30 jours)
+- [ ] Périmètre précis (surfaces détaillées par zone, contraintes horaires)
+- [ ] Prestations décrites avec fréquences et produits
+- [ ] Tableau récapitulatif des fréquences
+- [ ] Prix HT décomposé (forfait + ponctuel)
+- [ ] Conditions complètes (durée, révision, résiliation)
+- [ ] Marge brute estimée > 25%
+- [ ] Signature électronique activée
+- [ ] Relances programmées à J+5 et J+10
+
+Si l'un de ces points manque, ne pas envoyer. Vous augmentez vos chances de conversion de 30% en moyenne en envoyant un devis complet plutôt qu'un devis bricolé en urgence.`,
+  },
+  {
     slug: 'etude-digitalisation-societes-nettoyage-france-2026',
     title: "Étude 2026 : la digitalisation des sociétés de nettoyage en France",
     excerpt: "14 000 entreprises, 92% en dessous de 50 salariés, 80% encore sur Excel + WhatsApp. État des lieux chiffré du retard et des leviers de transformation du secteur de la propreté B2B.",

@@ -1,0 +1,61 @@
+﻿Modèle de planning hebdomadaire — Société de nettoyage,,,,,,,,,
+Source,Proprely · https://proprely.fr/blog/modele-planning-hebdomadaire-entreprise-proprete,,,,,,,,
+,,,,,,,,,
+Entreprise,[Votre raison sociale],,,,,,,,
+Semaine du,JJ/MM/AAAA,,,,,,,,
+Etabli par,[Prénom Nom],,,,,,,,
+Date de mise à jour,JJ/MM/AAAA,,,,,,,,
+,,,,,,,,,
+SECTION 1 · Planning agent par jour,,,,,,,,,
+Agent,Spécialité,Lundi,Mardi,Mercredi,Jeudi,Vendredi,Samedi,Dimanche,Total semaine
+Marie L.,Bureaux,Atrium Tour A 06h-10h,Atrium Tour A 06h-10h,Atrium Tour A 06h-10h,Atrium Tour A 06h-10h,Atrium Tour A 06h-10h,,,20h
+Karim B.,Vitrerie,Hôtel Vivaldi 14h-18h,Repos,Cabinet Mercier 16h-19h,Repos,Hôtel Vivaldi 14h-18h,,,11h
+Sofia D.,Quotidien,Syndic Foch 06h-09h,Syndic Foch 06h-09h,Syndic Foch 06h-09h,Syndic Foch 06h-09h,Syndic Foch 06h-09h,Syndic Foch 06h-09h,,18h
+[Agent 4],[Spécialité],[Site horaires],[Site horaires],[Site horaires],[Site horaires],[Site horaires],,,0h
+[Agent 5],[Spécialité],,,,,,,,0h
+[Agent 6],[Spécialité],,,,,,,,0h
+[Agent 7],[Spécialité],,,,,,,,0h
+[Agent 8],[Spécialité],,,,,,,,0h
+[Agent 9],[Spécialité],,,,,,,,0h
+[Agent 10],[Spécialité],,,,,,,,0h
+,,,,,,,,,
+SECTION 2 · Récapitulatif heures par agent,,,,,,,,,
+Agent,Heures contractuelles,Heures réalisées,Ecart,Alerte surmenage si >145h/mois,Notes,,,,
+Marie L.,151.67,80 (4 semaines),-71.67,Non,RAS,,,,
+Karim B.,151.67,44 (4 semaines),-107.67,Non,Mois calme — vitrerie ponctuelle,,,,
+Sofia D.,151.67,72 (4 semaines),-79.67,Non,RAS,,,,
+[Agent 4],,,,,,,,,
+[Agent 5],,,,,,,,,
+,,,,,,,,,
+SECTION 3 · Récapitulatif par site,,,,,,,,,
+Site,Client,Fréquence,Heures/semaine prévues,Heures/semaine réalisées,Ecart,Marge brute estimée,,,
+Atrium Tour A,SCI Atrium,5x/semaine,20h,20h,0h,32%,,,
+Hôtel Vivaldi,Groupe Vivaldi,2x/semaine vitrerie,8h,8h,0h,38%,,,
+Cabinet Mercier,Dr Mercier,1x/semaine,3h,3h,0h,28%,,,
+Syndic Foch,Cabinet Foch,6x/semaine,18h,18h,0h,30%,,,
+[Site 5],[Client],[Fréquence],,,,,,,
+,,,,,,,,,
+SECTION 4 · Remplacements et changements,,,,,,,,,
+Date,Agent absent,Site concerné,Remplaçant,Heures,Validé par,Notes,,,
+JJ/MM,[Agent],[Site],[Remplaçant],,[Valideur],,,,
+,,,,,,,,,
+SECTION 5 · Notes et points d'attention,,,,,,,,,
+[Notes libres pour la semaine — surcharge à anticiper congés en cours alertes clients],,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Bonus · Comment l'utiliser,,,,,,,,,
+1. Remplir SECTION 1 chaque vendredi pour la semaine suivante,,,,,,,,,
+2. Communiquer le planning aux agents par lien ou par email avant le dimanche soir,,,,,,,,,
+3. Mettre à jour SECTION 2 (heures réalisées) en fin de mois pour la paie,,,,,,,,,
+4. Vérifier SECTION 3 chaque mois pour identifier les sites déficitaires,,,,,,,,,
+5. Tracer chaque remplacement dans SECTION 4 (traçabilité légale + climat social),,,,,,,,,
+,,,,,,,,,
+Limites de ce modèle Excel,,,,,,,,,
+"- Pas de mobile pour les agents (impression ou screenshots)",,,,,,,,,
+"- Aucune preuve de passage (photos signature horodatage)",,,,,,,,,
+"- Calcul manuel des heures (erreurs régulières)",,,,,,,,,
+"- Aucune alerte de surmenage automatique",,,,,,,,,
+"- Pas de pilotage marge par client en temps réel",,,,,,,,,
+,,,,,,,,,
+Au-delà de 5-6 agents un cockpit métier comme Proprely automatise ces 5 limites,,,,,,,,,
+Découvrir Proprely · https://proprely.fr,,,,,,,,,
