@@ -1,8 +1,37 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
+const navItems = [
+  { id: 'solution', label: 'Solution' },
+  { id: 'features', label: 'Fonctionnalités' },
+  { id: 'fondateur', label: 'Membres fondateurs' },
+  { id: 'faq', label: 'FAQ' },
+]
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleNavClick = (id: string) => {
+    setIsOpen(false)
+    setTimeout(() => scrollTo(id), 150)
+  }
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
+
   return (
     <nav className="w-full bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
@@ -21,23 +50,57 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-8 text-sm text-slate-500 font-medium">
-          <button onClick={() => scrollTo('solution')} className="hover:text-slate-900 transition-colors">Solution</button>
-          <button onClick={() => scrollTo('features')} className="hover:text-slate-900 transition-colors">Fonctionnalités</button>
-          <button onClick={() => scrollTo('fondateur')} className="hover:text-slate-900 transition-colors">Membres fondateurs</button>
-          <button onClick={() => scrollTo('faq')} className="hover:text-slate-900 transition-colors">FAQ</button>
+          {navItems.map(item => (
+            <button key={item.id} onClick={() => scrollTo(item.id)} className="hover:text-slate-900 transition-colors">{item.label}</button>
+          ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           <button
             onClick={() => scrollTo('formulaire')}
-            className="group relative bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] flex items-center gap-1.5 shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 overflow-hidden"
+            className="group relative bg-blue-600 text-white rounded-lg px-3 sm:px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] flex items-center gap-1.5 shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta</span>
             <ArrowRight size={14} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
+
+          <button
+            onClick={() => setIsOpen(o => !o)}
+            className="md:hidden p-2 -mr-1 text-slate-700 hover:text-slate-900 rounded-md transition-colors"
+            aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden border-t border-slate-100 bg-white overflow-hidden"
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2 flex flex-col">
+              {navItems.map((item, i) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`text-left py-3.5 text-sm font-medium text-slate-700 hover:text-slate-900 ${i < navItems.length - 1 ? 'border-b border-slate-100' : ''}`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }
