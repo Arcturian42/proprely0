@@ -22,6 +22,8 @@ const Resources = lazy(() => import('./pages/Resources'))
 const ResourceDetail = lazy(() => import('./pages/ResourceDetail'))
 const ProprelyVsExcel = lazy(() => import('./pages/ProprelyVsExcel'))
 const SimulateurRentabilite = lazy(() => import('./pages/SimulateurRentabilite'))
+const SoftwareLanding = lazy(() => import('./pages/SoftwareLanding'))
+const ComparatifLogiciels = lazy(() => import('./pages/ComparatifLogiciels'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -86,6 +88,14 @@ const META: Record<string, RouteMeta> = {
   '/simulateur-rentabilite': {
     title: 'Simulateur rentabilité contrat nettoyage · Proprely',
     description: "Calculez en 1 minute la marge brute d'un contrat de nettoyage : prix horaire vs coût horaire chargé, verdict instantané, recommandations.",
+  },
+  '/logiciel-societe-nettoyage': {
+    title: 'Logiciel pour société de nettoyage : le guide complet 2026 · Proprely',
+    description: "Logiciel de gestion pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Comparatif Excel/PROPRET/Progiclean. Bêta gratuite.",
+  },
+  '/comparatif-logiciel-nettoyage': {
+    title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
+    description: "Comparatif honnête des principaux logiciels société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir.",
   },
 }
 
@@ -167,6 +177,8 @@ function App() {
   else if (route === '/ressources' || route === '/ressources/') content = <Resources />
   else if (route === '/proprely-vs-excel') content = <ProprelyVsExcel />
   else if (route === '/simulateur-rentabilite') content = <SimulateurRentabilite />
+  else if (route === '/logiciel-societe-nettoyage') content = <SoftwareLanding />
+  else if (route === '/comparatif-logiciel-nettoyage') content = <ComparatifLogiciels />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route === '/beta' || route === '/beta/') content = <Beta />

@@ -1,5 +1,7 @@
 const STORAGE_KEY = 'proprely_consent_v1'
-const GA_ID = (import.meta as unknown as { env: { VITE_GA4_MEASUREMENT_ID?: string } }).env.VITE_GA4_MEASUREMENT_ID
+const DEFAULT_GA_ID = 'G-ETKWWG0CWL'
+const ENV_GA_ID = (import.meta as unknown as { env: { VITE_GA4_MEASUREMENT_ID?: string } }).env.VITE_GA4_MEASUREMENT_ID
+const GA_ID = ENV_GA_ID || DEFAULT_GA_ID
 
 type Consent = 'granted' | 'denied' | null
 

@@ -60,6 +60,8 @@ const urls = [
   { loc: `${ORIGIN}/ressources`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/proprely-vs-excel`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/simulateur-rentabilite`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/logiciel-societe-nettoyage`, priority: '1.0', changefreq: 'weekly', lastmod: today },
+  { loc: `${ORIGIN}/comparatif-logiciel-nettoyage`, priority: '0.9', changefreq: 'monthly', lastmod: today },
   ...resourceSlugs.map((slug) => ({
     loc: `${ORIGIN}/ressources/${slug}`,
     priority: '0.7',
@@ -101,4 +103,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 11 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + ${resourceSlugs.length} ressources + 3 legal)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 13 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + ${resourceSlugs.length} ressources + 3 legal)`)

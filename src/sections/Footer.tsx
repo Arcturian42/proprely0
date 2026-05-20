@@ -19,6 +19,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
+                <Link to="/logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors font-semibold">
+                  Logiciel nettoyage
+                </Link>
+              </li>
+              <li>
                 <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
                   Planning
                 </Link>
@@ -62,6 +67,12 @@ export default function Footer() {
                 <Link to="/simulateur-rentabilite" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                   <Calculator size={12} />
                   Simulateur rentabilité
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  Comparatif logiciels
                 </Link>
               </li>
               <li>
