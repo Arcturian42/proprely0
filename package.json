@@ -8,6 +8,7 @@
     "build": "node scripts/generate-sitemap.mjs && node scripts/generate-rss.mjs && tsc -b && vite build && tsx scripts/prerender.mts",
     "build:assets": "node scripts/generate-assets.mjs",
     "build:sitemap": "node scripts/generate-sitemap.mjs",
+    "seo:indexnow": "node scripts/submit-indexnow.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
