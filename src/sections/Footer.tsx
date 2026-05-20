@@ -14,7 +14,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Fonctionnalités</h4>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              <Link to="/fonctionnalites" className="hover:text-slate-300 transition-colors">Fonctionnalités</Link>
+            </h4>
             <ul className="space-y-2.5">
               <li>
                 <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
@@ -92,7 +94,9 @@ export default function Footer() {
         </div>
 
         <div className="mb-12 pb-12 border-b border-slate-800">
-          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Logiciel nettoyage par ville</h4>
+          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+            <Link to="/villes" className="hover:text-slate-300 transition-colors">Logiciel nettoyage par ville</Link>
+          </h4>
           <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
             <li>
               <Link to="/villes/paris" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
@@ -110,6 +114,24 @@ export default function Footer() {
               <Link to="/villes/marseille" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                 <MapPin size={12} />
                 Marseille &amp; PACA
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/bordeaux" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Bordeaux &amp; Gironde
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/toulouse" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Toulouse &amp; Occitanie
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/nantes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Nantes &amp; Loire-Atlantique
               </Link>
             </li>
           </ul>

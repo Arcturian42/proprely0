@@ -53,10 +53,26 @@
           "name": "Proprely",
           "url": "https://proprely.fr/",
           "logo": "https://proprely.fr/proprely-icon-512.png",
+          "image": "https://proprely.fr/og-image.png",
           "description": "Logiciel de gestion conçu pour les sociétés de nettoyage B2B en France.",
           "email": "contact@proprely.fr",
-          "areaServed": "FR",
-          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B"],
+          "areaServed": [
+            { "@type": "Country", "name": "France" },
+            { "@type": "City", "name": "Paris" },
+            { "@type": "City", "name": "Lyon" },
+            { "@type": "City", "name": "Marseille" },
+            { "@type": "City", "name": "Bordeaux" },
+            { "@type": "City", "name": "Toulouse" },
+            { "@type": "City", "name": "Nantes" }
+          ],
+          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B", "Preuve de passage", "Devis nettoyage"],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@proprely.fr",
+            "contactType": "customer support",
+            "availableLanguage": ["French"],
+            "areaServed": "FR"
+          },
           "parentOrganization": {
             "@type": "Organization",
             "@id": "https://pershingsolution.com/#organization",

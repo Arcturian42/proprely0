@@ -306,7 +306,7 @@ for (const f of features) {
   const schemas: object[] = [
     webpageSchema(f.title, f.metaDescription, `${ORIGIN}${url}`, [
       { name: 'Accueil', item: `${ORIGIN}/` },
-      { name: 'Fonctionnalités', item: `${ORIGIN}/` },
+      { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
       { name: f.tag, item: `${ORIGIN}${url}` },
     ]),
   ]
@@ -385,7 +385,7 @@ for (const c of cities) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/villes` },
         { '@type': 'ListItem', position: 3, name: c.city, item: cityUrl },
       ],
     },
@@ -727,6 +727,104 @@ const cguHtml = buildHtml({
 })
 writePage('/cgu', cguHtml)
 generated.push('/cgu')
+
+const featureIndexBody = `
+  <h1>Fonctionnalités logiciel nettoyage</h1>
+  <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>
+  <h2>Modules</h2>
+  <ul>
+    ${features
+      .map(
+        (f) =>
+          `<li><a href="${ORIGIN}/fonctionnalites/${f.slug}"><strong>${escapeHtml(f.title)}</strong></a> — ${escapeHtml(f.metaDescription)}</li>`
+      )
+      .join('')}
+  </ul>
+  <h2>Tout connecté dans un seul écran</h2>
+  <p>Un devis signé devient une facture, une mission affectée apparaît sur le planning de l'agent, une preuve de passage met à jour automatiquement le suivi qualité du client. Pas de copier-coller entre Excel, WhatsApp et Word.</p>
+`.trim()
+
+const featureIndexHtml = buildHtml({
+  url: '/fonctionnalites',
+  title: 'Fonctionnalités logiciel nettoyage · Proprely',
+  description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  schemas: [
+    webpageSchema(
+      'Fonctionnalités Proprely',
+      "Planning, devis, gestion agents, preuve de passage pour société de nettoyage.",
+      `${ORIGIN}/fonctionnalites`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Fonctionnalités Proprely',
+      url: `${ORIGIN}/fonctionnalites`,
+      inLanguage: 'fr-FR',
+      hasPart: features.map((f) => ({
+        '@type': 'WebPage',
+        name: f.title,
+        url: `${ORIGIN}/fonctionnalites/${f.slug}`,
+        description: f.metaDescription,
+      })),
+    },
+  ],
+  bodyHtml: featureIndexBody,
+})
+writePage('/fonctionnalites', featureIndexHtml)
+generated.push('/fonctionnalites')
+
+const cityIndexBody = `
+  <h1>Logiciel nettoyage par ville</h1>
+  <p>Le marché de la propreté B2B varie d'une région à l'autre. Paris a ses syndics et son tertiaire QCA, Lyon son pôle santé, Marseille sa saisonnalité touristique, Bordeaux son œnotourisme, Toulouse son aéronautique, Nantes son industrie maritime. Proprely s'adapte aux contraintes locales.</p>
+  <h2>Villes documentées</h2>
+  <ul>
+    ${cities
+      .map(
+        (c) =>
+          `<li><a href="${ORIGIN}/villes/${c.slug}"><strong>Logiciel nettoyage à ${escapeHtml(c.city)}</strong></a> (${escapeHtml(c.region)}) — ${escapeHtml(c.metaDescription)}</li>`
+      )
+      .join('')}
+  </ul>
+  <h2>Votre ville n'est pas listée ?</h2>
+  <p>Proprely opère sur toute la France. Si vous êtes ailleurs, candidatez quand même à la bêta : le produit est identique et l'onboarding est calé sur votre réalité locale.</p>
+`.trim()
+
+const cityIndexHtml = buildHtml({
+  url: '/villes',
+  title: 'Logiciel nettoyage par ville · Proprely',
+  description: "Logiciel de gestion pour société de nettoyage par ville : Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes. Conçu pour la propreté B2B française.",
+  schemas: [
+    webpageSchema(
+      'Proprely par ville',
+      "Logiciel nettoyage pour Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes.",
+      `${ORIGIN}/villes`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Villes', item: `${ORIGIN}/villes` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Logiciel nettoyage par ville',
+      url: `${ORIGIN}/villes`,
+      inLanguage: 'fr-FR',
+      hasPart: cities.map((c) => ({
+        '@type': 'WebPage',
+        name: c.title,
+        url: `${ORIGIN}/villes/${c.slug}`,
+        description: c.metaDescription,
+      })),
+    },
+  ],
+  bodyHtml: cityIndexBody,
+})
+writePage('/villes', cityIndexHtml)
+generated.push('/villes')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

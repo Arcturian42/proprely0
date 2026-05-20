@@ -41,7 +41,7 @@ function injectCitySchema(city: CityPageType) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
-        { '@type': 'ListItem', position: 2, name: 'Villes', item: 'https://proprely.fr/' },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: 'https://proprely.fr/villes' },
         { '@type': 'ListItem', position: 3, name: city.city, item: url },
       ],
     },
@@ -98,7 +98,7 @@ export default function CityPage({ slug }: Props) {
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <div className="flex justify-center mb-5">
-              <Breadcrumbs items={[{ name: city.city }]} />
+              <Breadcrumbs items={[{ name: 'Villes', href: '/villes' }, { name: city.city }]} />
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

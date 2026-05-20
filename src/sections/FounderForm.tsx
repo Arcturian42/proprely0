@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { CheckCircle } from 'lucide-react'
+import { trackEvent } from '../lib/analytics'
 
 const formFields = [
   'Prénom et nom',
@@ -16,7 +17,20 @@ export default function FounderForm() {
     script.src = 'https://server.fillout.com/embed/v1/'
     script.async = true
     document.body.appendChild(script)
-    return () => { document.body.removeChild(script) }
+
+    const onMessage = (e: MessageEvent) => {
+      const data = e.data as { type?: string; eventName?: string } | undefined
+      if (!data || typeof data !== 'object') return
+      if (data.type === 'form_submitted' || data.eventName === 'form_submitted') {
+        trackEvent('beta_form_submit', { form: 'founder' })
+      }
+    }
+    window.addEventListener('message', onMessage)
+
+    return () => {
+      document.body.removeChild(script)
+      window.removeEventListener('message', onMessage)
+    }
   }, [])
 
   return (

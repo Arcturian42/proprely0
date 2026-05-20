@@ -53,6 +53,8 @@ const urls = [
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly', lastmod: buildDate },
   { loc: `${ORIGIN}/contact`, priority: '0.5', changefreq: 'yearly', lastmod: today },
+  { loc: `${ORIGIN}/fonctionnalites`, priority: '0.9', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/villes`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   ...featureSlugs.map((slug) => ({
     loc: `${ORIGIN}/fonctionnalites/${slug}`,
     priority: '0.8',
@@ -88,4 +90,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 5 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + 3 legal)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 7 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + 3 legal)`)

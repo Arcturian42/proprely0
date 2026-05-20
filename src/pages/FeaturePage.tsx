@@ -30,7 +30,7 @@ function injectFeatureSchema(feature: FeaturePageType) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
-          { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://proprely.fr/' },
+          { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://proprely.fr/fonctionnalites' },
           { '@type': 'ListItem', position: 3, name: feature.tag, item: url },
         ],
       },
@@ -96,13 +96,13 @@ export default function FeaturePage({ slug }: Props) {
             <div className="flex justify-center mb-5">
               <Breadcrumbs
                 items={[
-                  { name: 'Fonctionnalités', href: '/' },
+                  { name: 'Fonctionnalités', href: '/fonctionnalites' },
                   { name: feature.tag },
                 ]}
               />
             </div>
             <Link
-              to="/"
+              to="/fonctionnalites"
               className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors mb-6"
             >
               <ArrowLeft size={12} />

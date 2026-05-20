@@ -3,8 +3,14 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 import Link from '../components/Link'
+import { trackEvent } from '../lib/analytics'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+
+const goToForm = () => {
+  trackEvent('cta_click', { location: 'hero', target: 'formulaire' })
+  scrollTo('formulaire')
+}
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: 'Tableau de bord' },
@@ -203,7 +209,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
         >
           <button
-            onClick={() => scrollTo('formulaire')}
+            onClick={goToForm}
             className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />

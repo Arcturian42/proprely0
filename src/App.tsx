@@ -15,6 +15,8 @@ const NotFound = lazy(() => import('./pages/NotFound'))
 const CityPage = lazy(() => import('./pages/CityPage'))
 const Legal = lazy(() => import('./pages/Legal'))
 const Contact = lazy(() => import('./pages/Contact'))
+const FeatureIndex = lazy(() => import('./pages/FeatureIndex'))
+const CityIndex = lazy(() => import('./pages/CityIndex'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -55,6 +57,14 @@ const META: Record<string, RouteMeta> = {
   '/cgu': {
     title: "Conditions générales d'utilisation · Proprely",
     description: "CGU Proprely : accès au service, engagements éditeur et membre, propriété des données, résiliation, évolutions.",
+  },
+  '/fonctionnalites': {
+    title: 'Fonctionnalités logiciel nettoyage · Proprely',
+    description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  },
+  '/villes': {
+    title: 'Logiciel nettoyage par ville · Proprely',
+    description: "Logiciel de gestion pour société de nettoyage par ville : Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes. Conçu pour la propreté B2B française.",
   },
 }
 
@@ -131,6 +141,8 @@ function App() {
   else if (route === '/mentions-legales') content = <Legal kind="mentions" />
   else if (route === '/confidentialite') content = <Legal kind="privacy" />
   else if (route === '/cgu') content = <Legal kind="cgu" />
+  else if (route === '/fonctionnalites' || route === '/fonctionnalites/') content = <FeatureIndex />
+  else if (route === '/villes' || route === '/villes/') content = <CityIndex />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
