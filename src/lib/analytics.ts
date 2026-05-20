@@ -1,9 +1,6 @@
-const STORAGE_KEY = 'proprely_consent_v1'
-const DEFAULT_GA_ID = 'G-ETKWWG0CWL'
-const ENV_GA_ID = (import.meta as unknown as { env: { VITE_GA4_MEASUREMENT_ID?: string } }).env.VITE_GA4_MEASUREMENT_ID
-const GA_ID = ENV_GA_ID || DEFAULT_GA_ID
-
-type Consent = 'granted' | 'denied' | null
+// GA4 est chargé en dur dans index.html (G-ETKWWG0CWL).
+// Ce module fournit juste les helpers pour tracker events et page views
+// depuis le code SPA.
 
 declare global {
   interface Window {
@@ -11,6 +8,26 @@ declare global {
     gtag?: (...args: unknown[]) => void
   }
 }
+
+export function trackEvent(name: string, params?: Record<string, unknown>) {
+  if (typeof window === 'undefined') return
+  window.gtag?.('event', name, params || {})
+}
+
+export function trackPageView(path: string) {
+  if (typeof window === 'undefined') return
+  window.gtag?.('event', 'page_view', {
+    page_path: path,
+    page_location: window.location.href,
+  })
+}
+
+// Compat : kept for components that import these symbols.
+// Avec GA4 charge en dur dans index.html, le consent banner ne gate
+// plus rien — il informe juste l'utilisateur. Conservé pour ne pas
+// casser les imports existants.
+const STORAGE_KEY = 'proprely_consent_v1'
+type Consent = 'granted' | 'denied' | null
 
 export function getConsent(): Consent {
   if (typeof window === 'undefined') return null
@@ -20,51 +37,10 @@ export function getConsent(): Consent {
 }
 
 export function setConsent(value: Exclude<Consent, null>) {
+  if (typeof window === 'undefined') return
   window.localStorage.setItem(STORAGE_KEY, value)
-  if (value === 'granted') loadGA()
-  else unloadGA()
-}
-
-function gtag(...args: unknown[]) {
-  window.dataLayer = window.dataLayer || []
-  window.dataLayer.push(args)
-}
-
-export function loadGA() {
-  if (!GA_ID) return
-  if (document.getElementById('ga4-script')) return
-  const s = document.createElement('script')
-  s.id = 'ga4-script'
-  s.async = true
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
-  document.head.appendChild(s)
-  window.dataLayer = window.dataLayer || []
-  window.gtag = function () {
-    // eslint-disable-next-line prefer-rest-params
-    window.dataLayer!.push(arguments)
-  }
-  gtag('js', new Date())
-  gtag('config', GA_ID, { anonymize_ip: true, send_page_view: true })
-}
-
-function unloadGA() {
-  document.getElementById('ga4-script')?.remove()
-  window.dataLayer = []
-}
-
-export function trackEvent(name: string, params?: Record<string, unknown>) {
-  if (!GA_ID) return
-  if (getConsent() !== 'granted') return
-  window.gtag?.('event', name, params || {})
-}
-
-export function trackPageView(path: string) {
-  if (!GA_ID) return
-  if (getConsent() !== 'granted') return
-  window.gtag?.('event', 'page_view', { page_path: path, page_location: window.location.href })
 }
 
 export function initAnalytics() {
-  if (typeof window === 'undefined') return
-  if (getConsent() === 'granted') loadGA()
+  // GA4 est chargé via index.html. Rien à faire ici.
 }

@@ -24,6 +24,8 @@ const ProprelyVsExcel = lazy(() => import('./pages/ProprelyVsExcel'))
 const SimulateurRentabilite = lazy(() => import('./pages/SimulateurRentabilite'))
 const SoftwareLanding = lazy(() => import('./pages/SoftwareLanding'))
 const ComparatifLogiciels = lazy(() => import('./pages/ComparatifLogiciels'))
+const AutoEntrepreneurLanding = lazy(() => import('./pages/AutoEntrepreneurLanding'))
+const CRMPage = lazy(() => import('./pages/CRMPage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -96,6 +98,14 @@ const META: Record<string, RouteMeta> = {
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
     description: "Comparatif honnête des principaux logiciels société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir.",
+  },
+  '/logiciel-auto-entrepreneur-nettoyage': {
+    title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
+    description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Conçu pour les indépendants qui démarrent ou solo établis.",
+  },
+  '/crm-entreprise-proprete': {
+    title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
+    description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française.",
   },
 }
 
@@ -179,6 +189,8 @@ function App() {
   else if (route === '/simulateur-rentabilite') content = <SimulateurRentabilite />
   else if (route === '/logiciel-societe-nettoyage') content = <SoftwareLanding />
   else if (route === '/comparatif-logiciel-nettoyage') content = <ComparatifLogiciels />
+  else if (route === '/logiciel-auto-entrepreneur-nettoyage') content = <AutoEntrepreneurLanding />
+  else if (route === '/crm-entreprise-proprete') content = <CRMPage />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route === '/beta' || route === '/beta/') content = <Beta />
