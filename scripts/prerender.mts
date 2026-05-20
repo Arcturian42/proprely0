@@ -1205,5 +1205,112 @@ const comparatifHtml = buildHtml({
 writePage('/comparatif-logiciel-nettoyage', comparatifHtml)
 generated.push('/comparatif-logiciel-nettoyage')
 
+const autoEntrepreneurBody = `
+  <h1>Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre</h1>
+  <p>Vous êtes auto-entrepreneur ou solo en nettoyage. Vous portez tout : devis, planning, facturation, relances. Proprely vous fait gagner 1 à 3 heures par semaine et vous donne l'image d'une vraie société pro.</p>
+  <h2>Le quotidien d'un auto-entrepreneur en nettoyage</h2>
+  <p>Quand vous êtes seul à porter votre activité, chaque heure passée en admin est une heure de moins en chantier ou en prospection.</p>
+  <h2>Ce que Proprely fait pour vous</h2>
+  <ul>
+    <li>Devis pro en 2 minutes avec signature électronique</li>
+    <li>Planning par semaine visible sur téléphone</li>
+    <li>Mobile sur le terrain avec preuve de passage</li>
+    <li>Conformité RGPD intégrée</li>
+  </ul>
+  <h2>Avant / Après</h2>
+  <p>Avant : 5-6h d'admin par semaine. Avec Proprely : 1h30. À 30 €/heure réel, c'est 600 €/mois récupérés.</p>
+  <h2>Gratuit pendant la bêta</h2>
+  <p>30 places fondateurs incluant des auto-entrepreneurs. <a href="${ORIGIN}/beta">Candidater à la bêta</a>. Voir aussi nos <a href="${ORIGIN}/ressources">modèles gratuits</a>.</p>
+`.trim()
+
+const autoEntrepreneurFaqs = [
+  { q: "Proprely est-il adapté à un auto-entrepreneur en nettoyage ?", a: "Oui à partir de 3-5 clients récurrents. En-dessous, un template Word et Excel suffit. Au-delà, vous gagnez 1 à 3 heures par semaine." },
+  { q: "Combien coûte Proprely pour un auto-entrepreneur ?", a: "Gratuit pendant la bêta privée (30 places fondateurs). Tarif fondateur conservé à vie." },
+  { q: "Mes clients verront-ils que je suis seul à gérer ?", a: "Non. Devis à votre charte, factures à votre SIRET, mentions auto-entrepreneur intégrées, signature électronique." },
+  { q: "Peut-on connecter Proprely à mon comptable ?", a: "Oui. Export CSV/PDF pour comptable, connexion Pennylane en finalisation." },
+  { q: "Que se passe-t-il quand j'embauche mon premier salarié ?", a: "Proprely bascule vers le mode multi-agents sans rupture. Vos données restent." },
+  { q: "Combien de temps pour la mise en route ?", a: "30 minutes avec le fondateur. Vos clients, prestations et créneaux sont importés." },
+  { q: "Faut-il un logiciel pour seulement 2-3 clients ?", a: "Non. Un template Word et Excel suffit (modèles gratuits sur /ressources). Dès 5+ clients récurrents, vous récupérez du temps." },
+]
+
+const autoEntrepreneurHtml = buildHtml({
+  url: '/logiciel-auto-entrepreneur-nettoyage',
+  title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
+  description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Conçu pour les indépendants qui démarrent ou solo établis.",
+  schemas: [
+    webpageSchema(
+      'Logiciel auto-entrepreneur nettoyage',
+      "Logiciel pour auto-entrepreneur en nettoyage : devis, planning, facturation, suivi.",
+      `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Logiciel auto-entrepreneur nettoyage', item: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage` },
+      ]
+    ),
+    faqSchema(autoEntrepreneurFaqs),
+  ],
+  bodyHtml: autoEntrepreneurBody,
+})
+writePage('/logiciel-auto-entrepreneur-nettoyage', autoEntrepreneurHtml)
+generated.push('/logiciel-auto-entrepreneur-nettoyage')
+
+const crmBody = `
+  <h1>CRM entreprise propreté : suivez clients, sites et prospects</h1>
+  <p>Un CRM pensé pour la réalité d'une société de nettoyage B2B : un compte client = plusieurs sites avec fréquences distinctes, pipeline devis avec relances auto, lien direct prospect → planning agents → marge réelle.</p>
+  <h2>Pourquoi HubSpot ou Salesforce ne suffit pas</h2>
+  <p>Les CRM généralistes sont d'excellents outils pour la vente complexe. La propreté B2B a des spécificités qu'ils ne couvrent pas :</p>
+  <ul>
+    <li>Pas de notion native de site client (un client = plusieurs sites)</li>
+    <li>Pas de catalogue prestations propreté</li>
+    <li>Pas de lien automatique entre prospect signé et planning agents</li>
+    <li>Pas de visibilité sur la marge par client en temps réel</li>
+    <li>Onboarding lourd et tarif élevé (40-80 €/utilisateur/mois minimum)</li>
+  </ul>
+  <h2>Le CRM Proprely</h2>
+  <ul>
+    <li>Comptes clients + sites multiples avec contacts par fonction</li>
+    <li>Pipeline prospects et devis avec relances auto J+5 et J+10</li>
+    <li>Contacts par site (directeur, facility manager, gardien, syndic)</li>
+    <li>Historique des appels, mails, RDV</li>
+    <li>Devis et catalogue prestations propreté pré-configuré</li>
+    <li>Marge par client en temps réel</li>
+  </ul>
+  <h2>Tout connecté</h2>
+  <p>Un prospect signé devient un client avec ses sites en 1 clic. Les sites alimentent le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning des agents</a>. Voir aussi le <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">module devis</a>.</p>
+  <h2>Gratuit en bêta privée</h2>
+  <p>30 places fondateurs, tarif fondateur à vie. <a href="${ORIGIN}/beta">Candidater à la bêta</a>.</p>
+`.trim()
+
+const crmFaqs = [
+  { q: "Pourquoi un CRM spécifique pour la propreté ?", a: "Parce que HubSpot, Salesforce ou Pipedrive sont conçus pour la vente complexe SaaS ou B2B industrielle. Ils ne couvrent pas les spécificités propreté : un client = plusieurs sites, catalogue prestations métier, lien direct prospect → planning agents, marge par compte en temps réel." },
+  { q: "Combien coûte un CRM propreté ?", a: "Les CRM généralistes coûtent 40-80 €/utilisateur/mois minimum (200+ pour Salesforce). Proprely intègre les fonctions CRM : gratuit pendant la bêta, tarif fondateur à vie après." },
+  { q: "Quelle différence avec HubSpot pour mon entreprise de nettoyage ?", a: "HubSpot excelle sur la vente complexe (6-12 mois). En propreté B2B, la vente est plus rapide (devis → signature en 1-3 semaines) et le besoin est de relier prospect → contrat → planning → marge." },
+  { q: "Peut-on migrer depuis HubSpot ou Salesforce ?", a: "Oui. Vos comptes et contacts sont importés depuis un export CSV. Configuration du catalogue prestations à l'onboarding (30 min)." },
+  { q: "Synchronisation Outlook / Gmail ?", a: "Synchronisation calendrier en finalisation. Connexion email prévue après la bêta." },
+  { q: "Le module CRM est-il disponible séparément ?", a: "Non. Proprely est un cockpit unifié : clients/sites + agents + planning + devis + factures + documents + pilotage." },
+  { q: "Combien de prospects et clients Proprely supporte-t-il ?", a: "Pas de limite imposée. Le produit est conçu pour 3-50 agents avec typiquement 10-150 sites clients." },
+]
+
+const crmHtml = buildHtml({
+  url: '/crm-entreprise-proprete',
+  title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
+  description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française.",
+  schemas: [
+    webpageSchema(
+      'CRM entreprise propreté Proprely',
+      "CRM métier propreté : comptes + sites, pipeline devis, marge par client.",
+      `${ORIGIN}/crm-entreprise-proprete`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'CRM entreprise propreté', item: `${ORIGIN}/crm-entreprise-proprete` },
+      ]
+    ),
+    faqSchema(crmFaqs),
+  ],
+  bodyHtml: crmBody,
+})
+writePage('/crm-entreprise-proprete', crmHtml)
+generated.push('/crm-entreprise-proprete')
+
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

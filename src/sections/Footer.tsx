@@ -24,6 +24,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/logiciel-auto-entrepreneur-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Auto-entrepreneur
+                </Link>
+              </li>
+              <li>
+                <Link to="/crm-entreprise-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  CRM propreté
+                </Link>
+              </li>
+              <li>
                 <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
                   Planning
                 </Link>
@@ -157,6 +167,36 @@ export default function Footer() {
               <Link to="/villes/nantes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                 <MapPin size={12} />
                 Nantes &amp; Loire-Atlantique
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/lille" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Lille &amp; Hauts-de-France
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/nice" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Nice &amp; Côte d'Azur
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/strasbourg" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Strasbourg &amp; Alsace
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/montpellier" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Montpellier &amp; Hérault
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/rennes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Rennes &amp; Bretagne
               </Link>
             </li>
           </ul>
