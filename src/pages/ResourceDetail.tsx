@@ -8,6 +8,7 @@ import type { Resource } from '../data/resources'
 import { getFeature } from '../data/features'
 import { getPost } from '../data/blog'
 import Link from '../components/Link'
+import LeadMagnetForm from '../components/LeadMagnetForm'
 
 function NotFound() {
   return (
@@ -153,18 +154,10 @@ export default function ResourceDetail({ slug }: Props) {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  className="flex flex-col sm:flex-row gap-3"
+                  className="space-y-3"
                 >
-                  {isDownload ? (
-                    <a
-                      href={r.filePath}
-                      download
-                      className="group relative bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2 overflow-hidden"
-                    >
-                      <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
-                      <Download size={16} className="relative" />
-                      <span className="relative">Télécharger le modèle</span>
-                    </a>
+                  {isDownload && r.filePath ? (
+                    <LeadMagnetForm filePath={r.filePath} resourceSlug={r.slug} resourceTitle={r.shortTitle} />
                   ) : r.pageHref ? (
                     <Link
                       to={r.pageHref}
@@ -175,13 +168,13 @@ export default function ResourceDetail({ slug }: Props) {
                     </Link>
                   ) : null}
 
-                  <Link to="/beta" className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center gap-2">
+                  <Link to="/beta" className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center gap-2 w-full">
                     Rejoindre la bêta gratuite
                     <ArrowRight size={14} />
                   </Link>
                 </motion.div>
 
-                <p className="text-xs text-slate-500 mt-4">{r.format} · {r.fileSize} · Pas d'inscription requise</p>
+                <p className="text-xs text-slate-500 mt-4">{r.format} · {r.fileSize}</p>
               </div>
 
               <div className="lg:col-span-2">
