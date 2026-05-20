@@ -773,6 +773,132 @@ Proprely se positionne dans la famille 3 (SaaS vertical moderne), avec un focus 
 
 Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboarding 30 minutes avec le fondateur, tarif privilégié à vie après la bêta. [Candidater à la bêta](/) si le profil correspond.`,
   },
+  {
+    slug: 'logiciel-devis-nettoyage-gratuit',
+    title: "Logiciel de devis nettoyage gratuit : ce qu'il faut savoir avant de chercher",
+    excerpt: "\"Gratuit\" cache trois réalités très différentes : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier, et que choisir si vous démarrez.",
+    date: '19 mai 2026',
+    readTime: '6 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Trois familles de 'logiciels gratuits' : freemium limité, bêta privée temporaire, modèle revente données.",
+      "Le freemium limite typiquement à 1-2 devis/mois, 1 utilisateur, pas d'export.",
+      "La bêta privée est un vrai gratuit mais limité dans le temps (6-18 mois) et au nombre de places.",
+      "La revente de données est interdite par RGPD mais reste pratiquée. Vérifier la politique de confidentialité.",
+      "Pour démarrer : commencer par un template Word gratuit, puis basculer vers un SaaS dès 5 devis/mois.",
+    ],
+    faq: [
+      { q: "Existe-t-il un vrai logiciel de devis nettoyage gratuit ?", a: "Oui, sous deux formes : (1) le freemium d'éditeurs établis (avec des limitations strictes : 1-2 devis/mois, pas d'export, pas de signature électronique), et (2) les bêtas privées de SaaS verticaux comme Proprely (accès complet et gratuit, mais limité dans le temps et au nombre de places fondateurs)." },
+      { q: "Quelle différence entre logiciel gratuit et template Word ?", a: "Le template Word est gratuit mais demande 15-20 minutes par devis (mise en forme, calcul TVA, signature image). Le logiciel automatise tout : 2-5 minutes par devis, signature électronique native, suivi des relances, marge calculée." },
+      { q: "Le devis signé électroniquement a-t-il une valeur juridique ?", a: "Oui, depuis le règlement eIDAS 2014/910/UE. La signature électronique a la même valeur qu'une signature manuscrite, à condition que le prestataire respecte les niveaux de fiabilité (signature simple, avancée ou qualifiée selon le contexte)." },
+      { q: "Combien de devis envoyer par mois pour rentabiliser un logiciel payant ?", a: "À partir de 5-8 devis par mois, le ROI est positif : un devis prend 5 minutes au lieu de 20, soit 75 minutes/mois minimum gagnées, ce qui dépasse largement le coût d'un SaaS à 20-40€/mois." },
+      { q: "Quel logiciel choisir si je commence ma société de nettoyage ?", a: "Démarrez avec un template Word gratuit le temps de valider votre offre (50 premiers devis). Dès que vous dépassez 5 devis/mois récurrents, basculez vers un SaaS spécialisé : vous récupérez 1h+ par semaine, vous gagnez en pro, vous suivez les conversions." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
+    content: `## "Gratuit" : un mot piégé
+
+Quand vous cherchez **"logiciel de devis nettoyage gratuit"** sur Google, vous tombez sur 3 familles d'offres très différentes. La distinction est cruciale, parce que la mauvaise option peut vous coûter plus cher qu'un outil payant honnête.
+
+## Famille 1 : Le freemium limité
+
+C'est le modèle dominant : un éditeur propose une version "gratuite" qui marche, mais qui plafonne tellement vite que vous êtes forcé de passer à la version payante dès que votre activité décolle.
+
+### Les limitations typiques
+
+- **1 ou 2 devis par mois** (au-delà : passage payant obligatoire)
+- **1 seul utilisateur** (pas de partage équipe)
+- **Pas d'export** de vos données
+- **Pas de signature électronique** native (ou bridée à 1 signature/mois)
+- Le logo de l'éditeur visible sur vos devis envoyés au client
+- **Pas de relances automatiques** des prospects
+
+### Qui c'est pour
+
+Idéal si vous testez votre activité ou si vous envoyez moins de 3 devis par an. Au-delà, vous perdrez plus de temps à contourner les limitations qu'à payer un vrai outil.
+
+## Famille 2 : Les bêtas privées de SaaS verticaux
+
+Modèle récent (2022-2026). Des éditeurs comme **Proprely** lancent leur produit en accès gratuit et complet pour les 20 à 50 premières sociétés sélectionnées comme "membres fondateurs".
+
+### Les conditions typiques
+
+- **Accès complet et gratuit** à toutes les fonctionnalités
+- Pas de carte bancaire demandée
+- Pas de limites artificielles sur le nombre de devis
+- **Tarif privilégié à vie** après la fin de la bêta
+- **Limité dans le temps** : la bêta dure typiquement 6 à 18 mois
+- **Limité en places** : 20 à 50 entreprises au total
+
+### Qui c'est pour
+
+Idéal pour les sociétés en croissance (3 à 50 agents) prêtes à donner du feedback structuré et à essuyer quelques bugs en échange d'un outil pro gratuit pendant la phase de structuration. C'est le meilleur "gratuit" du marché, mais il faut être sélectionné et accepter le côté "produit en construction".
+
+## Famille 3 : Les modèles qui revendent vos données
+
+À éviter absolument. Certains éditeurs prétendument "gratuits" se rémunèrent en revendant vos données métier (clients, prix pratiqués, marges) à des concurrents, des assureurs, ou des sociétés de prospection.
+
+### Comment les repérer
+
+- **Politique de confidentialité floue** ou inexistante
+- Hébergement hors UE (USA, Asie) sans contrat de sous-traitance explicite
+- **Mentions légales** introuvables ou incomplètes
+- Cookies tiers de tracking publicitaire actifs dès la 1ère visite
+- Demande d'accès à votre carnet de contacts ou à votre messagerie
+
+### Pourquoi c'est dangereux
+
+Au-delà du non-respect du RGPD (amende potentielle 4% du CA), vous donnez à des inconnus la cartographie commerciale de votre entreprise. Sortez immédiatement de ces outils.
+
+## Comparatif gratuit vs payant : quand basculer ?
+
+Faisons le calcul honnête.
+
+### Sur Word ou Excel
+
+- Temps moyen par devis : **20 minutes** (mise en forme, calculs TVA, signature image, export PDF)
+- Pas de suivi commercial (vous perdez 20 à 30% des prospects faute de relance)
+- Pas de signature électronique (client doit imprimer, scanner, renvoyer : 5 à 10 jours de délai)
+
+### Sur un logiciel pro (SaaS vertical)
+
+- Temps moyen par devis : **3 à 5 minutes** (catalogue, calculs auto, signature native)
+- Relances automatiques à J+5 et J+10
+- Signature électronique en 1 clic, devis signé revenu en quelques heures
+
+### Le seuil de rentabilité
+
+Imaginons un tarif horaire dirigeant à 40€ (chargé). Un devis sur Word vous coûte 20 min × 40€/h = **13,30€ en temps**. Sur un SaaS, 4 min × 40€/h = **2,70€**.
+
+Économie : **10,60€ par devis**.
+
+À 5 devis/mois, vous économisez **53€/mois** = largement plus qu'un SaaS à 20-40€/mois.
+
+**À partir de 5 devis par mois, le SaaS est rentable.**
+
+## La stratégie réaliste pour démarrer
+
+Voici la séquence que nous recommandons aux dirigeants qui démarrent :
+
+### Étape 1 : Les 20 premiers devis
+
+Utilisez un **template Word gratuit** (disponible sur le site de la CCI, sur Office.com, ou via un comptable). Vous validez votre offre, vos prix, votre catalogue prestations. Pas besoin d'outil sophistiqué.
+
+### Étape 2 : Les devis 20 à 100
+
+Si vous êtes encore en pré-amorçage et que les devis restent occasionnels, le template Word tient. Si vous dépassez 5 devis/mois récurrents, **basculez vers un SaaS**.
+
+### Étape 3 : Les devis 100+
+
+À ce stade, vous avez besoin de fonctionnalités au-delà du devis lui-même : catalogue partagé entre commerciaux, relances automatiques, conversion devis → facture en 1 clic, marge calculée en temps réel par client. Un SaaS vertical (famille 2) devient incontournable.
+
+## Proprely et le devis nettoyage
+
+[Proprely](/fonctionnalites/devis-nettoyage) propose son module devis dans le cadre de sa bêta privée gratuite (famille 2 ci-dessus).
+
+Génération en 2 minutes depuis un template à votre charte, signature électronique native, suivi automatique des relances, conversion devis → facture en 1 clic. Marge brute affichée en temps réel pendant que vous construisez votre devis.
+
+Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, [candidater à la bêta](/) prend 2 minutes.`,
+  },
 ]
 
 export function getPost(slug: string): BlogPost | undefined {
