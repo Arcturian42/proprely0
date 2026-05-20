@@ -1367,6 +1367,744 @@ Trois bénéfices spécifiques pour les opérateurs Bordeaux Métropole :
 
 [Découvrir Proprely](/beta) ou [télécharger nos modèles gratuits](/ressources) (devis, planning, suivi heures) pour structurer votre activité bordelaise.`,
   },
+  {
+    slug: 'trouver-clients-b2b-nettoyage',
+    title: "Comment trouver des clients B2B en nettoyage : 8 canaux qui marchent en 2026",
+    excerpt: "Le bouche-à-oreille ne suffit plus. Les 8 canaux concrets pour décrocher de nouveaux contrats récurrents en propreté B2B : ce qui marche, ce qui coûte cher pour rien, et comment prioriser selon votre stade.",
+    date: '20 mai 2026',
+    readTime: '10 min',
+    tag: 'Stratégie',
+    quickSummary: [
+      "Le bouche-à-oreille reste le canal #1 (35-45% des nouveaux contrats) mais ne suffit plus pour croître.",
+      "Google Business Profile + SEO local = canal le plus rentable à long terme (CAC < 100 €).",
+      "LinkedIn fonctionne pour cibler facility managers et syndics — pas pour les TPE locales.",
+      "Les appels d'offres publics demandent 30-50h de préparation pour un taux de gain de 5-15%.",
+      "Capterra/GetApp/SoftwareAdvice : faible volume mais leads très chauds (B2B SaaS uniquement).",
+      "Évitez Google Ads bas-de-funnel sans landing pages dédiées (CAC × 3-5).",
+    ],
+    faq: [
+      { q: "Quel est le meilleur canal d'acquisition pour une société de nettoyage B2B ?", a: "Le bouche-à-oreille reste #1 (35-45% des contrats) mais ne passe pas à l'échelle. À court terme : Google Business Profile + SEO local sur votre ville. À moyen terme : LinkedIn pour les comptes tertiaires, démarchage des syndics pour les copropriétés, partenariats avec courtiers facility management." },
+      { q: "Combien coûte un nouveau client B2B en nettoyage ?", a: "Variable selon canal. Bouche-à-oreille : 0 € (mais limité). SEO local : 50-200 € de CAC à terme. Démarchage commercial direct : 800-2000 €. Appels d'offres publics : 1500-5000 € (préparation + temps perdu sur dossiers non gagnés). Google Ads sans landing pages dédiées : 1500-3000 €." },
+      { q: "Faut-il payer un commercial dédié à la prospection ?", a: "À partir de 15-20 agents et 200 K€ de CA récurrent. Avant, le dirigeant gère la prospection lui-même via canaux passifs (Google, LinkedIn, bouche-à-oreille). Un commercial dédié sans système de CRM coûte plus qu'il ne rapporte la 1ère année." },
+      { q: "Les appels d'offres publics valent-ils la peine ?", a: "Oui pour les sociétés de 15+ agents avec un commercial dédié. Préparation d'un dossier : 30-50 heures. Taux de gain moyen : 5-15%. Marges souvent compressées. Mieux vaut cibler les marchés publics à enveloppe < 100 K€ (moins de concurrence)." },
+      { q: "Combien de temps pour voir des résultats SEO local ?", a: "3 à 6 mois pour apparaître sur les requêtes locales (logiciel nettoyage Paris, société propreté Lyon). 6-12 mois pour ranker sur les requêtes commerciales pures. La fiche Google Business Profile peut générer des appels dès le 1er mois si elle est complète." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Pourquoi le bouche-à-oreille ne suffit plus
+
+En 2026, 35 à 45% des nouveaux contrats d'une société de nettoyage B2B viennent du bouche-à-oreille. C'est le canal numéro 1, et ça restera vrai. Mais c'est aussi un canal **non-actionnable** : vous ne pouvez pas l'accélérer en travaillant plus, et il plafonne avec votre carnet d'adresses.
+
+Pour passer de 5 agents à 15, de 15 à 50, il faut **systématiser l'acquisition**. Voici les 8 canaux qui fonctionnent réellement, classés par rentabilité à moyen terme.
+
+## Canal 1 : Google Business Profile + SEO local
+
+**Le canal le plus rentable à long terme.** Une fiche Google Business Profile complète (photos, horaires, zone d'opération, avis clients) génère des appels directs sans intermédiaire ni clic payant.
+
+### Ce qui fonctionne
+
+- Remplir 100% des champs (catégorie, sous-catégories, services, attributs)
+- Publier 1 photo/semaine pendant 3 mois (intervention, équipe, locaux)
+- Demander systématiquement un avis Google après chaque mission validée
+- Ajouter les questions/réponses fréquentes
+
+### Coût et délai
+
+- Coût : 0 € de média + ~2h/semaine
+- Premiers appels : 4-8 semaines
+- Volume pic : 5-15 appels qualifiés/mois selon ville et concurrence
+
+### Pour qui
+
+Toutes les sociétés de nettoyage avec une présence physique (bureau, dépôt, ou même domicile). Indispensable à partir de 3 agents.
+
+## Canal 2 : SEO sur votre site
+
+Le complément naturel du Google Business Profile. Une dizaine d'articles bien optimisés sur votre ville (ex: "Société de nettoyage à Paris : marché, prix, organisation") génèrent un trafic régulier de prospects qualifiés.
+
+### Ce qui fonctionne
+
+- Pages villes/spécialités spécifiques ("nettoyage bureaux Paris 17", "nettoyage cabinet médical Lyon")
+- Articles guides ("Combien coûte un nettoyage de bureau au m² en 2026")
+- Calculateurs interactifs (le calculateur ROI Proprely en est un exemple)
+- Templates téléchargeables avec capture email (devis, planning, suivi heures)
+
+### Coût et délai
+
+- Coût : ~500-2000 € en contenu rédigé ou 20-40h de temps interne par mois
+- Premiers visiteurs SEO : 2-4 mois
+- Volume pic : 50-300 visites organiques/mois après 12 mois
+
+### Pour qui
+
+Sociétés qui veulent investir dans un canal pérenne. Pas adapté si vous cherchez du trafic en 30 jours.
+
+## Canal 3 : LinkedIn
+
+Pour cibler **les facility managers, directeurs immobiliers, gestionnaires de syndic**. Inefficace pour les TPE locales (boulangerie, cabinet médical) qui ne sont pas sur LinkedIn.
+
+### Ce qui fonctionne
+
+- Profil personnel du dirigeant complet, avec son numéro, mail
+- 1 post/semaine : retour de chantier, photo équipe, conseil métier
+- Sales Navigator pour identifier les facility managers de votre zone (199 €/mois)
+- 20-30 connexions ciblées par semaine avec message personnalisé court
+
+### Coût et délai
+
+- Coût : 199 €/mois (Sales Navigator) + 5-8h/semaine
+- Premiers RDV : 6-12 semaines
+- Volume pic : 1-3 RDV qualifiés/semaine après 6 mois
+
+### Pour qui
+
+Sociétés qui visent des contrats tertiaires (bureaux 500 m²+), copropriétés gérées par syndics nationaux, hôtels chaînes.
+
+## Canal 4 : Démarchage téléphonique et terrain
+
+**Le canal le plus inconfortable mais souvent le plus efficace à court terme.** Appeler ou passer dans une boutique pour proposer un devis fonctionne — encore — en 2026.
+
+### Ce qui fonctionne
+
+- Cibler par zone géographique (rue par rue dans une zone tertiaire)
+- Carte de visite + flyer professionnel laissé à l'accueil
+- Suivi à 7 jours par téléphone
+- Statistique réaliste : 2-3% de conversion en RDV, 30-50% de RDV en contrat
+
+### Coût et délai
+
+- Coût : votre temps + impressions papier
+- Premiers contrats : 2-6 semaines
+- Volume pic : 2-5 nouveaux contrats/mois à 4-6h de prospection/semaine
+
+### Pour qui
+
+Phase démarrage. Toutes les sociétés en phase de structuration commerciale.
+
+## Canal 5 : Appels d'offres publics
+
+**Marchés publics, hôpitaux, mairies, lycées**. Volumes importants, marges compressées, processus lourd.
+
+### Ce qui fonctionne
+
+- Cibler les marchés à enveloppe < 100 K€ (moins de concurrence sérieuse)
+- Veille via BOAMP, AWS Achat, mPlace
+- Préparer un dossier "type" réutilisable (mémoire technique, références, RSE)
+- Statistique réaliste : 5-15% de taux de gain pour un primo-candidat
+
+### Coût et délai
+
+- Coût : 30-50h par dossier de préparation
+- Premiers contrats : 2-6 mois
+- Volume pic : 1-3 marchés/an
+
+### Pour qui
+
+Sociétés de 15+ agents avec un commercial dédié et une trésorerie qui supporte des paiements à 60 jours.
+
+## Canal 6 : Partenariats avec syndics et facility managers
+
+**Le canal le plus stable.** Un partenariat avec un gestionnaire de syndic peut générer 5 à 20 immeubles d'un coup.
+
+### Ce qui fonctionne
+
+- Lister les syndics de votre zone (300 m de rayon autour de votre dépôt)
+- Demander un RDV de 30 min pour présenter votre offre
+- Commission discrète au gestionnaire (5-10% du premier mois de contrat, à formaliser)
+- Reporting standardisé qui leur facilite la vie (preuve de passage avec PV automatique)
+
+### Coût et délai
+
+- Coût : votre temps + qualité de service
+- Premiers contrats : 2-4 mois
+- Volume pic : 1-3 nouveaux immeubles/mois
+
+### Pour qui
+
+Sociétés qui visent les copropriétés ou les ASL. Indispensable au-delà de 10 immeubles.
+
+## Canal 7 : Plateformes B2B (Capterra, GetApp, Trustpilot, Google Reviews)
+
+Pour le **SaaS** spécifiquement (donc pour vous **client** d'outils comme Proprely, pas pour les sociétés de nettoyage classiques). Cité ici car certains éditeurs SaaS de propreté commencent à publier des annuaires.
+
+### Pour les sociétés de nettoyage classiques
+
+Trustpilot et Google Reviews sont à entretenir : un client qui choisit entre 3 prestataires regarde les avis. 30+ avis avec une note > 4,5/5 fait la différence.
+
+## Canal 8 : Google Ads et Facebook Ads
+
+**À éviter en bas-de-funnel sans landing pages dédiées.** Le CAC explose à 1500-3000 € sur des mots-clés concurrentiels comme "logiciel société nettoyage" ou "société propreté Paris".
+
+### Quand ça fonctionne
+
+- Vous avez une landing page ultra-spécifique par mot-clé
+- Vous avez un système de tracking des conversions (téléphone, formulaire, RDV)
+- Votre site convertit déjà 2%+ en trafic organique (sinon n'investissez pas)
+- Vous testez un budget < 500 € sur 2 semaines avant de monter
+
+### Pour qui
+
+Sociétés avec budget marketing structuré et au moins 500 K€ de CA. Avant, optimisez d'abord vos canaux 1-6.
+
+## La séquence recommandée selon votre stade
+
+### Stade 1 : 0-5 agents (démarrage)
+
+1. Google Business Profile complet
+2. 5-10 visites/semaine en démarchage terrain
+3. Demander 1 avis Google après chaque mission
+4. Partenariat avec 1 ou 2 syndics
+
+### Stade 2 : 5-15 agents (structuration)
+
+5. Site web pro avec 3-5 pages clés (homepage, services, contact, blog)
+6. 1 article SEO/mois sur la propreté locale
+7. Profil LinkedIn dirigeant actif
+
+### Stade 3 : 15-50 agents (croissance)
+
+8. CRM pour suivre prospects (voir [CRM entreprise propreté](/crm-entreprise-proprete))
+9. Présence commerciale sur appels d'offres locaux
+10. Sales Navigator + démarchage facility managers
+11. SEO complet (15-20 articles, pages villes, calculateurs)
+
+## Le réflexe à acquérir : tracker vos canaux
+
+Sans système qui mesure d'où vient chaque prospect, vous investissez à l'aveugle. La question à se poser à chaque nouveau client : **"Comment nous avez-vous trouvés ?"** et noter la réponse dans une fiche client.
+
+Au bout de 6 mois, vous voyez ce qui fonctionne dans **votre** zone, avec **votre** offre, pour **votre** taille. Pas besoin de stratégie marketing magique : du tracking simple suffit.
+
+## Aller plus loin
+
+Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp, vous perdez 40-60% des relances et opportunités. [Proprely centralise la partie commerciale](/crm-entreprise-proprete) (pipeline, relances, suivi par client) directement dans votre cockpit. [Candidater à la bêta gratuite](/beta) ou [voir le guide complet du logiciel propreté](/logiciel-societe-nettoyage).`,
+  },
+  {
+    slug: 'convention-collective-nettoyage-idcc-3043',
+    title: "Convention collective nettoyage IDCC 3043 : guide pratique 2026",
+    excerpt: "La convention collective des entreprises de propreté (IDCC 3043) régit 500 000 salariés en France. Grille salariale, heures, primes, transferts, RSE : le guide complet pour les dirigeants en 2026.",
+    date: '20 mai 2026',
+    readTime: '12 min',
+    tag: 'Conformité',
+    quickSummary: [
+      "IDCC 3043 — Convention collective des entreprises de propreté — régit ~500 000 salariés en France.",
+      "Grille salariale 2026 : agent service propreté niveau AS1 à 11,99 €/h, ASP à 12,42 €/h, ATQS à 13,32 €/h.",
+      "Heures complémentaires majorées à 10% (1 à 8h), 25% au-delà — règles spécifiques convention.",
+      "Article 7 : transfert automatique du personnel en cas de perte de marché. Obligation légale, pas une option.",
+      "Prime d'expérience à partir de 4 ans d'ancienneté chez le même employeur.",
+      "Heures de nuit (21h-6h) majorées à 20%, dimanche à 100%, jours fériés à 100%.",
+    ],
+    faq: [
+      { q: "Quelle convention collective s'applique aux entreprises de nettoyage ?", a: "La Convention collective nationale des entreprises de propreté et services associés (IDCC 3043), créée par accord du 26 juillet 2011 et étendue par arrêté ministériel. Elle s'applique à toutes les entreprises de propreté de droit privé en France (code NAF 81.21Z, 81.22Z, 81.29A, 81.29B principalement)." },
+      { q: "Quel est le salaire minimum d'un agent de propreté en 2026 ?", a: "Niveau AS1 (agent de service propreté débutant) : 11,99 €/h brut au 1er janvier 2026, soit ~1818 € brut/mois pour 35h. Niveau ASP (qualifié) : 12,42 €/h. Niveau ATQS (très qualifié, ex: chef d'équipe) : 13,32 €/h. La grille est révisée annuellement par accord de branche." },
+      { q: "Qu'est-ce que l'article 7 et pourquoi est-il critique ?", a: "L'article 7 de la convention IDCC 3043 prévoit le transfert automatique des salariés affectés à un marché en cas de changement de prestataire. Concrètement : si vous gagnez un marché à un concurrent, vous reprenez ses agents (avec leur ancienneté, contrat, salaire). Si vous perdez le marché, vos agents partent chez le successeur. Obligation légale, pas négociable. Implique une due diligence RH avant tout transfert." },
+      { q: "Les heures de nuit, dimanche et jours fériés sont-elles majorées ?", a: "Oui. Heures de nuit (21h à 6h) : +20%. Dimanche : +100% du taux horaire. Jours fériés travaillés : +100% (ou repos compensateur double si négocié). Ces majorations sont obligatoires dans la branche, indépendamment de votre contrat de travail." },
+      { q: "Comment fonctionne la prime d'expérience ?", a: "À partir de 4 ans d'ancienneté chez le même employeur, l'agent bénéficie d'une prime d'expérience versée mensuellement. Montant variable selon l'accord d'entreprise. Souvent forfaitaire (30-80 €/mois pour 4-10 ans, jusqu'à 150 €/mois au-delà de 15 ans). Vérifier votre accord d'entreprise ou la dernière révision IDCC 3043." },
+      { q: "Quelles obligations RSE et formation impose la convention ?", a: "La branche impose 0,55% de la masse salariale en formation (CDI/CDD) à partir de 11 salariés. Plan annuel de formation à présenter au CSE. Égalité professionnelle homme/femme (rapport annuel). Pénibilité (exposition produits chimiques) : suivi médical renforcé pour les agents exposés aux produits CMR." },
+    ],
+    relatedSlugs: ['calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    content: `## L'essentiel à connaître sur la convention IDCC 3043
+
+La Convention collective nationale des entreprises de propreté et services associés, identifiée sous le numéro **IDCC 3043**, régit environ 500 000 salariés en France. Si vous dirigez une société de nettoyage B2B (codes NAF 81.21Z, 81.22Z, 81.29A, 81.29B), elle s'applique obligatoirement à vos contrats de travail.
+
+Méconnaître cette convention coûte cher : redressement URSSAF, prud'hommes, perte de marché lors d'un transfert article 7 mal géré. Ce guide synthétise les 6 points qui font la différence au quotidien en 2026.
+
+## Grille salariale 2026
+
+La grille est révisée chaque année par accord de branche. Au 1er janvier 2026, les minima conventionnels (35h hebdomadaires, sans prime ni majoration) sont :
+
+| Niveau | Coefficient | Taux horaire brut | Salaire brut mensuel base 35h |
+| ------ | ----------- | ----------------- | ----------------------------- |
+| AS1 (Agent Service Propreté débutant) | 110 | 11,99 € | 1 818 € |
+| AS2 | 130 | 12,15 € | 1 842 € |
+| ASP (Agent Service Propreté qualifié) | 150 | 12,42 € | 1 884 € |
+| ATQS (Agent Très Qualifié Service) | 175 | 13,32 € | 2 020 € |
+| Chef d'équipe | 195 | 14,20 € | 2 153 € |
+| Inspecteur / Responsable secteur | 235 | 16,80 € | 2 548 € |
+
+**Attention** : ces montants sont des **planchers**. Vous pouvez et devez parfois payer plus selon le marché local, la spécialité (vitrerie hauteur, décapage, médical), et l'ancienneté.
+
+## Heures complémentaires et supplémentaires
+
+### Pour les temps partiels (cas le plus fréquent en propreté)
+
+- Heures complémentaires de 1 à 8h au-delà du contrat : **+10%** du taux horaire
+- Heures complémentaires au-delà de 8h hebdomadaires : **+25%**
+- Plafond : maximum 1/3 de la durée contractuelle (ex: 10h sur un contrat 30h = limite à 10h complémentaires/semaine)
+
+### Pour les temps complets
+
+- 35-43h : +25%
+- 44h et plus : +50%
+
+### Le piège classique
+
+Beaucoup de dirigeants oublient de majorer les heures complémentaires des temps partiels (qui représentent 60-70% des effectifs propreté). Cumulé sur un an, c'est un redressement URSSAF assuré lors du contrôle.
+
+## Heures de nuit, dimanche et jours fériés
+
+| Période | Majoration |
+| ------- | ---------- |
+| Nuit (21h à 6h) | +20% |
+| Dimanche | +100% |
+| Jour férié travaillé | +100% (ou repos compensateur double) |
+| 1er mai travaillé | +100% obligatoire **sans dérogation** |
+
+Le 1er mai a un statut spécifique : seuls les services indispensables peuvent demander à un agent de travailler. Refus possible sans sanction.
+
+## L'article 7 : la règle qui change tout
+
+C'est l'article le plus important de la convention pour un dirigeant.
+
+### Le principe
+
+Quand un marché change de prestataire (vous gagnez ou vous perdez un contrat), les salariés affectés à ce marché sont **transférés automatiquement** au nouveau prestataire, avec :
+
+- Leur ancienneté conservée
+- Leur contrat de travail (avec ses spécificités, primes, accords individuels)
+- Leur salaire de base
+
+### Les conditions du transfert
+
+L'agent doit :
+
+1. Avoir au moins **6 mois d'ancienneté chez le prestataire sortant** au moment du transfert
+2. Être affecté **principalement** au marché concerné (> 30% de son temps)
+3. Ne pas avoir été embauché dans les 3 mois précédant le changement de prestataire (sauf cas particuliers)
+
+### Implications pratiques
+
+**Quand vous gagnez un marché** : vous récupérez les agents existants, dont vous ne savez rien (turnover potentiel, absentéisme, qualité). Faites une due diligence RH **avant signature** : demander la liste nominative au prestataire sortant, vérifier les contrats, identifier les agents en arrêt longue durée.
+
+**Quand vous perdez un marché** : vos agents partent chez le concurrent. Vous gardez l'ancienneté pour les indemnités de licenciement éventuelles si vous ne pouvez pas les reclasser sur d'autres marchés.
+
+## Prime d'expérience
+
+À partir de **4 ans d'ancienneté chez le même employeur**, l'agent bénéficie d'une prime d'expérience mensuelle. Le montant n'est pas fixé par la convention de branche : il est défini par votre accord d'entreprise (ou par convention locale, ex: certaines branches régionales).
+
+Montants typiques observés :
+
+- 4-10 ans : 30 à 80 €/mois
+- 10-15 ans : 80 à 120 €/mois
+- 15+ ans : 100 à 150 €/mois
+
+Cette prime est cumulable avec la prime d'ancienneté du Code du travail si elle existe dans votre accord.
+
+## Obligations RSE, formation, égalité
+
+### Formation professionnelle
+
+- Contribution légale formation : 1% de la masse salariale brute (au-delà de 11 salariés ETP)
+- La branche propreté impose en complément : **0,55% spécifique** pour le plan de développement des compétences
+
+### Égalité homme/femme
+
+- Rapport annuel obligatoire au-delà de 50 salariés
+- Index égalité professionnelle à publier sur votre site (note sur 100)
+
+### Pénibilité et risques chimiques
+
+Les agents exposés aux produits CMR (cancérogènes, mutagènes, reprotoxiques — fréquents en bionettoyage médical) doivent bénéficier :
+
+- D'un suivi médical renforcé (visite tous les 4 ans minimum)
+- D'une formation aux risques chimiques documentée
+- D'une fiche d'exposition individuelle conservée 50 ans
+
+## Comment Proprely facilite la conformité IDCC 3043
+
+Plusieurs points de la convention nécessitent un suivi précis difficile à tenir sur Excel :
+
+- **Calcul des heures complémentaires majorées** : Proprely calcule automatiquement les majorations selon le taux horaire et le contrat
+- **Suivi des transferts article 7** : fiches agents avec ancienneté, marché d'affectation, % de temps — exportables en CSV pour due diligence
+- **Suivi formation et pénibilité** : champ "formations" et "expositions" sur chaque profil agent
+- **Reporting paie** : export mensuel des heures par agent avec majorations, prêt pour votre logiciel paie ou comptable
+
+[Découvrir le module gestion des agents](/fonctionnalites/gestion-agents-nettoyage). Pour structurer le calcul des heures : [guide complet](/blog/calcul-heures-agents-nettoyage). Pour fidéliser et limiter le turnover (et donc les transferts subis) : [6 leviers concrets](/blog/fideliser-agents-nettoyage-turnover).
+
+## Sources officielles
+
+- Convention collective IDCC 3043 sur Légifrance
+- Arrêté d'extension du 23 juillet 2012
+- Accords annuels de branche (révision salaires) — publiés au BO Travail
+- Site officiel FEP (Fédération des Entreprises de Propreté)
+
+Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conformité IDCC 3043 est conçue dans le produit, pas en option.`,
+  },
+  {
+    slug: 'tarif-nettoyage-bureaux-m2-2026',
+    title: "Tarif nettoyage bureaux au m² en 2026 : la grille honnête pour les prestataires",
+    excerpt: "Combien facturer le m² de nettoyage de bureaux en 2026 ? Grille par fréquence, par zone, par type de site. Méthode pour calculer un prix qui protège votre marge sans perdre l'affaire.",
+    date: '20 mai 2026',
+    readTime: '9 min',
+    tag: 'Stratégie',
+    quickSummary: [
+      "Tarif moyen national 2026 : 0,40 à 0,80 €/m²/mois pour un nettoyage quotidien de bureaux.",
+      "Paris/Île-de-France : +25 à +40% au-dessus de la moyenne nationale.",
+      "Calcul fiable : (m² × prestations × fréquence) ÷ vitesse de production agent × coût horaire chargé × 2,8-3,2.",
+      "Vitesse de production standard : 250 à 400 m²/heure selon le type de site et la fréquence.",
+      "Erreur classique : facturer au forfait sans connaître son coût réel — 3 contrats sur 10 finissent à perte.",
+      "Méthode 'prix de référence' : 3 grilles internes (basse, moyenne, premium) mises à jour 2 fois/an.",
+    ],
+    faq: [
+      { q: "Quel est le tarif moyen au m² pour le nettoyage de bureaux en 2026 ?", a: "0,40 à 0,80 €/m²/mois pour un nettoyage quotidien standard de bureaux (passage 5 fois/semaine, parties communes + sanitaires + bureaux). Variable selon la zone : Paris/IDF +25-40%, grandes métropoles régionales +10-20%, zones rurales -10-20%. Ces tarifs s'entendent hors prestations spécifiques (vitrerie, moquette, remise en état)." },
+      { q: "Comment calculer un prix au m² fiable ?", a: "Méthode : (surface en m² × prestations à réaliser × fréquence hebdomadaire) ÷ vitesse de production de l'agent en m²/h × coût horaire chargé. Le résultat est votre coût de revient. Multipliez par 2,8 à 3,2 pour obtenir le prix de vente. Vitesses de référence : 250-400 m²/h pour bureaux, 150-250 m²/h pour cabinet médical (protocole bionettoyage), 400-600 m²/h pour grand plateau open space." },
+      { q: "Faut-il facturer au forfait ou au m² ?", a: "Au forfait pour le client (plus lisible), mais calculé au m² en interne. Le forfait mensuel donne au client une visibilité budgétaire. Vous, vous tracez en m² × prestation × fréquence pour vérifier que vous restez rentable. Sans ce calcul interne, 3 contrats sur 10 finissent à perte sans que vous vous en rendiez compte." },
+      { q: "Comment justifier un prix plus élevé que la concurrence ?", a: "Quatre leviers : (1) Détail des prestations (qui fait quoi, combien de fois, quels produits), (2) Engagements de remplacement (si l'agent est absent, vous garantissez intervention sous X heures), (3) Preuve de passage automatique (QR + photos + signature), (4) Reporting régulier (PV mensuel automatique au gestionnaire). Ces 4 éléments justifient +10 à +20% par rapport à un concurrent low-cost." },
+      { q: "Quel taux de marge nette viser sur un contrat de nettoyage de bureaux ?", a: "15 à 20% de marge nette est la cible saine. En-dessous de 10%, votre entreprise est vulnérable au moindre imprévu (remplacement, hausse de charges, sinistre). Au-delà de 25%, vous êtes probablement hors marché ou sur un client captif (situation à court terme)." },
+      { q: "Les tarifs varient-ils selon le type de bureau ?", a: "Oui significativement. Bureau corporate standard : 0,40-0,55 €/m²/mois. Cabinet médical : 0,80-1,20 €/m²/mois (bionettoyage, traçabilité, fréquence haute). Coworking : 0,55-0,80 €/m²/mois (rotation forte, exigence esthétique). Espace de direction (présidence, salle de conseil) : 0,80-1,50 €/m²/mois (qualité haut de gamme demandée)." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'calcul-heures-agents-nettoyage'],
+    content: `## Pourquoi 60% des dirigeants se trompent sur leur prix au m²
+
+D'après les retours terrain de la branche propreté en 2025, environ 60% des sociétés de nettoyage B2B facturent au forfait sans avoir calculé leur coût de revient au m². Résultat : sur 10 contrats actifs, 3 sont en perte sèche et 4 en marge insuffisante. Seuls 3 portent la rentabilité.
+
+Ce guide donne la méthode honnête pour calculer un prix au m² qui **protège votre marge sans perdre l'affaire**.
+
+## La grille de référence 2026
+
+### Bureaux standards (passage 5 fois/semaine)
+
+| Zone | Tarif au m²/mois |
+| ---- | ---------------- |
+| Paris intra-muros | 0,55 à 0,90 € |
+| Île-de-France (hors Paris) | 0,50 à 0,80 € |
+| Grandes métropoles (Lyon, Marseille, Bordeaux, Toulouse, Nice, Lille, Nantes, Strasbourg, Montpellier, Rennes) | 0,45 à 0,70 € |
+| Villes moyennes (50-200K hab) | 0,40 à 0,60 € |
+| Zones rurales / petites villes | 0,35 à 0,50 € |
+
+### Cabinets médicaux et dentaires
+
+Multipliez les tarifs bureaux par **1,5 à 2,2** selon protocole et fréquence. Justification : produits certifiés, traçabilité, agents formés bionettoyage, plages contraintes par les rendez-vous patients.
+
+### Coworking et espaces flex
+
+Multipliez par **1,3 à 1,6**. Justification : rotation forte des utilisateurs, exigence esthétique constante, fréquence haute (parfois 2x/jour sur les sanitaires).
+
+### Industriel et logistique
+
+Multipliez par **0,7 à 1,0**. Justification : surfaces importantes (économie d'échelle), prestations moins exigeantes esthétiquement, mais vigilance sur les zones spécifiques (vestiaires, douches, salles de pause).
+
+## La méthode de calcul fiable
+
+### Étape 1 : Mesurer la surface réelle
+
+Le contrat client donne souvent une surface annoncée. Visitez le site, mesurez les zones effectivement nettoyées (les couloirs comptent, pas les escaliers extérieurs). Différence typique : 5-15% entre annoncé et réel.
+
+### Étape 2 : Lister les prestations
+
+Pour chaque zone, lister :
+
+- Sols : aspirateur, lavage, vitrification
+- Mobilier : dépoussiérage, traces
+- Sanitaires : nettoyage, désinfection, consommables
+- Parties communes : halls, escaliers, ascenseurs
+- Cuisines/tisaneries
+- Poubelles : ramassage, sortie
+
+### Étape 3 : Estimer la fréquence
+
+Quotidien (5x/semaine), 3x/semaine, hebdomadaire, mensuel. La fréquence détermine la charge de travail réelle.
+
+### Étape 4 : Appliquer la vitesse de production
+
+Vitesses observées dans la branche en 2026 :
+
+| Type de site | Vitesse (m²/h) |
+| ------------ | -------------- |
+| Open space standard | 350-500 |
+| Bureaux individuels classiques | 250-350 |
+| Cabinet médical (bionettoyage) | 150-250 |
+| Sanitaires (nettoyage complet) | 30-50 |
+| Cuisine/tisanerie | 80-120 |
+| Hall avec marbre/parties communes prestige | 150-200 |
+| Vitrerie intérieure | 80-100 |
+
+### Étape 5 : Calculer le coût de revient horaire chargé
+
+Coût horaire chargé = salaire brut × 1,45 (charges patronales) + produits et matériel + quote-part frais de structure.
+
+Pour un agent ASP en 2026 à 12,42 €/h brut :
+
+- Brut + charges : 12,42 × 1,45 = **18,01 €/h**
+- Produits et matériel : +0,80 €/h (forfaitaire)
+- Quote-part frais de structure (loyer dépôt, véhicules, encadrement, admin) : +3-5 €/h
+
+**Coût horaire chargé total : 22-25 €/h** pour un agent ASP standard.
+
+### Étape 6 : Multiplier par 2,8 à 3,2
+
+C'est la **règle des 3×** : votre prix de vente doit être à 2,8-3,2 fois votre coût horaire chargé pour couvrir vos imprévus (absentéisme, remplacements, renégociations, sinistres) et générer une marge nette de 15-20%.
+
+À 22 €/h de coût et un multiplicateur de 3, votre **prix de vente horaire est 66 €**.
+
+### Étape 7 : Convertir en €/m²/mois
+
+Exemple : un site de 800 m² de bureaux standards, nettoyage quotidien (5x/semaine = 22 jours/mois en moyenne), vitesse 350 m²/h.
+
+- Temps par passage : 800 ÷ 350 = **2,28 h**
+- Temps mensuel : 2,28 × 22 = **50,28 h**
+- Coût mensuel : 50,28 × 22 € = **1106 €**
+- Prix de vente cible : 50,28 × 66 € = **3318 €**
+- Prix au m²/mois : 3318 ÷ 800 = **4,15 €/m²/mois** (pour quotidien)
+- Ou par jour ouvré : 3318 ÷ 22 = **150 €/jour**
+
+> **Attention** : ces chiffres sont des illustrations. Vos coûts réels varient selon votre structure (TPE solo vs PME avec encadrement), votre ville et votre mix client.
+
+## Les 4 facteurs qui justifient une hausse de prix
+
+### 1. Technicité (vitrerie hauteur, décapage, remise en état post-chantier)
+
+Multiplicateur 1,3 à 2,0. Justifie une facturation à part en plus du contrat récurrent.
+
+### 2. Horaires (nuit, dimanche, jour férié)
+
+Majorations convention IDCC 3043 (+20% nuit, +100% dimanche, +100% jour férié). À répercuter sur le devis.
+
+### 3. Accessibilité
+
+Sous-sols, parkings difficiles, sites enclavés, accès badgés contraignants. +5 à +15% selon contrainte réelle.
+
+### 4. Fréquence très haute ou très basse
+
+Très haute fréquence (>1x/jour) : pas d'économie d'échelle, prix proportionnel. Très basse fréquence (1x/mois) : déplacement disproportionné, +20 à +30%.
+
+## La méthode "prix de référence" pour ne pas se planter
+
+Construire **3 grilles internes** à mettre à jour 2 fois par an :
+
+1. **Grille basse** : votre minimum vital (en-dessous, vous travaillez à perte). Calculée avec multiplicateur 2,5.
+2. **Grille moyenne** : votre prix standard. Multiplicateur 3,0.
+3. **Grille premium** : pour les sites prestige (cabinet présidentiel, hôtel 5 étoiles, prestations à valeur ajoutée). Multiplicateur 3,5+.
+
+Quand vous établissez un devis, partez systématiquement de la grille moyenne. Descendez sur la basse uniquement pour les contrats stratégiques (gain de visibilité, ancrage zone). Montez sur la premium quand l'exigence le justifie.
+
+## Erreurs à éviter
+
+### Facturer au forfait sans connaître son coût
+
+Le piège classique. Le client demande "combien par mois ?" et vous donnez un chiffre rond. Au bout de 6 mois, vous découvrez que vous perdez de l'argent. Toujours **calculer en interne au m² × prestation × fréquence**, même si le devis client est au forfait.
+
+### Aligner sur le concurrent sans contrôler ses coûts
+
+"Ils sont à 1500 €, je propose 1450 €." Si vos coûts sont supérieurs, vous perdez à chaque facture. Mieux vaut perdre l'affaire que perdre de l'argent.
+
+### Ne pas réviser les prix avec l'inflation des charges
+
+Les charges sociales et les salaires conventionnels montent. Si vous ne révisez pas vos prix annuellement, votre marge fond. Inclure une **clause d'indexation** dans vos contrats.
+
+### Sous-estimer les remplacements
+
+Un agent absent 10% du temps moyen sur l'année. À ne pas oublier dans le coût de revient.
+
+## Aller plus loin
+
+[Calculateur ROI Proprely](/calculateur-roi) pour estimer le coût de votre gestion dispersée. [Simulateur de rentabilité contrat](/simulateur-rentabilite) pour valider qu'un contrat précis est rentable avant signature. [Module devis Proprely](/fonctionnalites/devis-nettoyage) : catalogue prestations, marge brute affichée en temps réel pendant la construction du devis.
+
+Pour structurer votre tarification : [Fixer ses prix dans le nettoyage : la méthode juste en 2026](/blog/fixer-prix-nettoyage). Pour comprendre la convention collective : [Convention collective nettoyage IDCC 3043 : guide pratique 2026](/blog/convention-collective-nettoyage-idcc-3043).`,
+  },
+  {
+    slug: 'digitaliser-entreprise-nettoyage-5-etapes',
+    title: "Digitaliser son entreprise de nettoyage en 5 étapes concrètes (2026)",
+    excerpt: "Vous gérez encore sur Excel et WhatsApp ? La méthode en 5 étapes pour digitaliser sans casser votre activité — par ordre de priorité, avec ROI estimé et risques à éviter.",
+    date: '20 mai 2026',
+    readTime: '8 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Étape 1 — Cartographier vos flux actuels (3-4h, gratuit). Indispensable avant tout outil.",
+      "Étape 2 — Centraliser clients et sites dans un seul fichier ou un CRM (1 semaine, ROI immédiat).",
+      "Étape 3 — Digitaliser le planning des agents (mobile-first, sans app à installer). ROI 3-5h/semaine.",
+      "Étape 4 — Mettre en place preuve de passage native (QR + photos + signature). Réduit les litiges de 70-90%.",
+      "Étape 5 — Industrialiser devis, factures, suivi commercial. Récupère 2-3h/semaine.",
+      "Erreurs à éviter : tout digitaliser d'un coup, choisir un outil sans tester, ignorer les agents.",
+    ],
+    faq: [
+      { q: "Combien de temps pour digitaliser une société de nettoyage ?", a: "Selon la taille : 2 à 6 semaines pour une TPE (3-15 agents), 2 à 4 mois pour une PME (15-50 agents). L'erreur fréquente est de vouloir tout faire en une fois. La méthode en 5 étapes étalées sur plusieurs semaines donne de meilleurs résultats avec moins de risques opérationnels." },
+      { q: "Combien coûte la digitalisation d'une entreprise de nettoyage ?", a: "Tout dépend du chemin choisi. Excel + templates gratuits : 0 €. SaaS vertical moderne (Proprely et autres) : 15-50 €/utilisateur/mois. Logiciel métier historique (PROPRET, Progiclean) : 30-60 €/utilisateur/mois avec consultant intégrateur 5-15 K€. ERP généraliste : 100+ €/utilisateur/mois avec intégration 30-50 K€. Le coût caché de ne pas digitaliser : 12 à 21 K€/an en dispersion admin." },
+      { q: "Faut-il digitaliser quand on a moins de 5 agents ?", a: "Partiellement. Le planning peut rester sur Excel ou Google Sheets. La preuve de passage et le suivi clients deviennent intéressants dès le 1er client B2B exigeant (syndic, hôtel, médical). Les devis pro deviennent rentables à partir de 5-8 devis par mois." },
+      { q: "Que faire si mes agents ne sont pas à l'aise avec le numérique ?", a: "Le mythe du 'mes agents ne savent pas faire' tombe avec les outils 2026. La majorité des agents utilisent déjà WhatsApp et Instagram. Un lien web envoyé par SMS, qui ouvre directement le planning sur leur téléphone (sans app à installer, sans login complexe), est adopté en 5 minutes. Important : impliquer 1-2 agents pilotes dès le départ pour faire le retour terrain." },
+      { q: "Comment éviter le double travail pendant la transition ?", a: "Trois règles : (1) Choisir une date de bascule claire (pas de cohabitation > 2 semaines), (2) Importer toutes les données existantes en lot avant le démarrage (clients, sites, agents, prestations), (3) Désactiver les anciens canaux dès le J1 (fermer le groupe WhatsApp planning, archiver le fichier Excel)." },
+    ],
+    relatedSlugs: ['comparatif-logiciels-nettoyage-2026', 'logiciel-societe-nettoyage-criteres'],
+    content: `## Pourquoi 70% des sociétés de nettoyage n'ont toujours pas digitalisé en 2026
+
+D'après une enquête FEP 2024, environ 70% des sociétés de nettoyage de moins de 50 agents en France pilotent encore principalement sur Excel, WhatsApp et Word. Le coût caché est documenté : **12 à 21 K€/an** par société, en heures de dirigeant perdues, erreurs de pointage, contrats sous-tarifés et litiges.
+
+Pourtant, la digitalisation est plus simple en 2026 qu'il y a 5 ans :
+
+- Outils SaaS verticaux modernes (mobile-first, sans app)
+- Onboarding en 30 minutes à 1 journée (vs 3-6 mois pour les ERP historiques)
+- Tarifs accessibles (15-50 €/utilisateur/mois)
+- Hébergement européen RGPD par défaut
+
+Le frein principal n'est plus technologique : il est méthodologique. Ce guide donne la **méthode en 5 étapes** pour digitaliser sans casser votre activité.
+
+## Étape 1 — Cartographier vos flux actuels (3-4h)
+
+Avant d'acheter un outil, comprenez ce que vous voulez remplacer.
+
+### Faire l'inventaire
+
+Sur une feuille A3, listez :
+
+- Tous les fichiers Excel/Google Sheets que vous utilisez (clients, sites, agents, planning, devis, factures, paie)
+- Les groupes WhatsApp ou SMS (planning, remplacements, urgences)
+- Les classeurs papier (contrats, attestations, fiches de poste)
+- Les emails récurrents (relances, PV de passage, factures envoyées)
+
+### Identifier les douleurs
+
+Pour chaque flux, notez en 1 ligne :
+
+- Combien de temps vous y passez par semaine
+- Combien d'erreurs ou d'oublis vous y avez eu le mois dernier
+- Si quelqu'un d'autre que vous peut prendre le relais
+
+C'est votre **photo de l'existant**. Indispensable pour mesurer le ROI ensuite.
+
+## Étape 2 — Centraliser clients et sites (1 semaine)
+
+L'erreur classique : digitaliser le planning en premier. Faux. **Commencez par les données client.**
+
+### Structurer la base
+
+Pour chaque client, créez une fiche :
+
+- Nom de la société
+- SIRET, adresse de facturation
+- Contact décisionnaire (direction)
+- Contact opérationnel (facility manager, gardien)
+- Liste des sites (un client peut avoir plusieurs sites)
+
+Pour chaque site :
+
+- Adresse
+- Superficie (m²) et type (bureaux, médical, copro, retail, industriel)
+- Fréquences (quotidien, hebdo, mensuel)
+- Prestations (sols, vitres, sanitaires, parties communes)
+- Contacts opérationnels (gardien, accès, codes)
+- Photos d'état initial
+
+### Outils possibles
+
+- **Excel structuré** (gratuit, suffisant pour < 15 clients) — voir [nos modèles gratuits](/ressources)
+- **CRM métier** (Proprely et autres) — voir [CRM entreprise propreté](/crm-entreprise-proprete)
+- **Pas HubSpot/Salesforce** : trop puissants et coûteux pour ce besoin
+
+### ROI
+
+Récupération immédiate de 30 minutes à 1h par semaine sur la recherche d'informations client (adresse, code, contact). Et impact qualité : vous ne perdez plus d'opportunités par oubli de relance.
+
+## Étape 3 — Digitaliser le planning agents (1-2 semaines)
+
+C'est le cœur opérationnel. **Mobile-first obligatoire.**
+
+### Les critères du bon outil planning
+
+- **Affectation en 1 clic** (drag-and-drop d'un agent sur un créneau)
+- **Mobile pour les agents sans app à installer** : un lien web qui s'ouvre dans le navigateur
+- **Notifications de changement en temps réel** (un agent absent → remplaçant proposé automatiquement)
+- **Visibilité par agent, par client, par jour, par semaine**
+- **Compteur d'heures automatique** pour la paie
+
+### Le piège des apps natives
+
+Beaucoup d'éditeurs imposent une app à installer pour les agents. Conséquences :
+
+- Adoption faible (40-60% en moyenne)
+- Problèmes sur les téléphones bas de gamme ou Android anciens
+- Formation nécessaire
+
+Les outils 2026 modernes (dont Proprely) fonctionnent **via un lien web** ouvert dans le navigateur du téléphone agent. Aucune installation, fonctionne sur 4G dégradée.
+
+### ROI
+
+3 à 5 heures par semaine récupérées pour le dirigeant. Et impact qualité : moins d'agents qui se présentent sur le mauvais site, moins de retards, moins de tensions sur les remplacements.
+
+Voir aussi : [Planning des agents de nettoyage : la gestion centralisée](/fonctionnalites/planning-nettoyage).
+
+## Étape 4 — Preuve de passage native (1 semaine)
+
+C'est le levier qui fait la **différence en négociation client** et qui **réduit les litiges de 70-90%**.
+
+### Les composants essentiels
+
+- **QR code par site** : l'agent scanne à son arrivée, géolocalisation + horodatage enregistrés
+- **Photos avant/après horodatées** : 2-3 photos par intervention (sols, sanitaires, parties communes)
+- **Signature client électronique** si présent (gardien, gestionnaire) — sinon, validation par l'agent
+- **PV automatique** envoyé au client en fin d'intervention
+
+### Pourquoi c'est critique en 2026
+
+Les syndics nationaux exigent désormais une preuve de passage standardisée pour la majorité des marchés. Les hôtels et cabinets médicaux le demandent dès le contrat. Sans preuve de passage native, vous perdrez progressivement vos meilleurs marchés.
+
+Voir : [Preuve de passage nettoyage : QR code, photos avant-après et signature](/fonctionnalites/preuve-passage-nettoyage).
+
+### ROI
+
+Récupération de 1 à 2h/semaine en gestion des litiges. Gain commercial : +10 à +15% sur le prix grâce à la valeur perçue. Réduction des annulations de contrat suite à plaintes.
+
+## Étape 5 — Devis, factures, suivi commercial (2-3 semaines)
+
+Maintenant que l'opérationnel tourne, attaquez l'avant et l'après-vente.
+
+### Devis professionnels
+
+- Catalogue prestations réutilisable (quotidien bureaux, vitrerie, décapage)
+- Génération en 2 minutes au lieu de 20
+- Signature électronique native (eIDAS conforme)
+- Suivi des relances automatiques à J+5 et J+10
+
+### Factures
+
+- Conversion devis signé → facture en 1 clic
+- Numérotation comptable automatique
+- Export comptable mensuel
+- Connexion native vers Pennylane (en finalisation), Qonto (en finalisation)
+
+### Suivi commercial
+
+- Pipeline visible (envoyé / ouvert / signé / refusé)
+- Marge brute affichée en temps réel pendant la construction du devis
+- Historique des échanges par compte
+
+Voir : [Logiciel de devis nettoyage](/fonctionnalites/devis-nettoyage). Et : [Comment fixer ses prix dans le nettoyage](/blog/fixer-prix-nettoyage).
+
+### ROI
+
+2 à 3h/semaine récupérées sur la création de devis, le suivi et la facturation. Conversion devis → signature améliorée de 30-50% grâce aux relances automatiques.
+
+## Les 4 erreurs classiques à éviter
+
+### 1. Tout digitaliser d'un coup
+
+L'enthousiasme pousse à acheter un outil qui couvre tout et à basculer en 1 semaine. Résultat : épuisement, abandon partiel, retour aux anciens outils sur certains flux. **Phasez** : 1 module par semaine ou tous les 15 jours.
+
+### 2. Choisir un outil sans tester
+
+Demandez systématiquement une démo de **30 minutes avec vos propres données réelles** (importez 5-10 clients et 5-10 agents). Pas une démo générique avec données fictives. Si l'éditeur refuse, méfiance.
+
+### 3. Ignorer les agents
+
+Vos agents sont en première ligne du changement. Si vous décidez seul, l'adoption sera mauvaise. **Impliquez 1-2 agents pilotes dès la phase de choix d'outil**. Faites-leur tester le mobile.
+
+### 4. Ne pas mesurer le ROI
+
+Sans mesure du temps gagné, vous ne sauriez pas si la digitalisation est rentable. **Avant la transition**, notez votre temps actuel sur chaque flux. **3 mois après**, refaites le même chiffrage. La différence est votre vrai ROI.
+
+## La séquence recommandée
+
+Si vous démarrez de zéro :
+
+- **Semaine 1** : Cartographie (étape 1)
+- **Semaines 2-3** : Centralisation clients/sites (étape 2)
+- **Semaines 4-5** : Planning agents (étape 3)
+- **Semaines 6-7** : Preuve de passage (étape 4)
+- **Semaines 8-10** : Devis et facturation (étape 5)
+
+Pour une TPE de 3-15 agents, comptez **6 à 10 semaines au total**. Pour une PME de 15-50, **3 à 4 mois**.
+
+## Aller plus loin
+
+[Comparatif logiciels nettoyage 2026](/comparatif-logiciel-nettoyage) pour choisir votre outil. [Le guide complet du logiciel propreté](/logiciel-societe-nettoyage) pour la vue d'ensemble. [Candidater à la bêta privée Proprely](/beta) si vous voulez tester un cockpit unifié gratuit pendant la bêta, avec tarif fondateur conservé à vie.`,
+  },
 ]
 
 export function getPost(slug: string): BlogPost | undefined {
