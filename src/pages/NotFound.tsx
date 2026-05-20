@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, BookOpen, Calculator, Home, Tag } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 const links = [
   { icon: Home, label: 'Accueil', desc: 'Découvrir le cockpit', href: '/' },
@@ -72,9 +72,9 @@ export default function NotFound() {
             className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto"
           >
             {links.map((l) => (
-              <button
+              <Link
                 key={l.href}
-                onClick={() => navigate(l.href)}
+                to={l.href}
                 className="group flex items-center gap-3 bg-white border border-slate-100 rounded-2xl p-4 text-left hover:border-blue-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 active:scale-[0.98] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
@@ -85,7 +85,7 @@ export default function NotFound() {
                   <div className="text-xs text-slate-500 truncate">{l.desc}</div>
                 </div>
                 <ArrowRight size={14} className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-              </button>
+              </Link>
             ))}
           </motion.div>
         </div>

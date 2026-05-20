@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -173,7 +173,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
         >
-          Le cockpit métier des sociétés de nettoyage.<br />
+          Logiciel de gestion pour société de nettoyage.<br />
           <span className="text-blue-600">Sans Excel, sans WhatsApp, sans nuits blanches.</span>
         </motion.h1>
 
@@ -210,13 +210,13 @@ export default function Hero() {
             <span className="relative">Rejoindre la bêta privée</span>
             <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
-          <button
-            onClick={() => navigate('/calculateur-roi')}
+          <Link
+            to="/calculateur-roi"
             className="bg-white border border-slate-200 text-slate-700 rounded-xl px-7 py-4 font-semibold text-base hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <Calculator size={16} className="text-slate-500" />
             Calculer mon économie
-          </button>
+          </Link>
         </motion.div>
 
         <motion.p

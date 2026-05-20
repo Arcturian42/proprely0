@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Flame } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -43,12 +43,12 @@ export default function FinalCTA() {
             <span className="relative">Rejoindre la bêta gratuite</span>
             <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
           </button>
-          <button
-            onClick={() => navigate('/calculateur-roi')}
-            className="border border-white/20 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          <Link
+            to="/calculateur-roi"
+            className="border border-white/20 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 inline-flex items-center justify-center"
           >
             Calculer mon économie
-          </button>
+          </Link>
         </div>
 
         <p className="text-xs text-slate-500">Gratuit pendant la bêta, pas de carte bancaire, aucun engagement.</p>

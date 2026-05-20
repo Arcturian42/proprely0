@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight, BookOpen, Calculator, Mail } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 export default function ThankYou() {
   return (
@@ -70,21 +70,21 @@ export default function ThankYou() {
             transition={{ duration: 0.4, delay: 0.38 }}
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
-            <button
-              onClick={() => navigate('/blog')}
+            <Link
+              to="/blog"
               className="group inline-flex items-center justify-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
             >
               <BookOpen size={14} />
               Lire le blog
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-            </button>
-            <button
-              onClick={() => navigate('/calculateur-roi')}
+            </Link>
+            <Link
+              to="/calculateur-roi"
               className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97]"
             >
               <Calculator size={14} />
               Calculateur ROI
-            </button>
+            </Link>
           </motion.div>
 
           <motion.p
