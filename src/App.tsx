@@ -17,6 +17,11 @@ const Legal = lazy(() => import('./pages/Legal'))
 const Contact = lazy(() => import('./pages/Contact'))
 const FeatureIndex = lazy(() => import('./pages/FeatureIndex'))
 const CityIndex = lazy(() => import('./pages/CityIndex'))
+const Beta = lazy(() => import('./pages/Beta'))
+const Resources = lazy(() => import('./pages/Resources'))
+const ResourceDetail = lazy(() => import('./pages/ResourceDetail'))
+const ProprelyVsExcel = lazy(() => import('./pages/ProprelyVsExcel'))
+const SimulateurRentabilite = lazy(() => import('./pages/SimulateurRentabilite'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -65,6 +70,22 @@ const META: Record<string, RouteMeta> = {
   '/villes': {
     title: 'Logiciel nettoyage par ville · Proprely',
     description: "Logiciel de gestion pour société de nettoyage par ville : Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes. Conçu pour la propreté B2B française.",
+  },
+  '/beta': {
+    title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
+    description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie, onboarding 30 min.",
+  },
+  '/ressources': {
+    title: 'Ressources gratuites pour société de nettoyage · Proprely',
+    description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI.",
+  },
+  '/proprely-vs-excel': {
+    title: 'Proprely vs Excel : le comparatif honnête · Proprely',
+    description: "Excel coûte 6 à 10h par semaine et finit par bloquer la croissance. Comparatif détaillé Proprely vs Excel : marge, traçabilité, mobile, conformité.",
+  },
+  '/simulateur-rentabilite': {
+    title: 'Simulateur rentabilité contrat nettoyage · Proprely',
+    description: "Calculez en 1 minute la marge brute d'un contrat de nettoyage : prix horaire vs coût horaire chargé, verdict instantané, recommandations.",
   },
 }
 
@@ -143,10 +164,15 @@ function App() {
   else if (route === '/cgu') content = <Legal kind="cgu" />
   else if (route === '/fonctionnalites' || route === '/fonctionnalites/') content = <FeatureIndex />
   else if (route === '/villes' || route === '/villes/') content = <CityIndex />
+  else if (route === '/ressources' || route === '/ressources/') content = <Resources />
+  else if (route === '/proprely-vs-excel') content = <ProprelyVsExcel />
+  else if (route === '/simulateur-rentabilite') content = <SimulateurRentabilite />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
+  else if (route === '/beta' || route === '/beta/') content = <Beta />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
   else if (route.startsWith('/villes/')) content = <CityPage slug={route.slice(8).replace(/\/$/, '')} />
+  else if (route.startsWith('/ressources/')) content = <ResourceDetail slug={route.slice(12).replace(/\/$/, '')} />
   else content = <NotFound />
 
   if (route === '/') {

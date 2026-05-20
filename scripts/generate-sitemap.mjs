@@ -37,6 +37,7 @@ function extractBlogPosts(filePath) {
 const blogPosts = extractBlogPosts(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractField(resolve(root, 'src/data/features.ts'), 'slug')
 const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
+const resourceSlugs = extractField(resolve(root, 'src/data/resources.ts'), 'slug')
 
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
@@ -55,6 +56,16 @@ const urls = [
   { loc: `${ORIGIN}/contact`, priority: '0.5', changefreq: 'yearly', lastmod: today },
   { loc: `${ORIGIN}/fonctionnalites`, priority: '0.9', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/villes`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/beta`, priority: '0.9', changefreq: 'weekly', lastmod: today },
+  { loc: `${ORIGIN}/ressources`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/proprely-vs-excel`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/simulateur-rentabilite`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  ...resourceSlugs.map((slug) => ({
+    loc: `${ORIGIN}/ressources/${slug}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: today,
+  })),
   ...featureSlugs.map((slug) => ({
     loc: `${ORIGIN}/fonctionnalites/${slug}`,
     priority: '0.8',
@@ -90,4 +101,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 7 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + 3 legal)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 11 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + ${resourceSlugs.length} ressources + 3 legal)`)
