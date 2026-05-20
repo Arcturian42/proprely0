@@ -39,7 +39,7 @@ const modules = [
     tagline: 'Décidez avec des chiffres, pas au feeling.',
     benefits: [
       { before: "Vous découvrez la rentabilité du mois 45 jours après la clôture", after: "CA, heures et marge visibles en temps réel" },
-      { before: "Comptable et logiciel de facturation déconnectés", after: "Connexion native Pennylane / Conto, données synchronisées" },
+      { before: "Comptable et logiciel de facturation déconnectés", after: "Connexion native Pennylane / Qonto, données synchronisées" },
       { before: "Décisions prises à l'instinct, sans visibilité", after: "Rapport mensuel automatique par site et par client" },
     ],
   },
