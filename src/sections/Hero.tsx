@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
@@ -31,16 +31,36 @@ const missions = [
 
 function ProductMockup() {
   const ref = useRef<HTMLDivElement>(null)
+  const rectRef = useRef<DOMRect | null>(null)
   const mvX = useMotionValue(0)
   const mvY = useMotionValue(0)
   const springX = useSpring(mvX, { stiffness: 140, damping: 18, mass: 0.5 })
   const springY = useSpring(mvY, { stiffness: 140, damping: 18, mass: 0.5 })
   const rotateY = useTransform(springX, [-0.5, 0.5], [6, -6])
   const rotateX = useTransform(springY, [-0.5, 0.5], [-4, 4])
+  const [interactive, setInteractive] = useState(false)
+
+  useEffect(() => {
+    const enable = () => setInteractive(true)
+    const w = window as typeof window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+    if (w.requestIdleCallback) {
+      const id = w.requestIdleCallback(enable, { timeout: 2000 })
+      return () => w.cancelIdleCallback?.(id)
+    }
+    const t = setTimeout(enable, 1500)
+    return () => clearTimeout(t)
+  }, [])
+
+  const handleMouseEnter = () => {
+    if (ref.current) rectRef.current = ref.current.getBoundingClientRect()
+  }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return
-    const rect = ref.current.getBoundingClientRect()
+    const rect = rectRef.current
+    if (!rect) return
     mvX.set((e.clientX - rect.left) / rect.width - 0.5)
     mvY.set((e.clientY - rect.top) / rect.height - 0.5)
   }
@@ -53,8 +73,9 @@ function ProductMockup() {
   return (
     <div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={interactive ? handleMouseEnter : undefined}
+      onMouseMove={interactive ? handleMouseMove : undefined}
+      onMouseLeave={interactive ? handleMouseLeave : undefined}
       className="relative max-w-5xl mx-auto"
       style={{ perspective: '1400px' }}
     >
@@ -160,54 +181,29 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-blue-200/80 text-blue-700 rounded-full px-4 py-1.5 text-xs font-semibold mb-8 shadow-sm"
-        >
+        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-blue-200/80 text-blue-700 rounded-full px-4 py-1.5 text-xs font-semibold mb-8 shadow-sm">
           <span className="relative flex w-2 h-2">
             <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-60 animate-ping-3x" />
             <span className="relative inline-flex rounded-full w-2 h-2 bg-blue-600" />
           </span>
           <span className="uppercase tracking-wider text-[10px]">Bêta privée · {FOUNDER_SPOTS.total} sociétés de nettoyage seulement</span>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto"
-        >
+        <h1 className="text-4xl sm:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight mb-6 max-w-4xl mx-auto">
           Logiciel de gestion pour société de nettoyage.<br />
           <span className="text-blue-600">Sans Excel, sans WhatsApp, sans nuits blanches.</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.16 }}
-          className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-        >
+        <p className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
           Vos clients, sites, agents, plannings et devis dans <strong className="text-slate-900 font-semibold">un seul outil</strong> — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5"
-        >
+        <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5">
           <Flame size={14} className="text-amber-600" />
           <span>{remaining} places restantes sur {FOUNDER_SPOTS.total}</span>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.24 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center mb-4"
-        >
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
           <button
             onClick={goToForm}
             className="group relative bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] flex items-center justify-center gap-2 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
@@ -223,24 +219,13 @@ export default function Hero() {
             <Calculator size={16} className="text-slate-500" />
             Calculer mon économie
           </Link>
-        </motion.div>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="text-xs sm:text-sm text-slate-500 mb-14"
-        >
+        <p className="text-xs sm:text-sm text-slate-500 mb-14">
           Gratuit pendant la bêta · Sans carte bancaire · Réponse sous 24h
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <ProductMockup />
-        </motion.div>
+        <ProductMockup />
       </div>
     </section>
   )

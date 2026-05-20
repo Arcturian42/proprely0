@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CheckCircle } from 'lucide-react'
 import { trackEvent } from '../lib/analytics'
 
@@ -12,11 +12,36 @@ const formFields = [
 ]
 
 export default function FounderForm() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
+
   useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://server.fillout.com/embed/v1/'
-    script.async = true
-    document.body.appendChild(script)
+    if (!containerRef.current) return
+    const target = containerRef.current
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoad(true)
+          io.disconnect()
+        }
+      },
+      { rootMargin: '400px 0px' },
+    )
+    io.observe(target)
+    return () => io.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!shouldLoad) return
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[src="https://server.fillout.com/embed/v1/"]',
+    )
+    if (!existing) {
+      const script = document.createElement('script')
+      script.src = 'https://server.fillout.com/embed/v1/'
+      script.async = true
+      document.body.appendChild(script)
+    }
 
     const onMessage = (e: MessageEvent) => {
       const data = e.data as { type?: string; eventName?: string } | undefined
@@ -28,10 +53,9 @@ export default function FounderForm() {
     window.addEventListener('message', onMessage)
 
     return () => {
-      document.body.removeChild(script)
       window.removeEventListener('message', onMessage)
     }
-  }, [])
+  }, [shouldLoad])
 
   return (
     <section id="formulaire" className="bg-slate-50 py-20 sm:py-28 border-t border-slate-100">
@@ -64,14 +88,27 @@ export default function FounderForm() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
-              <div
-                style={{ width: '100%', minHeight: '600px' }}
-                data-fillout-id="rBPhgNm42Lus"
-                data-fillout-embed-type="standard"
-                data-fillout-inherit-parameters
-                data-fillout-dynamic-resize
-              />
+            <div
+              ref={containerRef}
+              className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.06)]"
+            >
+              {shouldLoad ? (
+                <div
+                  style={{ width: '100%', minHeight: '600px' }}
+                  data-fillout-id="rBPhgNm42Lus"
+                  data-fillout-embed-type="standard"
+                  data-fillout-inherit-parameters
+                  data-fillout-dynamic-resize
+                />
+              ) : (
+                <div
+                  style={{ width: '100%', minHeight: '600px' }}
+                  className="flex items-center justify-center text-slate-400 text-sm"
+                  aria-label="Chargement du formulaire de candidature"
+                >
+                  <div className="w-6 h-6 border-2 border-slate-200 border-t-blue-600 rounded-full animate-spin" />
+                </div>
+              )}
             </div>
           </div>
         </div>
