@@ -6,12 +6,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2563EB" />
     <meta name="google-site-verification" content="PZFK32zsKqhNO68YpJ5Rx97saq2F4nRP1cfS_y8Ay5A" />
 
-    <title>Proprely : Le cockpit métier des sociétés de nettoyage</title>
-    <meta name="description" content="Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite, 30 places fondateurs." />
+    <title>Logiciel société de nettoyage : le cockpit métier · Proprely</title>
+    <meta name="description" content="Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage dans un seul outil. Bêta privée gratuite." />
     <meta name="keywords" content="logiciel société nettoyage, logiciel propreté, gestion entreprise nettoyage, planning agents nettoyage, devis société propreté, cockpit métier nettoyage, logiciel B2B propreté" />
     <meta name="author" content="Proprely" />
     <link rel="canonical" href="https://proprely.fr/" />
@@ -21,8 +22,8 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://proprely.fr/" />
-    <meta property="og:title" content="Proprely : Le cockpit métier des sociétés de nettoyage" />
-    <meta property="og:description" content="Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite, 30 places fondateurs." />
+    <meta property="og:title" content="Logiciel société de nettoyage : le cockpit métier · Proprely" />
+    <meta property="og:description" content="Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage dans un seul outil. Bêta privée gratuite." />
     <meta property="og:image" content="https://proprely.fr/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,8 +32,8 @@
     <meta property="og:site_name" content="Proprely" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Proprely : Le cockpit métier des sociétés de nettoyage" />
-    <meta name="twitter:description" content="Bêta privée gratuite. 30 places réservées aux premières entreprises sélectionnées." />
+    <meta name="twitter:title" content="Logiciel société de nettoyage : le cockpit métier · Proprely" />
+    <meta name="twitter:description" content="Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage dans un seul outil. Bêta privée gratuite." />
     <meta name="twitter:image" content="https://proprely.fr/og-image.png" />
     <meta name="twitter:image:alt" content="Proprely — Le cockpit métier des sociétés de nettoyage" />
 
@@ -53,10 +54,26 @@
           "name": "Proprely",
           "url": "https://proprely.fr/",
           "logo": "https://proprely.fr/proprely-icon-512.png",
+          "image": "https://proprely.fr/og-image.png",
           "description": "Logiciel de gestion conçu pour les sociétés de nettoyage B2B en France.",
           "email": "contact@proprely.fr",
-          "areaServed": "FR",
-          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B"],
+          "areaServed": [
+            { "@type": "Country", "name": "France" },
+            { "@type": "City", "name": "Paris" },
+            { "@type": "City", "name": "Lyon" },
+            { "@type": "City", "name": "Marseille" },
+            { "@type": "City", "name": "Bordeaux" },
+            { "@type": "City", "name": "Toulouse" },
+            { "@type": "City", "name": "Nantes" }
+          ],
+          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B", "Preuve de passage", "Devis nettoyage"],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@proprely.fr",
+            "contactType": "customer support",
+            "availableLanguage": ["French"],
+            "areaServed": "FR"
+          },
           "parentOrganization": {
             "@type": "Organization",
             "@id": "https://pershingsolution.com/#organization",
@@ -154,23 +171,36 @@
   <body>
     <div id="root">
       <div class="seo-fallback" aria-hidden="true">
-        <h1>Le cockpit métier des sociétés de nettoyage. Sans Excel, sans WhatsApp, sans nuits blanches.</h1>
+        <h1>Logiciel de gestion pour société de nettoyage. Sans Excel, sans WhatsApp, sans nuits blanches.</h1>
         <p>Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.</p>
         <h2>Le problème : la dispersion entre 7 outils qui ne se parlent pas</h2>
         <p>Excel, WhatsApp, Google Agenda, Word, classeurs papier. Chaque outil fait une partie du travail. Personne ne fait l'ensemble. Résultat : 6 à 10 heures par semaine perdues en administration.</p>
         <h2>La solution : sept outils, un seul écran</h2>
-        <p>Sept modules connectés dans une seule interface : clients & sites, agents, planning, missions avec preuve de passage, devis & factures, documents et pilotage avec marge par client.</p>
+        <p>Sept modules connectés dans une seule interface : clients &amp; sites, agents, planning, missions avec preuve de passage, devis &amp; factures, documents et pilotage avec marge par client.</p>
         <h2>Bêta privée gratuite : 30 places fondateurs</h2>
         <p>Accès complet et gratuit pendant toute la bêta. Onboarding accompagné par le fondateur en 30 minutes. Tarif privilégié à vie pour les membres fondateurs. Hébergement européen, conformité RGPD, chiffrement.</p>
-        <h2>Fonctionnalités principales</h2>
+        <h2><a href="/fonctionnalites">Fonctionnalités principales</a></h2>
         <ul>
-          <li>Clients, sites & contacts centralisés</li>
-          <li>Agents et spécialités avec alerte de surmenage</li>
-          <li>Planning et affectation en 1 clic</li>
-          <li>Missions avec photo, vidéo et signature</li>
-          <li>Devis professionnels en 2 minutes</li>
-          <li>Documents centralisés et recherche instantanée</li>
-          <li>Pilotage et marge par client en temps réel</li>
+          <li><a href="/fonctionnalites/planning-nettoyage">Planning des agents de nettoyage</a> : affectation 1 clic, mobile-first, alertes surmenage</li>
+          <li><a href="/fonctionnalites/gestion-agents-nettoyage">Gestion des agents</a> : profils, spécialités, charge horaire</li>
+          <li><a href="/fonctionnalites/devis-nettoyage">Logiciel de devis nettoyage</a> : devis pro en 2 minutes, signature électronique</li>
+          <li><a href="/fonctionnalites/preuve-passage-nettoyage">Preuve de passage</a> : QR code, photos avant-après, PV automatique</li>
+        </ul>
+        <h2><a href="/villes">Logiciel nettoyage par ville</a></h2>
+        <ul>
+          <li><a href="/villes/paris">Logiciel nettoyage Paris &amp; Île-de-France</a></li>
+          <li><a href="/villes/lyon">Logiciel nettoyage Lyon &amp; Rhône-Alpes</a></li>
+          <li><a href="/villes/marseille">Logiciel nettoyage Marseille &amp; PACA</a></li>
+          <li><a href="/villes/bordeaux">Logiciel nettoyage Bordeaux &amp; Gironde</a></li>
+          <li><a href="/villes/toulouse">Logiciel nettoyage Toulouse &amp; Occitanie</a></li>
+          <li><a href="/villes/nantes">Logiciel nettoyage Nantes &amp; Loire-Atlantique</a></li>
+        </ul>
+        <h2>Ressources</h2>
+        <ul>
+          <li><a href="/tarifs">Tarifs Proprely : gratuit pendant la bêta, tarif fondateur à vie</a></li>
+          <li><a href="/calculateur-roi">Calculateur ROI : combien la dispersion vous coûte</a></li>
+          <li><a href="/blog">Blog Proprely : analyses propreté B2B</a></li>
+          <li><a href="/contact">Contacter Proprely</a></li>
         </ul>
         <h2>FAQ</h2>
         <p>Bêta privée gratuite, accès réservé aux 30 premières entreprises sélectionnées. Conçu en France. Hébergement européen RGPD. Vos données restent les vôtres, exportables à tout moment.</p>

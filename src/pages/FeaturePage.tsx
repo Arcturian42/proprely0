@@ -8,7 +8,7 @@ import NotFound from './NotFound'
 import { getFeature, getRelatedFeatures } from '../data/features'
 import type { FeaturePage as FeaturePageType } from '../data/features'
 import { getPost } from '../data/blog'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 function injectFeatureSchema(feature: FeaturePageType) {
   const id = 'feature-schema'
@@ -30,7 +30,7 @@ function injectFeatureSchema(feature: FeaturePageType) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
-          { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://proprely.fr/' },
+          { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://proprely.fr/fonctionnalites' },
           { '@type': 'ListItem', position: 3, name: feature.tag, item: url },
         ],
       },
@@ -96,20 +96,18 @@ export default function FeaturePage({ slug }: Props) {
             <div className="flex justify-center mb-5">
               <Breadcrumbs
                 items={[
-                  { name: 'Fonctionnalités', href: '/' },
+                  { name: 'Fonctionnalités', href: '/fonctionnalites' },
                   { name: feature.tag },
                 ]}
               />
             </div>
-            <motion.button
-              onClick={() => navigate('/')}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
+            <Link
+              to="/fonctionnalites"
               className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors mb-6"
             >
               <ArrowLeft size={12} />
               Toutes les fonctionnalités
-            </motion.button>
+            </Link>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -145,20 +143,21 @@ export default function FeaturePage({ slug }: Props) {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <button
-                onClick={() => navigate('/', { hash: 'formulaire' })}
+              <Link
+                to="/"
+                hash="formulaire"
                 className="group relative bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
                 <span className="relative">Rejoindre la bêta gratuite</span>
                 <ArrowRight size={14} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-              </button>
-              <button
-                onClick={() => navigate('/calculateur-roi')}
-                className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97]"
+              </Link>
+              <Link
+                to="/calculateur-roi"
+                className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center"
               >
                 Calculer mon ROI
-              </button>
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -300,13 +299,14 @@ export default function FeaturePage({ slug }: Props) {
             <p className="text-blue-100 text-base sm:text-lg mb-8 max-w-xl mx-auto">
               Rejoignez la bêta privée Proprely. Configuration en 30 minutes avec le fondateur. Tarif fondateur à vie.
             </p>
-            <button
-              onClick={() => navigate('/', { hash: 'formulaire' })}
+            <Link
+              to="/"
+              hash="formulaire"
               className="group bg-white text-blue-700 rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-50 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl inline-flex items-center gap-2 hover:-translate-y-0.5 active:scale-[0.97]"
             >
               Rejoindre la bêta gratuite
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -318,9 +318,9 @@ export default function FeaturePage({ slug }: Props) {
                   <h2 className="text-xl font-black text-slate-900 mb-6">Découvrir d'autres fonctionnalités</h2>
                   <div className="grid sm:grid-cols-2 gap-4 mb-10">
                     {related.map((r) => (
-                      <button
+                      <Link
                         key={r.slug}
-                        onClick={() => navigate(`/fonctionnalites/${r.slug}`)}
+                        to={`/fonctionnalites/${r.slug}`}
                         className="group text-left bg-white rounded-2xl border border-slate-100 p-5 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
                       >
                         <div className="flex items-center gap-2 mb-2 text-[10px] font-bold uppercase tracking-wider text-blue-700">
@@ -329,7 +329,7 @@ export default function FeaturePage({ slug }: Props) {
                         </div>
                         <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-700 transition-colors mb-2 leading-snug">{r.title}</h3>
                         <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{r.subtitle}</p>
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </>
@@ -340,15 +340,15 @@ export default function FeaturePage({ slug }: Props) {
                   <h2 className="text-xl font-black text-slate-900 mb-6">À lire sur le blog</h2>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {relatedBlogs.map((b) => b && (
-                      <button
+                      <Link
                         key={b.slug}
-                        onClick={() => navigate(`/blog/${b.slug}`)}
+                        to={`/blog/${b.slug}`}
                         className="group text-left bg-white rounded-2xl border border-slate-100 p-5 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
                       >
                         <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 rounded-full px-2 py-0.5 inline-block mb-2">{b.tag}</span>
                         <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-700 transition-colors mb-2 leading-snug">{b.title}</h3>
                         <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{b.excerpt}</p>
-                      </button>
+                      </Link>
                     ))}
                   </div>
                 </>

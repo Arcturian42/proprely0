@@ -2,6 +2,8 @@ import { lazy, Suspense, useEffect } from 'react'
 import Landing from './pages/Landing'
 import { useRoute } from './lib/useRoute'
 import ScrollProgress from './components/ScrollProgress'
+import CookieBanner from './components/CookieBanner'
+import { initAnalytics, trackPageView } from './lib/analytics'
 
 const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
 const BlogIndex = lazy(() => import('./pages/BlogIndex'))
@@ -11,21 +13,25 @@ const FeaturePage = lazy(() => import('./pages/FeaturePage'))
 const Pricing = lazy(() => import('./pages/Pricing'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const CityPage = lazy(() => import('./pages/CityPage'))
+const Legal = lazy(() => import('./pages/Legal'))
+const Contact = lazy(() => import('./pages/Contact'))
+const FeatureIndex = lazy(() => import('./pages/FeatureIndex'))
+const CityIndex = lazy(() => import('./pages/CityIndex'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
 const META: Record<string, RouteMeta> = {
   '/': {
-    title: 'Proprely : Le cockpit métier des sociétés de nettoyage',
-    description: "Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage. Bêta privée gratuite : 30 places fondateurs.",
+    title: 'Logiciel société de nettoyage : le cockpit métier · Proprely',
+    description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage dans un seul outil. Bêta privée gratuite.",
   },
   '/calculateur-roi': {
-    title: 'Calculateur ROI : Combien vous coûte la dispersion ? · Proprely',
-    description: "Estimez en 30 secondes combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word pour gérer votre société de nettoyage.",
+    title: 'Calculateur ROI société de nettoyage · Proprely',
+    description: "Estimez en 30 secondes combien d'heures et d'euros vous perdez chaque année à gérer votre société de nettoyage sur Excel, WhatsApp et Word.",
   },
   '/blog': {
-    title: 'Blog · Gestion, terrain et propreté B2B · Proprely',
-    description: "Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage. Productivité, RGPD, outils.",
+    title: 'Blog : gestion société de nettoyage · Proprely',
+    description: "Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage : productivité, prix, RGPD, outils.",
   },
   '/beta/merci': {
     title: 'Candidature enregistrée · Proprely',
@@ -33,8 +39,32 @@ const META: Record<string, RouteMeta> = {
     robots: 'noindex,follow',
   },
   '/tarifs': {
-    title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
-    description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.",
+    title: 'Tarifs : gratuit pendant la bêta, fondateur à vie · Proprely',
+    description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.",
+  },
+  '/contact': {
+    title: 'Contact · Proprely',
+    description: "Contactez Proprely : logiciel de gestion pour sociétés de nettoyage B2B. Email contact@proprely.fr, réponse sous 24h ouvrées.",
+  },
+  '/mentions-legales': {
+    title: 'Mentions légales · Proprely',
+    description: "Mentions légales de Proprely : éditeur Pershing Global Solutions LTD, hébergeur Hostinger, propriété intellectuelle, contact.",
+  },
+  '/confidentialite': {
+    title: 'Politique de confidentialité · Proprely',
+    description: "Politique de confidentialité Proprely : données collectées, finalités, base légale, durée de conservation, droits RGPD.",
+  },
+  '/cgu': {
+    title: "Conditions générales d'utilisation · Proprely",
+    description: "CGU Proprely : accès au service, engagements éditeur et membre, propriété des données, résiliation, évolutions.",
+  },
+  '/fonctionnalites': {
+    title: 'Fonctionnalités logiciel nettoyage · Proprely',
+    description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  },
+  '/villes': {
+    title: 'Logiciel nettoyage par ville · Proprely',
+    description: "Logiciel de gestion pour société de nettoyage par ville : Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes. Conçu pour la propreté B2B française.",
   },
 }
 
@@ -80,6 +110,10 @@ function App() {
   const route = useRoute()
 
   useEffect(() => {
+    initAnalytics()
+  }, [])
+
+  useEffect(() => {
     const meta = META[route]
     if (meta) {
       const url = `https://proprely.fr${route}`
@@ -95,6 +129,7 @@ function App() {
     } else {
       setRobots(undefined)
     }
+    trackPageView(route)
   }, [route])
 
   let content
@@ -102,6 +137,12 @@ function App() {
   else if (route === '/calculateur-roi') content = <RoiCalculator />
   else if (route === '/tarifs') content = <Pricing />
   else if (route === '/blog') content = <BlogIndex />
+  else if (route === '/contact') content = <Contact />
+  else if (route === '/mentions-legales') content = <Legal kind="mentions" />
+  else if (route === '/confidentialite') content = <Legal kind="privacy" />
+  else if (route === '/cgu') content = <Legal kind="cgu" />
+  else if (route === '/fonctionnalites' || route === '/fonctionnalites/') content = <FeatureIndex />
+  else if (route === '/villes' || route === '/villes/') content = <CityIndex />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route.startsWith('/fonctionnalites/')) content = <FeaturePage slug={route.slice(17).replace(/\/$/, '')} />
@@ -113,6 +154,7 @@ function App() {
       <div className="w-full bg-white">
         <ScrollProgress />
         {content}
+        <CookieBanner />
       </div>
     )
   }
@@ -121,6 +163,7 @@ function App() {
     <div className="w-full bg-white">
       <ScrollProgress />
       <Suspense fallback={<PageLoading />}>{content}</Suspense>
+      <CookieBanner />
     </div>
   )
 }

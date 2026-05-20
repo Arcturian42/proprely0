@@ -306,7 +306,7 @@ for (const f of features) {
   const schemas: object[] = [
     webpageSchema(f.title, f.metaDescription, `${ORIGIN}${url}`, [
       { name: 'Accueil', item: `${ORIGIN}/` },
-      { name: 'Fonctionnalités', item: `${ORIGIN}/` },
+      { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
       { name: f.tag, item: `${ORIGIN}${url}` },
     ]),
   ]
@@ -385,7 +385,7 @@ for (const c of cities) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/villes` },
         { '@type': 'ListItem', position: 3, name: c.city, item: cityUrl },
       ],
     },
@@ -580,6 +580,251 @@ const thankYouHtml = buildHtml({
 })
 writePage('/beta/merci', thankYouHtml)
 generated.push('/beta/merci')
+
+const contactBody = `
+  <h1>Contacter Proprely</h1>
+  <p>Une question sur le logiciel, la bêta privée, ou votre candidature de membre fondateur ? Écrivez-nous, nous revenons vers vous sous 24h ouvrées.</p>
+  <h2>Email</h2>
+  <p>Pour toute question : <a href="mailto:contact@proprely.fr">contact@proprely.fr</a>. Réponse sous 24h ouvrées (lundi-vendredi, 9h-18h CET).</p>
+  <h2>Informations</h2>
+  <p><strong>Éditeur :</strong> Pershing Global Solutions LTD, 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande.</p>
+  <p><strong>Zones d'opération :</strong> France entière, focus Paris &amp; Île-de-France, Lyon &amp; Rhône-Alpes, Marseille &amp; PACA.</p>
+  <h2>Rejoindre la bêta privée</h2>
+  <p>Vous voulez tester Proprely ? Candidatez à la bêta privée depuis la <a href="${ORIGIN}/">page d'accueil</a>. 30 places fondateurs disponibles.</p>
+`.trim()
+
+const contactHtml = buildHtml({
+  url: '/contact',
+  title: 'Contact · Proprely',
+  description: 'Contactez Proprely : logiciel de gestion pour sociétés de nettoyage B2B. Email contact@proprely.fr, réponse sous 24h ouvrées.',
+  schemas: [
+    webpageSchema(
+      'Contact Proprely',
+      'Contactez Proprely : email, zones d\'opération, éditeur.',
+      `${ORIGIN}/contact`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Contact', item: `${ORIGIN}/contact` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      url: `${ORIGIN}/contact`,
+      name: 'Contacter Proprely',
+      inLanguage: 'fr-FR',
+      mainEntity: { '@id': `${ORIGIN}/#organization` },
+    },
+  ],
+  bodyHtml: contactBody,
+})
+writePage('/contact', contactHtml)
+generated.push('/contact')
+
+const mentionsBody = `
+  <h1>Mentions légales</h1>
+  <h2>Éditeur du site</h2>
+  <p><strong>Pershing Global Solutions LTD</strong> (éditeur de Proprely). Siège social : 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande. Email : contact@proprely.fr.</p>
+  <h2>Directeur de la publication</h2>
+  <p>Pershing Global Solutions LTD.</p>
+  <h2>Hébergement</h2>
+  <p>Le site proprely.fr est hébergé par Hostinger International Ltd., 61 Lordou Vironos, 6023 Larnaca, Chypre. Les données saisies dans l'application Proprely sont hébergées chez un prestataire situé dans l'Union européenne, conformément au RGPD.</p>
+  <h2>Propriété intellectuelle</h2>
+  <p>L'ensemble du contenu du site proprely.fr est protégé par le droit d'auteur et les droits de propriété intellectuelle.</p>
+  <h2>Litiges</h2>
+  <p>Tout litige relatif à l'utilisation du site est soumis au droit français.</p>
+`.trim()
+
+const mentionsHtml = buildHtml({
+  url: '/mentions-legales',
+  title: 'Mentions légales · Proprely',
+  description: "Mentions légales de Proprely : éditeur Pershing Global Solutions LTD, hébergeur Hostinger, propriété intellectuelle, contact.",
+  schemas: [
+    webpageSchema(
+      'Mentions légales Proprely',
+      'Éditeur, hébergeur, propriété intellectuelle, contact.',
+      `${ORIGIN}/mentions-legales`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Mentions légales', item: `${ORIGIN}/mentions-legales` },
+      ]
+    ),
+  ],
+  bodyHtml: mentionsBody,
+})
+writePage('/mentions-legales', mentionsHtml)
+generated.push('/mentions-legales')
+
+const privacyBody = `
+  <h1>Politique de confidentialité</h1>
+  <p>Le responsable du traitement des données collectées sur proprely.fr est Proprely, joignable à l'adresse contact@proprely.fr.</p>
+  <h2>Données collectées</h2>
+  <p>Lors de votre candidature à la bêta privée : prénom, nom, email professionnel, nom d'entreprise, nombre d'agents, ville ou région, plus gros problème de gestion rencontré.</p>
+  <h2>Finalités</h2>
+  <p>Évaluer votre candidature, communiquer avec vous, fournir et améliorer le service, respecter nos obligations légales.</p>
+  <h2>Base légale</h2>
+  <p>Consentement (candidature, communications) et exécution du contrat de service.</p>
+  <h2>Durée de conservation</h2>
+  <p>12 mois en cas de non-sélection. 3 ans à des fins de prospection après fin de contrat (sauf opposition), 10 ans pour obligations légales.</p>
+  <h2>Vos droits</h2>
+  <p>Conformément au RGPD : accès, rectification, effacement, limitation, opposition, portabilité, réclamation auprès de la CNIL. Pour exercer ces droits : contact@proprely.fr (réponse sous 1 mois).</p>
+  <h2>Cookies</h2>
+  <p>Le site utilise des cookies fonctionnels strictement nécessaires et, si vous y consentez, un cookie de mesure d'audience Google Analytics.</p>
+`.trim()
+
+const privacyHtml = buildHtml({
+  url: '/confidentialite',
+  title: 'Politique de confidentialité · Proprely',
+  description: "Politique de confidentialité Proprely : données collectées, finalités, base légale, durée de conservation, droits RGPD.",
+  schemas: [
+    webpageSchema(
+      'Politique de confidentialité Proprely',
+      'Données collectées, finalités, durée de conservation, droits RGPD.',
+      `${ORIGIN}/confidentialite`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Confidentialité', item: `${ORIGIN}/confidentialite` },
+      ]
+    ),
+  ],
+  bodyHtml: privacyBody,
+})
+writePage('/confidentialite', privacyHtml)
+generated.push('/confidentialite')
+
+const cguBody = `
+  <h1>Conditions générales d'utilisation</h1>
+  <h2>Objet</h2>
+  <p>Les présentes CGU régissent l'accès et l'utilisation du service Proprely en phase de bêta privée.</p>
+  <h2>Accès au service</h2>
+  <p>L'accès au service est gratuit pendant toute la durée de la bêta privée. Aucun moyen de paiement n'est requis.</p>
+  <h2>Engagements de l'éditeur</h2>
+  <p>Fournir un service fonctionnel, assurer la sécurité des données, informer des évolutions, conserver les données en UE.</p>
+  <h2>Propriété des données</h2>
+  <p>Le membre fondateur reste propriétaire à 100% des données qu'il saisit. Export possible à tout moment en CSV ou Excel.</p>
+  <h2>Conditions préférentielles à vie</h2>
+  <p>À l'issue de la bêta, les membres fondateurs bénéficient d'un tarif privilégié garanti à vie.</p>
+  <h2>Résiliation</h2>
+  <p>Résiliation possible à tout moment, sans préavis, par simple notification à contact@proprely.fr.</p>
+`.trim()
+
+const cguHtml = buildHtml({
+  url: '/cgu',
+  title: "Conditions générales d'utilisation · Proprely",
+  description: "CGU Proprely : accès au service, engagements éditeur et membre, propriété des données, résiliation, évolutions.",
+  schemas: [
+    webpageSchema(
+      'CGU Proprely',
+      "Accès au service, engagements, propriété des données, résiliation.",
+      `${ORIGIN}/cgu`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'CGU', item: `${ORIGIN}/cgu` },
+      ]
+    ),
+  ],
+  bodyHtml: cguBody,
+})
+writePage('/cgu', cguHtml)
+generated.push('/cgu')
+
+const featureIndexBody = `
+  <h1>Fonctionnalités logiciel nettoyage</h1>
+  <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>
+  <h2>Modules</h2>
+  <ul>
+    ${features
+      .map(
+        (f) =>
+          `<li><a href="${ORIGIN}/fonctionnalites/${f.slug}"><strong>${escapeHtml(f.title)}</strong></a> — ${escapeHtml(f.metaDescription)}</li>`
+      )
+      .join('')}
+  </ul>
+  <h2>Tout connecté dans un seul écran</h2>
+  <p>Un devis signé devient une facture, une mission affectée apparaît sur le planning de l'agent, une preuve de passage met à jour automatiquement le suivi qualité du client. Pas de copier-coller entre Excel, WhatsApp et Word.</p>
+`.trim()
+
+const featureIndexHtml = buildHtml({
+  url: '/fonctionnalites',
+  title: 'Fonctionnalités logiciel nettoyage · Proprely',
+  description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  schemas: [
+    webpageSchema(
+      'Fonctionnalités Proprely',
+      "Planning, devis, gestion agents, preuve de passage pour société de nettoyage.",
+      `${ORIGIN}/fonctionnalites`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Fonctionnalités Proprely',
+      url: `${ORIGIN}/fonctionnalites`,
+      inLanguage: 'fr-FR',
+      hasPart: features.map((f) => ({
+        '@type': 'WebPage',
+        name: f.title,
+        url: `${ORIGIN}/fonctionnalites/${f.slug}`,
+        description: f.metaDescription,
+      })),
+    },
+  ],
+  bodyHtml: featureIndexBody,
+})
+writePage('/fonctionnalites', featureIndexHtml)
+generated.push('/fonctionnalites')
+
+const cityIndexBody = `
+  <h1>Logiciel nettoyage par ville</h1>
+  <p>Le marché de la propreté B2B varie d'une région à l'autre. Paris a ses syndics et son tertiaire QCA, Lyon son pôle santé, Marseille sa saisonnalité touristique, Bordeaux son œnotourisme, Toulouse son aéronautique, Nantes son industrie maritime. Proprely s'adapte aux contraintes locales.</p>
+  <h2>Villes documentées</h2>
+  <ul>
+    ${cities
+      .map(
+        (c) =>
+          `<li><a href="${ORIGIN}/villes/${c.slug}"><strong>Logiciel nettoyage à ${escapeHtml(c.city)}</strong></a> (${escapeHtml(c.region)}) — ${escapeHtml(c.metaDescription)}</li>`
+      )
+      .join('')}
+  </ul>
+  <h2>Votre ville n'est pas listée ?</h2>
+  <p>Proprely opère sur toute la France. Si vous êtes ailleurs, candidatez quand même à la bêta : le produit est identique et l'onboarding est calé sur votre réalité locale.</p>
+`.trim()
+
+const cityIndexHtml = buildHtml({
+  url: '/villes',
+  title: 'Logiciel nettoyage par ville · Proprely',
+  description: "Logiciel de gestion pour société de nettoyage par ville : Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes. Conçu pour la propreté B2B française.",
+  schemas: [
+    webpageSchema(
+      'Proprely par ville',
+      "Logiciel nettoyage pour Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes.",
+      `${ORIGIN}/villes`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Villes', item: `${ORIGIN}/villes` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Logiciel nettoyage par ville',
+      url: `${ORIGIN}/villes`,
+      inLanguage: 'fr-FR',
+      hasPart: cities.map((c) => ({
+        '@type': 'WebPage',
+        name: c.title,
+        url: `${ORIGIN}/villes/${c.slug}`,
+        description: c.metaDescription,
+      })),
+    },
+  ],
+  bodyHtml: cityIndexBody,
+})
+writePage('/villes', cityIndexHtml)
+generated.push('/villes')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

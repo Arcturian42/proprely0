@@ -1,151 +1,154 @@
-import { useState } from 'react'
 import { Calculator, BookOpen, Mail, ArrowUpRight, Tag, MapPin } from 'lucide-react'
-import Modal from '../components/Modal'
-import { MentionsLegales, Confidentialite, CGU } from '../components/LegalContent'
-import { navigate } from '../lib/useRoute'
-
-type LegalPage = 'mentions' | 'privacy' | 'cgu' | null
+import Link from '../components/Link'
 
 export default function Footer() {
-  const [open, setOpen] = useState<LegalPage>(null)
-
   return (
-    <>
-      <footer className="bg-slate-950 pt-16 pb-10 sm:pt-20 sm:pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 mb-12 pb-12 border-b border-slate-800">
-            <div className="col-span-2 sm:col-span-1">
-              <span className="text-white font-bold text-base block mb-2">Proprely</span>
-              <p className="text-slate-500 text-xs leading-relaxed">
-                Le cockpit métier pour piloter votre société de nettoyage.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Fonctionnalités</h4>
-              <ul className="space-y-2.5">
-                <li>
-                  <button onClick={() => navigate('/fonctionnalites/planning-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Planning
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate('/fonctionnalites/devis-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Devis
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate('/fonctionnalites/gestion-agents-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Gestion agents
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate('/fonctionnalites/preuve-passage-nettoyage')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Preuve de passage
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Ressources</h4>
-              <ul className="space-y-2.5">
-                <li>
-                  <button onClick={() => navigate('/tarifs')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                    <Tag size={12} />
-                    Tarifs
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate('/calculateur-roi')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                    <Calculator size={12} />
-                    Calculateur ROI
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => navigate('/blog')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                    <BookOpen size={12} />
-                    Blog
-                  </button>
-                </li>
-                <li>
-                  <a href="mailto:contact@proprely.fr" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                    <Mail size={12} />
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Légal</h4>
-              <ul className="space-y-2.5">
-                <li>
-                  <button onClick={() => setOpen('mentions')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Mentions légales
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => setOpen('privacy')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    Confidentialité
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => setOpen('cgu')} className="text-slate-400 hover:text-white text-sm transition-colors">
-                    CGU
-                  </button>
-                </li>
-              </ul>
-            </div>
+    <footer className="bg-slate-950 pt-16 pb-10 sm:pt-20 sm:pb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 mb-12 pb-12 border-b border-slate-800">
+          <div className="col-span-2 sm:col-span-1">
+            <span className="text-white font-bold text-base block mb-2">Proprely</span>
+            <p className="text-slate-500 text-xs leading-relaxed">
+              Le cockpit métier pour piloter votre société de nettoyage.
+            </p>
           </div>
 
-          <div className="mb-12 pb-12 border-b border-slate-800">
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Logiciel nettoyage par ville</h4>
-            <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
+          <div>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              <Link to="/fonctionnalites" className="hover:text-slate-300 transition-colors">Fonctionnalités</Link>
+            </h4>
+            <ul className="space-y-2.5">
               <li>
-                <button onClick={() => navigate('/villes/paris')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <MapPin size={12} />
-                  Paris &amp; Île-de-France
-                </button>
+                <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Planning
+                </Link>
               </li>
               <li>
-                <button onClick={() => navigate('/villes/lyon')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <MapPin size={12} />
-                  Lyon &amp; Rhône-Alpes
-                </button>
+                <Link to="/fonctionnalites/devis-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Devis
+                </Link>
               </li>
               <li>
-                <button onClick={() => navigate('/villes/marseille')} className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <MapPin size={12} />
-                  Marseille &amp; PACA
-                </button>
+                <Link to="/fonctionnalites/gestion-agents-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Gestion agents
+                </Link>
+              </li>
+              <li>
+                <Link to="/fonctionnalites/preuve-passage-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Preuve de passage
+                </Link>
               </li>
             </ul>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <p className="text-slate-500 text-xs">
-              © {new Date().getFullYear()} Proprely. Tous droits réservés.
-            </p>
-            <div className="flex items-center gap-4 text-xs text-slate-500">
-              <a href="https://proprely.fr" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1">
-                proprely.fr
-                <ArrowUpRight size={11} />
-              </a>
-            </div>
+          <div>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Ressources</h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/tarifs" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Tag size={12} />
+                  Tarifs
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculateur-roi" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Calculator size={12} />
+                  Calculateur ROI
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Mail size={12} />
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Légal</h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/mentions-legales" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link to="/confidentialite" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link to="/cgu" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  CGU
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
 
-      <Modal open={open === 'mentions'} onClose={() => setOpen(null)} title="Mentions légales">
-        <MentionsLegales />
-      </Modal>
-      <Modal open={open === 'privacy'} onClose={() => setOpen(null)} title="Politique de confidentialité">
-        <Confidentialite />
-      </Modal>
-      <Modal open={open === 'cgu'} onClose={() => setOpen(null)} title="Conditions Générales d'Utilisation">
-        <CGU />
-      </Modal>
-    </>
+        <div className="mb-12 pb-12 border-b border-slate-800">
+          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+            <Link to="/villes" className="hover:text-slate-300 transition-colors">Logiciel nettoyage par ville</Link>
+          </h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
+            <li>
+              <Link to="/villes/paris" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Paris &amp; Île-de-France
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/lyon" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Lyon &amp; Rhône-Alpes
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/marseille" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Marseille &amp; PACA
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/bordeaux" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Bordeaux &amp; Gironde
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/toulouse" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Toulouse &amp; Occitanie
+              </Link>
+            </li>
+            <li>
+              <Link to="/villes/nantes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                <MapPin size={12} />
+                Nantes &amp; Loire-Atlantique
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-slate-500 text-xs">
+            © {new Date().getFullYear()} Proprely. Tous droits réservés.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <a href="https://proprely.fr" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1">
+              proprely.fr
+              <ArrowUpRight size={11} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   )
 }

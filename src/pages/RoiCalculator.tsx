@@ -4,7 +4,7 @@ import { ArrowRight, Clock, Euro, TrendingUp, Calendar } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import { navigate } from '../lib/useRoute'
+import Link from '../components/Link'
 
 const PROPRELY_TIME_SAVING = 0.6
 const WEEKS_PER_YEAR = 47
@@ -163,13 +163,14 @@ export default function RoiCalculator() {
                       Vous commencez à récupérer ces heures dès la première semaine, sans engagement et sans carte bancaire. Les fondateurs gardent un tarif privilégié à vie après la bêta.
                     </p>
                   </div>
-                  <button
-                    onClick={() => navigate('/')}
+                  <Link
+                    to="/"
+                    hash="formulaire"
                     className="group bg-blue-600 text-white rounded-xl px-5 py-3 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2 shrink-0"
                   >
                     Rejoindre la bêta
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

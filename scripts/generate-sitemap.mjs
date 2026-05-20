@@ -52,6 +52,9 @@ const urls = [
   { loc: `${ORIGIN}/tarifs`, priority: '0.9', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/calculateur-roi`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/blog`, priority: '0.7', changefreq: 'weekly', lastmod: buildDate },
+  { loc: `${ORIGIN}/contact`, priority: '0.5', changefreq: 'yearly', lastmod: today },
+  { loc: `${ORIGIN}/fonctionnalites`, priority: '0.9', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/villes`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   ...featureSlugs.map((slug) => ({
     loc: `${ORIGIN}/fonctionnalites/${slug}`,
     priority: '0.8',
@@ -70,6 +73,9 @@ const urls = [
     changefreq: 'monthly',
     lastmod: p.lastmod || today,
   })),
+  { loc: `${ORIGIN}/mentions-legales`, priority: '0.3', changefreq: 'yearly', lastmod: today },
+  { loc: `${ORIGIN}/confidentialite`, priority: '0.3', changefreq: 'yearly', lastmod: today },
+  { loc: `${ORIGIN}/cgu`, priority: '0.3', changefreq: 'yearly', lastmod: today },
 ]
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -84,4 +90,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 4 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 7 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + 3 legal)`)

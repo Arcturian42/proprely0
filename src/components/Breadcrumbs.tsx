@@ -1,5 +1,5 @@
 import { ChevronRight, Home } from 'lucide-react'
-import { navigate } from '../lib/useRoute'
+import Link from './Link'
 
 export type Crumb = { name: string; href?: string }
 
@@ -13,14 +13,14 @@ export default function Breadcrumbs({ items, className = '' }: Props) {
     <nav aria-label="Fil d'Ariane" className={`text-xs sm:text-sm ${className}`}>
       <ol className="flex flex-wrap items-center gap-1.5 text-slate-500">
         <li>
-          <button
-            onClick={() => navigate('/')}
+          <Link
+            to="/"
+            ariaLabel="Accueil"
             className="inline-flex items-center gap-1 hover:text-blue-700 transition-colors"
-            aria-label="Accueil"
           >
             <Home size={13} aria-hidden="true" />
             <span className="hidden sm:inline">Accueil</span>
-          </button>
+          </Link>
         </li>
         {items.map((item, i) => {
           const isLast = i === items.length - 1
@@ -32,12 +32,9 @@ export default function Breadcrumbs({ items, className = '' }: Props) {
                   {item.name}
                 </span>
               ) : (
-                <button
-                  onClick={() => navigate(item.href!)}
-                  className="hover:text-blue-700 transition-colors truncate max-w-[40vw] sm:max-w-none"
-                >
+                <Link to={item.href} className="hover:text-blue-700 transition-colors truncate max-w-[40vw] sm:max-w-none">
                   {item.name}
-                </button>
+                </Link>
               )}
             </li>
           )

@@ -630,6 +630,275 @@ Sur 15 agents, à 35% de turnover, c'est 5 agents par an. Soit **17 500 à 25 00
 
 C'est exactement la philosophie derrière Proprely : centraliser pour rendre le travail des agents (et celui du dirigeant) plus prévisible, plus reconnu, moins frustrant. [Rejoignez la bêta privée](/) pour tester l'effet en conditions réelles.`,
   },
+  {
+    slug: 'comparatif-logiciels-nettoyage-2026',
+    title: "Comparatif logiciels société de nettoyage 2026 : la grille de lecture honnête",
+    excerpt: "Trois familles de logiciels se partagent le marché de la propreté B2B. Voici comment les distinguer, ce qu'ils savent (vraiment) faire, et la grille de lecture pour ne pas se tromper.",
+    date: '18 mai 2026',
+    readTime: '9 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Trois familles : ERP généralistes adaptés, logiciels métier historiques, nouveaux SaaS verticaux.",
+      "Les ERP généralistes coûtent cher et demandent du paramétrage : viables au-delà de 50 agents.",
+      "Les logiciels métier historiques ont la couverture fonctionnelle, mais l'UX et le mobile-first sont souvent à la traîne.",
+      "Les nouveaux SaaS verticaux misent sur la productivité quotidienne. Couverture variable, à challenger.",
+      "Les 8 critères de choix : métier, mobile, preuve de passage, marge par client, RGPD, export, onboarding, prix.",
+    ],
+    faq: [
+      { q: "Quel est le meilleur logiciel pour une société de nettoyage ?", a: "Il n'y a pas de meilleur logiciel dans l'absolu : ça dépend de la taille (3-50 agents vs 50+), du mix client (syndics, hôtels, médical, industriel), et du niveau de digitalisation actuel. La grille de lecture ci-dessous donne les bons critères de comparaison." },
+      { q: "Combien coûte un logiciel pour société de nettoyage ?", a: "De 15€ à 60€ par utilisateur/mois pour la plupart des SaaS verticaux. Les ERP généralistes coûtent souvent 100€+/utilisateur avec une mise en route facturée plusieurs milliers d'euros. Méfiance des packages 'tout compris' à 200€ flat : souvent limités." },
+      { q: "Faut-il un logiciel installé ou en SaaS ?", a: "SaaS dans 95% des cas. L'installé impose des coûts de maintenance, des sauvegardes à gérer en interne, et bloque le travail terrain (agents mobiles). Les SaaS modernes sont plus sûrs, plus à jour, et accessibles depuis n'importe quel téléphone." },
+      { q: "Mes agents doivent-ils installer une application ?", a: "Idéalement non. Les meilleurs outils 2026 fonctionnent via un lien web ouvert dans le navigateur du téléphone de l'agent. Pas d'app à installer, pas de formation, pas de blocage Android/iOS. Si un outil exige une app native, vérifiez l'expérience réelle sur 4G dégradée." },
+      { q: "Quels critères vérifier en démo ?", a: "Demandez à voir : (1) l'affectation d'un agent en 1 clic, (2) l'écran mobile que verra l'agent, (3) la génération d'un PV de passage avec photos, (4) la marge en temps réel sur un client donné, (5) l'export complet de vos données. Si l'un des cinq prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', méfiance." },
+    ],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
+    content: `## Le marché des logiciels nettoyage en 2026
+
+La propreté B2B française compte plus de 15 000 sociétés. Le marché des logiciels qui leur sont destinés a explosé depuis 2022, mais reste **structuré en trois familles** très différentes.
+
+Avant de choisir, il faut comprendre quelle famille répond vraiment à votre stade et à votre besoin. Spoiler : ce n'est pas une question de fonctionnalités cochées, c'est une question d'usage quotidien.
+
+## Famille 1 : Les ERP généralistes adaptés (Sage, Cegid, Divalto)
+
+Ce sont des progiciels conçus pour gérer une PME au sens large : compta, facturation, RH, parfois CRM. Adaptés au nettoyage via un module métier ou du paramétrage spécifique.
+
+### Ce qu'ils savent faire
+
+- Couverture comptable et fiscale complète
+- Multi-sociétés, multi-établissements, multi-devises
+- Intégration native paie (URSSAF, DSN)
+- Reporting financier costaud
+
+### Ce qu'ils savent moins bien faire
+
+- **Le terrain.** Les écrans agents sont souvent un afterthought. L'agent qui veut consulter son planning sur son téléphone galère.
+- **L'affectation rapide.** Pas pensé pour drag-and-droper un agent sur un créneau en 5 secondes.
+- **La preuve de passage.** Quasi inexistante en standard, à développer en spécifique (cher).
+
+### Verdict honnête
+
+**Viable à partir de 50 agents et plusieurs millions de CA.** En-dessous, le coût d'acquisition (15 000 à 50 000€ d'intégration) et la complexité d'usage rendent la valeur ajoutée discutable. Vous payez pour de la robustesse comptable dont vous n'avez pas (encore) besoin.
+
+## Famille 2 : Les logiciels métier historiques (Praxedo, Synchroteam, Comète Propreté)
+
+Ce sont des outils nés dans les années 2000-2010, conçus dès le départ pour les services à la personne, le BTP, ou la propreté B2B. Couverture fonctionnelle souvent excellente, design plus daté.
+
+### Ce qu'ils savent faire
+
+- Planning et affectation multi-sites
+- Catalogue prestations sectoriel
+- Devis et facturation métier
+- Mobile pour les agents (avec ou sans app dédiée)
+
+### Ce qu'ils savent moins bien faire
+
+- **L'UX 2026.** Beaucoup d'écrans encore en tableaux denses, courbes d'apprentissage longues.
+- **Le mobile-first.** Souvent une app à installer, parfois capricieuse en zone 4G dégradée.
+- **La marge par client en temps réel.** Disponible via reporting, rarement en surface dans l'écran de pilotage.
+
+### Verdict honnête
+
+**Solide choix entre 10 et 80 agents** si vous acceptez le compromis UX. Le rapport couverture/prix est correct (30 à 60€/utilisateur/mois généralement). Demandez impérativement une démo terrain (pas commerciale) sur **le téléphone d'un agent en conditions réelles**.
+
+## Famille 3 : Les nouveaux SaaS verticaux (Proprely et autres)
+
+Vague récente (2022-2026) de SaaS conçus dès le départ pour une niche métier. Mobile-first, UX moderne, intégrations natives.
+
+### Ce qu'ils savent faire
+
+- Affectation drag-and-drop en 5 secondes
+- Lien web sur téléphone agent (aucune app à installer)
+- Preuve de passage QR + photos + signature native
+- Marge par client visible en temps réel
+- Export complet des données en 1 clic
+
+### Ce qu'ils savent moins bien faire
+
+- **Couverture fonctionnelle variable.** Vérifiez la profondeur (multi-sociétés, reporting consolidé, multi-devises) si vous en avez besoin.
+- **Maturité comptable.** L'intégration paie/compta passe souvent par une connexion native vers Pennylane, Sage ou autre. Pas autonome.
+- **Track record.** Outils jeunes, exigez de parler à 2-3 clients en production avant de signer.
+
+### Verdict honnête
+
+**Idéal entre 3 et 50 agents** si la productivité quotidienne (gain d'heures par semaine) compte plus que la couverture exhaustive. Coûts généralement plus bas (15 à 40€/utilisateur/mois), onboarding plus rapide (30 minutes à 1 journée), pas de coût d'intégration caché.
+
+## Les 8 critères qui comptent vraiment
+
+Quel que soit le candidat, vérifiez ces 8 points lors de la démo. Si un seul tombe, négociez ou cherchez ailleurs.
+
+### 1. Pensé métier, pas adapté métier
+
+Posez la question : "C'est un outil qui a été conçu **pour** les sociétés de nettoyage, ou un outil généraliste **adapté** ?" La différence se voit en 10 secondes : si la démo commence par "vous configurez votre catalogue prestations" en mode tableau Excel, c'est adapté. Si elle commence par "voici les spécialités agents (vitrerie, moquette, décapage), elles existent déjà", c'est métier.
+
+### 2. Mobile-first sur l'agent
+
+Demandez à voir l'écran que verra un agent **sur son téléphone**, pas sur un iPad. Sans installer d'app, sur une connexion 4G dégradée si possible. C'est l'usage réel.
+
+### 3. Preuve de passage native
+
+QR code, photos avant/après, signature électronique du client. Doit fonctionner hors-ligne (sous-sols, parkings). PV envoyé automatiquement au client en fin d'intervention.
+
+### 4. Marge par client en temps réel
+
+Pas dans un reporting à compiler. **En surface**, dans l'écran de pilotage. Heures facturées vs heures réelles, marge brute par client, alerte si la marge passe sous un seuil.
+
+### 5. RGPD réel, pas marketing
+
+Hébergement européen, chiffrement en transit et au repos, sous-traitant explicitement nommé. Le contrat de sous-traitance disponible sur demande. Les photos de preuve de passage incluses dans la conformité.
+
+### 6. Export complet en 1 clic
+
+Vos données, en CSV ou Excel, à tout moment. Sans condition, sans frais, sans préavis. C'est votre **filet de sécurité** : sans export libre, vous êtes prisonnier de l'éditeur.
+
+### 7. Onboarding rapide et accompagné
+
+Maximum **1 journée** pour être opérationnel. Si l'éditeur vous parle de "3 à 6 mois de paramétrage avec un consultant intégrateur", c'est un ERP déguisé. Pas adapté au stade PME.
+
+### 8. Prix lisible
+
+Forfait par tranche d'agents ou par utilisateur, communiqué à l'avance. Pas de "on vous fera un devis". Pas de frais cachés (intégration, formation, mise à jour, support prioritaire payant). Le prix après la 1ère année doit être garanti à l'avance.
+
+## La grille de décision en 30 secondes
+
+| Profil | Famille recommandée |
+| ------ | ------------------- |
+| 3 à 15 agents, croissance | SaaS vertical moderne |
+| 15 à 50 agents, structuration | SaaS vertical ou logiciel métier historique |
+| 50 à 200 agents, multi-établissements | Logiciel métier historique ou ERP léger |
+| 200+ agents, multi-sociétés, multi-pays | ERP généraliste avec module métier |
+
+## Et Proprely dans tout ça ?
+
+Proprely se positionne dans la famille 3 (SaaS vertical moderne), avec un focus très assumé : **les sociétés de 3 à 50 agents qui veulent gagner du temps sur le quotidien**. Mobile-first, preuve de passage native, marge par client en temps réel, export libre, RGPD by design.
+
+Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboarding 30 minutes avec le fondateur, tarif privilégié à vie après la bêta. [Candidater à la bêta](/) si le profil correspond.`,
+  },
+  {
+    slug: 'logiciel-devis-nettoyage-gratuit',
+    title: "Logiciel de devis nettoyage gratuit : ce qu'il faut savoir avant de chercher",
+    excerpt: "\"Gratuit\" cache trois réalités très différentes : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier, et que choisir si vous démarrez.",
+    date: '19 mai 2026',
+    readTime: '6 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Trois familles de 'logiciels gratuits' : freemium limité, bêta privée temporaire, modèle revente données.",
+      "Le freemium limite typiquement à 1-2 devis/mois, 1 utilisateur, pas d'export.",
+      "La bêta privée est un vrai gratuit mais limité dans le temps (6-18 mois) et au nombre de places.",
+      "La revente de données est interdite par RGPD mais reste pratiquée. Vérifier la politique de confidentialité.",
+      "Pour démarrer : commencer par un template Word gratuit, puis basculer vers un SaaS dès 5 devis/mois.",
+    ],
+    faq: [
+      { q: "Existe-t-il un vrai logiciel de devis nettoyage gratuit ?", a: "Oui, sous deux formes : (1) le freemium d'éditeurs établis (avec des limitations strictes : 1-2 devis/mois, pas d'export, pas de signature électronique), et (2) les bêtas privées de SaaS verticaux comme Proprely (accès complet et gratuit, mais limité dans le temps et au nombre de places fondateurs)." },
+      { q: "Quelle différence entre logiciel gratuit et template Word ?", a: "Le template Word est gratuit mais demande 15-20 minutes par devis (mise en forme, calcul TVA, signature image). Le logiciel automatise tout : 2-5 minutes par devis, signature électronique native, suivi des relances, marge calculée." },
+      { q: "Le devis signé électroniquement a-t-il une valeur juridique ?", a: "Oui, depuis le règlement eIDAS 2014/910/UE. La signature électronique a la même valeur qu'une signature manuscrite, à condition que le prestataire respecte les niveaux de fiabilité (signature simple, avancée ou qualifiée selon le contexte)." },
+      { q: "Combien de devis envoyer par mois pour rentabiliser un logiciel payant ?", a: "À partir de 5-8 devis par mois, le ROI est positif : un devis prend 5 minutes au lieu de 20, soit 75 minutes/mois minimum gagnées, ce qui dépasse largement le coût d'un SaaS à 20-40€/mois." },
+      { q: "Quel logiciel choisir si je commence ma société de nettoyage ?", a: "Démarrez avec un template Word gratuit le temps de valider votre offre (50 premiers devis). Dès que vous dépassez 5 devis/mois récurrents, basculez vers un SaaS spécialisé : vous récupérez 1h+ par semaine, vous gagnez en pro, vous suivez les conversions." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
+    content: `## "Gratuit" : un mot piégé
+
+Quand vous cherchez **"logiciel de devis nettoyage gratuit"** sur Google, vous tombez sur 3 familles d'offres très différentes. La distinction est cruciale, parce que la mauvaise option peut vous coûter plus cher qu'un outil payant honnête.
+
+## Famille 1 : Le freemium limité
+
+C'est le modèle dominant : un éditeur propose une version "gratuite" qui marche, mais qui plafonne tellement vite que vous êtes forcé de passer à la version payante dès que votre activité décolle.
+
+### Les limitations typiques
+
+- **1 ou 2 devis par mois** (au-delà : passage payant obligatoire)
+- **1 seul utilisateur** (pas de partage équipe)
+- **Pas d'export** de vos données
+- **Pas de signature électronique** native (ou bridée à 1 signature/mois)
+- Le logo de l'éditeur visible sur vos devis envoyés au client
+- **Pas de relances automatiques** des prospects
+
+### Qui c'est pour
+
+Idéal si vous testez votre activité ou si vous envoyez moins de 3 devis par an. Au-delà, vous perdrez plus de temps à contourner les limitations qu'à payer un vrai outil.
+
+## Famille 2 : Les bêtas privées de SaaS verticaux
+
+Modèle récent (2022-2026). Des éditeurs comme **Proprely** lancent leur produit en accès gratuit et complet pour les 20 à 50 premières sociétés sélectionnées comme "membres fondateurs".
+
+### Les conditions typiques
+
+- **Accès complet et gratuit** à toutes les fonctionnalités
+- Pas de carte bancaire demandée
+- Pas de limites artificielles sur le nombre de devis
+- **Tarif privilégié à vie** après la fin de la bêta
+- **Limité dans le temps** : la bêta dure typiquement 6 à 18 mois
+- **Limité en places** : 20 à 50 entreprises au total
+
+### Qui c'est pour
+
+Idéal pour les sociétés en croissance (3 à 50 agents) prêtes à donner du feedback structuré et à essuyer quelques bugs en échange d'un outil pro gratuit pendant la phase de structuration. C'est le meilleur "gratuit" du marché, mais il faut être sélectionné et accepter le côté "produit en construction".
+
+## Famille 3 : Les modèles qui revendent vos données
+
+À éviter absolument. Certains éditeurs prétendument "gratuits" se rémunèrent en revendant vos données métier (clients, prix pratiqués, marges) à des concurrents, des assureurs, ou des sociétés de prospection.
+
+### Comment les repérer
+
+- **Politique de confidentialité floue** ou inexistante
+- Hébergement hors UE (USA, Asie) sans contrat de sous-traitance explicite
+- **Mentions légales** introuvables ou incomplètes
+- Cookies tiers de tracking publicitaire actifs dès la 1ère visite
+- Demande d'accès à votre carnet de contacts ou à votre messagerie
+
+### Pourquoi c'est dangereux
+
+Au-delà du non-respect du RGPD (amende potentielle 4% du CA), vous donnez à des inconnus la cartographie commerciale de votre entreprise. Sortez immédiatement de ces outils.
+
+## Comparatif gratuit vs payant : quand basculer ?
+
+Faisons le calcul honnête.
+
+### Sur Word ou Excel
+
+- Temps moyen par devis : **20 minutes** (mise en forme, calculs TVA, signature image, export PDF)
+- Pas de suivi commercial (vous perdez 20 à 30% des prospects faute de relance)
+- Pas de signature électronique (client doit imprimer, scanner, renvoyer : 5 à 10 jours de délai)
+
+### Sur un logiciel pro (SaaS vertical)
+
+- Temps moyen par devis : **3 à 5 minutes** (catalogue, calculs auto, signature native)
+- Relances automatiques à J+5 et J+10
+- Signature électronique en 1 clic, devis signé revenu en quelques heures
+
+### Le seuil de rentabilité
+
+Imaginons un tarif horaire dirigeant à 40€ (chargé). Un devis sur Word vous coûte 20 min × 40€/h = **13,30€ en temps**. Sur un SaaS, 4 min × 40€/h = **2,70€**.
+
+Économie : **10,60€ par devis**.
+
+À 5 devis/mois, vous économisez **53€/mois** = largement plus qu'un SaaS à 20-40€/mois.
+
+**À partir de 5 devis par mois, le SaaS est rentable.**
+
+## La stratégie réaliste pour démarrer
+
+Voici la séquence que nous recommandons aux dirigeants qui démarrent :
+
+### Étape 1 : Les 20 premiers devis
+
+Utilisez un **template Word gratuit** (disponible sur le site de la CCI, sur Office.com, ou via un comptable). Vous validez votre offre, vos prix, votre catalogue prestations. Pas besoin d'outil sophistiqué.
+
+### Étape 2 : Les devis 20 à 100
+
+Si vous êtes encore en pré-amorçage et que les devis restent occasionnels, le template Word tient. Si vous dépassez 5 devis/mois récurrents, **basculez vers un SaaS**.
+
+### Étape 3 : Les devis 100+
+
+À ce stade, vous avez besoin de fonctionnalités au-delà du devis lui-même : catalogue partagé entre commerciaux, relances automatiques, conversion devis → facture en 1 clic, marge calculée en temps réel par client. Un SaaS vertical (famille 2) devient incontournable.
+
+## Proprely et le devis nettoyage
+
+[Proprely](/fonctionnalites/devis-nettoyage) propose son module devis dans le cadre de sa bêta privée gratuite (famille 2 ci-dessus).
+
+Génération en 2 minutes depuis un template à votre charte, signature électronique native, suivi automatique des relances, conversion devis → facture en 1 clic. Marge brute affichée en temps réel pendant que vous construisez votre devis.
+
+Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, [candidater à la bêta](/) prend 2 minutes.`,
+  },
 ]
 
 export function getPost(slug: string): BlogPost | undefined {

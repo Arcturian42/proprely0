@@ -6,6 +6,7 @@ import ProblemSection from '../sections/ProblemSection'
 import SolutionSection from '../sections/SolutionSection'
 import Comparison from '../sections/Comparison'
 import FourSpaces from '../sections/FourSpaces'
+import Personas from '../sections/Personas'
 import HowItWorks from '../sections/HowItWorks'
 import ProductStatus from '../sections/ProductStatus'
 import FounderOffer from '../sections/FounderOffer'
@@ -40,6 +41,7 @@ export default function Landing() {
       <Comparison />
       <SectionDivider variant="curve" topColor="#ffffff" bottomColor="#f8fafc" />
       <FourSpaces />
+      <Personas />
       <HowItWorks />
       <ProductStatus />
       <FounderOffer />
