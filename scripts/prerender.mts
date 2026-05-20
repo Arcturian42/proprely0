@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 import { posts } from '../src/data/blog.ts'
 import { features } from '../src/data/features.ts'
 import { cities } from '../src/data/cities.ts'
+import { resources } from '../src/data/resources.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -825,6 +826,258 @@ const cityIndexHtml = buildHtml({
 })
 writePage('/villes', cityIndexHtml)
 generated.push('/villes')
+
+const betaBody = `
+  <h1>Bêta privée Proprely : devenez l'une des 30 sociétés fondatrices</h1>
+  <p>Accès gratuit à toute la plateforme pendant la bêta. Onboarding 30 minutes avec le fondateur. Tarif fondateur conservé à vie quand on passe au prix public.</p>
+  <h2>Cinq avantages exclusifs des membres fondateurs</h2>
+  <ul>
+    <li>Accès bêta 100% gratuit : tous les modules, sans limite d'agents ni de sites, pendant toute la durée de la bêta</li>
+    <li>Onboarding accompagné par le fondateur : mise en route en 30 minutes lors d'un appel</li>
+    <li>Influence directe sur la feuille de route : vos besoins remontés en direct deviennent les prochaines fonctionnalités</li>
+    <li>Accès prioritaire au support : réponse sous 4 heures en semaine, interlocuteur dédié</li>
+    <li>Conditions préférentielles à vie : tarif fondateur conservé après le lancement public</li>
+  </ul>
+  <h2>Profil recherché</h2>
+  <ul>
+    <li>Société de nettoyage B2B en France (bureaux, syndics, hôtels, cabinets médicaux, restaurants, copropriétés B2B)</li>
+    <li>Entre 3 et 50 agents</li>
+    <li>Au moins 5 sites clients</li>
+    <li>Vous utilisez aujourd'hui Excel, WhatsApp, Word ou papier pour piloter</li>
+    <li>Vous êtes dirigeant ou responsable d'exploitation</li>
+    <li>Vous êtes prêt à nous remonter des retours pendant 4 à 8 semaines</li>
+  </ul>
+  <h2>Comment candidater</h2>
+  <p>Remplissez le formulaire en quelques minutes : prénom, email professionnel, nom de votre entreprise, nombre d'agents, ville ou région, et votre plus gros problème actuel. Nous revenons vers vous sous 24 heures ouvrées pour un premier appel si votre profil correspond.</p>
+`.trim()
+
+const betaFaqs = [
+  { q: "C'est quoi exactement, la bêta privée Proprely ?", a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant toute la durée de la bêta, vous utilisez le produit gratuitement, vous nous remontez vos besoins, et vous influencez les prochaines fonctionnalités." },
+  { q: "C'est vraiment gratuit ?", a: "Oui. Aucun paiement, aucune carte bancaire demandée. Vous accédez à toute la plateforme sans limite d'utilisation pendant toute la durée de la bêta." },
+  { q: "Combien de temps pour la mise en route ?", a: "30 minutes lors d'un appel avec le fondateur. Nous configurons votre entreprise ensemble : sites, agents, fréquences d'intervention." },
+  { q: "Combien ça coûtera après la bêta ?", a: "Le tarif public sera communiqué en fin de bêta. Les membres fondateurs gardent un tarif privilégié, fixé à l'avance et conservé à vie." },
+  { q: "Mes données sont-elles sécurisées ?", a: "Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100 % et pouvez les exporter en 1 clic à tout moment." },
+]
+
+const betaHtml = buildHtml({
+  url: '/beta',
+  title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
+  description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie, onboarding 30 min avec le fondateur.",
+  schemas: [
+    webpageSchema(
+      'Bêta privée Proprely',
+      "Rejoignez les 30 sociétés fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie.",
+      `${ORIGIN}/beta`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Bêta privée', item: `${ORIGIN}/beta` },
+      ]
+    ),
+    faqSchema(betaFaqs),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Offer',
+      name: 'Programme membres fondateurs Proprely',
+      description: "Accès gratuit pendant toute la bêta privée. Tarif fondateur conservé à vie. Limité à 30 sociétés.",
+      availability: 'https://schema.org/LimitedAvailability',
+      price: '0',
+      priceCurrency: 'EUR',
+      seller: { '@id': `${ORIGIN}/#organization` },
+    },
+  ],
+  bodyHtml: betaBody,
+})
+writePage('/beta', betaHtml)
+generated.push('/beta')
+
+const resourcesIndexBody = `
+  <h1>Ressources gratuites pour société de nettoyage</h1>
+  <p>Modèles Excel et outils interactifs pour structurer votre activité : devis, planning, suivi des heures, calculateur ROI. Téléchargement immédiat sans inscription.</p>
+  <h2>Modèles et outils disponibles</h2>
+  <ul>
+    ${resources.map((r) => `<li><a href="${ORIGIN}/ressources/${r.slug}"><strong>${escapeHtml(r.title)}</strong></a> — ${escapeHtml(r.excerpt)}</li>`).join('')}
+  </ul>
+`.trim()
+
+const resourcesHtml = buildHtml({
+  url: '/ressources',
+  title: 'Ressources gratuites pour société de nettoyage · Proprely',
+  description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI. Conçu pour les dirigeants B2B.",
+  schemas: [
+    webpageSchema(
+      'Ressources Proprely',
+      "Modèles Excel et outils interactifs pour les dirigeants de société de nettoyage.",
+      `${ORIGIN}/ressources`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Ressources', item: `${ORIGIN}/ressources` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: resources.map((r, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: r.title,
+        url: `${ORIGIN}/ressources/${r.slug}`,
+      })),
+    },
+  ],
+  bodyHtml: resourcesIndexBody,
+})
+writePage('/ressources', resourcesHtml)
+generated.push('/ressources')
+
+for (const r of resources) {
+  if (r.slug === 'calculateur-roi' || r.slug === 'simulateur-rentabilite') continue
+  const url = `/ressources/${r.slug}`
+  const insideHtml = r.whatsInside.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
+  const whoForHtml = r.whoFor.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(r.title)}</h1>
+    <p>${escapeHtml(r.description)}</p>
+    <p>Format : ${escapeHtml(r.format)} · Taille : ${escapeHtml(r.fileSize)}</p>
+    ${r.filePath ? `<p><a href="${escapeAttr(r.filePath)}" download>Télécharger le modèle</a></p>` : ''}
+    <h2>Ce qu'il y a dans le fichier</h2>
+    <ul>${insideHtml}</ul>
+    <h2>Ce modèle convient si</h2>
+    <ul>${whoForHtml}</ul>
+    <h2>Aller plus loin que le modèle</h2>
+    <p>${escapeHtml(r.bestFor)} Proprely automatise ce que ce modèle vous demande de faire à la main. <a href="${ORIGIN}/beta">Rejoindre la bêta gratuite</a>.</p>
+  `.trim()
+
+  const schemas: object[] = [
+    webpageSchema(r.title, r.metaDescription, `${ORIGIN}${url}`, [
+      { name: 'Accueil', item: `${ORIGIN}/` },
+      { name: 'Ressources', item: `${ORIGIN}/ressources` },
+      { name: r.shortTitle, item: `${ORIGIN}${url}` },
+    ]),
+  ]
+
+  if (r.filePath) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'DigitalDocument',
+      name: r.title,
+      description: r.metaDescription,
+      url: `${ORIGIN}${r.filePath}`,
+      encodingFormat: 'text/csv',
+      inLanguage: 'fr-FR',
+      isAccessibleForFree: true,
+      publisher: { '@id': `${ORIGIN}/#organization` },
+    })
+  }
+
+  const html = buildHtml({
+    url,
+    title: r.metaTitle,
+    description: r.metaDescription,
+    ogTitle: r.title,
+    ogDescription: r.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+const vsExcelBody = `
+  <h1>Excel ou Proprely : à partir de quand changer ?</h1>
+  <p>Excel reste un excellent outil pour démarrer une société de nettoyage. À partir d'une certaine taille, il devient le frein principal à la croissance. Ce comparatif identifie précisément le moment où basculer, pourquoi, et comment migrer sans douleur.</p>
+  <h2>Quand Excel suffit encore</h2>
+  <ul>
+    <li>Vous êtes seul à gérer (pas de back-office)</li>
+    <li>Moins de 5 agents</li>
+    <li>Moins de 10 sites clients</li>
+    <li>Pas de preuve de passage formelle attendue</li>
+    <li>Pas de prestations récurrentes complexes</li>
+    <li>Pas d'enjeu de marge par client à suivre finement</li>
+  </ul>
+  <h2>Quand Excel devient le frein</h2>
+  <ul>
+    <li>Plus de 6 heures par semaine en admin dispersée</li>
+    <li>5 agents ou plus, sur 10 sites ou plus</li>
+    <li>Clients qui demandent des preuves de passage</li>
+    <li>Travail à 2+ personnes sur les mêmes fichiers</li>
+    <li>Erreurs de pointage ou de devis découvertes a posteriori</li>
+    <li>Plus de visibilité sur les contrats rentables</li>
+    <li>Documents difficiles à retrouver (contrat, attestation)</li>
+    <li>Agents qui oublient des passages</li>
+  </ul>
+  <h2>Coût caché d'Excel</h2>
+  <p>Quand on additionne les heures perdues, les erreurs et les risques, Excel coûte plus cher qu'une licence d'outil métier. À 45 € de coût horaire dirigeant, 6 à 10 heures perdues par semaine représentent 12 600 à 21 000 € de coût caché par an.</p>
+  <h2>Migration en 2 semaines</h2>
+  <p>Jour 1 audit des fichiers · Jour 2 configuration de l'instance · Jour 3 premier planning et premier devis · Semaine 1 validation côté agents · Semaine 2 bascule complète. Pas de big bang, pas de double saisie pendant 3 mois.</p>
+`.trim()
+
+const vsExcelFaqs = [
+  { q: "Excel est gratuit, pourquoi payer un logiciel ?", a: "Excel n'est pas gratuit dès qu'il vous coûte 6 à 10 heures par semaine d'administration dispersée. À 45 € de coût horaire dirigeant, ça représente 12 600 à 21 000 € de coût caché par an. Pendant la bêta, Proprely est aussi gratuit qu'Excel, sans ce coût caché." },
+  { q: "Mes équipes connaissent Excel par cœur, est-ce qu'elles vont adopter Proprely ?", a: "Proprely a été conçu avec des dirigeants de société de nettoyage. L'interface reprend les logiques métier qu'ils connaissent : sites, agents, missions, devis. La prise en main se fait en 30 minutes avec le fondateur." },
+  { q: "Comment je migre mes fichiers Excel existants ?", a: "Nous reprenons vos fichiers actuels et nous configurons votre instance avec vous lors de l'onboarding (30 minutes). Clients, sites, agents, fréquences : tout est importé sans que vous ayez à ressaisir." },
+  { q: "Qu'est-ce qui casse vraiment dans Excel quand on grandit ?", a: "Trois choses : la collaboration (à 2 personnes simultanées, le fichier se corrompt ou les modifications s'écrasent), la fiabilité (formules cassées, lignes décalées, données perdues), et le manque de fonctions terrain (preuve de passage, signature client, géolocalisation, application mobile pour les agents)." },
+  { q: "Et si je veux rester sur Excel ?", a: "Excel reste un excellent outil tant que vous êtes seul à gérer, avec moins de 5 agents et moins de 10 sites. Nous proposons d'ailleurs des modèles Excel gratuits sur notre page Ressources. Au-delà, le coût caché de la dispersion dépasse largement le prix d'un outil métier." },
+]
+
+const vsExcelHtml = buildHtml({
+  url: '/proprely-vs-excel',
+  title: 'Proprely vs Excel : à partir de quand changer ? · Comparatif 2026',
+  description: "Excel pour gérer une société de nettoyage : jusqu'où ça tient, ce qui casse à partir de 5 agents, et combien coûte vraiment la dispersion. Comparatif honnête.",
+  schemas: [
+    webpageSchema(
+      'Proprely vs Excel',
+      "Comparatif honnête entre Excel et Proprely pour piloter une société de nettoyage B2B.",
+      `${ORIGIN}/proprely-vs-excel`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Proprely vs Excel', item: `${ORIGIN}/proprely-vs-excel` },
+      ]
+    ),
+    faqSchema(vsExcelFaqs),
+  ],
+  bodyHtml: vsExcelBody,
+})
+writePage('/proprely-vs-excel', vsExcelHtml)
+generated.push('/proprely-vs-excel')
+
+const simulateurBody = `
+  <h1>Simulateur de rentabilité par contrat de nettoyage</h1>
+  <p>Renseignez les paramètres d'un contrat de nettoyage et obtenez en une minute la marge brute, la marge nette, le résultat horaire et un verdict immédiat avec des actions concrètes.</p>
+  <h2>Ce que le simulateur calcule</h2>
+  <ul>
+    <li>Marge brute en euros et en pourcentage</li>
+    <li>Marge nette après quote-part frais de structure</li>
+    <li>Résultat horaire — le KPI le plus utile pour comparer deux contrats</li>
+    <li>Net annuel projeté sur 12 mois</li>
+    <li>Verdict automatique : très rentable, rentable, limite, non rentable</li>
+    <li>Recommandations actionnables selon le verdict</li>
+  </ul>
+  <h2>Méthode de calcul</h2>
+  <p>Marge brute = CA mensuel − (heures × coût horaire chargé + consommables + déplacements). Marge nette = marge brute − frais de structure (en pourcentage du CA). Résultat horaire = marge nette ÷ heures sur le site.</p>
+  <h2>Ce qui n'est pas pris en compte</h2>
+  <p>Le simulateur ne prend pas en compte les prestations ponctuelles facturées hors contrat, l'écart entre heures contractuelles et heures réellement effectuées, ni les coûts liés aux remplacements et absences. Le module rentabilité de Proprely intègre ces éléments avec vos données réelles.</p>
+`.trim()
+
+const simulateurHtml = buildHtml({
+  url: '/simulateur-rentabilite',
+  title: 'Simulateur de rentabilité par contrat de nettoyage · Proprely',
+  description: "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat et recommandations selon votre situation.",
+  schemas: [
+    webpageSchema(
+      'Simulateur de rentabilité Proprely',
+      "Calculez la rentabilité réelle d'un contrat de nettoyage avec un verdict immédiat et des recommandations actionnables.",
+      `${ORIGIN}/simulateur-rentabilite`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Simulateur de rentabilité', item: `${ORIGIN}/simulateur-rentabilite` },
+      ]
+    ),
+  ],
+  bodyHtml: simulateurBody,
+})
+writePage('/simulateur-rentabilite', simulateurHtml)
+generated.push('/simulateur-rentabilite')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

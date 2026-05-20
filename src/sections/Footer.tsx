@@ -42,7 +42,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Ressources</h4>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              <Link to="/ressources" className="hover:text-slate-300 transition-colors">Ressources</Link>
+            </h4>
             <ul className="space-y-2.5">
               <li>
                 <Link to="/tarifs" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
@@ -54,6 +56,18 @@ export default function Footer() {
                 <Link to="/calculateur-roi" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                   <Calculator size={12} />
                   Calculateur ROI
+                </Link>
+              </li>
+              <li>
+                <Link to="/simulateur-rentabilite" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Calculator size={12} />
+                  Simulateur rentabilité
+                </Link>
+              </li>
+              <li>
+                <Link to="/proprely-vs-excel" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  Proprely vs Excel
                 </Link>
               </li>
               <li>
