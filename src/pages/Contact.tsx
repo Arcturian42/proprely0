@@ -4,6 +4,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import { trackEvent } from '../lib/analytics'
 
 const URL = 'https://proprely.fr/contact'
 const TITLE = 'Contact · Proprely'
@@ -36,6 +37,7 @@ export default function Contact() {
         <div className="grid sm:grid-cols-2 gap-4 mb-10">
           <a
             href="mailto:contact@proprely.fr"
+            onClick={() => trackEvent('email_click', { location: 'contact_page' })}
             className="group bg-blue-50 border border-blue-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-blue-100/60 transition-colors"
           >
             <div className="flex items-center gap-2 mb-2">
