@@ -1,4 +1,89 @@
+# Proprely — robots.txt
+# Site officiel : https://proprely.fr
+# Politique : ouvert à l'indexation classique et aux crawlers IA (LLMs)
+# pour maximiser la visibilité dans les Generative Engines (ChatGPT, Perplexity, Claude, Gemini, Copilot).
+
+# Crawlers classiques
 User-agent: *
 Allow: /
+Disallow: /beta/merci
 
+# Google search & AI training opt-in
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# OpenAI : ChatGPT search, GPT crawler
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic : Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta / Llama
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Mistral, Cohere, You.com, Diffbot
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Sitemaps
 Sitemap: https://proprely.fr/sitemap.xml
+
+# LLM index
+# https://proprely.fr/llms.txt

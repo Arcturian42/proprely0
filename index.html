@@ -50,35 +50,113 @@
           "@type": "Organization",
           "@id": "https://proprely.fr/#organization",
           "name": "Proprely",
+          "alternateName": "Proprely - Cockpit métier nettoyage",
           "url": "https://proprely.fr/",
-          "logo": "https://proprely.fr/proprely-icon-512.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://proprely.fr/proprely-icon-512.png",
+            "width": 512,
+            "height": 512
+          },
           "image": "https://proprely.fr/og-image.png",
-          "description": "Logiciel de gestion conçu pour les sociétés de nettoyage B2B en France.",
+          "description": "Logiciel de gestion conçu pour les sociétés de nettoyage B2B en France : clients, agents, planning, devis, preuve de passage, pilotage de la rentabilité dans un seul outil.",
+          "slogan": "Le cockpit métier des sociétés de nettoyage",
+          "foundingDate": "2025",
           "email": "contact@proprely.fr",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "77 Camden Lower Street, Saint Kevin",
+            "addressLocality": "Dublin",
+            "postalCode": "D02 XE80",
+            "addressCountry": "IE"
+          },
           "areaServed": [
             { "@type": "Country", "name": "France" },
-            { "@type": "City", "name": "Paris" },
-            { "@type": "City", "name": "Lyon" },
-            { "@type": "City", "name": "Marseille" },
-            { "@type": "City", "name": "Bordeaux" },
-            { "@type": "City", "name": "Toulouse" },
-            { "@type": "City", "name": "Nantes" }
+            { "@type": "City", "name": "Paris", "containedInPlace": { "@type": "AdministrativeArea", "name": "Île-de-France" } },
+            { "@type": "City", "name": "Lyon", "containedInPlace": { "@type": "AdministrativeArea", "name": "Auvergne-Rhône-Alpes" } },
+            { "@type": "City", "name": "Marseille", "containedInPlace": { "@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur" } },
+            { "@type": "City", "name": "Bordeaux", "containedInPlace": { "@type": "AdministrativeArea", "name": "Nouvelle-Aquitaine" } },
+            { "@type": "City", "name": "Toulouse", "containedInPlace": { "@type": "AdministrativeArea", "name": "Occitanie" } },
+            { "@type": "City", "name": "Nantes", "containedInPlace": { "@type": "AdministrativeArea", "name": "Pays de la Loire" } },
+            { "@type": "City", "name": "Lille", "containedInPlace": { "@type": "AdministrativeArea", "name": "Hauts-de-France" } },
+            { "@type": "City", "name": "Nice", "containedInPlace": { "@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur" } },
+            { "@type": "City", "name": "Strasbourg", "containedInPlace": { "@type": "AdministrativeArea", "name": "Grand Est" } },
+            { "@type": "City", "name": "Montpellier", "containedInPlace": { "@type": "AdministrativeArea", "name": "Occitanie" } },
+            { "@type": "City", "name": "Rennes", "containedInPlace": { "@type": "AdministrativeArea", "name": "Bretagne" } }
           ],
-          "knowsAbout": ["Logiciel de gestion", "Société de nettoyage", "Planning agents", "Gestion B2B", "Preuve de passage", "Devis nettoyage"],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "contact@proprely.fr",
-            "contactType": "customer support",
-            "availableLanguage": ["French"],
-            "areaServed": "FR"
-          },
+          "knowsAbout": [
+            "Logiciel de gestion société de nettoyage",
+            "Planning agents nettoyage",
+            "Devis nettoyage B2B",
+            "Preuve de passage nettoyage",
+            "Gestion société de propreté",
+            "CRM entreprise nettoyage",
+            "Suivi heures agents",
+            "Convention collective propreté IDCC 3043",
+            "Marge contrat de nettoyage",
+            "Onboarding société de nettoyage",
+            "RGPD société de nettoyage"
+          ],
+          "knowsLanguage": ["fr-FR"],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "email": "contact@proprely.fr",
+              "contactType": "customer support",
+              "availableLanguage": ["French"],
+              "areaServed": "FR"
+            },
+            {
+              "@type": "ContactPoint",
+              "email": "contact@proprely.fr",
+              "contactType": "sales",
+              "availableLanguage": ["French"],
+              "areaServed": "FR"
+            }
+          ],
+          "sameAs": [
+            "https://pershingsolution.com"
+          ],
           "parentOrganization": {
             "@type": "Organization",
             "@id": "https://pershingsolution.com/#organization",
-            "name": "Pershing Global Solutions",
+            "name": "Pershing Global Solutions LTD",
             "url": "https://pershingsolution.com",
             "description": "Société IT spécialisée dans le développement de logiciels métiers sur mesure.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "77 Camden Lower Street, Saint Kevin",
+              "addressLocality": "Dublin",
+              "postalCode": "D02 XE80",
+              "addressCountry": "IE"
+            },
             "sameAs": ["https://pershingsolution.com"]
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://proprely.fr/#service",
+          "name": "Proprely — logiciel de gestion pour sociétés de nettoyage B2B",
+          "description": "Logiciel SaaS B2B français qui centralise clients, sites, agents, planning, missions avec preuve de passage, devis, factures, documents et pilotage de la rentabilité pour les sociétés de nettoyage de 3 à 50 agents.",
+          "url": "https://proprely.fr/",
+          "image": "https://proprely.fr/og-image.png",
+          "provider": { "@id": "https://proprely.fr/#organization" },
+          "serviceType": "Logiciel de gestion société de nettoyage",
+          "category": "BusinessApplication",
+          "areaServed": { "@id": "https://proprely.fr/#organization" },
+          "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents)"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Modules Proprely",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planning agents nettoyage", "url": "https://proprely.fr/fonctionnalites/planning-nettoyage" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logiciel de devis nettoyage", "url": "https://proprely.fr/fonctionnalites/devis-nettoyage" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestion des agents de nettoyage", "url": "https://proprely.fr/fonctionnalites/gestion-agents-nettoyage" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preuve de passage nettoyage", "url": "https://proprely.fr/fonctionnalites/preuve-passage-nettoyage" } }
+            ]
           }
         },
         {

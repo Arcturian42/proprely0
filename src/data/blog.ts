@@ -11,6 +11,10 @@ export type BlogPost = {
   readTime: string
   tag: string
   content: string
+  /** Réponse-flash (40-80 mots) optimisée pour les Generative Engines
+   * (ChatGPT, Perplexity, Google AI Overviews). Affichée en tête d'article
+   * et incluse dans le HTML pré-rendu pour les crawlers IA. */
+  tldr?: string
   quickSummary: string[]
   faq?: BlogFAQ[]
   relatedSlugs?: string[]
@@ -2107,8 +2111,51 @@ Pour une TPE de 3-15 agents, comptez **6 à 10 semaines au total**. Pour une PME
   },
 ]
 
+// TL;DR (réponse-flash) par article, séparé du tableau principal pour
+// faciliter la mise à jour. Format : 40-80 mots, réponse directe à
+// l'intention de recherche, optimisé pour les Generative Engines
+// (ChatGPT, Perplexity, Google AI Overviews, Gemini).
+const POST_TLDR: Record<string, string> = {
+  'fixer-prix-nettoyage':
+    "Pour fixer le prix d'une prestation de nettoyage B2B, multipliez votre coût horaire chargé par 3 (fourchette saine : 2,8 à 3,2). Pour un agent au SMIC en 2026, le coût horaire chargé est de 18-20 €, soit un prix de vente cible de 54-60 €/h. Ajustez ensuite selon 4 facteurs : technicité (×4-5), horaires décalés (+30-60 %), accessibilité (+10-20 %), ponctualité (+20-30 %).",
+  'gestion-societe-nettoyage-outils':
+    "La majorité des sociétés de nettoyage B2B en France gèrent leur activité avec un mix d'Excel (planning, devis), WhatsApp (changements de dernière minute), Word (factures), Google Drive (documents) et papier (preuve de passage). Ce mix coûte en moyenne 6 à 10 heures par semaine au dirigeant et bloque la croissance dès que la société dépasse 5-8 agents.",
+  'logiciel-societe-nettoyage-criteres':
+    "Les 8 critères qui comptent pour choisir un logiciel société de nettoyage : (1) planning multi-sites mobile-first, (2) preuve de passage standardisée (QR + photos + signature), (3) marge par client en temps réel, (4) devis pro en 2 minutes, (5) gestion agents avec spécialités, (6) hébergement européen RGPD, (7) export 1 clic, (8) onboarding accompagné. Évitez les outils ERP industriels surdimensionnés pour une TPE/PME.",
+  'calcul-heures-agents-nettoyage':
+    "Le coût horaire chargé d'un agent au SMIC en 2026 est de 18-20 € : salaire brut + charges patronales (~42 %) + congés/RTT (10 %) + primes (panier, transport, salissure) + mutuelle. Multipliez ce coût par 3 pour fixer le prix de vente horaire. Les heures supplémentaires se majorent à +25 % (8 premières heures) puis +50 %. Sans suivi rigoureux, la paie déborde de 5-10 % chaque mois.",
+  'rgpd-societe-nettoyage-2026':
+    "Une société de nettoyage B2B est soumise au RGPD dès qu'elle gère des données d'agents et de contacts clients. Obligations 2026 : registre des traitements (obligatoire dès le 1er salarié), mention sous-traitants, durée de conservation des photos de preuve de passage (5 ans recommandé), information des personnes filmées/photographiées, contrat de sous-traitance avec votre éditeur de logiciel, hébergement européen privilégié.",
+  'fideliser-agents-nettoyage-turnover':
+    "Le turnover annuel moyen dans le nettoyage B2B dépasse 35 %. 6 leviers prouvés pour le réduire : (1) prime de présence trimestrielle, (2) planning prévisible publié 2 semaines à l'avance, (3) alertes surmenage automatiques, (4) parcours de spécialisation (vitrerie, décapage), (5) reconnaissance terrain (photo de la semaine), (6) entretien individuel trimestriel de 30 minutes. Cibler 20 % de turnover annuel est réaliste.",
+  'comparatif-logiciels-nettoyage-2026':
+    "Comparatif 2026 des logiciels société de nettoyage : Proprely (cockpit unifié bêta gratuite, conçu en France pour TPE/PME B2B 3-50 agents), PROPRET (historique du marché, ergonomie datée), Progiclean (puissant mais lourd à paramétrer), Organilog (multi-secteurs, pas spécifiquement propreté), Excel (gratuit mais bloque la croissance). Choix : Proprely si TPE/PME B2B, PROPRET si gros volume, Organilog si multi-métier.",
+  'logiciel-devis-nettoyage-gratuit':
+    "Les options gratuites de logiciel de devis nettoyage (Henrri, Tiime, Excel, Word) suffisent pour 1-3 clients par mois. Au-delà, leurs limites se révèlent : pas de suivi commercial, pas de relances automatiques, pas de signature électronique, pas de lien avec le planning agents. Pour une société B2B de nettoyage avec 5+ devis par mois, un outil dédié comme Proprely (gratuit pendant la bêta) devient rentable.",
+  'societe-nettoyage-paris':
+    "Le marché du nettoyage B2B à Paris représente près d'un tiers du marché français. Cible majoritaire : tertiaire QCA, copropriétés haussmanniennes gérées par les grands syndics, hôtellerie, cabinets médicaux. Spécificités à connaître : rotations 5h-9h, syndics qui demandent preuve de passage standardisée, turnover agents >35 %, pression sur les prix. Marge nette saine : 15-18 %.",
+  'societe-nettoyage-ile-de-france':
+    "L'Île-de-France concentre ~30 % du marché français de la propreté B2B. Géographie : Paris intra-muros (densité tertiaire), La Défense (92, tours), Saint-Denis/Saint-Ouen (industriel, logistique), Boulogne-Issy (sièges sociaux), Versailles/Saint-Quentin (tertiaire ouest). Départements porteurs en croissance : 92, 93, 94. Salaire d'agent généralement +5 à +10 % vs province pour compenser le coût de la vie.",
+  'societe-nettoyage-la-defense-92':
+    "Le quartier de La Défense (92) est le premier quartier d'affaires européen avec ~3,5 millions de m² de bureaux. Spécificités pour une société de nettoyage : rotations matinales 5h-9h obligatoires, exigences sécurité strictes (badges, accès contrôlés), preuve de passage standardisée demandée par les facility managers, exigence de polyvalence (bureaux + parties communes + sanitaires), prix marché 14-18 € HT/m²/mois sur contrat annuel.",
+  'societe-nettoyage-bordeaux':
+    "Le marché bordelais du nettoyage B2B est porté par 3 secteurs : tertiaire Chartrons / Bassins à flot, hôtellerie/œnotourisme (Saint-Émilion, Médoc), cabinets médicaux & laboratoires. Spécificités locales : forte saisonnalité touristique (mai-octobre), copropriétés du centre historique à exigences patrimoniales, prix marché 10-13 €/m²/mois soit 10-20 % en dessous de Paris. Marge nette atteignable : 15-20 %.",
+  'trouver-clients-b2b-nettoyage':
+    "Les 5 canaux d'acquisition B2B qui marchent en nettoyage : (1) prospection LinkedIn ciblée (office managers, syndics, DRH), (2) recommandation de clients satisfaits (programme de parrainage), (3) référencement local SEO (page ville + Google Business Profile), (4) partenariat avec syndics/facility managers, (5) appels d'offres publics (BOAMP, profils acheteurs). Le porte-à-porte et les flyers ont un ROI quasi nul en B2B.",
+  'convention-collective-nettoyage-idcc-3043':
+    "La convention collective nationale de la propreté (IDCC 3043) régit ~500 000 salariés en France. Points clés 2026 : grille de salaires AS1 à MP5 (de 12,00 €/h brut à 18+ €/h), prime panier (~ 7 €/jour si plus de 6h), prime de transport (URSSAF), prime d'expérience (3-15 %), congés payés 2,5 jours/mois, durée de travail standard 35h/semaine. Tout employeur du secteur doit l'appliquer.",
+  'tarif-nettoyage-bureaux-m2-2026':
+    "Le tarif de nettoyage de bureaux en France en 2026 se situe en moyenne entre 12 et 22 € HT/m²/an, soit ~1-2 €/m²/mois sur contrat annuel. Variables : surface (>500 m² = -10-20 %), fréquence (quotidien vs 3×/semaine), zone géographique (Paris/IDF +15-25 % vs province), prestations annexes (vitres, moquette), horaires (avant 7h ou après 21h = +30-60 %).",
+  'digitaliser-entreprise-nettoyage-5-etapes':
+    "5 étapes pour digitaliser une société de nettoyage en 2-4 mois : (1) audit des outils actuels et heures perdues, (2) choix d'un cockpit unifié (planning + devis + agents + preuve de passage + marge), (3) migration progressive des données clients/sites/agents, (4) formation agents 1h max sur mobile, (5) basculement complet en 4-8 semaines selon taille. ROI typique : 6-10h récupérées par semaine pour le dirigeant.",
+}
+
 export function getPost(slug: string): BlogPost | undefined {
-  return posts.find((p) => p.slug === slug)
+  const post = posts.find((p) => p.slug === slug)
+  if (!post) return undefined
+  if (post.tldr) return post
+  const tldr = POST_TLDR[slug]
+  return tldr ? { ...post, tldr } : post
 }
 
 export function getRelatedPosts(slug: string, max = 2): BlogPost[] {
