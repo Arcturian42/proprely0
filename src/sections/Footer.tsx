@@ -68,6 +68,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/outils" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Calculator size={12} />
+                  Outils gratuits
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculateur-prix-nettoyage-m2" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Calculator size={12} />
+                  Prix nettoyage m²
+                </Link>
+              </li>
+              <li>
                 <Link to="/calculateur-roi" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                   <Calculator size={12} />
                   Calculateur ROI

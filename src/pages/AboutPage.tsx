@@ -10,7 +10,7 @@ import { trackEvent } from '../lib/analytics'
 const META = {
   title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
   description:
-    "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+    "Proprely est édité par Pershing Global Solutions LTD. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion.",
   url: 'https://proprely.fr/a-propos',
 }
 

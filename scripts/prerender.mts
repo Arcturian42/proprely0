@@ -241,7 +241,8 @@ function webpageSchema(title: string, description: string, url: string, crumbs: 
 const generated: string[] = []
 
 for (const rawPost of posts) {
-  // getPost() injecte le TL;DR depuis POST_TLDR si présent.
+  // getPost() injecte le TL;DR depuis POST_TLDR et dateModified depuis
+  // POST_DATE_MODIFIED si présents.
   const p = getPost(rawPost.slug) ?? rawPost
   const url = `/blog/${p.slug}`
   const summaryHtml = p.quickSummary.map((s) => `<li>${escapeHtml(s)}</li>`).join('')
@@ -251,6 +252,22 @@ for (const rawPost of posts) {
   const tldrHtml = p.tldr
     ? `<aside><p><strong>Réponse-flash :</strong> ${escapeHtml(p.tldr)}</p></aside>`
     : ''
+  const relatedSlugs = p.relatedSlugs?.length
+    ? p.relatedSlugs
+    : posts.filter((q) => q.slug !== p.slug && q.tag === p.tag).slice(0, 3).map((q) => q.slug)
+  const relatedPosts = relatedSlugs
+    .map((s) => posts.find((q) => q.slug === s))
+    .filter((q): q is NonNullable<typeof q> => Boolean(q))
+    .slice(0, 4)
+  const relatedHtml = relatedPosts.length
+    ? `<aside><h2>À lire aussi</h2><ul>${relatedPosts
+        .map(
+          (q) =>
+            `<li><a href="${ORIGIN}/blog/${q.slug}"><strong>${escapeHtml(q.title)}</strong></a> — ${escapeHtml(q.excerpt)}</li>`,
+        )
+        .join('')}</ul></aside>`
+    : ''
+
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
@@ -260,6 +277,7 @@ for (const rawPost of posts) {
     <ul>${summaryHtml}</ul>
     ${md2html(p.content)}
     ${faqHtml ? `<h2>Questions fréquentes</h2>${faqHtml}` : ''}
+    ${relatedHtml}
   `.trim()
 
   const breadcrumbs = {
@@ -350,7 +368,7 @@ for (const rawFeature of features) {
 
   const html = buildHtml({
     url,
-    title: `${f.tag} · Proprely`,
+    title: `${f.title} · Proprely`,
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
@@ -513,6 +531,40 @@ const blogIndexBody = `
   </ul>
 `.trim()
 
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${ORIGIN}/blog#blog`,
+  name: 'Blog Proprely · Gestion, terrain et propreté B2B',
+  description:
+    "Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage : productivité, RGPD, outils, prix, fidélisation, marchés locaux.",
+  url: `${ORIGIN}/blog`,
+  inLanguage: 'fr-FR',
+  isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+  publisher: { '@id': `${ORIGIN}/#organization` },
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    '@id': `${ORIGIN}/blog/${p.slug}#article`,
+    headline: p.title,
+    description: p.excerpt,
+    datePublished: p.date,
+    dateModified: getPost(p.slug)?.dateModified ?? p.date,
+    url: `${ORIGIN}/blog/${p.slug}`,
+    author: { '@type': 'Organization', name: 'Proprely' },
+  })),
+}
+
+const blogItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: posts.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${ORIGIN}/blog/${p.slug}`,
+    name: p.title,
+  })),
+}
+
 const blogIndexHtml = buildHtml({
   url: '/blog',
   title: 'Blog · Gestion, terrain et propreté B2B · Proprely',
@@ -528,6 +580,8 @@ const blogIndexHtml = buildHtml({
         { name: 'Blog', item: `${ORIGIN}/blog` },
       ]
     ),
+    blogSchema,
+    blogItemList,
   ],
   bodyHtml: blogIndexBody,
 })
@@ -597,7 +651,7 @@ const pricingFaqs = [
 const pricingHtml = buildHtml({
   url: '/tarifs',
   title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
-  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.',
+  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.',
   schemas: [
     webpageSchema(
       'Tarifs Proprely',
@@ -839,7 +893,7 @@ const featureIndexBody = `
 const featureIndexHtml = buildHtml({
   url: '/fonctionnalites',
   title: 'Fonctionnalités logiciel nettoyage · Proprely',
-  description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  description: "Toutes les fonctionnalités Proprely : planning agents, devis, gestion agents, preuve de passage. Logiciel propreté B2B. Bêta gratuite.",
   schemas: [
     webpageSchema(
       'Fonctionnalités Proprely',
@@ -953,7 +1007,7 @@ const betaFaqs = [
 const betaHtml = buildHtml({
   url: '/beta',
   title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
-  description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie, onboarding 30 min avec le fondateur.",
+  description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur à vie, onboarding 30 min.",
   schemas: [
     webpageSchema(
       'Bêta privée Proprely',
@@ -993,7 +1047,7 @@ const resourcesIndexBody = `
 const resourcesHtml = buildHtml({
   url: '/ressources',
   title: 'Ressources gratuites pour société de nettoyage · Proprely',
-  description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI. Conçu pour les dirigeants B2B.",
+  description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : templates Excel gratuits, calculateur ROI. Dirigeants B2B.",
   schemas: [
     webpageSchema(
       'Ressources Proprely',
@@ -1204,7 +1258,7 @@ const softwareLandingFaqs = [
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
   title: 'Logiciel pour société de nettoyage : le guide complet 2026 · Proprely',
-  description: "Logiciel de gestion pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Comparatif Excel/PROPRET/Progiclean. Bêta gratuite.",
+  description: "Logiciel pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1278,7 +1332,7 @@ const comparatifFaqs = [
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
   title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
-  description: "Comparatif honnête des principaux logiciels société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir.",
+  description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
   schemas: [
     webpageSchema(
       'Comparatif logiciel nettoyage 2026',
@@ -1513,7 +1567,7 @@ const aboutBody = `
 const aboutHtml = buildHtml({
   url: '/a-propos',
   title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
-  description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+  description: "Proprely est édité par Pershing Global Solutions LTD. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1540,6 +1594,131 @@ const aboutHtml = buildHtml({
 })
 writePage('/a-propos', aboutHtml)
 generated.push('/a-propos')
+
+// === Page /outils (index outils gratuits) ===
+const toolsBody = `
+  <h1>Les calculateurs gratuits pour piloter votre société de nettoyage</h1>
+  <p>Quatre outils utilisables tout de suite, sans inscription, pour fixer les prix, mesurer la marge et calculer le coût caché de la dispersion administrative.</p>
+  <h2>Outils disponibles</h2>
+  <ul>
+    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2"><strong>Calculateur prix de nettoyage au m²</strong></a> — estimez le prix de vente d'une prestation selon surface, fréquence, zone, type de local (1 min).</li>
+    <li><a href="${ORIGIN}/simulateur-rentabilite"><strong>Simulateur de rentabilité contrat</strong></a> — marge brute d'un contrat en 1 minute, verdict instantané (1 min).</li>
+    <li><a href="${ORIGIN}/calculateur-roi"><strong>Calculateur ROI dispersion</strong></a> — combien d'heures et d'euros perdus en gestion dispersée (30 sec).</li>
+    <li><a href="${ORIGIN}/ressources/modele-suivi-heures-agents"><strong>Coût horaire chargé d'un agent</strong></a> — modèle Excel téléchargeable (5 min).</li>
+  </ul>
+`.trim()
+
+const toolsHtml = buildHtml({
+  url: '/outils',
+  title: 'Outils gratuits pour société de nettoyage · Proprely',
+  description: "Calculateurs et simulateurs gratuits : prix au m², coût horaire chargé, marge de contrat, ROI dispersion. Pour dirigeants de sociétés de nettoyage B2B en France.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Outils gratuits pour société de nettoyage',
+      description: "Calculateurs et simulateurs gratuits : prix au m², coût horaire chargé, marge de contrat, ROI dispersion.",
+      url: `${ORIGIN}/outils`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-05-21',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Calculateur prix de nettoyage au m²', url: `${ORIGIN}/calculateur-prix-nettoyage-m2` },
+          { '@type': 'ListItem', position: 2, name: 'Simulateur de rentabilité contrat', url: `${ORIGIN}/simulateur-rentabilite` },
+          { '@type': 'ListItem', position: 3, name: 'Calculateur ROI dispersion', url: `${ORIGIN}/calculateur-roi` },
+          { '@type': 'ListItem', position: 4, name: "Coût horaire chargé d'un agent (modèle Excel)", url: `${ORIGIN}/ressources/modele-suivi-heures-agents` },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils` },
+      ],
+    },
+  ],
+  bodyHtml: toolsBody,
+})
+writePage('/outils', toolsHtml)
+generated.push('/outils')
+
+// === Calculateur prix nettoyage au m² (page longue traîne SEO) ===
+const priceFaqs = [
+  { q: "Quel est le prix moyen du nettoyage de bureaux au m² en France en 2026 ?", a: "Entre 12 et 18 € HT/m²/an, soit ~1-1,5 €/m²/mois. La fourchette varie selon la zone géographique (Paris/IDF +15-25 %, ville moyenne -10 %), le type de local (médical +30-50 % vs bureau standard), la fréquence et les prestations annexes (vitrerie, moquette)." },
+  { q: "Comment calcule-t-on le prix au m² pour une prestation de nettoyage ?", a: "Méthode : prix de base au m² (selon type de local) × multiplicateur de zone géographique × multiplicateur de fréquence. Cette estimation donne un prix annuel HT. Divisez par 12 pour le forfait mensuel. Ajustez ensuite selon les contraintes horaires (avant 6h ou après 21h : +30 à 60 %) et les prestations annexes." },
+  { q: "Le prix du nettoyage est-il plus cher à Paris qu'en province ?", a: "Oui. Le marché Paris / Île-de-France est typiquement 15 à 25 % au-dessus de la moyenne nationale, en raison du coût de la vie (salaires agents + 5-10 %), de la densité tertiaire, et de la concurrence sur les marchés syndic / facility. Les grandes métropoles (Lyon, Marseille, Lille) sont alignées à la moyenne nationale. Villes moyennes : -10 %. Zones rurales : -18 %." },
+  { q: "Comment justifier un prix au m² plus élevé que la concurrence ?", a: "Détaillez les prestations (qui fait quoi, à quelle fréquence), listez les produits utilisés et leurs certifications (écolabels), intégrez la preuve de passage (QR + photos + signature), les engagements de remplacement et les délais de réactivité. Un devis détaillé justifie un prix 15-20 % supérieur sans difficulté." },
+]
+
+const priceBody = `
+  <h1>Calculateur prix de nettoyage de bureaux au m² en 2026</h1>
+  <p>Estimez le prix de vente d'une prestation de nettoyage selon la surface, le type de local, la zone géographique et la fréquence. Fourchette basse / haute basée sur les prix marché observés en France en 2026.</p>
+  <h2>Prix au m² indicatifs (base 2026)</h2>
+  <ul>
+    <li>Bureaux standards : 13 €/m²/an HT</li>
+    <li>Bureaux premium : 17 €/m²/an HT</li>
+    <li>Cabinets médicaux / labos : 21 €/m²/an HT (protocoles bionettoyage)</li>
+    <li>Sites industriels : 9 €/m²/an HT</li>
+    <li>Commerces / retail : 14 €/m²/an HT</li>
+  </ul>
+  <h2>Multiplicateurs zone géographique</h2>
+  <ul>
+    <li>Paris / Île-de-France : +20 %</li>
+    <li>Grande métropole (Lyon, Marseille, Lille, Bordeaux, Toulouse, Nantes) : référence</li>
+    <li>Ville moyenne (50 000-200 000 hab) : -10 %</li>
+    <li>Zone rurale / petite ville : -18 %</li>
+  </ul>
+  <h2>Multiplicateurs fréquence</h2>
+  <ul>
+    <li>1×/semaine : 0,65</li>
+    <li>2×/semaine : 0,78</li>
+    <li>3×/semaine : 0,88</li>
+    <li>4×/semaine : 0,95</li>
+    <li>5×/semaine (quotidien) : 1,00 (base)</li>
+    <li>6×/semaine : 1,12</li>
+  </ul>
+  <h2>Comment lire le résultat</h2>
+  <p>La fourchette basse / haute reflète l'écart de marché entre prestataires "low-cost" et "premium". Si vous facturez en-dessous de la fourchette basse, votre marge est probablement insuffisante. Au-dessus, vous devez pouvoir justifier la différence (preuve de passage, certifications, réactivité).</p>
+  <h2>Questions fréquentes</h2>
+  ${priceFaqs.map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`).join('')}
+`.trim()
+
+const priceHtml = buildHtml({
+  url: '/calculateur-prix-nettoyage-m2',
+  title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
+  description: "Calculez le prix de nettoyage de bureaux au m² : surface, fréquence, zone géographique, type de local. Estimation honnête sans inscription.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Calculateur prix nettoyage bureaux au m²',
+      description: "Estimation du prix de vente d'une prestation de nettoyage selon surface, fréquence, zone géographique, type de local.",
+      url: `${ORIGIN}/calculateur-prix-nettoyage-m2`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-05-21',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils` },
+        { '@type': 'ListItem', position: 3, name: 'Calculateur prix nettoyage', item: `${ORIGIN}/calculateur-prix-nettoyage-m2` },
+      ],
+    },
+    faqSchema(priceFaqs),
+  ],
+  bodyHtml: priceBody,
+})
+writePage('/calculateur-prix-nettoyage-m2', priceHtml)
+generated.push('/calculateur-prix-nettoyage-m2')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

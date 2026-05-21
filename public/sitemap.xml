@@ -1,28 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://proprely.fr/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Proprely — Logiciel de gestion société de nettoyage B2B</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/tarifs</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Tarifs Proprely</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/calculateur-roi</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Calculateur ROI société de nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Blog Proprely · Propreté B2B</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/contact</loc>
@@ -35,330 +52,570 @@
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalités Proprely</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage par ville</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/beta</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Bêta privée Proprely</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressources Proprely</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/proprely-vs-excel</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Proprely vs Excel</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/simulateur-rentabilite</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Simulateur rentabilité</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/logiciel-societe-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel société de nettoyage — guide 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/comparatif-logiciel-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif logiciels nettoyage 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/logiciel-auto-entrepreneur-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel auto-entrepreneur nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/crm-entreprise-proprete</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>CRM entreprise propreté</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/a-propos</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>À propos de Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/outils</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Outils gratuits Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/calculateur-prix-nettoyage-m2</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Calculateur prix nettoyage bureaux au m²</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-organilog</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs organilog</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-progiclean</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs progiclean</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-propret</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs propret</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources/modele-devis-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressource Proprely : modele devis nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources/modele-planning-agents-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressource Proprely : modele planning agents nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources/modele-suivi-heures-agents</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressource Proprely : modele suivi heures agents</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources/calculateur-roi</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressource Proprely : calculateur roi</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/ressources/simulateur-rentabilite</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Ressource Proprely : simulateur rentabilite</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/fonctionnalites/planning-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : planning nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/fonctionnalites/devis-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : devis nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/fonctionnalites/gestion-agents-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : gestion agents nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/fonctionnalites/preuve-passage-nettoyage</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : preuve passage nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/paris</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Paris</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/lyon</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Lyon</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/marseille</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Marseille</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/bordeaux</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Bordeaux</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/toulouse</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Toulouse</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/nantes</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Nantes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/lille</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Lille</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/nice</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Nice</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/strasbourg</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Strasbourg</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/montpellier</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Montpellier</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/villes/rennes</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel nettoyage Rennes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/fixer-prix-nettoyage</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : fixer prix nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/gestion-societe-nettoyage-outils</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : gestion societe nettoyage outils</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/logiciel-societe-nettoyage-criteres</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : logiciel societe nettoyage criteres</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/calcul-heures-agents-nettoyage</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : calcul heures agents nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/rgpd-societe-nettoyage-2026</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : rgpd societe nettoyage 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : fideliser agents nettoyage turnover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/comparatif-logiciels-nettoyage-2026</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : comparatif logiciels nettoyage 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/logiciel-devis-nettoyage-gratuit</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : logiciel devis nettoyage gratuit</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-paris</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage paris</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-ile-de-france</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage ile de france</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-la-defense-92</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage la defense 92</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-bordeaux</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage bordeaux</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/trouver-clients-b2b-nettoyage</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : trouver clients b2b nettoyage</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : convention collective nettoyage idcc 3043</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/tarif-nettoyage-bureaux-m2-2026</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : tarif nettoyage bureaux m2 2026</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/digitaliser-entreprise-nettoyage-5-etapes</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : digitaliser entreprise nettoyage 5 etapes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-lyon</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage lyon</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-marseille</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage marseille</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-toulouse</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage toulouse</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-lille</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage lille</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/blog/societe-nettoyage-nantes</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : societe nettoyage nantes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://proprely.fr/mentions-legales</loc>

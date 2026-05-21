@@ -16,15 +16,24 @@ RewriteRule ^ - [L]
 # Otherwise, return a real HTTP 404 (Apache will serve /404.html via ErrorDocument)
 RewriteRule ^ - [R=404,L]
 
-# Set proper caching for static assets
+# Cache et signaux de fraîcheur pour les bots (Googlebot, Bingbot, etc.)
 <IfModule mod_headers.c>
   <FilesMatch "\.(jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot|css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  # HTML : revalidation forte mais on autorise un petit cache navigateur (5 min)
+  # pour ne pas pénaliser les Core Web Vitals. Avant : no-cache + no-store qui
+  # supprimaient le ETag/Last-Modified, donc pas de signal de fraîcheur pour
+  # Googlebot. Maintenant : revalidation obligatoire mais via 304 Not Modified.
   <FilesMatch "\.(html)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Cache-Control "public, max-age=300, must-revalidate"
   </FilesMatch>
 </IfModule>
+
+# Active Last-Modified et ETag sur tous les fichiers (signal de fraîcheur
+# explicite pour les crawlers : si la page n'a pas changé, le serveur répond
+# 304 Not Modified et économise du budget de crawl).
+FileETag MTime Size
 
 # Force HTTPS
 <IfModule mod_rewrite.c>

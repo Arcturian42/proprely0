@@ -66,7 +66,7 @@ export default function FeaturePage({ slug }: Props) {
   useEffect(() => {
     if (!feature) return
     const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
-    const title = `${feature.tag} · Proprely`
+    const title = `${feature.title} · Proprely`
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', feature.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', feature.title)
