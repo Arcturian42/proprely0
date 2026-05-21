@@ -1,45 +1,108 @@
 # Proprely
 
-> Le cockpit métier des sociétés de nettoyage. Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
+> Le cockpit métier des sociétés de nettoyage B2B en France. Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
 
-Proprely est un logiciel SaaS B2B français conçu pour les sociétés de nettoyage de 3 à 50 agents. Il centralise dans une seule interface : la gestion des clients et sites, le suivi des agents et leurs spécialités (vitrerie, moquette, décapage), le planning et l'affectation, la preuve de passage par QR code et photos, les devis et factures, les documents (contrats, fiches sécurité, attestations URSSAF) et le pilotage de la rentabilité par client.
+Proprely est un logiciel SaaS B2B français conçu pour les sociétés de nettoyage de 3 à 50 agents. Il centralise dans une seule interface : la gestion des clients et sites, le suivi des agents et leurs spécialités (vitrerie, moquette, décapage, remise en état), le planning et l'affectation 1-clic, la preuve de passage par QR code et photos avant-après, les devis et factures avec signature électronique, les documents (contrats, fiches sécurité, attestations URSSAF, certifications) et le pilotage de la rentabilité avec marge par client en temps réel.
 
-Le produit est actuellement en bêta privée, réservée à 30 sociétés fondatrices sélectionnées. L'accès est gratuit pendant la bêta, et les membres fondateurs gardent un tarif privilégié à vie. Hébergement européen, conformité RGPD, chiffrement en transit et au repos.
+Le produit est actuellement en **bêta privée**, réservée à 30 sociétés fondatrices sélectionnées. L'accès est **gratuit** pendant toute la durée de la bêta, sans carte bancaire, sans engagement. Les membres fondateurs gardent un **tarif privilégié à vie** après le lancement public. Hébergement européen, conformité RGPD, chiffrement en transit et au repos, export des données en 1 clic.
+
+Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plusieurs sites clients : bureaux, syndics, hôtels, cabinets médicaux, copropriétés). Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C), ni pour les grands groupes industriels (>200 agents).
+
+Éditeur : Pershing Global Solutions LTD (Dublin, Irlande). Contact : contact@proprely.fr.
 
 ## Pages principales
 
-- [Page d'accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
-- [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie pour les 30 premières sociétés
+- [Accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
+- [Logiciel société de nettoyage — guide complet 2026](https://proprely.fr/logiciel-societe-nettoyage) : guide pilier, critères de choix, comparatif vs Excel/PROPRET/Progiclean, ROI
+- [Comparatif logiciels nettoyage 2026](https://proprely.fr/comparatif-logiciel-nettoyage) : Proprely vs PROPRET, Progiclean, Organilog, Excel — critères, fonctionnalités, tarifs
+- [Logiciel auto-entrepreneur nettoyage](https://proprely.fr/logiciel-auto-entrepreneur-nettoyage) : pour les indépendants en nettoyage, devis, planning, facturation
+- [CRM entreprise propreté](https://proprely.fr/crm-entreprise-proprete) : pipeline commercial, suivi clients/sites, relances devis, marge par compte
+- [Proprely vs Excel](https://proprely.fr/proprely-vs-excel) : comparatif détaillé, coût de la dispersion, gains attendus
+- [Bêta privée — devenir membre fondateur](https://proprely.fr/beta) : candidature aux 30 places fondateurs
+- [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
-- [Blog](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage
-- [Flux RSS](https://proprely.fr/rss.xml) : suivi des nouveaux articles
+- [Simulateur de rentabilité](https://proprely.fr/simulateur-rentabilite) : marge brute d'un contrat de nettoyage en 1 minute
+- [Ressources gratuites](https://proprely.fr/ressources) : modèles de devis, planning, suivi des heures (Excel téléchargeables)
+- [Blog Proprely](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants du nettoyage
+- [Contact](https://proprely.fr/contact) : email, zones d'opération, éditeur
+- [Flux RSS](https://proprely.fr/rss.xml) : nouveaux articles
 
 ## Fonctionnalités
 
-- [Planning des agents de nettoyage](https://proprely.fr/fonctionnalites/planning-nettoyage) : affectation 1-clic selon spécialités et disponibilité, mobile-first, alertes surmenage
-- [Logiciel de devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis professionnels en 2 minutes, signature électronique, suivi commercial
-- [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités, suivi charge horaire, alertes surmenage
-- [Preuve de passage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code, photos avant-après, signature client, PV automatique
+- [Planning des agents de nettoyage](https://proprely.fr/fonctionnalites/planning-nettoyage) : affectation 1-clic selon spécialités et disponibilité, mobile-first (lien web sans installation), alertes surmenage, remplacements traçables
+- [Logiciel de devis nettoyage](https://proprely.fr/fonctionnalites/devis-nettoyage) : devis professionnels en 2 minutes, signature électronique, suivi commercial, relances automatiques
+- [Gestion des agents de nettoyage](https://proprely.fr/fonctionnalites/gestion-agents-nettoyage) : profils, spécialités (vitrerie, moquette, décapage, remise en état), suivi charge horaire, alertes surmenage, compteur d'heures
+- [Preuve de passage nettoyage](https://proprely.fr/fonctionnalites/preuve-passage-nettoyage) : QR code sur site, photos avant-après, signature client, PV automatique, conformité syndics et appels d'offres
 
-## Villes desservies
+## Villes desservies (11 pages locales)
 
-- [Logiciel nettoyage Paris & Île-de-France](https://proprely.fr/villes/paris) : tertiaire QCA, copropriétés haussmanniennes, syndics nationaux, hôtellerie
-- [Logiciel nettoyage Lyon & Rhône-Alpes](https://proprely.fr/villes/lyon) : Part-Dieu, pôle santé HCL, biotech Gerland, hôtellerie presqu'île
-- [Logiciel nettoyage Marseille & PACA](https://proprely.fr/villes/marseille) : Euroméditerranée, hôtellerie saisonnière, copropriétés bord de mer
+- [Logiciel nettoyage Paris & Île-de-France](https://proprely.fr/villes/paris) : tertiaire QCA, copropriétés haussmanniennes, syndics nationaux, hôtellerie, cabinets médicaux
+- [Logiciel nettoyage Lyon & Rhône-Alpes](https://proprely.fr/villes/lyon) : Part-Dieu, pôle santé HCL, biotech Gerland, hôtellerie presqu'île, copropriétés Brotteaux/Croix-Rousse
+- [Logiciel nettoyage Marseille & PACA](https://proprely.fr/villes/marseille) : Euroméditerranée, hôtellerie saisonnière, copropriétés bord de mer, port commerce
+- [Logiciel nettoyage Bordeaux & Gironde](https://proprely.fr/villes/bordeaux) : tertiaire Chartrons/Bassins à flot, hôtellerie/œnotourisme, cabinets médicaux
+- [Logiciel nettoyage Toulouse & Occitanie](https://proprely.fr/villes/toulouse) : aérospatial (Airbus, sous-traitants), tertiaire Compans-Caffarelli, médical CHU
+- [Logiciel nettoyage Nantes & Loire-Atlantique](https://proprely.fr/villes/nantes) : tertiaire Île de Nantes, médical CHU, copropriétés centre-ville
+- [Logiciel nettoyage Lille & Hauts-de-France](https://proprely.fr/villes/lille) : Euralille, métropole Lille-Roubaix-Tourcoing-Villeneuve d'Ascq, sièges régionaux (Auchan, Decathlon, OVHcloud)
+- [Logiciel nettoyage Nice & Côte d'Azur](https://proprely.fr/villes/nice) : hôtellerie haut de gamme, palaces, copropriétés bord de mer, saisonnalité touristique
+- [Logiciel nettoyage Strasbourg & Alsace](https://proprely.fr/villes/strasbourg) : Parlement européen, tertiaire Wacken, médical NHC, frontière Allemagne
+- [Logiciel nettoyage Montpellier & Hérault](https://proprely.fr/villes/montpellier) : pôle santé/biotech, tertiaire Port Marianne, étudiants/résidences
+- [Logiciel nettoyage Rennes & Bretagne](https://proprely.fr/villes/rennes) : tertiaire EuroRennes, médical CHU Pontchaillou, agroalimentaire, universitaire
 
 ## Articles de blog
 
-- [Fixer ses prix dans le nettoyage](https://proprely.fr/blog/fixer-prix-nettoyage) : la règle des 3×, les 4 facteurs qui justifient une hausse, méthode prix de référence
-- [Gestion société nettoyage : les outils 2026](https://proprely.fr/blog/gestion-societe-nettoyage-outils) : panorama des outils utilisés et leurs limites
-- [Critères de choix d'un logiciel nettoyage](https://proprely.fr/blog/logiciel-societe-nettoyage-criteres) : les 8 critères qui comptent vraiment
-- [Calcul des heures agents nettoyage](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : méthode rigoureuse, coût horaire chargé, heures sup
-- [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : conformité, registre, sous-traitance, photos preuve de passage
-- [Fidéliser les agents nettoyage](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
+### Stratégie & pilotage
+
+- [Fixer ses prix dans le nettoyage en 2026](https://proprely.fr/blog/fixer-prix-nettoyage) : la règle des 3×, les 4 facteurs qui justifient une hausse, méthode prix de référence, marge nette cible 15-20%
+- [Calcul des heures agents nettoyage](https://proprely.fr/blog/calcul-heures-agents-nettoyage) : méthode rigoureuse, coût horaire chargé, heures sup, paie sans erreur
+- [Trouver des clients B2B en nettoyage](https://proprely.fr/blog/trouver-clients-b2b-nettoyage) : canaux d'acquisition qui marchent vraiment, prospection, recommandation, appels d'offres
+- [Tarif nettoyage bureaux au m² en 2026](https://proprely.fr/blog/tarif-nettoyage-bureaux-m2-2026) : grilles indicatives, paramètres qui font varier le prix, méthode de chiffrage
+- [Fidéliser les agents nettoyage face au turnover](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
+- [Digitaliser son entreprise de nettoyage en 5 étapes](https://proprely.fr/blog/digitaliser-entreprise-nettoyage-5-etapes) : roadmap concrète de la dispersion à un cockpit unifié
+
+### Outils & logiciels
+
+- [Gestion société nettoyage : les outils 2026](https://proprely.fr/blog/gestion-societe-nettoyage-outils) : panorama des outils utilisés et leurs limites, mix Excel/WhatsApp/Word/Drive
+- [Critères de choix d'un logiciel nettoyage](https://proprely.fr/blog/logiciel-societe-nettoyage-criteres) : les 8 critères qui comptent vraiment (mobilité, preuve, marge, RGPD)
+- [Comparatif logiciels nettoyage 2026](https://proprely.fr/blog/comparatif-logiciels-nettoyage-2026) : Proprely, PROPRET, Progiclean, Organilog, Excel — qui choisir selon profil
+- [Logiciel devis nettoyage gratuit](https://proprely.fr/blog/logiciel-devis-nettoyage-gratuit) : options gratuites, leurs limites, alternatives B2B sérieuses
+
+### Conformité
+
+- [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : registre, sous-traitance, photos preuve de passage, durées de conservation
+- [Convention collective nettoyage IDCC 3043](https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043) : grille salaires, primes, congés, ce qu'il faut absolument respecter
+
+### Local / GEO
+
+- [Société de nettoyage à Paris](https://proprely.fr/blog/societe-nettoyage-paris) : marché, types de clients, contraintes parisiennes, comment se différencier
+- [Société de nettoyage en Île-de-France](https://proprely.fr/blog/societe-nettoyage-ile-de-france) : géographie du marché, départements porteurs, syndics franciliens
+- [Société de nettoyage à La Défense (92)](https://proprely.fr/blog/societe-nettoyage-la-defense-92) : tours tertiaires, rotations matinales 5h-9h, exigences sécurité
+- [Société de nettoyage à Bordeaux](https://proprely.fr/blog/societe-nettoyage-bordeaux) : marché bordelais, secteurs porteurs, prix marché, particularités locales
+
+## Ressources gratuites téléchargeables
+
+- [Modèle de devis nettoyage](https://proprely.fr/ressources/modele-devis-nettoyage) : template Excel professionnel prêt à l'emploi
+- [Modèle de planning agents nettoyage](https://proprely.fr/ressources/modele-planning-agents-nettoyage) : Excel hebdomadaire multi-agents
+- [Modèle de suivi des heures agents](https://proprely.fr/ressources/modele-suivi-heures-agents) : Excel avec calcul coût horaire chargé
+- [Calculateur ROI dispersion](https://proprely.fr/ressources/calculateur-roi) : combien la gestion dispersée vous coûte
+- [Simulateur de rentabilité contrat](https://proprely.fr/ressources/simulateur-rentabilite) : marge brute d'un contrat en 1 minute
 
 ## Programme membres fondateurs
 
-30 sociétés de nettoyage seront sélectionnées comme membres fondateurs. Avantages exclusifs : accès bêta 100% gratuit (tous modules, sans limite), onboarding accompagné en 30 min par le fondateur, influence directe sur la feuille de route, accès prioritaire au support (réponse sous 4h), conditions préférentielles à vie après la bêta. Candidature via un formulaire court ; retour sous 24h ouvrées.
+30 sociétés de nettoyage sont sélectionnées comme membres fondatrices. Avantages exclusifs :
+- Accès bêta 100% gratuit (tous modules, sans limite d'utilisation)
+- Onboarding accompagné en 30 minutes par le fondateur (sites, agents, fréquences d'intervention configurés ensemble)
+- Influence directe sur la feuille de route produit
+- Accès prioritaire au support (réponse sous 4h ouvrées)
+- Conditions tarifaires préférentielles à vie après le lancement public, fixées à l'avance et non soumises aux augmentations futures
+- Candidature via formulaire court depuis la page d'accueil ; réponse sous 24h ouvrées
 
-## Cible
+Au moment de la rédaction, environ 1/7 des places fondateurs est pris. La bêta se referme une fois les 30 places attribuées, jusqu'au lancement public.
 
-Dirigeants de sociétés de nettoyage B2B en France, gérant 3 à 50 agents et plusieurs sites clients. Profils typiques : entreprises B2B (bureaux, syndics, hôtels, cabinets médicaux, copropriétés), en croissance ou en structuration. Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C), ni pour les grands groupes industriels (>200 agents).
+## Sécurité & conformité
+
+- Hébergement européen (Union européenne)
+- Chiffrement en transit (TLS) et au repos
+- Conformité RGPD : registre des traitements, droits des personnes, mention sous-traitants
+- Export complet des données en 1 clic à tout moment (CSV/Excel)
+- Aucun lock-in technique ou contractuel
+- Conformité IDCC 3043 (convention collective nettoyage) pour le module RH et heures

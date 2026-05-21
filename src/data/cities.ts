@@ -21,6 +21,10 @@ export type CityPage = {
   challenges: CityChallenge[]
   proprelyFit: CityFit[]
   faq: CityFAQ[]
+  /** Slugs d'articles de blog liés (pour maillage interne ville → blog) */
+  relatedBlogSlugs?: string[]
+  /** Slugs de fonctionnalités liées (pour maillage interne ville → feature) */
+  relatedFeatureSlugs?: string[]
 }
 
 export const cities: CityPage[] = [
@@ -541,6 +545,68 @@ export const cities: CityPage[] = [
   },
 ]
 
+// Maillage interne ville → articles / fonctionnalités (séparé pour éviter
+// d'alourdir les 11 objets ville et faciliter la mise à jour quand on ajoute
+// des articles ou fonctionnalités).
+const CITY_RELATIONS: Record<string, { blogs: string[]; features: string[] }> = {
+  paris: {
+    blogs: ['societe-nettoyage-paris', 'societe-nettoyage-ile-de-france', 'societe-nettoyage-la-defense-92'],
+    features: ['planning-nettoyage', 'preuve-passage-nettoyage', 'gestion-agents-nettoyage', 'devis-nettoyage'],
+  },
+  lyon: {
+    blogs: ['fixer-prix-nettoyage', 'fideliser-agents-nettoyage-turnover', 'rgpd-societe-nettoyage-2026'],
+    features: ['planning-nettoyage', 'gestion-agents-nettoyage', 'preuve-passage-nettoyage', 'devis-nettoyage'],
+  },
+  marseille: {
+    blogs: ['tarif-nettoyage-bureaux-m2-2026', 'gestion-societe-nettoyage-outils', 'fixer-prix-nettoyage'],
+    features: ['planning-nettoyage', 'devis-nettoyage', 'preuve-passage-nettoyage'],
+  },
+  bordeaux: {
+    blogs: ['societe-nettoyage-bordeaux', 'fixer-prix-nettoyage', 'calcul-heures-agents-nettoyage'],
+    features: ['planning-nettoyage', 'gestion-agents-nettoyage', 'devis-nettoyage'],
+  },
+  toulouse: {
+    blogs: ['digitaliser-entreprise-nettoyage-5-etapes', 'convention-collective-nettoyage-idcc-3043', 'logiciel-societe-nettoyage-criteres'],
+    features: ['planning-nettoyage', 'preuve-passage-nettoyage', 'gestion-agents-nettoyage'],
+  },
+  nantes: {
+    blogs: ['trouver-clients-b2b-nettoyage', 'logiciel-societe-nettoyage-criteres', 'tarif-nettoyage-bureaux-m2-2026'],
+    features: ['planning-nettoyage', 'devis-nettoyage', 'gestion-agents-nettoyage'],
+  },
+  lille: {
+    blogs: ['gestion-societe-nettoyage-outils', 'digitaliser-entreprise-nettoyage-5-etapes', 'fideliser-agents-nettoyage-turnover'],
+    features: ['planning-nettoyage', 'preuve-passage-nettoyage', 'gestion-agents-nettoyage'],
+  },
+  nice: {
+    blogs: ['tarif-nettoyage-bureaux-m2-2026', 'fideliser-agents-nettoyage-turnover', 'fixer-prix-nettoyage'],
+    features: ['planning-nettoyage', 'gestion-agents-nettoyage', 'preuve-passage-nettoyage'],
+  },
+  strasbourg: {
+    blogs: ['rgpd-societe-nettoyage-2026', 'convention-collective-nettoyage-idcc-3043', 'logiciel-societe-nettoyage-criteres'],
+    features: ['preuve-passage-nettoyage', 'gestion-agents-nettoyage', 'planning-nettoyage'],
+  },
+  montpellier: {
+    blogs: ['fideliser-agents-nettoyage-turnover', 'calcul-heures-agents-nettoyage', 'logiciel-societe-nettoyage-criteres'],
+    features: ['planning-nettoyage', 'gestion-agents-nettoyage', 'devis-nettoyage'],
+  },
+  rennes: {
+    blogs: ['trouver-clients-b2b-nettoyage', 'logiciel-societe-nettoyage-criteres', 'digitaliser-entreprise-nettoyage-5-etapes'],
+    features: ['planning-nettoyage', 'devis-nettoyage', 'preuve-passage-nettoyage'],
+  },
+}
+
 export function getCity(slug: string): CityPage | undefined {
-  return cities.find((c) => c.slug === slug)
+  const city = cities.find((c) => c.slug === slug)
+  if (!city) return undefined
+  const rel = CITY_RELATIONS[slug]
+  if (!rel) return city
+  return {
+    ...city,
+    relatedBlogSlugs: city.relatedBlogSlugs ?? rel.blogs,
+    relatedFeatureSlugs: city.relatedFeatureSlugs ?? rel.features,
+  }
+}
+
+export function getCityRelations(slug: string): { blogs: string[]; features: string[] } | undefined {
+  return CITY_RELATIONS[slug]
 }

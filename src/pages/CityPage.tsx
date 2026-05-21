@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin, Sparkles, CheckCircle, HelpCircle, AlertCircle } from 'lucide-react'
+import { ArrowRight, MapPin, Sparkles, CheckCircle, HelpCircle, AlertCircle, BookOpen, Layers } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import NotFound from './NotFound'
 import { getCity } from '../data/cities'
 import type { CityPage as CityPageType } from '../data/cities'
+import { getPost } from '../data/blog'
+import { getFeature } from '../data/features'
 import Link from '../components/Link'
 
 function injectCitySchema(city: CityPageType) {
@@ -25,6 +27,7 @@ function injectCitySchema(city: CityPageType) {
       datePublished: '2026-01-01',
       dateModified: today,
       isPartOf: { '@type': 'WebSite', '@id': 'https://proprely.fr/#website' },
+      keywords: city.keywords.join(', '),
       about: {
         '@type': 'Service',
         name: `Logiciel de gestion pour sociétés de nettoyage à ${city.city}`,
@@ -34,6 +37,25 @@ function injectCitySchema(city: CityPageType) {
           name: city.city,
           containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
         },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: `Proprely — logiciel société de nettoyage à ${city.city}`,
+      description: city.metaDescription,
+      url,
+      image: 'https://proprely.fr/og-image.png',
+      provider: { '@id': 'https://proprely.fr/#organization' },
+      serviceType: 'Logiciel de gestion société de nettoyage',
+      areaServed: {
+        '@type': 'City',
+        name: city.city,
+        containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
+      },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: `Dirigeants de sociétés de nettoyage B2B à ${city.city} et en ${city.region}`,
       },
     },
     {
@@ -66,6 +88,14 @@ type Props = { slug: string }
 
 export default function CityPage({ slug }: Props) {
   const city = getCity(slug)
+  const relatedPosts = (city?.relatedBlogSlugs ?? [])
+    .map((s) => getPost(s))
+    .filter((p): p is NonNullable<ReturnType<typeof getPost>> => Boolean(p))
+    .slice(0, 3)
+  const relatedFeatures = (city?.relatedFeatureSlugs ?? [])
+    .map((s) => getFeature(s))
+    .filter((f): f is NonNullable<ReturnType<typeof getFeature>> => Boolean(f))
+    .slice(0, 4)
 
   useEffect(() => {
     if (!city) return
@@ -285,6 +315,62 @@ export default function CityPage({ slug }: Props) {
             </div>
           </div>
         </section>
+
+        {(relatedFeatures.length > 0 || relatedPosts.length > 0) && (
+          <section className="py-14 sm:py-20 bg-slate-50 border-t border-slate-100">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+              {relatedFeatures.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Layers size={16} className="text-blue-600" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Fonctionnalités utiles à {city.city}</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-6 tracking-tight">
+                    Les modules Proprely les plus utiles pour les sociétés de nettoyage {city.city === 'Paris' ? 'parisiennes' : `de ${city.city}`}
+                  </h2>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {relatedFeatures.map((f) => (
+                      <Link
+                        key={f.slug}
+                        to={`/fonctionnalites/${f.slug}`}
+                        className="group block bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5"
+                      >
+                        <div className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1.5">{f.tag}</div>
+                        <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors leading-snug">{f.title}</h3>
+                        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{f.subtitle}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {relatedPosts.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <BookOpen size={16} className="text-blue-600" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Lectures liées</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-6 tracking-tight">
+                    À lire pour gérer votre société de nettoyage à {city.city}
+                  </h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {relatedPosts.map((p) => (
+                      <Link
+                        key={p.slug}
+                        to={`/blog/${p.slug}`}
+                        className="group block bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5"
+                      >
+                        <div className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-1.5">{p.tag} · {p.readTime}</div>
+                        <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors leading-snug">{p.title}</h3>
+                        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{p.excerpt}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         <section className="py-14 sm:py-20 border-t border-slate-100 bg-slate-950 text-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">

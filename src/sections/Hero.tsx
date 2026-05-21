@@ -82,6 +82,8 @@ function ProductMockup() {
       <div className="absolute -inset-6 bg-gradient-to-br from-blue-400/20 via-sky-300/15 to-blue-500/20 blur-3xl rounded-[2.5rem] pointer-events-none" />
 
       <motion.div
+        role="img"
+        aria-label="Aperçu du cockpit Proprely : planning du jour d'une société de nettoyage, missions par agent, indicateurs CA, heures, marge"
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         className="relative bg-white rounded-2xl shadow-[0_20px_70px_-15px_rgba(15,42,94,0.25)] border border-slate-200/80 overflow-hidden will-change-transform">
         <div className="bg-slate-50 border-b border-slate-100 px-4 py-2.5 flex items-center gap-3">

@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle, Zap } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -294,6 +294,21 @@ export default function BlogPost({ slug }: Props) {
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
               {post.excerpt}
             </p>
+
+            {post.tldr && (
+              <motion.aside
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: 0.1 }}
+                className="bg-white border-l-4 border-blue-500 rounded-r-2xl p-5 sm:p-6 mb-6 shadow-[0_2px_12px_rgba(0,0,0,0.04)]"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap size={14} className="text-blue-600" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Réponse-flash</span>
+                </div>
+                <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-medium">{post.tldr}</p>
+              </motion.aside>
+            )}
 
             <QuickSummary items={post.quickSummary} />
 

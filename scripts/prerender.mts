@@ -1,9 +1,9 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
-import { posts } from '../src/data/blog.ts'
-import { features } from '../src/data/features.ts'
-import { cities } from '../src/data/cities.ts'
+import { posts, getPost } from '../src/data/blog.ts'
+import { features, getFeature } from '../src/data/features.ts'
+import { cities, getCity } from '../src/data/cities.ts'
 import { resources } from '../src/data/resources.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -158,11 +158,11 @@ function writePage(routePath: string, html: string) {
   writeFileSync(targetFile, html)
 }
 
-function blogPostingSchema(p: typeof posts[number]) {
+function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
   const url = `${ORIGIN}/blog/${p.slug}`
   const datePublished = parseFrenchDate(p.date) || p.date
   const dateModified = p.dateModified ? (parseFrenchDate(p.dateModified) || p.dateModified) : datePublished
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: p.title,
@@ -181,6 +181,10 @@ function blogPostingSchema(p: typeof posts[number]) {
     inLanguage: 'fr-FR',
     articleSection: p.tag,
   }
+  if (p.tldr) {
+    schema.abstract = p.tldr
+  }
+  return schema
 }
 
 function howToSchema(h: NonNullable<typeof posts[number]['howTo']>) {
@@ -236,16 +240,22 @@ function webpageSchema(title: string, description: string, url: string, crumbs: 
 
 const generated: string[] = []
 
-for (const p of posts) {
+for (const rawPost of posts) {
+  // getPost() injecte le TL;DR depuis POST_TLDR si présent.
+  const p = getPost(rawPost.slug) ?? rawPost
   const url = `/blog/${p.slug}`
   const summaryHtml = p.quickSummary.map((s) => `<li>${escapeHtml(s)}</li>`).join('')
   const faqHtml = (p.faq || [])
     .map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`)
     .join('')
+  const tldrHtml = p.tldr
+    ? `<aside><p><strong>Réponse-flash :</strong> ${escapeHtml(p.tldr)}</p></aside>`
+    : ''
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
     <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}</p>
+    ${tldrHtml}
     <h2>L'essentiel</h2>
     <ul>${summaryHtml}</ul>
     ${md2html(p.content)}
@@ -326,7 +336,9 @@ for (const f of features) {
   generated.push(url)
 }
 
-for (const c of cities) {
+for (const rawCity of cities) {
+  // getCity() injecte relatedBlogSlugs et relatedFeatureSlugs depuis CITY_RELATIONS.
+  const c = getCity(rawCity.slug) ?? rawCity
   const url = `/villes/${c.slug}`
   const marketBulletsHtml = c.marketBullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')
   const clientTypesHtml = c.clientTypes
@@ -342,6 +354,38 @@ for (const c of cities) {
     .map((q) => `<h3>${escapeHtml(q.q)}</h3><p>${escapeHtml(q.a)}</p>`)
     .join('')
 
+  const relatedFeatures = (c.relatedFeatureSlugs ?? [])
+    .map((s) => getFeature(s))
+    .filter((f): f is NonNullable<ReturnType<typeof getFeature>> => Boolean(f))
+  const relatedPosts = (c.relatedBlogSlugs ?? [])
+    .map((s) => getPost(s))
+    .filter((p): p is NonNullable<ReturnType<typeof getPost>> => Boolean(p))
+
+  const relatedFeaturesHtml = relatedFeatures.length
+    ? `
+    <h2>Fonctionnalités Proprely utiles à ${escapeHtml(c.city)}</h2>
+    <ul>
+      ${relatedFeatures
+        .map(
+          (f) =>
+            `<li><a href="${ORIGIN}/fonctionnalites/${f.slug}"><strong>${escapeHtml(f.title)}</strong></a> — ${escapeHtml(f.subtitle)}</li>`,
+        )
+        .join('')}
+    </ul>`
+    : ''
+  const relatedPostsHtml = relatedPosts.length
+    ? `
+    <h2>À lire pour gérer votre société de nettoyage à ${escapeHtml(c.city)}</h2>
+    <ul>
+      ${relatedPosts
+        .map(
+          (p) =>
+            `<li><a href="${ORIGIN}/blog/${p.slug}"><strong>${escapeHtml(p.title)}</strong></a> — ${escapeHtml(p.excerpt)}</li>`,
+        )
+        .join('')}
+    </ul>`
+    : ''
+
   const bodyHtml = `
     <h1>${escapeHtml(c.title)}</h1>
     <p>${escapeHtml(c.subtitle)}</p>
@@ -354,6 +398,8 @@ for (const c of cities) {
     ${challengesHtml}
     <h2>Comment Proprely répond aux contraintes de ${escapeHtml(c.city)}</h2>
     ${fitHtml}
+    ${relatedFeaturesHtml}
+    ${relatedPostsHtml}
     <h2>Questions fréquentes sur ${escapeHtml(c.city)}</h2>
     ${faqHtml}
   `.trim()
@@ -370,6 +416,7 @@ for (const c of cities) {
       datePublished: '2026-01-01',
       dateModified: TODAY,
       isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      keywords: c.keywords.join(', '),
       about: {
         '@type': 'Service',
         name: `Logiciel de gestion pour sociétés de nettoyage à ${c.city}`,
@@ -379,6 +426,25 @@ for (const c of cities) {
           name: c.city,
           containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
         },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: `Proprely — logiciel société de nettoyage à ${c.city}`,
+      description: c.metaDescription,
+      url: cityUrl,
+      image: `${ORIGIN}/og-image.png`,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      serviceType: 'Logiciel de gestion société de nettoyage',
+      areaServed: {
+        '@type': 'City',
+        name: c.city,
+        containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
+      },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: `Dirigeants de sociétés de nettoyage B2B à ${c.city} et en ${c.region}`,
       },
     },
     {
