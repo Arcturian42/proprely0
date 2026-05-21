@@ -252,6 +252,22 @@ for (const rawPost of posts) {
   const tldrHtml = p.tldr
     ? `<aside><p><strong>Réponse-flash :</strong> ${escapeHtml(p.tldr)}</p></aside>`
     : ''
+  const relatedSlugs = p.relatedSlugs?.length
+    ? p.relatedSlugs
+    : posts.filter((q) => q.slug !== p.slug && q.tag === p.tag).slice(0, 3).map((q) => q.slug)
+  const relatedPosts = relatedSlugs
+    .map((s) => posts.find((q) => q.slug === s))
+    .filter((q): q is NonNullable<typeof q> => Boolean(q))
+    .slice(0, 4)
+  const relatedHtml = relatedPosts.length
+    ? `<aside><h2>À lire aussi</h2><ul>${relatedPosts
+        .map(
+          (q) =>
+            `<li><a href="${ORIGIN}/blog/${q.slug}"><strong>${escapeHtml(q.title)}</strong></a> — ${escapeHtml(q.excerpt)}</li>`,
+        )
+        .join('')}</ul></aside>`
+    : ''
+
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
@@ -261,6 +277,7 @@ for (const rawPost of posts) {
     <ul>${summaryHtml}</ul>
     ${md2html(p.content)}
     ${faqHtml ? `<h2>Questions fréquentes</h2>${faqHtml}` : ''}
+    ${relatedHtml}
   `.trim()
 
   const breadcrumbs = {
@@ -351,7 +368,7 @@ for (const rawFeature of features) {
 
   const html = buildHtml({
     url,
-    title: `${f.tag} · Proprely`,
+    title: `${f.title} · Proprely`,
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
@@ -514,6 +531,40 @@ const blogIndexBody = `
   </ul>
 `.trim()
 
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${ORIGIN}/blog#blog`,
+  name: 'Blog Proprely · Gestion, terrain et propreté B2B',
+  description:
+    "Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage : productivité, RGPD, outils, prix, fidélisation, marchés locaux.",
+  url: `${ORIGIN}/blog`,
+  inLanguage: 'fr-FR',
+  isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+  publisher: { '@id': `${ORIGIN}/#organization` },
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    '@id': `${ORIGIN}/blog/${p.slug}#article`,
+    headline: p.title,
+    description: p.excerpt,
+    datePublished: p.date,
+    dateModified: getPost(p.slug)?.dateModified ?? p.date,
+    url: `${ORIGIN}/blog/${p.slug}`,
+    author: { '@type': 'Organization', name: 'Proprely' },
+  })),
+}
+
+const blogItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: posts.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: `${ORIGIN}/blog/${p.slug}`,
+    name: p.title,
+  })),
+}
+
 const blogIndexHtml = buildHtml({
   url: '/blog',
   title: 'Blog · Gestion, terrain et propreté B2B · Proprely',
@@ -529,6 +580,8 @@ const blogIndexHtml = buildHtml({
         { name: 'Blog', item: `${ORIGIN}/blog` },
       ]
     ),
+    blogSchema,
+    blogItemList,
   ],
   bodyHtml: blogIndexBody,
 })
@@ -598,7 +651,7 @@ const pricingFaqs = [
 const pricingHtml = buildHtml({
   url: '/tarifs',
   title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
-  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie après le lancement. Sans CB, sans engagement, sans lock-in.',
+  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.',
   schemas: [
     webpageSchema(
       'Tarifs Proprely',
@@ -840,7 +893,7 @@ const featureIndexBody = `
 const featureIndexHtml = buildHtml({
   url: '/fonctionnalites',
   title: 'Fonctionnalités logiciel nettoyage · Proprely',
-  description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+  description: "Toutes les fonctionnalités Proprely : planning agents, devis, gestion agents, preuve de passage. Logiciel propreté B2B. Bêta gratuite.",
   schemas: [
     webpageSchema(
       'Fonctionnalités Proprely',
@@ -954,7 +1007,7 @@ const betaFaqs = [
 const betaHtml = buildHtml({
   url: '/beta',
   title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
-  description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie, onboarding 30 min avec le fondateur.",
+  description: "Rejoignez les 30 sociétés de nettoyage fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur à vie, onboarding 30 min.",
   schemas: [
     webpageSchema(
       'Bêta privée Proprely',
@@ -994,7 +1047,7 @@ const resourcesIndexBody = `
 const resourcesHtml = buildHtml({
   url: '/ressources',
   title: 'Ressources gratuites pour société de nettoyage · Proprely',
-  description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : téléchargez gratuitement nos templates Excel et notre calculateur ROI. Conçu pour les dirigeants B2B.",
+  description: "Modèles de devis, planning et suivi des heures pour société de nettoyage : templates Excel gratuits, calculateur ROI. Dirigeants B2B.",
   schemas: [
     webpageSchema(
       'Ressources Proprely',
@@ -1205,7 +1258,7 @@ const softwareLandingFaqs = [
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
   title: 'Logiciel pour société de nettoyage : le guide complet 2026 · Proprely',
-  description: "Logiciel de gestion pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Comparatif Excel/PROPRET/Progiclean. Bêta gratuite.",
+  description: "Logiciel pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1279,7 +1332,7 @@ const comparatifFaqs = [
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
   title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
-  description: "Comparatif honnête des principaux logiciels société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir.",
+  description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
   schemas: [
     webpageSchema(
       'Comparatif logiciel nettoyage 2026',
@@ -1514,7 +1567,7 @@ const aboutBody = `
 const aboutHtml = buildHtml({
   url: '/a-propos',
   title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
-  description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+  description: "Proprely est édité par Pershing Global Solutions LTD. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1638,7 +1691,7 @@ const priceBody = `
 const priceHtml = buildHtml({
   url: '/calculateur-prix-nettoyage-m2',
   title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
-  description: "Calculez le prix de vente d'une prestation de nettoyage de bureaux : tarif au m² selon surface, fréquence, zone géographique, type de local. Estimation honnête, sans inscription.",
+  description: "Calculez le prix de nettoyage de bureaux au m² : surface, fréquence, zone géographique, type de local. Estimation honnête sans inscription.",
   schemas: [
     {
       '@context': 'https://schema.org',

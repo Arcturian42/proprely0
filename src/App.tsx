@@ -36,7 +36,7 @@ type RouteMeta = { title: string; description: string; robots?: string }
 const META: Record<string, RouteMeta> = {
   '/': {
     title: 'Logiciel société de nettoyage : le cockpit métier · Proprely',
-    description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage dans un seul outil. Bêta privée gratuite.",
+    description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage. Bêta privée gratuite.",
   },
   '/calculateur-roi': {
     title: 'Calculateur ROI société de nettoyage · Proprely',
@@ -73,7 +73,7 @@ const META: Record<string, RouteMeta> = {
   },
   '/fonctionnalites': {
     title: 'Fonctionnalités logiciel nettoyage · Proprely',
-    description: "Toutes les fonctionnalités Proprely pour piloter une société de nettoyage : planning agents, devis, gestion agents, preuve de passage. Conçu pour la propreté B2B.",
+    description: "Toutes les fonctionnalités Proprely : planning agents, devis, gestion agents, preuve de passage. Logiciel propreté B2B. Bêta gratuite.",
   },
   '/villes': {
     title: 'Logiciel nettoyage par ville · Proprely',
@@ -97,15 +97,15 @@ const META: Record<string, RouteMeta> = {
   },
   '/logiciel-societe-nettoyage': {
     title: 'Logiciel pour société de nettoyage : le guide complet 2026 · Proprely',
-    description: "Logiciel de gestion pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Comparatif Excel/PROPRET/Progiclean. Bêta gratuite.",
+    description: "Logiciel pensé pour les sociétés de nettoyage B2B : planning, devis, agents, preuve de passage, marge par client. Bêta gratuite.",
   },
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
-    description: "Comparatif honnête des principaux logiciels société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir.",
+    description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
   },
   '/logiciel-auto-entrepreneur-nettoyage': {
     title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
-    description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Conçu pour les indépendants qui démarrent ou solo établis.",
+    description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Pour solo et indépendants.",
   },
   '/crm-entreprise-proprete': {
     title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
@@ -113,7 +113,7 @@ const META: Record<string, RouteMeta> = {
   },
   '/a-propos': {
     title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
-    description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+    description: "Proprely est édité par Pershing Global Solutions LTD. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion.",
   },
   '/outils': {
     title: 'Outils gratuits pour société de nettoyage · Proprely',
@@ -121,7 +121,7 @@ const META: Record<string, RouteMeta> = {
   },
   '/calculateur-prix-nettoyage-m2': {
     title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
-    description: "Calculez le prix de vente d'une prestation de nettoyage de bureaux : tarif au m² selon surface, fréquence, zone géographique, type de local. Estimation honnête, sans inscription.",
+    description: "Calculez le prix de nettoyage de bureaux au m² : surface, fréquence, zone géographique, type de local. Estimation honnête sans inscription.",
   },
 }
 

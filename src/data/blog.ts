@@ -25,7 +25,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'fixer-prix-nettoyage',
     title: 'Fixer ses prix dans le nettoyage : la méthode juste en 2026',
-    excerpt: "8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et comment construire une grille interne qui protège vos marges.",
+    excerpt: "8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et la grille qui protège vos marges.",
     date: '15 mai 2026',
     readTime: '7 min',
     tag: 'Stratégie',
@@ -167,47 +167,79 @@ C'est exactement ce que fait Proprely. [Rejoignez la bêta privée](/) si vous v
       "Un outil métier centralise les 5 sans configuration de mois ni formation lourde.",
     ],
     faq: [
-      { q: "Combien d'outils utilisent les sociétés de nettoyage en moyenne ?", a: "Entre 4 et 7 outils non connectés : Excel, WhatsApp, Google Agenda, Word, logiciel comptable, emails, classeurs papier. Aucun ne se parle." },
-      { q: "Excel fonctionne-t-il pour gérer une société de nettoyage ?", a: "Jusqu'à 2-3 agents, oui. Au-delà, c'est ingérable : multiples versions, erreurs de saisie, pas de mobile-first, pas de preuve de passage." },
-      { q: "Quel est le vrai coût caché de WhatsApp pour les remplacements ?", a: "Zéro traçabilité. Quand un client conteste un remplacement, vous n'avez aucune preuve. Et quand un agent dit avoir prévenu, vous ne pouvez pas vérifier." },
-      { q: "Combien d'heures par semaine la dispersion fait perdre ?", a: "6 à 10 heures par semaine en moyenne. Soit l'équivalent d'un mi-temps d'admin sur l'année." },
+      { q: "Combien d'outils utilisent les sociétés de nettoyage en moyenne ?", a: "Entre 4 et 7 outils non connectés : Excel, WhatsApp, Google Agenda, Word, logiciel comptable, emails, classeurs papier. Aucun ne se parle, chacun fait une partie du travail." },
+      { q: "Excel fonctionne-t-il pour gérer une société de nettoyage ?", a: "Jusqu'à 2-3 agents et 3-5 clients, oui. Au-delà, c'est ingérable : multiples versions, erreurs de saisie, pas de mobile-first pour les agents, pas de preuve de passage. La bascule est nécessaire vers un cockpit dès que vous franchissez 5-8 agents." },
+      { q: "Quel est le vrai coût caché de WhatsApp pour les remplacements ?", a: "Zéro traçabilité. Quand un client conteste un remplacement, vous n'avez aucune preuve. Quand un agent dit avoir prévenu, vous ne pouvez pas vérifier. Et quand vous devez retrouver une décision prise il y a 3 mois, c'est introuvable dans le flux de messages." },
+      { q: "Combien d'heures par semaine la dispersion fait perdre ?", a: "6 à 10 heures par semaine en moyenne pour un dirigeant qui gère 8 à 15 agents. Soit l'équivalent d'un mi-temps d'administration sur l'année, ou 300-500 heures perdues. C'est la marge brute d'un contrat de 30 000 € à l'année." },
+      { q: "Combien de temps prend la bascule d'Excel vers un cockpit unifié ?", a: "30 minutes à 2 heures pour la configuration initiale (sites, agents, fréquences) si vous êtes accompagné. 1 à 2 semaines pour que les agents prennent le réflexe mobile. La paie redevient calculable en 10 minutes au lieu d'une demi-journée dès la 2e clôture mensuelle." },
+      { q: "Quels sont les risques juridiques de gérer une société de nettoyage sur WhatsApp et Excel ?", a: "Quatre risques majeurs : RGPD (données personnelles d'agents et clients stockées sur des outils non chiffrés), URSSAF (impossibilité de prouver les heures réellement travaillées en cas de contrôle), prud'hommes (litiges agents sur heures supplémentaires et primes), contrats clients (impossibilité de fournir une preuve de passage standardisée demandée par les facility managers et syndics)." },
+      { q: "Faut-il choisir un ERP industriel ou un cockpit métier pour une société de nettoyage de 10-30 agents ?", a: "Cockpit métier. Les ERP industriels (Sage X3, Cegid, Divalto) sont surdimensionnés pour une TPE/PME nettoyage : 6-18 mois d'implémentation, 30 000-100 000 € de licence et intégration, modules inutiles. Un cockpit métier (Proprely, Organilog, PROPRET) couvre 100 % des besoins propreté avec un onboarding de 30 minutes et un coût mensuel de 30-150 € par utilisateur." },
     ],
-    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'calcul-heures-agents-nettoyage'],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'calcul-heures-agents-nettoyage', 'fixer-prix-nettoyage', 'digitaliser-entreprise-nettoyage-5-etapes'],
     content: `## La dispersion, ce mal silencieux
 
 La plupart des dirigeants de sociétés de nettoyage que nous avons rencontrés utilisent en moyenne **4 à 7 outils différents** pour gérer leur entreprise. Aucun ne se parle. Chacun fait une partie du travail. Personne ne fait l'ensemble.
 
-Voici les cinq outils les plus fréquents, et pourquoi ils créent plus de problèmes qu'ils n'en résolvent.
+Ce mode de fonctionnement n'est pas un choix conscient. Il est arrivé par sédimentation : Excel pour démarrer, WhatsApp parce que les agents ont déjà l'app, Google Agenda parce que c'est gratuit, Word parce que vous savez vous en servir, le classeur papier parce qu'on n'a jamais pris le temps de scanner. Chaque outil pris isolément est rationnel. Le résultat agrégé ne l'est pas.
+
+Voici les cinq outils les plus fréquents, ce qu'ils font (ou ne font pas), et pourquoi ils créent plus de problèmes qu'ils n'en résolvent dès que vous dépassez 5 agents et 5 clients.
 
 ## 1. Excel pour les heures
 
-C'est l'outil par défaut. Une feuille par mois, parfois une feuille par agent. Le 22 du mois, vous récupérez l'agenda, vous comptez les interventions, vous saisissez les heures à la main.
+C'est l'outil par défaut. Une feuille par mois, parfois une feuille par agent. Le 22 du mois, vous récupérez l'agenda, vous comptez les interventions, vous saisissez les heures à la main, vous croisez avec les notes de WhatsApp pour les remplacements et avec les SMS pour les retards. La paie tombe le 28 et il faut être prêt.
 
-**Le vrai coût** : 3 à 4 heures par mois en saisie manuelle. Des erreurs régulières. Pas de traçabilité quand un client conteste.
+Sur le papier, Excel est un outil fantastique. En pratique, dès que vous gérez plus de 5 agents :
+- Vous perdez le compte des versions (planning_mai_v3_final_OK.xlsx)
+- Vous dupliquez les erreurs : une heure mal saisie en début de feuille casse tout le calcul
+- Vous ne pouvez pas le partager mobile : un agent qui veut vérifier ses heures doit vous appeler
+- Il n'y a aucune piste d'audit : qui a modifié quoi, quand, pourquoi
 
-## 2. WhatsApp pour les remplacements
+**Le vrai coût** : 3 à 4 heures par mois en saisie manuelle, 1 à 2 erreurs corrigées en réclamation a posteriori, 0 traçabilité face à un contrôle URSSAF.
 
-Quand un agent est malade, vous écrivez sur le groupe. Quelqu'un répond. Ou pas. Vous appelez en parallèle. Le message se perd, le remplaçant ne se présente pas, le client appelle furieux.
+## 2. WhatsApp pour les remplacements et changements de dernière minute
 
-**Le vrai coût** : aucune traçabilité, aucun historique. Quand vous voulez retrouver qui a remplacé qui le 14 mars, c'est impossible.
+L'agent du matin est malade à 5h30. Vous écrivez sur le groupe "Dispo ce matin 6h site Dupont ?". Trois agents répondent simultanément. Vous en choisissez un. Pendant ce temps, un autre s'est déjà mis en route croyant être désigné. Le client appelle furieux que personne n'est venu, ou que deux personnes sont arrivées sans avoir prévenu.
+
+Le scénario se répète tous les mois. Et quand un client conteste, vous remontez les messages des trois dernières semaines pour retrouver la conversation, sans pouvoir filtrer par site ni par agent.
+
+**Le vrai coût** : aucune traçabilité, aucun historique structuré, aucune preuve en cas de litige. Le coût juridique potentiel d'une seule procédure prud'homale sur les heures supplémentaires non payées peut dépasser 10 000 €.
 
 ## 3. Google Agenda pour le planning
 
-C'est mieux que rien. Mais quand vous avez 12 agents sur 8 sites, l'agenda devient un sapin de Noël illisible. Pas de filtres, pas de vue par agent, pas de gestion des spécialités.
+Mieux que rien. Mais quand vous avez 12 agents sur 8 sites, l'agenda devient un sapin de Noël illisible. Pas de filtres par spécialité (qui sait faire le décapage ?), pas de vue par agent (combien d'heures cet agent va faire ce mois ?), pas de gestion des compétences ni des certifications.
 
-**Le vrai coût** : impossible de répondre à "qui peut prendre cette intervention demain à 7h ?" sans appeler trois personnes.
+Le pire : un agent ne voit pas son planning sauf si vous l'avez partagé manuellement, individuellement, avec les bons droits. La plupart des dirigeants finissent par envoyer une capture d'écran par WhatsApp chaque dimanche soir. Qui devient obsolète lundi matin.
+
+**Le vrai coût** : impossible de répondre à "qui peut prendre cette intervention demain à 7h ?" sans appeler trois personnes. Coût opportunité : 30 % des demandes urgentes non honorées par manque de visibilité.
 
 ## 4. Word pour les devis
 
-Vous ouvrez un ancien devis, vous modifiez les références, vous changez les prix. 20 minutes. Pendant ce temps, le concurrent a répondu par email en 10 minutes.
+Vous ouvrez un ancien devis, vous modifiez les références, vous changez les prix, vous oubliez de mettre à jour la date ou le numéro. 20 minutes. Pendant ce temps, le concurrent a répondu par email en 10 minutes avec un PDF propre et une signature électronique intégrée.
 
-**Le vrai coût** : conversion commerciale plus faible. Pas de suivi des relances. Pas de pipeline.
+Au-delà du devis lui-même, c'est tout le pipeline commercial qui se perd : qui a relancé qui ? quel devis en attente ? quel taux de conversion sur les devis envoyés en mai vs juin ?
 
-## 5. Classeur papier pour les documents
+**Le vrai coût** : conversion commerciale 30 à 40 % plus faible vs. un outil de devis spécialisé. Pas de suivi des relances. Pas de pipeline visible. Pas de capacité à connaître votre taux de transformation par segment client.
 
-Contrats, fiches de sécurité, attestations URSSAF, PV d'intervention. Tout dans des classeurs sur l'étagère. Quand un audit RGPD ou URSSAF arrive, vous passez une journée à chercher.
+## 5. Classeur papier (ou Drive non organisé) pour les documents
 
-**Le vrai coût** : risque légal et perte de temps en cascade.
+Contrats clients, fiches de sécurité produits, attestations URSSAF agents, certifications, PV d'intervention, photos avant-après imprimées : tout dans des classeurs sur l'étagère, ou dispersé entre un Drive familial et plusieurs emails. Quand un audit RGPD, URSSAF ou ISO arrive, vous passez une journée à chercher.
+
+Pire : lorsqu'un syndic ou un facility manager demande l'attestation URSSAF de l'agent X, vous devez fouiller. Trois jours plus tard, l'audit est perdu et le contrat se referme par manque de réactivité.
+
+**Le vrai coût** : risque légal cumulatif (RGPD, URSSAF, contrats clients) et perte de temps en cascade. Pour une société de 15 agents, un audit RGPD non préparé peut coûter 2 à 5 jours/homme de mise en conformité d'urgence.
+
+## Tableau récapitulatif : dispersion vs. cockpit unifié
+
+| Tâche | Outils dispersés | Cockpit unifié | Gain |
+|---|---|---|---|
+| Saisie des heures mensuelles | 3-4h Excel manuel | 10 min validation automatique | 90 % |
+| Remplacement agent | 15-30 min WhatsApp + appels | 2 min affectation 1-clic | 85 % |
+| Édition d'un devis | 15-20 min Word | 2-3 min template + signature | 85 % |
+| Recherche document client | 10-30 min Drive/papier | 10 sec recherche centralisée | 95 % |
+| Preuve de passage | Photo WhatsApp non horodatée | QR + photo + signature instantané | qualitatif majeur |
+| Marge par client | Inconnue ou estimée à la louche | Calculée en temps réel | qualitatif majeur |
+| Audit RGPD/URSSAF/ISO | 1 à 3 jours de préparation | Export 1 clic | 95 % |
+| Risque litige sur heures | Élevé (zéro traçabilité) | Faible (historique complet) | qualitatif majeur |
 
 ## Ce que la dispersion vous coûte vraiment
 
@@ -215,23 +247,48 @@ Additionnez :
 
 - 3-4h/mois sur les heures
 - 1-2h/semaine sur les remplacements et plannings
-- 20 min par devis × 8-10 devis par mois
+- 20 min par devis × 8-10 devis par mois (≈ 3h/mois)
 - 2-3h/mois sur les documents
+- 2-4h/mois sur la facturation et le suivi des paiements
 
-**Total estimé : 6 à 10 heures par semaine** consacrées à de l'administration que n'importe quel cockpit métier centralise.
+**Total estimé : 6 à 10 heures par semaine** consacrées à de l'administration que n'importe quel cockpit métier centralise. Sur un an, c'est 300 à 500 heures perdues. À 50 €/h de coût opportunité dirigeant, cela représente 15 000 à 25 000 € de marge brute évaporée chaque année.
+
+Ce n'est pas le coût visible du cockpit qui compte. C'est le coût caché de continuer à fonctionner en dispersion.
+
+## Pourquoi le mix Excel/WhatsApp/Word ne tient pas la croissance
+
+Trois seuils déclenchent toujours la migration vers un outil métier :
+
+1. **Le seuil opérationnel** (5-8 agents, 10+ sites) : vous ne pouvez plus tout retenir en tête, vous commencez à oublier des interventions, à mal communiquer les changements
+2. **Le seuil commercial** (15-25 K€ de devis/mois) : vous perdez des affaires faute de pipeline visible, vous facturez avec retard, votre marge se dilue sans que vous sachiez où
+3. **Le seuil réglementaire** (1er contrôle URSSAF ou demande d'audit client B2B) : vous découvrez que vous ne pouvez rien prouver formellement
+
+Les sociétés qui franchissent ces seuils sans changer d'outils stagnent. Celles qui basculent vers un cockpit unifié passent la barre des 50 agents sans avoir à recruter un ETP administratif.
+
+## Comment basculer d'Excel vers un cockpit en 30 minutes
+
+La peur la plus fréquente est : "ça va prendre des mois, je n'ai pas le temps". La réalité d'un cockpit métier moderne (Proprely, Organilog, PROPRET) :
+
+1. **Import clients & sites** (5 min) : copier-coller depuis Excel ou import CSV
+2. **Création des agents** (5 min) : nom, contact, spécialités cochées
+3. **Configuration des fréquences d'intervention** (10 min) : par site, jours et créneaux récurrents
+4. **Génération du planning hebdomadaire** (5 min) : le système propose, vous validez
+5. **Activation des agents sur mobile** (5 min) : un SMS d'invitation par agent, ils accèdent à leur tournée via un lien web
+
+Total : 30 minutes en configuration initiale, 1 heure si vous voulez aussi importer les devis en cours. Sur la 2e clôture mensuelle, la paie devient calculable en 10 minutes au lieu d'une demi-journée. Le retour sur investissement est immédiat.
 
 ## La bonne question à se poser
 
 Ce n'est pas "comment je peux mieux organiser Excel". C'est "pourquoi est-ce que je dois encore organiser Excel en 2026 quand je dirige une entreprise de propreté B2B ?"
 
-Un outil métier conçu pour le nettoyage règle ces cinq problèmes d'un coup, sans configuration de mois, sans formation lourde.
+Un outil métier conçu pour le nettoyage règle ces cinq problèmes d'un coup, sans configuration de mois, sans formation lourde, et vous redonne 6 à 10 heures par semaine pour faire ce qui fait vraiment grandir l'entreprise : prospecter, recruter, négocier les contrats.
 
 C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [rejoignez la bêta privée](/), c'est gratuit pendant toute la phase de bêta.`,
   },
   {
     slug: 'logiciel-societe-nettoyage-criteres',
     title: 'Logiciel pour société de nettoyage : 7 critères pour bien choisir',
-    excerpt: "Conçu pour le métier, mobile-first, preuve de passage, marge par client visible, RGPD réel, export 100%, mise en route en moins d'une journée. La checklist à appliquer avant de signer.",
+    excerpt: "Conçu métier, mobile-first, preuve de passage, marge par client, RGPD, export 100%, mise en route en 1 jour. La checklist avant de signer.",
     date: '8 mai 2026',
     readTime: '8 min',
     tag: 'Outils',
@@ -354,7 +411,7 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
   {
     slug: 'calcul-heures-agents-nettoyage',
     title: "Le calcul des heures : la vraie raison qui vous fait perdre une journée par mois",
-    excerpt: "Le 22 du mois, vous récupérez l'agenda, vous additionnez les heures de chaque agent, vous transmettez à la paie. Combien ça vous coûte vraiment ? Bien plus que ce que vous imaginez.",
+    excerpt: "Le 22 du mois, vous additionnez les heures de chaque agent pour la paie. Combien ça coûte vraiment ? Bien plus que ce que vous imaginez.",
     date: '5 mai 2026',
     readTime: '5 min',
     tag: 'Productivité',
@@ -365,66 +422,112 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
       "Un compteur automatique fait passer le calcul de 4h à 2 clics.",
     ],
     faq: [
-      { q: "Combien de temps prend le calcul des heures dans une société de nettoyage ?", a: "En moyenne 3h30 à 4h30 par mois, soit l'équivalent d'une demi-journée perdue à compter, croiser, vérifier les heures depuis l'agenda et les messages." },
-      { q: "Combien coûte cette tâche annuellement ?", a: "À un coût horaire dirigeant de 45-60€ chargé, c'est 200-300€ par mois, soit 2 400 à 3 600€ par an. Sans compter les erreurs de paie et heures non-facturées par oubli." },
-      { q: "Comment automatiser le calcul des heures des agents ?", a: "Avec un compteur intégré au planning : chaque intervention validée incrémente le compteur de l'agent automatiquement. Pas de saisie, pas de calcul, pas d'oubli." },
-      { q: "Les agents peuvent-ils consulter leurs heures en temps réel ?", a: "Oui, sur leur téléphone via un lien navigateur. Cette transparence règle 80% des contestations de paie avant qu'elles ne deviennent un conflit." },
+      { q: "Combien de temps prend le calcul des heures dans une société de nettoyage ?", a: "En moyenne 3h30 à 4h30 par mois pour 10-15 agents, soit l'équivalent d'une demi-journée perdue à compter, croiser, vérifier les heures depuis l'agenda et les messages WhatsApp." },
+      { q: "Combien coûte cette tâche annuellement ?", a: "À un coût horaire dirigeant de 45-60 € chargé, c'est 200-300 € par mois, soit 2 400 à 3 600 € par an. Sans compter les erreurs de paie et heures non-facturées par oubli. Pour 30 agents, le coût grimpe à 6 000-9 000 €/an." },
+      { q: "Comment automatiser le calcul des heures des agents ?", a: "Avec un compteur intégré au planning : chaque intervention validée par l'agent (pointage QR code ou validation in-app) incrémente le compteur automatiquement. Pas de saisie, pas de calcul, pas d'oubli. À la fin du mois, vous exportez la paie en 1 clic." },
+      { q: "Les agents peuvent-ils consulter leurs heures en temps réel ?", a: "Oui, sur leur téléphone via un lien navigateur (pas d'app à installer). Cette transparence règle 80 % des contestations de paie avant qu'elles ne deviennent un conflit. Le climat social s'améliore mesurablement dès le 2e mois d'utilisation." },
+      { q: "Quel est le coût horaire chargé d'un agent de nettoyage au SMIC en 2026 ?", a: "Entre 18 et 20 € : salaire brut SMIC (~11,90 €/h) + charges patronales (~42 % soit ~5 €/h) + congés/RTT (10 %) + primes panier (~7 €/jour si >6h), prime transport URSSAF (50 % abonnement transport public), prime salissure conventionnelle, mutuelle employeur. C'est cette base × 3 qui détermine votre prix de vente." },
+      { q: "Comment se majorent les heures supplémentaires dans le nettoyage ?", a: "Selon la convention IDCC 3043 et le Code du travail : +25 % pour les 8 premières heures sup au-delà de 35h/semaine, puis +50 % au-delà. Les heures de nuit (21h-6h) se majorent en plus de 20 à 30 % selon les accords d'entreprise. Le dimanche et jours fériés : +50 % à +100 %. Sans suivi automatisé, ces majorations sont rarement bien calculées." },
+      { q: "Quels sont les 5 erreurs les plus fréquentes dans le calcul des heures ?", a: "(1) Oublier les heures supplémentaires non déclarées sur l'agenda, (2) Mélanger heures travaillées et heures rémunérées (pauses incluses ou non), (3) Mal calculer les majorations nuit / dimanche / férié, (4) Oublier les primes panier/transport/salissure obligatoires conventionnellement, (5) Ne pas distinguer heures facturées au client et heures payées à l'agent (qui ne sont pas toujours identiques)." },
+      { q: "Combien d'heures peut-on faire travailler un agent de nettoyage par semaine ?", a: "Maximum 48h/semaine (Code du travail), 44h en moyenne sur 12 semaines glissantes. Repos quotidien minimum : 11h consécutives. Repos hebdomadaire : 35h consécutives (24h + 11h). Sans alertes automatiques, ces seuils sont régulièrement dépassés en saisonnalité, exposant l'employeur à des sanctions URSSAF et prud'homales." },
     ],
-    relatedSlugs: ['fideliser-agents-nettoyage-turnover', 'gestion-societe-nettoyage-outils'],
+    relatedSlugs: ['fideliser-agents-nettoyage-turnover', 'gestion-societe-nettoyage-outils', 'fixer-prix-nettoyage', 'convention-collective-nettoyage-idcc-3043'],
     content: `## Une routine que personne ne calcule
 
 C'est l'un des moments les plus emblématiques de la gestion d'une société de nettoyage. Entre le 20 et le 25 du mois, le dirigeant, ou le responsable d'exploitation, ferme la porte du bureau, ouvre l'agenda et commence à compter.
 
-Combien d'heures Marie a faite cette semaine ? Et la semaine d'avant ? Et le 8, c'était quel site ?
+Combien d'heures Marie a faite cette semaine ? Et la semaine d'avant ? Et le 8, c'était quel site ? Qui a remplacé qui le 14, et combien de temps ? Cette opération mensuelle est tellement intégrée à la routine que personne ne la mesure plus. Et personne ne réalise qu'elle représente, selon la taille de l'équipe, entre 4 heures et 2 jours pleins de travail caché chaque mois.
 
 ## Le vrai temps que ça prend
 
-Sur 10 dirigeants interrogés, la moyenne ressort à **3h30 à 4h30 par mois** consacrées au seul calcul des heures. Soit l'équivalent d'une demi-journée perdue chaque mois.
+Sur 10 dirigeants interrogés en France en 2026, la moyenne ressort à **3h30 à 4h30 par mois** consacrées au seul calcul des heures pour une équipe de 10 à 15 agents. Pour 25-30 agents, on monte à **8-12 heures** par mois. Pour 40-50 agents, on bascule sur une journée complète, parfois plus si le dirigeant veut tout vérifier deux fois.
 
 Pourquoi tant ?
-- Croiser plusieurs sources : agenda, post-it, SMS, messages WhatsApp
-- Vérifier les missions effectuées (vs prévues)
-- Gérer les remplacements
-- Identifier les heures supplémentaires
-- Calculer les paniers et primes selon les conventions
+- Croiser plusieurs sources : agenda, post-it, SMS, messages WhatsApp, mémoire personnelle
+- Vérifier les missions effectuées (vs. prévues) en croisant avec les remontées agents
+- Gérer les remplacements et les changements de dernière minute
+- Identifier les heures supplémentaires (et leurs majorations différenciées)
+- Calculer les paniers, primes de transport, primes de salissure selon la convention
+- Distinguer heures facturées au client et heures payées à l'agent (qui ne sont pas toujours identiques)
 
-Cette tâche ne s'externalise pas : elle requiert une connaissance fine du terrain. Et elle ne se délègue pas, parce qu'il n'y a souvent personne d'autre dans la structure capable de la faire.
+Cette tâche ne s'externalise pas facilement : elle requiert une connaissance fine du terrain et de chaque cas particulier. Et elle ne se délègue pas, parce qu'il n'y a souvent personne d'autre dans la structure capable de la faire.
 
 ## Le coût caché
 
-Si on prend un coût horaire dirigeant de 45 à 60€ (charges incluses), ce calcul mensuel représente **un coût de 200 à 300€ par mois**, soit **2 400 à 3 600€ par an**.
+Si on prend un coût horaire dirigeant de 45 à 60 € (charges incluses), ce calcul mensuel représente **un coût de 200 à 300 € par mois pour 10-15 agents**, soit **2 400 à 3 600 € par an**. Pour 30 agents, c'est 6 000 à 9 000 €/an.
 
 C'est sans compter :
-- Les erreurs de paie qui créent des tensions avec les agents
-- Les heures non-facturées au client par oubli
-- La fatigue cognitive qui pèse sur le reste du pilotage
+- Les erreurs de paie qui créent des tensions avec les agents (et alimentent le turnover de 35 %)
+- Les heures non-facturées au client par oubli (souvent 2 à 5 % du chiffre d'affaires sur le mois)
+- La fatigue cognitive qui pèse sur le reste du pilotage commercial et stratégique
+- Le risque d'erreur URSSAF (cotisations mal calculées, redressements à 1-3 ans)
+- Le risque prud'homal (heures supplémentaires non payées, prescription 3 ans)
+
+## Tableau comparatif : 4 méthodes de calcul des heures
+
+| Méthode | Temps mensuel (15 agents) | Précision | Conformité | Coût annuel caché |
+|---|---|---|---|---|
+| Papier + agenda mural | 6-10h | 80 % (erreurs) | Faible | 4 000-7 000 € |
+| Excel + WhatsApp | 4-6h | 90 % | Moyenne | 2 500-4 500 € |
+| App pointage mobile dédiée | 1-2h | 99 % | Bonne | 800-1 500 € |
+| Cockpit unifié avec compteur auto | 10 min | 100 % | Excellente | 100-200 € |
+
+La différence entre une app pointage et un cockpit unifié est subtile : l'app pointage capture les heures, mais elle ne les croise pas avec le planning prévu, les heures facturées au client, ni les contraintes conventionnelles (panier, transport, salissure). Le cockpit fait tout en un seul flux.
+
+## Les 5 erreurs classiques de calcul des heures
+
+1. **Confondre heures travaillées et heures rémunérées.** La pause méridienne peut être ou non incluse selon les contrats. Vérifiez ce que prévoit le contrat de travail de chaque agent.
+2. **Oublier les majorations nuit.** Les heures effectuées entre 21h et 6h ouvrent droit à une majoration de 20 à 30 % en plus des majorations heures supplémentaires éventuelles.
+3. **Mal cumuler les heures sup' sur le mois.** Les 8 premières heures au-delà de 35h/semaine se majorent à +25 %, les suivantes à +50 %. C'est par semaine, pas par mois.
+4. **Oublier les primes conventionnelles.** Panier (~7 €/jour si plus de 6h), transport (50 % abonnement TC), salissure conventionnelle pour certaines tâches, prime d'expérience (3-15 % selon ancienneté).
+5. **Ne pas distinguer heures facturées au client vs heures payées à l'agent.** Quand un agent met 1h30 sur un site facturé 1h, vous payez 1h30 et facturez 1h. La différence se perd et grignote la marge.
 
 ## Pourquoi un compteur automatique change tout
 
-Un compteur d'heures intégré au planning fonctionne sur un principe simple : **chaque intervention validée incrémente le compteur de l'agent automatiquement.** Pas de saisie, pas de calcul, pas d'oubli.
+Un compteur d'heures intégré au planning fonctionne sur un principe simple : **chaque intervention validée par l'agent incrémente le compteur automatiquement.** Pas de saisie, pas de calcul, pas d'oubli.
 
-À la fin du mois, vous ouvrez le récapitulatif et vous avez :
-- Les heures par agent
-- La répartition par site et par client
-- Les heures sup' identifiées
-- L'export prêt pour la paie
+Concrètement, l'agent scanne un QR code en arrivant sur site (ou valide dans son app web), il scanne ou valide en partant, le système enregistre le créneau exact. À la fin de la semaine, le compteur consolide automatiquement, applique les règles conventionnelles (majorations, primes, plafonds), et propose un état des heures à valider.
 
-Le calcul mensuel passe de 4 heures à 2 clics.
+À la fin du mois, vous ouvrez le récapitulatif et vous avez en 1 clic :
+- Les heures par agent (travaillées, rémunérées, sup)
+- La répartition par site et par client (heures facturables)
+- Les heures sup' identifiées et leurs majorations calculées
+- Les primes panier/transport/salissure pré-calculées
+- Les seuils de repos quotidien/hebdomadaire vérifiés
+- L'export Excel prêt pour la paie (DSN-compatible)
+
+Le calcul mensuel passe de 4 heures à 10 minutes de validation.
+
+## Comment automatiser le pointage agent en 5 étapes
+
+Si vous voulez basculer d'une gestion manuelle vers un compteur automatisé, voici la marche à suivre :
+
+1. **Choisir l'outil** (planning intégré au compteur, pas une app pointage isolée) — 1 semaine de comparatif
+2. **Configurer les sites avec QR code ou géolocalisation** — 1h pour 10 sites
+3. **Inviter les agents par SMS avec un lien web** (pas d'app à installer) — 30 min
+4. **Former en groupe : pointage entrée + sortie + signalement anomalie** — 1h en visio ou présentiel
+5. **Tester sur 1 semaine en double avec la méthode actuelle**, puis basculer définitivement
+
+Le double-run est essentiel : il prouve aux agents (et à vous-même) que les heures comptées par le système sont justes. Une fois cette confiance acquise, plus personne ne veut revenir en arrière.
 
 ## Ce qui change pour vos agents
 
-Au-delà du gain de temps, c'est la transparence qui change tout. Vos agents voient leurs heures en temps réel. Plus de "ah bon je pensais avoir fait plus", plus de contestation à la paie, plus de tension le 30 du mois.
+Au-delà du gain de temps pour le dirigeant, c'est la transparence qui change tout pour les agents. Ils voient leurs heures en temps réel sur leur téléphone. Plus de "ah bon je pensais avoir fait plus", plus de contestation à la paie, plus de tension le 30 du mois.
+
+Cette transparence a un effet mesurable sur le turnover : les sociétés qui basculent passent typiquement de 35 % de turnover annuel à 20-25 %. Sur une équipe de 15 agents, c'est 2 départs évités par an, soit ~6 000 à 10 000 € d'économies en recrutement et formation.
 
 ## Et les heures facturées clients ?
 
-Même logique, en miroir. Chaque intervention est tracée, photographiée, signée. Quand un client conteste, vous avez la preuve. Quand vous facturez, vous facturez juste.
+Même logique, en miroir. Chaque intervention est tracée, photographiée, signée. Quand un client conteste une intervention ou une durée, vous avez la preuve horodatée. Quand vous facturez, vous facturez juste : ni en sous-déclaration (qui grignote votre marge), ni en sur-facturation (qui fait perdre des clients à la longue).
+
+Pour les contrats à l'heure réelle, ce passage à l'automatisation permet souvent de récupérer 2 à 5 % de chiffre d'affaires sur des heures jusqu'ici "perdues" : les remplacements ad hoc, les interventions allongées, les passages exceptionnels non saisis.
 
 C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratuit](/) et la mise en route prend 30 minutes avec le fondateur.`,
   },
   {
     slug: 'rgpd-societe-nettoyage-2026',
     title: 'RGPD et nettoyage : ce que doit savoir un dirigeant en 2026',
-    excerpt: "Vos agents ont accès à des locaux clients. Vos planning contiennent des données nominatives. Vos rapports d'intervention archivent des photos. Sans le savoir, vous traitez des données à caractère personnel.",
+    excerpt: "Vos agents accèdent à des locaux clients, vos plannings stockent des données nominatives, vos rapports archivent des photos. Vous traitez du personnel.",
     date: '28 avril 2026',
     readTime: '7 min',
     tag: 'Conformité',
@@ -435,85 +538,172 @@ C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratu
       "Centraliser dans un outil RGPD-natif rend la conformité conséquence, pas charge supplémentaire.",
     ],
     faq: [
-      { q: "Suis-je vraiment concerné par le RGPD en tant que société de nettoyage ?", a: "Oui, dès le premier agent recruté et le premier client B2B. Vous traitez identité, paie, géolocalisation, photos de sites, toutes ces données sont personnelles." },
-      { q: "Quel hébergement choisir pour rester conforme RGPD ?", a: "Un hébergeur européen avec un DPA (Data Processing Agreement). Le stockage doit être en UE pour éviter les complications des transferts internationaux." },
-      { q: "Combien de temps conserver les données de mes agents et clients ?", a: "Généralement 5 ans après la fin du contrat, sauf obligations légales spécifiques (paie, comptabilité) qui peuvent imposer 10 ans d'archivage." },
-      { q: "Quelles sanctions en cas de manquement RGPD ?", a: "La CNIL peut prononcer des amendes jusqu'à 4% du CA annuel ou 20 millions d'euros. Pour une PME, le vrai risque est plutôt une plainte d'agent ou un refus d'appel d'offres public." },
+      { q: "Suis-je vraiment concerné par le RGPD en tant que société de nettoyage ?", a: "Oui, dès le premier agent recruté et le premier client B2B. Vous traitez identité, paie, géolocalisation potentielle (pointage), photos de sites, badges d'accès. Toutes ces données sont personnelles au sens du RGPD. La taille de l'entreprise n'exonère pas : un solo a déjà ses propres obligations." },
+      { q: "Quel hébergement choisir pour rester conforme RGPD ?", a: "Un hébergeur européen (idéalement français ou UE) avec un DPA (Data Processing Agreement / contrat de sous-traitance RGPD). Le stockage doit être en UE pour éviter les complications des transferts internationaux (Privacy Shield invalidé, Cloud Act américain). Vérifiez aussi la conformité de l'éditeur du logiciel que vous utilisez." },
+      { q: "Combien de temps conserver les données de mes agents et clients ?", a: "Cinq ans est la durée standard recommandée pour la majorité des données après la fin du contrat ou la dernière interaction. Spécifiques : paie et bulletins (50 ans), contrats agents (5 ans après départ), comptabilité (10 ans), photos de preuve de passage (3-5 ans selon le contrat), vidéosurveillance éventuelle (30 jours maximum sauf incident)." },
+      { q: "Quelles sanctions en cas de manquement RGPD ?", a: "La CNIL peut prononcer des amendes jusqu'à 4 % du CA annuel ou 20 millions d'euros (le plus élevé des deux). Pour une PME française, les sanctions effectives 2023-2025 vont de 5 000 € à 200 000 €. Mais le vrai risque c'est : une plainte d'agent sur ses données paie, un signalement client après incident sécurité, un refus d'appel d'offres public où la conformité RGPD est exigée." },
+      { q: "Combien de temps faut-il conserver les photos de preuve de passage ?", a: "3 à 5 ans selon le contrat client. La règle RGPD est : la durée minimale nécessaire à la finalité. Si le contrat prévoit 1 an de garantie service, vous pouvez conserver 1 an + 2 ans de marge de réclamation, soit 3 ans. Pour les contrats syndics demandant un historique, étendez à 5 ans. Au-delà, suppression ou anonymisation obligatoire." },
+      { q: "Qu'est-ce qu'un registre des traitements et comment le remplir ?", a: "Le registre des traitements (article 30 RGPD) est obligatoire pour toute entreprise traitant des données personnelles, sans seuil de taille. Il liste chaque traitement (paie agents, suivi clients, vidéosurveillance) avec : finalité, catégories de données, durée de conservation, destinataires, mesures de sécurité, base légale. La CNIL fournit un modèle Excel gratuit. À tenir à jour annuellement." },
+      { q: "Faut-il informer les agents qu'ils sont géolocalisés via le pointage QR code ?", a: "Oui, obligatoirement et par écrit. La CNIL exige une information claire et préalable : finalité de la géolocalisation (vérification du pointage sur site), durée de conservation, droits d'accès et d'opposition. Cette information se met dans le contrat de travail, le règlement intérieur et la politique de confidentialité interne. À défaut : risque prud'homal et sanction CNIL." },
+      { q: "Un client a demandé l'effacement de ses données : combien de temps pour répondre ?", a: "Un mois maximum à compter de la demande, prolongeable de 2 mois si la demande est complexe (article 12 RGPD). Vous devez confirmer l'effacement par écrit ou justifier un refus motivé (par exemple : obligation légale de conservation comptable). Une demande non traitée dans les délais peut être signalée à la CNIL et déclencher un contrôle." },
+      { q: "Que faire en cas de violation de données (vol d'ordinateur, fuite de fichier) ?", a: "Notification à la CNIL sous 72 heures via leur portail en ligne, dès que vous prenez connaissance de la violation. Si la violation présente un risque élevé pour les personnes concernées (vol de RIB, identités, données médicales agents), notification individuelle des personnes touchées également. Tenir un registre interne des violations. Une notification tardive est un facteur aggravant de sanction." },
     ],
-    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils', 'convention-collective-nettoyage-idcc-3043'],
     content: `## Une responsabilité souvent ignorée
 
-Le RGPD n'est pas qu'une affaire de grandes entreprises. En tant que dirigeant d'une société de nettoyage, vous êtes **responsable du traitement** de plusieurs catégories de données personnelles, parfois sans même le savoir.
+Le RGPD (Règlement Général sur la Protection des Données) n'est pas qu'une affaire de grandes entreprises. En tant que dirigeant d'une société de nettoyage, vous êtes **responsable du traitement** de plusieurs catégories de données personnelles, parfois sans même le savoir.
+
+Le RGPD s'applique en France depuis le 25 mai 2018, mais l'intensité des contrôles CNIL et la jurisprudence ont fortement augmenté en 2024-2026. Le secteur du nettoyage, particulièrement exposé du fait de la nature des données traitées (identité, géolocalisation, photos de sites clients), est désormais une cible identifiée des contrôles ciblés.
 
 ## Les données concernées
 
 ### Côté agents
 
 - Identité, coordonnées, RIB pour la paie
-- Heures travaillées, géolocalisation potentielle (check-in)
-- Compétences, spécialités, suivi médical (parfois)
+- Heures travaillées, géolocalisation potentielle (pointage QR, app mobile)
+- Compétences, spécialités, suivi médical professionnel (visites obligatoires)
 - Photos d'identité, badges d'accès aux sites
+- Antécédents judiciaires (bulletin n°3) pour certains contrats sensibles (banque, santé)
 
 ### Côté clients
 
-- Contacts (gestionnaires, syndics, gardiens)
-- Plans d'accès, codes d'immeubles, alarmes
-- Photos de sites, parfois en présence de personnes
+- Contacts (gestionnaires, syndics, gardiens) : nom, fonction, email, téléphone
+- Plans d'accès, codes d'immeubles, alarmes, horaires d'ouverture
+- Photos de sites avant-après, parfois en présence de personnes
+- Données de facturation et de paiement (RIB, conditions commerciales)
+
+### Côté tiers
+
+- Sous-traitants éventuels : leurs données ET les données qu'ils traitent pour vous
+- Candidats au recrutement : CV, lettres, références
+- Visiteurs/intervenants ponctuels (pour les contrats avec accès contrôlé)
 
 ## Les obligations clés
 
 ### 1. Information
 
-Vos agents et clients doivent être informés de la collecte et de l'usage de leurs données. Cela passe par une **politique de confidentialité** accessible, claire, et idéalement liée à votre contrat.
+Vos agents et clients doivent être informés de la collecte et de l'usage de leurs données. Cela passe par :
+- Une **politique de confidentialité** accessible publiquement sur votre site
+- Une **mention RGPD** dans les contrats agents (clause spécifique) et clients (annexe)
+- Un **affichage RGPD** dans les locaux pour les visiteurs et candidats
+
+L'information doit être claire, en français, accessible avant la collecte (pas après). Une politique cachée dans le pied de page ne suffit pas.
 
 ### 2. Finalité
 
-Chaque donnée collectée doit servir un objectif explicite : planning, paie, sécurité, facturation. Pas de collecte "pour si jamais".
+Chaque donnée collectée doit servir un objectif explicite : planning, paie, sécurité, facturation, qualité. Pas de collecte "pour si jamais", pas d'utilisation détournée. Si vous géolocalisez les agents pour le pointage, vous ne pouvez pas utiliser cette géolocalisation pour les évaluer ou les surveiller au-delà du pointage.
 
-### 3. Durée
+### 3. Durée de conservation
 
-Les données doivent être supprimées ou anonymisées après un délai défini (généralement 5 ans après la fin du contrat, sauf obligations légales spécifiques).
+Les données doivent être supprimées ou anonymisées après un délai défini :
+
+| Catégorie de données | Durée recommandée | Base légale |
+|---|---|---|
+| Contrat agent + paie | 5 ans après départ | Code du travail |
+| Bulletins de paie (copie employeur) | 50 ans | Code du travail / retraites |
+| Données candidats non retenus | 2 ans max | CNIL |
+| Photos preuve de passage | 3-5 ans selon contrat | Finalité contractuelle |
+| Vidéosurveillance | 30 jours max | CNIL |
+| Données comptables / factures | 10 ans | Code de commerce |
+| Données prospects (sans contrat) | 3 ans après dernier contact | CNIL |
 
 ### 4. Sécurité
 
-C'est là que beaucoup d'entreprises pèchent. Excel sur un ordinateur portable non chiffré, WhatsApp avec photos de sites, classeurs papier accessibles à toute l'équipe, ce sont des violations potentielles.
+C'est là que beaucoup d'entreprises pèchent. Excel sur un ordinateur portable non chiffré, WhatsApp avec photos de sites, classeurs papier accessibles à toute l'équipe : ce sont des violations potentielles de l'article 32 RGPD (sécurité du traitement).
+
+Mesures minimales :
+- Chiffrement des disques (BitLocker Windows, FileVault Mac) sur tous les postes
+- Mots de passe forts + authentification à 2 facteurs sur les outils SaaS
+- Politique de mots de passe + révocation des accès au départ d'un salarié
+- Sauvegarde régulière chiffrée
+- Restriction des accès par rôle ("le pointage agent n'a pas besoin de voir les RIB")
 
 ### 5. Hébergement
 
-Si vous utilisez un outil tiers (logiciel, cloud), celui-ci doit être **conforme RGPD**. Hébergement européen, contrat de sous-traitance, chiffrement.
+Si vous utilisez un outil tiers (logiciel, cloud), celui-ci doit être **conforme RGPD** : hébergement européen, contrat de sous-traitance (DPA), chiffrement. Les outils non-européens (Google Workspace, Microsoft 365, Slack) restent utilisables mais nécessitent une attention particulière depuis l'invalidation du Privacy Shield et le Cloud Act américain. Privilégier des outils éditeurs européens si possible.
 
-## Les sanctions
+## Les 5 obligations à mettre en place dès aujourd'hui
 
-La CNIL peut prononcer des amendes jusqu'à **4% du chiffre d'affaires annuel** ou 20 millions d'euros. Mais le vrai risque, pour une PME, c'est :
-- Une plainte d'agent (litige paie + données)
-- Un signalement client après incident
-- Une condition d'attribution d'un appel d'offres public (la conformité RGPD est exigée)
+1. **Registre des traitements** (article 30 RGPD) — obligatoire dès le 1er salarié, modèle Excel gratuit fourni par la CNIL
+2. **Politique de confidentialité** publique sur votre site + mention dans contrats
+3. **Mesures de sécurité documentées** (chiffrement, gestion des accès, sauvegarde)
+4. **Contrat de sous-traitance** signé avec chaque éditeur logiciel
+5. **Procédure de réponse aux demandes** (accès, rectification, effacement) sous 1 mois
+
+## Tableau des sanctions CNIL observées dans le secteur services (2023-2025)
+
+| Type de manquement | Sanction observée | Société touchée |
+|---|---|---|
+| Vidéosurveillance excessive agents | 20 000 € | PME services 30 agents |
+| Pas de registre des traitements | 5 000 - 30 000 € | TPE/PME multi-secteurs |
+| Géolocalisation sans information | 50 000 € | PME logistique 50 agents |
+| Conservation excessive données candidats | 10 000 - 50 000 € | Plusieurs cas RH |
+| Sécurité défaillante + violation | 100 000 - 200 000 € | PME 100-200 salariés |
+| Refus de droits d'accès | 8 000 - 30 000 € | Plusieurs PME |
+
+Au-delà de l'amende, les sanctions CNIL sont publiques et nominatives. La réputation professionnelle est durablement affectée, ce qui pèse sur l'obtention de contrats B2B et les appels d'offres publics.
+
+## Les vrais risques pour une PME nettoyage
+
+La CNIL peut prononcer des amendes jusqu'à **4 % du chiffre d'affaires annuel** ou 20 millions d'euros. Mais le vrai risque, pour une PME, c'est :
+- Une **plainte d'agent** (litige paie + données mal traitées) qui déclenche un contrôle
+- Un **signalement client** après incident sécurité (clés perdues, codes diffusés)
+- Une **condition d'attribution d'un appel d'offres public** où la conformité RGPD est exigée (souvent depuis 2023)
+- Un **audit syndic ou facility manager** qui demande la conformité de toute la chaîne sous-traitance
+
+## Checklist : 10 points à vérifier avant un contrôle CNIL
+
+1. Politique de confidentialité publique et à jour ?
+2. Registre des traitements rempli et accessible ?
+3. Mentions RGPD dans les contrats agents (clause data) ?
+4. Contrat de sous-traitance signé avec votre éditeur de logiciel ?
+5. Politique de mots de passe + 2FA activé sur les comptes critiques ?
+6. Chiffrement des disques sur tous les postes ?
+7. Sauvegarde régulière chiffrée hors site ?
+8. Procédure documentée pour répondre aux droits RGPD (accès, effacement) ?
+9. Information visible des personnes filmées/photographiées (panneaux, mention) ?
+10. Registre des violations de données rempli (même vide, il doit exister) ?
+
+Si vous cochez moins de 7 sur 10, vous êtes exposé. La mise en conformité d'urgence prend typiquement 1 à 2 semaines avec un cockpit unifié, contre 1 à 3 mois en gestion artisanale.
+
+## Cas concret : qu'arrive-t-il en cas de plainte d'agent ?
+
+Scénario typique observé : un agent licencié dépose plainte à la CNIL en alléguant que ses données paie, géolocalisation et photos ont été conservées au-delà de la fin du contrat, sans information préalable. La CNIL ouvre une instruction, demande votre registre des traitements, votre politique de confidentialité, vos preuves d'information.
+
+- **Cas A — Société conforme** : registre à jour, politique notifiée, preuve d'information signée. La CNIL classe sans suite.
+- **Cas B — Société non conforme** : pas de registre, politique générique non actualisée, pas de preuve d'information. La CNIL prononce une mise en demeure, puis une sanction si non-conformité maintenue (typiquement 5 000 à 50 000 € pour une PME).
+
+Le coût total du Cas B (sanction + temps perdu + perte de contrats publics les 6 mois suivants) dépasse régulièrement 30 000 à 80 000 €. La conformité préventive coûte environ 10 % de ce montant.
 
 ## La bonne hygiène
 
 1. **Centralisez** vos données dans un outil sécurisé plutôt que sur 4 supports différents
-2. **Hébergez en France** pour simplifier la conformité
-3. **Chiffrez** transit (HTTPS) et stockage
-4. **Donnez accès** uniquement aux personnes qui en ont besoin
-5. **Documentez** vos traitements (registre RGPD)
+2. **Hébergez en France** pour simplifier la conformité (juridiction française, pas d'extraterritorialité américaine)
+3. **Chiffrez** transit (HTTPS) et stockage (disques + bases de données)
+4. **Donnez accès** uniquement aux personnes qui en ont besoin (principe de minimisation)
+5. **Documentez** vos traitements (registre RGPD à jour annuellement)
 
-## Ce que ça change avec un cockpit métier
+## Ce que ça change avec un cockpit métier RGPD-natif
 
 Centraliser vos données dans un outil dédié simplifie radicalement la conformité :
 - Hébergement contrôlé en Union européenne
-- Chiffrement par défaut
+- Chiffrement par défaut (transit + stockage)
 - Gestion des accès par rôle
-- Export facile pour exercer les droits RGPD
+- Export facile pour exercer les droits RGPD (accès, portabilité)
 - Registre automatique des traitements
+- Logs d'accès qui prouvent qui a vu/modifié quoi et quand
+- Suppression automatique au terme de la durée de conservation
 
-Plutôt que de gérer la conformité **en plus** de votre activité, elle devient une **conséquence** de votre outillage.
+Plutôt que de gérer la conformité **en plus** de votre activité, elle devient une **conséquence** de votre outillage. Le DPA (contrat de sous-traitance) est signé une fois avec l'éditeur, et tout votre traitement de données opérationnelles entre dans ce cadre.
 
 ## En pratique
 
 Si vous gérez 10+ agents et plusieurs clients B2B, vous êtes très probablement tenu d'avoir :
 - Une politique de confidentialité (sur votre site et dans vos contrats)
-- Un registre des traitements
-- Des mesures de sécurité documentées
+- Un registre des traitements (article 30 RGPD)
+- Des mesures de sécurité documentées (article 32)
+- Un contrat de sous-traitance avec chaque éditeur logiciel (article 28)
+- Une procédure de réponse aux demandes RGPD (article 12)
 
 C'est aussi pour ça qu'on a conçu Proprely avec le RGPD comme prérequis, pas comme option. [Rejoignez la bêta](/) si vous voulez tester un outil pensé "conformité-first" dès la base.`,
   },
@@ -637,7 +827,7 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
   {
     slug: 'comparatif-logiciels-nettoyage-2026',
     title: "Comparatif logiciels société de nettoyage 2026 : la grille de lecture honnête",
-    excerpt: "Trois familles de logiciels se partagent le marché de la propreté B2B. Voici comment les distinguer, ce qu'ils savent (vraiment) faire, et la grille de lecture pour ne pas se tromper.",
+    excerpt: "Trois familles de logiciels se partagent le marché de la propreté B2B. Comment les distinguer, ce qu'ils savent faire, et la grille de lecture.",
     date: '18 mai 2026',
     readTime: '9 min',
     tag: 'Outils',
@@ -780,7 +970,7 @@ Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboar
   {
     slug: 'logiciel-devis-nettoyage-gratuit',
     title: "Logiciel de devis nettoyage gratuit : ce qu'il faut savoir avant de chercher",
-    excerpt: "\"Gratuit\" cache trois réalités très différentes : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier, et que choisir si vous démarrez.",
+    excerpt: "\"Gratuit\" cache 3 réalités : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier si vous démarrez.",
     date: '19 mai 2026',
     readTime: '6 min',
     tag: 'Outils',
@@ -906,7 +1096,7 @@ Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, 
   {
     slug: 'societe-nettoyage-paris',
     title: 'Société de nettoyage à Paris : marché, prix et organisation en 2026',
-    excerpt: "Le marché parisien du nettoyage B2B reste l'un des plus denses d'Europe. Voici ce qu'il faut savoir avant d'opérer dans Paris intra-muros : tarifs, contraintes terrain, clients types et profils de prestations qui marchent.",
+    excerpt: "Le marché parisien du nettoyage B2B est l'un des plus denses d'Europe. Tarifs, contraintes terrain, clients types et profils qui marchent.",
     date: '18 mai 2026',
     readTime: '9 min',
     tag: 'Marché local',
@@ -1016,7 +1206,7 @@ Trois bénéfices spécifiques pour un dirigeant qui opère dans Paris intra-mur
   {
     slug: 'societe-nettoyage-ile-de-france',
     title: 'Gérer une société de nettoyage en Île-de-France : multi-sites et logistique',
-    excerpt: "L'Île-de-France concentre 30 % de l'activité française de propreté. Opérer sur les 8 départements implique une organisation différente d'un marché provincial : multi-sites, transport, turnover. Ce qu'il faut anticiper.",
+    excerpt: "L'IDF concentre 30 % de l'activité propreté française. Opérer sur les 8 départements : multi-sites, transport, turnover. Ce qu'il faut anticiper.",
     date: '17 mai 2026',
     readTime: '8 min',
     tag: 'Marché local',
@@ -1130,7 +1320,7 @@ Pour un dirigeant qui opère en Île-de-France, trois bénéfices spécifiques :
   {
     slug: 'societe-nettoyage-la-defense-92',
     title: 'Nettoyage à La Défense et dans les Hauts-de-Seine : exigences et organisation',
-    excerpt: "Le 92 et La Défense en tête concentrent les sièges sociaux et grands comptes les plus exigeants de France. Standards ISO, traçabilité obligatoire, horaires décalés, audits clients : ce qu'il faut savoir pour s'y positionner durablement.",
+    excerpt: "La Défense et le 92 concentrent les sièges les plus exigeants de France. ISO, traçabilité, horaires décalés, audits : comment s'y positionner.",
     date: '16 mai 2026',
     readTime: '8 min',
     tag: 'Marché local',
@@ -1255,7 +1445,7 @@ Trois bénéfices spécifiques pour les opérateurs La Défense / 92 tertiaire :
   {
     slug: 'societe-nettoyage-bordeaux',
     title: 'Société de nettoyage à Bordeaux : un marché en croissance accélérée',
-    excerpt: "Bordeaux Métropole est devenue en 10 ans l'un des marchés français de la propreté les plus dynamiques. Tertiarisation rapide, secteur viticole spécifique, patrimoine UNESCO contraint : ce qu'il faut savoir pour s'y développer.",
+    excerpt: "Bordeaux Métropole est l'un des marchés propreté les plus dynamiques. Tertiarisation, viticole, patrimoine UNESCO : comment s'y développer.",
     date: '15 mai 2026',
     readTime: '7 min',
     tag: 'Marché local',
@@ -1374,7 +1564,7 @@ Trois bénéfices spécifiques pour les opérateurs Bordeaux Métropole :
   {
     slug: 'trouver-clients-b2b-nettoyage',
     title: "Comment trouver des clients B2B en nettoyage : 8 canaux qui marchent en 2026",
-    excerpt: "Le bouche-à-oreille ne suffit plus. Les 8 canaux concrets pour décrocher de nouveaux contrats récurrents en propreté B2B : ce qui marche, ce qui coûte cher pour rien, et comment prioriser selon votre stade.",
+    excerpt: "Le bouche-à-oreille ne suffit plus. Les 8 canaux pour décrocher des contrats récurrents en propreté B2B et comment prioriser selon votre stade.",
     date: '20 mai 2026',
     readTime: '10 min',
     tag: 'Stratégie',
@@ -1584,7 +1774,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
     title: "Convention collective nettoyage IDCC 3043 : guide pratique 2026",
-    excerpt: "La convention collective des entreprises de propreté (IDCC 3043) régit 500 000 salariés en France. Grille salariale, heures, primes, transferts, RSE : le guide complet pour les dirigeants en 2026.",
+    excerpt: "La convention collective de la propreté (IDCC 3043) régit 500 000 salariés. Grille salariale, heures, primes, transferts : le guide 2026.",
     date: '20 mai 2026',
     readTime: '12 min',
     tag: 'Conformité',
@@ -1735,7 +1925,7 @@ Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conf
   {
     slug: 'tarif-nettoyage-bureaux-m2-2026',
     title: "Tarif nettoyage bureaux au m² en 2026 : la grille honnête pour les prestataires",
-    excerpt: "Combien facturer le m² de nettoyage de bureaux en 2026 ? Grille par fréquence, par zone, par type de site. Méthode pour calculer un prix qui protège votre marge sans perdre l'affaire.",
+    excerpt: "Combien facturer le m² de nettoyage de bureaux en 2026 ? Grille par fréquence, zone, type de site. Méthode pour protéger votre marge.",
     date: '20 mai 2026',
     readTime: '9 min',
     tag: 'Stratégie',
@@ -1907,7 +2097,7 @@ Pour structurer votre tarification : [Fixer ses prix dans le nettoyage : la mét
   {
     slug: 'digitaliser-entreprise-nettoyage-5-etapes',
     title: "Digitaliser son entreprise de nettoyage en 5 étapes concrètes (2026)",
-    excerpt: "Vous gérez encore sur Excel et WhatsApp ? La méthode en 5 étapes pour digitaliser sans casser votre activité — par ordre de priorité, avec ROI estimé et risques à éviter.",
+    excerpt: "Vous gérez encore sur Excel et WhatsApp ? La méthode en 5 étapes pour digitaliser sans casser votre activité, avec ROI et risques à éviter.",
     date: '20 mai 2026',
     readTime: '8 min',
     tag: 'Outils',
@@ -2112,7 +2302,7 @@ Pour une TPE de 3-15 agents, comptez **6 à 10 semaines au total**. Pour une PME
   {
     slug: 'societe-nettoyage-lyon',
     title: 'Société de nettoyage à Lyon : marché, contraintes, comment se différencier en 2026',
-    excerpt: "Lyon est le 2e marché français du nettoyage B2B. Analyse du marché lyonnais (Part-Dieu, pôle santé, biotech Gerland, presqu'île), prix marché, secteurs porteurs, et comment se différencier face à la concurrence.",
+    excerpt: "Lyon est le 2e marché français du nettoyage B2B. Part-Dieu, pôle santé, biotech Gerland : prix marché, secteurs porteurs, différenciation.",
     date: '20 mai 2026',
     readTime: '8 min',
     tag: 'Local',
@@ -2206,7 +2396,7 @@ Gratuit pendant la bêta privée (30 places fondateurs, tarif privilégié à vi
   {
     slug: 'societe-nettoyage-marseille',
     title: 'Société de nettoyage à Marseille : marché PACA, secteurs porteurs, prix en 2026',
-    excerpt: "Marseille concentre un marché propreté B2B porté par Euroméditerranée, l'hôtellerie saisonnière, les copropriétés bord de mer et le port. Analyse du marché marseillais, prix indicatifs, comment piloter sa société.",
+    excerpt: "Marseille : marché porté par Euroméditerranée, l'hôtellerie saisonnière, les copropriétés et le port. Prix marché, secteurs, pilotage.",
     date: '20 mai 2026',
     readTime: '7 min',
     tag: 'Local',
@@ -2300,7 +2490,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Marseille
   {
     slug: 'societe-nettoyage-toulouse',
     title: 'Société de nettoyage à Toulouse : marché aérospatial, prix, comment se positionner en 2026',
-    excerpt: "Toulouse est un marché B2B porté par l'aérospatial (Airbus, ATR, Thales), le médical (CHU, oncopole) et la croissance démographique. Analyse du marché toulousain, prix, secteurs porteurs.",
+    excerpt: "Toulouse : marché B2B porté par l'aérospatial (Airbus, ATR, Thales), le médical (CHU, oncopole) et la démographie. Prix et secteurs porteurs.",
     date: '20 mai 2026',
     readTime: '7 min',
     tag: 'Local',
@@ -2401,7 +2591,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Toulouse]
   {
     slug: 'societe-nettoyage-lille',
     title: "Société de nettoyage à Lille : Euralille, métropole Lille-Roubaix-Tourcoing, marché 2026",
-    excerpt: "Lille concentre un marché B2B porté par Euralille, les sièges régionaux (Auchan, Decathlon, OVHcloud), le CHRU et l'étalement géographique Lille-Roubaix-Tourcoing-Villeneuve d'Ascq. Analyse du marché lillois.",
+    excerpt: "Lille : marché B2B porté par Euralille, les sièges régionaux (Auchan, Decathlon, OVHcloud), le CHRU et l'étalement Lille-Roubaix-Tourcoing.",
     date: '20 mai 2026',
     readTime: '7 min',
     tag: 'Local',
@@ -2504,7 +2694,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Lille](/v
   {
     slug: 'societe-nettoyage-nantes',
     title: "Société de nettoyage à Nantes : marché, secteurs porteurs, prix en 2026",
-    excerpt: "Nantes est portée par l'Île de Nantes (tertiaire en croissance), le CHU, l'agroalimentaire et la dynamique démographique. Analyse du marché B2B nantais, prix indicatifs, comment piloter sa société.",
+    excerpt: "Nantes : portée par l'Île de Nantes (tertiaire), le CHU, l'agroalimentaire et la démographie. Marché B2B, prix indicatifs, pilotage.",
     date: '20 mai 2026',
     readTime: '7 min',
     tag: 'Local',
