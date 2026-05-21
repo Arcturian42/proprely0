@@ -8,6 +8,7 @@ import NotFound from './NotFound'
 import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import Link from '../components/Link'
+import NewsletterSignup from '../components/NewsletterSignup'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
@@ -320,7 +321,11 @@ export default function BlogPost({ slug }: Props) {
 
             {post.faq && post.faq.length > 0 && <FAQSection faq={post.faq} />}
 
-            <div className="mt-16 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
+            <div className="mt-16">
+              <NewsletterSignup source={`blog_post:${post.slug}`} />
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-slate-100 bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 sm:p-8">
               <p className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Bêta privée</p>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Vous reconnaissez votre quotidien ?</h3>
               <p className="text-sm sm:text-base text-slate-700 mb-5">

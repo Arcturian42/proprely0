@@ -94,6 +94,8 @@ const urls = [
   { loc: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: today, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel auto-entrepreneur nettoyage' },
   { loc: `${ORIGIN}/crm-entreprise-proprete`, priority: '0.8', changefreq: 'monthly', lastmod: today, image: DEFAULT_OG_IMAGE, imageTitle: 'CRM entreprise propreté' },
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: today, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
+  { loc: `${ORIGIN}/outils`, priority: '0.9', changefreq: 'monthly', lastmod: today, image: DEFAULT_OG_IMAGE, imageTitle: 'Outils gratuits Proprely' },
+  { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: today, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
   ...comparisonSlugs.map((slug) => ({
     loc: `${ORIGIN}/comparatif/${slug}`,
     priority: '0.8',

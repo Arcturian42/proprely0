@@ -5,6 +5,7 @@ import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
 import { resources } from '../data/resources'
 import Link from '../components/Link'
+import NewsletterSignup from '../components/NewsletterSignup'
 
 const META = {
   title: 'Ressources gratuites pour société de nettoyage · Proprely',
@@ -153,6 +154,12 @@ export default function Resources() {
                 )
               })}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white pb-16 sm:pb-20">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <NewsletterSignup source="resources" />
           </div>
         </section>
 

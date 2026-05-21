@@ -28,6 +28,8 @@ const AutoEntrepreneurLanding = lazy(() => import('./pages/AutoEntrepreneurLandi
 const CRMPage = lazy(() => import('./pages/CRMPage'))
 const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
+const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -112,6 +114,14 @@ const META: Record<string, RouteMeta> = {
   '/a-propos': {
     title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
     description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+  },
+  '/outils': {
+    title: 'Outils gratuits pour société de nettoyage · Proprely',
+    description: "Calculateurs et simulateurs gratuits : prix au m², coût horaire chargé, marge de contrat, ROI dispersion. Pour dirigeants de sociétés de nettoyage B2B en France.",
+  },
+  '/calculateur-prix-nettoyage-m2': {
+    title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
+    description: "Calculez le prix de vente d'une prestation de nettoyage de bureaux : tarif au m² selon surface, fréquence, zone géographique, type de local. Estimation honnête, sans inscription.",
   },
 }
 
@@ -198,6 +208,8 @@ function App() {
   else if (route === '/logiciel-auto-entrepreneur-nettoyage') content = <AutoEntrepreneurLanding />
   else if (route === '/crm-entreprise-proprete') content = <CRMPage />
   else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
+  else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
+  else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />

@@ -26,7 +26,9 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [À propos de Proprely](https://proprely.fr/a-propos) : mission, engagements, histoire et éditeur
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
 - [Simulateur de rentabilité](https://proprely.fr/simulateur-rentabilite) : marge brute d'un contrat de nettoyage en 1 minute
-- [Ressources gratuites](https://proprely.fr/ressources) : modèles de devis, planning, suivi des heures (Excel téléchargeables)
+- [Outils gratuits](https://proprely.fr/outils) : 4 calculateurs sans inscription (prix au m², ROI, rentabilité, coût horaire chargé)
+- [Calculateur prix nettoyage au m²](https://proprely.fr/calculateur-prix-nettoyage-m2) : estimation interactive selon surface, type de local, zone, fréquence
+- [Ressources gratuites](https://proprely.fr/ressources) : modèles de devis, planning, suivi des heures (Excel téléchargeables) avec capture email
 - [Blog Proprely](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants du nettoyage
 - [Contact](https://proprely.fr/contact) : email, zones d'opération, éditeur
 - [Flux RSS](https://proprely.fr/rss.xml) : nouveaux articles

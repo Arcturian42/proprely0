@@ -6,6 +6,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import { posts } from '../data/blog'
 import Link from '../components/Link'
+import NewsletterSignup from '../components/NewsletterSignup'
 
 const META = {
   title: 'Blog · Gestion, terrain et propreté B2B · Proprely',
@@ -148,6 +149,10 @@ export default function BlogIndex() {
                 </Link>
               </motion.article>
             ))}
+          </div>
+
+          <div className="mt-14 sm:mt-20">
+            <NewsletterSignup source="blog_index" />
           </div>
         </div>
       </main>

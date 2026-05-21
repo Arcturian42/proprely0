@@ -158,6 +158,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/outils</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Outils gratuits Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/calculateur-prix-nettoyage-m2</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Calculateur prix nettoyage bureaux au m²</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-organilog</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
