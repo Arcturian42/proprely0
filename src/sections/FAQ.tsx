@@ -43,6 +43,30 @@ const faqs = [
     q: "Quelle est la prochaine étape concrète ?",
     a: "Vous remplissez le formulaire (2 minutes). Nous étudions votre candidature et vous répondons sous 24h. Si votre profil correspond, nous calons un premier appel de découverte et de mise en route avec le fondateur.",
   },
+  {
+    q: "C'est quoi un logiciel de gestion pour société de nettoyage ?",
+    a: "Un logiciel de gestion pour société de nettoyage centralise dans un seul outil les fonctions opérationnelles du métier : clients et sites, agents avec leurs spécialités, planning et affectation, missions avec preuve de passage (QR + photos + signature), devis et factures, documents administratifs, pilotage de la rentabilité par client. Pour une TPE/PME B2B (3-50 agents), il remplace typiquement Excel, WhatsApp, Word et Google Drive utilisés en parallèle.",
+  },
+  {
+    q: "Combien coûte un logiciel pour société de nettoyage en 2026 ?",
+    a: "Les solutions du marché vont de 0 € (Excel ou outils gratuits limités) à plusieurs centaines d'euros par mois pour les ERP métier comme Progiclean ou PROPRET. Un cockpit B2B moderne se positionne typiquement entre 25 et 80 €/utilisateur/mois selon le périmètre. Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices), avec un tarif fondateur conservé à vie après le lancement public.",
+  },
+  {
+    q: "Proprely fonctionne-t-il pour une société de nettoyage à Paris, Lyon, Marseille ?",
+    a: "Oui. Proprely a été conçu pour les sociétés de nettoyage B2B en France, avec des pages dédiées par ville pour les principales métropoles (Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Nice, Strasbourg, Montpellier, Rennes). Le produit s'adapte aux spécificités locales : rotations matinales tertiaires, syndics de copropriétés, hôtellerie saisonnière, pôles médicaux, biotech.",
+  },
+  {
+    q: "Faut-il être en bêta privée pour tester Proprely ?",
+    a: "Pendant la phase actuelle, oui. Nous sélectionnons 30 sociétés fondatrices à qui nous offrons un accès gratuit, un onboarding 30 minutes avec le fondateur, et un tarif privilégié conservé à vie. La candidature se fait depuis la page d'accueil en 2 minutes. Réponse sous 24h ouvrées. Après les 30 places, la bêta se referme jusqu'au lancement public.",
+  },
+  {
+    q: "Proprely gère-t-il la convention collective de la propreté (IDCC 3043) ?",
+    a: "Oui. La grille de salaires AS1 à MP5, les primes (panier, transport, expérience), les majorations heures sup et les durées de travail standards de la convention collective nationale de la propreté (IDCC 3043) sont intégrées au module gestion des agents. Vous restez bien sûr maître de votre grille interne si elle diffère de la convention.",
+  },
+  {
+    q: "Comment Proprely se compare à PROPRET, Progiclean ou Organilog ?",
+    a: "PROPRET et Progiclean sont des ERP métier historiques (~20-30 ans) ciblant les PME/ETI (>50 agents) avec un périmètre large (paie, GED, qualité). Organilog est une suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Proprely est un cockpit nouvelle génération (2025-2026) conçu spécifiquement pour les TPE/PME B2B nettoyage (3-50 agents), mobile-first, avec marge par client en temps réel et onboarding 30 minutes. Comparatifs détaillés disponibles sur le site.",
+  },
 ]
 
 export default function FAQ() {

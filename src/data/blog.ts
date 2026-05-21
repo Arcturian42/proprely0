@@ -2109,6 +2109,498 @@ Pour une TPE de 3-15 agents, comptez **6 à 10 semaines au total**. Pour une PME
 
 [Comparatif logiciels nettoyage 2026](/comparatif-logiciel-nettoyage) pour choisir votre outil. [Le guide complet du logiciel propreté](/logiciel-societe-nettoyage) pour la vue d'ensemble. [Candidater à la bêta privée Proprely](/beta) si vous voulez tester un cockpit unifié gratuit pendant la bêta, avec tarif fondateur conservé à vie.`,
   },
+  {
+    slug: 'societe-nettoyage-lyon',
+    title: 'Société de nettoyage à Lyon : marché, contraintes, comment se différencier en 2026',
+    excerpt: "Lyon est le 2e marché français du nettoyage B2B. Analyse du marché lyonnais (Part-Dieu, pôle santé, biotech Gerland, presqu'île), prix marché, secteurs porteurs, et comment se différencier face à la concurrence.",
+    date: '20 mai 2026',
+    readTime: '8 min',
+    tag: 'Local',
+    quickSummary: [
+      "Lyon est le 2e marché français de la propreté B2B après l'Île-de-France.",
+      "4 secteurs porteurs : tertiaire Part-Dieu/Confluence, pôle santé HCL, biotech Gerland, hôtellerie presqu'île.",
+      "Prix marché : 12-18 €/m²/mois selon zone et fréquence (10-15 % en dessous de Paris).",
+      "Concurrence intense : se différencier par la spécialisation (médical, biotech) ou la zone (Croix-Rousse, Brotteaux).",
+      "Marge nette saine atteignable : 15-20 % avec un cockpit de pilotage qui suit la rentabilité par client.",
+    ],
+    faq: [
+      { q: "Quel est le prix marché du nettoyage de bureaux à Lyon en 2026 ?", a: "Le prix marché lyonnais se situe entre 12 et 18 €/m²/an HT sur contrat annuel, soit ~1-1,5 €/m²/mois. Variables : surface (>500 m² = -10 %), fréquence (5×/sem = +20 % vs 3×/sem), zone (Part-Dieu et Confluence = +10 %), horaires décalés (+30-60 %)." },
+      { q: "Quels secteurs sont les plus porteurs pour une société de nettoyage à Lyon ?", a: "Quatre secteurs portent le marché lyonnais : (1) tertiaire Part-Dieu/Confluence (forte densité d'immeubles modernes), (2) pôle santé (HCL, Centre Léon Bérard, cabinets médicaux du 6e), (3) biotech/pharma Gerland (Sanofi, BioMérieux et leur écosystème), (4) hôtellerie de la presqu'île et bouchons lyonnais." },
+      { q: "Comment se démarquer face à la concurrence à Lyon ?", a: "Trois leviers efficaces : spécialisation sur un protocole exigeant (bionettoyage médical, salles blanches biotech), focus géographique (Croix-Rousse, Brotteaux, Confluence — moins saturé que la presqu'île), différenciation par la preuve de passage standardisée acceptée par les grands syndics lyonnais." },
+      { q: "Quelle est la convention collective applicable aux agents de nettoyage à Lyon ?", a: "La convention collective nationale de la propreté (IDCC 3043) s'applique sur tout le territoire français, donc à Lyon. Salaire minimum AS1 ≈ 12 €/h brut en 2026, primes panier, transport et expérience à prévoir. Aucune spécificité départementale." },
+      { q: "Quels syndics gestionnaires sont actifs à Lyon ?", a: "Les principaux syndics nationaux (Foncia, Citya, Nexity, Loiselet & Daigremont) sont présents à Lyon, ainsi que des acteurs régionaux historiques (Sergic, Boré). Tous demandent désormais une preuve de passage standardisée (signature, photos, horodatage) pour les parties communes." },
+      { q: "Quel logiciel utiliser pour gérer une société de nettoyage à Lyon ?", a: "Pour une TPE/PME B2B lyonnaise (3-50 agents), Proprely est un cockpit unifié conçu spécifiquement pour le métier : planning multi-sites mobile-first adapté au transit Vaise/Part-Dieu/Confluence, preuve de passage acceptée syndics, marge par client en temps réel. Gratuit pendant la bêta privée." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'fideliser-agents-nettoyage-turnover', 'rgpd-societe-nettoyage-2026'],
+    content: `## Le marché du nettoyage B2B à Lyon en 2026
+
+Lyon est le deuxième marché français de la propreté B2B après l'Île-de-France. La métropole concentre **un tissu unique en France** : un quartier d'affaires Part-Dieu en expansion permanente, un pôle santé majeur (Hospices Civils, Centre Léon Bérard, cluster pharmaceutique), une presqu'île tertiaire dense, et un écosystème industriel/biotech à Gerland et Confluence.
+
+Ces univers ont des exigences très différentes. Un agent qui fait des bureaux le matin, un cabinet médical à 14h et un laboratoire pharmaceutique en soirée enchaîne trois protocoles distincts dans sa journée. Sans système qui mémorise les spécialités, vous risquez l'erreur opérationnelle.
+
+## Les 4 secteurs qui portent le marché lyonnais
+
+### 1. Tertiaire Part-Dieu / Confluence
+
+**Part-Dieu** est le 2e quartier d'affaires français hors Paris. Tours et immeubles tertiaires modernes (Incity, Oxygène, To-Lyon), prestations matinales 6h-9h, accueil propre obligatoire à 8h30, reporting régulier exigé par les facility managers.
+
+**Confluence** est en croissance forte : nouveaux immeubles tertiaires (Ydeo, Sky 56), sièges sociaux, attractivité grande. Prix marché supérieur de 10-15 % à la moyenne lyonnaise.
+
+### 2. Pôle santé lyonnais
+
+Lyon concentre un des plus gros pôles santé français. **HCL, cliniques privées, cabinets médicaux du 6e, laboratoires de Gerland** : ces clients demandent des protocoles bionettoyage stricts, une traçabilité produit, des agents formés aux risques biologiques. Le ticket prix est plus élevé (+30-50 % vs bureaux standards), mais les exigences le sont aussi.
+
+### 3. Industrie pharmaceutique et biotech
+
+**Sanofi, BioMérieux et leur écosystème** opèrent à Gerland et autour. Salles blanches, protocoles ISO 14644, certifications agents, charte qualité stricte. Marché de niche mais à forte valeur ajoutée. Quelques sociétés lyonnaises s'y sont spécialisées et facturent 4-5 fois le tarif horaire standard.
+
+### 4. Hôtellerie & restauration
+
+Bouchons lyonnais, hôtels de la presqu'île, restaurants étoilés. **Cuisines, salles, sanitaires publics**. Plages très contraintes (avant ouverture 5h-7h ou après fermeture 22h-1h). Saisonnalité moins forte qu'à Marseille ou Nice mais réelle (mai-octobre + décembre).
+
+## Prix marché du nettoyage à Lyon en 2026
+
+Selon nos observations terrain sur 2025-2026 :
+
+- **Bureaux tertiaires standards** : 12-16 €/m²/an HT (≈ 1 à 1,30 €/m²/mois)
+- **Bureaux Part-Dieu / Confluence** : 14-18 €/m²/an HT (+10-15 % vs moyenne)
+- **Copropriétés haussmanniennes** : 15-22 €/m²/an HT selon prestations (vitres, escaliers)
+- **Cabinets médicaux** : 18-25 €/m²/an HT (protocole bionettoyage)
+- **Laboratoires biotech** : 25-50 €/m²/an HT (salles blanches, ISO)
+- **Hôtellerie** : tarification souvent à la chambre (8-15 €/chambre)
+
+Les prix lyonnais sont **10-15 % en dessous de Paris** mais **5-10 % au-dessus de Marseille ou Bordeaux**. La concurrence est intense mais les marges restent saines pour les structurées.
+
+## Les 3 défis spécifiques aux dirigeants lyonnais
+
+### Multiplicité des protocoles
+
+Bureau, cabinet médical, biotech, hôtellerie : un agent peut enchaîner plusieurs protocoles dans la même journée. Sans un système qui mémorise qui sait faire quoi, l'erreur arrive.
+
+### Géographie étalée
+
+Vos clients sont entre Vaise, Part-Dieu, Confluence et la Croix-Rousse. La proximité géographique est un avantage, mais **sans optimisation des tournées, vous perdez du temps de transit** — et donc des heures facturables.
+
+### Turnover agents
+
+Lyon n'échappe pas au turnover sectoriel (~35 % annuel). Le marché du travail est tendu, le recrutement coûte cher, et chaque départ vous fait perdre la mémoire de l'agent (spécialités, clients servis, formations).
+
+## Comment se différencier à Lyon en 2026
+
+**Trois leviers efficaces** d'après les sociétés qui gagnent des parts de marché :
+
+1. **Spécialisation sur un protocole exigeant** : bionettoyage médical, salles blanches biotech, remise en état chantier. Marge supérieure, concurrence plus faible.
+2. **Focus géographique** : maîtriser une zone (Croix-Rousse, Brotteaux, Confluence) plutôt que de courir toute la métropole. Réduit le transit, améliore la fidélisation.
+3. **Différenciation par la preuve** : preuve de passage standardisée (QR + photos + signature) acceptée par les grands syndics lyonnais et exigée sur les appels d'offres publics.
+
+## Quel logiciel utiliser pour piloter une société de nettoyage à Lyon ?
+
+[Proprely](/villes/lyon) est un cockpit métier conçu pour les TPE/PME B2B (3-50 agents). Il centralise planning multi-sites mobile-first, clients, agents avec leurs spécialités (vitrerie, bionettoyage, biotech), preuve de passage standardisée, devis et factures, marge par client en temps réel.
+
+Pour Lyon, deux fonctionnalités sont particulièrement utiles :
+- [Planning agents](/fonctionnalites/planning-nettoyage) adapté au transit Vaise / Part-Dieu / Confluence
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage) acceptée par les syndics gestionnaires lyonnais
+
+Gratuit pendant la bêta privée (30 places fondateurs, tarif privilégié à vie ensuite). [Candidater à la bêta](/beta) ou voir la [page Lyon dédiée](/villes/lyon) pour le détail.`,
+  },
+  {
+    slug: 'societe-nettoyage-marseille',
+    title: 'Société de nettoyage à Marseille : marché PACA, secteurs porteurs, prix en 2026',
+    excerpt: "Marseille concentre un marché propreté B2B porté par Euroméditerranée, l'hôtellerie saisonnière, les copropriétés bord de mer et le port. Analyse du marché marseillais, prix indicatifs, comment piloter sa société.",
+    date: '20 mai 2026',
+    readTime: '7 min',
+    tag: 'Local',
+    quickSummary: [
+      "Marseille est le 3e marché propreté B2B français, porté par Euroméditerranée, l'hôtellerie et le port.",
+      "Forte saisonnalité touristique (mai-octobre) qui double la demande hôtelière.",
+      "Prix marché : 10-15 €/m²/an pour les bureaux, soit ~20 % en dessous de Paris.",
+      "Copropriétés bord de mer : exigences spécifiques (sel, embruns, vitres extérieures).",
+      "Multilinguisme agents fréquent (FR/AR) : un atout sur les marchés de niche.",
+    ],
+    faq: [
+      { q: "Quel est le prix marché du nettoyage de bureaux à Marseille ?", a: "Le tarif marseillais se situe entre 10 et 15 €/m²/an HT sur contrat annuel, soit environ 0,85 à 1,25 €/m²/mois. C'est ~20 % en dessous de Paris. Pour Euroméditerranée (zone tertiaire moderne), comptez 12-16 €/m²/an. Pour le centre-ville historique, 11-14 €/m²/an." },
+      { q: "Comment gérer la saisonnalité touristique à Marseille ?", a: "L'hôtellerie marseillaise double sa demande entre mai et octobre. Trois leviers : (1) constituer un vivier d'agents saisonniers fidélisés (mêmes agents chaque été), (2) anticiper le planning 8 semaines à l'avance, (3) utiliser un logiciel qui suit la charge horaire et alerte sur le surmenage des agents permanents en haute saison." },
+      { q: "Quels sont les secteurs porteurs à Marseille ?", a: "Cinq secteurs portent le marché marseillais : (1) Euroméditerranée (zone tertiaire moderne en croissance), (2) hôtellerie saisonnière (Vieux-Port, Corniche), (3) copropriétés bord de mer (8e, 7e, La Joliette), (4) port et logistique (Marseille-Fos), (5) cabinets médicaux (AP-HM, Conception, Timone)." },
+      { q: "Quelles contraintes spécifiques aux copropriétés du bord de mer marseillais ?", a: "Le sel et les embruns attaquent vitres, mobilier extérieur et serrureries. Les copropriétés du 7e, 8e arrondissement et de la Corniche demandent un nettoyage vitrerie plus fréquent (mensuel vs trimestriel ailleurs), des produits adaptés (anticorrosion), et des agents formés au travail extérieur." },
+      { q: "Le port de Marseille-Fos est-il un débouché pour les sociétés de nettoyage ?", a: "Oui. Bureaux administratifs du Grand Port Maritime, sociétés de transit, entrepôts logistiques : marché significatif mais avec contraintes (sécurité, badges, horaires décalés). Le tarif est généralement 10-15 % au-dessus du marché bureaux classique en raison de la complexité d'accès." },
+      { q: "Quel outil pour piloter sa société de nettoyage à Marseille ?", a: "Pour une TPE/PME B2B à Marseille (3-50 agents), un cockpit unifié comme Proprely centralise planning saisonnier, agents avec spécialités, preuve de passage, marge par client. Particulièrement utile pour anticiper la haute saison hôtelière et éviter le surmenage. Gratuit pendant la bêta privée." },
+    ],
+    relatedSlugs: ['tarif-nettoyage-bureaux-m2-2026', 'gestion-societe-nettoyage-outils', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Le marché du nettoyage B2B à Marseille en 2026
+
+Marseille est le troisième marché français de la propreté B2B en volume. La métropole Aix-Marseille-Provence concentre **5 univers très différents** : Euroméditerranée (zone tertiaire moderne en expansion), centre historique et copropriétés (Vieux-Port, Cours Julien), bord de mer huppé (Corniche, Endoume), hôtellerie saisonnière (Vieux-Port, Castellane), et le port commerce/logistique (Marseille-Fos).
+
+Chaque univers a ses contraintes. Une société de nettoyage marseillaise doit savoir jongler entre la rotation hôtelière 5h du matin en juillet, le bureau d'Euromed 6h-9h en semaine, et l'immeuble bord de mer dont les vitres sont attaquées par le sel.
+
+## Les 5 secteurs porteurs à Marseille
+
+### 1. Euroméditerranée — la zone tertiaire moderne
+
+**Euroméditerranée** est le plus gros projet de rénovation urbaine du sud de la France. Tours tertiaires (CMA-CGM, La Marseillaise, Mirabeau), nouveaux sièges sociaux, attractivité forte. Marché en croissance avec des prix marché supérieurs de 10-15 % à la moyenne marseillaise. Exigences modernes : reporting digital, preuve de passage standardisée.
+
+### 2. Hôtellerie saisonnière
+
+Le **Vieux-Port, la Corniche, Castellane** concentrent l'hôtellerie marseillaise. **La demande double entre mai et octobre** avec le tourisme international. Cuisines, étages, parties communes, exigence de discrétion absolue. Plages contraintes (avant 7h pour les communs, en journée pour les étages).
+
+### 3. Copropriétés bord de mer
+
+**7e, 8e arrondissements, Corniche** : copropriétés haut de gamme avec halls, escaliers, vitres extérieures attaquées par le sel et les embruns. Syndics gestionnaires (Foncia Marseille, Square Habitat, Citya) demandent reporting régulier. Tarif souvent 15-20 % au-dessus de la moyenne bureaux.
+
+### 4. Port et logistique Marseille-Fos
+
+**Grand Port Maritime, sociétés de transit, entrepôts logistiques** sur Fos-sur-Mer et le bassin Est. Marché significatif mais avec contraintes spécifiques : sécurité renforcée, badges, horaires décalés, surface souvent importante. Tarif majoré de 10-15 %.
+
+### 5. Pôle santé marseillais
+
+**AP-HM, Conception, Timone, cabinets médicaux** du centre-ville. Protocoles bionettoyage, traçabilité, agents formés aux risques biologiques. Niche à forte valeur ajoutée mais exigences fortes.
+
+## Prix marché du nettoyage à Marseille en 2026
+
+D'après les observations terrain :
+
+- **Bureaux centre-ville** : 11-14 €/m²/an HT (≈ 0,90-1,20 €/m²/mois)
+- **Bureaux Euroméditerranée** : 12-16 €/m²/an HT (+10-15 %)
+- **Copropriétés bord de mer** : 13-18 €/m²/an HT (vitrerie incluse)
+- **Hôtellerie** : tarification souvent à la chambre (7-13 €/chambre selon catégorie)
+- **Cabinets médicaux** : 17-24 €/m²/an HT (bionettoyage)
+- **Entrepôts port/Fos** : 6-10 €/m²/an HT (volumes importants, prestation basique)
+
+Globalement **Marseille est ~15-20 % en dessous de Paris** mais aligné avec Lyon hors Part-Dieu.
+
+## Le défi marseillais n°1 : la saisonnalité hôtelière
+
+L'hôtellerie marseillaise double sa demande entre mai et octobre. Pour une société de nettoyage qui sert plusieurs hôtels, cela signifie :
+- Recruter et fidéliser un vivier d'agents saisonniers (mêmes agents chaque été)
+- Anticiper le planning 8 semaines à l'avance pour caler les agents permanents
+- Éviter le surmenage en haute saison (alertes automatiques nécessaires)
+
+**Sans outil de pilotage**, vous découvrez les conflits de planning quelques jours avant. Vous payez des heures sup non prévues. Vos agents craquent en août.
+
+## Le défi marseillais n°2 : les copropriétés bord de mer
+
+Le **sel et les embruns** attaquent vitres, mobilier extérieur et serrureries. Les copropriétés du 7e, 8e et de la Corniche demandent :
+- Nettoyage vitrerie plus fréquent (mensuel vs trimestriel ailleurs)
+- Produits adaptés (anticorrosion, déminéralisés)
+- Agents formés au travail extérieur (échelles, harnais selon hauteur)
+
+Le tarif est plus élevé, mais les exigences le sont aussi.
+
+## Comment piloter sa société de nettoyage à Marseille
+
+Avec **plusieurs secteurs (tertiaire, hôtellerie, copropriétés, port), une saisonnalité forte et une géographie étalée Aix-Marseille-Fos**, un cockpit unifié devient stratégique.
+
+[Proprely](/villes/marseille) centralise :
+- [Planning multi-sites](/fonctionnalites/planning-nettoyage) avec gestion de la saisonnalité hôtelière
+- [Gestion agents](/fonctionnalites/gestion-agents-nettoyage) avec spécialités (vitrerie, bionettoyage, port)
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage) acceptée syndics et facility managers
+- Marge par client en temps réel : indispensable pour identifier les contrats hôteliers vraiment rentables
+
+Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Marseille](/villes/marseille).`,
+  },
+  {
+    slug: 'societe-nettoyage-toulouse',
+    title: 'Société de nettoyage à Toulouse : marché aérospatial, prix, comment se positionner en 2026',
+    excerpt: "Toulouse est un marché B2B porté par l'aérospatial (Airbus, ATR, Thales), le médical (CHU, oncopole) et la croissance démographique. Analyse du marché toulousain, prix, secteurs porteurs.",
+    date: '20 mai 2026',
+    readTime: '7 min',
+    tag: 'Local',
+    quickSummary: [
+      "Toulouse est portée par 3 piliers : aérospatial (Airbus & sous-traitants), médical (CHU, Oncopole), tertiaire en croissance.",
+      "L'aérospatial demande des protocoles stricts (ESD, salles propres, traçabilité) — tarif majoré 30-50 %.",
+      "Prix marché bureaux : 11-15 €/m²/an HT (~15 % en dessous de Paris).",
+      "Croissance démographique +10 000 hab/an : marché tertiaire et résidentiel en expansion durable.",
+      "Géographie : axe Compans-Caffarelli, Blagnac, Labège, Cancéropôle, sud toulousain.",
+    ],
+    faq: [
+      { q: "Quels sont les secteurs porteurs à Toulouse pour une société de nettoyage ?", a: "Trois piliers : (1) aérospatial — Airbus et sa supply chain (Latécoère, Liebherr, Sogeclair) avec exigences protocole ESD et salles propres, (2) médical — CHU Purpan/Rangueil, Oncopole, cliniques privées, cabinets médicaux du centre, (3) tertiaire — Compans-Caffarelli, Cité de l'Espace, Labège Innopole, plus de nouveaux immeubles avec la croissance démographique." },
+      { q: "Quel est le prix marché du nettoyage de bureaux à Toulouse ?", a: "Le tarif toulousain se situe entre 11 et 15 €/m²/an HT sur contrat annuel, soit ~0,90 à 1,25 €/m²/mois. Pour les immeubles modernes de Compans-Caffarelli ou Labège, 12-16 €/m²/an. Pour les sites aérospatiaux (avec protocoles ESD), prix majoré de 30-50 %." },
+      { q: "Comment décrocher des contrats avec Airbus et l'aérospatial à Toulouse ?", a: "Trois prérequis : (1) certification qualité (ISO 9001 minimum, idéalement EN 9100), (2) agents formés aux protocoles ESD (décharge électrostatique) et salles propres, (3) capacité à fournir traçabilité produit et reporting digital. L'entrée se fait souvent par des contrats avec des sous-traitants Airbus avant d'accéder au donneur d'ordre direct." },
+      { q: "Le Cancéropôle / Oncopole est-il un débouché pour une société de nettoyage ?", a: "Oui, marché de niche à forte valeur ajoutée. Oncopole, IUCT, laboratoires de recherche cancer : protocoles bionettoyage stricts, salles propres, traçabilité produits, agents formés aux risques biologiques. Tarif 2-3 fois supérieur au bureau standard, mais exigences en proportion." },
+      { q: "Comment gérer la croissance démographique de Toulouse côté business ?", a: "Toulouse gagne ~10 000 habitants par an, ce qui tire le tertiaire et le résidentiel. Pour une société de nettoyage : anticiper la croissance en structurant l'organisation (logiciel de pilotage, recrutement continu), miser sur les zones en développement (Cartoucherie, Andromède à Blagnac, Eurocentre nord), nouer des partenariats avec promoteurs et syndics." },
+      { q: "Quel logiciel pour piloter sa société de nettoyage à Toulouse ?", a: "Pour une TPE/PME B2B toulousaine (3-50 agents) sur axe Compans/Blagnac/Labège, un cockpit unifié comme Proprely centralise planning multi-sites avec optimisation des tournées (transit Toulouse-Blagnac-Labège peut atteindre 30 km/jour), gestion agents avec spécialités aéronautique/médical, preuve de passage standardisée. Gratuit pendant la bêta privée." },
+    ],
+    relatedSlugs: ['digitaliser-entreprise-nettoyage-5-etapes', 'convention-collective-nettoyage-idcc-3043', 'logiciel-societe-nettoyage-criteres'],
+    content: `## Le marché du nettoyage B2B à Toulouse en 2026
+
+Toulouse est portée par **trois piliers structurels** : l'aérospatial (Airbus, ATR, Thales Alenia Space, plus une dense supply chain), le médical (CHU Purpan/Rangueil, Oncopole, cliniques privées), et un tertiaire en croissance soutenue par la dynamique démographique (+10 000 habitants/an).
+
+Pour une société de nettoyage B2B, c'est un marché **stable, en croissance, avec des niches à forte valeur ajoutée** (aéronautique, médical) qui justifient un tarif majoré pour les structures spécialisées.
+
+## Les 3 piliers du marché toulousain
+
+### 1. L'aérospatial : la spécificité toulousaine
+
+**Airbus et sa supply chain** (Latécoère, Liebherr, Sogeclair, Daher, et des centaines de sous-traitants) sont le poumon économique de Toulouse. Pour une société de nettoyage, ce secteur représente un débouché majeur, **à condition de répondre aux exigences** :
+
+- Protocoles ESD (décharge électrostatique) pour les zones de production électronique
+- Salles propres ISO 7-8 pour certains ateliers d'assemblage
+- Traçabilité produits chimiques et certifications
+- Reporting digital exigé par les facility managers
+- Souvent ISO 9001 minimum, idéalement EN 9100
+
+Le tarif est majoré de 30 à 50 % vs un bureau standard, mais la barrière d'entrée filtre la concurrence.
+
+### 2. Le pôle médical
+
+**CHU Purpan, Rangueil, Oncopole (Cancéropôle), IUCT, cliniques privées (Saint-Jean Languedoc, Pasteur), cabinets médicaux du centre** : Toulouse concentre un pôle santé majeur, classé parmi les 5 premiers de France.
+
+Exigences : bionettoyage, traçabilité, agents formés aux risques biologiques. Marché à forte valeur ajoutée, peu de concurrents capables de répondre aux protocoles.
+
+### 3. Le tertiaire en croissance
+
+**Compans-Caffarelli** (centre tertiaire historique), **Labège Innopole** (zone d'activité au sud), **Cancéropôle** (au-delà du médical, tertiaire qui s'agrège), **Blagnac et Andromède** (autour de l'aéroport) : le tissu tertiaire toulousain se densifie.
+
+La croissance démographique de Toulouse (+10 000 hab/an) tire la demande en bureaux, en logements, et donc en prestations de nettoyage récurrentes.
+
+## Prix marché à Toulouse en 2026
+
+- **Bureaux centre-ville** : 11-14 €/m²/an HT (≈ 0,90-1,15 €/m²/mois)
+- **Bureaux Compans / Labège / Andromède** : 12-16 €/m²/an HT (+10 %)
+- **Sites aérospatiaux avec ESD** : 18-30 €/m²/an HT (+50-100 % bureau standard)
+- **Cabinets médicaux** : 18-25 €/m²/an HT (bionettoyage)
+- **Salles propres / Oncopole / labos** : 30-60 €/m²/an HT (ISO 7-8)
+- **Copropriétés centre historique** : 12-18 €/m²/an HT
+
+Toulouse est globalement **~15 % en dessous de Paris** sur le bureau standard, mais **équivalent ou au-dessus** sur les niches aéronautiques et médicales.
+
+## Le défi toulousain n°1 : l'étalement géographique
+
+Vos clients peuvent être entre Compans (centre), Blagnac (nord-ouest, aéroport), Labège (sud-est) et Cancéropôle (sud). **Le transit peut atteindre 30-40 km/jour** pour un agent multi-sites.
+
+Sans optimisation des tournées, vous perdez 1 à 2 heures par jour par agent. Un logiciel de planning qui suggère les agents les plus proches du prochain site selon leur dernière intervention devient stratégique.
+
+## Le défi toulousain n°2 : la course à la qualification
+
+Pour l'aérospatial et le médical, **la barrière n'est pas commerciale, elle est qualitative**. Vous avez besoin :
+- D'agents formés (ESD, salles propres, bionettoyage)
+- D'un système de traçabilité (qui a fait quoi, quand, avec quels produits)
+- D'un reporting digital exigé par les facility managers
+
+Sans cela, vous restez sur le marché bureau standard où la concurrence prix est intense.
+
+## Comment se positionner à Toulouse en 2026
+
+**Trois stratégies efficaces** :
+
+1. **Spécialisation aéronautique** : se positionner comme expert ESD/salles propres pour Airbus et sa supply chain. Marché à entrée élevée mais à marge confortable.
+2. **Spécialisation médical** : Oncopole, CHU, cliniques privées. Forte valeur ajoutée, peu de concurrence sérieuse.
+3. **Maillage zone porteuse** : Andromède, Cartoucherie, Eurocentre nord. Zones en développement avec promoteurs et syndics qui cherchent des prestataires.
+
+## Quel logiciel pour piloter sa société de nettoyage à Toulouse
+
+Pour une **TPE/PME B2B toulousaine (3-50 agents)** avec sites entre Compans, Blagnac, Labège et Cancéropôle, un cockpit unifié devient stratégique.
+
+[Proprely](/villes/toulouse) centralise :
+- [Planning multi-sites](/fonctionnalites/planning-nettoyage) avec optimisation des tournées (réduction transit)
+- [Gestion agents](/fonctionnalites/gestion-agents-nettoyage) avec spécialités (aéronautique, médical, ESD)
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage) avec reporting digital exigé par les facility managers Airbus
+- Marge par client en temps réel : essentiel pour distinguer les contrats aéronautiques vraiment rentables
+
+Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Toulouse](/villes/toulouse).`,
+  },
+  {
+    slug: 'societe-nettoyage-lille',
+    title: "Société de nettoyage à Lille : Euralille, métropole Lille-Roubaix-Tourcoing, marché 2026",
+    excerpt: "Lille concentre un marché B2B porté par Euralille, les sièges régionaux (Auchan, Decathlon, OVHcloud), le CHRU et l'étalement géographique Lille-Roubaix-Tourcoing-Villeneuve d'Ascq. Analyse du marché lillois.",
+    date: '20 mai 2026',
+    readTime: '7 min',
+    tag: 'Local',
+    quickSummary: [
+      "Lille concentre les sièges régionaux des Hauts-de-France : Auchan, Decathlon, OVHcloud, Castorama, Boulanger.",
+      "Métropole étalée Lille-Roubaix-Tourcoing-Villeneuve d'Ascq : transit potentiel 30-50 km/jour.",
+      "Prix marché bureaux : 11-14 €/m²/an HT (~20 % en dessous de Paris).",
+      "Proximité Belgique : opportunités cross-border mais réglementation différente.",
+      "CHRU et pôle universitaire majeurs : marché médical et étudiant porteur.",
+    ],
+    faq: [
+      { q: "Quel est le prix marché du nettoyage de bureaux à Lille en 2026 ?", a: "Le tarif lillois se situe entre 11 et 14 €/m²/an HT sur contrat annuel, soit ~0,90 à 1,15 €/m²/mois. Pour Euralille (zone tertiaire moderne), 12-16 €/m²/an. Pour la périphérie (Villeneuve d'Ascq, Roubaix), 10-13 €/m²/an. Globalement ~20 % en dessous de Paris." },
+      { q: "Comment gérer l'étalement géographique Lille-Roubaix-Tourcoing-Villeneuve ?", a: "Trois leviers : (1) optimiser les tournées avec un logiciel qui suggère l'agent le plus proche du prochain site, (2) constituer des équipes par sous-zone (équipe Lille centre, équipe Roubaix-Tourcoing, équipe Villeneuve), (3) prévoir un budget transit dans la grille de prix (~5-10 % du coût horaire chargé)." },
+      { q: "Quels sont les sièges régionaux clients potentiels à Lille ?", a: "Lille est le siège des Hauts-de-France pour de nombreux groupes : Auchan, Decathlon, Boulanger, Castorama (groupe Mulliez), Bonduelle, OVHcloud à proximité (Roubaix), Vente-Privée. Tous ont des sièges et des entrepôts qui demandent des prestations de nettoyage récurrentes." },
+      { q: "Peut-on travailler en Belgique depuis une société de nettoyage lilloise ?", a: "Possible mais avec contraintes : enregistrement TVA belge si CA significatif en Belgique, conformité au droit social belge pour les agents qui interviennent côté belge (commission paritaire 121 nettoyage), gestion des frontaliers. Souvent il est plus simple de créer une entité belge dédiée si le volume cross-border devient important." },
+      { q: "Le CHRU et le pôle médical lillois sont-ils porteurs ?", a: "Oui. CHRU de Lille (un des plus gros CHU français), Clinique Saint-Vincent, Polyclinique du Bois, cabinets médicaux du Vieux-Lille : marché bionettoyage à forte valeur ajoutée. Exigences strictes (protocoles, traçabilité, formation agents) mais marges supérieures de 30-50 % au bureau standard." },
+      { q: "Quel logiciel pour piloter sa société de nettoyage à Lille ?", a: "Pour une TPE/PME B2B lilloise (3-50 agents) avec sites étalés sur la métropole, un cockpit comme Proprely centralise planning multi-sites avec optimisation des tournées (transit Lille-Roubaix-Tourcoing-Villeneuve), gestion agents avec spécialités, preuve de passage standardisée acceptée par les sièges régionaux. Gratuit pendant la bêta privée." },
+    ],
+    relatedSlugs: ['gestion-societe-nettoyage-outils', 'digitaliser-entreprise-nettoyage-5-etapes', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Le marché du nettoyage B2B à Lille en 2026
+
+Lille est la **quatrième grande métropole tertiaire française** après Paris, Lyon et Marseille. La spécificité lilloise tient à **trois caractéristiques** :
+
+1. **Une concentration unique de sièges régionaux** issus du tissu familial industriel des Hauts-de-France (groupe Mulliez : Auchan, Decathlon, Boulanger, Castorama ; mais aussi Bonduelle, OVHcloud, Vente-Privée).
+2. **Un étalement géographique fort** sur la métropole Lille-Roubaix-Tourcoing-Villeneuve d'Ascq (1,2 million d'habitants sur 95 communes).
+3. **Une proximité frontalière** avec la Belgique qui ouvre des opportunités cross-border.
+
+Pour une société de nettoyage B2B, c'est un marché **mature, exigeant, avec des opportunités de niche** (sièges régionaux, médical, e-commerce / logistique avec Roubaix).
+
+## Les 4 secteurs porteurs à Lille
+
+### 1. Euralille et les sièges régionaux
+
+**Euralille** est le principal quartier d'affaires lillois (Tour Lille Europe, Tour Bercail, Centre Commercial). Bureaux tertiaires modernes, prestations matinales 6h-9h, exigence d'accueil propre à 8h30.
+
+Au-delà d'Euralille, les **sièges régionaux du Mulliez** (Croix, Villeneuve d'Ascq) et d'**OVHcloud** (Roubaix) représentent des comptes majeurs. Volumes importants, exigences modernes (preuve de passage digitale, reporting), tarif marché +5-10 % vs bureau standard.
+
+### 2. Le pôle médical / CHRU
+
+**CHRU de Lille** (un des plus gros CHU de France), Clinique Saint-Vincent, Polyclinique du Bois, cabinets médicaux du Vieux-Lille et du quartier Vauban : pôle santé majeur. Protocoles bionettoyage, traçabilité, agents formés. Tarif majoré 30-50 % vs bureau standard.
+
+### 3. L'enseignement supérieur
+
+**Université de Lille (3 sites + campus), HEC, EDHEC, Centrale Lille, IÉSEG, Université Catholique** : Lille est la 3e ville étudiante française (~115 000 étudiants). Marché des résidences étudiantes, locaux d'écoles, espaces de coworking. Saisonnalité forte (creux juillet-août, intensité septembre-juin).
+
+### 4. La logistique et l'e-commerce
+
+**Roubaix-Tourcoing** concentre une logistique e-commerce (OVHcloud, Showroomprivé historique, plateformes Auchan). Entrepôts, bureaux administratifs, exigences spécifiques (sécurité, badges, horaires décalés).
+
+## Prix marché à Lille en 2026
+
+- **Bureaux Euralille** : 12-16 €/m²/an HT (≈ 1,00-1,30 €/m²/mois)
+- **Bureaux centre-ville hors Euralille** : 11-14 €/m²/an HT
+- **Bureaux périphérie (Villeneuve d'Ascq, Roubaix)** : 10-13 €/m²/an HT (-15 %)
+- **Sièges régionaux Mulliez / OVHcloud** : grille négociée, souvent 13-17 €/m²/an
+- **CHRU / cliniques** : 18-25 €/m²/an HT (bionettoyage)
+- **Copropriétés Vieux-Lille** : 13-19 €/m²/an HT (patrimonial)
+- **Entrepôts logistiques Roubaix-Tourcoing** : 6-9 €/m²/an HT (volumes)
+
+Lille est globalement **~20 % en dessous de Paris** mais en ligne avec Lyon ou Marseille hors zones premium.
+
+## Le défi lillois n°1 : la métropole étalée
+
+Vos clients peuvent être entre Lille centre, Roubaix, Tourcoing, Villeneuve d'Ascq, et la frontière belge. **30 à 50 km de transit potentiel par jour** pour un agent multi-sites.
+
+Trois leviers pour limiter le coût du transit :
+- Optimiser les tournées avec un logiciel qui suggère l'agent le plus proche
+- Constituer des équipes par sous-zone (équipe Lille centre, équipe Roubaix-Tourcoing)
+- Intégrer ~5-10 % de coût transit dans la grille de prix
+
+## Le défi lillois n°2 : la proximité belge
+
+La frontière belge est à 15-30 minutes de Lille. **Tentation forte** de prendre des contrats côté belge, mais attention :
+- TVA belge à enregistrer si CA significatif en Belgique
+- Conformité au droit social belge pour les agents intervenant côté belge (commission paritaire 121 nettoyage en Belgique)
+- Gestion administrative des frontaliers complexe
+
+Souvent il est plus simple de créer une entité belge dédiée si le volume cross-border devient stratégique.
+
+## Comment se positionner à Lille en 2026
+
+**Trois stratégies efficaces** :
+
+1. **Spécialisation sièges régionaux** : se positionner comme prestataire structuré (reporting, preuve de passage digitale) capable de servir les sièges Mulliez et OVHcloud. Volumes garantis, tarif négocié mais correct.
+2. **Spécialisation médical** : CHRU, cliniques, cabinets. Forte valeur ajoutée, barrière à l'entrée (protocoles, formation).
+3. **Maillage zone étudiante** : résidences, écoles, coworkings. Volume important, saisonnalité gérable avec un bon planning.
+
+## Quel logiciel pour piloter sa société de nettoyage à Lille
+
+Pour une **TPE/PME B2B lilloise (3-50 agents)** avec sites étalés Lille-Roubaix-Tourcoing-Villeneuve, un cockpit unifié est stratégique.
+
+[Proprely](/villes/lille) centralise :
+- [Planning multi-sites](/fonctionnalites/planning-nettoyage) avec optimisation transit
+- [Gestion agents](/fonctionnalites/gestion-agents-nettoyage) avec spécialités (médical, logistique)
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage) acceptée par les sièges régionaux et le CHRU
+- Marge par client en temps réel pour identifier les contrats vraiment rentables
+
+Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Lille](/villes/lille).`,
+  },
+  {
+    slug: 'societe-nettoyage-nantes',
+    title: "Société de nettoyage à Nantes : marché, secteurs porteurs, prix en 2026",
+    excerpt: "Nantes est portée par l'Île de Nantes (tertiaire en croissance), le CHU, l'agroalimentaire et la dynamique démographique. Analyse du marché B2B nantais, prix indicatifs, comment piloter sa société.",
+    date: '20 mai 2026',
+    readTime: '7 min',
+    tag: 'Local',
+    quickSummary: [
+      "Nantes est une métropole en croissance démographique forte (+5 000 hab/an).",
+      "4 piliers : tertiaire Île de Nantes / Euronantes, CHU & médical, agroalimentaire, étudiants.",
+      "Prix marché bureaux : 11-15 €/m²/an HT (~15 % en dessous de Paris).",
+      "Tertiaire en développement : nouveaux immeubles Île de Nantes, Euronantes, Chantenay.",
+      "Marché stable, marges saines, concurrence raisonnable vs Lyon ou Paris.",
+    ],
+    faq: [
+      { q: "Quel est le prix marché du nettoyage de bureaux à Nantes ?", a: "Le tarif nantais se situe entre 11 et 15 €/m²/an HT sur contrat annuel, soit ~0,90 à 1,25 €/m²/mois. Pour Euronantes ou l'Île de Nantes (zones modernes), 12-16 €/m²/an. Pour le centre historique et Chantenay, 11-14 €/m²/an. Globalement ~15 % en dessous de Paris." },
+      { q: "Quels sont les secteurs porteurs à Nantes pour une société de nettoyage ?", a: "Quatre piliers : (1) tertiaire Île de Nantes / Euronantes / Cité des Congrès (immeubles modernes, sièges régionaux), (2) médical — CHU Hôtel-Dieu, ICO Cancérologie, cliniques privées, cabinets, (3) agroalimentaire (siège LDC, IAA, sous-traitants), (4) enseignement supérieur (Université de Nantes, Audencia, Centrale, Oniris)." },
+      { q: "L'Île de Nantes est-elle un débouché majeur pour le nettoyage B2B ?", a: "Oui. C'est le plus gros projet de rénovation urbaine de France après Euroméditerranée. Tertiaire moderne (Euronantes), équipements publics (CHU 2026), école d'architecture, MIN. Marché en croissance forte avec immeubles neufs qui demandent un nettoyage premier mois après livraison puis récurrent." },
+      { q: "Comment se démarquer face à la concurrence à Nantes ?", a: "Trois leviers : (1) spécialisation médical / bionettoyage (CHU et ICO ouvrent des appels d'offres réguliers), (2) maîtrise de l'Île de Nantes en pleine croissance — relations avec les promoteurs et facility managers, (3) preuve de passage standardisée pour les syndics nationaux présents à Nantes (Foncia, Citya, Sergic)." },
+      { q: "Quelle saisonnalité touristique à Nantes ?", a: "Saisonnalité modérée vs Marseille ou Nice. Pic mai-septembre avec le Voyage à Nantes, les Machines de l'Île, les croisières fluviales. L'hôtellerie nantaise (centre-ville, gare) voit sa demande augmenter ~30 % en haute saison, vs +100 % à Marseille. Anticipation à 4 semaines suffit généralement." },
+      { q: "Quel logiciel pour piloter sa société de nettoyage à Nantes ?", a: "Pour une TPE/PME B2B nantaise (3-50 agents), Proprely centralise planning multi-sites, agents avec spécialités, preuve de passage standardisée acceptée par les facility managers Euronantes et les syndics. Particulièrement adapté pour gérer la croissance de l'Île de Nantes et anticiper la haute saison. Gratuit pendant la bêta privée." },
+    ],
+    relatedSlugs: ['trouver-clients-b2b-nettoyage', 'logiciel-societe-nettoyage-criteres', 'tarif-nettoyage-bureaux-m2-2026'],
+    content: `## Le marché du nettoyage B2B à Nantes en 2026
+
+Nantes est l'une des **métropoles françaises en plus forte croissance démographique** (~+5 000 habitants/an sur la métropole). Cette dynamique tire le marché du nettoyage B2B : nouveaux bureaux, nouveaux équipements publics, nouvelles copropriétés.
+
+Le tissu économique nantais est **équilibré et résilient** : tertiaire moderne (Île de Nantes, Euronantes), pôle médical majeur (CHU, ICO), agroalimentaire (siège LDC, IAA), enseignement supérieur (Audencia, Centrale Nantes). C'est un marché **mature mais en expansion**, avec une concurrence raisonnable vs Lyon ou Paris.
+
+## Les 4 piliers du marché nantais
+
+### 1. Tertiaire — Île de Nantes / Euronantes
+
+**L'Île de Nantes** est le plus gros projet de rénovation urbaine de France hors Marseille. **Euronantes** (gare nord et sud, Cité des Congrès) concentre le tertiaire moderne : nouveaux immeubles de bureaux, sièges régionaux, opérateurs publics. Croissance soutenue, exigences modernes (preuve de passage digitale, reporting).
+
+Le futur **nouveau CHU de Nantes** (livraison 2026-2027) ajoute un équipement majeur sur l'Île, qui tirera l'écosystème médical et administratif autour.
+
+### 2. Pôle médical
+
+**CHU Hôtel-Dieu / Laennec**, **ICO Cancérologie** (René-Gauducheau), Polyclinique de l'Atlantique, Confluent, cabinets médicaux du centre et de Saint-Herblain. Marché bionettoyage à forte valeur ajoutée, exigences strictes mais marges supérieures de 30-50 %.
+
+### 3. Agroalimentaire
+
+**LDC** (siège à Sablé-sur-Sarthe mais activités fortes en Loire-Atlantique), **industries agroalimentaires** de la métropole nantaise et de la périphérie : sites industriels avec exigences hygiène strictes, contrats récurrents importants. Marché de niche mais à forte valeur.
+
+### 4. Enseignement supérieur
+
+**Université de Nantes (45 000 étudiants), Audencia, Centrale Nantes, Oniris** : ~60 000 étudiants au total. Marché des locaux d'écoles, résidences universitaires, espaces de coworking. Saisonnalité forte (creux juillet-août).
+
+## Prix marché à Nantes en 2026
+
+- **Bureaux Euronantes / Île de Nantes** : 12-16 €/m²/an HT (≈ 1,00-1,30 €/m²/mois)
+- **Bureaux centre-ville historique** : 11-14 €/m²/an HT
+- **Bureaux périphérie (Saint-Herblain, Carquefou)** : 10-13 €/m²/an HT
+- **CHU / cliniques** : 18-25 €/m²/an HT (bionettoyage)
+- **Sites agroalimentaires** : grille négociée, souvent forfait mensuel
+- **Copropriétés centre / Île Feydeau** : 12-18 €/m²/an HT
+- **Hôtellerie** : 6-12 €/chambre
+
+Nantes est globalement **~15 % en dessous de Paris** et en ligne avec Bordeaux ou Lille.
+
+## Le défi nantais n°1 : la croissance de l'Île de Nantes
+
+L'Île de Nantes livre **plusieurs dizaines de milliers de m² de bureaux par an**. Les sociétés qui maîtrisent ce marché captent une croissance organique forte.
+
+**Trois leviers** :
+- Relations avec les promoteurs (ICADE, Eiffage, Nexity) pour intervenir dès la livraison
+- Relations avec les facility managers (Cushman & Wakefield, JLL, Foncia AM)
+- Capacité à mobiliser rapidement (un immeuble livré = besoin immédiat de prestation)
+
+## Le défi nantais n°2 : la guerre des talents
+
+Nantes attire les jeunes actifs et les agents. Mais le marché du travail est tendu, **les agents de nettoyage sont sollicités par tous les secteurs (logistique, distribution, restauration)**. La fidélisation devient stratégique.
+
+Leviers :
+- Planning prévisible publié 2 semaines à l'avance
+- Prime de présence trimestrielle
+- Parcours de spécialisation (vitrerie, bionettoyage)
+- Compteur d'heures juste et transparent
+
+## Comment se positionner à Nantes en 2026
+
+**Trois stratégies** :
+
+1. **Spécialisation Île de Nantes / Euronantes** : se positionner comme prestataire structuré (reporting, preuve de passage digitale). Marché en croissance forte.
+2. **Spécialisation médical** : CHU, ICO, cliniques. Forte valeur ajoutée, peu de concurrence sérieuse.
+3. **Maillage centre + périphérie** : Saint-Herblain, Carquefou, Rezé. Volume important, concurrence raisonnable.
+
+## Quel logiciel pour piloter sa société de nettoyage à Nantes
+
+Pour une **TPE/PME B2B nantaise (3-50 agents)**, un cockpit unifié devient stratégique dès 5-8 agents.
+
+[Proprely](/villes/nantes) centralise :
+- [Planning multi-sites](/fonctionnalites/planning-nettoyage) avec gestion des zones (centre, Île, périphérie)
+- [Gestion agents](/fonctionnalites/gestion-agents-nettoyage) avec spécialités (médical, agroalimentaire)
+- [Devis nettoyage](/fonctionnalites/devis-nettoyage) en 2 min pour répondre aux nouvelles opportunités Île de Nantes
+- Marge par client en temps réel
+
+Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Nantes](/villes/nantes).`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour
@@ -2148,6 +2640,16 @@ const POST_TLDR: Record<string, string> = {
     "Le tarif de nettoyage de bureaux en France en 2026 se situe en moyenne entre 12 et 22 € HT/m²/an, soit ~1-2 €/m²/mois sur contrat annuel. Variables : surface (>500 m² = -10-20 %), fréquence (quotidien vs 3×/semaine), zone géographique (Paris/IDF +15-25 % vs province), prestations annexes (vitres, moquette), horaires (avant 7h ou après 21h = +30-60 %).",
   'digitaliser-entreprise-nettoyage-5-etapes':
     "5 étapes pour digitaliser une société de nettoyage en 2-4 mois : (1) audit des outils actuels et heures perdues, (2) choix d'un cockpit unifié (planning + devis + agents + preuve de passage + marge), (3) migration progressive des données clients/sites/agents, (4) formation agents 1h max sur mobile, (5) basculement complet en 4-8 semaines selon taille. ROI typique : 6-10h récupérées par semaine pour le dirigeant.",
+  'societe-nettoyage-lyon':
+    "Lyon est le 2e marché français du nettoyage B2B après l'Île-de-France. 4 secteurs porteurs : tertiaire Part-Dieu/Confluence, pôle santé HCL, biotech Gerland (Sanofi, BioMérieux), hôtellerie presqu'île. Prix marché bureaux : 12-18 €/m²/an HT (~10-15 % en dessous de Paris). Pour se différencier : spécialisation médicale ou biotech, ou focus géographique sur une zone (Croix-Rousse, Brotteaux, Confluence).",
+  'societe-nettoyage-marseille':
+    "Marseille est le 3e marché propreté B2B français, porté par Euroméditerranée (tertiaire moderne en expansion), l'hôtellerie saisonnière (mai-octobre), les copropriétés bord de mer (Corniche, 7e/8e arr.), le port Marseille-Fos et le pôle santé AP-HM. Prix marché bureaux : 10-15 €/m²/an HT (~20 % en dessous de Paris). Spécificité : saisonnalité forte qui double la demande hôtelière.",
+  'societe-nettoyage-toulouse':
+    "Toulouse est portée par 3 piliers : aérospatial (Airbus et supply chain — exigences ESD et salles propres, tarif majoré 30-50 %), médical (CHU, Oncopole), tertiaire en croissance avec la démographie (+10 000 hab/an). Prix marché bureaux : 11-15 €/m²/an HT (~15 % en dessous de Paris). Géographie étalée Compans-Blagnac-Labège-Cancéropôle exige une optimisation rigoureuse des tournées.",
+  'societe-nettoyage-lille':
+    "Lille concentre les sièges régionaux du tissu industriel des Hauts-de-France : Auchan, Decathlon, Boulanger, Castorama (groupe Mulliez), OVHcloud, Bonduelle. Métropole étalée Lille-Roubaix-Tourcoing-Villeneuve d'Ascq (~30-50 km de transit potentiel/jour). Prix marché bureaux : 11-14 €/m²/an HT (~20 % en dessous de Paris). Proximité Belgique = opportunités cross-border mais réglementation distincte.",
+  'societe-nettoyage-nantes':
+    "Nantes est une métropole en forte croissance démographique (+5 000 hab/an). 4 piliers : tertiaire Île de Nantes / Euronantes (en expansion forte), CHU et ICO (médical), agroalimentaire (LDC), enseignement supérieur (60 000 étudiants). Prix marché bureaux : 11-15 €/m²/an HT (~15 % en dessous de Paris). Marché mature mais en expansion, concurrence raisonnable vs Lyon ou Paris.",
 }
 
 export function getPost(slug: string): BlogPost | undefined {

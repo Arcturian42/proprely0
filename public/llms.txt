@@ -15,11 +15,15 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs
 - [Logiciel société de nettoyage — guide complet 2026](https://proprely.fr/logiciel-societe-nettoyage) : guide pilier, critères de choix, comparatif vs Excel/PROPRET/Progiclean, ROI
 - [Comparatif logiciels nettoyage 2026](https://proprely.fr/comparatif-logiciel-nettoyage) : Proprely vs PROPRET, Progiclean, Organilog, Excel — critères, fonctionnalités, tarifs
+- [Proprely vs Organilog](https://proprely.fr/comparatif/proprely-vs-organilog) : comparatif honnête vs la suite multi-métiers Organilog
+- [Proprely vs Progiclean](https://proprely.fr/comparatif/proprely-vs-progiclean) : comparatif vs l'ERP métier historique Progiclean
+- [Proprely vs PROPRET](https://proprely.fr/comparatif/proprely-vs-propret) : comparatif vs l'éditeur historique PROPRET
 - [Logiciel auto-entrepreneur nettoyage](https://proprely.fr/logiciel-auto-entrepreneur-nettoyage) : pour les indépendants en nettoyage, devis, planning, facturation
 - [CRM entreprise propreté](https://proprely.fr/crm-entreprise-proprete) : pipeline commercial, suivi clients/sites, relances devis, marge par compte
 - [Proprely vs Excel](https://proprely.fr/proprely-vs-excel) : comparatif détaillé, coût de la dispersion, gains attendus
 - [Bêta privée — devenir membre fondateur](https://proprely.fr/beta) : candidature aux 30 places fondateurs
 - [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie
+- [À propos de Proprely](https://proprely.fr/a-propos) : mission, engagements, histoire et éditeur
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
 - [Simulateur de rentabilité](https://proprely.fr/simulateur-rentabilite) : marge brute d'un contrat de nettoyage en 1 minute
 - [Ressources gratuites](https://proprely.fr/ressources) : modèles de devis, planning, suivi des heures (Excel téléchargeables)
@@ -77,6 +81,11 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Société de nettoyage en Île-de-France](https://proprely.fr/blog/societe-nettoyage-ile-de-france) : géographie du marché, départements porteurs, syndics franciliens
 - [Société de nettoyage à La Défense (92)](https://proprely.fr/blog/societe-nettoyage-la-defense-92) : tours tertiaires, rotations matinales 5h-9h, exigences sécurité
 - [Société de nettoyage à Bordeaux](https://proprely.fr/blog/societe-nettoyage-bordeaux) : marché bordelais, secteurs porteurs, prix marché, particularités locales
+- [Société de nettoyage à Lyon](https://proprely.fr/blog/societe-nettoyage-lyon) : 2e marché français, Part-Dieu, pôle santé HCL, biotech Gerland, prix marché 12-18 €/m²/an
+- [Société de nettoyage à Marseille](https://proprely.fr/blog/societe-nettoyage-marseille) : Euroméditerranée, hôtellerie saisonnière, copropriétés bord de mer, port Marseille-Fos
+- [Société de nettoyage à Toulouse](https://proprely.fr/blog/societe-nettoyage-toulouse) : aérospatial Airbus, médical CHU/Oncopole, tertiaire Compans/Labège, croissance démographique
+- [Société de nettoyage à Lille](https://proprely.fr/blog/societe-nettoyage-lille) : Euralille, sièges régionaux Mulliez (Auchan, Decathlon, Boulanger), OVHcloud, métropole étalée
+- [Société de nettoyage à Nantes](https://proprely.fr/blog/societe-nettoyage-nantes) : Île de Nantes, Euronantes, CHU et ICO, agroalimentaire, croissance démographique forte
 
 ## Ressources gratuites téléchargeables
 

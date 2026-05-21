@@ -4,6 +4,8 @@ import { Calendar, FileText, Users, QrCode, Clock, AlertTriangle, ShieldCheck, S
 export type FeatureBenefit = { icon: LucideIcon; title: string; desc: string }
 export type FeatureUseCase = { icon: LucideIcon; client: string; situation: string; benefit: string }
 export type FeatureFAQ = { q: string; a: string }
+export type FeatureHowToStep = { name: string; text: string }
+export type FeatureHowTo = { name: string; description: string; steps: FeatureHowToStep[] }
 
 export type FeaturePage = {
   slug: string
@@ -23,6 +25,9 @@ export type FeaturePage = {
   faq: FeatureFAQ[]
   relatedSlugs: string[]
   relatedBlogSlugs?: string[]
+  /** Étapes HowTo (schema.org) pour aider Google et les LLMs à comprendre
+   * comment utiliser la fonctionnalité. Mapping centralisé en bas de fichier. */
+  howTo?: FeatureHowTo
 }
 
 export const features: FeaturePage[] = [
@@ -192,8 +197,62 @@ export const features: FeaturePage[] = [
   },
 ]
 
+// Mapping HowTo par fonctionnalité, séparé de l'array principal pour
+// faciliter la mise à jour. Génère un schema.org HowTo dans les pages
+// fonctionnalités (utile pour Google Rich Results et les Generative Engines).
+const FEATURE_HOWTO: Record<string, FeatureHowTo> = {
+  'planning-nettoyage': {
+    name: "Créer et affecter un planning d'agents de nettoyage avec Proprely",
+    description: "Configurer un planning hebdomadaire multi-sites, affecter les agents en 1 clic selon spécialités et disponibilité, et le rendre consultable par les agents sur leur téléphone.",
+    steps: [
+      { name: "Créer les sites clients", text: "Ajoutez vos sites clients avec adresse, fréquence d'intervention (quotidien, hebdomadaire, etc.) et plages horaires souhaitées. Vous pouvez importer une liste depuis Excel pendant l'onboarding." },
+      { name: "Renseigner les agents et leurs spécialités", text: "Créez le profil de chaque agent : nom, contact, spécialités (vitrerie, moquette, décapage, remise en état), charge horaire hebdomadaire cible. Ces spécialités servent à l'affectation automatique." },
+      { name: "Glisser-déposer un agent sur un créneau", text: "Sur la vue planning de la semaine, faites glisser un agent sur un créneau d'intervention. Proprely vérifie sa disponibilité, sa spécialité et sa charge horaire pour éviter doubles-bookings et surmenage." },
+      { name: "Envoyer le planning aux agents", text: "À la validation, chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Pas d'application à installer. Il voit son planning de la semaine et coche les missions terminées en temps réel." },
+      { name: "Suivre et ajuster", text: "Depuis le dashboard, suivez l'avancement en temps réel. Une mission absente déclenche une alerte. Vous pouvez réaffecter en 1 clic à un autre agent disponible." },
+    ],
+  },
+  'devis-nettoyage': {
+    name: "Créer un devis de nettoyage professionnel en 2 minutes avec Proprely",
+    description: "Construire un devis de prestation de nettoyage à partir d'un client, de prestations standardisées, et l'envoyer avec signature électronique pour relance automatique.",
+    steps: [
+      { name: "Sélectionner le client et le site", text: "Choisissez un client existant ou créez-le. Ajoutez le site concerné avec sa surface et ses spécificités (bureaux, copropriété, hôtel, médical)." },
+      { name: "Choisir les prestations et la fréquence", text: "Sélectionnez dans votre catalogue les prestations (nettoyage quotidien, vitrerie mensuelle, moquette trimestrielle…). Le prix se calcule automatiquement selon votre grille interne (m² × tarif × fréquence)." },
+      { name: "Personnaliser et générer le PDF", text: "Ajustez les commentaires, conditions de paiement, durée de validité. Proprely génère un PDF professionnel avec votre logo, vos mentions légales et CGV." },
+      { name: "Envoyer pour signature électronique", text: "Envoyez le devis par email avec un lien de signature électronique. Le client signe en 30 secondes depuis son téléphone ou son ordinateur." },
+      { name: "Relancer et convertir en contrat", text: "Proprely suit l'état du devis (envoyé, ouvert, signé, refusé). Relances automatiques après J+3 et J+7. À la signature, le contrat se crée et alimente le planning automatiquement." },
+    ],
+  },
+  'gestion-agents-nettoyage': {
+    name: "Gérer les agents d'une société de nettoyage avec Proprely",
+    description: "Configurer le profil de chaque agent, suivre la charge horaire, les spécialités et les certifications, prévenir le surmenage et fidéliser l'équipe.",
+    steps: [
+      { name: "Créer le profil agent", text: "Renseignez identité, contact, contrat (CDI/CDD), date d'embauche, charge horaire cible. Ajoutez les documents administratifs (contrat, attestation URSSAF, fiche de paie type) dans son dossier numérique." },
+      { name: "Renseigner les spécialités", text: "Cochez les prestations maîtrisées : vitrerie, moquette, décapage, remise en état, bionettoyage, salles propres, ESD. Ces spécialités filtrent les agents proposés lors de l'affectation au planning." },
+      { name: "Suivre la charge horaire en temps réel", text: "Le dashboard agent affiche heures planifiées vs heures cible. Si un agent dépasse son seuil (ex : 39h sur 35h cible), une alerte surmenage se déclenche automatiquement." },
+      { name: "Gérer les absences et remplacements", text: "Quand un agent est absent, Proprely propose en 1 clic les remplaçants les plus pertinents (proximité géographique, spécialité, charge horaire disponible). Historique conservé pour la traçabilité." },
+      { name: "Préparer la paie sans erreur", text: "À la fin du mois, exportez les heures travaillées de chaque agent vers votre logiciel de paie (Silae compatible). Compteur d'heures, primes, heures sup intégrées. Plus de pointage manuel." },
+    ],
+  },
+  'preuve-passage-nettoyage': {
+    name: "Mettre en place une preuve de passage de nettoyage avec QR code et photos",
+    description: "Configurer une preuve de passage standardisée sur un site client, avec QR code physique, photos avant-après, signature client, et PV automatique envoyé au syndic ou facility manager.",
+    steps: [
+      { name: "Configurer le site et générer le QR code", text: "Sur la fiche du site client, activez la preuve de passage. Proprely génère un QR code unique à imprimer et coller sur le site (entrée, local technique, hall)." },
+      { name: "L'agent scanne le QR à l'arrivée", text: "L'agent ouvre son lien Proprely, scanne le QR code du site. Le check-in est horodaté et géolocalisé (si activé) automatiquement. La mission démarre." },
+      { name: "Prendre les photos avant-après", text: "L'agent prend des photos avant et après l'intervention via Proprely. Les photos sont automatiquement associées au site, à la mission et à la date. Stockage sécurisé européen, 5 ans de conservation." },
+      { name: "Faire signer le client (optionnel)", text: "Si un client ou gardien est présent, il signe sur l'écran du téléphone de l'agent. Sa signature est intégrée au PV automatique." },
+      { name: "Le PV part automatiquement", text: "À la validation de la mission, Proprely génère un PV PDF (QR + photos avant/après + signature + horodatage + agent) et l'envoie automatiquement au syndic ou facility manager configuré. Format accepté par les principaux acteurs nationaux." },
+    ],
+  },
+}
+
 export function getFeature(slug: string): FeaturePage | undefined {
-  return features.find((f) => f.slug === slug)
+  const f = features.find((p) => p.slug === slug)
+  if (!f) return undefined
+  if (f.howTo) return f
+  const howTo = FEATURE_HOWTO[slug]
+  return howTo ? { ...f, howTo } : f
 }
 
 export function getRelatedFeatures(slug: string, max = 2): FeaturePage[] {

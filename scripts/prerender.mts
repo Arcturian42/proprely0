@@ -286,7 +286,9 @@ for (const rawPost of posts) {
   generated.push(url)
 }
 
-for (const f of features) {
+for (const rawFeature of features) {
+  // getFeature() injecte howTo depuis FEATURE_HOWTO si présent.
+  const f = getFeature(rawFeature.slug) ?? rawFeature
   const url = `/fonctionnalites/${f.slug}`
   const benefitsHtml = f.benefits
     .map((b) => `<li><strong>${escapeHtml(b.title)}</strong> — ${escapeHtml(b.desc)}</li>`)
@@ -297,6 +299,13 @@ for (const f of features) {
   const faqHtml = f.faq
     .map((q) => `<h3>${escapeHtml(q.q)}</h3><p>${escapeHtml(q.a)}</p>`)
     .join('')
+  const howToHtml = f.howTo
+    ? `<h2>Comment utiliser ${escapeHtml(f.tag.toLowerCase())} : ${escapeHtml(f.howTo.name)}</h2>
+       <p>${escapeHtml(f.howTo.description)}</p>
+       <ol>${f.howTo.steps
+         .map((s) => `<li><strong>${escapeHtml(s.name)}</strong> — ${escapeHtml(s.text)}</li>`)
+         .join('')}</ol>`
+    : ''
 
   const bodyHtml = `
     <h1>${escapeHtml(f.title)}</h1>
@@ -310,6 +319,7 @@ for (const f of features) {
     <ul>${benefitsHtml}</ul>
     <h2>Cas d'usage</h2>
     <ul>${useCasesHtml}</ul>
+    ${howToHtml}
     <h2>Questions fréquentes</h2>
     ${faqHtml}
   `.trim()
@@ -322,6 +332,21 @@ for (const f of features) {
     ]),
   ]
   if (f.faq.length) schemas.push(faqSchema(f.faq))
+  if (f.howTo) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'HowTo',
+      name: f.howTo.name,
+      description: f.howTo.description,
+      inLanguage: 'fr-FR',
+      step: f.howTo.steps.map((s, i) => ({
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    })
+  }
 
   const html = buildHtml({
     url,
@@ -1377,6 +1402,144 @@ const crmHtml = buildHtml({
 })
 writePage('/crm-entreprise-proprete', crmHtml)
 generated.push('/crm-entreprise-proprete')
+
+// === Comparatifs concurrents (vs-organilog, vs-progiclean, vs-propret) ===
+const { comparisons } = await import('../src/data/comparisons.ts')
+for (const c of comparisons) {
+  const url = `/comparatif/${c.slug}`
+  const cmpUrl = `${ORIGIN}${url}`
+  const tableHtml = c.comparisonTable
+    .map(
+      (r) =>
+        `<tr><td>${escapeHtml(r.criterion)}</td><td>${escapeHtml(r.proprely)}</td><td>${escapeHtml(r.competitor)}</td></tr>`,
+    )
+    .join('')
+  const diffsHtml = c.keyDifferences
+    .map((d) => `<h3>${escapeHtml(d.title)}</h3><p>${escapeHtml(d.description)}</p>`)
+    .join('')
+  const faqHtml = c.faq
+    .map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`)
+    .join('')
+  const whoProprely = c.whoChooses.proprely.map((i) => `<li>${escapeHtml(i)}</li>`).join('')
+  const whoCompetitor = c.whoChooses.competitor.map((i) => `<li>${escapeHtml(i)}</li>`).join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(c.title)}</h1>
+    <aside><p><strong>Réponse-flash :</strong> ${escapeHtml(c.tldr)}</p></aside>
+    <h2>${escapeHtml(c.competitorName)} en quelques mots</h2>
+    <p>${escapeHtml(c.competitorPitch)}</p>
+    <h2>Tableau comparatif Proprely vs ${escapeHtml(c.competitorName)}</h2>
+    <table>
+      <thead><tr><th>Critère</th><th>Proprely</th><th>${escapeHtml(c.competitorName)}</th></tr></thead>
+      <tbody>${tableHtml}</tbody>
+    </table>
+    <h2>Différences structurelles</h2>
+    ${diffsHtml}
+    <h2>Qui choisit Proprely</h2>
+    <ul>${whoProprely}</ul>
+    <h2>Qui choisit ${escapeHtml(c.competitorName)}</h2>
+    <ul>${whoCompetitor}</ul>
+    <h2>Questions fréquentes sur Proprely vs ${escapeHtml(c.competitorName)}</h2>
+    ${faqHtml}
+  `.trim()
+
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: c.title,
+      description: c.metaDescription,
+      url: cmpUrl,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      abstract: c.tldr,
+      mentions: c.competitorUrl
+        ? [{ '@type': 'Organization', name: c.competitorName, url: c.competitorUrl }]
+        : [{ '@type': 'Organization', name: c.competitorName }],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Comparatif', item: `${ORIGIN}/comparatif-logiciel-nettoyage` },
+        { '@type': 'ListItem', position: 3, name: `Proprely vs ${c.competitorName}`, item: cmpUrl },
+      ],
+    },
+    faqSchema(c.faq),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: c.metaTitle,
+    description: c.metaDescription,
+    ogTitle: c.title,
+    ogDescription: c.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+// === Page À propos ===
+const aboutBody = `
+  <h1>Libérer les dirigeants du nettoyage de la dispersion administrative</h1>
+  <p>Proprely est le cockpit métier qui centralise clients, sites, agents, planning, missions, devis et pilotage d'une société de nettoyage B2B dans un seul outil. Conçu en France, en bêta privée auprès de 30 sociétés fondatrices.</p>
+  <h2>Notre mission</h2>
+  <p>Diriger une société de nettoyage B2B en France en 2026, c'est jongler entre Excel pour le planning, WhatsApp pour les changements de dernière minute, Word pour les devis, Google Drive pour les documents, et le papier pour la preuve de passage. Résultat : 6 à 10 heures par semaine perdues par le dirigeant en administration dispersée. À 45 € de coût horaire, c'est 12 600 à 21 000 € de coût caché par an.</p>
+  <p>Notre mission : libérer ces heures et cette charge mentale. Un seul cockpit qui centralise tout, conçu avec les dirigeants qui l'utilisent, sur la convention collective IDCC 3043 et les exigences réelles des syndics, facility managers et clients B2B français.</p>
+  <h2>Nos engagements</h2>
+  <ul>
+    <li><strong>Conçu avec des dirigeants du nettoyage</strong> — chaque fonctionnalité construite à partir d'entretiens terrain.</li>
+    <li><strong>Bêta privée accompagnée et gratuite</strong> — 30 sociétés fondatrices, onboarding 30 min avec le fondateur, tarif fondateur conservé à vie.</li>
+    <li><strong>Vos données restent vos données</strong> — hébergement européen, chiffrement, RGPD, export 1-clic.</li>
+    <li><strong>Édité par une société IT établie</strong> — Pershing Global Solutions LTD (Dublin), spécialisée dans les logiciels métiers sur mesure.</li>
+  </ul>
+  <h2>Notre histoire</h2>
+  <h3>2024 — Genèse</h3>
+  <p>Premiers entretiens terrain avec des dirigeants de sociétés de nettoyage B2B. Constat partagé : 6 à 10 heures par semaine perdues à jongler entre Excel, WhatsApp, Word, Drive et papier.</p>
+  <h3>2025 — Construction</h3>
+  <p>Construction du produit avec un panel de 10 dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels.</p>
+  <h3>2026 — Bêta privée</h3>
+  <p>Ouverture à 30 sociétés fondatrices, support prioritaire, conditions tarifaires préférentielles à vie.</p>
+  <h2>Éditeur</h2>
+  <p>Proprely est édité par <strong>Pershing Global Solutions LTD</strong>, société IT spécialisée dans le développement de logiciels métiers sur mesure. Siège social : 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande. Plus d'informations sur <a href="https://pershingsolution.com">pershingsolution.com</a>.</p>
+  <p>Service support et commercial en français : <a href="mailto:contact@proprely.fr">contact@proprely.fr</a>.</p>
+`.trim()
+
+const aboutHtml = buildHtml({
+  url: '/a-propos',
+  title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
+  description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'À propos de Proprely',
+      description: "Mission, engagements, histoire et éditeur de Proprely.",
+      url: `${ORIGIN}/a-propos`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      mainEntity: { '@id': `${ORIGIN}/#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'À propos', item: `${ORIGIN}/a-propos` },
+      ],
+    },
+  ],
+  bodyHtml: aboutBody,
+})
+writePage('/a-propos', aboutHtml)
+generated.push('/a-propos')
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

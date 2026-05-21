@@ -38,6 +38,7 @@ const blogPosts = extractBlogPosts(resolve(root, 'src/data/blog.ts'))
 const featureSlugs = extractField(resolve(root, 'src/data/features.ts'), 'slug')
 const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
 const resourceSlugs = extractField(resolve(root, 'src/data/resources.ts'), 'slug')
+const comparisonSlugs = extractField(resolve(root, 'src/data/comparisons.ts'), 'slug')
 
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
@@ -64,6 +65,13 @@ const urls = [
   { loc: `${ORIGIN}/comparatif-logiciel-nettoyage`, priority: '0.9', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: today },
   { loc: `${ORIGIN}/crm-entreprise-proprete`, priority: '0.8', changefreq: 'monthly', lastmod: today },
+  { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: today },
+  ...comparisonSlugs.map((slug) => ({
+    loc: `${ORIGIN}/comparatif/${slug}`,
+    priority: '0.8',
+    changefreq: 'monthly',
+    lastmod: today,
+  })),
   ...resourceSlugs.map((slug) => ({
     loc: `${ORIGIN}/ressources/${slug}`,
     priority: '0.7',
@@ -105,4 +113,4 @@ ${urls.map((u) => `  <url>
 `
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml)
-console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 15 core + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + ${resourceSlugs.length} ressources + 3 legal)`)
+console.log(`✓ sitemap.xml regenerated (${urls.length} URLs : 16 core + ${comparisonSlugs.length} comparatifs + ${featureSlugs.length} features + ${citySlugs.length} villes + ${blogPosts.length} blog + ${resourceSlugs.length} ressources + 3 legal)`)

@@ -26,6 +26,8 @@ const SoftwareLanding = lazy(() => import('./pages/SoftwareLanding'))
 const ComparatifLogiciels = lazy(() => import('./pages/ComparatifLogiciels'))
 const AutoEntrepreneurLanding = lazy(() => import('./pages/AutoEntrepreneurLanding'))
 const CRMPage = lazy(() => import('./pages/CRMPage'))
+const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -106,6 +108,10 @@ const META: Record<string, RouteMeta> = {
   '/crm-entreprise-proprete': {
     title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
     description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française.",
+  },
+  '/a-propos': {
+    title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
+    description: "Proprely est édité par Pershing Global Solutions LTD, société IT spécialisée dans les logiciels métiers sur mesure. Notre mission : libérer les dirigeants de sociétés de nettoyage B2B de la dispersion administrative.",
   },
 }
 
@@ -191,6 +197,8 @@ function App() {
   else if (route === '/comparatif-logiciel-nettoyage') content = <ComparatifLogiciels />
   else if (route === '/logiciel-auto-entrepreneur-nettoyage') content = <AutoEntrepreneurLanding />
   else if (route === '/crm-entreprise-proprete') content = <CRMPage />
+  else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
+  else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route === '/beta' || route === '/beta/') content = <Beta />
