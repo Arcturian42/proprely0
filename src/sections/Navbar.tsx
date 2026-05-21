@@ -1,4 +1,6 @@
 import { ArrowRight } from 'lucide-react'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -28,14 +30,17 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_navbar' })}
             className="group relative bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] flex items-center gap-1.5 shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta</span>
             <ArrowRight size={14} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-          </button>
+          </a>
         </div>
       </div>
     </nav>

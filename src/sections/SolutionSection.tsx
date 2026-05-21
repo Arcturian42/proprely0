@@ -1,8 +1,8 @@
 import { useState, type ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, ArrowRight, CheckCircle, AlertTriangle, QrCode, Camera, Signature, FileSignature, Receipt, FileBadge, FileLock, FileCheck, Sparkles, MapPin, Battery, CalendarClock, Wand2 } from 'lucide-react'
-
-const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 type Module = {
   id: string
@@ -431,13 +431,16 @@ export default function SolutionSection() {
         </div>
 
         <div className="text-center mt-12 sm:mt-14">
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_solution' })}
             className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:scale-[0.97]"
           >
             Rejoindre la bêta gratuite
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-          </button>
+          </a>
           <p className="text-xs text-slate-500 mt-3">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
         </div>
       </div>

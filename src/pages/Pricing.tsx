@@ -3,8 +3,9 @@ import { CheckCircle, ArrowRight, Award, Shield, Users, Calculator, HelpCircle }
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import { FOUNDER_SPOTS, remainingSpots } from '../config'
+import { FOUNDER_SPOTS, remainingSpots, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
+import { trackEvent } from '../lib/analytics'
 
 const founderBenefits = [
   'Accès gratuit pendant toute la durée de la bêta',
@@ -124,14 +125,16 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/"
-                  hash="formulaire"
+                <a
+                  href={BETA_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('beta_cta_click', { location: 'pricing_card' })}
                   className="group w-full bg-white text-blue-700 rounded-xl px-6 py-4 font-bold text-base hover:bg-blue-50 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
                 >
                   Candidater à la bêta
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-                </Link>
+                </a>
                 <p className="text-xs text-blue-200 mt-4 text-center">Sans carte bancaire · Réponse sous 24h</p>
               </motion.div>
 
@@ -267,14 +270,16 @@ export default function Pricing() {
             <p className="text-slate-300 text-base leading-relaxed mb-8">
               Vos données restent les vôtres. Exportables en CSV ou Excel en 1 clic, à tout moment. Hébergement européen, conformité RGPD, chiffrement en transit et au repos.
             </p>
-            <Link
-              to="/"
-              hash="formulaire"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'pricing_footer' })}
               className="group bg-white text-slate-900 rounded-xl px-7 py-4 font-bold text-base hover:bg-slate-100 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
             >
               Candidater à la bêta
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-            </Link>
+            </a>
             <p className="text-xs text-slate-400 mt-4">{remaining} places fondatrices restantes</p>
           </div>
         </section>

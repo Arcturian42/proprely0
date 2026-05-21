@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Flame } from 'lucide-react'
-import { FOUNDER_SPOTS, remainingSpots } from '../config'
+import { FOUNDER_SPOTS, remainingSpots, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
-
-const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+import { trackEvent } from '../lib/analytics'
 
 export default function FinalCTA() {
   const remaining = remainingSpots()
@@ -35,14 +34,17 @@ export default function FinalCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center mb-6">
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_final_cta' })}
             className="group relative bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl shadow-blue-500/20 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/40 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta gratuite</span>
             <ArrowRight size={18} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-          </button>
+          </a>
           <Link
             to="/calculateur-roi"
             className="border border-white/20 text-white rounded-xl px-7 py-4 font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 inline-flex items-center justify-center"

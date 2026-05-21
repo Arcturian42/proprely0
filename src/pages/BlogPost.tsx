@@ -8,6 +8,8 @@ import NotFound from './NotFound'
 import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 function renderMarkdown(content: string): ReactElement[] {
   const lines = content.split('\n')
@@ -324,14 +326,16 @@ export default function BlogPost({ slug }: Props) {
               <p className="text-sm sm:text-base text-slate-700 mb-5">
                 Proprely centralise tout ce dont parle cet article. C'est gratuit pendant la bêta et la mise en route prend 30 minutes avec le fondateur.
               </p>
-              <Link
-                to="/"
-                hash="formulaire"
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('beta_cta_click', { location: 'blog_post', post: post.slug })}
                 className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-6 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
               >
                 Rejoindre la bêta gratuite
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-              </Link>
+              </a>
             </div>
           </div>
         </article>

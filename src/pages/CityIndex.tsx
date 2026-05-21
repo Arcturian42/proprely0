@@ -5,6 +5,8 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 import { cities } from '../data/cities'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const URL = 'https://proprely.fr/villes'
 const TITLE = 'Logiciel nettoyage par ville · Proprely'
@@ -121,14 +123,16 @@ export default function CityIndex() {
             <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
               Proprely opère sur toute la France. Les pages villes ci-dessus présentent les spécificités des marchés que nous documentons le plus. Si vous êtes ailleurs, candidatez quand même à la bêta : le produit est identique et l'onboarding est calé sur votre réalité locale.
             </p>
-            <Link
-              to="/"
-              hash="formulaire"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'city_index' })}
               className="group inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
             >
               Candidater à la bêta gratuite
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

@@ -92,9 +92,33 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/comparatif/proprely-vs-organilog" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  vs Organilog
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  vs Progiclean
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-propret" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <BookOpen size={12} />
+                  vs PROPRET
+                </Link>
+              </li>
+              <li>
                 <Link to="/blog" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
                   <BookOpen size={12} />
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/a-propos" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
+                  <Mail size={12} />
+                  À propos
                 </Link>
               </li>
               <li>
