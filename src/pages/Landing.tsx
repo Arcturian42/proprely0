@@ -13,6 +13,7 @@ const HowItWorks = lazy(() => import('../sections/HowItWorks'))
 const ProductStatus = lazy(() => import('../sections/ProductStatus'))
 const FounderOffer = lazy(() => import('../sections/FounderOffer'))
 const Credibilite = lazy(() => import('../sections/Credibilite'))
+const FeaturedArticles = lazy(() => import('../sections/FeaturedArticles'))
 const FounderForm = lazy(() => import('../sections/FounderForm'))
 const FAQ = lazy(() => import('../sections/FAQ'))
 const FinalCTA = lazy(() => import('../sections/FinalCTA'))
@@ -48,6 +49,7 @@ export default function Landing() {
         <ProductStatus />
         <FounderOffer />
         <Credibilite />
+        <FeaturedArticles />
         <FounderForm />
         <FAQ />
         <FinalCTA />

@@ -2652,12 +2652,32 @@ const POST_TLDR: Record<string, string> = {
     "Nantes est une métropole en forte croissance démographique (+5 000 hab/an). 4 piliers : tertiaire Île de Nantes / Euronantes (en expansion forte), CHU et ICO (médical), agroalimentaire (LDC), enseignement supérieur (60 000 étudiants). Prix marché bureaux : 11-15 €/m²/an HT (~15 % en dessous de Paris). Marché mature mais en expansion, concurrence raisonnable vs Lyon ou Paris.",
 }
 
+// Refraîchissement de dateModified pour les articles "Discovered – currently
+// not indexed" dans Google Search Console. Légitime : ces articles ont reçu
+// du maillage interne, des TL;DR et des schemas enrichis dans les sprints
+// SEO récents. Signal de fraîcheur pour forcer un nouveau crawl.
+//
+// Format ISO YYYY-MM-DD (le sitemap utilise ce format).
+const POST_DATE_MODIFIED: Record<string, string> = {
+  'calcul-heures-agents-nettoyage': '21 mai 2026',
+  'fideliser-agents-nettoyage-turnover': '21 mai 2026',
+  'fixer-prix-nettoyage': '21 mai 2026',
+  'gestion-societe-nettoyage-outils': '21 mai 2026',
+  'logiciel-societe-nettoyage-criteres': '21 mai 2026',
+  'rgpd-societe-nettoyage-2026': '21 mai 2026',
+}
+
 export function getPost(slug: string): BlogPost | undefined {
   const post = posts.find((p) => p.slug === slug)
   if (!post) return undefined
-  if (post.tldr) return post
-  const tldr = POST_TLDR[slug]
-  return tldr ? { ...post, tldr } : post
+  const dateModified = POST_DATE_MODIFIED[slug]
+  const tldr = post.tldr ?? POST_TLDR[slug]
+  if (!tldr && !dateModified) return post
+  return {
+    ...post,
+    tldr: post.tldr ?? tldr,
+    dateModified: post.dateModified ?? dateModified,
+  }
 }
 
 export function getRelatedPosts(slug: string, max = 2): BlogPost[] {

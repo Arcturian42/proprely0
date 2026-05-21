@@ -241,7 +241,8 @@ function webpageSchema(title: string, description: string, url: string, crumbs: 
 const generated: string[] = []
 
 for (const rawPost of posts) {
-  // getPost() injecte le TL;DR depuis POST_TLDR si présent.
+  // getPost() injecte le TL;DR depuis POST_TLDR et dateModified depuis
+  // POST_DATE_MODIFIED si présents.
   const p = getPost(rawPost.slug) ?? rawPost
   const url = `/blog/${p.slug}`
   const summaryHtml = p.quickSummary.map((s) => `<li>${escapeHtml(s)}</li>`).join('')
