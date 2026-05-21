@@ -1,12 +1,9 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Award, ArrowRight, Sparkles, Headphones, Lightbulb, Zap, BadgePercent } from 'lucide-react'
-import { FOUNDER_SPOTS, remainingSpots, progressPercent } from '../config'
+import { FOUNDER_SPOTS, remainingSpots, progressPercent, BETA_FORM_URL } from '../config'
 import AnimatedCounter from '../components/AnimatedCounter'
-
-const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-}
+import { trackEvent } from '../lib/analytics'
 
 const advantages = [
   {
@@ -145,13 +142,16 @@ export default function FounderOffer() {
         </ol>
 
         <div className="text-center">
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_founder_offer' })}
             className="group bg-white text-slate-900 rounded-xl px-8 py-4 font-bold text-base hover:bg-slate-100 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl shadow-blue-500/20 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
           >
             Devenir membre fondateur
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-          </button>
+          </a>
           <p className="text-xs text-slate-400 mt-4">Gratuit pendant la bêta · Pas de carte bancaire · Aucun engagement</p>
         </div>
       </div>

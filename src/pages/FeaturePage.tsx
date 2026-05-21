@@ -9,6 +9,8 @@ import { getFeature, getRelatedFeatures } from '../data/features'
 import type { FeaturePage as FeaturePageType } from '../data/features'
 import { getPost } from '../data/blog'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 function injectFeatureSchema(feature: FeaturePageType) {
   const id = 'feature-schema'
@@ -143,15 +145,17 @@ export default function FeaturePage({ slug }: Props) {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <Link
-                to="/"
-                hash="formulaire"
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('beta_cta_click', { location: 'feature_page_hero', feature: feature.slug })}
                 className="group relative bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
                 <span className="relative">Rejoindre la bêta gratuite</span>
                 <ArrowRight size={14} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-              </Link>
+              </a>
               <Link
                 to="/calculateur-roi"
                 className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-[background-color,border-color,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center justify-center"
@@ -299,14 +303,16 @@ export default function FeaturePage({ slug }: Props) {
             <p className="text-blue-100 text-base sm:text-lg mb-8 max-w-xl mx-auto">
               Rejoignez la bêta privée Proprely. Configuration en 30 minutes avec le fondateur. Tarif fondateur à vie.
             </p>
-            <Link
-              to="/"
-              hash="formulaire"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'feature_page_footer', feature: feature.slug })}
               className="group bg-white text-blue-700 rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-50 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-2xl inline-flex items-center gap-2 hover:-translate-y-0.5 active:scale-[0.97]"
             >
               Rejoindre la bêta gratuite
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-            </Link>
+            </a>
           </div>
         </section>
 

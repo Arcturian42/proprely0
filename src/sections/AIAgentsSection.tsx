@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Sparkles, BarChart3, Search, MessageSquare, Zap, Shield, CheckCircle, ArrowRight, Lightbulb } from 'lucide-react'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -83,13 +85,16 @@ export default function AIAgentsSection() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_ai_agents' })}
             className="bg-[#0F2D5E] text-white rounded-full px-6 sm:px-8 py-3 font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.97] transition-transform duration-200 ease-[var(--ease-out)]"
           >
             Devenir société partenaire IA
             <ArrowRight size={16} />
-          </button>
+          </a>
           <button
             onClick={() => scrollTo('fondateur')}
             className="border border-[#0F2D5E] text-[#0F2D5E] rounded-full px-6 sm:px-8 py-3 font-medium hover:bg-[#0F2D5E]/5 active:scale-[0.97] transition-[background-color,transform] duration-200 ease-[var(--ease-out)]"

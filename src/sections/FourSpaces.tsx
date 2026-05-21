@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import AnimatedCounter from '../components/AnimatedCounter'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const modules = [
   {
@@ -44,8 +46,6 @@ const modules = [
     ],
   },
 ]
-
-const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
 export default function FourSpaces() {
   return (
@@ -121,14 +121,17 @@ export default function FourSpaces() {
               <AnimatedCounter to={12} duration={1.0} suffix=" transformations" />
             </strong> que vous mesurez dès la première semaine d'utilisation.
           </p>
-          <button
-            onClick={() => scrollTo('formulaire')}
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'home_four_spaces' })}
             className="group relative inline-flex items-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/20 hover:shadow-2xl hover:shadow-blue-600/40 hover:-translate-y-0.5 active:scale-[0.97] overflow-hidden shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-white/20 to-blue-500/0 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer pointer-events-none" />
             <span className="relative">Rejoindre la bêta</span>
             <ArrowRight size={16} className="relative group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

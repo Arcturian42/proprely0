@@ -4,7 +4,8 @@ import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin } fro
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const META = {
   title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
@@ -268,14 +269,16 @@ export default function AboutPage() {
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-8">
               Après le lancement public, vous gardez votre <strong>tarif fondateur à vie</strong>, fixé à l'avance et non soumis aux augmentations futures.
             </p>
-            <Link
-              to="/"
-              hash="formulaire"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'about_page' })}
               className="group bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
             >
               Candidater à la bêta
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </section>
       </main>

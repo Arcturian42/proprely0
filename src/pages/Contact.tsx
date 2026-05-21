@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 import { trackEvent } from '../lib/analytics'
+import { BETA_FORM_URL } from '../config'
 
 const URL = 'https://proprely.fr/contact'
 const TITLE = 'Contact · Proprely'
@@ -50,9 +51,11 @@ export default function Contact() {
             <div className="text-sm text-slate-600 mt-1">Réponse sous 24h ouvrées</div>
           </a>
 
-          <Link
-            to="/"
-            hash="formulaire"
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackEvent('beta_cta_click', { location: 'contact_page' })}
             className="group bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 hover:bg-slate-100 transition-colors"
           >
             <div className="flex items-center gap-2 mb-2">
@@ -63,7 +66,7 @@ export default function Contact() {
               Candidater à la bêta
             </div>
             <div className="text-sm text-slate-600 mt-1">Formulaire 2 minutes, 30 places fondateurs</div>
-          </Link>
+          </a>
         </div>
 
         <h2 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">Informations</h2>
