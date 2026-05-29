@@ -16,7 +16,7 @@ import { trackEvent } from '../lib/analytics'
 function injectCitySchema(city: CityPageType) {
   const id = 'city-schema'
   document.getElementById(id)?.remove()
-  const url = `https://proprely.fr/villes/${city.slug}`
+  const url = `https://proprely.fr/villes/${city.slug}/`
   const today = new Date().toISOString().slice(0, 10)
   const schemas: object[] = [
     {
@@ -101,7 +101,7 @@ export default function CityPage({ slug }: Props) {
 
   useEffect(() => {
     if (!city) return
-    const url = `https://proprely.fr/villes/${city.slug}`
+    const url = `https://proprely.fr/villes/${city.slug}/`
     const title = `${city.title} · Proprely`
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', city.metaDescription)

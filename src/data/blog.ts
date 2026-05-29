@@ -1773,7 +1773,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention collective nettoyage IDCC 3043 : guide pratique 2026",
+    title: "Convention collective nettoyage IDCC 3043 : salaires et guide 2026",
     excerpt: "La convention collective de la propreté (IDCC 3043) régit 500 000 salariés. Grille salariale, heures, primes, transferts : le guide 2026.",
     date: '20 mai 2026',
     readTime: '12 min',

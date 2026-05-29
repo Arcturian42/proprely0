@@ -32,7 +32,7 @@ function NotFound() {
 function injectSchema(r: Resource) {
   const id = 'resource-schema'
   document.getElementById(id)?.remove()
-  const url = `https://proprely.fr/ressources/${r.slug}`
+  const url = `https://proprely.fr/ressources/${r.slug}/`
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -82,7 +82,7 @@ export default function ResourceDetail({ slug }: Props) {
 
   useEffect(() => {
     if (!r) return
-    const url = `https://proprely.fr/ressources/${r.slug}`
+    const url = `https://proprely.fr/ressources/${r.slug}/`
     document.title = r.metaTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', r.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', r.title)
