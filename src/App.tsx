@@ -62,14 +62,17 @@ const META: Record<string, RouteMeta> = {
   '/mentions-legales': {
     title: 'Mentions légales · Proprely',
     description: "Mentions légales de Proprely : éditeur Pershing Global Solutions LTD, hébergeur Hostinger, propriété intellectuelle, contact.",
+    robots: 'noindex,follow',
   },
   '/confidentialite': {
     title: 'Politique de confidentialité · Proprely',
     description: "Politique de confidentialité Proprely : données collectées, finalités, base légale, durée de conservation, droits RGPD.",
+    robots: 'noindex,follow',
   },
   '/cgu': {
     title: "Conditions générales d'utilisation · Proprely",
     description: "CGU Proprely : accès au service, engagements éditeur et membre, propriété des données, résiliation, évolutions.",
+    robots: 'noindex,follow',
   },
   '/fonctionnalites': {
     title: 'Fonctionnalités logiciel nettoyage · Proprely',
@@ -173,7 +176,8 @@ function App() {
   useEffect(() => {
     const meta = META[route]
     if (meta) {
-      const url = `https://proprely.fr${route}`
+      // URL canonique AVEC slash final (cohérent avec le serveur et le sitemap).
+      const url = `https://proprely.fr${route}${route === '/' ? '' : '/'}`
       document.title = meta.title
       setMeta('description', meta.description)
       setMeta('og:title', meta.title)

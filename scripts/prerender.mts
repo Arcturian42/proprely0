@@ -96,7 +96,10 @@ type PageMeta = {
 }
 
 function buildHtml(meta: PageMeta): string {
-  const canonical = `${ORIGIN}${meta.url}`
+  // URL canonique AVEC slash final : c'est l'URL réellement servie par le
+  // serveur (Apache DirectorySlash / Vercel trailingSlash) et celle déclarée
+  // dans le sitemap. Évite les statuts "Page with redirect" dans GSC.
+  const canonical = `${ORIGIN}${meta.url}${meta.url.endsWith('/') ? '' : '/'}`
   const ogTitle = meta.ogTitle ?? meta.title
   const ogDesc = meta.ogDescription ?? meta.description
   const schemaScript = `<script type="application/ld+json">${JSON.stringify(meta.schemas)}</script>`
@@ -785,6 +788,7 @@ const mentionsHtml = buildHtml({
   url: '/mentions-legales',
   title: 'Mentions légales · Proprely',
   description: "Mentions légales de Proprely : éditeur Pershing Global Solutions LTD, hébergeur Hostinger, propriété intellectuelle, contact.",
+  robots: 'noindex,follow',
   schemas: [
     webpageSchema(
       'Mentions légales Proprely',
@@ -822,6 +826,7 @@ const privacyHtml = buildHtml({
   url: '/confidentialite',
   title: 'Politique de confidentialité · Proprely',
   description: "Politique de confidentialité Proprely : données collectées, finalités, base légale, durée de conservation, droits RGPD.",
+  robots: 'noindex,follow',
   schemas: [
     webpageSchema(
       'Politique de confidentialité Proprely',
@@ -858,6 +863,7 @@ const cguHtml = buildHtml({
   url: '/cgu',
   title: "Conditions générales d'utilisation · Proprely",
   description: "CGU Proprely : accès au service, engagements éditeur et membre, propriété des données, résiliation, évolutions.",
+  robots: 'noindex,follow',
   schemas: [
     webpageSchema(
       'CGU Proprely',
