@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://proprely.fr/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -12,8 +12,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/tarifs</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/tarifs/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -22,8 +22,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/calculateur-roi</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/calculateur-roi/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -32,8 +32,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/blog/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -42,14 +42,14 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/contact</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/contact/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://proprely.fr/fonctionnalites</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/fonctionnalites/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -58,8 +58,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -68,8 +68,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/beta</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/beta/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -78,8 +78,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/ressources</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/ressources/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -88,8 +88,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/proprely-vs-excel</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/proprely-vs-excel/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -98,8 +98,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/simulateur-rentabilite</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/simulateur-rentabilite/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -108,8 +108,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/logiciel-societe-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/logiciel-societe-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -118,8 +118,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/comparatif-logiciel-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/comparatif-logiciel-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -128,8 +128,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/logiciel-auto-entrepreneur-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/logiciel-auto-entrepreneur-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -138,8 +138,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/crm-entreprise-proprete</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/crm-entreprise-proprete/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -148,8 +148,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/a-propos</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/a-propos/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -158,8 +158,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/outils</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/outils/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -168,8 +168,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/calculateur-prix-nettoyage-m2</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/calculateur-prix-nettoyage-m2/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -178,8 +178,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/comparatif/proprely-vs-organilog</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/comparatif/proprely-vs-organilog/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -188,8 +188,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/comparatif/proprely-vs-progiclean</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/comparatif/proprely-vs-progiclean/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -198,8 +198,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/comparatif/proprely-vs-propret</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/comparatif/proprely-vs-propret/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -208,8 +208,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/ressources/modele-devis-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/ressources/modele-devis-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -218,8 +218,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/ressources/modele-planning-agents-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/ressources/modele-planning-agents-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -228,8 +228,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/ressources/modele-suivi-heures-agents</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/ressources/modele-suivi-heures-agents/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -238,28 +238,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/ressources/calculateur-roi</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Ressource Proprely : calculateur roi</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/ressources/simulateur-rentabilite</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Ressource Proprely : simulateur rentabilite</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/fonctionnalites/planning-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/fonctionnalites/planning-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -268,8 +248,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/fonctionnalites/devis-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/fonctionnalites/devis-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -278,8 +258,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/fonctionnalites/gestion-agents-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/fonctionnalites/gestion-agents-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -288,8 +268,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/fonctionnalites/preuve-passage-nettoyage</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/fonctionnalites/preuve-passage-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -298,8 +278,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/paris</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/paris/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -308,8 +288,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/lyon</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/lyon/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -318,8 +298,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/marseille</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/marseille/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -328,8 +308,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/bordeaux</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/bordeaux/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -338,8 +318,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/toulouse</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/toulouse/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -348,8 +328,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/nantes</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/nantes/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -358,8 +338,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/lille</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/lille/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -368,8 +348,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/nice</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/nice/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -378,8 +358,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/strasbourg</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/strasbourg/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -388,8 +368,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/montpellier</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/montpellier/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -398,8 +378,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/villes/rennes</loc>
-    <lastmod>2026-05-21</lastmod>
+    <loc>https://proprely.fr/villes/rennes/</loc>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -408,7 +388,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/fixer-prix-nettoyage</loc>
+    <loc>https://proprely.fr/blog/fixer-prix-nettoyage/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -418,7 +398,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/gestion-societe-nettoyage-outils</loc>
+    <loc>https://proprely.fr/blog/gestion-societe-nettoyage-outils/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -428,7 +408,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/logiciel-societe-nettoyage-criteres</loc>
+    <loc>https://proprely.fr/blog/logiciel-societe-nettoyage-criteres/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -438,7 +418,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/calcul-heures-agents-nettoyage</loc>
+    <loc>https://proprely.fr/blog/calcul-heures-agents-nettoyage/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -448,7 +428,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/rgpd-societe-nettoyage-2026</loc>
+    <loc>https://proprely.fr/blog/rgpd-societe-nettoyage-2026/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -458,7 +438,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover</loc>
+    <loc>https://proprely.fr/blog/fideliser-agents-nettoyage-turnover/</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -468,7 +448,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/comparatif-logiciels-nettoyage-2026</loc>
+    <loc>https://proprely.fr/blog/comparatif-logiciels-nettoyage-2026/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -478,7 +458,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/logiciel-devis-nettoyage-gratuit</loc>
+    <loc>https://proprely.fr/blog/logiciel-devis-nettoyage-gratuit/</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -488,7 +468,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-paris</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-paris/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -498,7 +478,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-ile-de-france</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-ile-de-france/</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -508,7 +488,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-la-defense-92</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-la-defense-92/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -518,7 +498,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-bordeaux</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-bordeaux/</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -528,7 +508,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/trouver-clients-b2b-nettoyage</loc>
+    <loc>https://proprely.fr/blog/trouver-clients-b2b-nettoyage/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -538,7 +518,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043</loc>
+    <loc>https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -548,7 +528,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/tarif-nettoyage-bureaux-m2-2026</loc>
+    <loc>https://proprely.fr/blog/tarif-nettoyage-bureaux-m2-2026/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -558,7 +538,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/digitaliser-entreprise-nettoyage-5-etapes</loc>
+    <loc>https://proprely.fr/blog/digitaliser-entreprise-nettoyage-5-etapes/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -568,7 +548,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-lyon</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-lyon/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -578,7 +558,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-marseille</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-marseille/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -588,7 +568,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-toulouse</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-toulouse/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -598,7 +578,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-lille</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-lille/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -608,7 +588,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/societe-nettoyage-nantes</loc>
+    <loc>https://proprely.fr/blog/societe-nettoyage-nantes/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -616,23 +596,5 @@
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Article : societe nettoyage nantes</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/mentions-legales</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://proprely.fr/confidentialite</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://proprely.fr/cgu</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>

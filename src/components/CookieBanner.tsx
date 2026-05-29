@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Cookie, X } from 'lucide-react'
-import { getConsent, setConsent } from '../lib/analytics'
+import { getConsent, setConsent, enableAnalytics } from '../lib/analytics'
 import Link from './Link'
 
 export default function CookieBanner() {
@@ -9,7 +9,9 @@ export default function CookieBanner() {
   if (!visible) return null
 
   const handle = (choice: 'granted' | 'denied') => {
-    setConsent(choice)
+    // GA4 n'est chargé qu'après un consentement explicite (opt-in CNIL).
+    if (choice === 'granted') enableAnalytics()
+    else setConsent('denied')
     setVisible(false)
   }
 

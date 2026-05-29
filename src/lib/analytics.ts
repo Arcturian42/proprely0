@@ -13,8 +13,19 @@ declare global {
 let gaLoaded = false
 let gaLoadStarted = false
 
+/**
+ * GA4 est une mesure d'audience NON exemptée par la CNIL : elle ne doit jamais
+ * être chargée sans consentement explicite préalable. Ce verrou est le point de
+ * passage unique — tous les chemins (idle, interaction, trackEvent) transitent
+ * par loadGAScript, donc aucun ne peut charger GA sans consentement.
+ */
+function consentGranted(): boolean {
+  return getConsent() === 'granted'
+}
+
 function loadGAScript() {
   if (gaLoadStarted || typeof window === 'undefined') return
+  if (!consentGranted()) return
   gaLoadStarted = true
 
   window.dataLayer = window.dataLayer || []
@@ -35,13 +46,14 @@ function loadGAScript() {
 
 export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (typeof window === 'undefined') return
+  if (!consentGranted()) return
   if (!gaLoadStarted) loadGAScript()
   window.gtag?.('event', name, params || {})
 }
 
 export function trackPageView(path: string) {
   if (typeof window === 'undefined') return
-  if (!gaLoadStarted) return
+  if (!consentGranted() || !gaLoadStarted) return
   window.gtag?.('event', 'page_view', {
     page_path: path,
     page_location: window.location.href,
@@ -64,8 +76,21 @@ export function setConsent(value: Exclude<Consent, null>) {
   window.localStorage.setItem(STORAGE_KEY, value)
 }
 
+/**
+ * Appelé après un consentement explicite ("Accepter" dans le bandeau cookies).
+ * Mémorise le choix puis démarre immédiatement GA4 (le verrou consentGranted()
+ * de loadGAScript est désormais satisfait).
+ */
+export function enableAnalytics() {
+  setConsent('granted')
+  loadGAScript()
+}
+
 export function initAnalytics() {
   if (typeof window === 'undefined' || gaLoadStarted) return
+  // Sans consentement accordé, on n'attache aucun listener et on ne planifie
+  // aucun chargement. La mesure démarre via enableAnalytics() au clic "Accepter".
+  if (!consentGranted()) return
 
   const start = () => {
     const ric = (window as typeof window & {
