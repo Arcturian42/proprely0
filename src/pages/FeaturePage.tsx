@@ -15,7 +15,7 @@ import { trackEvent } from '../lib/analytics'
 function injectFeatureSchema(feature: FeaturePageType) {
   const id = 'feature-schema'
   document.getElementById(id)?.remove()
-  const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
+  const url = `https://proprely.fr/fonctionnalites/${feature.slug}/`
   const today = new Date().toISOString().slice(0, 10)
   const schemas: object[] = [
     {
@@ -65,7 +65,7 @@ export default function FeaturePage({ slug }: Props) {
 
   useEffect(() => {
     if (!feature) return
-    const url = `https://proprely.fr/fonctionnalites/${feature.slug}`
+    const url = `https://proprely.fr/fonctionnalites/${feature.slug}/`
     const title = `${feature.title} · Proprely`
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', feature.metaDescription)

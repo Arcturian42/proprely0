@@ -14,7 +14,7 @@ import { trackEvent } from '../lib/analytics'
 function injectComparisonSchema(c: ComparisonPageType) {
   const id = 'comparison-schema'
   document.getElementById(id)?.remove()
-  const url = `https://proprely.fr/comparatif/${c.slug}`
+  const url = `https://proprely.fr/comparatif/${c.slug}/`
   const today = new Date().toISOString().slice(0, 10)
   const schemas: object[] = [
     {
@@ -85,7 +85,7 @@ export default function ComparisonPage({ slug }: Props) {
 
   useEffect(() => {
     if (!c) return
-    const url = `https://proprely.fr/comparatif/${c.slug}`
+    const url = `https://proprely.fr/comparatif/${c.slug}/`
     document.title = c.metaTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', c.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', c.title)

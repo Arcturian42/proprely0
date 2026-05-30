@@ -10,6 +10,7 @@ const Comparison = lazy(() => import('../sections/Comparison'))
 const FourSpaces = lazy(() => import('../sections/FourSpaces'))
 const Personas = lazy(() => import('../sections/Personas'))
 const HowItWorks = lazy(() => import('../sections/HowItWorks'))
+const VideoDemo = lazy(() => import('../sections/VideoDemo'))
 const ProductStatus = lazy(() => import('../sections/ProductStatus'))
 const FounderOffer = lazy(() => import('../sections/FounderOffer'))
 const Credibilite = lazy(() => import('../sections/Credibilite'))
@@ -46,6 +47,7 @@ export default function Landing() {
         <FourSpaces />
         <Personas />
         <HowItWorks />
+        <VideoDemo />
         <ProductStatus />
         <FounderOffer />
         <Credibilite />

@@ -162,7 +162,7 @@ function parseFrenchDate(str: string): string | null {
 function injectArticleSchema(post: BlogPostType) {
   const id = 'blog-post-schema'
   document.getElementById(id)?.remove()
-  const url = `https://proprely.fr/blog/${post.slug}`
+  const url = `https://proprely.fr/blog/${post.slug}/`
   const datePublished = parseFrenchDate(post.date) || post.date
   const dateModified = post.dateModified ? (parseFrenchDate(post.dateModified) || post.dateModified) : datePublished
   const schemas: object[] = [
@@ -236,7 +236,7 @@ export default function BlogPost({ slug }: Props) {
 
   useEffect(() => {
     if (!post) return
-    const url = `https://proprely.fr/blog/${post.slug}`
+    const url = `https://proprely.fr/blog/${post.slug}/`
     const title = `${post.title} · Proprely`
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt)
