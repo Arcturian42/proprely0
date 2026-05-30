@@ -52,8 +52,8 @@ const META: Record<string, RouteMeta> = {
     robots: 'noindex,follow',
   },
   '/tarifs': {
-    title: 'Tarifs : gratuit pendant la bêta, fondateur à vie · Proprely',
-    description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.",
+    title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
+    description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
   },
   '/contact': {
     title: 'Contact · Proprely',

@@ -73,8 +73,8 @@ export default function Pricing() {
               transition={{ duration: 0.4 }}
               className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.05] mb-6"
             >
-              Gratuit pendant la bêta.<br />
-              <span className="text-blue-600">Tarif fondateur à vie.</span>
+              Tarifs Proprely<br />
+              <span className="text-blue-600">Gratuit pendant la bêta</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -177,6 +177,28 @@ export default function Pricing() {
                   Communication du tarif en fin de bêta · membres fondateurs notifiés en avance
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-20 border-t border-slate-100">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Le vrai coût</p>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-5">
+              Combien coûte la gestion sans logiciel ?
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+              Le vrai coût n'est pas le logiciel : c'est son absence. Diriger sur Excel, WhatsApp, Word et le papier, c'est 6 à 10 heures d'administration dispersée par semaine. À 45 € de coût horaire dirigeant chargé, cela représente <strong className="text-slate-900">12 600 à 21 000 € par an</strong> — sans compter les erreurs de pointage, les contrats sous-tarifés et les litiges faute de preuve de passage.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link to="/calculateur-roi" className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2">
+                <Calculator size={14} />
+                Calculateur ROI
+              </Link>
+              <Link to="/simulateur-rentabilite" className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2">
+                <Calculator size={14} />
+                Simulateur de rentabilité
+              </Link>
             </div>
           </div>
         </section>

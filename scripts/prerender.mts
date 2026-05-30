@@ -624,7 +624,7 @@ writePage('/calculateur-roi', roiHtml)
 generated.push('/calculateur-roi')
 
 const pricingBody = `
-  <h1>Tarifs Proprely : gratuit pendant la bêta, tarif fondateur à vie</h1>
+  <h1>Tarifs Proprely — Gratuit pendant la bêta</h1>
   <p>Proprely est en bêta privée. Aucun paiement, aucune carte bancaire demandée. Les 30 premières sociétés sélectionnées comme membres fondateurs gardent leur tarif privilégié à vie après le lancement public.</p>
   <h2>Tarif membre fondateur</h2>
   <p>0 € par mois pendant toute la durée de la bêta. Accès complet à tous les modules sans limite. Tarif fondateur conservé à vie après le lancement, fixé à l'avance et non soumis aux augmentations futures.</p>
@@ -637,6 +637,8 @@ const pricingBody = `
   </ul>
   <h2>Lancement public</h2>
   <p>Le tarif public sera défini avec les retours des fondateurs. L'objectif : un prix lisible, prévisible, qui ne pénalise pas la croissance. Modèle hypothèse : forfait par tranche d'agents.</p>
+  <h2>Combien coûte la gestion d'une société de nettoyage SANS logiciel ?</h2>
+  <p>Le vrai coût n'est pas le logiciel : c'est son absence. Diriger sur Excel, WhatsApp, Word et le papier représente 6 à 10 heures d'administration dispersée par semaine. À 45 € de coût horaire dirigeant chargé, c'est 12 600 à 21 000 € par an — sans compter les erreurs de pointage, les contrats sous-tarifés et les litiges clients faute de preuve de passage. Chiffrez votre propre coût avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</p>
   <h2>Tout est inclus</h2>
   <p>Aucun module en option, aucune limite d'utilisation. Clients, sites et contacts illimités. Agents et spécialités sans limite. Planning et affectation 1-clic. Missions avec preuve de passage (QR, photos, signature). Devis et factures avec signature électronique. Documents centralisés. Pilotage et marge par client en temps réel. Hébergement européen, conformité RGPD. Export de vos données en 1 clic à tout moment.</p>
   <h2>Sans risque, sans engagement, sans lock-in</h2>
@@ -653,8 +655,8 @@ const pricingFaqs = [
 
 const pricingHtml = buildHtml({
   url: '/tarifs',
-  title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
-  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.',
+  title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
+  description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
   schemas: [
     webpageSchema(
       'Tarifs Proprely',
