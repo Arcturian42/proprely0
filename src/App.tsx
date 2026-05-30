@@ -103,8 +103,8 @@ const META: Record<string, RouteMeta> = {
     description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places.",
   },
   '/comparatif-logiciel-nettoyage': {
-    title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
-    description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
+    title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
+    description: "Comparatif complet des logiciels pour société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Fonctionnalités, prix, mobile, support FR — lequel choisir.",
   },
   '/logiciel-auto-entrepreneur-nettoyage': {
     title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
