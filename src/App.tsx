@@ -193,6 +193,30 @@ function App() {
     trackPageView(route)
   }, [route])
 
+  // Dé-doublonnage du JSON-LD. Chaque page prérendue embarque un bloc
+  // <script type="application/ld+json"> SANS id ; la plupart des pages
+  // réinjectent leur schéma (AVEC id) au montage. Sans ça, Googlebot voit DEUX
+  // FAQPage/WebPage au rendu JS → "invalid items detected" dans la Search Console.
+  // On retire donc le bloc prérendu (sans id) dès qu'un bloc injecté (avec id)
+  // apparaît. Le @graph global de la home est explicitement préservé.
+  useEffect(() => {
+    if (route === '/') return
+    const dedupe = () => {
+      const injected = document.querySelector('script[type="application/ld+json"][id]')
+      if (!injected) return
+      document
+        .querySelectorAll('script[type="application/ld+json"]:not([id])')
+        .forEach((el) => {
+          if (el.textContent?.includes('"@graph"')) return
+          el.remove()
+        })
+    }
+    dedupe()
+    const observer = new MutationObserver(dedupe)
+    observer.observe(document.head, { childList: true })
+    return () => observer.disconnect()
+  }, [route])
+
   let content
   if (route === '/') content = <Landing />
   else if (route === '/calculateur-roi') content = <RoiCalculator />
