@@ -35,7 +35,7 @@ type RouteMeta = { title: string; description: string; robots?: string }
 
 const META: Record<string, RouteMeta> = {
   '/': {
-    title: 'Logiciel société de nettoyage : le cockpit métier · Proprely',
+    title: 'Logiciel société de nettoyage : planning, devis, clients · Proprely',
     description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage. Bêta privée gratuite.",
   },
   '/calculateur-roi': {

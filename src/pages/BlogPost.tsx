@@ -41,6 +41,41 @@ function renderMarkdown(content: string): ReactElement[] {
       continue
     }
 
+    // Tableau markdown : ligne d'en-tête | … | suivie d'une ligne séparatrice | --- |
+    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\|?[\s:|-]*-[\s:|-]*\|?$/.test(lines[i + 1].trim())) {
+      const splitRow = (s: string) => s.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())
+      const header = splitRow(line)
+      i += 2 // saute l'en-tête + la ligne séparatrice
+      const bodyRows: string[][] = []
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        bodyRows.push(splitRow(lines[i]))
+        i++
+      }
+      blocks.push(
+        <div key={key++} className="overflow-x-auto my-6 rounded-xl border border-slate-200">
+          <table className="w-full text-sm">
+            <thead className="bg-slate-50 border-b border-slate-200">
+              <tr>
+                {header.map((h, hi) => (
+                  <th key={hi} className="text-left p-3 font-bold text-slate-700" dangerouslySetInnerHTML={{ __html: renderInline(h) }} />
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {bodyRows.map((r, ri) => (
+                <tr key={ri} className="border-b border-slate-100 last:border-b-0">
+                  {r.map((c, ci) => (
+                    <td key={ci} className="p-3 text-slate-700 align-top" dangerouslySetInnerHTML={{ __html: renderInline(c) }} />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+      continue
+    }
+
     if (line.startsWith('- ')) {
       const items: string[] = []
       while (i < lines.length && lines[i].startsWith('- ')) {

@@ -58,6 +58,21 @@ function md2html(content: string): string {
       i++
       continue
     }
+    // Tableau markdown : ligne d'en-tête | … | suivie d'une ligne séparatrice | --- |
+    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\|?[\s:|-]*-[\s:|-]*\|?$/.test(lines[i + 1].trim())) {
+      const splitRow = (s: string) => s.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())
+      const header = splitRow(line)
+      i += 2
+      const bodyRows: string[][] = []
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        bodyRows.push(splitRow(lines[i]))
+        i++
+      }
+      const thead = '<thead><tr>' + header.map((h) => `<th>${renderInline(h)}</th>`).join('') + '</tr></thead>'
+      const tbody = '<tbody>' + bodyRows.map((r) => '<tr>' + r.map((c) => `<td>${renderInline(c)}</td>`).join('') + '</tr>').join('') + '</tbody>'
+      out.push(`<table>${thead}${tbody}</table>`)
+      continue
+    }
     if (line.startsWith('- ')) {
       const items: string[] = []
       while (i < lines.length && lines[i].startsWith('- ')) {
