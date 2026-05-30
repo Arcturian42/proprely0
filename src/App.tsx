@@ -52,8 +52,8 @@ const META: Record<string, RouteMeta> = {
     robots: 'noindex,follow',
   },
   '/tarifs': {
-    title: 'Tarifs : gratuit pendant la bêta, fondateur à vie · Proprely',
-    description: "Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.",
+    title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
+    description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
   },
   '/contact': {
     title: 'Contact · Proprely',
@@ -103,8 +103,8 @@ const META: Record<string, RouteMeta> = {
     description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places.",
   },
   '/comparatif-logiciel-nettoyage': {
-    title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
-    description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
+    title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
+    description: "Comparatif complet des logiciels pour société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Fonctionnalités, prix, mobile, support FR — lequel choisir.",
   },
   '/logiciel-auto-entrepreneur-nettoyage': {
     title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
@@ -191,6 +191,30 @@ function App() {
       setRobots(undefined)
     }
     trackPageView(route)
+  }, [route])
+
+  // Dé-doublonnage du JSON-LD. Chaque page prérendue embarque un bloc
+  // <script type="application/ld+json"> SANS id ; la plupart des pages
+  // réinjectent leur schéma (AVEC id) au montage. Sans ça, Googlebot voit DEUX
+  // FAQPage/WebPage au rendu JS → "invalid items detected" dans la Search Console.
+  // On retire donc le bloc prérendu (sans id) dès qu'un bloc injecté (avec id)
+  // apparaît. Le @graph global de la home est explicitement préservé.
+  useEffect(() => {
+    if (route === '/') return
+    const dedupe = () => {
+      const injected = document.querySelector('script[type="application/ld+json"][id]')
+      if (!injected) return
+      document
+        .querySelectorAll('script[type="application/ld+json"]:not([id])')
+        .forEach((el) => {
+          if (el.textContent?.includes('"@graph"')) return
+          el.remove()
+        })
+    }
+    dedupe()
+    const observer = new MutationObserver(dedupe)
+    observer.observe(document.head, { childList: true })
+    return () => observer.disconnect()
   }, [route])
 
   let content

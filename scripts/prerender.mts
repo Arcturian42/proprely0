@@ -624,7 +624,7 @@ writePage('/calculateur-roi', roiHtml)
 generated.push('/calculateur-roi')
 
 const pricingBody = `
-  <h1>Tarifs Proprely : gratuit pendant la bêta, tarif fondateur à vie</h1>
+  <h1>Tarifs Proprely — Gratuit pendant la bêta</h1>
   <p>Proprely est en bêta privée. Aucun paiement, aucune carte bancaire demandée. Les 30 premières sociétés sélectionnées comme membres fondateurs gardent leur tarif privilégié à vie après le lancement public.</p>
   <h2>Tarif membre fondateur</h2>
   <p>0 € par mois pendant toute la durée de la bêta. Accès complet à tous les modules sans limite. Tarif fondateur conservé à vie après le lancement, fixé à l'avance et non soumis aux augmentations futures.</p>
@@ -637,6 +637,8 @@ const pricingBody = `
   </ul>
   <h2>Lancement public</h2>
   <p>Le tarif public sera défini avec les retours des fondateurs. L'objectif : un prix lisible, prévisible, qui ne pénalise pas la croissance. Modèle hypothèse : forfait par tranche d'agents.</p>
+  <h2>Combien coûte la gestion d'une société de nettoyage SANS logiciel ?</h2>
+  <p>Le vrai coût n'est pas le logiciel : c'est son absence. Diriger sur Excel, WhatsApp, Word et le papier représente 6 à 10 heures d'administration dispersée par semaine. À 45 € de coût horaire dirigeant chargé, c'est 12 600 à 21 000 € par an — sans compter les erreurs de pointage, les contrats sous-tarifés et les litiges clients faute de preuve de passage. Chiffrez votre propre coût avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</p>
   <h2>Tout est inclus</h2>
   <p>Aucun module en option, aucune limite d'utilisation. Clients, sites et contacts illimités. Agents et spécialités sans limite. Planning et affectation 1-clic. Missions avec preuve de passage (QR, photos, signature). Devis et factures avec signature électronique. Documents centralisés. Pilotage et marge par client en temps réel. Hébergement européen, conformité RGPD. Export de vos données en 1 clic à tout moment.</p>
   <h2>Sans risque, sans engagement, sans lock-in</h2>
@@ -653,8 +655,8 @@ const pricingFaqs = [
 
 const pricingHtml = buildHtml({
   url: '/tarifs',
-  title: 'Tarifs : Gratuit pendant la bêta, tarif fondateur à vie · Proprely',
-  description: 'Proprely est gratuit pendant la bêta privée. 30 sociétés fondatrices gardent un tarif privilégié à vie. Sans CB, sans engagement.',
+  title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
+  description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
   schemas: [
     webpageSchema(
       'Tarifs Proprely',
@@ -1363,18 +1365,19 @@ writePage('/logiciel-societe-nettoyage', softwareLandingHtml)
 generated.push('/logiciel-societe-nettoyage')
 
 const comparatifBody = `
-  <h1>Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel</h1>
-  <p>Comparatif factuel des principaux outils du marché. 12 critères qui comptent au quotidien, 4 profils types avec recommandation explicite, 8 questions fréquentes.</p>
+  <h1>Comparatif logiciels société de nettoyage 2026 : lequel choisir ?</h1>
+  <p>Comparatif factuel des principaux outils du marché : Proprely, Organilog, Progiclean, PROPRET, Synchroteam et Excel. 13 critères qui comptent au quotidien, 4 profils types avec recommandation explicite, 8 questions fréquentes.</p>
   <h2>Les outils comparés</h2>
   <ul>
     <li><strong>Proprely</strong> — SaaS vertical 2026, mobile-first, gratuit en bêta privée (3-50 agents)</li>
     <li><strong>PROPRET</strong> — Logiciel métier historique (10+ ans), couverture large, app native (10-200 agents)</li>
     <li><strong>Progiclean</strong> — Logiciel métier historique, UX dense (10-100 agents)</li>
     <li><strong>Organilog</strong> — Field service générique (5-100 agents), pas spécifique propreté</li>
+    <li><strong>Synchroteam</strong> — Field service générique (5-100 agents), app native, non spécifique propreté</li>
     <li><strong>Excel</strong> — Tableur généraliste, OK pour 1-8 agents en démarrage</li>
   </ul>
   <h2>Critères du comparatif</h2>
-  <p>Conçu propreté B2B, planning drag-and-drop, mobile sans app, preuve de passage native, devis et signature électronique, marge en temps réel, spécialités agents, connexion Pennylane/Qonto, hébergement européen RGPD, export libre, onboarding accompagné, tarif transparent.</p>
+  <p>Conçu propreté B2B, essai gratuit, planning drag-and-drop, devis intégré et signature électronique, preuve de passage native, marge par client en temps réel, application mobile agents, spécialités agents, hébergement européen RGPD, export libre, onboarding accompagné, support en français, tarif transparent.</p>
   <h2>Recommandations par profil</h2>
   <ul>
     <li>1-5 agents : Excel + modèles Proprely gratuits suffisent — <a href="${ORIGIN}/ressources">Voir les modèles</a></li>
@@ -1382,8 +1385,12 @@ const comparatifBody = `
     <li>15-50 agents : Proprely (agilité, marge) ou PROPRET/Progiclean (comptabilité)</li>
     <li>50+ agents : ERP métier ou PROPRET/Progiclean entreprise</li>
   </ul>
-  <h2>Voir aussi</h2>
-  <p>Notre article blog complémentaire : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels nettoyage 2026 : grille de lecture honnête</a>. Et notre comparatif spécifique Excel : <a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a>.</p>
+  <h2>Aller plus loin</h2>
+  <ul>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a> · <a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a> · <a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a> · <a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
+    <li><a href="${ORIGIN}/tarifs">Tarifs Proprely</a> · <a href="${ORIGIN}/fonctionnalites">Toutes les fonctionnalités</a> · <a href="${ORIGIN}/logiciel-societe-nettoyage">Le guide complet</a></li>
+    <li>Méthode détaillée : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels nettoyage 2026 : grille de lecture honnête</a></li>
+  </ul>
 `.trim()
 
 const comparatifFaqs = [
@@ -1399,7 +1406,7 @@ const comparatifFaqs = [
 
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
-  title: 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely',
+  title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
   description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
   schemas: [
     webpageSchema(

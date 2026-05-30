@@ -7,8 +7,8 @@ import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
 const URL = 'https://proprely.fr/comparatif-logiciel-nettoyage'
-const TITLE = 'Comparatif logiciel nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog · Proprely'
-const DESCRIPTION = "Comparatif honnête des principaux logiciels pour société de nettoyage en 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, fonctionnalités, tarifs, qui choisir."
+const TITLE = 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely'
+const DESCRIPTION = "Comparatif complet des logiciels pour société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Fonctionnalités, prix, mobile, support FR — lequel choisir selon votre profil."
 
 type Tool = {
   name: string
@@ -24,6 +24,7 @@ const tools: Tool[] = [
   { name: 'PROPRET', pos: 'Logiciel métier historique', founded: '~2010', pricing: 'Sur devis (~40-60 €/utilisateur/mois)', agentMin: 10, agentMax: 200 },
   { name: 'Progiclean', pos: 'Logiciel métier historique', founded: '~2008', pricing: 'Sur devis (~30-50 €/utilisateur/mois)', agentMin: 10, agentMax: 100 },
   { name: 'Organilog', pos: 'Field service générique', founded: '~2014', pricing: '20-40 €/utilisateur/mois', agentMin: 5, agentMax: 100 },
+  { name: 'Synchroteam', pos: 'Field service générique', founded: '~2012', pricing: '~28-36 €/utilisateur/mois', agentMin: 5, agentMax: 100 },
   { name: 'Excel', pos: 'Tableur généraliste', founded: 'N/A', pricing: 'Inclus Microsoft 365', agentMin: 1, agentMax: 8 },
 ]
 
@@ -33,6 +34,7 @@ type Row = {
   propret: { v: string; s: 'ok' | 'warn' | 'bad' }
   progiclean: { v: string; s: 'ok' | 'warn' | 'bad' }
   organilog: { v: string; s: 'ok' | 'warn' | 'bad' }
+  synchroteam: { v: string; s: 'ok' | 'warn' | 'bad' }
   excel: { v: string; s: 'ok' | 'warn' | 'bad' }
 }
 
@@ -43,7 +45,17 @@ const rows: Row[] = [
     propret: { v: 'Oui', s: 'ok' },
     progiclean: { v: 'Oui', s: 'ok' },
     organilog: { v: 'Non, field service générique', s: 'warn' },
+    synchroteam: { v: 'Non, field service générique', s: 'warn' },
     excel: { v: 'Non, adapté manuellement', s: 'bad' },
+  },
+  {
+    criteria: 'Essai gratuit',
+    proprely: { v: 'Gratuit toute la bêta', s: 'ok' },
+    propret: { v: 'Démo sur demande', s: 'warn' },
+    progiclean: { v: 'Démo sur demande', s: 'warn' },
+    organilog: { v: '14 jours', s: 'ok' },
+    synchroteam: { v: '14 jours', s: 'ok' },
+    excel: { v: 'Inclus Microsoft 365', s: 'ok' },
   },
   {
     criteria: 'Planning agents drag-and-drop',
@@ -51,15 +63,17 @@ const rows: Row[] = [
     propret: { v: 'Oui (UI dense)', s: 'ok' },
     progiclean: { v: 'Oui', s: 'ok' },
     organilog: { v: 'Oui', s: 'ok' },
+    synchroteam: { v: 'Oui', s: 'ok' },
     excel: { v: 'Manuel, copier-coller', s: 'bad' },
   },
   {
-    criteria: 'Mobile agents sans app',
-    proprely: { v: 'Lien web direct', s: 'ok' },
-    propret: { v: 'App native obligatoire', s: 'warn' },
-    progiclean: { v: 'App native obligatoire', s: 'warn' },
-    organilog: { v: 'App native', s: 'warn' },
-    excel: { v: 'Non utilisable terrain', s: 'bad' },
+    criteria: 'Devis intégré + signature électronique',
+    proprely: { v: 'Oui, en 2 min', s: 'ok' },
+    propret: { v: 'Oui (module séparé)', s: 'ok' },
+    progiclean: { v: 'Oui', s: 'ok' },
+    organilog: { v: 'Basique', s: 'warn' },
+    synchroteam: { v: 'Basique', s: 'warn' },
+    excel: { v: 'Word/PDF manuel', s: 'bad' },
   },
   {
     criteria: 'Preuve de passage QR + photos + signature',
@@ -67,15 +81,8 @@ const rows: Row[] = [
     propret: { v: 'Oui', s: 'ok' },
     progiclean: { v: 'Partiel', s: 'warn' },
     organilog: { v: 'Oui (générique)', s: 'ok' },
+    synchroteam: { v: 'Oui (générique)', s: 'ok' },
     excel: { v: 'Non', s: 'bad' },
-  },
-  {
-    criteria: 'Devis + signature électronique native',
-    proprely: { v: 'Oui, en 2 min', s: 'ok' },
-    propret: { v: 'Oui (module séparé)', s: 'ok' },
-    progiclean: { v: 'Oui', s: 'ok' },
-    organilog: { v: 'Basique', s: 'warn' },
-    excel: { v: 'Word/PDF manuel', s: 'bad' },
   },
   {
     criteria: 'Marge par client en temps réel',
@@ -83,7 +90,17 @@ const rows: Row[] = [
     propret: { v: 'Via reporting (différé)', s: 'warn' },
     progiclean: { v: 'Via reporting', s: 'warn' },
     organilog: { v: 'Non', s: 'bad' },
+    synchroteam: { v: 'Non', s: 'bad' },
     excel: { v: 'Manuel, retard 30+ jours', s: 'bad' },
+  },
+  {
+    criteria: 'Application mobile agents (sans app à installer)',
+    proprely: { v: 'Lien web direct', s: 'ok' },
+    propret: { v: 'App native obligatoire', s: 'warn' },
+    progiclean: { v: 'App native obligatoire', s: 'warn' },
+    organilog: { v: 'App native', s: 'warn' },
+    synchroteam: { v: 'App native', s: 'warn' },
+    excel: { v: 'Non utilisable terrain', s: 'bad' },
   },
   {
     criteria: 'Spécialités et habilitations agents',
@@ -91,15 +108,8 @@ const rows: Row[] = [
     propret: { v: 'Oui', s: 'ok' },
     progiclean: { v: 'Oui', s: 'ok' },
     organilog: { v: 'Compétences génériques', s: 'warn' },
+    synchroteam: { v: 'Compétences génériques', s: 'warn' },
     excel: { v: 'Non structuré', s: 'bad' },
-  },
-  {
-    criteria: 'Connexion native Pennylane / Qonto',
-    proprely: { v: 'En finalisation', s: 'warn' },
-    propret: { v: 'Passerelle custom', s: 'warn' },
-    progiclean: { v: 'Variable', s: 'warn' },
-    organilog: { v: 'Limité', s: 'warn' },
-    excel: { v: 'Aucune', s: 'bad' },
   },
   {
     criteria: 'Hébergement européen RGPD',
@@ -107,6 +117,7 @@ const rows: Row[] = [
     propret: { v: 'Oui', s: 'ok' },
     progiclean: { v: 'Oui', s: 'ok' },
     organilog: { v: 'Oui', s: 'ok' },
+    synchroteam: { v: 'Oui', s: 'ok' },
     excel: { v: 'Local (vos sauvegardes)', s: 'warn' },
   },
   {
@@ -115,6 +126,7 @@ const rows: Row[] = [
     propret: { v: 'Sur demande', s: 'warn' },
     progiclean: { v: 'Variable, parfois payant', s: 'warn' },
     organilog: { v: 'CSV partiel', s: 'warn' },
+    synchroteam: { v: 'CSV', s: 'warn' },
     excel: { v: 'Oui (vos fichiers)', s: 'ok' },
   },
   {
@@ -123,7 +135,17 @@ const rows: Row[] = [
     propret: { v: 'Consultant intégrateur (plusieurs jours)', s: 'warn' },
     progiclean: { v: 'Consultant intégrateur', s: 'warn' },
     organilog: { v: 'Self-onboarding + support', s: 'warn' },
+    synchroteam: { v: 'Self-onboarding + support', s: 'warn' },
     excel: { v: 'Aucun', s: 'bad' },
+  },
+  {
+    criteria: 'Support en français',
+    proprely: { v: 'Oui, par le fondateur', s: 'ok' },
+    propret: { v: 'Oui', s: 'ok' },
+    progiclean: { v: 'Oui', s: 'ok' },
+    organilog: { v: 'Oui', s: 'ok' },
+    synchroteam: { v: 'Oui', s: 'ok' },
+    excel: { v: 'Communauté seulement', s: 'warn' },
   },
   {
     criteria: 'Tarif transparent',
@@ -131,6 +153,7 @@ const rows: Row[] = [
     propret: { v: 'Sur devis', s: 'warn' },
     progiclean: { v: 'Sur devis', s: 'warn' },
     organilog: { v: 'Public dès 20 €', s: 'ok' },
+    synchroteam: { v: 'Public dès ~28 €', s: 'ok' },
     excel: { v: 'Microsoft 365', s: 'ok' },
   },
 ]
@@ -266,8 +289,8 @@ export default function ComparatifLogiciels() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6"
             >
-              Comparatif logiciel nettoyage 2026 :<br />
-              <span className="text-blue-600">Proprely vs PROPRET, Progiclean, Organilog, Excel</span>
+              Comparatif logiciels société de nettoyage 2026 :<br />
+              <span className="text-blue-600">lequel choisir ?</span>
             </motion.h1>
 
             <motion.p
@@ -276,7 +299,7 @@ export default function ComparatifLogiciels() {
               transition={{ duration: 0.4, delay: 0.12 }}
               className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed"
             >
-              Comparatif factuel des principaux outils du marché. 12 critères qui comptent vraiment au quotidien, 4 profils types avec recommandation explicite, 8 questions fréquentes. Aucun pas de jugement caché : nous citons quand un concurrent est meilleur que nous.
+Proprely, Organilog, Progiclean, PROPRET, Synchroteam et Excel passés au crible : 13 critères qui comptent vraiment au quotidien, 4 profils types avec recommandation explicite, 8 questions fréquentes. Aucun jugement caché : nous citons quand un concurrent est meilleur que nous.
             </motion.p>
           </div>
         </section>
@@ -286,7 +309,7 @@ export default function ComparatifLogiciels() {
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-8 text-center">
               Les outils comparés
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {tools.map((t) => (
                 <div key={t.name} className={`rounded-2xl p-5 border ${t.name === 'Proprely' ? 'bg-blue-50/50 border-blue-200' : 'bg-slate-50 border-slate-100'}`}>
                   <div className="font-bold text-slate-900 mb-1">{t.name}</div>
@@ -317,6 +340,7 @@ export default function ComparatifLogiciels() {
                     <th className="text-left p-4 font-bold text-slate-700 min-w-[130px]">PROPRET</th>
                     <th className="text-left p-4 font-bold text-slate-700 min-w-[130px]">Progiclean</th>
                     <th className="text-left p-4 font-bold text-slate-700 min-w-[130px]">Organilog</th>
+                    <th className="text-left p-4 font-bold text-slate-700 min-w-[130px]">Synchroteam</th>
                     <th className="text-left p-4 font-bold text-slate-700 min-w-[130px]">Excel</th>
                   </tr>
                 </thead>
@@ -324,7 +348,7 @@ export default function ComparatifLogiciels() {
                   {rows.map((row) => (
                     <tr key={row.criteria} className="border-b border-slate-100 last:border-b-0">
                       <td className="p-4 font-semibold text-slate-900 text-xs sm:text-sm">{row.criteria}</td>
-                      {([row.proprely, row.propret, row.progiclean, row.organilog, row.excel] as const).map((cell, i) => (
+                      {([row.proprely, row.propret, row.progiclean, row.organilog, row.synchroteam, row.excel] as const).map((cell, i) => (
                         <td key={i} className={`p-4 ${i === 0 ? 'bg-blue-50/30' : ''}`}>
                           <div className="flex items-start gap-2">
                             <StatusIcon status={cell.s} />
@@ -403,6 +427,36 @@ export default function ComparatifLogiciels() {
                   </summary>
                   <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-3">{f.a}</p>
                 </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-6 text-center">
+              Aller plus loin
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { to: '/comparatif/proprely-vs-organilog', label: 'Proprely vs Organilog', desc: 'Le face-à-face avec la suite field service' },
+                { to: '/comparatif/proprely-vs-progiclean', label: 'Proprely vs Progiclean', desc: "Face à l'ERP métier historique" },
+                { to: '/comparatif/proprely-vs-propret', label: 'Proprely vs PROPRET', desc: "Face à l'éditeur historique de la propreté" },
+                { to: '/proprely-vs-excel', label: 'Proprely vs Excel', desc: 'Le coût caché de la gestion sur tableur' },
+                { to: '/tarifs', label: 'Tarifs Proprely', desc: 'Gratuit pendant la bêta, tarif fondateur à vie' },
+                { to: '/fonctionnalites', label: 'Toutes les fonctionnalités', desc: 'Planning, devis, agents, preuve de passage' },
+              ].map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="group flex items-start gap-3 bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-blue-200 hover:bg-white transition-colors"
+                >
+                  <ArrowRight size={16} className="text-blue-600 mt-0.5 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                  <span>
+                    <span className="block font-bold text-slate-900 text-sm group-hover:text-blue-700 transition-colors">{l.label}</span>
+                    <span className="block text-xs text-slate-500 mt-0.5">{l.desc}</span>
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
