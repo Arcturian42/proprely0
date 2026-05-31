@@ -32,6 +32,7 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Blog Proprely](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants du nettoyage
 - [Contact](https://proprely.fr/contact) : email, zones d'opération, éditeur
 - [Flux RSS](https://proprely.fr/rss.xml) : nouveaux articles
+- [Contenu intégral pour LLM](https://proprely.fr/llms-full.txt) : texte complet des articles + résumés des fonctionnalités, villes et comparatifs
 
 ## Fonctionnalités
 
