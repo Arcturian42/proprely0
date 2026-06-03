@@ -176,15 +176,18 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
     image: `${ORIGIN}/og-image.png`,
     author: {
       '@type': 'Person',
-      name: 'Rédaction Proprely',
+      '@id': `${ORIGIN}/a-propos#paul-munier`,
+      name: 'Paul Munier',
       url: `${ORIGIN}/a-propos`,
-      jobTitle: 'Équipe éditoriale Proprely',
+      jobTitle: 'Fondateur de Proprely',
+      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
       worksFor: { '@id': `${ORIGIN}/#organization` },
       knowsAbout: [
         'Logiciel de gestion société de nettoyage',
         'Convention collective propreté IDCC 3043',
-        'Gestion société de propreté B2B',
-        'Marges et tarification nettoyage',
+        'Pilotage de marge en propreté B2B',
+        'Planning multi-sites pour société de nettoyage',
+        'Preuve de passage et conformité syndic',
       ],
     },
     publisher: {
@@ -284,10 +287,14 @@ for (const rawPost of posts) {
         .join('')}</ul></aside>`
     : ''
 
+  const dateModifiedDisplay = p.dateModified && p.dateModified !== p.date
+    ? ` · Mis à jour le ${escapeHtml(p.dateModified)}`
+    : ''
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
-    <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}</p>
+    <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}${dateModifiedDisplay}</p>
+    <p>Par <a href="${ORIGIN}/a-propos">Paul Munier</a>, fondateur de Proprely</p>
     ${tldrHtml}
     <h2>L'essentiel</h2>
     <ul>${summaryHtml}</ul>
@@ -617,7 +624,7 @@ const blogSchema = {
     datePublished: p.date,
     dateModified: getPost(p.slug)?.dateModified ?? p.date,
     url: `${ORIGIN}/blog/${p.slug}`,
-    author: { '@type': 'Organization', name: 'Proprely' },
+    author: { '@type': 'Person', '@id': `${ORIGIN}/a-propos#paul-munier`, name: 'Paul Munier' },
   })),
 }
 
@@ -1482,8 +1489,8 @@ const softwareLandingFaqs = [
 
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
-  title: 'Logiciel pour société de nettoyage B2B : le guide complet 2026 · Proprely',
-  description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 14 places.",
+  title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
+  description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1782,12 +1789,14 @@ const aboutBody = `
     <li><strong>Vos données restent vos données</strong> — hébergement européen, chiffrement, RGPD, export 1-clic.</li>
     <li><strong>Édité par une société IT établie</strong> — Pershing Global Solutions LTD (Dublin), spécialisée dans les logiciels métiers sur mesure.</li>
   </ul>
+  <h2>Le fondateur</h2>
+  <p><strong>Paul Munier</strong>, fondateur de Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, Paul a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien : le constat — 6 à 10 heures perdues par semaine entre Excel, WhatsApp, Word et le papier — est devenu la mission du produit. Profil LinkedIn : <a href="https://www.linkedin.com/in/paulmunier/" rel="noopener noreferrer">linkedin.com/in/paulmunier</a>.</p>
   <h2>Notre histoire</h2>
-  <h3>2024 — Genèse</h3>
+  <h3>Février 2026 — Premiers entretiens</h3>
   <p>Premiers entretiens terrain avec des dirigeants de sociétés de nettoyage B2B. Constat partagé : 6 à 10 heures par semaine perdues à jongler entre Excel, WhatsApp, Word, Drive et papier.</p>
-  <h3>2025 — Construction</h3>
-  <p>Construction du produit avec un panel de 10 dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels.</p>
-  <h3>2026 — Bêta privée</h3>
+  <h3>Mars 2026 — Construction</h3>
+  <p>Construction du produit avec un panel de dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels.</p>
+  <h3>Juillet 2026 — Bêta privée</h3>
   <p>Ouverture à 30 sociétés fondatrices, support prioritaire, conditions tarifaires préférentielles à vie.</p>
   <h2>Éditeur</h2>
   <p>Proprely est édité par <strong>Pershing Global Solutions LTD</strong>, société IT spécialisée dans le développement de logiciels métiers sur mesure. Siège social : 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande. Plus d'informations sur <a href="https://pershingsolution.com">pershingsolution.com</a>.</p>
@@ -1810,6 +1819,24 @@ const aboutHtml = buildHtml({
       dateModified: TODAY,
       isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
       mainEntity: { '@id': `${ORIGIN}/#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${ORIGIN}/a-propos#paul-munier`,
+      name: 'Paul Munier',
+      jobTitle: 'Fondateur de Proprely',
+      url: `${ORIGIN}/a-propos`,
+      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+      worksFor: { '@id': `${ORIGIN}/#organization` },
+      knowsAbout: [
+        'Logiciel de gestion société de nettoyage',
+        'Convention collective propreté IDCC 3043',
+        'Pilotage de marge en propreté B2B',
+        'Planning multi-sites pour société de nettoyage',
+        'Preuve de passage et conformité syndic',
+      ],
+      description: "Paul Munier dirige Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, il a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien.",
     },
     {
       '@context': 'https://schema.org',
