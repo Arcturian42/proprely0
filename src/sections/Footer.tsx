@@ -39,6 +39,21 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/logiciel-nettoyage-medical-bionettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Médical & bionettoyage
+                </Link>
+              </li>
+              <li>
+                <Link to="/logiciel-nettoyage-copropriete-syndic" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Copropriété & syndic
+                </Link>
+              </li>
+              <li>
+                <Link to="/application-mobile-agents-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Application mobile agents
+                </Link>
+              </li>
+              <li>
                 <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
                   Planning
                 </Link>

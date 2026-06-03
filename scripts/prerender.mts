@@ -1003,6 +1003,261 @@ const conventionHtml = buildHtml({
 writePage('/convention-collective-nettoyage', conventionHtml)
 generated.push('/convention-collective-nettoyage')
 
+// === /logiciel-nettoyage-medical-bionettoyage ===
+const medicalFaqs = [
+  { q: "Quel logiciel pour société de bionettoyage médical ?", a: "Pour piloter une société de bionettoyage médical en France, le logiciel doit couvrir trois exigences spécifiques : (1) la traçabilité des protocoles et des produits (détergent, désinfectant, lot, fiche FDS) pour les audits ANSM/ARS, (2) le suivi des agents exposés aux produits CMR avec fiche d'exposition individuelle conservée 50 ans (obligation IDCC 3043), (3) la preuve de passage horodatée envoyée automatiquement au pharmacien hygiéniste ou au facility manager. Proprely intègre ces trois exigences nativement." },
+  { q: "Comment tracer les protocoles bionettoyage avec un logiciel ?", a: "La traçabilité bionettoyage s'organise en 4 niveaux : protocole par site (ordre des zones, produits agréés, temps de contact), consigne par mission (l'agent voit le protocole sur son téléphone avant intervention), check-list de passage (chaque zone validée avec photos avant-après), export d'audit (historique complet exportable pour ANSM, ARS ou client). Proprely couvre les 4 niveaux dans un seul outil." },
+  { q: "Le logiciel gère-t-il le suivi des agents exposés aux CMR ?", a: "Oui. La convention collective propreté IDCC 3043 impose un suivi médical renforcé pour les agents exposés aux produits cancérogènes, mutagènes ou reprotoxiques (CMR) — fréquents en bionettoyage médical. Proprely centralise dans le profil agent : formation aux risques chimiques, visites médicales renforcées (tous les 4 ans minimum), fiche d'exposition individuelle archivée 50 ans, équipements de protection fournis." },
+  { q: "Quelle marge attendre sur un contrat de bionettoyage médical ?", a: "Les contrats médicaux justifient un prix premium (0,80 à 1,80 €/m²/mois selon la complexité), mais le coût horaire est plus élevé qu'en bureaux standards : agents formés (+10 à +15 % vs SMIC propreté), produits agréés plus chers, temps de protocole plus long. Cible saine : 18 à 25 % de marge nette." },
+  { q: "Mes agents bionettoyage doivent-ils utiliser une application ?", a: "Non, ils accèdent à leur planning, aux protocoles du site et à la preuve de passage via un simple lien web sur leur téléphone. Pas d'application à installer, fonctionne sur 4G dégradée — important dans les sous-sols de cliniques ou les locaux techniques de laboratoires." },
+  { q: "Comment se compare Proprely aux ERP propreté pour le médical ?", a: "PROPRET, Progiclean ou Sevensoft proposent des modules bionettoyage complets mais avec setup 1-3 mois et tarif sur devis. Proprely couvre les exigences essentielles du bionettoyage médical en bêta gratuite pour les TPE/PME 3-50 agents, avec onboarding 30 minutes." },
+]
+
+const medicalBody = `
+  <h1>Logiciel nettoyage médical et bionettoyage : traçabilité, protocoles, conformité IDCC 3043</h1>
+  <p>Pour piloter une société de bionettoyage médical, votre logiciel doit tracer les protocoles, suivre les agents exposés aux produits CMR (obligation IDCC 3043) et envoyer la preuve de passage horodatée au pharmacien hygiéniste. Proprely intègre les trois nativement.</p>
+  <h2>Les 4 exigences spécifiques du bionettoyage médical</h2>
+  <ul>
+    <li><strong>Protocoles bionettoyage tracés</strong> — fiche par site avec produits agréés, ordre des zones, temps de contact. L'agent consulte le protocole sur son téléphone.</li>
+    <li><strong>Suivi exposition CMR obligatoire</strong> — fiche d'exposition individuelle conservée 50 ans, suivi médical renforcé tous les 4 ans.</li>
+    <li><strong>Preuve de passage horodatée</strong> — QR à l'entrée, photos avant-après, signature du référent, PV automatique au pharmacien hygiéniste.</li>
+    <li><strong>Traçabilité produits et lots</strong> — référence + numéro de lot + fiche de données de sécurité pour audits ANSM/ARS.</li>
+  </ul>
+  <h2>Vos clients types et leur marché 2026</h2>
+  <ul>
+    <li><strong>Cabinets médicaux & dentaires</strong> — 0,80 à 1,20 €/m²/mois</li>
+    <li><strong>Cliniques privées & centres d'imagerie</strong> — 1,00 à 1,50 €/m²/mois</li>
+    <li><strong>Laboratoires d'analyses biomédicales</strong> — 1,20 à 1,80 €/m²/mois</li>
+    <li><strong>EHPAD & résidences seniors</strong> — 0,70 à 1,00 €/m²/mois</li>
+  </ul>
+  <h2>Comment Proprely répond</h2>
+  <ul>
+    <li>Spécialités bionettoyage natives sur les profils agents</li>
+    <li>Conformité IDCC 3043 médical : formations CMR, visites médicales, fiche d'exposition</li>
+    <li>PV envoyés au pharmacien hygiéniste sans intervention manuelle</li>
+    <li>Marge par contrat médical en temps réel pour éviter la sous-tarification</li>
+  </ul>
+  <h2>Pour aller plus loin</h2>
+  <p>Voir le <a href="${ORIGIN}/blog/bionettoyage-medical-protocoles">guide bionettoyage médical complet</a>, la <a href="${ORIGIN}/convention-collective-nettoyage">conformité convention collective IDCC 3043</a>, le module <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">gestion agents avec spécialités et exposition CMR</a>, et la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage avec PV automatique</a>. <a href="${ORIGIN}/beta">Candidater à la bêta privée</a>.</p>
+`.trim()
+
+const medicalHtml = buildHtml({
+  url: '/logiciel-nettoyage-medical-bionettoyage',
+  title: 'Logiciel nettoyage médical et bionettoyage : traçabilité IDCC 3043 · Proprely',
+  description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme convention collective IDCC 3043. Bêta gratuite.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Logiciel nettoyage médical et bionettoyage',
+      description: "Logiciel pour société de bionettoyage médical conforme à la convention collective propreté IDCC 3043.",
+      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-03',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage médical', item: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage` },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'Proprely — logiciel pour société de bionettoyage médical',
+      description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité CMR, PV automatique. Conforme IDCC 3043.",
+      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage`,
+      image: `${ORIGIN}/og-image.png`,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      serviceType: 'Logiciel de gestion société de bionettoyage médical',
+      areaServed: { '@type': 'Country', name: 'France' },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Dirigeants de sociétés de bionettoyage médical en France',
+      },
+    },
+    faqSchema(medicalFaqs),
+  ],
+  bodyHtml: medicalBody,
+})
+writePage('/logiciel-nettoyage-medical-bionettoyage', medicalHtml)
+generated.push('/logiciel-nettoyage-medical-bionettoyage')
+
+// === /logiciel-nettoyage-copropriete-syndic ===
+const coproFaqs = [
+  { q: "Quel logiciel pour société de nettoyage qui travaille avec des syndics ?", a: "Pour piloter une société de nettoyage qui sert des syndics de copropriété, le logiciel doit couvrir : (1) preuve de passage standardisée (QR + photos avant-après + signature gardien éventuelle) acceptée par les syndics nationaux, (2) PV mensuel automatique envoyé au gestionnaire d'immeuble sans intervention manuelle, (3) facturation récurrente annuelle/trimestrielle avec relances automatiques. Proprely intègre ces trois exigences avec multi-sites illimité." },
+  { q: "Comment générer un PV de passage pour un syndic de copropriété ?", a: "Le PV doit contenir : date et heure d'intervention, nom de l'agent, zones nettoyées (hall, escaliers, ascenseur, cour), photos avant-après, incidents éventuels, signature du gardien si présent. Proprely génère ce PV automatiquement à la validation de la mission et l'envoie au gestionnaire d'immeuble configuré. Format accepté par Foncia, Citya, Nexity, Sergic et Loiselet & Daigremont." },
+  { q: "Comment automatiser la facturation des contrats syndic ?", a: "Les contrats syndic sont quasi-systématiquement annuels avec facturation mensuelle ou trimestrielle. Proprely transforme le contrat signé en facturation automatique : génération à l'échéance, envoi au service comptabilité du syndic, suivi du paiement, relances à J+15 et J+30." },
+  { q: "Que faire en cas d'incident sur une copropriété ?", a: "L'agent signale l'incident depuis son téléphone (catégorie + photo + commentaire). Proprely ajoute l'incident au PV mensuel, envoie une notification immédiate au gestionnaire si configuré, et garde l'historique horodaté pour les contestations futures." },
+  { q: "Peut-on adapter le protocole de nettoyage selon le bâti ?", a: "Oui. Chaque site a sa fiche dédiée avec son protocole spécifique : produits adaptés au revêtement (marbre, terrazzo, parquet ancien), ordre des zones, fréquence par partie commune, interdits (pas de produit corrosif sur ferronnerie ancienne)." },
+  { q: "Combien de syndics et d'immeubles Proprely peut-il gérer ?", a: "Pas de limite par défaut. Les sociétés utilisent typiquement Proprely pour 3 à 25 syndics actifs et 30 à 300 immeubles au total. Le multi-sites illimité reste lisible jusqu'à plusieurs centaines de copropriétés." },
+]
+
+const coproBody = `
+  <h1>Logiciel nettoyage copropriété et syndic : preuve de passage, PV automatique, facturation récurrente</h1>
+  <p>Pour piloter une société de nettoyage qui sert des syndics, votre logiciel doit fournir une preuve de passage standardisée acceptée par Foncia, Citya, Nexity, envoyer un PV mensuel automatique au gestionnaire d'immeuble et facturer les contrats annuels sans intervention manuelle.</p>
+  <h2>Ce que les syndics attendent vraiment</h2>
+  <ul>
+    <li><strong>Preuve de passage standardisée</strong> — QR + photos avant-après + signature gardien acceptés par les syndics nationaux</li>
+    <li><strong>PV mensuel envoyé automatiquement</strong> au gestionnaire d'immeuble</li>
+    <li><strong>Contrats récurrents facturés automatiquement</strong> (mensuel/trimestriel) avec relances J+15 / J+30</li>
+    <li><strong>Adaptation au bâti</strong> (haussmannien, marbre, ferronnerie ancienne) via fiches site dédiées</li>
+  </ul>
+  <h2>Vos profils de clients syndic 2026</h2>
+  <ul>
+    <li><strong>Syndics nationaux (Foncia, Citya, Nexity)</strong> — 0,40 à 0,70 €/m²/mois, marge cible 12-18 %</li>
+    <li><strong>Syndics indépendants régionaux</strong> — 0,45 à 0,80 €/m²/mois, marge cible 15-20 %</li>
+    <li><strong>Copropriétés en gestion directe (ASL)</strong> — 0,40 à 0,65 €/m²/mois, marge cible 15-22 %</li>
+    <li><strong>Copropriétés haussmanniennes premium</strong> — 0,80 à 1,30 €/m²/mois, marge cible 18-25 %</li>
+  </ul>
+  <h2>Comment Proprely répond</h2>
+  <ul>
+    <li>PV automatique configurable par destinataire (gestionnaire, conseil syndical, comptabilité)</li>
+    <li>Multi-sites jusqu'à 300+ immeubles avec contraintes locales mémorisées</li>
+    <li>Facturation récurrente syndic avec envoi au service compta + relances automatiques</li>
+    <li>Catalogue prestations syndic pour répondre rapidement aux appels d'offres triennaux</li>
+  </ul>
+  <h2>Pour aller plus loin</h2>
+  <p>Voir le <a href="${ORIGIN}/blog/nettoyage-copropriete-obligations-prix">guide nettoyage copropriété : obligations et prix</a>, le module <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage avec QR et PV automatique</a>, le module <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">devis et facturation automatisée</a>, le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning multi-sites</a>, et la page <a href="${ORIGIN}/villes/paris">logiciel nettoyage Paris</a> (50 000+ copropriétés intra-muros).</p>
+`.trim()
+
+const coproHtml = buildHtml({
+  url: '/logiciel-nettoyage-copropriete-syndic',
+  title: 'Logiciel nettoyage copropriété et syndic : PV automatique · Proprely',
+  description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété : preuve de passage QR, PV automatique au syndic, reporting standardisé. Bêta gratuite.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Logiciel nettoyage copropriété et syndic',
+      description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété.",
+      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-03',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage copropriété', item: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic` },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'Proprely — logiciel pour société de nettoyage de copropriétés',
+      description: "Logiciel pour société de nettoyage intervenant pour syndics et copropriétés : preuve de passage, PV automatique, facturation récurrente.",
+      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`,
+      image: `${ORIGIN}/og-image.png`,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      serviceType: 'Logiciel de gestion société de nettoyage copropriétés',
+      areaServed: { '@type': 'Country', name: 'France' },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Dirigeants de sociétés de nettoyage B2B intervenant pour syndics et copropriétés en France',
+      },
+    },
+    faqSchema(coproFaqs),
+  ],
+  bodyHtml: coproBody,
+})
+writePage('/logiciel-nettoyage-copropriete-syndic', coproHtml)
+generated.push('/logiciel-nettoyage-copropriete-syndic')
+
+// === /application-mobile-agents-nettoyage ===
+const mobileFaqs = [
+  { q: "Quelle application mobile pour les agents de nettoyage ?", a: "Proprely propose une application mobile pour agents de nettoyage qui ne nécessite aucune installation : chaque agent reçoit un lien web personnel qu'il ouvre dans le navigateur de son téléphone. Il accède à son planning, peut pointer son arrivée et son départ, déclencher la preuve de passage (QR + photos + signature), signaler une absence ou un incident, et consulter son compteur d'heures en temps réel. Compatible Android 8+ et iOS 13+, fonctionne en 4G dégradée." },
+  { q: "L'application mobile Proprely est-elle gratuite ?", a: "Oui. L'accès agent est inclus dans tous les abonnements (et donc gratuit pendant la bêta privée pour les 30 sociétés fondatrices). Vous payez par site ou par utilisateur dirigeant — pas par agent. Vous pouvez ajouter autant d'agents que nécessaire sans surcoût." },
+  { q: "Pourquoi pas d'application native à installer ?", a: "Trois raisons : (1) les agents refusent souvent d'installer une app pro sur leur téléphone perso, (2) les apps natives saturent le stockage des téléphones d'entrée de gamme, (3) chaque mise à jour casse l'app pour une partie des utilisateurs. Le lien web supprime ces trois frictions." },
+  { q: "L'application fonctionne-t-elle hors connexion ?", a: "Mode dégradé oui, hors ligne complet non. L'agent peut consulter son planning en cache navigateur, pointer ses heures et prendre les photos de preuve de passage même en 4G capricieuse — les données sont stockées temporairement puis envoyées en arrière-plan dès qu'une connexion correcte est retrouvée." },
+  { q: "Que se passe-t-il si un agent perd son téléphone ?", a: "Vous coupez son accès en 5 secondes depuis le cockpit dirigeant : son lien personnel devient inactif. Aucune donnée client sensible n'est stockée localement de manière persistante — le cache est nettoyé après 7 jours d'inactivité." },
+  { q: "Mes agents non-natifs du numérique vont-ils s'en sortir ?", a: "Oui. L'interface utilise un vocabulaire métier accessible, des icônes claires et une seule action principale par écran. Les agents de 40-60 ans prennent la main en 5 à 10 minutes. L'absence d'installation supprime la première barrière." },
+]
+
+const mobileBody = `
+  <h1>Application mobile pour agents de nettoyage : aucune app à installer</h1>
+  <p>Pour équiper vos agents de nettoyage en mobile, Proprely fournit un simple lien web personnel : planning, pointage, preuve de passage, signalement d'absence et compteur d'heures dans le navigateur du téléphone. Aucune application à installer, aucune mise à jour à pousser, aucune formation longue.</p>
+  <h2>Pourquoi les apps natives échouent sur le terrain nettoyage</h2>
+  <ul>
+    <li>Les agents refusent d'installer une app pro sur leur téléphone perso</li>
+    <li>Le téléphone est saturé, l'app refuse de s'installer</li>
+    <li>Formation longue à chaque nouvel agent</li>
+    <li>Les mises à jour cassent la fonctionnalité pour une partie de l'équipe</li>
+    <li>Compte ancien encore actif des semaines après le départ d'un agent</li>
+    <li>App native qui ne fonctionne plus en sous-sol ou en parking 4G dégradée</li>
+  </ul>
+  <h2>Notre approche : un lien web personnel = une application mobile</h2>
+  <ul>
+    <li><strong>Zéro installation, zéro mise à jour</strong> — pas de téléchargement, version toujours à jour</li>
+    <li><strong>Fonctionne sur tout téléphone récent</strong> — Android 8+ et iOS 13+, entrée de gamme inclus</li>
+    <li><strong>Sécurisé même si le téléphone est perdu</strong> — lien révocable en 5 secondes</li>
+    <li><strong>Connexion réseau dégradée gérée</strong> — cache navigateur + envoi en arrière-plan</li>
+  </ul>
+  <h2>Ce que vos agents peuvent faire depuis leur téléphone</h2>
+  <ul>
+    <li><strong>Voir son planning de la semaine</strong> — par jour, par site, par horaire</li>
+    <li><strong>Pointer son arrivée et son départ</strong> — horodatage + géolocalisation optionnelle</li>
+    <li><strong>Déclencher la preuve de passage</strong> — QR, photos avant-après, signature</li>
+    <li><strong>Signaler une absence ou un incident</strong> — alerte cockpit dirigeant immédiate</li>
+    <li><strong>Consulter ses heures et historique</strong> — transparence anti-conflits paie</li>
+    <li><strong>Consignes en français simple</strong> — pour équipes intergénérationnelles</li>
+  </ul>
+  <h2>Pour aller plus loin</h2>
+  <p>Voir le module <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning agents (cockpit dirigeant)</a>, la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage mobile</a>, la <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">gestion agents (profils, spécialités, alertes)</a>, le <a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage">guide calcul des heures agents 2026</a>, et le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier 2026</a>.</p>
+`.trim()
+
+const mobileHtml = buildHtml({
+  url: '/application-mobile-agents-nettoyage',
+  title: "Application mobile agents nettoyage : sans app à installer · Proprely",
+  description: "Application mobile pour agents de société de nettoyage : planning, pointage, preuve de passage. Aucune app à installer — simple lien web sur le téléphone. Bêta gratuite.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Application mobile agents nettoyage',
+      description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — sans app à installer.",
+      url: `${ORIGIN}/application-mobile-agents-nettoyage`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-03',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Application mobile agents nettoyage', item: `${ORIGIN}/application-mobile-agents-nettoyage` },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'MobileApplication',
+      name: 'Proprely — application agent terrain',
+      description: "Application mobile pour agents de nettoyage via lien web personnel : planning, pointage, preuve de passage, signalements.",
+      url: `${ORIGIN}/application-mobile-agents-nettoyage`,
+      operatingSystem: 'Web (Android 8+, iOS 13+, navigateur récent)',
+      applicationCategory: 'BusinessApplication',
+      publisher: { '@id': `${ORIGIN}/#organization` },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        description: 'Accès agent inclus dans tous les abonnements Proprely, gratuit pendant la bêta privée.',
+      },
+    },
+    faqSchema(mobileFaqs),
+  ],
+  bodyHtml: mobileBody,
+})
+writePage('/application-mobile-agents-nettoyage', mobileHtml)
+generated.push('/application-mobile-agents-nettoyage')
+
 const mentionsBody = `
   <h1>Mentions légales</h1>
   <h2>Éditeur du site</h2>
@@ -1587,10 +1842,13 @@ const softwareLandingBody = `
     <li><a href="${ORIGIN}/calculateur-roi">Calculateur ROI logiciel société de nettoyage</a> — coût caché de la dispersion</li>
     <li><a href="${ORIGIN}/outils">Tous les outils gratuits</a></li>
   </ul>
-  <h3>Cas spécifiques par taille et par profil</h3>
+  <h3>Cas spécifiques par taille, profil et vertical</h3>
   <ul>
     <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage">Logiciel pour auto-entrepreneur nettoyage</a> — solo et indépendants</li>
     <li><a href="${ORIGIN}/convention-collective-nettoyage">Logiciel conforme convention collective propreté IDCC 3043</a> — grille salaires, article 7</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-medical-bionettoyage">Logiciel nettoyage médical et bionettoyage</a> — traçabilité, protocoles, CMR</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-copropriete-syndic">Logiciel nettoyage copropriété et syndic</a> — PV automatique, facturation récurrente</li>
+    <li><a href="${ORIGIN}/application-mobile-agents-nettoyage">Application mobile pour agents de nettoyage</a> — sans app à installer</li>
   </ul>
   <h3>Pages locales — couverture nationale</h3>
   <ul>

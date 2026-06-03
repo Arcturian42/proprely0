@@ -27,6 +27,9 @@ const ComparatifLogiciels = lazy(() => import('./pages/ComparatifLogiciels'))
 const AutoEntrepreneurLanding = lazy(() => import('./pages/AutoEntrepreneurLanding'))
 const CRMPage = lazy(() => import('./pages/CRMPage'))
 const ConventionCollectiveLanding = lazy(() => import('./pages/ConventionCollectiveLanding'))
+const MedicalBionetLanding = lazy(() => import('./pages/MedicalBionetLanding'))
+const CoproSyndicLanding = lazy(() => import('./pages/CoproSyndicLanding'))
+const MobileAgentLanding = lazy(() => import('./pages/MobileAgentLanding'))
 const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
@@ -130,6 +133,18 @@ const META: Record<string, RouteMeta> = {
   '/convention-collective-nettoyage': {
     title: 'Logiciel conforme convention collective propreté IDCC 3043 · Proprely',
     description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes. Bêta gratuite.",
+  },
+  '/logiciel-nettoyage-medical-bionettoyage': {
+    title: 'Logiciel nettoyage médical et bionettoyage : traçabilité IDCC 3043 · Proprely',
+    description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme convention collective IDCC 3043. Bêta gratuite.",
+  },
+  '/logiciel-nettoyage-copropriete-syndic': {
+    title: 'Logiciel nettoyage copropriété et syndic : PV automatique · Proprely',
+    description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété : preuve de passage QR, PV automatique au syndic, reporting standardisé. Bêta gratuite.",
+  },
+  '/application-mobile-agents-nettoyage': {
+    title: "Application mobile agents nettoyage : sans app à installer · Proprely",
+    description: "Application mobile pour agents de société de nettoyage : planning, pointage, preuve de passage. Aucune app à installer — simple lien web sur le téléphone. Bêta gratuite.",
   },
 }
 
@@ -241,6 +256,9 @@ function App() {
   else if (route === '/logiciel-auto-entrepreneur-nettoyage') content = <AutoEntrepreneurLanding />
   else if (route === '/crm-entreprise-proprete') content = <CRMPage />
   else if (route === '/convention-collective-nettoyage' || route === '/convention-collective-nettoyage/') content = <ConventionCollectiveLanding />
+  else if (route === '/logiciel-nettoyage-medical-bionettoyage' || route === '/logiciel-nettoyage-medical-bionettoyage/') content = <MedicalBionetLanding />
+  else if (route === '/logiciel-nettoyage-copropriete-syndic' || route === '/logiciel-nettoyage-copropriete-syndic/') content = <CoproSyndicLanding />
+  else if (route === '/application-mobile-agents-nettoyage' || route === '/application-mobile-agents-nettoyage/') content = <MobileAgentLanding />
   else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
