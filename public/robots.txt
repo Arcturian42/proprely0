@@ -87,3 +87,4 @@ Sitemap: https://proprely.fr/sitemap.xml
 
 # LLM index
 # https://proprely.fr/llms.txt
+# https://proprely.fr/llms-full.txt

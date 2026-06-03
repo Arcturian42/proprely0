@@ -58,6 +58,21 @@ function md2html(content: string): string {
       i++
       continue
     }
+    // Tableau markdown : ligne d'en-tête | … | suivie d'une ligne séparatrice | --- |
+    if (line.trim().startsWith('|') && i + 1 < lines.length && /^\|?[\s:|-]*-[\s:|-]*\|?$/.test(lines[i + 1].trim())) {
+      const splitRow = (s: string) => s.trim().replace(/^\||\|$/g, '').split('|').map((c) => c.trim())
+      const header = splitRow(line)
+      i += 2
+      const bodyRows: string[][] = []
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        bodyRows.push(splitRow(lines[i]))
+        i++
+      }
+      const thead = '<thead><tr>' + header.map((h) => `<th>${renderInline(h)}</th>`).join('') + '</tr></thead>'
+      const tbody = '<tbody>' + bodyRows.map((r) => '<tr>' + r.map((c) => `<td>${renderInline(c)}</td>`).join('') + '</tr>').join('') + '</tbody>'
+      out.push(`<table>${thead}${tbody}</table>`)
+      continue
+    }
     if (line.startsWith('- ')) {
       const items: string[] = []
       while (i < lines.length && lines[i].startsWith('- ')) {
@@ -162,9 +177,11 @@ function writePage(routePath: string, html: string) {
 }
 
 function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
-  const url = `${ORIGIN}/blog/${p.slug}`
+  const url = `${ORIGIN}/blog/${p.slug}/`
   const datePublished = parseFrenchDate(p.date) || p.date
   const dateModified = p.dateModified ? (parseFrenchDate(p.dateModified) || p.dateModified) : datePublished
+  const wordCount = p.content.split(/\s+/).filter(Boolean).length
+  const minutes = p.readTime.match(/(\d+)/)?.[1]
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -199,7 +216,9 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     inLanguage: 'fr-FR',
     articleSection: p.tag,
+    wordCount,
   }
+  if (minutes) schema.timeRequired = `PT${minutes}M`
   if (p.tldr) {
     schema.abstract = p.tldr
   }
@@ -1976,6 +1995,77 @@ const priceHtml = buildHtml({
 })
 writePage('/calculateur-prix-nettoyage-m2', priceHtml)
 generated.push('/calculateur-prix-nettoyage-m2')
+
+// === llms-full.txt : corpus intégral pour les moteurs génératifs (GEO) ===
+// Au-delà de l'index llms.txt, on expose le TEXTE COMPLET des articles +
+// résumés des fonctionnalités, villes et comparatifs, pour faciliter la
+// citation par les LLM (ChatGPT, Perplexity, Claude, Gemini, Copilot).
+const stripMd = (s: string): string =>
+  s
+    .replace(/^\s*\|.*\|\s*$/gm, (line) => line.replace(/\|/g, ' ').replace(/\s{2,}/g, ' ').trim())
+    .replace(/^\s*[-:|\s]+$/gm, '')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+
+const lf: string[] = []
+lf.push('# Proprely — contenu intégral pour moteurs génératifs (llms-full.txt)')
+lf.push('')
+lf.push('> Le cockpit métier des sociétés de nettoyage B2B en France. Ce fichier rassemble le texte intégral des articles ainsi que les résumés des fonctionnalités, pages villes et comparatifs, pour faciliter la citation par les LLM (ChatGPT, Perplexity, Claude, Gemini, Copilot). Index synthétique : https://proprely.fr/llms.txt')
+lf.push('')
+lf.push('## Articles de blog (texte intégral)')
+for (const rawPost of posts) {
+  const p = getPost(rawPost.slug) ?? rawPost
+  lf.push('')
+  lf.push(`### ${p.title}`)
+  lf.push(`URL : ${ORIGIN}/blog/${p.slug}/ | ${p.tag} | ${p.readTime} | publié le ${p.date}`)
+  if (p.tldr) lf.push(`Réponse-flash : ${p.tldr}`)
+  lf.push(p.excerpt)
+  lf.push('')
+  lf.push(stripMd(p.content))
+  if (p.faq?.length) {
+    lf.push('')
+    lf.push('Questions fréquentes :')
+    for (const f of p.faq) lf.push(`- ${f.q} — ${f.a}`)
+  }
+}
+lf.push('')
+lf.push('## Fonctionnalités')
+for (const rawF of features) {
+  const f = getFeature(rawF.slug) ?? rawF
+  lf.push('')
+  lf.push(`### ${f.title}`)
+  lf.push(`URL : ${ORIGIN}/fonctionnalites/${f.slug}/`)
+  lf.push(f.subtitle)
+  lf.push(`Problème : ${f.problemDescription}`)
+  lf.push(`Solution : ${f.solutionDescription}`)
+  if (f.faq?.length) for (const q of f.faq) lf.push(`- ${q.q} — ${q.a}`)
+}
+lf.push('')
+lf.push('## Pages villes')
+for (const rawC of cities) {
+  const c = getCity(rawC.slug) ?? rawC
+  lf.push('')
+  lf.push(`### ${c.title}`)
+  lf.push(`URL : ${ORIGIN}/villes/${c.slug}/`)
+  lf.push(c.subtitle)
+  lf.push(c.marketIntro)
+}
+lf.push('')
+lf.push('## Comparatifs concurrents')
+for (const cmp of comparisons) {
+  lf.push('')
+  lf.push(`### ${cmp.title}`)
+  lf.push(`URL : ${ORIGIN}/comparatif/${cmp.slug}/`)
+  lf.push(`Réponse-flash : ${cmp.tldr}`)
+  lf.push(`${cmp.competitorName} : ${cmp.competitorPitch}`)
+  if (cmp.faq?.length) for (const q of cmp.faq) lf.push(`- ${q.q} — ${q.a}`)
+}
+const llmsFullContent = lf.join('\n') + '\n'
+writeFileSync(resolve(distDir, 'llms-full.txt'), llmsFullContent)
+console.log(`✓ llms-full.txt généré (${llmsFullContent.length} caractères)`)
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

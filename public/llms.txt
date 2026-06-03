@@ -32,6 +32,7 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Blog Proprely](https://proprely.fr/blog) : analyses et retours d'expérience pour les dirigeants du nettoyage
 - [Contact](https://proprely.fr/contact) : email, zones d'opération, éditeur
 - [Flux RSS](https://proprely.fr/rss.xml) : nouveaux articles
+- [Contenu intégral pour LLM](https://proprely.fr/llms-full.txt) : texte complet des articles + résumés des fonctionnalités, villes et comparatifs
 
 ## Fonctionnalités
 
@@ -64,6 +65,10 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Tarif nettoyage bureaux au m² en 2026](https://proprely.fr/blog/tarif-nettoyage-bureaux-m2-2026) : grilles indicatives, paramètres qui font varier le prix, méthode de chiffrage
 - [Fidéliser les agents nettoyage face au turnover](https://proprely.fr/blog/fideliser-agents-nettoyage-turnover) : 6 leviers contre 35% de turnover annuel sectoriel
 - [Digitaliser son entreprise de nettoyage en 5 étapes](https://proprely.fr/blog/digitaliser-entreprise-nettoyage-5-etapes) : roadmap concrète de la dispersion à un cockpit unifié
+- [Coût horaire chargé d'un agent de nettoyage : calcul 2026](https://proprely.fr/blog/cout-horaire-charge-agent-nettoyage) : décomposition salaire + charges + congés + primes + coûts indirects, règle des 3×
+- [Répondre à un appel d'offres de nettoyage](https://proprely.fr/blog/repondre-appel-offres-nettoyage) : où trouver les marchés (BOAMP, profils acheteurs), DCE, mémoire technique, chiffrage, article 7
+- [Nettoyage de copropriété : obligations, fréquences et prix 2026](https://proprely.fr/blog/nettoyage-copropriete-obligations-prix) : prestations parties communes, fréquences, prix au lot, relation syndic
+- [Réduire l'absentéisme des agents de nettoyage](https://proprely.fr/blog/reduire-absenteisme-agents-nettoyage) : coût réel, causes (TMS, horaires), 7 leviers concrets
 
 ### Outils & logiciels
 
@@ -76,6 +81,7 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 
 - [RGPD société nettoyage 2026](https://proprely.fr/blog/rgpd-societe-nettoyage-2026) : registre, sous-traitance, photos preuve de passage, durées de conservation
 - [Convention collective nettoyage IDCC 3043](https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043) : grille salaires, primes, congés, ce qu'il faut absolument respecter
+- [Bionettoyage médical : protocoles, normes et tarifs 2026](https://proprely.fr/blog/bionettoyage-medical-protocoles) : zones à risque, protocole, normes EN, traçabilité, tarif premium
 
 ### Local / GEO
 
