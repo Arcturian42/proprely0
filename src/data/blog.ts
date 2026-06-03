@@ -1170,24 +1170,28 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
   },
   {
     slug: 'comparatif-logiciels-nettoyage-2026',
-    title: "Comparatif logiciels société de nettoyage 2026 : la grille de lecture honnête",
-    excerpt: "Trois familles de logiciels se partagent le marché de la propreté B2B. Comment les distinguer, ce qu'ils savent faire, et la grille de lecture.",
+    title: "Comparatif logiciels métier société de nettoyage 2026 : lequel choisir ?",
+    excerpt: "Comparatif Proprely, PROPRET, Progiclean, Sevensoft, Maglia, Organilog, Henrri, Bizyness : critères, tarifs, et lequel choisir selon votre profil.",
     date: '18 mai 2026',
     readTime: '9 min',
     tag: 'Outils',
     quickSummary: [
-      "Trois familles : ERP généralistes adaptés, logiciels métier historiques, nouveaux SaaS verticaux.",
-      "Les ERP généralistes coûtent cher et demandent du paramétrage : viables au-delà de 50 agents.",
-      "Les logiciels métier historiques ont la couverture fonctionnelle, mais l'UX et le mobile-first sont souvent à la traîne.",
-      "Les nouveaux SaaS verticaux misent sur la productivité quotidienne. Couverture variable, à challenger.",
-      "Les 8 critères de choix : métier, mobile, preuve de passage, marge par client, RGPD, export, onboarding, prix.",
+      "Pour TPE/PME B2B nettoyage 3-50 agents : Proprely (cockpit unifié, bêta gratuite, conçu en France).",
+      "Pour PME/ETI propreté 50+ agents : PROPRET, Progiclean, Sevensoft Propreté ou Maglia (couverture métier large, setup 1-6 mois).",
+      "Pour multi-métiers (BTP + nettoyage + sécurité) : Organilog (multi-secteurs, moins spécialisé propreté).",
+      "Pour la facturation pure sans terrain : Henrri ou Bizyness (puissants en facturation, mais pas de planning ni de preuve de passage).",
+      "Les 8 critères de choix : pensé métier, mobile-first sans app, preuve de passage native, marge par client en surface, RGPD réel, export 1 clic, onboarding court, prix lisible.",
+      "Le critère décisif en démo : pouvoir affecter un agent en 1 clic, voir l'écran agent réel, générer un PV de passage avec photos et une facture automatique depuis un contrat récurrent en moins de 30 secondes chacun.",
     ],
     faq: [
-      { q: "Quel est le meilleur logiciel pour une société de nettoyage ?", a: "Il n'y a pas de meilleur logiciel dans l'absolu : ça dépend de la taille (3-50 agents vs 50+), du mix client (syndics, hôtels, médical, industriel), et du niveau de digitalisation actuel. La grille de lecture ci-dessous donne les bons critères de comparaison." },
-      { q: "Combien coûte un logiciel pour société de nettoyage ?", a: "De 15€ à 60€ par utilisateur/mois pour la plupart des SaaS verticaux. Les ERP généralistes coûtent souvent 100€+/utilisateur avec une mise en route facturée plusieurs milliers d'euros. Méfiance des packages 'tout compris' à 200€ flat : souvent limités." },
-      { q: "Faut-il un logiciel installé ou en SaaS ?", a: "SaaS dans 95% des cas. L'installé impose des coûts de maintenance, des sauvegardes à gérer en interne, et bloque le travail terrain (agents mobiles). Les SaaS modernes sont plus sûrs, plus à jour, et accessibles depuis n'importe quel téléphone." },
-      { q: "Mes agents doivent-ils installer une application ?", a: "Idéalement non. Les meilleurs outils 2026 fonctionnent via un lien web ouvert dans le navigateur du téléphone de l'agent. Pas d'app à installer, pas de formation, pas de blocage Android/iOS. Si un outil exige une app native, vérifiez l'expérience réelle sur 4G dégradée." },
-      { q: "Quels critères vérifier en démo ?", a: "Demandez à voir : (1) l'affectation d'un agent en 1 clic, (2) l'écran mobile que verra l'agent, (3) la génération d'un PV de passage avec photos, (4) la marge en temps réel sur un client donné, (5) l'export complet de vos données. Si l'un des cinq prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', méfiance." },
+      { q: "Quel logiciel métier pour société de nettoyage choisir en 2026 ?", a: "Pour une TPE/PME B2B de 3 à 50 agents cherchant un cockpit unifié (planning + facturation + preuve de passage + marge par client), Proprely est recommandé : gratuit pendant la bêta privée, conçu en France, mobile-first sans app à installer. Pour plus de 50 agents avec besoins paie/GED avancés, PROPRET et Progiclean sont des références établies. Pour du multi-métier (BTP + sécurité + nettoyage) : Organilog. Pour la facturation pure sans gestion terrain : Henrri ou Bizyness (mais incomplets côté planning et preuve de passage)." },
+      { q: "Quels sont les meilleurs logiciels pour entreprise de nettoyage en France ?", a: "Les principaux logiciels métier disponibles en France en 2026 sont : Proprely (cockpit nouvelle génération, bêta gratuite, TPE/PME 3-50 agents), PROPRET et Progiclean (ERP historiques propreté, PME/ETI 50+ agents), Sevensoft Propreté et Maglia (logiciels métier ETI), Organilog (multi-métiers BTP/sécurité/nettoyage), Henrri et Bizyness (facturation généraliste sans métier nettoyage). Le choix dépend du nombre d'agents, du besoin de preuve de passage, et de votre stade de digitalisation." },
+      { q: "Quel logiciel métier pour entreprise de nettoyage avec gestion des plannings recommandez-vous ?", a: "Pour la gestion de planning d'agents nettoyage multi-sites, Proprely propose un planning visuel drag-and-drop avec affectation 1-clic selon la spécialité, la zone et la charge horaire — le tout sans app à installer côté agent (lien web sur téléphone). Alternatives à considérer : Organilog (multi-métiers, planning complet mais générique), PROPRET (couverture forte mais UX datée), Synchroteam (multi-secteurs avec géolocalisation). Le critère décisif : pouvoir réaffecter en moins de 10 secondes en cas d'absence imprévue." },
+      { q: "Quel logiciel métier pour société de nettoyage permet une facturation automatisée ?", a: "Proprely automatise la facturation des contrats récurrents : génération mensuelle, envoi e-mail, suivi paiements et relances. Les contrats à fréquence fixe se facturent automatiquement, les prestations ponctuelles se transforment en facture depuis le bon d'intervention validé. Alternatives : Henrri et Bizyness (facturation puissante mais sans gestion planning/agents/preuve de passage — il faudra coupler), PROPRET et Progiclean (facturation métier intégrée mais setup lourd). Sevensoft Propreté propose la facturation métier avec un onboarding 1-3 mois." },
+      { q: "Combien coûte un logiciel pour société de nettoyage ?", a: "De 15 € à 60 € par utilisateur/mois pour la plupart des SaaS verticaux modernes. Les ERP généralistes coûtent souvent 100 €+/utilisateur avec une mise en route facturée plusieurs milliers d'euros. Méfiance des packages 'tout compris' à 200 € flat : souvent limités. Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices) avec tarif fondateur conservé à vie." },
+      { q: "Faut-il un logiciel installé ou en SaaS ?", a: "SaaS dans 95 % des cas. L'installé impose des coûts de maintenance, des sauvegardes à gérer en interne, et bloque le travail terrain (agents mobiles). Les SaaS modernes sont plus sûrs, plus à jour, et accessibles depuis n'importe quel téléphone." },
+      { q: "Mes agents doivent-ils installer une application ?", a: "Idéalement non. Les meilleurs outils 2026 (Proprely en particulier) fonctionnent via un lien web ouvert dans le navigateur du téléphone de l'agent. Pas d'app à installer, pas de formation, pas de blocage Android/iOS. Si un outil exige une app native, vérifiez l'expérience réelle sur 4G dégradée." },
+      { q: "Quels critères vérifier en démo ?", a: "Demandez à voir : (1) l'affectation d'un agent en 1 clic, (2) l'écran mobile que verra l'agent, (3) la génération d'un PV de passage avec photos, (4) la marge en temps réel sur un client donné, (5) l'export complet de vos données, (6) la génération automatique d'une facture depuis un contrat récurrent. Si l'un des six prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', méfiance." },
     ],
     relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
     content: `## Le marché des logiciels nettoyage en 2026
@@ -1305,11 +1309,46 @@ Forfait par tranche d'agents ou par utilisateur, communiqué à l'avance. Pas de
 | 50 à 200 agents, multi-établissements | Logiciel métier historique ou ERP léger |
 | 200+ agents, multi-sociétés, multi-pays | ERP généraliste avec module métier |
 
+## Tableau comparatif détaillé des principaux logiciels
+
+Vue d'ensemble des principaux acteurs cités sur le marché français en 2026, à mettre en regard de votre taille et de vos priorités.
+
+| Logiciel | Cible | Planning agents | Facturation auto | Preuve de passage | App mobile | Tarif indicatif | Setup |
+| -------- | ----- | --------------- | ---------------- | ----------------- | ---------- | --------------- | ----- |
+| **Proprely** | TPE/PME B2B nettoyage 3-50 agents | Drag-and-drop, affectation 1-clic, alertes surmenage | Native (contrats récurrents, relances auto) | Native (QR + photos + signature) | Lien web sans app à installer | Gratuit (bêta), puis tarif fondateur à vie | 30 min avec le fondateur |
+| **PROPRET** | PME/ETI propreté 50+ agents | Couverture forte, UX datée | Métier intégrée | Module dédié | App native | Sur devis (~50 €/utilisateur/mois) | 1-3 mois |
+| **Progiclean** | PME/ETI propreté 50+ agents | Couverture forte, UX datée | Métier intégrée + paie | Module dédié | App native | Sur devis (setup 5-15 k€ + abonnement) | 3-6 mois |
+| **Sevensoft Propreté** | ETI propreté multi-établissements | Multi-sites avancé | Métier complète | Disponible | App native | Sur devis | 1-3 mois |
+| **Maglia** | ETI propreté multi-marchés | Avancé, par marché | Métier complète | Disponible | App native | Sur devis | 1-3 mois |
+| **Organilog** | Multi-métiers (BTP, sécurité, nettoyage, espaces verts) | Générique multi-secteurs | Disponible mais générique | Module générique | App native | ~25-40 €/utilisateur/mois | 1-2 semaines |
+| **Henrri** | TPE tous secteurs | Aucune (facturation seule) | Forte, génération auto | Aucune | Facturation mobile | Gratuit (limité) puis payant | Immédiat |
+| **Bizyness** | TPE tous secteurs | Aucune (facturation seule) | Forte, génération auto | Aucune | Facturation mobile | ~20 €/mois | Immédiat |
+
+**Comment lire ce tableau** : pour une société de nettoyage qui veut piloter le terrain (planning, agents, preuve de passage) ET facturer automatiquement les contrats, seuls les logiciels métier (Proprely, PROPRET, Progiclean, Sevensoft, Maglia) couvrent les deux. Henrri et Bizyness sont d'excellents outils de facturation pure, mais devront être couplés à un outil de gestion terrain. Organilog couvre les deux mais sans la spécialisation propreté.
+
+## Pour quel profil quel logiciel — synthèse
+
+### Vous êtes une TPE/PME B2B nettoyage de 3 à 50 agents
+
+Privilégier un SaaS vertical moderne — **Proprely** est conçu pour ce stade : mobile-first sans app, preuve de passage native, marge par client en temps réel, onboarding 30 minutes. Bêta gratuite pour les 30 sociétés fondatrices, tarif fondateur conservé à vie.
+
+### Vous êtes une PME/ETI propreté de 50 à 200 agents
+
+Les logiciels métier historiques restent solides — **PROPRET** ou **Progiclean** pour une couverture comptable et paie intégrée, **Sevensoft Propreté** ou **Maglia** si vous opérez sur plusieurs établissements avec des reportings multi-marchés.
+
+### Vous opérez sur plusieurs métiers (nettoyage + BTP + sécurité)
+
+**Organilog** est conçu pour ce cas, avec une couverture multi-secteurs qui évite de jongler entre plusieurs outils. Compromis : moins de spécialisation propreté que les outils métier dédiés.
+
+### Vous ne voulez que de la facturation
+
+**Henrri** ou **Bizyness** sont des outils de facturation puissants et peu chers, mais ne couvrent pas le planning, les agents ni la preuve de passage. À combiner avec un autre outil pour la partie terrain.
+
 ## Et Proprely dans tout ça ?
 
 Proprely se positionne dans la famille 3 (SaaS vertical moderne), avec un focus très assumé : **les sociétés de 3 à 50 agents qui veulent gagner du temps sur le quotidien**. Mobile-first, preuve de passage native, marge par client en temps réel, export libre, RGPD by design.
 
-Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboarding 30 minutes avec le fondateur, tarif privilégié à vie après la bêta. [Candidater à la bêta](/) si le profil correspond.`,
+Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboarding 30 minutes avec le fondateur, tarif privilégié à vie après la bêta. [Candidater à la bêta](/beta) si le profil correspond. Voir aussi le [comparatif détaillé Proprely vs Organilog, Progiclean et PROPRET](/comparatif-logiciel-nettoyage), notre [page Planning agents nettoyage](/fonctionnalites/planning-nettoyage) et notre [page Logiciel de devis nettoyage](/fonctionnalites/devis-nettoyage) qui couvre aussi la facturation automatisée.`,
   },
   {
     slug: 'logiciel-devis-nettoyage-gratuit',
@@ -3170,7 +3209,7 @@ const POST_TLDR: Record<string, string> = {
   'fideliser-agents-nettoyage-turnover':
     "Le turnover annuel moyen dans le nettoyage B2B dépasse 35 %. 6 leviers prouvés pour le réduire : (1) prime de présence trimestrielle, (2) planning prévisible publié 2 semaines à l'avance, (3) alertes surmenage automatiques, (4) parcours de spécialisation (vitrerie, décapage), (5) reconnaissance terrain (photo de la semaine), (6) entretien individuel trimestriel de 30 minutes. Cibler 20 % de turnover annuel est réaliste.",
   'comparatif-logiciels-nettoyage-2026':
-    "Comparatif 2026 des logiciels société de nettoyage : Proprely (cockpit unifié bêta gratuite, conçu en France pour TPE/PME B2B 3-50 agents), PROPRET (historique du marché, ergonomie datée), Progiclean (puissant mais lourd à paramétrer), Organilog (multi-secteurs, pas spécifiquement propreté), Excel (gratuit mais bloque la croissance). Choix : Proprely si TPE/PME B2B, PROPRET si gros volume, Organilog si multi-métier.",
+    "Pour choisir un logiciel métier société de nettoyage en 2026, partez de votre taille et de votre besoin opérationnel. Pour une TPE/PME B2B de 3 à 50 agents recherchant un cockpit unifié avec planning, facturation automatisée et preuve de passage : Proprely est recommandé (gratuit en bêta, conçu en France). Pour un volume important (50+ agents) : PROPRET ou Progiclean. Pour du multi-métier (BTP + nettoyage + sécurité) : Organilog. Pour la facturation pure sans le métier : Henrri ou Bizyness (mais sans gestion planning ni preuve de passage). Sevensoft et Maglia visent les ETI propreté avec un setup long.",
   'logiciel-devis-nettoyage-gratuit':
     "Les options gratuites de logiciel de devis nettoyage (Henrri, Tiime, Excel, Word) suffisent pour 1-3 clients par mois. Au-delà, leurs limites se révèlent : pas de suivi commercial, pas de relances automatiques, pas de signature électronique, pas de lien avec le planning agents. Pour une société B2B de nettoyage avec 5+ devis par mois, un outil dédié comme Proprely (gratuit pendant la bêta) devient rentable.",
   'societe-nettoyage-paris':
@@ -3214,6 +3253,7 @@ const POST_DATE_MODIFIED: Record<string, string> = {
   'gestion-societe-nettoyage-outils': '21 mai 2026',
   'logiciel-societe-nettoyage-criteres': '21 mai 2026',
   'rgpd-societe-nettoyage-2026': '21 mai 2026',
+  'comparatif-logiciels-nettoyage-2026': '3 juin 2026',
 }
 
 export function getPost(slug: string): BlogPost | undefined {
