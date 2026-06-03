@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 import { posts, getPost } from '../src/data/blog.ts'
+import { getAuthor } from '../src/config.ts'
 import { features, getFeature } from '../src/data/features.ts'
 import { cities, getCity } from '../src/data/cities.ts'
 import { resources } from '../src/data/resources.ts'
@@ -176,12 +177,13 @@ function writePage(routePath: string, html: string) {
   writeFileSync(targetFile, html)
 }
 
-function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
+function blogPostingSchema(p: typeof posts[number] & { tldr?: string; authorSlug?: string }) {
   const url = `${ORIGIN}/blog/${p.slug}/`
   const datePublished = parseFrenchDate(p.date) || p.date
   const dateModified = p.dateModified ? (parseFrenchDate(p.dateModified) || p.dateModified) : datePublished
   const wordCount = p.content.split(/\s+/).filter(Boolean).length
   const minutes = p.readTime.match(/(\d+)/)?.[1]
+  const author = getAuthor(p.authorSlug)
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -193,19 +195,13 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
     image: `${ORIGIN}/og-image.png`,
     author: {
       '@type': 'Person',
-      '@id': `${ORIGIN}/a-propos#paul-munier`,
-      name: 'Paul Munier',
-      url: `${ORIGIN}/a-propos`,
-      jobTitle: 'Business Developer & rédacteur',
-      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+      '@id': `${ORIGIN}/auteur/${author.slug}#person`,
+      name: author.name,
+      url: author.linkedin,
+      jobTitle: author.jobTitle,
+      sameAs: [author.linkedin],
       worksFor: { '@id': `${ORIGIN}/#organization` },
-      knowsAbout: [
-        'Logiciel de gestion société de nettoyage',
-        'Convention collective propreté IDCC 3043',
-        'Pilotage de marge en propreté B2B',
-        'Planning multi-sites pour société de nettoyage',
-        'Preuve de passage et conformité syndic',
-      ],
+      knowsAbout: author.knowsAbout,
     },
     publisher: {
       '@id': `${ORIGIN}/#organization`,
@@ -306,14 +302,20 @@ for (const rawPost of posts) {
         .join('')}</ul></aside>`
     : ''
 
+  const publishedIso = parseFrenchDate(p.date) || ''
+  const modifiedIso = p.dateModified ? (parseFrenchDate(p.dateModified) || '') : ''
+  const publishedTime = publishedIso
+    ? `<time datetime="${escapeAttr(publishedIso)}">${escapeHtml(p.date)}</time>`
+    : escapeHtml(p.date)
   const dateModifiedDisplay = p.dateModified && p.dateModified !== p.date
-    ? ` · Mis à jour le ${escapeHtml(p.dateModified)}`
+    ? ` · Mis à jour le ${modifiedIso ? `<time datetime="${escapeAttr(modifiedIso)}">${escapeHtml(p.dateModified)}</time>` : escapeHtml(p.dateModified)}`
     : ''
+  const postAuthor = getAuthor(p.authorSlug)
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
-    <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}${dateModifiedDisplay}</p>
-    <p>Par <a href="${ORIGIN}/a-propos">Paul Munier</a>, Business Developer &amp; rédacteur chez Proprely</p>
+    <p>Publié le ${publishedTime} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}${dateModifiedDisplay}</p>
+    <p>Par <a href="${escapeAttr(postAuthor.linkedin)}" rel="author noopener noreferrer" target="_blank">${escapeHtml(postAuthor.name)}</a>, ${escapeHtml(postAuthor.jobTitle)}</p>
     ${tldrHtml}
     <h2>L'essentiel</h2>
     <ul>${summaryHtml}</ul>
@@ -643,7 +645,10 @@ const blogSchema = {
     datePublished: p.date,
     dateModified: getPost(p.slug)?.dateModified ?? p.date,
     url: `${ORIGIN}/blog/${p.slug}`,
-    author: { '@type': 'Person', '@id': `${ORIGIN}/a-propos#paul-munier`, name: 'Paul Munier' },
+    author: (() => {
+      const a = getAuthor(p.authorSlug)
+      return { '@type': 'Person', '@id': `${ORIGIN}/auteur/${a.slug}#person`, name: a.name }
+    })(),
   })),
 }
 
@@ -757,6 +762,28 @@ const pricingHtml = buildHtml({
         { name: 'Tarifs', item: `${ORIGIN}/tarifs` },
       ]
     ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'Proprely — logiciel société de nettoyage B2B',
+      description: "Cockpit métier pour piloter une société de nettoyage B2B : clients, agents, planning, missions avec preuve de passage, devis, factures, pilotage de la marge.",
+      brand: { '@type': 'Brand', name: 'Proprely' },
+      image: `${ORIGIN}/og-image.png`,
+      offers: {
+        '@type': 'Offer',
+        '@id': `${ORIGIN}/tarifs#offer-beta`,
+        url: `${ORIGIN}/tarifs`,
+        name: 'Bêta privée Proprely — accès gratuit',
+        description: "Accès complet au cockpit pendant toute la durée de la bêta privée, réservé aux 30 sociétés fondatrices. Tarif fondateur conservé à vie après le lancement public.",
+        price: '0',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2026-12-31',
+        eligibleCustomerType: 'https://schema.org/Enterprise',
+        areaServed: { '@type': 'Country', name: 'France' },
+        seller: { '@id': `${ORIGIN}/#organization` },
+      },
+    },
     faqSchema(pricingFaqs),
   ],
   bodyHtml: pricingBody,
@@ -1585,6 +1612,14 @@ const comparatifFaqs = [
   { q: "Combien de temps pour migrer ?", a: "30 min à 1 journée pour les SaaS verticaux modernes. 3 à 6 mois pour un ERP avec consultant intégrateur." },
 ]
 
+const comparatifSoftwares: { name: string; description: string; url: string }[] = [
+  { name: 'Proprely', description: "Cockpit métier B2B nouvelle génération (2026) conçu pour les TPE/PME nettoyage 3-50 agents. Planning, devis, preuve de passage, marge par client.", url: `${ORIGIN}/` },
+  { name: 'PROPRET', description: "ERP métier historique de la propreté (depuis ~2005). Couverture fonctionnelle large (paie, GED) destinée aux PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-propret` },
+  { name: 'Progiclean', description: "ERP métier propreté historique (depuis ~2000). Setup sur devis, abonnement annuel, cible PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean` },
+  { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Forfait par utilisateur/mois, non spécifique propreté.", url: `${ORIGIN}/comparatif/proprely-vs-organilog` },
+  { name: 'Synchroteam', description: "Solution de gestion d'interventions multi-secteurs avec planning et géolocalisation, non spécifique au nettoyage.", url: 'https://www.synchroteam.com/' },
+]
+
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
   title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
@@ -1599,6 +1634,27 @@ const comparatifHtml = buildHtml({
         { name: 'Comparatif logiciel nettoyage', item: `${ORIGIN}/comparatif-logiciel-nettoyage` },
       ]
     ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Logiciels société de nettoyage comparés en 2026',
+      description: "Liste des logiciels analysés dans le comparatif Proprely 2026 pour les sociétés de nettoyage B2B en France.",
+      numberOfItems: comparatifSoftwares.length,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: comparatifSoftwares.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: s.url,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: s.name,
+          description: s.description,
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: s.url,
+        },
+      })),
+    },
     faqSchema(comparatifFaqs),
   ],
   bodyHtml: comparatifBody,
