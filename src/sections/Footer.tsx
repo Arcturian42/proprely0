@@ -248,6 +248,26 @@ export default function Footer() {
             © {new Date().getFullYear()} Proprely. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-500">
+            <a
+              href="https://www.linkedin.com/company/proprely/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Proprely sur LinkedIn"
+              className="hover:text-slate-300 transition-colors inline-flex items-center gap-1"
+            >
+              LinkedIn
+              <ArrowUpRight size={11} />
+            </a>
+            <a
+              href="https://tiktok.com/@proprely"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Proprely sur TikTok"
+              className="hover:text-slate-300 transition-colors inline-flex items-center gap-1"
+            >
+              TikTok
+              <ArrowUpRight size={11} />
+            </a>
             <a href="https://proprely.fr" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1">
               proprely.fr
               <ArrowUpRight size={11} />
