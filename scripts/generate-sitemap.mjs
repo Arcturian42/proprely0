@@ -100,6 +100,7 @@ const urls = [
   { loc: `${ORIGIN}/comparatif-logiciel-nettoyage`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Comparatif logiciels nettoyage 2026' },
   { loc: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel auto-entrepreneur nettoyage' },
   { loc: `${ORIGIN}/crm-entreprise-proprete`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'CRM entreprise propreté' },
+  { loc: `${ORIGIN}/convention-collective-nettoyage`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel conforme convention collective propreté IDCC 3043' },
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
   { loc: `${ORIGIN}/outils`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Outils gratuits Proprely' },
   { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
@@ -134,7 +135,9 @@ const urls = [
   })),
   ...citySlugs.map((slug) => ({
     loc: `${ORIGIN}/villes/${slug}`,
-    priority: '0.7',
+    // Top 3 métropoles (Paris, Lyon, Marseille) à 0.8 — même niveau que les pages
+    // produit majeures (comparatif, simulateur). Autres villes à 0.7.
+    priority: ['paris', 'lyon', 'marseille'].includes(slug) ? '0.8' : '0.7',
     changefreq: 'monthly',
     lastmod: CONTENT_LASTMOD,
     image: DEFAULT_OG_IMAGE,
