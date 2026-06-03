@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin, ExternalLink } from 'lucide-react'
+import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -199,43 +199,6 @@ export default function AboutPage() {
                   </motion.div>
                 )
               })}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-14 sm:py-20 border-t border-slate-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">
-              L'auteur des articles
-            </h2>
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              La plupart des analyses publiées sur le blog Proprely sont signées par un rédacteur identifié, qui parle régulièrement avec des dirigeants de sociétés de nettoyage B2B.
-            </p>
-            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 sm:p-8">
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
-                <div className="shrink-0 sm:w-32">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center text-white font-black text-3xl sm:text-4xl shadow-lg shadow-blue-600/20">
-                    PM
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">{AUTHOR.name}</h3>
-                  <p className="text-sm sm:text-base text-blue-700 font-bold mb-4">{AUTHOR.jobTitle}</p>
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-5">
-                    {AUTHOR.bio}
-                  </p>
-                  <a
-                    href={AUTHOR.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackEvent('author_linkedin_click', { location: 'about_page' })}
-                    className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 rounded-xl px-4 py-2 font-semibold text-sm hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-colors"
-                  >
-                    <ExternalLink size={14} />
-                    Profil LinkedIn de {AUTHOR.name.split(' ')[0]}
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </section>
