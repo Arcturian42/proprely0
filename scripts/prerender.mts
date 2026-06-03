@@ -174,8 +174,24 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
     datePublished,
     dateModified,
     image: `${ORIGIN}/og-image.png`,
-    author: { '@type': 'Organization', name: 'Proprely', url: ORIGIN },
+    author: {
+      '@type': 'Person',
+      '@id': `${ORIGIN}/a-propos#paul-munier`,
+      name: 'Paul Munier',
+      url: `${ORIGIN}/a-propos`,
+      jobTitle: 'Fondateur de Proprely',
+      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+      worksFor: { '@id': `${ORIGIN}/#organization` },
+      knowsAbout: [
+        'Logiciel de gestion société de nettoyage',
+        'Convention collective propreté IDCC 3043',
+        'Pilotage de marge en propreté B2B',
+        'Planning multi-sites pour société de nettoyage',
+        'Preuve de passage et conformité syndic',
+      ],
+    },
     publisher: {
+      '@id': `${ORIGIN}/#organization`,
       '@type': 'Organization',
       name: 'Proprely',
       logo: { '@type': 'ImageObject', url: `${ORIGIN}/proprely-icon-512.png` },
@@ -271,10 +287,14 @@ for (const rawPost of posts) {
         .join('')}</ul></aside>`
     : ''
 
+  const dateModifiedDisplay = p.dateModified && p.dateModified !== p.date
+    ? ` · Mis à jour le ${escapeHtml(p.dateModified)}`
+    : ''
   const bodyHtml = `
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
-    <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}</p>
+    <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}${dateModifiedDisplay}</p>
+    <p>Par <a href="${ORIGIN}/a-propos">Paul Munier</a>, fondateur de Proprely</p>
     ${tldrHtml}
     <h2>L'essentiel</h2>
     <ul>${summaryHtml}</ul>
@@ -432,12 +452,29 @@ for (const rawCity of cities) {
     </ul>`
     : ''
 
+  const neighborhoodsHtml = c.neighborhoods?.length
+    ? `
+    <h2>Quartiers d'affaires et zones tertiaires à ${escapeHtml(c.city)}</h2>
+    <p>Les zones où se concentre la demande propreté B2B et leurs spécificités opérationnelles.</p>
+    <ul>${c.neighborhoods
+      .map((n) => `<li><strong>${escapeHtml(n.name)}</strong> — ${escapeHtml(n.description)}</li>`)
+      .join('')}</ul>`
+    : ''
+  const pricingHtml = c.marketPricing
+    ? `
+    <h2>Prix de marché propreté à ${escapeHtml(c.city)} en 2026</h2>
+    <p><strong>Tarif bureaux :</strong> ${escapeHtml(c.marketPricing.range)}. ${escapeHtml(c.marketPricing.note)}</p>
+    <p>Pour calibrer votre tarification au m², consultez le <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">guide complet du tarif nettoyage bureaux 2026</a>.</p>`
+    : ''
+
   const bodyHtml = `
     <h1>${escapeHtml(c.title)}</h1>
     <p>${escapeHtml(c.subtitle)}</p>
     <h2>Le marché de la propreté B2B à ${escapeHtml(c.city)}</h2>
     <p>${escapeHtml(c.marketIntro)}</p>
     <ul>${marketBulletsHtml}</ul>
+    ${neighborhoodsHtml}
+    ${pricingHtml}
     <h2>Vos clients types à ${escapeHtml(c.city)}</h2>
     <ul>${clientTypesHtml}</ul>
     <h2>Les défis spécifiques à ${escapeHtml(c.city)}</h2>
@@ -451,6 +488,47 @@ for (const rawCity of cities) {
   `.trim()
 
   const cityUrl = `${ORIGIN}${url}`
+  const cityAreaServed: Record<string, unknown> = {
+    '@type': 'City',
+    name: c.city,
+    containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
+  }
+  if (c.wikidata) {
+    cityAreaServed.sameAs = c.wikidata
+  }
+  const localBusinessSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${cityUrl}#localbusiness`,
+    name: `Proprely — logiciel société de nettoyage à ${c.city}`,
+    description: c.metaDescription,
+    url: cityUrl,
+    image: `${ORIGIN}/og-image.png`,
+    logo: `${ORIGIN}/proprely-icon-512.png`,
+    priceRange: '€€',
+    email: 'contact@proprely.fr',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '30 rue Marbeuf',
+      addressLocality: 'Paris',
+      addressRegion: 'Île-de-France',
+      postalCode: '75008',
+      addressCountry: 'FR',
+    },
+    areaServed: c.department
+      ? [cityAreaServed, { '@type': 'AdministrativeArea', name: c.department }]
+      : [cityAreaServed],
+    serviceType: 'Logiciel de gestion société de nettoyage B2B',
+    parentOrganization: { '@id': `${ORIGIN}/#organization` },
+  }
+  if (c.geo) {
+    localBusinessSchema.geo = {
+      '@type': 'GeoCoordinates',
+      latitude: c.geo.latitude,
+      longitude: c.geo.longitude,
+    }
+  }
+
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -467,11 +545,7 @@ for (const rawCity of cities) {
         '@type': 'Service',
         name: `Logiciel de gestion pour sociétés de nettoyage à ${c.city}`,
         provider: { '@id': `${ORIGIN}/#organization` },
-        areaServed: {
-          '@type': 'City',
-          name: c.city,
-          containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
-        },
+        areaServed: cityAreaServed,
       },
     },
     {
@@ -483,16 +557,13 @@ for (const rawCity of cities) {
       image: `${ORIGIN}/og-image.png`,
       provider: { '@id': `${ORIGIN}/#organization` },
       serviceType: 'Logiciel de gestion société de nettoyage',
-      areaServed: {
-        '@type': 'City',
-        name: c.city,
-        containedInPlace: { '@type': 'AdministrativeArea', name: c.region },
-      },
+      areaServed: cityAreaServed,
       audience: {
         '@type': 'BusinessAudience',
         audienceType: `Dirigeants de sociétés de nettoyage B2B à ${c.city} et en ${c.region}`,
       },
     },
+    localBusinessSchema,
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -553,7 +624,7 @@ const blogSchema = {
     datePublished: p.date,
     dateModified: getPost(p.slug)?.dateModified ?? p.date,
     url: `${ORIGIN}/blog/${p.slug}`,
-    author: { '@type': 'Organization', name: 'Proprely' },
+    author: { '@type': 'Person', '@id': `${ORIGIN}/a-propos#paul-munier`, name: 'Paul Munier' },
   })),
 }
 
@@ -771,6 +842,97 @@ const contactHtml = buildHtml({
 })
 writePage('/contact', contactHtml)
 generated.push('/contact')
+
+const conventionFaqs = [
+  { q: "Proprely applique-t-il automatiquement la convention collective propreté IDCC 3043 ?", a: "Oui. La grille salariale 2026 (AS1 à inspecteur), les majorations heures complémentaires/supplémentaires/nuit/dimanche/jours fériés, la prime d'expérience à partir de 4 ans, et les seuils pénibilité sont intégrés dans le module gestion des agents. Vous pouvez bien sûr surcharger avec votre grille interne si elle est plus généreuse que les minima conventionnels." },
+  { q: "Comment Proprely gère-t-il l'article 7 (transfert automatique des salariés) ?", a: "Chaque agent a une fiche avec son ancienneté, le marché auquel il est affecté principalement, et le pourcentage de son temps sur ce marché. Lors d'un transfert (gain ou perte de marché), l'export CSV liste les agents éligibles (>6 mois d'ancienneté, >30 % du temps sur le marché) avec toutes les données nécessaires à la due diligence." },
+  { q: "Le calcul des heures de nuit, dimanche et jours fériés est-il automatique ?", a: "Oui. Vous saisissez l'horaire réel de l'intervention, Proprely identifie les plages concernées et applique les majorations conventionnelles : nuit +20 % (21h-6h), dimanche +100 %, jours fériés +100 %, 1er mai +100 % obligatoire. Le récapitulatif mensuel par agent est prêt pour la paie." },
+  { q: "Quelles sont les sanctions en cas de non-respect de l'IDCC 3043 ?", a: "Trois risques principaux : redressement URSSAF pour majorations heures complémentaires non versées (typique 5-20 k€ pour une PME de 15 agents sur 3 ans), prud'hommes pour rappel de salaire (jusqu'à 3 ans d'arriérés + intérêts), et perte de marché si la due diligence article 7 révèle des anomalies sociales." },
+  { q: "Faut-il être expert RH pour utiliser Proprely en conformité IDCC 3043 ?", a: "Non. Les règles conventionnelles sont préconfigurées. Vous saisissez les heures réelles et les contrats, Proprely fait le calcul. En cas de doute sur un point spécifique, nous recommandons une revue annuelle avec votre cabinet comptable ou un avocat en droit social." },
+  { q: "Où trouver le détail complet de la convention collective propreté IDCC 3043 ?", a: "Notre article de référence couvre les 6 points qui font la différence au quotidien : grille de salaires 2024/2025/2026, calcul des heures, article 7, prime d'expérience, obligations formation/RSE/pénibilité, sources officielles Légifrance et FEP." },
+]
+
+const conventionBody = `
+  <h1>Logiciel propreté conforme convention collective IDCC 3043</h1>
+  <p>Grille de salaires 2026 préconfigurée, calcul automatique des majorations heures, suivi article 7 prêt pour la due diligence, exports paie standardisés. Proprely intègre la convention collective des entreprises de propreté pour vous éviter redressement URSSAF et erreurs paie.</p>
+  <h2>Grille de salaires convention collective propreté 2026</h2>
+  <p>Minima conventionnels IDCC 3043 au 1er janvier 2026, base 35h hebdomadaires :</p>
+  <ul>
+    <li><strong>AS1 (Agent Service Propreté débutant)</strong> — coefficient 110 — 11,99 €/h brut</li>
+    <li><strong>AS2 (Agent Service Propreté)</strong> — coefficient 130 — 12,15 €/h brut</li>
+    <li><strong>ASP (Agent Service Propreté qualifié)</strong> — coefficient 150 — 12,42 €/h brut</li>
+    <li><strong>ATQS (Agent Très Qualifié Service)</strong> — coefficient 175 — 13,32 €/h brut</li>
+    <li><strong>Chef d'équipe</strong> — coefficient 195 — 14,20 €/h brut</li>
+    <li><strong>Inspecteur / Responsable secteur</strong> — coefficient 235 — 16,80 €/h brut</li>
+  </ul>
+  <h2>Les 4 obligations IDCC 3043 que vous ne pouvez plus tenir sur Excel</h2>
+  <ul>
+    <li><strong>Calcul des heures complémentaires</strong> — Majoration +10 % de 1 à 8h, +25 % au-delà pour les temps partiels. Erreur fréquente = redressement URSSAF assuré.</li>
+    <li><strong>Article 7 : transfert de personnel</strong> — Reprise automatique des agents lors d'un changement de prestataire. Due diligence RH obligatoire avant signature.</li>
+    <li><strong>Prime d'expérience à 4 ans</strong> — Versement mensuel à partir de 4 ans d'ancienneté chez le même employeur. Montants définis par accord d'entreprise.</li>
+    <li><strong>Formation 0,55 % et pénibilité</strong> — Plan annuel formation propreté, suivi médical renforcé pour les agents exposés aux produits CMR (bionettoyage médical).</li>
+  </ul>
+  <h2>Comment Proprely répond à la conformité IDCC 3043</h2>
+  <ul>
+    <li><strong>Grille salariale intégrée</strong> — la grille IDCC 3043 AS1 à inspecteur est paramétrée par défaut, surcharge possible si votre grille interne est plus généreuse</li>
+    <li><strong>Calcul automatique des majorations</strong> — heures complémentaires, supplémentaires, nuit (+20 %), dimanche (+100 %), jours fériés (+100 %)</li>
+    <li><strong>Suivi article 7 prêt pour la due diligence</strong> — fiches agents avec ancienneté, marché d'affectation, % de temps — exportable CSV</li>
+    <li><strong>Reporting paie standardisé</strong> — export mensuel des heures par agent avec toutes majorations conformes IDCC 3043</li>
+  </ul>
+  <h2>Le guide complet convention collective propreté</h2>
+  <p>Cette page présente le logiciel. Pour comprendre en profondeur la convention IDCC 3043 (grille 2024/2025/2026, calcul détaillé des heures, mécanique de l'article 7, primes, formation, pénibilité, sources Légifrance/FEP), consultez notre <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">guide de référence convention collective propreté IDCC 3043</a>.</p>
+`.trim()
+
+const conventionHtml = buildHtml({
+  url: '/convention-collective-nettoyage',
+  title: 'Logiciel conforme convention collective propreté IDCC 3043 · Proprely',
+  description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes. Bêta gratuite.",
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Logiciel conforme convention collective propreté IDCC 3043',
+      description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes.",
+      url: `${ORIGIN}/convention-collective-nettoyage`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      about: {
+        '@type': 'Legislation',
+        name: 'Convention collective nationale des entreprises de propreté et services associés',
+        legislationIdentifier: 'IDCC 3043',
+        legislationJurisdiction: { '@type': 'Country', name: 'France' },
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Convention collective nettoyage IDCC 3043', item: `${ORIGIN}/convention-collective-nettoyage` },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: 'Proprely — logiciel conforme convention collective propreté IDCC 3043',
+      description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes.",
+      url: `${ORIGIN}/convention-collective-nettoyage`,
+      image: `${ORIGIN}/og-image.png`,
+      provider: { '@id': `${ORIGIN}/#organization` },
+      serviceType: 'Logiciel de gestion société de nettoyage conforme IDCC 3043',
+      areaServed: { '@type': 'Country', name: 'France' },
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Dirigeants de sociétés de nettoyage B2B en France soumis à la convention collective propreté IDCC 3043',
+      },
+    },
+    faqSchema(conventionFaqs),
+  ],
+  bodyHtml: conventionBody,
+})
+writePage('/convention-collective-nettoyage', conventionHtml)
+generated.push('/convention-collective-nettoyage')
 
 const mentionsBody = `
   <h1>Mentions légales</h1>
@@ -1327,8 +1489,8 @@ const softwareLandingFaqs = [
 
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
-  title: 'Logiciel pour société de nettoyage B2B : le guide complet 2026 · Proprely',
-  description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places.",
+  title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
+  description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1627,12 +1789,14 @@ const aboutBody = `
     <li><strong>Vos données restent vos données</strong> — hébergement européen, chiffrement, RGPD, export 1-clic.</li>
     <li><strong>Édité par une société IT établie</strong> — Pershing Global Solutions LTD (Dublin), spécialisée dans les logiciels métiers sur mesure.</li>
   </ul>
+  <h2>Le fondateur</h2>
+  <p><strong>Paul Munier</strong>, fondateur de Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, Paul a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien : le constat — 6 à 10 heures perdues par semaine entre Excel, WhatsApp, Word et le papier — est devenu la mission du produit. Profil LinkedIn : <a href="https://www.linkedin.com/in/paulmunier/" rel="noopener noreferrer">linkedin.com/in/paulmunier</a>.</p>
   <h2>Notre histoire</h2>
-  <h3>2024 — Genèse</h3>
+  <h3>Février 2026 — Premiers entretiens</h3>
   <p>Premiers entretiens terrain avec des dirigeants de sociétés de nettoyage B2B. Constat partagé : 6 à 10 heures par semaine perdues à jongler entre Excel, WhatsApp, Word, Drive et papier.</p>
-  <h3>2025 — Construction</h3>
-  <p>Construction du produit avec un panel de 10 dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels.</p>
-  <h3>2026 — Bêta privée</h3>
+  <h3>Mars 2026 — Construction</h3>
+  <p>Construction du produit avec un panel de dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels.</p>
+  <h3>Juillet 2026 — Bêta privée</h3>
   <p>Ouverture à 30 sociétés fondatrices, support prioritaire, conditions tarifaires préférentielles à vie.</p>
   <h2>Éditeur</h2>
   <p>Proprely est édité par <strong>Pershing Global Solutions LTD</strong>, société IT spécialisée dans le développement de logiciels métiers sur mesure. Siège social : 77 Camden Lower Street, Saint Kevin, Dublin D02 XE80, Irlande. Plus d'informations sur <a href="https://pershingsolution.com">pershingsolution.com</a>.</p>
@@ -1655,6 +1819,24 @@ const aboutHtml = buildHtml({
       dateModified: TODAY,
       isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
       mainEntity: { '@id': `${ORIGIN}/#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${ORIGIN}/a-propos#paul-munier`,
+      name: 'Paul Munier',
+      jobTitle: 'Fondateur de Proprely',
+      url: `${ORIGIN}/a-propos`,
+      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+      worksFor: { '@id': `${ORIGIN}/#organization` },
+      knowsAbout: [
+        'Logiciel de gestion société de nettoyage',
+        'Convention collective propreté IDCC 3043',
+        'Pilotage de marge en propreté B2B',
+        'Planning multi-sites pour société de nettoyage',
+        'Preuve de passage et conformité syndic',
+      ],
+      description: "Paul Munier dirige Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, il a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien.",
     },
     {
       '@context': 'https://schema.org',

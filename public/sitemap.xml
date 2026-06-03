@@ -148,6 +148,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/convention-collective-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Logiciel conforme convention collective propreté IDCC 3043</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/a-propos/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -281,7 +291,7 @@
     <loc>https://proprely.fr/villes/paris/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Logiciel nettoyage Paris</image:title>
@@ -291,7 +301,7 @@
     <loc>https://proprely.fr/villes/lyon/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Logiciel nettoyage Lyon</image:title>
@@ -301,7 +311,7 @@
     <loc>https://proprely.fr/villes/marseille/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Logiciel nettoyage Marseille</image:title>

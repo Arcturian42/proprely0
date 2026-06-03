@@ -26,6 +26,7 @@ const SoftwareLanding = lazy(() => import('./pages/SoftwareLanding'))
 const ComparatifLogiciels = lazy(() => import('./pages/ComparatifLogiciels'))
 const AutoEntrepreneurLanding = lazy(() => import('./pages/AutoEntrepreneurLanding'))
 const CRMPage = lazy(() => import('./pages/CRMPage'))
+const ConventionCollectiveLanding = lazy(() => import('./pages/ConventionCollectiveLanding'))
 const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
@@ -99,8 +100,8 @@ const META: Record<string, RouteMeta> = {
     description: "Calculez en 1 minute la marge brute d'un contrat de nettoyage : prix horaire vs coût horaire chargé, verdict instantané, recommandations.",
   },
   '/logiciel-societe-nettoyage': {
-    title: 'Logiciel pour société de nettoyage B2B : le guide complet 2026 · Proprely',
-    description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places.",
+    title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
+    description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
   },
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
@@ -125,6 +126,10 @@ const META: Record<string, RouteMeta> = {
   '/calculateur-prix-nettoyage-m2': {
     title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
     description: "Calculez le prix de nettoyage de bureaux au m² : surface, fréquence, zone géographique, type de local. Estimation honnête sans inscription.",
+  },
+  '/convention-collective-nettoyage': {
+    title: 'Logiciel conforme convention collective propreté IDCC 3043 · Proprely',
+    description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes. Bêta gratuite.",
   },
 }
 
@@ -235,6 +240,7 @@ function App() {
   else if (route === '/comparatif-logiciel-nettoyage') content = <ComparatifLogiciels />
   else if (route === '/logiciel-auto-entrepreneur-nettoyage') content = <AutoEntrepreneurLanding />
   else if (route === '/crm-entreprise-proprete') content = <CRMPage />
+  else if (route === '/convention-collective-nettoyage' || route === '/convention-collective-nettoyage/') content = <ConventionCollectiveLanding />
   else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />

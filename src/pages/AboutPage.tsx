@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin } from 'lucide-react'
+import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin, ExternalLink } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import { BETA_FORM_URL } from '../config'
+import { BETA_FORM_URL, FOUNDER } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 const META = {
@@ -30,6 +30,18 @@ function injectAboutSchema() {
       dateModified: today,
       isPartOf: { '@type': 'WebSite', '@id': 'https://proprely.fr/#website' },
       mainEntity: { '@id': 'https://proprely.fr/#organization' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': 'https://proprely.fr/a-propos#paul-munier',
+      name: FOUNDER.name,
+      jobTitle: FOUNDER.jobTitle,
+      url: FOUNDER.url,
+      sameAs: [FOUNDER.linkedin],
+      worksFor: { '@id': 'https://proprely.fr/#organization' },
+      knowsAbout: FOUNDER.knowsAbout,
+      description: FOUNDER.bio,
     },
     {
       '@context': 'https://schema.org',
@@ -76,17 +88,17 @@ const values = [
 
 const milestones = [
   {
-    year: '2024',
-    title: "Genèse",
+    year: 'Février 2026',
+    title: "Premiers entretiens",
     text: "Premiers entretiens terrain avec des dirigeants de sociétés de nettoyage B2B. Constat partagé : 6 à 10 heures par semaine perdues à jongler entre Excel, WhatsApp, Word, Drive et papier. Personne n'a d'outil unifié conçu pour le métier.",
   },
   {
-    year: '2025',
+    year: 'Mars 2026',
     title: "Construction",
-    text: "Construction du produit avec un panel de 10 dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels : clients & sites, agents, planning, missions avec preuve de passage, devis & factures, documents, pilotage avec marge par client.",
+    text: "Construction du produit avec un panel de dirigeants. Itérations hebdomadaires, focus sur les 7 modules essentiels : clients & sites, agents, planning, missions avec preuve de passage, devis & factures, documents, pilotage avec marge par client.",
   },
   {
-    year: '2026',
+    year: 'Juillet 2026',
     title: "Bêta privée",
     text: "Ouverture de la bêta privée à 30 sociétés fondatrices sélectionnées. Onboarding 30 minutes avec le fondateur, support prioritaire, influence directe sur la feuille de route, conditions tarifaires préférentielles conservées à vie.",
   },
@@ -192,6 +204,43 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-20 border-t border-slate-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">
+              Le fondateur
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+              Proprely est porté par une personne qui parle au quotidien avec ses utilisateurs.
+            </p>
+            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 sm:p-8">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+                <div className="shrink-0 sm:w-32">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center text-white font-black text-3xl sm:text-4xl shadow-lg shadow-blue-600/20">
+                    PM
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">{FOUNDER.name}</h3>
+                  <p className="text-sm sm:text-base text-blue-700 font-bold mb-4">{FOUNDER.jobTitle}</p>
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-5">
+                    {FOUNDER.bio}
+                  </p>
+                  <a
+                    href={FOUNDER.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('founder_linkedin_click', { location: 'about_page' })}
+                    className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 rounded-xl px-4 py-2 font-semibold text-sm hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-colors"
+                  >
+                    <ExternalLink size={14} />
+                    Profil LinkedIn de {FOUNDER.name.split(' ')[0]}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-10 leading-tight">
               Notre histoire
@@ -206,7 +255,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.3, delay: i * 0.06 }}
                   className="flex gap-5"
                 >
-                  <div className="shrink-0 w-16 text-right font-black text-blue-600 text-lg pt-0.5">{m.year}</div>
+                  <div className="shrink-0 w-24 sm:w-28 text-right font-black text-blue-600 text-sm sm:text-base pt-1">{m.year}</div>
                   <div className="border-l-2 border-blue-100 pl-5">
                     <h3 className="font-bold text-slate-900 text-base sm:text-lg mb-1.5">{m.title}</h3>
                     <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{m.text}</p>
