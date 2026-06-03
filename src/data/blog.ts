@@ -11,6 +11,9 @@ export type BlogPost = {
   readTime: string
   tag: string
   content: string
+  /** Slug de l'auteur dans AUTHORS (src/config.ts). Par défaut 'paul-munier'.
+   * Permet d'attribuer un article à un auteur différent (multi-auteurs). */
+  authorSlug?: string
   /** Réponse-flash (40-80 mots) optimisée pour les Generative Engines
    * (ChatGPT, Perplexity, Google AI Overviews). Affichée en tête d'article
    * et incluse dans le HTML pré-rendu pour les crawlers IA. */
@@ -751,7 +754,7 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
   },
   {
     slug: 'calcul-heures-agents-nettoyage',
-    title: "Le calcul des heures : la vraie raison qui vous fait perdre une journée par mois",
+    title: "Calcul des heures agents nettoyage : méthode et coût 2026",
     excerpt: "Le 22 du mois, vous additionnez les heures de chaque agent pour la paie. Combien ça coûte vraiment ? Bien plus que ce que vous imaginez.",
     date: '5 mai 2026',
     readTime: '5 min',

@@ -225,6 +225,33 @@ function injectSchema() {
     },
     {
       '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Logiciels société de nettoyage comparés en 2026',
+      description: "Liste des logiciels analysés dans le comparatif Proprely 2026 pour les sociétés de nettoyage B2B en France.",
+      numberOfItems: 5,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: [
+        { name: 'Proprely', description: "Cockpit métier B2B nouvelle génération (2026) conçu pour les TPE/PME nettoyage 3-50 agents. Planning, devis, preuve de passage, marge par client.", url: 'https://proprely.fr/' },
+        { name: 'PROPRET', description: "ERP métier historique de la propreté (depuis ~2005). Couverture fonctionnelle large (paie, GED) destinée aux PME/ETI 50+ agents.", url: 'https://proprely.fr/comparatif/proprely-vs-propret' },
+        { name: 'Progiclean', description: "ERP métier propreté historique (depuis ~2000). Setup sur devis, abonnement annuel, cible PME/ETI 50+ agents.", url: 'https://proprely.fr/comparatif/proprely-vs-progiclean' },
+        { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Forfait par utilisateur/mois, non spécifique propreté.", url: 'https://proprely.fr/comparatif/proprely-vs-organilog' },
+        { name: 'Synchroteam', description: "Solution de gestion d'interventions multi-secteurs avec planning et géolocalisation, non spécifique au nettoyage.", url: 'https://www.synchroteam.com/' },
+      ].map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: s.url,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: s.name,
+          description: s.description,
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: s.url,
+        },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'FAQPage',
       mainEntity: faq.map((f) => ({
         '@type': 'Question',

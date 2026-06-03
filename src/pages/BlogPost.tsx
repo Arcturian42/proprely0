@@ -9,7 +9,7 @@ import { getPost, getRelatedPosts } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import Link from '../components/Link'
 import NewsletterSignup from '../components/NewsletterSignup'
-import { BETA_FORM_URL } from '../config'
+import { BETA_FORM_URL, getAuthor } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 function renderMarkdown(content: string): ReactElement[] {
@@ -200,6 +200,7 @@ function injectArticleSchema(post: BlogPostType) {
   const url = `https://proprely.fr/blog/${post.slug}/`
   const datePublished = parseFrenchDate(post.date) || post.date
   const dateModified = post.dateModified ? (parseFrenchDate(post.dateModified) || post.dateModified) : datePublished
+  const author = getAuthor(post.authorSlug)
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -212,11 +213,11 @@ function injectArticleSchema(post: BlogPostType) {
       image: 'https://proprely.fr/og-image.png',
       author: {
         '@type': 'Person',
-        '@id': 'https://proprely.fr/a-propos#paul-munier',
-        name: 'Paul Munier',
-        url: 'https://proprely.fr/a-propos',
-        jobTitle: 'Business Developer & rédacteur',
-        sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+        '@id': `https://proprely.fr/auteur/${author.slug}#person`,
+        name: author.name,
+        url: author.linkedin,
+        jobTitle: author.jobTitle,
+        sameAs: [author.linkedin],
         worksFor: { '@id': 'https://proprely.fr/#organization' },
       },
       publisher: {
@@ -298,6 +299,16 @@ export default function BlogPost({ slug }: Props) {
 
   if (!post) return <NotFound />
 
+  const author = getAuthor(post.authorSlug)
+  const authorInitials = author.name
+    .split(' ')
+    .map((s) => s[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+  const publishedIso = parseFrenchDate(post.date) ?? undefined
+  const modifiedIso = post.dateModified ? (parseFrenchDate(post.dateModified) ?? undefined) : undefined
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <PageNav />
@@ -322,7 +333,7 @@ export default function BlogPost({ slug }: Props) {
 
             <div className="flex items-center gap-3 text-xs text-slate-500 mb-4">
               <span className="font-semibold text-blue-700 bg-blue-50 rounded-full px-2.5 py-0.5">{post.tag}</span>
-              <span>{post.date}</span>
+              <time dateTime={publishedIso}>{post.date}</time>
               <span className="flex items-center gap-1">
                 <Clock size={11} />
                 {post.readTime}
@@ -344,17 +355,25 @@ export default function BlogPost({ slug }: Props) {
 
             <div className="flex items-center gap-3 text-xs text-slate-500 mb-8 pb-6 border-b border-slate-100">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center text-white font-black text-xs shrink-0">
-                PM
+                {authorInitials}
               </div>
               <div className="leading-tight">
                 <div className="text-slate-700 font-semibold">
                   Par{' '}
-                  <Link to="/a-propos" className="hover:text-blue-700 transition-colors">Paul Munier</Link>
+                  <a
+                    href={author.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer author"
+                    onClick={() => trackEvent('author_linkedin_click', { location: 'blog_post', author: author.slug, post: post.slug })}
+                    className="hover:text-blue-700 transition-colors"
+                  >
+                    {author.name}
+                  </a>
                 </div>
                 <div className="text-slate-500">
-                  Business Developer &amp; rédacteur
+                  {author.jobTitle}
                   {post.dateModified && post.dateModified !== post.date && (
-                    <> · Mis à jour le {post.dateModified}</>
+                    <> · Mis à jour le <time dateTime={modifiedIso}>{post.dateModified}</time></>
                   )}
                 </div>
               </div>

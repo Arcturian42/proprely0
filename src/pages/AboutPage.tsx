@@ -34,10 +34,10 @@ function injectAboutSchema() {
     {
       '@context': 'https://schema.org',
       '@type': 'Person',
-      '@id': 'https://proprely.fr/a-propos#paul-munier',
+      '@id': `https://proprely.fr/auteur/${AUTHOR.slug}#person`,
       name: AUTHOR.name,
       jobTitle: AUTHOR.jobTitle,
-      url: AUTHOR.url,
+      url: AUTHOR.linkedin,
       sameAs: [AUTHOR.linkedin],
       worksFor: { '@id': 'https://proprely.fr/#organization' },
       knowsAbout: AUTHOR.knowsAbout,
