@@ -1483,7 +1483,7 @@ const softwareLandingFaqs = [
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
   title: 'Logiciel pour société de nettoyage B2B : le guide complet 2026 · Proprely',
-  description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places.",
+  description: "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 14 places.",
   schemas: [
     {
       '@context': 'https://schema.org',

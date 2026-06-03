@@ -9,7 +9,7 @@ import { FOUNDER_SPOTS, remainingSpots } from '../config'
 
 const URL = 'https://proprely.fr/logiciel-societe-nettoyage/'
 const TITLE = 'Logiciel pour société de nettoyage B2B : le guide complet 2026 · Proprely'
-const DESCRIPTION = "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 26 places."
+const DESCRIPTION = "Proprely est le logiciel de gestion conçu pour les sociétés de nettoyage B2B françaises : planning agents, devis, preuve de passage, CRM, pilotage de la rentabilité. Bêta gratuite — 14 places."
 
 const painPoints = [
   "Excel, WhatsApp, Word et Google Agenda — 7 outils dispersés, 6 à 10 heures perdues par semaine",
