@@ -2114,8 +2114,8 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention collective nettoyage IDCC 3043 : salaires et guide 2026",
-    excerpt: "La convention collective de la propreté (IDCC 3043) régit 500 000 salariés. Grille salariale, heures, primes, transferts : le guide 2026.",
+    title: "Convention collective propreté IDCC 3043 : grille salaires 2026",
+    excerpt: "La convention collective propreté (IDCC 3043) régit 500 000 salariés. Grille de salaires 2026, calcul des heures, article 7, primes : le guide.",
     date: '20 mai 2026',
     readTime: '12 min',
     tag: 'Conformité',
@@ -2136,13 +2136,13 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
       { q: "Quelles obligations RSE et formation impose la convention ?", a: "La branche impose 0,55% de la masse salariale en formation (CDI/CDD) à partir de 11 salariés. Plan annuel de formation à présenter au CSE. Égalité professionnelle homme/femme (rapport annuel). Pénibilité (exposition produits chimiques) : suivi médical renforcé pour les agents exposés aux produits CMR." },
     ],
     relatedSlugs: ['calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
-    content: `## L'essentiel à connaître sur la convention IDCC 3043
+    content: `## L'essentiel à connaître sur la convention collective propreté IDCC 3043
 
 La Convention collective nationale des entreprises de propreté et services associés, identifiée sous le numéro **IDCC 3043**, régit environ 500 000 salariés en France. Si vous dirigez une société de nettoyage B2B (codes NAF 81.21Z, 81.22Z, 81.29A, 81.29B), elle s'applique obligatoirement à vos contrats de travail.
 
 Méconnaître cette convention coûte cher : redressement URSSAF, prud'hommes, perte de marché lors d'un transfert article 7 mal géré. Ce guide synthétise les 6 points qui font la différence au quotidien en 2026.
 
-## Grille salariale 2026
+## Grille de salaires convention collective propreté 2026
 
 La grille est révisée chaque année par accord de branche. Au 1er janvier 2026, les minima conventionnels (35h hebdomadaires, sans prime ni majoration) sont :
 
@@ -2157,7 +2157,22 @@ La grille est révisée chaque année par accord de branche. Au 1er janvier 2026
 
 **Attention** : ces montants sont des **planchers**. Vous pouvez et devez parfois payer plus selon le marché local, la spécialité (vitrerie hauteur, décapage, médical), et l'ancienneté.
 
-## Heures complémentaires et supplémentaires
+## Évolution de la grille salariale IDCC 3043 : 2024, 2025, 2026
+
+Comparatif des minima conventionnels sur 3 ans, pour suivre l'évolution du SMIC conventionnel propreté et anticiper vos charges salariales.
+
+| Niveau | Taux horaire 2024 | Taux horaire 2025 | Taux horaire 2026 | Évolution 2024→2026 |
+| ------ | ----------------- | ----------------- | ----------------- | ------------------- |
+| AS1 | 11,65 € | 11,82 € | 11,99 € | +2,9 % |
+| AS2 | 11,78 € | 11,96 € | 12,15 € | +3,1 % |
+| ASP | 12,05 € | 12,24 € | 12,42 € | +3,1 % |
+| ATQS | 12,90 € | 13,11 € | 13,32 € | +3,3 % |
+| Chef d'équipe | 13,75 € | 13,98 € | 14,20 € | +3,3 % |
+| Inspecteur | 16,25 € | 16,52 € | 16,80 € | +3,4 % |
+
+**Lecture** : la grille suit globalement l'inflation française (~2,8 % par an sur la période). Les niveaux supérieurs (ATQS, chef d'équipe, inspecteur) progressent légèrement plus vite que les niveaux d'entrée — signal de tension RH sur l'encadrement intermédiaire dans la branche. Anticipez +3 % minimum sur votre masse salariale chaque année.
+
+## Calcul des heures convention collective nettoyage : complémentaires et supplémentaires
 
 ### Pour les temps partiels (cas le plus fréquent en propreté)
 
@@ -2174,7 +2189,7 @@ La grille est révisée chaque année par accord de branche. Au 1er janvier 2026
 
 Beaucoup de dirigeants oublient de majorer les heures complémentaires des temps partiels (qui représentent 60-70% des effectifs propreté). Cumulé sur un an, c'est un redressement URSSAF assuré lors du contrôle.
 
-## Heures de nuit, dimanche et jours fériés
+## Majorations heures de nuit, dimanche et jours fériés selon IDCC 3043
 
 | Période | Majoration |
 | ------- | ---------- |
@@ -2185,7 +2200,7 @@ Beaucoup de dirigeants oublient de majorer les heures complémentaires des temps
 
 Le 1er mai a un statut spécifique : seuls les services indispensables peuvent demander à un agent de travailler. Refus possible sans sanction.
 
-## L'article 7 : la règle qui change tout
+## Article 7 IDCC 3043 : transfert automatique des salariés en cas de perte de marché
 
 C'est l'article le plus important de la convention pour un dirigeant.
 
@@ -2211,7 +2226,7 @@ L'agent doit :
 
 **Quand vous perdez un marché** : vos agents partent chez le concurrent. Vous gardez l'ancienneté pour les indemnités de licenciement éventuelles si vous ne pouvez pas les reclasser sur d'autres marchés.
 
-## Prime d'expérience
+## Prime d'expérience convention collective propreté : conditions et montants
 
 À partir de **4 ans d'ancienneté chez le même employeur**, l'agent bénéficie d'une prime d'expérience mensuelle. Le montant n'est pas fixé par la convention de branche : il est défini par votre accord d'entreprise (ou par convention locale, ex: certaines branches régionales).
 
@@ -2223,7 +2238,7 @@ Montants typiques observés :
 
 Cette prime est cumulable avec la prime d'ancienneté du Code du travail si elle existe dans votre accord.
 
-## Obligations RSE, formation, égalité
+## Obligations formation, égalité et RSE pour les entreprises de propreté
 
 ### Formation professionnelle
 
@@ -2243,7 +2258,7 @@ Les agents exposés aux produits CMR (cancérogènes, mutagènes, reprotoxiques 
 - D'une formation aux risques chimiques documentée
 - D'une fiche d'exposition individuelle conservée 50 ans
 
-## Comment Proprely facilite la conformité IDCC 3043
+## Comment Proprely facilite la conformité convention collective propreté
 
 Plusieurs points de la convention nécessitent un suivi précis difficile à tenir sur Excel :
 
@@ -2252,9 +2267,9 @@ Plusieurs points de la convention nécessitent un suivi précis difficile à ten
 - **Suivi formation et pénibilité** : champ "formations" et "expositions" sur chaque profil agent
 - **Reporting paie** : export mensuel des heures par agent avec majorations, prêt pour votre logiciel paie ou comptable
 
-[Découvrir le module gestion des agents](/fonctionnalites/gestion-agents-nettoyage). Pour structurer le calcul des heures : [guide complet](/blog/calcul-heures-agents-nettoyage). Pour fidéliser et limiter le turnover (et donc les transferts subis) : [6 leviers concrets](/blog/fideliser-agents-nettoyage-turnover).
+Pour voir comment Proprely intègre la conformité IDCC 3043 en pratique : [logiciel propreté conforme convention collective IDCC 3043](/convention-collective-nettoyage). [Découvrir le module gestion des agents](/fonctionnalites/gestion-agents-nettoyage). Pour structurer le calcul des heures : [guide complet](/blog/calcul-heures-agents-nettoyage). Pour fidéliser et limiter le turnover (et donc les transferts subis) : [6 leviers concrets](/blog/fideliser-agents-nettoyage-turnover).
 
-## Sources officielles
+## Sources officielles convention collective IDCC 3043
 
 - Convention collective IDCC 3043 sur Légifrance
 - Arrêté d'extension du 23 juillet 2012

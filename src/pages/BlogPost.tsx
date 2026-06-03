@@ -210,8 +210,17 @@ function injectArticleSchema(post: BlogPostType) {
       datePublished,
       dateModified,
       image: 'https://proprely.fr/og-image.png',
-      author: { '@type': 'Organization', name: 'Proprely', url: 'https://proprely.fr' },
+      author: {
+        '@type': 'Person',
+        '@id': 'https://proprely.fr/a-propos#paul-munier',
+        name: 'Paul Munier',
+        url: 'https://proprely.fr/a-propos',
+        jobTitle: 'Fondateur de Proprely',
+        sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+        worksFor: { '@id': 'https://proprely.fr/#organization' },
+      },
       publisher: {
+        '@id': 'https://proprely.fr/#organization',
         '@type': 'Organization',
         name: 'Proprely',
         logo: { '@type': 'ImageObject', url: 'https://proprely.fr/proprely-icon-512.png' },
@@ -329,9 +338,27 @@ export default function BlogPost({ slug }: Props) {
               {post.title}
             </motion.h1>
 
-            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
               {post.excerpt}
             </p>
+
+            <div className="flex items-center gap-3 text-xs text-slate-500 mb-8 pb-6 border-b border-slate-100">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center text-white font-black text-xs shrink-0">
+                PM
+              </div>
+              <div className="leading-tight">
+                <div className="text-slate-700 font-semibold">
+                  Par{' '}
+                  <Link to="/a-propos" className="hover:text-blue-700 transition-colors">Paul Munier</Link>
+                </div>
+                <div className="text-slate-500">
+                  Fondateur de Proprely
+                  {post.dateModified && post.dateModified !== post.date && (
+                    <> · Mis à jour le {post.dateModified}</>
+                  )}
+                </div>
+              </div>
+            </div>
 
             {post.tldr && (
               <motion.aside

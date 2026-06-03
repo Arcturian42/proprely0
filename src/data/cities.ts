@@ -10,6 +10,16 @@ export type CityPage = {
   slug: string
   city: string
   region: string
+  /** Département (numéro + nom). Utilisé dans le schéma LocalBusiness areaServed. */
+  department?: string
+  /** Coordonnées géographiques (centre-ville, format WGS84). Utilisées pour le schéma LocalBusiness.geo. */
+  geo?: { latitude: number; longitude: number }
+  /** URL Wikidata de la ville. Utilisée comme sameAs dans le schéma LocalBusiness. */
+  wikidata?: string
+  /** Quartiers d'affaires et zones tertiaires différenciants pour la propreté B2B locale. */
+  neighborhoods?: { name: string; description: string }[]
+  /** Prix de marché local (bureaux €/m²/an HT et signal de tension). */
+  marketPricing?: { range: string; note: string }
   population: string
   title: string
   subtitle: string
@@ -25,6 +35,76 @@ export type CityPage = {
   relatedBlogSlugs?: string[]
   /** Slugs de fonctionnalités liées (pour maillage interne ville → feature) */
   relatedFeatureSlugs?: string[]
+}
+
+/**
+ * Données géo + wikidata par ville. Centralisées ici (plutôt qu'inlinées dans
+ * chaque objet) pour faciliter la mise à jour et garder les objets villes
+ * lisibles. Injectées par getCity().
+ */
+const CITY_GEO: Record<string, { latitude: number; longitude: number; wikidata: string; department: string }> = {
+  paris:       { latitude: 48.8566, longitude:  2.3522, wikidata: 'https://www.wikidata.org/wiki/Q90',    department: '75 — Paris' },
+  lyon:        { latitude: 45.7640, longitude:  4.8357, wikidata: 'https://www.wikidata.org/wiki/Q456',   department: '69 — Rhône' },
+  marseille:   { latitude: 43.2965, longitude:  5.3698, wikidata: 'https://www.wikidata.org/wiki/Q23482', department: '13 — Bouches-du-Rhône' },
+  bordeaux:    { latitude: 44.8378, longitude: -0.5792, wikidata: 'https://www.wikidata.org/wiki/Q1479',  department: '33 — Gironde' },
+  toulouse:    { latitude: 43.6047, longitude:  1.4442, wikidata: 'https://www.wikidata.org/wiki/Q7880',  department: '31 — Haute-Garonne' },
+  nantes:      { latitude: 47.2184, longitude: -1.5536, wikidata: 'https://www.wikidata.org/wiki/Q12191', department: '44 — Loire-Atlantique' },
+  lille:       { latitude: 50.6292, longitude:  3.0573, wikidata: 'https://www.wikidata.org/wiki/Q648',   department: '59 — Nord' },
+  nice:        { latitude: 43.7102, longitude:  7.2620, wikidata: 'https://www.wikidata.org/wiki/Q33959', department: '06 — Alpes-Maritimes' },
+  strasbourg:  { latitude: 48.5734, longitude:  7.7521, wikidata: 'https://www.wikidata.org/wiki/Q6602',  department: '67 — Bas-Rhin' },
+  montpellier: { latitude: 43.6108, longitude:  3.8767, wikidata: 'https://www.wikidata.org/wiki/Q6441',  department: '34 — Hérault' },
+  rennes:      { latitude: 48.1173, longitude: -1.6778, wikidata: 'https://www.wikidata.org/wiki/Q647',   department: '35 — Ille-et-Vilaine' },
+}
+
+/**
+ * Quartiers d'affaires et zones tertiaires différenciants par ville. Données
+ * géo-locales que Google valorise comme signal de pertinence (T10 audit SEO).
+ * Centralisées hors des objets villes pour la lisibilité.
+ */
+const CITY_NEIGHBORHOODS: Record<string, { name: string; description: string }[]> = {
+  paris: [
+    { name: "QCA (Quartier Central des Affaires)", description: "Triangle Opéra–Champs-Élysées–Madeleine : sièges sociaux du CAC 40, banques d'affaires, cabinets de conseil. Rotations 6h-9h avant ouverture, exigence d'accueil irréprochable à 8h30." },
+    { name: "La Défense (92)", description: "Premier quartier d'affaires européen, 3,5 millions de m² de bureaux. Badges, accès contrôlés, preuves de passage standardisées exigées par les facility managers." },
+    { name: "13e — Paris Rive Gauche / BNF", description: "Bibliothèque François-Mitterrand, sièges Le Monde / Telecom Paris. Immeubles tertiaires modernes, exigences éco-responsabilité forte." },
+    { name: "Boulogne / Issy-les-Moulineaux (92)", description: "Sièges des grands groupes média (TF1, BFM), tech (Microsoft France, Oracle). Norme ISO 14001, certifications agents." },
+    { name: "Saint-Denis / Plaine Saint-Denis (93)", description: "Sièges SFR, Orange Campus, Stade de France. Bureaux tertiaires modernes, exigences logistiques liées aux événements." },
+  ],
+  lyon: [
+    { name: "Part-Dieu", description: "2e quartier d'affaires français hors Paris, gare TGV, tours en expansion (To-Lyon, Silex²). Rotations matinales 6h-9h, reporting régulier exigé." },
+    { name: "Confluence", description: "Quartier tertiaire moderne au sud de la presqu'île, certifications HQE/BREEAM omniprésentes. Exigences éco-responsabilité fortes." },
+    { name: "Gerland (7e)", description: "Cluster biotech & pharmaceutique : Sanofi, BioMérieux et leur écosystème. Salles blanches, protocoles ISO, certifications agents obligatoires." },
+    { name: "Vaise (9e)", description: "Pôle multimédia (Bayer, Technip, Atos, Cegid). Tertiaire moderne, accès depuis le tunnel sous Fourvière — délais matinaux à anticiper." },
+    { name: "Vieux-Lyon / Presqu'île", description: "Hôtellerie haut de gamme, restaurants étoilés, bouchons lyonnais. Plages très contraintes (avant ouverture)." },
+  ],
+  marseille: [
+    { name: "Euroméditerranée", description: "Plus grand projet de rénovation urbaine d'Europe du Sud, 480 ha. Tertiaire moderne (CMA-CGM, La Marseillaise, Les Docks). Marché en expansion." },
+    { name: "Le Prado / 8e arrondissement", description: "Quartier d'affaires historique, mutuelles, cabinets d'avocats. Copropriétés bourgeoises, syndics nationaux exigeant un reporting standardisé." },
+    { name: "La Joliette", description: "Reconversion portuaire, sièges régionaux et incubateurs (CMA-CGM, Voyage Privé). Rotations matinales avec contraintes mistral." },
+    { name: "Pôle Activités d'Aix-en-Provence", description: "Sites Airbus Helicopters, ITER, microélectronique (STMicroelectronics). Exigences ESD et salles propres, tarifs majorés 30-50 %." },
+    { name: "Vieux-Port / Le Panier", description: "Hôtellerie saisonnière (mai-octobre), restaurants. Doublement de la demande estivale, gestion saisonnalité critique." },
+  ],
+  bordeaux: [
+    { name: "Bassins à flot / Bacalan", description: "Tertiaire en croissance, Cité du Vin, sièges régionaux. Reconversion industrielle récente, bureaux modernes HQE." },
+    { name: "Chartrons / quais", description: "Tertiaire historique : avocats, négociants en vins, banques privées. Copropriétés haussmanniennes, exigences patrimoniales." },
+    { name: "Mériadeck", description: "Bureaux administratifs (Conseil régional, CAF, CPAM, tribunal). Volumes importants, contraintes horaires strictes (avant 8h)." },
+    { name: "Aéroparc Mérignac", description: "Dassault, Thales, Stelia Aerospace. Exigences ESD/salles propres, badges, traçabilité renforcée." },
+    { name: "Saint-Émilion / Médoc (œnotourisme)", description: "Hôtellerie de prestige (Sources de Caudalie, Lalique), châteaux viticoles. Saisonnalité mai-octobre + vendanges septembre." },
+  ],
+}
+
+/** Prix de marché bureaux par ville (référentiel 2026, €/m²/an HT). */
+const CITY_PRICING: Record<string, { range: string; note: string }> = {
+  paris:       { range: "15-22 €/m²/an HT", note: "Référence haute du marché français. Premium 25-40 % au-dessus de la moyenne nationale." },
+  lyon:        { range: "12-18 €/m²/an HT", note: "2e marché français, 10-15 % en dessous de Paris. Marge nette atteignable 15-20 %." },
+  marseille:   { range: "10-15 €/m²/an HT", note: "3e marché, 20 % en dessous de Paris. Saisonnalité forte mai-octobre." },
+  bordeaux:    { range: "10-13 €/m²/an HT", note: "10-20 % en dessous de Paris. Marge nette atteignable 15-20 %." },
+  toulouse:    { range: "11-15 €/m²/an HT", note: "15 % en dessous de Paris. Tarif majoré 30-50 % sur les sites aérospatial / ESD." },
+  nantes:      { range: "11-15 €/m²/an HT", note: "Marché mature mais en expansion, 15 % en dessous de Paris." },
+  lille:       { range: "11-14 €/m²/an HT", note: "20 % en dessous de Paris. Opportunités cross-border Belgique." },
+  nice:        { range: "12-17 €/m²/an HT", note: "Saisonnalité touristique forte, tertiaire en croissance." },
+  strasbourg:  { range: "10-13 €/m²/an HT", note: "Institutions européennes, exigences multilingues, RGPD renforcé." },
+  montpellier: { range: "10-13 €/m²/an HT", note: "Pôle santé et tech en croissance, démographie +1 % par an." },
+  rennes:      { range: "10-13 €/m²/an HT", note: "Tech et agroalimentaire, marché en expansion régulière." },
 }
 
 export const cities: CityPage[] = [
@@ -599,11 +679,18 @@ export function getCity(slug: string): CityPage | undefined {
   const city = cities.find((c) => c.slug === slug)
   if (!city) return undefined
   const rel = CITY_RELATIONS[slug]
-  if (!rel) return city
+  const geo = CITY_GEO[slug]
+  const neighborhoods = CITY_NEIGHBORHOODS[slug]
+  const pricing = CITY_PRICING[slug]
   return {
     ...city,
-    relatedBlogSlugs: city.relatedBlogSlugs ?? rel.blogs,
-    relatedFeatureSlugs: city.relatedFeatureSlugs ?? rel.features,
+    relatedBlogSlugs: city.relatedBlogSlugs ?? rel?.blogs,
+    relatedFeatureSlugs: city.relatedFeatureSlugs ?? rel?.features,
+    geo: city.geo ?? (geo ? { latitude: geo.latitude, longitude: geo.longitude } : undefined),
+    wikidata: city.wikidata ?? geo?.wikidata,
+    department: city.department ?? geo?.department,
+    neighborhoods: city.neighborhoods ?? neighborhoods,
+    marketPricing: city.marketPricing ?? pricing,
   }
 }
 

@@ -34,6 +34,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/convention-collective-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Convention IDCC 3043
+                </Link>
+              </li>
+              <li>
                 <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
                   Planning
                 </Link>

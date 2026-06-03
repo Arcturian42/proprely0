@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin, Sparkles, CheckCircle, HelpCircle, AlertCircle, BookOpen, Layers } from 'lucide-react'
+import { ArrowRight, MapPin, Sparkles, CheckCircle, HelpCircle, AlertCircle, BookOpen, Layers, Building2, Euro } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -18,6 +18,46 @@ function injectCitySchema(city: CityPageType) {
   document.getElementById(id)?.remove()
   const url = `https://proprely.fr/villes/${city.slug}/`
   const today = new Date().toISOString().slice(0, 10)
+  const cityAreaServed: Record<string, unknown> = {
+    '@type': 'City',
+    name: city.city,
+    containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
+  }
+  if (city.wikidata) {
+    cityAreaServed.sameAs = city.wikidata
+  }
+  const localBusinessSchema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${url}#localbusiness`,
+    name: `Proprely — logiciel société de nettoyage à ${city.city}`,
+    description: city.metaDescription,
+    url,
+    image: 'https://proprely.fr/og-image.png',
+    logo: 'https://proprely.fr/proprely-icon-512.png',
+    priceRange: '€€',
+    email: 'contact@proprely.fr',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '30 rue Marbeuf',
+      addressLocality: 'Paris',
+      addressRegion: 'Île-de-France',
+      postalCode: '75008',
+      addressCountry: 'FR',
+    },
+    areaServed: city.department
+      ? [cityAreaServed, { '@type': 'AdministrativeArea', name: city.department }]
+      : [cityAreaServed],
+    serviceType: 'Logiciel de gestion société de nettoyage B2B',
+    parentOrganization: { '@id': 'https://proprely.fr/#organization' },
+  }
+  if (city.geo) {
+    localBusinessSchema.geo = {
+      '@type': 'GeoCoordinates',
+      latitude: city.geo.latitude,
+      longitude: city.geo.longitude,
+    }
+  }
   const schemas: object[] = [
     {
       '@context': 'https://schema.org',
@@ -34,11 +74,7 @@ function injectCitySchema(city: CityPageType) {
         '@type': 'Service',
         name: `Logiciel de gestion pour sociétés de nettoyage à ${city.city}`,
         provider: { '@id': 'https://proprely.fr/#organization' },
-        areaServed: {
-          '@type': 'City',
-          name: city.city,
-          containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
-        },
+        areaServed: cityAreaServed,
       },
     },
     {
@@ -50,16 +86,13 @@ function injectCitySchema(city: CityPageType) {
       image: 'https://proprely.fr/og-image.png',
       provider: { '@id': 'https://proprely.fr/#organization' },
       serviceType: 'Logiciel de gestion société de nettoyage',
-      areaServed: {
-        '@type': 'City',
-        name: city.city,
-        containedInPlace: { '@type': 'AdministrativeArea', name: city.region },
-      },
+      areaServed: cityAreaServed,
       audience: {
         '@type': 'BusinessAudience',
         audienceType: `Dirigeants de sociétés de nettoyage B2B à ${city.city} et en ${city.region}`,
       },
     },
+    localBusinessSchema,
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
@@ -204,6 +237,70 @@ export default function CityPage({ slug }: Props) {
             </ul>
           </div>
         </section>
+
+        {city.neighborhoods && city.neighborhoods.length > 0 && (
+          <section className="py-14 sm:py-20 border-t border-slate-100">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-2 mb-3">
+                <Building2 size={16} className="text-blue-600" />
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Géographie locale</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
+                Quartiers d'affaires et zones tertiaires à {city.city}
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+                Les zones où se concentre la demande propreté B2B à {city.city} et leurs spécificités opérationnelles. Connaître ces zones permet d'optimiser vos tournées, vos tarifs et votre force de vente.
+              </p>
+              <div className="space-y-4">
+                {city.neighborhoods.map((n, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: i * 0.05 }}
+                    className="flex items-start gap-4 bg-white border border-slate-100 rounded-2xl p-5 sm:p-6"
+                  >
+                    <MapPin size={18} className="text-blue-600 shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-bold text-slate-900 mb-1.5">{n.name}</h3>
+                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{n.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {city.marketPricing && (
+          <section className="py-14 sm:py-20 bg-gradient-to-b from-blue-50/40 to-white border-t border-slate-100">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-2 mb-3">
+                <Euro size={16} className="text-blue-600" />
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Prix de marché 2026</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
+                Tarifs propreté bureaux à {city.city} en 2026
+              </h2>
+              <div className="bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 mb-6">
+                <div className="text-xs font-bold uppercase tracking-wider text-blue-700 mb-2">Tarif moyen bureaux</div>
+                <div className="text-3xl sm:text-4xl font-black text-slate-900 mb-3">{city.marketPricing.range}</div>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{city.marketPricing.note}</p>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Pour calibrer votre tarification au m² selon le type de site et les prestations, consultez le{' '}
+                <Link to="/blog/tarif-nettoyage-bureaux-m2-2026" className="text-blue-700 font-semibold hover:underline">
+                  guide complet du tarif nettoyage bureaux en 2026
+                </Link>{' '}
+                ou utilisez notre{' '}
+                <Link to="/calculateur-prix-nettoyage-m2" className="text-blue-700 font-semibold hover:underline">
+                  calculateur de prix nettoyage au m²
+                </Link>.
+              </p>
+            </div>
+          </section>
+        )}
 
         <section className="py-14 sm:py-20 bg-slate-50 border-t border-slate-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
