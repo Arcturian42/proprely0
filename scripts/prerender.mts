@@ -686,22 +686,44 @@ const blogIndexHtml = buildHtml({
 writePage('/blog', blogIndexHtml)
 generated.push('/blog')
 
+const roiFaqs = [
+  { q: "Comment calculer le ROI d'un logiciel pour société de nettoyage ?", a: "Le ROI d'un logiciel métier société de nettoyage se calcule en comparant le temps administratif gagné (heures par semaine récupérées par le dirigeant et les agents) au coût total de l'outil. Formule simplifiée : (heures hebdomadaires économisées × 47 semaines × coût horaire chargé du dirigeant) − abonnement annuel = ROI. Pour une PME de 8-15 agents, la dispersion entre Excel, WhatsApp et Word coûte typiquement 6 à 10 heures par semaine, soit 12 000 à 21 000 € par an au taux horaire dirigeant de 45 €." },
+  { q: "Combien d'heures par semaine perd-on à gérer son entreprise de nettoyage sur Excel et WhatsApp ?", a: "Les retours terrain de dirigeants TPE/PME B2B nettoyage en France indiquent une moyenne de 6 à 10 heures par semaine perdues en administration dispersée : ressaisie entre outils, recherche d'informations, suivi des messages WhatsApp, contrôle manuel des pointages, génération de devis et factures sur Word. Au-delà de 5-8 agents, la charge augmente proportionnellement au nombre de sites et de prestations récurrentes." },
+  { q: "Quelle hypothèse utilisez-vous pour le coût horaire dirigeant ?", a: "Le calculateur utilise 45 €/h comme coût horaire chargé d'un dirigeant TPE/PME nettoyage en France (rémunération nette ≈ 30 €/h + charges sociales + part fixe entreprise). C'est un benchmark conservateur ; si vous vous rémunérez au-dessus du SMIC dirigeant standard, ajustez à la hausse pour obtenir votre vrai ROI." },
+  { q: "Le calcul prend-il en compte le temps perdu par les agents ?", a: "Le calculateur ROI Proprely se concentre sur le temps dirigeant car c'est le poste le plus mesurable et le plus impactant. Pour intégrer le temps agents (saisie pointage, échanges WhatsApp, recherche planning), comptez 2-4 heures supplémentaires par semaine par tranche de 5 agents. Le ROI réel est donc souvent 30-50 % supérieur au calcul de base." },
+  { q: "À partir de combien d'agents un logiciel métier devient-il rentable ?", a: "Selon nos benchmarks 2026 : à partir de 3-5 agents pour les dirigeants qui pilotent eux-mêmes l'opérationnel, et à partir de 5-8 agents si la gestion est partagée. Sous 3 agents, un mix template Word + Excel + WhatsApp reste viable. Au-dessus de 8 agents, la dispersion coûte plus cher chaque mois que l'abonnement d'un cockpit unifié — y compris en bêta privée gratuite Proprely." },
+]
+
 const roiBody = `
-  <h1>Calculateur ROI : combien vous coûte la dispersion ?</h1>
-  <p>Estimez en 30 secondes combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word pour gérer votre société de nettoyage.</p>
+  <h1>Calculateur ROI logiciel société de nettoyage : combien la dispersion vous coûte</h1>
+  <p>Pour calculer le ROI d'un logiciel métier société de nettoyage, il faut comparer le temps administratif gagné au coût de l'outil. Une PME B2B nettoyage de 8 à 15 agents perd typiquement 6 à 10 heures par semaine en administration dispersée entre Excel, WhatsApp et Word — soit <strong>12 600 à 21 000 € par an</strong> au coût horaire dirigeant chargé de 45 €. Notre calculateur vous donne votre chiffre en 30 secondes.</p>
   <h2>Ce que vous découvrirez en 30 secondes</h2>
   <ul>
-    <li>Le temps réel perdu chaque semaine en administration dispersée</li>
-    <li>Le coût annuel équivalent (heures × taux horaire dirigeant)</li>
-    <li>Le ROI estimé si vous centralisiez sur un seul outil</li>
+    <li>Le temps réel perdu chaque semaine en administration dispersée (saisie, recherche, ressaisie entre outils)</li>
+    <li>Le coût annuel équivalent (heures × taux horaire dirigeant chargé)</li>
+    <li>Le ROI estimé si vous centralisiez sur un seul outil métier</li>
+    <li>Le seuil de rentabilité par taille d'entreprise (3, 8, 15, 25 agents)</li>
   </ul>
+  <h2>Méthodologie du calcul</h2>
+  <p>Le calculateur s'appuie sur trois données : le nombre d'agents que vous gérez, le nombre de sites clients, et votre coût horaire chargé estimé. Sur cette base, nous appliquons un coefficient empirique tiré de nos entretiens avec des dirigeants TPE/PME B2B nettoyage (entre 0,5 et 1,5 heure perdue par agent par semaine selon la dispersion).</p>
+  <h2>Benchmarks par taille de société</h2>
+  <ul>
+    <li><strong>3 agents, 1-3 sites :</strong> 2-3 h perdues par semaine = 4 200 à 6 300 €/an. ROI immédiat dès le premier mois.</li>
+    <li><strong>8 agents, 5-10 sites :</strong> 5-7 h perdues par semaine = 10 500 à 14 700 €/an. ROI atteint en 2-3 mois avec un cockpit unifié.</li>
+    <li><strong>15 agents, 10-20 sites :</strong> 7-10 h perdues par semaine = 14 700 à 21 000 €/an. ROI dès le premier mois si l'outil supprime la double saisie.</li>
+    <li><strong>25 agents et plus :</strong> 8-12 h perdues par semaine = 16 800 à 25 200 €/an, sans compter les erreurs paie et les contrats sous-tarifés.</li>
+  </ul>
+  <h2>Ce que ce calcul ne couvre pas (et qui augmente votre vrai ROI)</h2>
+  <p>Le ROI réel est généralement 30 à 50 % supérieur à l'estimation de base parce que le calculateur ne tient compte que du temps dirigeant. Vous récupérez en plus : le temps des agents (saisie pointage, recherche planning), la marge sur les contrats actuellement sous-tarifés (visibilité marge par client), la qualité avec moins de litiges grâce à la preuve de passage standardisée, et la baisse de turnover qui résulte d'un meilleur pilotage de la charge horaire.</p>
+  <h2>Aller plus loin</h2>
+  <p>Pour calibrer votre tarification au m² : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur de prix nettoyage bureaux au m²</a>. Pour estimer la marge brute d'un contrat précis : <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité contrat nettoyage</a>. Pour le guide complet du choix de logiciel : <a href="${ORIGIN}/logiciel-societe-nettoyage">logiciel société de nettoyage — guide complet 2026</a> ou le <a href="${ORIGIN}/comparatif-logiciel-nettoyage">comparatif Proprely vs PROPRET, Progiclean, Organilog</a>. La bêta privée Proprely est gratuite pour 30 sociétés fondatrices : <a href="${ORIGIN}/beta">candidater à la bêta</a>.</p>
 `.trim()
 
 const roiHtml = buildHtml({
   url: '/calculateur-roi',
-  title: 'Calculateur ROI : combien vous coûte la dispersion ? · Proprely',
+  title: 'Calculateur ROI logiciel société de nettoyage · Proprely',
   description:
-    "Estimez en 30 secondes combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word pour gérer votre société de nettoyage.",
+    "Calculez le ROI d'un logiciel métier société de nettoyage : heures perdues sur Excel et WhatsApp, coût annuel, seuil de rentabilité par taille d'entreprise. 30 secondes.",
   schemas: [
     webpageSchema(
       'Calculateur ROI Proprely',
@@ -712,6 +734,7 @@ const roiHtml = buildHtml({
         { name: 'Calculateur ROI', item: `${ORIGIN}/calculateur-roi` },
       ]
     ),
+    faqSchema(roiFaqs),
   ],
   bodyHtml: roiBody,
 })
@@ -1402,28 +1425,47 @@ const vsExcelHtml = buildHtml({
 writePage('/proprely-vs-excel', vsExcelHtml)
 generated.push('/proprely-vs-excel')
 
+const simulateurFaqs = [
+  { q: "Comment calculer la rentabilité d'un contrat de nettoyage ?", a: "La rentabilité d'un contrat de nettoyage se calcule à partir de quatre éléments : le CA mensuel, le nombre d'heures réellement effectuées sur le site, le coût horaire chargé des agents affectés, et les coûts annexes (consommables, déplacements, frais de structure). Marge brute = CA − (heures × coût horaire chargé + consommables + déplacements). Marge nette = marge brute − quote-part frais de structure (typiquement 8-15 % du CA pour une PME B2B nettoyage). Le KPI décisif pour comparer deux contrats est le résultat horaire (marge nette ÷ heures sur le site)." },
+  { q: "Quelle marge nette viser sur un contrat de nettoyage B2B ?", a: "Cibles saines pour une société de nettoyage B2B en France en 2026 : marge brute 30-40 %, marge nette 12-20 %. Sous 10 % de marge nette, le contrat est vulnérable au moindre imprévu (remplacement, absentéisme, hausse de charges). Au-delà de 25 % de marge nette, vous êtes probablement hors marché concurrentiel ou sur un client captif (situation à court terme). Cible recommandée : 15-18 % de marge nette pour la majorité des contrats récurrents." },
+  { q: "Quelle est la différence entre marge brute et marge nette ?", a: "La marge brute mesure ce que le contrat dégage avant la quote-part de structure (encadrement, locaux, comptable, logiciels, véhicules). La marge nette intègre cette quote-part et représente le vrai bénéfice du contrat. Sur 100 € de CA, un contrat sain dégage 30-40 € de marge brute, mais seulement 15-20 € de marge nette une fois les frais fixes ré-imputés. C'est la marge nette qui doit guider vos décisions d'arbitrage entre contrats." },
+  { q: "Comment intégrer les heures supplémentaires dans le calcul ?", a: "Les heures supplémentaires doivent être valorisées à leur coût majoré réel : +25 % de 36 à 43 h hebdomadaires, +50 % au-delà (temps plein), ou +10 %/+25 % pour les heures complémentaires des temps partiels (cas le plus fréquent en propreté). Si votre contrat impose des plages décalées (nuit +20 %, dimanche +100 %, jours fériés +100 %), intégrez ces majorations dans votre coût horaire chargé moyen — sinon votre marge calculée est surestimée de 5-15 %." },
+  { q: "Mon contrat est limite, que faire ?", a: "Trois leviers selon le verdict : (1) renégocier le prix au prochain renouvellement, en vous appuyant sur le détail des prestations et la grille de référence — voir notre <a href=\"/blog/fixer-prix-nettoyage\">méthode prix nettoyage 2026</a>, (2) optimiser les heures via une meilleure affectation agents/sites et la suppression des dérives (planning rigoureux + preuve de passage standardisée), (3) si le client refuse une hausse et que la marge nette reste sous 8 %, arbitrer pour ne pas reconduire et redéployer la capacité sur des contrats plus rentables." },
+]
+
 const simulateurBody = `
-  <h1>Simulateur de rentabilité par contrat de nettoyage</h1>
-  <p>Renseignez les paramètres d'un contrat de nettoyage et obtenez en une minute la marge brute, la marge nette, le résultat horaire et un verdict immédiat avec des actions concrètes.</p>
+  <h1>Simulateur de rentabilité contrat de nettoyage : marge brute, nette et verdict</h1>
+  <p>Pour calculer la rentabilité d'un contrat de nettoyage, comparez le CA mensuel aux coûts (heures × coût horaire chargé + consommables + déplacements + quote-part frais de structure). Une marge nette saine est de <strong>12 à 20 %</strong> pour une société de nettoyage B2B en France en 2026. Notre simulateur vous donne marge brute, marge nette, résultat horaire et un verdict immédiat avec actions concrètes.</p>
   <h2>Ce que le simulateur calcule</h2>
   <ul>
-    <li>Marge brute en euros et en pourcentage</li>
-    <li>Marge nette après quote-part frais de structure</li>
-    <li>Résultat horaire — le KPI le plus utile pour comparer deux contrats</li>
-    <li>Net annuel projeté sur 12 mois</li>
-    <li>Verdict automatique : très rentable, rentable, limite, non rentable</li>
-    <li>Recommandations actionnables selon le verdict</li>
+    <li><strong>Marge brute</strong> en euros et en pourcentage du CA</li>
+    <li><strong>Marge nette</strong> après quote-part frais de structure</li>
+    <li><strong>Résultat horaire</strong> — le KPI le plus utile pour comparer deux contrats</li>
+    <li><strong>Net annuel projeté</strong> sur 12 mois</li>
+    <li><strong>Verdict automatique</strong> : très rentable, rentable, limite, non rentable</li>
+    <li><strong>Recommandations actionnables</strong> selon le verdict (renégocier, optimiser heures, arbitrer)</li>
   </ul>
   <h2>Méthode de calcul</h2>
-  <p>Marge brute = CA mensuel − (heures × coût horaire chargé + consommables + déplacements). Marge nette = marge brute − frais de structure (en pourcentage du CA). Résultat horaire = marge nette ÷ heures sur le site.</p>
+  <p>Marge brute = CA mensuel − (heures × coût horaire chargé + consommables + déplacements). Marge nette = marge brute − frais de structure (en pourcentage du CA, typiquement 8 à 15 %). Résultat horaire = marge nette ÷ heures sur le site.</p>
+  <h2>Cibles de marge par typologie de contrat</h2>
+  <ul>
+    <li><strong>Bureaux standards quotidien :</strong> marge nette cible 15-20 % (Paris/IDF +2 pts, province -2 pts)</li>
+    <li><strong>Cabinets médicaux / bionettoyage :</strong> marge nette cible 18-25 % (technicité + traçabilité justifient un premium)</li>
+    <li><strong>Hôtellerie :</strong> marge nette cible 12-18 % (saisonnalité forte, remplacements fréquents)</li>
+    <li><strong>Copropriétés :</strong> marge nette cible 12-15 % (concurrence forte, syndic exigeant)</li>
+    <li><strong>Industriel / logistique :</strong> marge nette cible 10-15 % (volumes élevés, pression prix)</li>
+    <li><strong>Aérospatial / salles propres :</strong> marge nette cible 18-28 % (technicité ESD/ISO majoration 30-50 %)</li>
+  </ul>
   <h2>Ce qui n'est pas pris en compte</h2>
-  <p>Le simulateur ne prend pas en compte les prestations ponctuelles facturées hors contrat, l'écart entre heures contractuelles et heures réellement effectuées, ni les coûts liés aux remplacements et absences. Le module rentabilité de Proprely intègre ces éléments avec vos données réelles.</p>
+  <p>Le simulateur ne prend pas en compte les prestations ponctuelles facturées hors contrat, l'écart entre heures contractuelles et heures réellement effectuées, ni les coûts liés aux remplacements et absences imprévues. Le module pilotage de Proprely intègre ces éléments avec vos données réelles agent par agent et site par site, et affiche la marge en temps réel.</p>
+  <h2>Aller plus loin</h2>
+  <p>Pour fixer un prix juste avant de signer : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur de prix nettoyage au m²</a> et <a href="${ORIGIN}/blog/fixer-prix-nettoyage">guide méthode prix nettoyage 2026</a>. Pour comprendre le vrai coût horaire chargé de vos agents : <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">guide coût horaire chargé 2026</a>. Pour calculer le ROI global de la digitalisation : <a href="${ORIGIN}/calculateur-roi">calculateur ROI société de nettoyage</a>. La bêta privée Proprely intègre la marge par client en temps réel — <a href="${ORIGIN}/beta">candidater à la bêta</a>.</p>
 `.trim()
 
 const simulateurHtml = buildHtml({
   url: '/simulateur-rentabilite',
-  title: 'Simulateur de rentabilité par contrat de nettoyage · Proprely',
-  description: "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat et recommandations selon votre situation.",
+  title: 'Simulateur rentabilité contrat nettoyage : marge brute et nette · Proprely',
+  description: "Calculez en 1 minute la marge brute, la marge nette et le résultat horaire d'un contrat de nettoyage. Verdict immédiat, recommandations actionnables, cibles par typologie.",
   schemas: [
     webpageSchema(
       'Simulateur de rentabilité Proprely',
@@ -1434,6 +1476,7 @@ const simulateurHtml = buildHtml({
         { name: 'Simulateur de rentabilité', item: `${ORIGIN}/simulateur-rentabilite` },
       ]
     ),
+    faqSchema(simulateurFaqs),
   ],
   bodyHtml: simulateurBody,
 })
@@ -1517,6 +1560,55 @@ const softwareLandingBody = `
   <p>Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment.</p>
   <h3>Quelle est la différence entre Proprely et PROPRET ou Progiclean ?</h3>
   <p>PROPRET et Progiclean sont les acteurs historiques (10-15 ans) avec une couverture fonctionnelle large mais une UX datée et un mobile via app native. Proprely est un SaaS de nouvelle génération (2026) conçu mobile-first par lien web, avec preuve de passage native et marge par client en surface.</p>
+
+  <h2>Tout l'écosystème Proprely en un coup d'œil</h2>
+  <p>Pour aller plus loin dans le choix et la mise en place de votre logiciel métier société de nettoyage, voici les ressources organisées par usage :</p>
+  <h3>Comparer Proprely aux concurrents du marché</h3>
+  <ul>
+    <li><a href="${ORIGIN}/comparatif-logiciel-nettoyage">Comparatif général logiciels société de nettoyage 2026</a></li>
+    <li><a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels métier société de nettoyage : lequel choisir ?</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a></li>
+    <li><a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
+  </ul>
+  <h3>Explorer les fonctionnalités métier</h3>
+  <ul>
+    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage">Logiciel planning agents nettoyage</a> — affectation 1-clic, mobile sans app</li>
+    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage">Logiciel devis et facturation automatisée nettoyage</a> — contrats récurrents auto</li>
+    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">Gestion agents nettoyage</a> — profils, spécialités, alertes surmenage</li>
+    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">Preuve de passage nettoyage</a> — QR, photos, signature, PV automatique</li>
+    <li><a href="${ORIGIN}/crm-entreprise-proprete">CRM entreprise propreté</a> — pipeline commercial, relances</li>
+  </ul>
+  <h3>Calculer et chiffrer avant de signer</h3>
+  <ul>
+    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2">Calculateur prix de nettoyage au m²</a> — surface, fréquence, zone, type de site</li>
+    <li><a href="${ORIGIN}/simulateur-rentabilite">Simulateur rentabilité contrat</a> — marge brute, marge nette, verdict</li>
+    <li><a href="${ORIGIN}/calculateur-roi">Calculateur ROI logiciel société de nettoyage</a> — coût caché de la dispersion</li>
+    <li><a href="${ORIGIN}/outils">Tous les outils gratuits</a></li>
+  </ul>
+  <h3>Cas spécifiques par taille et par profil</h3>
+  <ul>
+    <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage">Logiciel pour auto-entrepreneur nettoyage</a> — solo et indépendants</li>
+    <li><a href="${ORIGIN}/convention-collective-nettoyage">Logiciel conforme convention collective propreté IDCC 3043</a> — grille salaires, article 7</li>
+  </ul>
+  <h3>Pages locales — couverture nationale</h3>
+  <ul>
+    <li><a href="${ORIGIN}/villes/paris">Paris &amp; Île-de-France</a> · <a href="${ORIGIN}/villes/lyon">Lyon &amp; Rhône-Alpes</a> · <a href="${ORIGIN}/villes/marseille">Marseille &amp; PACA</a> · <a href="${ORIGIN}/villes/bordeaux">Bordeaux &amp; Gironde</a> · <a href="${ORIGIN}/villes/toulouse">Toulouse &amp; Occitanie</a></li>
+    <li><a href="${ORIGIN}/villes/nantes">Nantes</a> · <a href="${ORIGIN}/villes/lille">Lille</a> · <a href="${ORIGIN}/villes/nice">Nice</a> · <a href="${ORIGIN}/villes/strasbourg">Strasbourg</a> · <a href="${ORIGIN}/villes/montpellier">Montpellier</a> · <a href="${ORIGIN}/villes/rennes">Rennes</a></li>
+    <li><a href="${ORIGIN}/villes">Voir toutes les pages villes</a></li>
+  </ul>
+  <h3>Articles de blog les plus consultés</h3>
+  <ul>
+    <li><a href="${ORIGIN}/blog/fixer-prix-nettoyage">Fixer ses prix dans le nettoyage : méthode 2026</a></li>
+    <li><a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">Convention collective propreté IDCC 3043 : grille salaires 2026</a></li>
+    <li><a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage">Calcul des heures agents nettoyage : méthode et coût 2026</a></li>
+    <li><a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">Tarif nettoyage bureaux au m² 2026</a></li>
+    <li><a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">Coût horaire chargé d'un agent en 2026</a></li>
+    <li><a href="${ORIGIN}/blog/rgpd-societe-nettoyage-2026">RGPD société de nettoyage 2026</a></li>
+    <li><a href="${ORIGIN}/blog/fideliser-agents-nettoyage-turnover">Fidéliser les agents : 6 leviers contre 35 % de turnover</a></li>
+    <li><a href="${ORIGIN}/blog">Voir tous les articles du blog</a></li>
+  </ul>
 
   <h2>Bêta privée Proprely</h2>
   <p>30 sociétés fondatrices, accès gratuit pendant toute la bêta, tarif privilégié à vie après le lancement public. Onboarding 30 min avec le fondateur. <a href="${ORIGIN}/beta">Candidater à la bêta</a> · <a href="${ORIGIN}/tarifs">Tarifs</a>.</p>
@@ -1929,15 +2021,24 @@ generated.push('/a-propos')
 
 // === Page /outils (index outils gratuits) ===
 const toolsBody = `
-  <h1>Les calculateurs gratuits pour piloter votre société de nettoyage</h1>
-  <p>Quatre outils utilisables tout de suite, sans inscription, pour fixer les prix, mesurer la marge et calculer le coût caché de la dispersion administrative.</p>
-  <h2>Outils disponibles</h2>
+  <h1>Outils et calculateurs gratuits pour société de nettoyage en 2026</h1>
+  <p>Pour piloter une société de nettoyage B2B sereinement, quatre calculs sont décisifs : le prix de vente au m², la marge nette par contrat, le coût horaire chargé des agents et le ROI de la digitalisation. Proprely met à disposition quatre outils en accès libre, sans inscription, pour répondre à chacune de ces questions en moins de 5 minutes.</p>
+  <h2>Quatre outils utilisables tout de suite</h2>
   <ul>
-    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2"><strong>Calculateur prix de nettoyage au m²</strong></a> — estimez le prix de vente d'une prestation selon surface, fréquence, zone, type de local (1 min).</li>
-    <li><a href="${ORIGIN}/simulateur-rentabilite"><strong>Simulateur de rentabilité contrat</strong></a> — marge brute d'un contrat en 1 minute, verdict instantané (1 min).</li>
-    <li><a href="${ORIGIN}/calculateur-roi"><strong>Calculateur ROI dispersion</strong></a> — combien d'heures et d'euros perdus en gestion dispersée (30 sec).</li>
-    <li><a href="${ORIGIN}/ressources/modele-suivi-heures-agents"><strong>Coût horaire chargé d'un agent</strong></a> — modèle Excel téléchargeable (5 min).</li>
+    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2"><strong>Calculateur prix de nettoyage au m²</strong></a> — estimez le prix de vente d'une prestation selon surface, fréquence (quotidienne, 3×/semaine, hebdomadaire), zone géographique (Paris, IDF, métropoles, villes moyennes, rural) et type de site (bureaux, médical, hôtellerie, industriel). Bénéfice : éviter de sous-tarifer un contrat avant de le signer (1 min).</li>
+    <li><a href="${ORIGIN}/simulateur-rentabilite"><strong>Simulateur de rentabilité par contrat</strong></a> — marge brute, marge nette, résultat horaire et verdict immédiat (très rentable / rentable / limite / non rentable) avec recommandations actionnables selon votre situation. Bénéfice : identifier les contrats qui rongent votre rentabilité avant qu'ils ne creusent un trou (1 min).</li>
+    <li><a href="${ORIGIN}/calculateur-roi"><strong>Calculateur ROI dispersion administrative</strong></a> — combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word. Benchmark : 6 à 10 h/semaine perdues pour une PME de 8-15 agents, soit 12 600 à 21 000 €/an. Bénéfice : objectiver le coût caché de la non-digitalisation (30 sec).</li>
+    <li><a href="${ORIGIN}/ressources/modele-suivi-heures-agents"><strong>Coût horaire chargé d'un agent — modèle Excel</strong></a> — calcul du coût horaire réel d'un agent au SMIC propreté 2026, charges sociales et primes incluses (panier, transport, salissure). Bénéfice : connaître précisément le coût horaire à charger sur chaque contrat. À télécharger et adapter à vos paramètres (5 min).</li>
   </ul>
+  <h2>Pour quel profil quel outil ?</h2>
+  <ul>
+    <li><strong>Vous êtes en phase de prospection</strong> et préparez une réponse à un nouveau client : commencez par le <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur prix au m²</a>, puis validez la rentabilité prévisionnelle avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</li>
+    <li><strong>Vous voulez auditer un contrat existant</strong> qui vous semble fragile : utilisez directement le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a> avec les vraies données du contrat (CA, heures, coûts).</li>
+    <li><strong>Vous hésitez à digitaliser votre gestion</strong> : commencez par le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> pour mesurer le coût caché de la dispersion, puis lisez le <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes">guide digitalisation en 5 étapes</a>.</li>
+    <li><strong>Vous préparez votre prochaine grille de salaires</strong> : téléchargez le <a href="${ORIGIN}/ressources/modele-suivi-heures-agents">modèle coût horaire chargé</a> et croisez avec la <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">convention collective propreté IDCC 3043</a>.</li>
+  </ul>
+  <h2>Aller plus loin — guides et ressources</h2>
+  <p>Pour approfondir le pilotage de votre société : <a href="${ORIGIN}/blog/fixer-prix-nettoyage">méthode prix nettoyage 2026</a>, <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">coût horaire chargé d'un agent</a>, <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">tarif nettoyage bureaux au m² 2026</a>, <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a>. Tous les <a href="${ORIGIN}/ressources">modèles Excel téléchargeables</a> sont accessibles sans inscription. Pour passer à un cockpit unifié, la <a href="${ORIGIN}/beta">bêta privée Proprely</a> est gratuite pour les 30 sociétés fondatrices.</p>
 `.trim()
 
 const toolsHtml = buildHtml({
