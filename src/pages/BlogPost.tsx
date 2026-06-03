@@ -215,7 +215,7 @@ function injectArticleSchema(post: BlogPostType) {
         '@id': 'https://proprely.fr/a-propos#paul-munier',
         name: 'Paul Munier',
         url: 'https://proprely.fr/a-propos',
-        jobTitle: 'Fondateur de Proprely',
+        jobTitle: 'Business Developer & rédacteur',
         sameAs: ['https://www.linkedin.com/in/paulmunier/'],
         worksFor: { '@id': 'https://proprely.fr/#organization' },
       },
@@ -352,7 +352,7 @@ export default function BlogPost({ slug }: Props) {
                   <Link to="/a-propos" className="hover:text-blue-700 transition-colors">Paul Munier</Link>
                 </div>
                 <div className="text-slate-500">
-                  Fondateur de Proprely
+                  Business Developer &amp; rédacteur
                   {post.dateModified && post.dateModified !== post.date && (
                     <> · Mis à jour le {post.dateModified}</>
                   )}
