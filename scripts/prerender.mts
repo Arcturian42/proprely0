@@ -196,7 +196,7 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string }) {
       '@id': `${ORIGIN}/a-propos#paul-munier`,
       name: 'Paul Munier',
       url: `${ORIGIN}/a-propos`,
-      jobTitle: 'Fondateur de Proprely',
+      jobTitle: 'Business Developer & rédacteur',
       sameAs: ['https://www.linkedin.com/in/paulmunier/'],
       worksFor: { '@id': `${ORIGIN}/#organization` },
       knowsAbout: [
@@ -313,7 +313,7 @@ for (const rawPost of posts) {
     <h1>${escapeHtml(p.title)}</h1>
     <p>${escapeHtml(p.excerpt)}</p>
     <p>Publié le ${escapeHtml(p.date)} · ${escapeHtml(p.readTime)} · ${escapeHtml(p.tag)}${dateModifiedDisplay}</p>
-    <p>Par <a href="${ORIGIN}/a-propos">Paul Munier</a>, fondateur de Proprely</p>
+    <p>Par <a href="${ORIGIN}/a-propos">Paul Munier</a>, Business Developer &amp; rédacteur chez Proprely</p>
     ${tldrHtml}
     <h2>L'essentiel</h2>
     <ul>${summaryHtml}</ul>
@@ -1808,8 +1808,8 @@ const aboutBody = `
     <li><strong>Vos données restent vos données</strong> — hébergement européen, chiffrement, RGPD, export 1-clic.</li>
     <li><strong>Édité par une société IT établie</strong> — Pershing Global Solutions LTD (Dublin), spécialisée dans les logiciels métiers sur mesure.</li>
   </ul>
-  <h2>Le fondateur</h2>
-  <p><strong>Paul Munier</strong>, fondateur de Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, Paul a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien : le constat — 6 à 10 heures perdues par semaine entre Excel, WhatsApp, Word et le papier — est devenu la mission du produit. Profil LinkedIn : <a href="https://www.linkedin.com/in/paulmunier/" rel="noopener noreferrer">linkedin.com/in/paulmunier</a>.</p>
+  <h2>L'auteur des articles</h2>
+  <p><strong>Paul Munier</strong>, Business Developer &amp; rédacteur chez Proprely. Paul est en charge du développement commercial et signe la plupart des articles du blog. Il s'appuie sur des entretiens réguliers avec des dirigeants de sociétés de nettoyage B2B et sur la convention collective IDCC 3043 pour traiter les sujets concrets du métier : tarification, calcul des heures, transferts article 7, fidélisation des agents, choix d'outils. Profil LinkedIn : <a href="https://www.linkedin.com/in/paulmunier/" rel="noopener noreferrer">linkedin.com/in/paulmunier</a>.</p>
   <h2>Notre histoire</h2>
   <h3>Février 2026 — Premiers entretiens</h3>
   <p>Premiers entretiens terrain avec des dirigeants de sociétés de nettoyage B2B. Constat partagé : 6 à 10 heures par semaine perdues à jongler entre Excel, WhatsApp, Word, Drive et papier.</p>
@@ -1844,7 +1844,7 @@ const aboutHtml = buildHtml({
       '@type': 'Person',
       '@id': `${ORIGIN}/a-propos#paul-munier`,
       name: 'Paul Munier',
-      jobTitle: 'Fondateur de Proprely',
+      jobTitle: 'Business Developer & rédacteur',
       url: `${ORIGIN}/a-propos`,
       sameAs: ['https://www.linkedin.com/in/paulmunier/'],
       worksFor: { '@id': `${ORIGIN}/#organization` },
@@ -1855,7 +1855,7 @@ const aboutHtml = buildHtml({
         'Planning multi-sites pour société de nettoyage',
         'Preuve de passage et conformité syndic',
       ],
-      description: "Paul Munier dirige Proprely. Après plusieurs années à concevoir des logiciels métiers chez Pershing Global Solutions, il a lancé Proprely en interrogeant des dirigeants de sociétés de nettoyage B2B sur leur quotidien.",
+      description: "Paul Munier est en charge du développement commercial chez Proprely et signe la plupart des articles du blog. Il s'appuie sur des entretiens réguliers avec des dirigeants de sociétés de nettoyage B2B et sur la convention collective IDCC 3043.",
     },
     {
       '@context': 'https://schema.org',

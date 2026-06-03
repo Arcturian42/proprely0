@@ -4,7 +4,7 @@ import { ArrowRight, Building2, Compass, Heart, ShieldCheck, Users, MapPin, Exte
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import { BETA_FORM_URL, FOUNDER } from '../config'
+import { BETA_FORM_URL, AUTHOR } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 const META = {
@@ -35,13 +35,13 @@ function injectAboutSchema() {
       '@context': 'https://schema.org',
       '@type': 'Person',
       '@id': 'https://proprely.fr/a-propos#paul-munier',
-      name: FOUNDER.name,
-      jobTitle: FOUNDER.jobTitle,
-      url: FOUNDER.url,
-      sameAs: [FOUNDER.linkedin],
+      name: AUTHOR.name,
+      jobTitle: AUTHOR.jobTitle,
+      url: AUTHOR.url,
+      sameAs: [AUTHOR.linkedin],
       worksFor: { '@id': 'https://proprely.fr/#organization' },
-      knowsAbout: FOUNDER.knowsAbout,
-      description: FOUNDER.bio,
+      knowsAbout: AUTHOR.knowsAbout,
+      description: AUTHOR.bio,
     },
     {
       '@context': 'https://schema.org',
@@ -206,10 +206,10 @@ export default function AboutPage() {
         <section className="py-14 sm:py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">
-              Le fondateur
+              L'auteur des articles
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              Proprely est porté par une personne qui parle au quotidien avec ses utilisateurs.
+              La plupart des analyses publiées sur le blog Proprely sont signées par un rédacteur identifié, qui parle régulièrement avec des dirigeants de sociétés de nettoyage B2B.
             </p>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
@@ -219,20 +219,20 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">{FOUNDER.name}</h3>
-                  <p className="text-sm sm:text-base text-blue-700 font-bold mb-4">{FOUNDER.jobTitle}</p>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">{AUTHOR.name}</h3>
+                  <p className="text-sm sm:text-base text-blue-700 font-bold mb-4">{AUTHOR.jobTitle}</p>
                   <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-5">
-                    {FOUNDER.bio}
+                    {AUTHOR.bio}
                   </p>
                   <a
-                    href={FOUNDER.linkedin}
+                    href={AUTHOR.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackEvent('founder_linkedin_click', { location: 'about_page' })}
+                    onClick={() => trackEvent('author_linkedin_click', { location: 'about_page' })}
                     className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 rounded-xl px-4 py-2 font-semibold text-sm hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-colors"
                   >
                     <ExternalLink size={14} />
-                    Profil LinkedIn de {FOUNDER.name.split(' ')[0]}
+                    Profil LinkedIn de {AUTHOR.name.split(' ')[0]}
                   </a>
                 </div>
               </div>
