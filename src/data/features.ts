@@ -74,7 +74,7 @@ export const features: FeaturePage[] = [
       { q: "Peut-on gérer plusieurs équipes ou plusieurs sites ?", a: "Oui. Proprely est conçu pour les sociétés multi-sites : un client peut avoir 1 à N sites, chaque site a son planning propre, et vous avez la vue d'ensemble par agent, par client, par jour ou par zone géographique." },
     ],
     relatedSlugs: ['gestion-agents-nettoyage', 'preuve-passage-nettoyage'],
-    relatedBlogSlugs: ['fideliser-agents-nettoyage-turnover', 'calcul-heures-agents-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
+    relatedBlogSlugs: ['logiciel-planning-nettoyage-2026', 'fideliser-agents-nettoyage-turnover', 'calcul-heures-agents-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
   },
   {
     slug: 'devis-nettoyage',
