@@ -27,7 +27,7 @@ export type BlogPost = {
 export const posts: BlogPost[] = [
   {
     slug: 'cout-horaire-charge-agent-nettoyage',
-    title: "Coût horaire chargé d'un agent de nettoyage : le calcul 2026",
+    title: "Coût horaire chargé agent nettoyage : calcul 2026",
     excerpt: "Salaire brut, charges, congés, primes, coûts indirects : la méthode complète pour calculer le vrai coût d'une heure d'agent — et arrêter de sous-tarifer.",
     date: '30 mai 2026',
     readTime: '9 min',
@@ -109,7 +109,7 @@ Le coût horaire chargé n'est pas un calcul annuel : il bouge avec la grille ID
   },
   {
     slug: 'repondre-appel-offres-nettoyage',
-    title: "Répondre à un appel d'offres de nettoyage : le guide complet 2026",
+    title: "Appel d'offres nettoyage : guide complet 2026",
     excerpt: "Où trouver les marchés, construire un mémoire technique qui gagne, fixer le bon prix : la méthode pour décrocher des marchés de propreté publics et privés.",
     date: '30 mai 2026',
     readTime: '10 min',
@@ -177,7 +177,7 @@ Les entreprises qui gagnent régulièrement ont des trames de mémoire technique
   },
   {
     slug: 'nettoyage-copropriete-obligations-prix',
-    title: "Nettoyage de copropriété : obligations, fréquences et prix 2026",
+    title: "Nettoyage copropriété : obligations et prix 2026",
     excerpt: "Parties communes, fréquences, prix au lot, relation syndic : ce qu'une société de nettoyage doit maîtriser pour gagner et garder des contrats de copropriété.",
     date: '30 mai 2026',
     readTime: '9 min',
@@ -307,7 +307,7 @@ Le bionettoyage se facture **30 à 50 % au-dessus** du [tarif de bureaux standar
   },
   {
     slug: 'reduire-absenteisme-agents-nettoyage',
-    title: "Réduire l'absentéisme des agents de nettoyage : 7 leviers concrets",
+    title: "Réduire l'absentéisme agents nettoyage : 7 leviers",
     excerpt: "L'absentéisme dépasse souvent 10 % dans la propreté. Son coût réel, ses causes, et 7 leviers actionnables pour le réduire sans dégrader la qualité ni la marge.",
     date: '30 mai 2026',
     readTime: '8 min',
@@ -368,7 +368,7 @@ Les leviers anti-absentéisme rejoignent ceux de la fidélisation : conditions d
   },
   {
     slug: 'fixer-prix-nettoyage',
-    title: 'Fixer ses prix dans le nettoyage : la méthode juste en 2026',
+    title: 'Fixer ses prix dans le nettoyage : méthode 2026',
     excerpt: "8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et la grille qui protège vos marges.",
     date: '15 mai 2026',
     readTime: '7 min',
@@ -499,7 +499,7 @@ C'est exactement ce que fait Proprely. [Rejoignez la bêta privée](/) si vous v
   },
   {
     slug: 'gestion-societe-nettoyage-outils',
-    title: '5 outils que les sociétés de nettoyage utilisent au quotidien (et pourquoi ça pose problème)',
+    title: '5 outils des sociétés de nettoyage : les limites 2026',
     excerpt: "Excel, WhatsApp, Google Agenda, Word, classeur papier. Cinq outils, cinq sources de friction. Anatomie de la dispersion qui fait perdre 6 heures par semaine.",
     date: '12 mai 2026',
     readTime: '6 min',
@@ -631,7 +631,7 @@ C'est exactement ce qu'on construit avec Proprely. Si vous voulez en discuter, [
   },
   {
     slug: 'logiciel-societe-nettoyage-criteres',
-    title: 'Logiciel pour société de nettoyage : 7 critères pour bien choisir',
+    title: 'Logiciel société de nettoyage : 7 critères 2026',
     excerpt: "Conçu métier, mobile-first, preuve de passage, marge par client, RGPD, export 100%, mise en route en 1 jour. La checklist avant de signer.",
     date: '8 mai 2026',
     readTime: '8 min',
@@ -870,7 +870,7 @@ C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratu
   },
   {
     slug: 'rgpd-societe-nettoyage-2026',
-    title: 'RGPD et nettoyage : ce que doit savoir un dirigeant en 2026',
+    title: 'RGPD société de nettoyage : guide dirigeant 2026',
     excerpt: "Vos agents accèdent à des locaux clients, vos plannings stockent des données nominatives, vos rapports archivent des photos. Vous traitez du personnel.",
     date: '28 avril 2026',
     readTime: '7 min',
@@ -1053,7 +1053,7 @@ C'est aussi pour ça qu'on a conçu Proprely avec le RGPD comme prérequis, pas 
   },
   {
     slug: 'fideliser-agents-nettoyage-turnover',
-    title: "Fidéliser ses agents de nettoyage : 6 leviers contre 35% de turnover",
+    title: "Fidéliser agents nettoyage : 6 leviers anti-turnover",
     excerpt: "Le secteur a un turnover de 35% par an. Les sociétés qui descendent sous 15% appliquent ces 6 leviers. Indice : ce ne sont pas celles qui paient le plus.",
     date: '21 avril 2026',
     readTime: '7 min',
@@ -1170,7 +1170,7 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
   },
   {
     slug: 'comparatif-logiciels-nettoyage-2026',
-    title: "Comparatif logiciels métier société de nettoyage 2026 : lequel choisir ?",
+    title: "Comparatif logiciels métier nettoyage 2026 : lequel ?",
     excerpt: "Comparatif Proprely, PROPRET, Progiclean, Sevensoft, Maglia, Organilog, Henrri, Bizyness : critères, tarifs, et lequel choisir selon votre profil.",
     date: '18 mai 2026',
     readTime: '9 min',
@@ -1352,7 +1352,7 @@ Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboar
   },
   {
     slug: 'logiciel-devis-nettoyage-gratuit',
-    title: "Logiciel de devis nettoyage gratuit : ce qu'il faut savoir avant de chercher",
+    title: "Logiciel devis nettoyage gratuit : guide 2026",
     excerpt: "\"Gratuit\" cache 3 réalités : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier si vous démarrez.",
     date: '19 mai 2026',
     readTime: '6 min',
@@ -1478,7 +1478,7 @@ Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, 
   },
   {
     slug: 'societe-nettoyage-paris',
-    title: 'Société de nettoyage à Paris : marché, prix et organisation en 2026',
+    title: 'Société de nettoyage à Paris : marché et prix 2026',
     excerpt: "Le marché parisien du nettoyage B2B est l'un des plus denses d'Europe. Tarifs, contraintes terrain, clients types et profils qui marchent.",
     date: '18 mai 2026',
     readTime: '9 min',
@@ -1588,7 +1588,7 @@ Trois bénéfices spécifiques pour un dirigeant qui opère dans Paris intra-mur
   },
   {
     slug: 'societe-nettoyage-ile-de-france',
-    title: 'Gérer une société de nettoyage en Île-de-France : multi-sites et logistique',
+    title: 'Société de nettoyage en Île-de-France : guide 2026',
     excerpt: "L'IDF concentre 30 % de l'activité propreté française. Opérer sur les 8 départements : multi-sites, transport, turnover. Ce qu'il faut anticiper.",
     date: '17 mai 2026',
     readTime: '8 min',
@@ -1702,7 +1702,7 @@ Pour un dirigeant qui opère en Île-de-France, trois bénéfices spécifiques :
   },
   {
     slug: 'societe-nettoyage-la-defense-92',
-    title: 'Nettoyage à La Défense et dans les Hauts-de-Seine : exigences et organisation',
+    title: 'Nettoyage à La Défense (92) : exigences 2026',
     excerpt: "La Défense et le 92 concentrent les sièges les plus exigeants de France. ISO, traçabilité, horaires décalés, audits : comment s'y positionner.",
     date: '16 mai 2026',
     readTime: '8 min',
@@ -1827,7 +1827,7 @@ Trois bénéfices spécifiques pour les opérateurs La Défense / 92 tertiaire :
   },
   {
     slug: 'societe-nettoyage-bordeaux',
-    title: 'Société de nettoyage à Bordeaux : un marché en croissance accélérée',
+    title: 'Société de nettoyage à Bordeaux : marché 2026',
     excerpt: "Bordeaux Métropole est l'un des marchés propreté les plus dynamiques. Tertiarisation, viticole, patrimoine UNESCO : comment s'y développer.",
     date: '15 mai 2026',
     readTime: '7 min',
@@ -1946,7 +1946,7 @@ Trois bénéfices spécifiques pour les opérateurs Bordeaux Métropole :
   },
   {
     slug: 'trouver-clients-b2b-nettoyage',
-    title: "Comment trouver des clients B2B en nettoyage : 8 canaux qui marchent en 2026",
+    title: "Trouver des clients B2B nettoyage : 8 canaux 2026",
     excerpt: "Le bouche-à-oreille ne suffit plus. Les 8 canaux pour décrocher des contrats récurrents en propreté B2B et comment prioriser selon votre stade.",
     date: '20 mai 2026',
     readTime: '10 min',
@@ -2156,7 +2156,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention collective propreté IDCC 3043 : grille salaires 2026",
+    title: "Convention collective propreté IDCC 3043 : salaires 2026",
     excerpt: "La convention collective propreté (IDCC 3043) régit 500 000 salariés. Grille de salaires 2026, calcul des heures, article 7, primes : le guide.",
     date: '20 mai 2026',
     readTime: '12 min',
@@ -2322,7 +2322,7 @@ Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conf
   },
   {
     slug: 'tarif-nettoyage-bureaux-m2-2026',
-    title: "Tarif nettoyage bureaux au m² en 2026 : la grille honnête pour les prestataires",
+    title: "Tarif nettoyage bureaux au m² 2026 : la grille",
     excerpt: "Combien facturer le m² de nettoyage de bureaux en 2026 ? Grille par fréquence, zone, type de site. Méthode pour protéger votre marge.",
     date: '20 mai 2026',
     readTime: '9 min',
@@ -2494,7 +2494,7 @@ Pour structurer votre tarification : [Fixer ses prix dans le nettoyage : la mét
   },
   {
     slug: 'digitaliser-entreprise-nettoyage-5-etapes',
-    title: "Digitaliser son entreprise de nettoyage en 5 étapes concrètes (2026)",
+    title: "Digitaliser sa société de nettoyage : 5 étapes 2026",
     excerpt: "Vous gérez encore sur Excel et WhatsApp ? La méthode en 5 étapes pour digitaliser sans casser votre activité, avec ROI et risques à éviter.",
     date: '20 mai 2026',
     readTime: '8 min',
@@ -2699,7 +2699,7 @@ Pour une TPE de 3-15 agents, comptez **6 à 10 semaines au total**. Pour une PME
   },
   {
     slug: 'societe-nettoyage-lyon',
-    title: 'Société de nettoyage à Lyon : marché, contraintes, comment se différencier en 2026',
+    title: 'Société de nettoyage à Lyon : marché 2026',
     excerpt: "Lyon est le 2e marché français du nettoyage B2B. Part-Dieu, pôle santé, biotech Gerland : prix marché, secteurs porteurs, différenciation.",
     date: '20 mai 2026',
     readTime: '8 min',
@@ -2793,7 +2793,7 @@ Gratuit pendant la bêta privée (30 places fondateurs, tarif privilégié à vi
   },
   {
     slug: 'societe-nettoyage-marseille',
-    title: 'Société de nettoyage à Marseille : marché PACA, secteurs porteurs, prix en 2026',
+    title: 'Société de nettoyage à Marseille : marché PACA 2026',
     excerpt: "Marseille : marché porté par Euroméditerranée, l'hôtellerie saisonnière, les copropriétés et le port. Prix marché, secteurs, pilotage.",
     date: '20 mai 2026',
     readTime: '7 min',
@@ -2887,7 +2887,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Marseille
   },
   {
     slug: 'societe-nettoyage-toulouse',
-    title: 'Société de nettoyage à Toulouse : marché aérospatial, prix, comment se positionner en 2026',
+    title: 'Société de nettoyage à Toulouse : aérospatial 2026',
     excerpt: "Toulouse : marché B2B porté par l'aérospatial (Airbus, ATR, Thales), le médical (CHU, oncopole) et la démographie. Prix et secteurs porteurs.",
     date: '20 mai 2026',
     readTime: '7 min',
@@ -2988,7 +2988,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Toulouse]
   },
   {
     slug: 'societe-nettoyage-lille',
-    title: "Société de nettoyage à Lille : Euralille, métropole Lille-Roubaix-Tourcoing, marché 2026",
+    title: "Société de nettoyage à Lille : marché 2026",
     excerpt: "Lille : marché B2B porté par Euralille, les sièges régionaux (Auchan, Decathlon, OVHcloud), le CHRU et l'étalement Lille-Roubaix-Tourcoing.",
     date: '20 mai 2026',
     readTime: '7 min',
@@ -3091,7 +3091,7 @@ Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Lille](/v
   },
   {
     slug: 'societe-nettoyage-nantes',
-    title: "Société de nettoyage à Nantes : marché, secteurs porteurs, prix en 2026",
+    title: "Société de nettoyage à Nantes : marché 2026",
     excerpt: "Nantes : portée par l'Île de Nantes (tertiaire), le CHU, l'agroalimentaire et la démographie. Marché B2B, prix indicatifs, pilotage.",
     date: '20 mai 2026',
     readTime: '7 min',

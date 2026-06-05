@@ -7,8 +7,8 @@ import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
 const URL = 'https://proprely.fr/comparatif-logiciel-nettoyage'
-const TITLE = 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely'
-const DESCRIPTION = "Comparatif complet des logiciels pour société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Fonctionnalités, prix, mobile, support FR — lequel choisir selon votre profil."
+const TITLE = 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely'
+const DESCRIPTION = "Comparatif des logiciels métier société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Critères et tarifs."
 
 type Tool = {
   name: string

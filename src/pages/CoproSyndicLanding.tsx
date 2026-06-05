@@ -9,8 +9,8 @@ import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 const URL = 'https://proprely.fr/logiciel-nettoyage-copropriete-syndic/'
-const TITLE = 'Logiciel nettoyage copropriété et syndic : PV automatique · Proprely'
-const DESCRIPTION = "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété : preuve de passage QR, PV automatique au syndic, reporting standardisé. Bêta gratuite."
+const TITLE = 'Logiciel nettoyage copropriété et syndic : PV auto · Proprely'
+const DESCRIPTION = "Logiciel pour société de nettoyage qui travaille avec des syndics : preuve de passage QR, PV automatique, facturation récurrente. Bêta gratuite."
 
 const syndicNeeds = [
   { icon: Camera, title: 'Preuve de passage standardisée', desc: "Les principaux syndics nationaux (Foncia, Citya, Nexity, Sergic, Loiselet & Daigremont) exigent désormais une preuve de passage formelle : QR code à l'entrée, photos avant-après des parties communes, signature du gardien si présent. Sans cela, contestations garanties." },

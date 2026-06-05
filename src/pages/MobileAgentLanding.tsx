@@ -9,8 +9,8 @@ import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 const URL = 'https://proprely.fr/application-mobile-agents-nettoyage/'
-const TITLE = "Application mobile agents nettoyage : sans app à installer · Proprely"
-const DESCRIPTION = "Application mobile pour agents de société de nettoyage : planning, pointage, preuve de passage. Aucune app à installer — simple lien web sur le téléphone. Bêta gratuite."
+const TITLE = "Application mobile agents nettoyage : sans app · Proprely"
+const DESCRIPTION = "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite."
 
 const benefits = [
   { icon: Zap, title: "Zéro installation, zéro mise à jour", desc: "L'agent ouvre un lien web depuis son téléphone, c'est tout. Pas d'application à télécharger sur Play Store ou App Store, pas de compte créer, pas de mises à jour à pousser. La version est toujours la dernière, sans intervention." },

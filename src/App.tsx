@@ -100,23 +100,23 @@ const META: Record<string, RouteMeta> = {
   },
   '/simulateur-rentabilite': {
     title: 'Simulateur rentabilité contrat nettoyage · Proprely',
-    description: "Calculez en 1 minute la marge brute d'un contrat de nettoyage : prix horaire vs coût horaire chargé, verdict instantané, recommandations.",
+    description: "Calculez en 1 minute la marge brute, marge nette et résultat horaire d'un contrat de nettoyage. Verdict immédiat, cibles par typologie.",
   },
   '/logiciel-societe-nettoyage': {
     title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
     description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
   },
   '/comparatif-logiciel-nettoyage': {
-    title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
-    description: "Comparatif complet des logiciels pour société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Fonctionnalités, prix, mobile, support FR — lequel choisir.",
+    title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
+    description: "Comparatif des logiciels métier société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Critères et tarifs.",
   },
   '/logiciel-auto-entrepreneur-nettoyage': {
-    title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
+    title: 'Logiciel auto-entrepreneur nettoyage : gérer seul · Proprely',
     description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Pour solo et indépendants.",
   },
   '/crm-entreprise-proprete': {
-    title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
-    description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française.",
+    title: 'CRM entreprise propreté : clients et prospects · Proprely',
+    description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte.",
   },
   '/a-propos': {
     title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
@@ -124,27 +124,27 @@ const META: Record<string, RouteMeta> = {
   },
   '/outils': {
     title: 'Outils gratuits pour société de nettoyage · Proprely',
-    description: "Calculateurs et simulateurs gratuits : prix au m², coût horaire chargé, marge de contrat, ROI dispersion. Pour dirigeants de sociétés de nettoyage B2B en France.",
+    description: "Calculateurs gratuits : prix au m², coût horaire chargé, marge contrat, ROI dispersion. Pour dirigeants société nettoyage B2B en France.",
   },
   '/calculateur-prix-nettoyage-m2': {
     title: 'Calculateur prix nettoyage bureaux au m² · Proprely',
     description: "Calculez le prix de nettoyage de bureaux au m² : surface, fréquence, zone géographique, type de local. Estimation honnête sans inscription.",
   },
   '/convention-collective-nettoyage': {
-    title: 'Logiciel conforme convention collective propreté IDCC 3043 · Proprely',
-    description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes. Bêta gratuite.",
+    title: 'Logiciel conforme convention collective IDCC 3043 · Proprely',
+    description: "Logiciel pour société de nettoyage conforme convention collective propreté IDCC 3043 : grille salaires 2026, heures, article 7. Bêta gratuite.",
   },
   '/logiciel-nettoyage-medical-bionettoyage': {
-    title: 'Logiciel nettoyage médical et bionettoyage : traçabilité IDCC 3043 · Proprely',
-    description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme convention collective IDCC 3043. Bêta gratuite.",
+    title: 'Logiciel nettoyage médical et bionettoyage 2026 · Proprely',
+    description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme IDCC 3043. Bêta gratuite.",
   },
   '/logiciel-nettoyage-copropriete-syndic': {
-    title: 'Logiciel nettoyage copropriété et syndic : PV automatique · Proprely',
-    description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété : preuve de passage QR, PV automatique au syndic, reporting standardisé. Bêta gratuite.",
+    title: 'Logiciel nettoyage copropriété et syndic : PV auto · Proprely',
+    description: "Logiciel pour société de nettoyage qui travaille avec des syndics : preuve de passage QR, PV automatique, facturation récurrente. Bêta gratuite.",
   },
   '/application-mobile-agents-nettoyage': {
-    title: "Application mobile agents nettoyage : sans app à installer · Proprely",
-    description: "Application mobile pour agents de société de nettoyage : planning, pointage, preuve de passage. Aucune app à installer — simple lien web sur le téléphone. Bêta gratuite.",
+    title: "Application mobile agents nettoyage : sans app · Proprely",
+    description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite.",
   },
 }
 

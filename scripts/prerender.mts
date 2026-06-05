@@ -161,9 +161,14 @@ function buildHtml(meta: PageMeta): string {
 
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, schemaScript)
 
+  // Image visible Googlebot pour TOUTES les pages prérendues : l'og-image
+  // figure systématiquement en tête du seo-fallback. Casse le statut
+  // "0 <img>" du site et donne à Google Images au moins une image par URL.
+  // Alt text adapté à la page via meta.ogTitle/ogDescription.
+  const fallbackImage = `<img src="${ORIGIN}/og-image.png" alt="${escapeAttr(ogTitle)} — Proprely, logiciel société de nettoyage B2B" width="1200" height="630" loading="lazy" decoding="async" />`
   html = html.replace(
     /<div class="seo-fallback" aria-hidden="true">[\s\S]*?<\/div>/,
-    `<div class="seo-fallback" aria-hidden="true">${meta.bodyHtml}</div>`
+    `<div class="seo-fallback" aria-hidden="true">${fallbackImage}${meta.bodyHtml}</div>`
   )
 
   return html
@@ -954,8 +959,8 @@ const conventionBody = `
 
 const conventionHtml = buildHtml({
   url: '/convention-collective-nettoyage',
-  title: 'Logiciel conforme convention collective propreté IDCC 3043 · Proprely',
-  description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes. Bêta gratuite.",
+  title: 'Logiciel conforme convention collective IDCC 3043 · Proprely',
+  description: "Logiciel pour société de nettoyage conforme convention collective propreté IDCC 3043 : grille salaires 2026, heures, article 7. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1043,8 +1048,8 @@ const medicalBody = `
 
 const medicalHtml = buildHtml({
   url: '/logiciel-nettoyage-medical-bionettoyage',
-  title: 'Logiciel nettoyage médical et bionettoyage : traçabilité IDCC 3043 · Proprely',
-  description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme convention collective IDCC 3043. Bêta gratuite.",
+  title: 'Logiciel nettoyage médical et bionettoyage 2026 · Proprely',
+  description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme IDCC 3043. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1126,8 +1131,8 @@ const coproBody = `
 
 const coproHtml = buildHtml({
   url: '/logiciel-nettoyage-copropriete-syndic',
-  title: 'Logiciel nettoyage copropriété et syndic : PV automatique · Proprely',
-  description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété : preuve de passage QR, PV automatique au syndic, reporting standardisé. Bêta gratuite.",
+  title: 'Logiciel nettoyage copropriété et syndic : PV auto · Proprely',
+  description: "Logiciel pour société de nettoyage qui travaille avec des syndics : preuve de passage QR, PV automatique, facturation récurrente. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1213,8 +1218,8 @@ const mobileBody = `
 
 const mobileHtml = buildHtml({
   url: '/application-mobile-agents-nettoyage',
-  title: "Application mobile agents nettoyage : sans app à installer · Proprely",
-  description: "Application mobile pour agents de société de nettoyage : planning, pointage, preuve de passage. Aucune app à installer — simple lien web sur le téléphone. Bêta gratuite.",
+  title: "Application mobile agents nettoyage : sans app · Proprely",
+  description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1623,32 +1628,63 @@ for (const r of resources) {
 }
 
 const vsExcelBody = `
-  <h1>Excel ou Proprely : à partir de quand changer ?</h1>
-  <p>Excel reste un excellent outil pour démarrer une société de nettoyage. À partir d'une certaine taille, il devient le frein principal à la croissance. Ce comparatif identifie précisément le moment où basculer, pourquoi, et comment migrer sans douleur.</p>
+  <h1>Proprely vs Excel : à partir de quand changer pour un logiciel métier ?</h1>
+  <p>Excel reste un excellent outil pour démarrer une société de nettoyage. Au-delà d'un seuil — typiquement 5 à 8 agents et 10 sites — il devient le frein principal à la croissance et coûte plus cher qu'une licence d'outil métier. Ce comparatif Proprely vs Excel identifie précisément le moment où basculer, pourquoi, et comment migrer sans douleur en moins de 2 semaines.</p>
+
   <h2>Quand Excel suffit encore</h2>
   <ul>
-    <li>Vous êtes seul à gérer (pas de back-office)</li>
+    <li>Vous êtes seul à gérer la société (pas de back-office, pas d'associé)</li>
     <li>Moins de 5 agents</li>
-    <li>Moins de 10 sites clients</li>
-    <li>Pas de preuve de passage formelle attendue</li>
-    <li>Pas de prestations récurrentes complexes</li>
+    <li>Moins de 10 sites clients récurrents</li>
+    <li>Pas de preuve de passage formelle attendue par vos clients</li>
+    <li>Pas de prestations récurrentes complexes (un seul type de prestation, fréquence standard)</li>
     <li>Pas d'enjeu de marge par client à suivre finement</li>
+    <li>Pas de contraintes réglementaires fortes (médical, agroalimentaire)</li>
   </ul>
-  <h2>Quand Excel devient le frein</h2>
+  <p>Dans ce cadre, nous proposons même des <a href="${ORIGIN}/ressources">modèles Excel gratuits téléchargeables</a> pour démarrer : devis, planning hebdomadaire, suivi des heures agents.</p>
+
+  <h2>Quand Excel devient le frein principal à la croissance</h2>
   <ul>
-    <li>Plus de 6 heures par semaine en admin dispersée</li>
+    <li>Plus de 6 heures par semaine perdues en administration dispersée (saisie, recherche, ressaisie entre fichiers)</li>
     <li>5 agents ou plus, sur 10 sites ou plus</li>
-    <li>Clients qui demandent des preuves de passage</li>
-    <li>Travail à 2+ personnes sur les mêmes fichiers</li>
-    <li>Erreurs de pointage ou de devis découvertes a posteriori</li>
-    <li>Plus de visibilité sur les contrats rentables</li>
-    <li>Documents difficiles à retrouver (contrat, attestation)</li>
-    <li>Agents qui oublient des passages</li>
+    <li>Clients (syndics, facility managers, gardiens) qui demandent une preuve de passage formelle avec photos et signature</li>
+    <li>Travail simultané à 2 personnes ou plus sur les mêmes fichiers (corruption, modifications écrasées)</li>
+    <li>Erreurs de pointage ou de devis découvertes a posteriori (formules cassées, lignes décalées, oublis)</li>
+    <li>Plus aucune visibilité sur quels contrats sont vraiment rentables</li>
+    <li>Documents administratifs difficiles à retrouver (contrat agent, attestation URSSAF, KBis client)</li>
+    <li>Agents qui oublient des passages sans qu'on s'en rende compte avant le client mécontent</li>
+    <li>Facturation manuelle des contrats récurrents qui prend 4 à 6 heures par mois</li>
   </ul>
-  <h2>Coût caché d'Excel</h2>
-  <p>Quand on additionne les heures perdues, les erreurs et les risques, Excel coûte plus cher qu'une licence d'outil métier. À 45 € de coût horaire dirigeant, 6 à 10 heures perdues par semaine représentent 12 600 à 21 000 € de coût caché par an.</p>
-  <h2>Migration en 2 semaines</h2>
-  <p>Jour 1 audit des fichiers · Jour 2 configuration de l'instance · Jour 3 premier planning et premier devis · Semaine 1 validation côté agents · Semaine 2 bascule complète. Pas de big bang, pas de double saisie pendant 3 mois.</p>
+
+  <h2>Coût caché d'Excel pour une société de nettoyage</h2>
+  <p>Quand on additionne les heures perdues en dispersion administrative, les erreurs de devis et de pointage, et les risques (perte de contrat faute de preuve de passage, redressement URSSAF sur les heures sup non majorées), Excel coûte plus cher qu'une licence d'outil métier. Estimation chiffrée : pour une société B2B nettoyage de 8 à 15 agents, à 45 € de coût horaire dirigeant chargé, 6 à 10 heures perdues par semaine représentent <strong>12 600 à 21 000 € de coût caché par an</strong> — sans compter les opportunités commerciales loupées par lenteur de devis ou les contrats perdus par sous-tarification invisible.</p>
+  <p>Mesurez votre coût réel avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI logiciel société de nettoyage</a>.</p>
+
+  <h2>Comparatif tableau : Proprely vs Excel sur 10 critères</h2>
+  <ul>
+    <li><strong>Coût</strong> : Excel = 0 € licence (Office 365 inclus le plus souvent) mais 12-21 k€/an de coût caché. Proprely = gratuit pendant la bêta privée, tarif fondateur à vie après</li>
+    <li><strong>Multi-utilisateur</strong> : Excel = collaboration fragile (corruption). Proprely = multi-utilisateur natif, droits par profil</li>
+    <li><strong>Mobile agents</strong> : Excel = inutilisable sur téléphone. Proprely = lien web personnel par agent, sans app à installer</li>
+    <li><strong>Preuve de passage</strong> : Excel = aucune. Proprely = QR + photos avant-après + signature + PV automatique</li>
+    <li><strong>Marge par client en temps réel</strong> : Excel = à compiler manuellement. Proprely = en surface dans le pilotage</li>
+    <li><strong>Facturation auto contrats récurrents</strong> : Excel = manuel chaque mois. Proprely = automatique</li>
+    <li><strong>Spécialités agents (vitrerie, bionettoyage)</strong> : Excel = colonne notée à la main. Proprely = filtre natif à l'affectation</li>
+    <li><strong>Alertes surmenage</strong> : Excel = aucune. Proprely = alerte automatique au dépassement de seuil</li>
+    <li><strong>RGPD et hébergement</strong> : Excel/OneDrive = OK. Proprely = hébergement européen, contrat de sous-traitance, export 1 clic</li>
+    <li><strong>Évolutivité</strong> : Excel = bloque à 8-10 agents. Proprely = jusqu'à 50+ agents sans dégradation</li>
+  </ul>
+
+  <h2>Migration Excel → Proprely en 2 semaines</h2>
+  <p>Jour 1 — audit de vos fichiers Excel actuels (clients, sites, agents, contrats, devis). Jour 2 — configuration de votre instance Proprely à partir de vos fichiers. Jour 3 — premier planning + premier devis sur Proprely. Semaine 1 — validation côté agents (chacun ouvre son lien web personnel, valide sa première mission). Semaine 2 — bascule complète : Proprely devient l'outil principal, Excel reste accessible en archive. Pas de big bang, pas de double saisie pendant 3 mois.</p>
+
+  <h2>Aller plus loin</h2>
+  <ul>
+    <li>Pour comparer avec d'autres logiciels métier société de nettoyage : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a></li>
+    <li>Pour mesurer votre ROI : <a href="${ORIGIN}/calculateur-roi">calculateur ROI logiciel société de nettoyage</a></li>
+    <li>Pour préparer la digitalisation : <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes">Digitaliser sa société de nettoyage : 5 étapes 2026</a></li>
+    <li>Modèles Excel gratuits pour démarrer : <a href="${ORIGIN}/ressources">devis, planning, suivi heures</a></li>
+    <li><a href="${ORIGIN}/beta">Candidater à la bêta Proprely</a> — gratuit, sans carte bancaire</li>
+  </ul>
 `.trim()
 
 const vsExcelFaqs = [
@@ -1924,30 +1960,43 @@ generated.push('/logiciel-societe-nettoyage')
 
 const comparatifBody = `
   <h1>Comparatif logiciels société de nettoyage 2026 : lequel choisir ?</h1>
-  <p>Comparatif factuel des principaux outils du marché : Proprely, Organilog, Progiclean, PROPRET, Synchroteam et Excel. 13 critères qui comptent au quotidien, 4 profils types avec recommandation explicite, 8 questions fréquentes.</p>
-  <h2>Les outils comparés</h2>
+  <p>Le comparatif des logiciels métier pour société de nettoyage en France en 2026 oppose trois familles : les SaaS verticaux nouvelle génération (Proprely), les logiciels métier historiques (PROPRET, Progiclean, Sevensoft, Maglia), les suites multi-métiers (Organilog, Synchroteam) et Excel. Le bon choix dépend de votre taille, votre mix client et votre niveau de digitalisation actuel.</p>
+  <h2>Réponse rapide selon votre profil</h2>
   <ul>
-    <li><strong>Proprely</strong> — SaaS vertical 2026, mobile-first, gratuit en bêta privée (3-50 agents)</li>
-    <li><strong>PROPRET</strong> — Logiciel métier historique (10+ ans), couverture large, app native (10-200 agents)</li>
-    <li><strong>Progiclean</strong> — Logiciel métier historique, UX dense (10-100 agents)</li>
-    <li><strong>Organilog</strong> — Field service générique (5-100 agents), pas spécifique propreté</li>
-    <li><strong>Synchroteam</strong> — Field service générique (5-100 agents), app native, non spécifique propreté</li>
-    <li><strong>Excel</strong> — Tableur généraliste, OK pour 1-8 agents en démarrage</li>
+    <li><strong>1 à 5 agents (démarrage solo ou TPE)</strong> — Excel + modèles Proprely gratuits suffisent. Voir nos <a href="${ORIGIN}/ressources">modèles de devis, planning et suivi des heures</a>.</li>
+    <li><strong>3 à 15 agents en structuration</strong> — Proprely (SaaS vertical moderne) : mobile-first sans app, marge par client, onboarding 30 min. <a href="${ORIGIN}/beta">Candidater à la bêta gratuite</a>.</li>
+    <li><strong>15 à 50 agents</strong> — Proprely pour l'agilité et la marge, ou PROPRET/Progiclean si vous avez besoin d'une couverture comptable intégrée.</li>
+    <li><strong>50+ agents avec besoins paie/GED avancés</strong> — ERP métier propreté (PROPRET, Progiclean, Sevensoft, Maglia) ou ERP généraliste (Sage, Cegid, Divalto).</li>
+    <li><strong>Multi-métiers (BTP + sécurité + nettoyage)</strong> — Organilog (couverture multi-secteurs) ; compromis : moins spécialisé propreté.</li>
+    <li><strong>Pour la facturation pure</strong> — Henrri ou Bizyness (puissants en facturation mais sans planning ni preuve de passage).</li>
   </ul>
-  <h2>Critères du comparatif</h2>
-  <p>Conçu propreté B2B, essai gratuit, planning drag-and-drop, devis intégré et signature électronique, preuve de passage native, marge par client en temps réel, application mobile agents, spécialités agents, hébergement européen RGPD, export libre, onboarding accompagné, support en français, tarif transparent.</p>
-  <h2>Recommandations par profil</h2>
+
+  <h2>Les outils comparés en 2026</h2>
   <ul>
-    <li>1-5 agents : Excel + modèles Proprely gratuits suffisent — <a href="${ORIGIN}/ressources">Voir les modèles</a></li>
-    <li>3-15 agents en structuration : Proprely (SaaS moderne) — <a href="${ORIGIN}/beta">Candidater à la bêta</a></li>
-    <li>15-50 agents : Proprely (agilité, marge) ou PROPRET/Progiclean (comptabilité)</li>
-    <li>50+ agents : ERP métier ou PROPRET/Progiclean entreprise</li>
+    <li><strong>Proprely</strong> — SaaS vertical 2026 conçu pour TPE/PME nettoyage B2B 3-50 agents, mobile-first sans app à installer, gratuit en bêta privée. Planning drag-and-drop, devis et facturation auto, preuve de passage native, marge par client en temps réel.</li>
+    <li><strong>PROPRET</strong> — Logiciel métier historique propreté (10+ ans). Couverture fonctionnelle large incluant paie et GED, UX dense, app mobile native, intégration par consultant. Cible PME/ETI 50+ agents. Tarif sur devis.</li>
+    <li><strong>Progiclean</strong> — Logiciel métier historique propreté. UX dense, setup 3-6 mois avec consultant intégrateur, packages 5-15 k€ + abonnement annuel. Cible PME/ETI 50+ agents.</li>
+    <li><strong>Sevensoft Propreté</strong> — Logiciel métier ETI propreté multi-établissements avec facturation métier complète. Setup 1-3 mois sur devis.</li>
+    <li><strong>Maglia</strong> — Logiciel métier ETI propreté multi-marchés avec reporting consolidé. Setup 1-3 mois sur devis.</li>
+    <li><strong>Organilog</strong> — Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Planning générique complet mais non spécifique propreté. ~25-40 €/utilisateur/mois.</li>
+    <li><strong>Synchroteam</strong> — Field service multi-secteurs avec géolocalisation, app mobile native. Non spécifique au nettoyage.</li>
+    <li><strong>Excel + WhatsApp + Word</strong> — Mix gratuit viable pour 1 à 5 agents en démarrage. Bloque la croissance dès 5-8 agents (6 à 10 h/semaine perdues en dispersion).</li>
   </ul>
-  <h2>Aller plus loin</h2>
+
+  <h2>13 critères qui comptent vraiment</h2>
+  <p>Pour comparer objectivement les logiciels métier société de nettoyage, vérifiez en démo : (1) conçu propreté B2B vs adapté propreté, (2) essai gratuit sans carte bancaire, (3) planning drag-and-drop avec affectation 1-clic, (4) devis intégré avec signature électronique, (5) facturation automatique des contrats récurrents, (6) preuve de passage native (QR + photos + signature), (7) marge par client en temps réel (pas dans un reporting compilé), (8) application mobile agents (idéalement lien web sans app à installer), (9) spécialités agents natives (vitrerie hauteur, décapage, bionettoyage), (10) hébergement européen et RGPD réel, (11) export 1 clic de toutes vos données, (12) onboarding rapide (< 1 journée pour les SaaS modernes, 1-6 mois pour les ERP), (13) tarif transparent et prévisible sans coût caché.</p>
+
+  <h2>Coût d'un logiciel métier société de nettoyage en 2026</h2>
+  <p>Les fourchettes du marché français : SaaS verticaux modernes 15 à 60 €/utilisateur/mois (Proprely : gratuit en bêta privée, tarif fondateur à vie après) ; ERP métier propreté 50 à 150 €/utilisateur/mois plus un setup facturé 5 à 15 k€ ; suites multi-métiers 25 à 50 €/utilisateur/mois ; logiciels de facturation pure 10 à 30 €/mois forfait. Méfiance des packages "tout compris" à 200 € flat — souvent très limités.</p>
+
+  <h2>5 tests à demander absolument en démo</h2>
+  <p>Pour qualifier un logiciel métier société de nettoyage avant de signer : (1) affecter un agent à un créneau en 1 clic, (2) voir l'écran mobile que verra réellement un agent sur son téléphone, (3) générer un PV de passage avec photos avant-après et signature, (4) consulter la marge brute en temps réel sur un client, (5) exporter l'intégralité de vos données en CSV. Si l'une des cinq actions prend plus de 30 secondes ou nécessite un "on vous montrera plus tard", cherchez ailleurs.</p>
+
+  <h2>Pour aller plus loin</h2>
   <ul>
-    <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a> · <a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a> · <a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a> · <a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
-    <li><a href="${ORIGIN}/tarifs">Tarifs Proprely</a> · <a href="${ORIGIN}/fonctionnalites">Toutes les fonctionnalités</a> · <a href="${ORIGIN}/logiciel-societe-nettoyage">Le guide complet</a></li>
-    <li>Méthode détaillée : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels nettoyage 2026 : grille de lecture honnête</a></li>
+    <li>Comparatifs détaillés un-à-un : <a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a> · <a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a> · <a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a> · <a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
+    <li>Méthode complète : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels métier nettoyage 2026 — lequel choisir ?</a> (article de référence sur les trois familles)</li>
+    <li>Aller plus loin : <a href="${ORIGIN}/tarifs">Tarifs Proprely</a> · <a href="${ORIGIN}/fonctionnalites">Toutes les fonctionnalités</a> · <a href="${ORIGIN}/logiciel-societe-nettoyage">Logiciel société de nettoyage : guide complet</a> · <a href="${ORIGIN}/calculateur-roi">Calculateur ROI logiciel société de nettoyage</a></li>
   </ul>
 `.trim()
 
@@ -1972,8 +2021,8 @@ const comparatifSoftwares: { name: string; description: string; url: string }[] 
 
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
-  title: 'Comparatif logiciels société de nettoyage 2026 : lequel choisir ? · Proprely',
-  description: "Comparatif honnête des logiciels société de nettoyage 2026 : Proprely, PROPRET, Progiclean, Organilog, Excel. Critères, tarifs, qui choisir.",
+  title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
+  description: "Comparatif des logiciels métier société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Critères et tarifs.",
   schemas: [
     webpageSchema(
       'Comparatif logiciel nettoyage 2026',
@@ -2014,20 +2063,32 @@ generated.push('/comparatif-logiciel-nettoyage')
 
 const autoEntrepreneurBody = `
   <h1>Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre</h1>
-  <p>Vous êtes auto-entrepreneur ou solo en nettoyage. Vous portez tout : devis, planning, facturation, relances. Proprely vous fait gagner 1 à 3 heures par semaine et vous donne l'image d'une vraie société pro.</p>
+  <p>Un logiciel métier pour auto-entrepreneur en nettoyage doit couvrir le minimum vital : devis professionnels à votre charte, signature électronique, planning visible sur téléphone, facturation automatique des contrats récurrents, suivi des heures pour votre comptable. Proprely fait tout ça gratuitement pendant la bêta privée, et vous récupérez 1 à 3 heures par semaine sur l'administration.</p>
+
   <h2>Le quotidien d'un auto-entrepreneur en nettoyage</h2>
-  <p>Quand vous êtes seul à porter votre activité, chaque heure passée en admin est une heure de moins en chantier ou en prospection.</p>
-  <h2>Ce que Proprely fait pour vous</h2>
+  <p>Quand vous êtes seul à porter votre activité, chaque heure passée en admin est une heure de moins en chantier ou en prospection. Les frictions récurrentes : devis sur Word qui prend 20 minutes par client, planning sur Excel qui se désynchronise dès le premier remplacement, factures à émettre manuellement chaque mois pour les contrats récurrents, relances de paiement oubliées, pas de preuve de passage formelle quand le client conteste une intervention.</p>
+
+  <h2>Ce que Proprely fait pour vous, concrètement</h2>
   <ul>
-    <li>Devis pro en 2 minutes avec signature électronique</li>
-    <li>Planning par semaine visible sur téléphone</li>
-    <li>Mobile sur le terrain avec preuve de passage</li>
-    <li>Conformité RGPD intégrée</li>
+    <li><strong>Devis pro en 2 minutes</strong> avec template à votre charte, signature électronique du client, suivi des relances automatiques à J+5 et J+10</li>
+    <li><strong>Planning par semaine</strong> visible sur votre téléphone et sur celui de vos sous-traitants éventuels — sans application à installer</li>
+    <li><strong>Facturation automatique des contrats récurrents</strong> : devis signé devient contrat, facture émise chaque mois, envoyée par e-mail, relances J+15 et J+30 si impayé</li>
+    <li><strong>Preuve de passage standardisée</strong> sur les sites où le client veut un suivi formel (QR + photos + signature)</li>
+    <li><strong>Suivi des heures pour le comptable</strong> exportable en CSV à tout moment, prêt pour Pennylane, Sage ou tout autre outil compta</li>
+    <li><strong>Conformité RGPD intégrée</strong> avec hébergement européen et chiffrement</li>
   </ul>
-  <h2>Avant / Après</h2>
-  <p>Avant : 5-6h d'admin par semaine. Avec Proprely : 1h30. À 30 €/heure réel, c'est 600 €/mois récupérés.</p>
-  <h2>Gratuit pendant la bêta</h2>
-  <p>30 places fondateurs incluant des auto-entrepreneurs. <a href="${ORIGIN}/beta">Candidater à la bêta</a>. Voir aussi nos <a href="${ORIGIN}/ressources">modèles gratuits</a>.</p>
+
+  <h2>Avant / Après : le gain concret</h2>
+  <p>Avant Proprely (mix Word + Excel + WhatsApp + Gmail) : 5 à 6 heures d'admin par semaine pour 8 à 12 clients. Avec Proprely : 1 h 30 par semaine. Sur un an, à 30 €/heure réelle de votre temps, c'est <strong>environ 600 € par mois récupérés</strong> en pratique — du temps qui peut être consacré à la prospection ou aux chantiers facturables.</p>
+
+  <h2>Faut-il un logiciel quand on a 2-3 clients ?</h2>
+  <p>Probablement non. En dessous de 5 clients récurrents, un template Word pour les devis + Excel pour le planning suffit. Voir nos <a href="${ORIGIN}/ressources">modèles gratuits téléchargeables</a>. Dès que vous dépassez 5 clients récurrents ou commencez à perdre du temps à chercher l'info, basculer vers un logiciel métier vous récupère du temps immédiatement.</p>
+
+  <h2>Quand vous embauchez votre premier salarié</h2>
+  <p>Proprely bascule sans rupture du mode solo au mode multi-agents : vos données restent, vous ajoutez les profils des agents, ils accèdent à leur planning depuis leur téléphone via un lien web personnel — toujours sans application à installer. C'est exactement la même interface qu'en solo, juste avec plus de monde.</p>
+
+  <h2>Gratuit pendant la bêta privée</h2>
+  <p>30 places fondateurs incluant des auto-entrepreneurs et solo. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire demandée, onboarding 30 minutes avec le fondateur. <a href="${ORIGIN}/beta">Candidater à la bêta</a> ou voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a> pour comparer avec les alternatives (Henrri, Bizyness, Organilog).</p>
 `.trim()
 
 const autoEntrepreneurFaqs = [
@@ -2042,8 +2103,8 @@ const autoEntrepreneurFaqs = [
 
 const autoEntrepreneurHtml = buildHtml({
   url: '/logiciel-auto-entrepreneur-nettoyage',
-  title: 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely',
-  description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Conçu pour les indépendants qui démarrent ou solo établis.",
+  title: 'Logiciel auto-entrepreneur nettoyage : gérer seul · Proprely',
+  description: "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Pour solo et indépendants.",
   schemas: [
     webpageSchema(
       'Logiciel auto-entrepreneur nettoyage',
@@ -2063,29 +2124,40 @@ generated.push('/logiciel-auto-entrepreneur-nettoyage')
 
 const crmBody = `
   <h1>CRM entreprise propreté : suivez clients, sites et prospects</h1>
-  <p>Un CRM pensé pour la réalité d'une société de nettoyage B2B : un compte client = plusieurs sites avec fréquences distinctes, pipeline devis avec relances auto, lien direct prospect → planning agents → marge réelle.</p>
-  <h2>Pourquoi HubSpot ou Salesforce ne suffit pas</h2>
-  <p>Les CRM généralistes sont d'excellents outils pour la vente complexe. La propreté B2B a des spécificités qu'ils ne couvrent pas :</p>
+  <p>Un CRM pour entreprise de propreté doit gérer une spécificité fondamentale : un client = plusieurs sites avec des fréquences distinctes. Les CRM généralistes (HubSpot, Salesforce, Pipedrive) ne couvrent pas ce modèle. Proprely intègre nativement comptes + sites multiples + pipeline devis + planning agents + marge par client en temps réel — dans un seul cockpit, gratuit pendant la bêta privée.</p>
+
+  <h2>Pourquoi HubSpot ou Salesforce ne suffit pas en propreté B2B</h2>
+  <p>Les CRM généralistes sont d'excellents outils pour la vente complexe SaaS ou B2B industrielle (cycles 6-12 mois, équipes commerciales étoffées). La propreté B2B a des spécificités qu'ils ne couvrent pas natively :</p>
   <ul>
-    <li>Pas de notion native de site client (un client = plusieurs sites)</li>
-    <li>Pas de catalogue prestations propreté</li>
-    <li>Pas de lien automatique entre prospect signé et planning agents</li>
-    <li>Pas de visibilité sur la marge par client en temps réel</li>
-    <li>Onboarding lourd et tarif élevé (40-80 €/utilisateur/mois minimum)</li>
+    <li><strong>Pas de notion native de site client</strong> — un client de nettoyage a souvent 5 à 50 sites avec adresses, codes d'accès, gardiens, fréquences et protocoles distincts. Les CRM généralistes obligent à dupliquer le compte ou bricoler avec des champs custom</li>
+    <li><strong>Pas de catalogue prestations propreté</strong> — vous devez recréer vitrerie hauteur, moquette, décapage, bionettoyage et leurs tarifs à la main, dans chaque devis</li>
+    <li><strong>Pas de lien automatique prospect → planning agents</strong> — quand vous gagnez un contrat, vous ressaisissez tout dans Excel ou un outil planning séparé</li>
+    <li><strong>Pas de visibilité sur la marge par client en temps réel</strong> — vous suivez le CA, pas la rentabilité réelle qui dépend des heures effectivement passées</li>
+    <li><strong>Onboarding lourd et tarif élevé</strong> — 40 à 80 €/utilisateur/mois minimum, 200 €+ pour Salesforce, sans compter le setup de plusieurs jours/semaines</li>
   </ul>
-  <h2>Le CRM Proprely</h2>
+
+  <h2>Le CRM intégré Proprely : ce qu'il fait</h2>
   <ul>
-    <li>Comptes clients + sites multiples avec contacts par fonction</li>
-    <li>Pipeline prospects et devis avec relances auto J+5 et J+10</li>
-    <li>Contacts par site (directeur, facility manager, gardien, syndic)</li>
-    <li>Historique des appels, mails, RDV</li>
-    <li>Devis et catalogue prestations propreté pré-configuré</li>
-    <li>Marge par client en temps réel</li>
+    <li><strong>Comptes clients + sites multiples</strong> avec contacts par fonction (DG, facility manager, gardien, syndic, comptabilité)</li>
+    <li><strong>Pipeline prospects et devis</strong> avec relances automatiques à J+5 et J+10 si le devis n'est pas signé</li>
+    <li><strong>Historique des interactions</strong> par compte : appels, e-mails, RDV, devis envoyés, contrats signés</li>
+    <li><strong>Catalogue prestations propreté pré-configuré</strong> : vitrerie, moquette, décapage, bionettoyage, remise en état post-chantier, avec tarification par fréquence</li>
+    <li><strong>Conversion prospect → client en 1 clic</strong> — le prospect signé alimente automatiquement le planning des agents et le contrat de facturation récurrent</li>
+    <li><strong>Marge par client en temps réel</strong> — visible sur l'écran de pilotage, basée sur les heures réellement passées (pas une projection théorique)</li>
+    <li><strong>Alertes commerciales</strong> — contrat expirant dans 60 jours, marge en baisse, client non visité depuis 6 mois</li>
   </ul>
-  <h2>Tout connecté</h2>
-  <p>Un prospect signé devient un client avec ses sites en 1 clic. Les sites alimentent le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning des agents</a>. Voir aussi le <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">module devis</a>.</p>
-  <h2>Gratuit en bêta privée</h2>
-  <p>30 places fondateurs, tarif fondateur à vie. <a href="${ORIGIN}/beta">Candidater à la bêta</a>.</p>
+
+  <h2>Tout connecté dans un seul écran</h2>
+  <p>L'avantage d'un cockpit unifié vs un CRM séparé : un prospect signé devient un client avec ses sites en 1 clic. Les sites alimentent automatiquement le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning des agents</a>. Les missions validées génèrent le PV de passage automatique. La facturation récurrente part chaque mois sans intervention manuelle (voir le <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">module devis et facturation auto</a>). La marge par client se calcule en temps réel sur les heures réellement passées. Aucune ressaisie, aucune perte d'information entre les étapes.</p>
+
+  <h2>Profils de sociétés concernées</h2>
+  <p>Le CRM Proprely couvre les besoins typiques d'une société de nettoyage B2B de 3 à 50 agents avec 10 à 150 sites clients : prestataires multi-sites pour syndics de copropriété, sociétés intervenant sur bureaux tertiaires, cabinets médicaux, hôtellerie, retail. Au-delà de 50 agents avec besoins commerciaux structurés (commerciaux dédiés, comptes-clés stratégiques), un CRM dédié type HubSpot Sales Hub couplé à un ERP métier reste plus adapté.</p>
+
+  <h2>Coût et alternatives</h2>
+  <p>Tarifs CRM 2026 pour entreprise de propreté : Proprely gratuit pendant la bêta privée (tarif fondateur à vie après) ; HubSpot Starter 20 €/utilisateur/mois (mais sans la spécificité propreté) ; Pipedrive 15-30 €/utilisateur/mois (idem) ; Salesforce Essentials 25 €+/utilisateur/mois (idem, et setup lourd). Pour une comparaison plus large des logiciels métier société de nettoyage, voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a>.</p>
+
+  <h2>Gratuit pendant la bêta privée</h2>
+  <p>30 places fondateurs, tarif fondateur conservé à vie après le lancement public. Onboarding 30 min avec le fondateur : import de vos comptes clients + sites + contacts, configuration du catalogue prestations, et vous êtes opérationnel. <a href="${ORIGIN}/beta">Candidater à la bêta</a> ou voir <a href="${ORIGIN}/logiciel-societe-nettoyage">le guide complet logiciel société de nettoyage</a>.</p>
 `.trim()
 
 const crmFaqs = [
@@ -2100,8 +2172,8 @@ const crmFaqs = [
 
 const crmHtml = buildHtml({
   url: '/crm-entreprise-proprete',
-  title: 'CRM entreprise propreté : suivez clients et prospects · Proprely',
-  description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française.",
+  title: 'CRM entreprise propreté : clients et prospects · Proprely',
+  description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte.",
   schemas: [
     webpageSchema(
       'CRM entreprise propreté Proprely',
