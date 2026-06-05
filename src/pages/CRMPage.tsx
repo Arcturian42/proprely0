@@ -7,8 +7,8 @@ import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
 const URL = 'https://proprely.fr/crm-entreprise-proprete'
-const TITLE = 'CRM entreprise propreté : suivez clients et prospects · Proprely'
-const DESCRIPTION = "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte. Conçu pour la propreté B2B française."
+const TITLE = 'CRM entreprise propreté : clients et prospects · Proprely'
+const DESCRIPTION = "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte."
 
 const limitsOfGenericCRM = [
   "HubSpot et Salesforce sont pensés pour le SaaS et la vente complexe : trop puissants, trop coûteux, sans logique métier propreté",

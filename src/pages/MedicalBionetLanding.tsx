@@ -9,8 +9,8 @@ import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 const URL = 'https://proprely.fr/logiciel-nettoyage-medical-bionettoyage/'
-const TITLE = 'Logiciel nettoyage médical et bionettoyage : traçabilité IDCC 3043 · Proprely'
-const DESCRIPTION = "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme convention collective IDCC 3043. Bêta gratuite."
+const TITLE = 'Logiciel nettoyage médical et bionettoyage 2026 · Proprely'
+const DESCRIPTION = "Logiciel pour société de bionettoyage médical : protocoles, traçabilité produits CMR, PV automatique. Conforme IDCC 3043. Bêta gratuite."
 
 const obligations = [
   { icon: ShieldCheck, title: 'Protocoles bionettoyage tracés', desc: "Chaque site médical (cabinet, clinique, laboratoire) a sa fiche protocole : produits agréés, ordre des zones (sol → mobilier → sanitaires), temps de contact, fréquence. Les agents consultent le protocole sur leur téléphone avant d'intervenir." },

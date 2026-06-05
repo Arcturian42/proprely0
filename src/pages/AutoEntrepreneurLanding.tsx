@@ -8,8 +8,8 @@ import Link from '../components/Link'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 
 const URL = 'https://proprely.fr/logiciel-auto-entrepreneur-nettoyage'
-const TITLE = 'Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre · Proprely'
-const DESCRIPTION = "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Conçu pour les indépendants qui démarrent ou solo établis."
+const TITLE = 'Logiciel auto-entrepreneur nettoyage : gérer seul · Proprely'
+const DESCRIPTION = "Logiciel pour auto-entrepreneur en nettoyage : devis, clients, planning, facturation, suivi heures. Pour solo et indépendants."
 
 const challenges = [
   "Vous êtes seul à tout porter : devis, planning, facturation, relances, paie",
