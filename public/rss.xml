@@ -6,7 +6,15 @@
     <atom:link href="https://proprely.fr/rss.xml" rel="self" type="application/rss+xml" />
     <description>Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage B2B. Productivité, RGPD, outils, prix, fidélisation.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Sat, 30 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Devis nettoyage par IA : 9 facteurs pour scaler en 2026</title>
+      <link>https://proprely.fr/blog/devis-nettoyage-intelligent-ia</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/devis-nettoyage-intelligent-ia</guid>
+      <description>Premier module de devis IA pour société de nettoyage : 9 facteurs croisés, 3 scénarios (marge, gagner, upsell). Pour scaler votre société.</description>
+      <category>Outils</category>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Coût horaire chargé agent nettoyage : calcul 2026</title>
       <link>https://proprely.fr/blog/cout-horaire-charge-agent-nettoyage</link>

@@ -119,7 +119,7 @@ export const features: FeaturePage[] = [
       { q: "Quelle est la différence avec un logiciel comptable comme Pennylane ?", a: "Proprely gère l'avant-vente (catalogue, devis, signature, contrats) et la facturation métier (récurrente, depuis le bon d'intervention). Pennylane gère la compta (lettrage, déclarations TVA, bilans). Les deux se complètent via une connexion native qui pousse vos factures dans Pennylane." },
     ],
     relatedSlugs: ['planning-nettoyage', 'gestion-agents-nettoyage'],
-    relatedBlogSlugs: ['fixer-prix-nettoyage', 'logiciel-societe-nettoyage-criteres', 'comparatif-logiciels-nettoyage-2026'],
+    relatedBlogSlugs: ['fixer-prix-nettoyage', 'logiciel-societe-nettoyage-criteres', 'comparatif-logiciels-nettoyage-2026', 'devis-nettoyage-intelligent-ia'],
   },
   {
     slug: 'gestion-agents-nettoyage',

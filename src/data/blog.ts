@@ -1193,7 +1193,7 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
       { q: "Mes agents doivent-ils installer une application ?", a: "Idéalement non. Les meilleurs outils 2026 (Proprely en particulier) fonctionnent via un lien web ouvert dans le navigateur du téléphone de l'agent. Pas d'app à installer, pas de formation, pas de blocage Android/iOS. Si un outil exige une app native, vérifiez l'expérience réelle sur 4G dégradée." },
       { q: "Quels critères vérifier en démo ?", a: "Demandez à voir : (1) l'affectation d'un agent en 1 clic, (2) l'écran mobile que verra l'agent, (3) la génération d'un PV de passage avec photos, (4) la marge en temps réel sur un client donné, (5) l'export complet de vos données, (6) la génération automatique d'une facture depuis un contrat récurrent. Si l'un des six prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', méfiance." },
     ],
-    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils'],
+    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils', 'devis-nettoyage-intelligent-ia'],
     content: `## Le marché des logiciels nettoyage en 2026
 
 La propreté B2B française compte plus de 15 000 sociétés. Le marché des logiciels qui leur sont destinés a explosé depuis 2022, mais reste **structuré en trois familles** très différentes.
@@ -3189,6 +3189,150 @@ Pour une **TPE/PME B2B nantaise (3-50 agents)**, un cockpit unifié devient stra
 
 Gratuit pendant la bêta privée. [Candidater](/beta) ou voir la [page Nantes](/villes/nantes).`,
   },
+  {
+    slug: 'devis-nettoyage-intelligent-ia',
+    title: "Devis nettoyage par IA : 9 facteurs pour scaler en 2026",
+    excerpt: "Premier module de devis IA pour société de nettoyage : 9 facteurs croisés, 3 scénarios (marge, gagner, upsell). Pour scaler votre société.",
+    date: '5 juin 2026',
+    readTime: '10 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Premier module de devis intelligent par IA pour société de nettoyage en France, intégré à Proprely.",
+      "9 facteurs croisés automatiquement : prix marché local, disponibilités calendrier, avis et crédibilité, profil client, consommables, location machines, masse salariale, frais de structure, budget marketing.",
+      "3 scénarios générés à chaque devis : marge protégée, gagner le contrat, upsell maximisé.",
+      "L'IA détecte automatiquement les opportunités d'upsell (autres bureaux, autres prestations, contrats croisés).",
+      "Bénéfice clé : devis qui rendent votre société viable et scalable, pas juste rentable. Moins de temps en décision, plus de temps en prospection.",
+      "Disponible dans la bêta privée Proprely (gratuit pour les 30 sociétés fondatrices).",
+    ],
+    faq: [
+      { q: "Quel logiciel de devis intelligent par IA pour société de nettoyage existe en 2026 ?", a: "Proprely propose le premier module de devis intelligent par IA pour société de nettoyage en France. Contrairement aux logiciels de devis classiques (Henrri, Bizyness, Maglia) qui se contentent de remplir un template à partir de votre catalogue, l'IA de Proprely croise 9 facteurs en temps réel pour calculer le devis optimal : prix marché local, disponibilités dans votre calendrier, avis clients (crédibilité prestataire), profil estimé du client, coûts directs (consommables, machines, sous-traitants/salariés), frais de structure et budget marketing. Le résultat : un devis qui rend votre société viable et scalable, pas seulement rentable." },
+      { q: "Comment l'IA peut-elle calculer un devis nettoyage à votre place ?", a: "L'IA ne remplace pas votre décision finale : elle propose le devis le plus probablement optimal à partir des données réelles de votre activité et du marché. Concrètement : elle interroge la grille de prix marché local (Paris/IDF, métropoles, villes moyennes, rural), vérifie vos disponibilités calendrier (un agenda plein justifie un premium), pondère par votre profil prestataire (nombre d'avis, ancienneté, spécialités), estime le profil du client cible (type de site, taille, capacité de paiement), et soustrait votre coût total réel (consommables, machines, masse salariale, frais fixes, marketing). Vous voyez 3 scénarios, vous choisissez, vous ajustez si besoin, vous envoyez en 2 minutes." },
+      { q: "Quels facteurs un devis intelligent prend-il en compte ?", a: "Le module de devis IA Proprely croise 9 facteurs : (1) prix marché local par typologie (bureaux, médical, hôtellerie, industriel), (2) disponibilités dans votre calendrier (rareté = premium), (3) nombre d'avis clients et ancienneté (crédibilité prestataire), (4) profil estimé du client cible (type, taille, secteur), (5) prix des consommables (produits, équipements), (6) coût de location ou amortissement des machines (autolaveuses, monobrosses, aspirateurs industriels), (7) masse salariale et coût horaire chargé (CDI/CDD, sous-traitants, intérimaires), (8) quote-part frais de structure (locaux, comptable, logiciels, véhicules, encadrement), (9) budget acquisition (ads, marketing, commercial). C'est la première fois que ces 9 dimensions sont croisées par un algorithme dans un logiciel métier nettoyage français." },
+      { q: "Quelle différence entre un devis IA et un logiciel de devis classique ?", a: "Un logiciel de devis classique (Henrri, Bizyness, le module devis d'un ERP métier comme PROPRET ou Progiclean) fait du remplissage de template : vous saisissez la surface, vous choisissez les prestations dans votre catalogue, le système calcule prix = surface × tarif × fréquence. C'est rapide mais ça ne tient pas compte du marché, ni de vos disponibilités, ni de votre coût réel global. Un devis IA fait du calcul d'optimisation multi-variables : il croise vos coûts directs ET vos coûts indirects (structure, marketing, ROI commercial) avec le marché et les signaux du client, pour proposer le prix qui maximise votre probabilité de gagner le contrat à la marge cible que vous avez définie." },
+      { q: "Quels sont les 3 scénarios générés par le devis IA Proprely ?", a: "Trois scénarios par devis : (1) Marge protégée : le prix qui sécurise votre marge nette cible (typiquement 15-20 %) sans concession sur la rentabilité. À utiliser quand vous êtes en pleine charge et que vous pouvez vous permettre de perdre le contrat. (2) Gagner le contrat : un prix plus agressif qui maximise la probabilité statistique de signature, en intégrant les opportunités secondaires détectées (autres bureaux du même client, prestations annexes potentielles, références futures). À utiliser quand vous avez de la capacité et que ce client est stratégique. (3) Upsell maximisé : le devis principal au prix marché + 2 à 5 propositions d'upsell détaillées (vitrerie hauteur trimestrielle, remise en état semestrielle, bionettoyage si médical, contrat consommables). À utiliser quand vous voulez ancrer une relation premium dès le départ." },
+      { q: "Le devis IA fonctionne-t-il pour tous les types de prestations ?", a: "Oui pour les prestations récurrentes courantes : bureaux tertiaires, copropriétés, hôtellerie, retail, cabinets médicaux (avec bionettoyage), industriel léger, logistique. Pour les prestations très spécialisées (salles propres ISO classe 7-8, décontamination amiante, nettoyage post-sinistre, événementiel premium), l'IA fournit une estimation de base mais l'expertise humaine reste indispensable pour finaliser. Le module détecte automatiquement ces cas et propose une revue manuelle." },
+      { q: "L'IA peut-elle remplacer complètement ma propre estimation ?", a: "Non, et ce n'est pas l'objectif. L'IA propose le devis le plus probablement optimal à partir des données, mais vous gardez la décision finale et pouvez ajuster chaque ligne. L'objectif est de vous faire passer de 20-30 minutes par devis (Word + Excel + estimations mentales) à 2-3 minutes de validation/ajustement, tout en sécurisant votre marge. Vous restez le pilote ; l'IA est le copilote qui vous évite de partir à 100 €/h alors que le marché est à 65 €/h, ou inversement de facturer 45 €/h sur un site médical qui justifierait 80 €/h." },
+      { q: "Comment le devis IA détecte-t-il les opportunités d'upsell ?", a: "L'IA analyse trois signaux : (1) le profil client (un client multi-sites a probablement d'autres bureaux à confier, un cabinet médical seul a souvent des locaux annexes), (2) l'historique sectoriel (un syndic qui achète du quotidien sous-traite souvent vitrerie et remise en état semestrielle ailleurs), (3) les prestations annexes pertinentes pour le type de site (vitrerie hauteur sur tertiaire >3 étages, bionettoyage sur médical, traitement sols sur retail). Chaque upsell est proposé avec sa probabilité d'acceptation estimée et son impact sur la marge totale du compte." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'comparatif-logiciels-nettoyage-2026', 'tarif-nettoyage-bureaux-m2-2026'],
+    content: `## Pourquoi 60 % des devis nettoyage sont mal calibrés en 2026
+
+Les retours terrain de la branche propreté française indiquent que 60 % environ des sociétés de nettoyage B2B facturent leurs contrats à un prix sous-optimal — souvent trop bas, parfois trop haut pour le segment ciblé. Le problème ne vient pas du manque de méthode : il vient de la **charge cognitive** que représente un calcul de devis honnête.
+
+Pour bien chiffrer un contrat, il faut croiser au minimum 9 dimensions : prix marché local, disponibilités calendrier, votre crédibilité prestataire, profil du client, consommables, location ou amortissement machines, masse salariale chargée, frais de structure, budget marketing. Aucun cerveau humain ne peut croiser ces 9 dimensions en moins de 30 minutes sur Excel, à chaque devis. Résultat : on prend des raccourcis, on copie le devis précédent, on tente une fourchette intuitive — et la marge réelle finit aléatoire.
+
+C'est précisément ce que **Proprely vient résoudre avec le premier module de devis intelligent par IA dédié aux sociétés de nettoyage**, disponible dans la bêta privée.
+
+## Ce que fait un devis intelligent par IA, en pratique
+
+Le module croise automatiquement 9 facteurs en quelques secondes et produit un devis optimisé. Voici les 9 dimensions qu'il intègre, regroupées en 4 blocs.
+
+### Bloc 1 — Marché et timing
+
+- **Prix marché local** : la grille référence 2026 par typologie (bureaux 0,40-0,80 €/m²/mois, médical 0,80-1,20, hôtellerie variable, industriel) et par zone (Paris/IDF, métropoles, villes moyennes, rural) est interrogée pour situer le devis dans la fourchette du marché réel.
+- **Disponibilités dans votre calendrier** : un agenda chargé justifie un premium ; un agenda creux pousse vers un prix plus compétitif. L'IA lit votre planning Proprely et ajuste.
+
+### Bloc 2 — Votre crédibilité et le profil client
+
+- **Nombre d'avis clients et ancienneté** : un prestataire avec 25 avis positifs et 4 ans d'ancienneté peut justifier +10-15 % vs un nouvel entrant.
+- **Profil estimé du client** : taille, secteur, capacité de paiement, signaux de premium (siège social vs site secondaire, marque grand public, exigences ESG annoncées) — l'IA infère ces signaux à partir des informations fournies à la prise de brief.
+
+### Bloc 3 — Vos coûts directs réels
+
+- **Consommables** : produits détergents/désinfectants, équipements EPI, papier-essuie, sacs poubelle. Proprely connaît votre catalogue de consommables et leurs prix négociés.
+- **Location ou amortissement machines** : autolaveuses, monobrosses, aspirateurs industriels. L'IA répartit le coût mensuel sur les contrats actifs.
+- **Masse salariale chargée** : coût horaire réel des agents affectés (CDI/CDD/intérim), majorations IDCC 3043 (nuit +20 %, dimanche +100 %, jours fériés +100 %, heures complémentaires +10/25 %).
+
+### Bloc 4 — Frais de structure et acquisition
+
+- **Quote-part frais de structure** : locaux, comptable, logiciels, véhicules, encadrement, formation. Typiquement 8-15 % du CA pour une PME B2B nettoyage.
+- **Budget acquisition** : coûts marketing (ads, référencement, commercial), souvent oubliés dans les devis traditionnels. Une part proportionnelle de votre budget acquisition mensuel est imputée au contrat pour refléter son coût réel total.
+
+C'est la **première fois que ces 9 dimensions sont croisées par un algorithme dans un logiciel métier nettoyage** sur le marché français.
+
+## Les 3 scénarios générés automatiquement
+
+À chaque devis, l'IA propose 3 scénarios distincts, chacun optimisé pour un objectif différent.
+
+### Scénario 1 — Marge protégée
+
+Le prix qui sécurise votre marge nette cible (typiquement 15-20 % en B2B nettoyage), sans concession sur la rentabilité. À utiliser quand vous êtes en pleine charge et que vous pouvez vous permettre de perdre le contrat. C'est aussi votre **prix plancher** de référence pour toute négociation ultérieure.
+
+### Scénario 2 — Gagner le contrat
+
+Un prix plus agressif qui maximise la probabilité statistique de signature, **en intégrant les opportunités secondaires** détectées par l'IA : autres bureaux du même client, prestations annexes potentielles, références sectorielles futures. Le calcul valorise ces opportunités au prorata de leur probabilité, ce qui justifie un prix d'entrée plus bas tout en restant viable sur le LTV (lifetime value) du client.
+
+À utiliser quand vous avez de la capacité disponible et que ce client est stratégique (gros logo de référence, secteur dans lequel vous voulez vous développer, multi-sites confirmé).
+
+### Scénario 3 — Upsell maximisé
+
+Le devis principal au prix marché + **2 à 5 propositions d'upsell détaillées et chiffrées** : vitrerie hauteur trimestrielle, remise en état semestrielle, bionettoyage si médical, contrat consommables, traitement sols. Chaque upsell est proposé avec sa probabilité d'acceptation estimée par l'IA et son impact sur la marge totale annualisée du compte.
+
+À utiliser quand vous voulez ancrer une **relation premium** dès le départ, ou quand le profil client (multi-sites, multi-prestations) le justifie.
+
+## Comment l'IA détecte les opportunités d'upsell automatiquement
+
+Trois signaux sont analysés en temps réel pour proposer les upsells les plus pertinents :
+
+1. **Profil client** : un client multi-sites a probablement d'autres bureaux à confier. Un cabinet médical seul a souvent des locaux annexes (salle d'attente premium, salle de stockage, archives). Un syndic gestionnaire de 30 immeubles est candidat à un contrat-cadre standardisé.
+2. **Historique sectoriel** : la base de connaissance interne sait qu'un syndic qui achète du quotidien sous-traite souvent vitrerie et remise en état semestrielle ailleurs ; qu'un hôtel 4 étoiles facture en plus le nettoyage de fin de séjour et la blanchisserie ; qu'un cabinet médical premium externalise souvent la gestion des déchets DASRI.
+3. **Type de site** : vitrerie hauteur sur tertiaire >3 étages, bionettoyage sur médical, traitement sols sur retail, désinfection trimestrielle sur restauration.
+
+Chaque upsell est proposé avec sa probabilité d'acceptation estimée et son impact net sur la marge.
+
+## Différenciation par rapport aux outils existants du marché
+
+| Outil | Modèle de devis | Intelligence | Limites |
+| ----- | --------------- | ------------ | ------- |
+| Excel + Word | Saisie 100 % manuelle | Aucune | 20-30 min par devis, marge aléatoire |
+| Henrri / Bizyness | Template + catalogue | Aucune | Rapide mais aucun croisement coûts/marché |
+| PROPRET / Progiclean | Catalogue métier + grille | Statique | Bonne couverture mais pas d'optimisation IA |
+| Sevensoft / Maglia | Catalogue métier ETI | Statique | Setup 1-3 mois, pas d'IA |
+| Organilog | Catalogue multi-métiers | Statique | Pas spécifique propreté |
+| **Proprely (devis IA)** | **Catalogue + 9 facteurs croisés par IA** | **3 scénarios générés** | **Bêta privée, gratuit** |
+
+Pour une vue d'ensemble du marché, voir le [comparatif logiciels métier nettoyage 2026](/blog/comparatif-logiciels-nettoyage-2026).
+
+## Ce que ça vous fait gagner concrètement
+
+### Temps
+
+De 20-30 minutes par devis (Word + Excel + estimations mentales) à **2-3 minutes de validation/ajustement** des propositions IA. Sur 10 devis par mois, c'est 3 à 4 heures récupérées chaque mois — sans compter le temps mental économisé.
+
+### Marge
+
+Une étude interne de la bêta (premiers retours sociétés fondatrices) suggère une **amélioration de marge nette de 2 à 5 points** par rapport à la facturation traditionnelle, simplement en évitant les sous-tarifications systématiques (le piège le plus fréquent : oublier d'imputer la quote-part frais de structure et marketing).
+
+### Scalabilité
+
+C'est le point le plus important. Une PME qui facture à la marge cible **chaque** contrat, sans exception, peut se permettre de croître. Une PME qui facture aléatoirement (3 contrats rentables, 4 limites, 3 en perte) plafonne à sa taille actuelle parce que chaque embauche fragilise la trésorerie. Le devis IA Proprely vous fait passer du second modèle au premier — c'est ce qui rend la société **viable ET scalable**, pas seulement rentable.
+
+### Charge mentale
+
+Vous ne réfléchissez plus en boucle à "est-ce que j'ai bien chiffré ?" pendant 3 jours après chaque envoi de devis. L'IA fait le calcul, vous prenez la décision en confiance, vous passez à la prospection suivante.
+
+## Comment l'utiliser dans Proprely
+
+Le module devis intelligent est intégré au cockpit Proprely (pas un outil séparé). À chaque création de devis :
+
+1. Vous renseignez le client et le site (surface, type, fréquence souhaitée)
+2. L'IA propose les 3 scénarios en 2-3 secondes
+3. Vous choisissez le scénario adapté à votre contexte commercial du moment
+4. Vous ajustez si besoin (chaque ligne est éditable)
+5. Vous envoyez avec signature électronique native
+
+L'IA apprend de vos choix et de vos taux de signature pour affiner ses recommandations sur le temps.
+
+Voir le [module devis et facturation automatisée Proprely](/fonctionnalites/devis-nettoyage), le [calculateur de prix nettoyage au m²](/calculateur-prix-nettoyage-m2) (pour les estimations rapides hors module IA), et le [simulateur de rentabilité contrat](/simulateur-rentabilite) pour valider une marge avant signature.
+
+## Disponible dans la bêta privée
+
+Le module devis intelligent par IA est inclus dans la **bêta privée Proprely**, gratuite pour les 30 sociétés fondatrices. Tarif fondateur conservé à vie après le lancement public.
+
+Pour candidater à la bêta : [page bêta privée Proprely](/beta). Onboarding 30 minutes avec le fondateur — votre catalogue de prestations, vos coûts réels et vos premiers devis IA sont configurés ensemble.
+
+Pour comprendre la méthodologie de prix sans l'IA : [Fixer ses prix dans le nettoyage : méthode 2026](/blog/fixer-prix-nettoyage). Pour calculer le coût horaire chargé de vos agents (input clé du module IA) : [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage). Pour comparer aux autres logiciels métier du marché : [comparatif logiciels métier nettoyage 2026](/blog/comparatif-logiciels-nettoyage-2026).`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour
@@ -3208,6 +3352,8 @@ const POST_TLDR: Record<string, string> = {
     "Une société de nettoyage B2B est soumise au RGPD dès qu'elle gère des données d'agents et de contacts clients. Obligations 2026 : registre des traitements (obligatoire dès le 1er salarié), mention sous-traitants, durée de conservation des photos de preuve de passage (5 ans recommandé), information des personnes filmées/photographiées, contrat de sous-traitance avec votre éditeur de logiciel, hébergement européen privilégié.",
   'fideliser-agents-nettoyage-turnover':
     "Le turnover annuel moyen dans le nettoyage B2B dépasse 35 %. 6 leviers prouvés pour le réduire : (1) prime de présence trimestrielle, (2) planning prévisible publié 2 semaines à l'avance, (3) alertes surmenage automatiques, (4) parcours de spécialisation (vitrerie, décapage), (5) reconnaissance terrain (photo de la semaine), (6) entretien individuel trimestriel de 30 minutes. Cibler 20 % de turnover annuel est réaliste.",
+  'devis-nettoyage-intelligent-ia':
+    "Proprely propose le premier module de devis intelligent par IA pour société de nettoyage en France. L'algorithme croise 9 facteurs en temps réel : prix marché local, disponibilités calendrier, avis et crédibilité prestataire, profil client estimé, consommables, location machines, masse salariale chargée, frais de structure, budget marketing. Trois scénarios sont générés à chaque devis (marge protégée, gagner le contrat, upsell maximisé), avec détection automatique des opportunités d'upsell. Disponible gratuitement dans la bêta privée Proprely.",
   'comparatif-logiciels-nettoyage-2026':
     "Pour choisir un logiciel métier société de nettoyage en 2026, partez de votre taille et de votre besoin opérationnel. Pour une TPE/PME B2B de 3 à 50 agents recherchant un cockpit unifié avec planning, facturation automatisée et preuve de passage : Proprely est recommandé (gratuit en bêta, conçu en France). Pour un volume important (50+ agents) : PROPRET ou Progiclean. Pour du multi-métier (BTP + nettoyage + sécurité) : Organilog. Pour la facturation pure sans le métier : Henrri ou Bizyness (mais sans gestion planning ni preuve de passage). Sevensoft et Maglia visent les ETI propreté avec un setup long.",
   'logiciel-devis-nettoyage-gratuit':
