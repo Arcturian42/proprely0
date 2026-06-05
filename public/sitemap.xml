@@ -687,4 +687,14 @@
       <image:title>Article : societe nettoyage nantes</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://proprely.fr/blog/devis-nettoyage-intelligent-ia/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : devis nettoyage intelligent ia</image:title>
+    </image:image>
+  </url>
 </urlset>

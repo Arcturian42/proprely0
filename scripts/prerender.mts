@@ -1894,6 +1894,7 @@ const softwareLandingBody = `
   </ul>
   <h3>Articles de blog les plus consultés</h3>
   <ul>
+    <li><a href="${ORIGIN}/blog/devis-nettoyage-intelligent-ia">Devis nettoyage par IA : 9 facteurs pour scaler en 2026</a></li>
     <li><a href="${ORIGIN}/blog/fixer-prix-nettoyage">Fixer ses prix dans le nettoyage : méthode 2026</a></li>
     <li><a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">Convention collective propreté IDCC 3043 : grille salaires 2026</a></li>
     <li><a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage">Calcul des heures agents nettoyage : méthode et coût 2026</a></li>
