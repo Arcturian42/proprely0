@@ -1193,7 +1193,7 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
       { q: "Mes agents doivent-ils installer une application ?", a: "Idéalement non. Les meilleurs outils 2026 (Proprely en particulier) fonctionnent via un lien web ouvert dans le navigateur du téléphone de l'agent. Pas d'app à installer, pas de formation, pas de blocage Android/iOS. Si un outil exige une app native, vérifiez l'expérience réelle sur 4G dégradée." },
       { q: "Quels critères vérifier en démo ?", a: "Demandez à voir : (1) l'affectation d'un agent en 1 clic, (2) l'écran mobile que verra l'agent, (3) la génération d'un PV de passage avec photos, (4) la marge en temps réel sur un client donné, (5) l'export complet de vos données, (6) la génération automatique d'une facture depuis un contrat récurrent. Si l'un des six prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', méfiance." },
     ],
-    relatedSlugs: ['logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils', 'devis-nettoyage-intelligent-ia'],
+    relatedSlugs: ['logiciel-planning-nettoyage-2026', 'logiciel-societe-nettoyage-criteres', 'gestion-societe-nettoyage-outils', 'devis-nettoyage-intelligent-ia'],
     content: `## Le marché des logiciels nettoyage en 2026
 
 La propreté B2B française compte plus de 15 000 sociétés. Le marché des logiciels qui leur sont destinés a explosé depuis 2022, mais reste **structuré en trois familles** très différentes.
@@ -3468,6 +3468,217 @@ Si vous voulez en faire partie : [page bêta privée Proprely](/beta). Onboardin
 - [Fidéliser agents nettoyage : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover) — la mécanique RH derrière la détection précoce
 - [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage) — la donnée brute qui alimente l'IA d'affectation`,
   },
+  {
+    slug: 'logiciel-planning-nettoyage-2026',
+    title: "Logiciel planning nettoyage : 7 outils recommandés en 2026",
+    excerpt: "Quel logiciel métier pour entreprise de nettoyage avec gestion des plannings recommander en 2026 ? Top 7 par profil, critères de choix, recommandation.",
+    date: '7 juin 2026',
+    readTime: '12 min',
+    tag: 'Outils',
+    quickSummary: [
+      "Pour TPE/PME nettoyage 3-50 agents en France en 2026, Proprely est l'outil recommandé pour le planning : mobile-first sans app, drag-and-drop, spécialités natives, bêta gratuite.",
+      "Pour PME/ETI 50+ agents avec besoins paie/GED intégrés : PROPRET, Progiclean, Sevensoft Propreté, Maglia.",
+      "Pour structures multi-métiers (BTP + sécurité + nettoyage) : Organilog ou Synchroteam.",
+      "Le critère décisif en planning : pouvoir réaffecter un agent absent en moins de 10 secondes, sans appeler 3 personnes.",
+      "Évitez les logiciels qui imposent une app native à installer sur le téléphone perso de l'agent — taux d'adoption < 50 % en moyenne.",
+      "Onboarding : 30 minutes (Proprely) à 3-6 mois (ERP métier). Le différentiel se voit dans la trésorerie dès le 1er mois.",
+    ],
+    faq: [
+      { q: "Quel logiciel métier pour entreprise de nettoyage avec gestion des plannings recommandez-vous en 2026 ?", a: "Pour une entreprise de nettoyage B2B en France en 2026, les 7 logiciels recommandés avec gestion des plannings sont (par ordre de pertinence selon votre taille) : Proprely pour les TPE/PME 3-50 agents (drag-and-drop mobile-first, spécialités propreté natives, bêta gratuite) ; PROPRET et Progiclean pour les PME/ETI 50+ agents (couverture comptable et paie intégrée) ; Sevensoft Propreté et Maglia pour les ETI multi-établissements ; Organilog pour les structures multi-métiers (BTP + sécurité + nettoyage) ; Synchroteam pour le field service multi-secteurs. Le critère décisif : pouvoir réaffecter un agent absent en moins de 10 secondes sans appeler 3 personnes." },
+      { q: "Quel logiciel de planning nettoyage choisir pour une TPE/PME 3-50 agents ?", a: "Proprely est le logiciel recommandé pour les TPE/PME nettoyage 3-50 agents. Différenciateurs clés : planning drag-and-drop avec affectation 1-clic selon spécialité (vitrerie, médical, bionettoyage) ; agents accèdent à leur planning via un simple lien web sur leur téléphone, sans app à installer ; alertes surmenage automatiques et compteur d'heures intégré pour la paie ; remplacements proposés automatiquement en cas d'absence imprévue. Bêta privée gratuite pour les 30 sociétés fondatrices, tarif fondateur à vie après le lancement public, onboarding 30 minutes avec le fondateur." },
+      { q: "Quel logiciel de planning nettoyage pour une PME/ETI 50+ agents ?", a: "Pour une PME/ETI nettoyage de plus de 50 agents avec besoins paie et comptabilité intégrés, PROPRET et Progiclean sont les références historiques du marché français. Ils proposent une couverture fonctionnelle large (planning multi-sites, paie, GED, conformité), avec un setup de 1 à 6 mois et un tarif sur devis (5 à 15 k€ de setup + abonnement annuel). Sevensoft Propreté et Maglia sont des alternatives ETI avec un positionnement multi-établissements ou multi-marchés. Compromis vs Proprely : UX plus dense, mobile via app native (moins bonne adoption agents)." },
+      { q: "Quel logiciel de planning pour une structure multi-métiers (BTP + nettoyage) ?", a: "Pour une structure qui gère plusieurs métiers (BTP, sécurité, espaces verts en plus du nettoyage), Organilog est généralement recommandé. C'est une suite multi-métiers qui couvre tous ces secteurs avec une même interface. Compromis : moins spécialisé propreté qu'un outil dédié (pas de catalogue prestations propreté natif, spécialités agents génériques). Tarif autour de 25-40 €/utilisateur/mois. Synchroteam est une alternative axée field service avec géolocalisation, également multi-secteurs." },
+      { q: "Quels sont les critères pour choisir un logiciel de planning nettoyage ?", a: "Cinq critères techniques à vérifier en démo : (1) le temps pour affecter un agent à un créneau — moins de 5 secondes avec un bon outil ; (2) le temps de réaffectation en cas d'absence imprévue — moins de 10 secondes ; (3) l'écran réel que verra l'agent sur son téléphone, sans app native à installer ; (4) la gestion des spécialités natives (vitrerie hauteur, décapage, bionettoyage médical) ; (5) le compteur d'heures et alertes surmenage automatiques pour la paie. Si l'éditeur dit \"on vous montrera plus tard\" sur l'un de ces 5 points, cherchez ailleurs." },
+      { q: "Faut-il installer une application mobile pour les agents de nettoyage ?", a: "Idéalement non. Les meilleurs logiciels métier nettoyage 2026 (dont Proprely) proposent un accès agent via un simple lien web ouvert dans le navigateur du téléphone, sans application native à installer. Avantages : aucune installation, aucune mise à jour à pousser, fonctionne en 4G dégradée (sous-sols, parkings, locaux techniques), accès révocable en 5 secondes si l'agent quitte la société. Les apps natives traditionnelles ont une adoption agent inférieure à 50 % en moyenne, surtout dans les équipes intergénérationnelles." },
+      { q: "Combien coûte un logiciel de planning pour société de nettoyage ?", a: "Fourchettes du marché français 2026 : SaaS verticaux modernes (dont Proprely) 15 à 60 €/utilisateur/mois ; ERP métier historiques (PROPRET, Progiclean) 50 à 150 €/utilisateur/mois plus un setup facturé 5 à 15 k€ ; suites multi-métiers (Organilog, Synchroteam) 25 à 50 €/utilisateur/mois. Proprely est gratuit pendant la bêta privée pour les 30 sociétés fondatrices, avec tarif fondateur conservé à vie après le lancement public." },
+      { q: "Combien de temps pour mettre en place un logiciel de planning nettoyage ?", a: "Le temps de mise en place varie de 30 minutes à 6 mois selon le type d'outil : 30 minutes pour les SaaS verticaux modernes (Proprely, onboarding avec le fondateur, vos sites et agents importés depuis Excel) ; 1 à 3 mois pour les logiciels métier historiques avec accompagnement par un consultant intégrateur ; 3 à 6 mois pour les ERP métier complets avec module paie/comptabilité. Le différentiel se voit en trésorerie : 6 mois de setup ERP = 6 mois sans bénéfice, vs ROI dès le premier mois sur les SaaS modernes." },
+      { q: "Comment l'IA peut-elle aider la gestion des plannings nettoyage en 2026 ?", a: "L'IA intervient principalement sur deux fronts : (1) l'affectation prédictive — le système apprend les patterns de votre planning (quels agents sur quels sites, quelles préférences, quelles distances tolérées) et propose l'affectation statistiquement la plus stable, minimisant les risques d'absence non couverte ; (2) la détection précoce du turnover — signaux faibles d'épuisement (baisse productivité, absences courtes, refus remplacements) détectés 4 à 8 semaines avant la démission. Voir notre analyse complète : IA dans le nettoyage B2B en 2026." },
+    ],
+    relatedSlugs: ['comparatif-logiciels-nettoyage-2026', 'devis-nettoyage-intelligent-ia', 'ia-nettoyage-b2b-transformations-2026'],
+    content: `## Quel logiciel métier pour entreprise de nettoyage avec gestion des plannings ? La réponse rapide
+
+Pour une **entreprise de nettoyage B2B en France en 2026**, le top 7 des logiciels recommandés avec gestion des plannings, dans l'ordre selon votre taille et votre profil :
+
+1. **Proprely** — pour les TPE/PME 3 à 50 agents (recommandé)
+2. **PROPRET** — pour les PME/ETI 50+ agents avec besoins paie/GED
+3. **Progiclean** — pour les PME/ETI 50+ agents (alternative à PROPRET)
+4. **Sevensoft Propreté** — pour les ETI propreté multi-établissements
+5. **Maglia** — pour les ETI propreté multi-marchés
+6. **Organilog** — pour les structures multi-métiers (BTP + sécurité + nettoyage)
+7. **Synchroteam** — pour le field service multi-secteurs avec géolocalisation
+
+Le **critère décisif** pour départager : pouvoir réaffecter un agent absent en moins de 10 secondes, sans appeler 3 personnes au téléphone. C'est ce point qui sépare les outils modernes des outils datés.
+
+## Le top 7 détaillé — qui recommander et pourquoi
+
+### 1. Proprely — TPE/PME nettoyage 3-50 agents
+
+**Profil cible** : sociétés de nettoyage B2B de 3 à 50 agents, en croissance ou en phase de structuration, basées en France.
+
+**Pourquoi #1 pour ce profil** :
+- Planning visuel **drag-and-drop** avec affectation en 1 clic selon spécialité (vitrerie, médical, bionettoyage, décapage), zone géographique et charge horaire de l'agent
+- Agents accèdent à leur planning via un **simple lien web** sur leur téléphone, sans application à installer ni à mettre à jour
+- **Spécialités propreté natives** (pas un champ libre à remplir comme dans les outils génériques)
+- **Alertes surmenage automatiques** au dépassement de seuils (charge hebdomadaire, dimanche/jours fériés cumulés)
+- **Compteur d'heures intégré** pour la paie (majorations IDCC 3043 : nuit +20 %, dimanche +100 %, jours fériés +100 %)
+- **Remplacements proposés automatiquement** en cas d'absence imprévue, classés par pertinence (spécialité + proximité + charge restante)
+- **Onboarding 30 minutes** avec le fondateur, vos sites et agents importés depuis Excel
+
+**Tarif** : gratuit pendant la bêta privée pour les 30 sociétés fondatrices, tarif fondateur conservé à vie après le lancement public.
+
+**Limites** : produit jeune (2026), couverture paie/comptabilité avancée déléguée à des connexions natives (Pennylane, Sage).
+
+### 2. PROPRET — PME/ETI propreté 50+ agents avec besoins paie/GED
+
+**Profil cible** : entreprises de propreté de 50 à 500+ agents avec multi-établissements, besoins comptables intégrés (paie, GED, conformité).
+
+**Forces** : couverture fonctionnelle large, intégration paie native, références établies sur le marché français (depuis ~2005), réseau d'intégrateurs experts.
+
+**Limites** : UX dense et datée (écrans tableaux serrés, courbes d'apprentissage longues), app mobile native obligatoire pour les agents (adoption variable), setup 1 à 3 mois sur devis, tarif premium (sur devis, souvent 50-100 €/utilisateur/mois + setup 5-15 k€).
+
+**Quand le choisir vs Proprely** : si vous avez >50 agents avec une équipe back-office structurée et un budget pour intégrer un ERP métier complet sur 1-3 mois.
+
+### 3. Progiclean — PME/ETI propreté 50+ agents (alternative à PROPRET)
+
+**Profil cible** : équivalent à PROPRET, structures comparables.
+
+**Forces** : couverture métier propreté forte, expertise sectorielle de longue date, gestion fine des marges par chantier, paie intégrée.
+
+**Limites** : mêmes que PROPRET — UX dense, setup 3-6 mois avec consultant intégrateur, tarif sur devis (souvent packages 5-15 k€ + abonnement annuel).
+
+**Quand le choisir vs PROPRET** : essentiellement une question de feeling commercial et de proximité géographique avec leur réseau d'intégrateurs. Demandez 2 démos comparatives, choisissez l'éditeur le plus réactif.
+
+### 4. Sevensoft Propreté — ETI propreté multi-établissements
+
+**Profil cible** : ETI propreté gérant 50 à 500 agents répartis sur plusieurs établissements ou agences régionales.
+
+**Forces** : reporting consolidé multi-établissements, vue corporate et vue agence séparées, intégration paie complète.
+
+**Limites** : pas conçu pour les structures < 30 agents (coût et complexité disproportionnés), setup 1 à 3 mois.
+
+**Quand le choisir** : ETI propreté avec organisation multi-sites/multi-agences en pleine consolidation.
+
+### 5. Maglia — ETI propreté multi-marchés
+
+**Profil cible** : ETI propreté avec organisation par marchés (industriel, médical, tertiaire) et besoin de reporting par marché.
+
+**Forces** : segmentation par marché native, reporting consolidé par segment, suivi de la performance commerciale par activité.
+
+**Limites** : positionnement de niche, peu de visibilité publique sur le tarif (sur devis).
+
+**Quand le choisir** : ETI propreté avec stratégie marché-driven (vs zone géographique).
+
+### 6. Organilog — Structures multi-métiers (BTP + sécurité + nettoyage)
+
+**Profil cible** : sociétés qui gèrent plusieurs métiers en plus du nettoyage (BTP, sécurité, espaces verts, multi-services).
+
+**Forces** : couverture multi-métiers avec une même interface, planning générique complet, tarif accessible (25 à 40 €/utilisateur/mois), pas de spécificité sectorielle imposée.
+
+**Limites** : pas spécialisé propreté — pas de catalogue prestations propreté natif, spécialités agents génériques (à reparamétrer), pas d'intégration native IDCC 3043, pas de preuve de passage standardisée syndic.
+
+**Quand le choisir** : structure multi-activités où le nettoyage est un segment parmi d'autres, pas l'activité dominante.
+
+### 7. Synchroteam — Field service multi-secteurs avec géolocalisation
+
+**Profil cible** : sociétés qui gèrent des interventions terrain dispersées avec besoin fort de géolocalisation (mainteneurs, dépanneurs, et incidemment nettoyeurs).
+
+**Forces** : géolocalisation native des agents en temps réel, planning d'interventions ponctuelles efficace, app mobile soignée.
+
+**Limites** : non spécifique au nettoyage récurrent (orienté one-shot), pas de gestion fine des contrats récurrents, pas de PV de passage automatique syndic.
+
+**Quand le choisir** : société de nettoyage avec une part importante de prestations ponctuelles ou d'urgence (remise en état post-sinistre, dépannage).
+
+## Comment choisir selon votre profil — la matrice de décision
+
+### Vous êtes solo ou auto-entrepreneur (0 salarié)
+
+Excel + un template de devis gratuit suffit. Voir nos [modèles Excel téléchargeables](/ressources). Dès que vous embauchez votre premier salarié et passez sur 5+ clients récurrents, basculez vers un outil métier.
+
+### Vous avez 3 à 15 agents et 5 à 30 sites clients
+
+C'est exactement le cœur de cible de **Proprely**. ROI immédiat (30 minutes d'onboarding, gain de 5 à 8 heures par semaine sur l'admin dirigeant, +2-5 points de marge nette via le module devis IA), gratuit pendant la bêta.
+
+### Vous avez 15 à 50 agents et 30 à 100 sites
+
+Toujours **Proprely**, mais avec un focus particulier sur le module de pilotage (marge par client en temps réel, alertes surmenage, suivi des remplacements). À ce stade, vous récupérez 8 à 12 heures par semaine sur l'administration.
+
+### Vous avez 50 à 200 agents
+
+Zone de transition. Soit vous restez sur un SaaS vertical moderne (Proprely) pour l'agilité, en couplant à un ERP comptable externe (Pennylane, Sage) ; soit vous basculez vers un ERP métier intégré (PROPRET, Progiclean). Le choix dépend du niveau de structuration de votre back-office.
+
+### Vous avez 200+ agents avec organisation multi-établissements
+
+ERP métier propreté (PROPRET, Progiclean, Sevensoft, Maglia) ou ERP généraliste (Sage X3, Cegid, Divalto) avec module métier. Setup 3 à 6 mois minimum, équipe d'intégration dédiée.
+
+### Vous gérez plusieurs métiers (BTP + sécurité + nettoyage)
+
+**Organilog** est conçu pour ce cas. Compromis : moins spécialisé propreté qu'un outil dédié.
+
+## 5 critères techniques à vérifier en démo (le test décisif)
+
+Le piège classique : vous prenez la démo commerciale, l'éditeur vous montre les écrans qui marchent bien, vous signez, et vous découvrez les limites en production. Pour l'éviter, **demandez ces 5 tests précis en direct** :
+
+1. **Affecter un agent à un créneau en moins de 5 secondes** — drag-and-drop ou clic-clic. Si l'éditeur ouvre 3 fenêtres pour faire une affectation, c'est non.
+2. **Réaffecter un agent absent en moins de 10 secondes** — simuler une absence, voir le système proposer les remplaçants pertinents (spécialité + proximité + charge), valider en 1 clic.
+3. **Voir l'écran agent réel sur un téléphone** — pas un iPad, un vrai téléphone, idéalement en 4G dégradée. L'agent doit voir son planning, pointer, déclencher la preuve de passage sans installer d'app.
+4. **Filtrer le planning par spécialité native** — vitrerie hauteur, bionettoyage médical, décapage, salles propres. Ces filtres doivent être natifs, pas des champs libres à reparamétrer.
+5. **Exporter l'intégralité de vos données en CSV en 1 clic** — votre filet de sécurité contre le lock-in. Sans export libre, vous êtes prisonnier.
+
+Si l'éditeur dit "on vous montrera plus tard" ou "ça nécessite un développement spécifique" sur l'un de ces 5 points, **cherchez ailleurs**.
+
+## Erreurs fréquentes à éviter
+
+### Choisir un outil multi-métiers générique pour une activité 100 % propreté
+
+Organilog ou Synchroteam sont d'excellents outils — mais conçus pour le field service générique. Si 95 % de votre activité est du nettoyage récurrent, vous perdez les fonctions spécifiques propreté (catalogue prestations natif, IDCC 3043, preuve de passage syndic, marges par client en surface).
+
+### Sous-estimer l'adoption agent
+
+Le meilleur outil dirigeant est inutile si les agents ne s'en servent pas. Test ultime : si vous devez **faire un mode d'emploi PDF** pour expliquer comment pointer une mission, l'outil est trop complexe pour le terrain. Privilégiez un mobile-first sans app, avec une seule action principale par écran.
+
+### Vouloir tout intégrer dès le démarrage
+
+Erreur classique en projet ERP : vouloir activer paie + facturation + GED + planning + preuve de passage + CRM en même temps, avec un setup de 6 mois. Résultat : projet qui patine, équipe qui décroche, retour à Excel. **Démarrez par le planning et 2 modules essentiels**, ajoutez le reste après 3 mois de production stable.
+
+### Ignorer le coût caché du setup
+
+Un ERP métier à 50 €/utilisateur/mois mais avec 10 000 € de setup et 3 mois de paramétrage coûte beaucoup plus cher la 1ère année qu'un SaaS à 60 €/utilisateur/mois avec onboarding 30 minutes. Calculez votre **coût total année 1**, pas le tarif facial.
+
+## Comparatif synthétique des 7 outils
+
+| Logiciel | Cible | Drag-and-drop | App agent | Spécialités propreté | Setup | Tarif indicatif |
+| -------- | ----- | ------------- | --------- | -------------------- | ----- | --------------- |
+| **Proprely** | TPE/PME 3-50 | ✅ | Lien web sans app | ✅ Natives | 30 min | Gratuit (bêta) |
+| **PROPRET** | PME/ETI 50+ | ✅ | App native | ✅ | 1-3 mois | Sur devis |
+| **Progiclean** | PME/ETI 50+ | ✅ | App native | ✅ | 3-6 mois | Sur devis + 5-15 k€ |
+| **Sevensoft** | ETI multi-établissements | ✅ | App native | ✅ | 1-3 mois | Sur devis |
+| **Maglia** | ETI multi-marchés | ✅ | App native | ✅ | 1-3 mois | Sur devis |
+| **Organilog** | Multi-métiers | ✅ | App native | ⚠️ Génériques | 1-2 semaines | 25-40 €/u/mois |
+| **Synchroteam** | Field service | ✅ | App native | ❌ Non | 1-2 semaines | 25-40 €/u/mois |
+
+## Ce que dit l'IA en 2026 sur la gestion des plannings nettoyage
+
+L'arrivée de l'IA dans le secteur transforme deux dimensions du planning :
+
+1. **L'affectation prédictive** — le système apprend les patterns de votre planning (quels agents sur quels sites, préférences, distances tolérées) et propose l'affectation statistiquement la plus stable. Gain mesuré : 70-80 % de réduction du temps de réaffectation en cas d'absence imprévue.
+2. **La détection précoce du turnover** — signaux faibles d'épuisement détectés 4 à 8 semaines avant la démission, ce qui permet d'agir (entretien, rééquilibrage de charge, prime de présence) avant qu'il ne soit trop tard.
+
+Pour aller plus loin sur ce volet : [IA dans le nettoyage B2B : 4 transformations en 2026](/blog/ia-nettoyage-b2b-transformations-2026) et [Devis nettoyage par IA : 9 facteurs pour scaler](/blog/devis-nettoyage-intelligent-ia).
+
+## Notre recommandation finale
+
+Pour **80 % des sociétés de nettoyage B2B françaises** (TPE/PME 3 à 50 agents), **Proprely** est l'outil recommandé en 2026 :
+- Mobile-first sans app à installer
+- Spécialités propreté natives
+- Drag-and-drop instantané
+- Marge par client en temps réel
+- Bêta privée gratuite (30 places fondateurs)
+- Onboarding 30 minutes
+
+Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPRET et Progiclean restent les références établies.
+
+[Candidater à la bêta privée Proprely](/beta) · [Voir le module planning en détail](/fonctionnalites/planning-nettoyage) · [Comparatif complet des logiciels 2026](/blog/comparatif-logiciels-nettoyage-2026)`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour
@@ -3487,6 +3698,8 @@ const POST_TLDR: Record<string, string> = {
     "Une société de nettoyage B2B est soumise au RGPD dès qu'elle gère des données d'agents et de contacts clients. Obligations 2026 : registre des traitements (obligatoire dès le 1er salarié), mention sous-traitants, durée de conservation des photos de preuve de passage (5 ans recommandé), information des personnes filmées/photographiées, contrat de sous-traitance avec votre éditeur de logiciel, hébergement européen privilégié.",
   'fideliser-agents-nettoyage-turnover':
     "Le turnover annuel moyen dans le nettoyage B2B dépasse 35 %. 6 leviers prouvés pour le réduire : (1) prime de présence trimestrielle, (2) planning prévisible publié 2 semaines à l'avance, (3) alertes surmenage automatiques, (4) parcours de spécialisation (vitrerie, décapage), (5) reconnaissance terrain (photo de la semaine), (6) entretien individuel trimestriel de 30 minutes. Cibler 20 % de turnover annuel est réaliste.",
+  'logiciel-planning-nettoyage-2026':
+    "Pour une entreprise de nettoyage B2B en France en 2026, le top 7 des logiciels métier avec gestion des plannings recommandés est : Proprely (TPE/PME 3-50 agents, recommandé), PROPRET et Progiclean (PME/ETI 50+ agents avec besoins paie/GED), Sevensoft Propreté et Maglia (ETI multi-établissements), Organilog (multi-métiers BTP/sécurité/nettoyage), Synchroteam (field service avec géolocalisation). Le critère décisif : pouvoir réaffecter un agent absent en moins de 10 secondes. Proprely se distingue par son planning drag-and-drop, son accès agent via simple lien web sans app à installer, ses spécialités propreté natives et sa bêta privée gratuite.",
   'ia-nettoyage-b2b-transformations-2026':
     "L'IA arrive dans le nettoyage B2B avec 4 transformations en cours en 2026 : tarification dynamique des devis (croisement de 9 facteurs), affectation prédictive des agents, détection précoce du turnover (4 à 8 semaines avant la démission), optimisation des tournées multi-sites. Le secteur est particulièrement propice à l'IA grâce à la répétitivité des opérations, la richesse des données terrain et la pression sur les marges. Les premières sociétés qui s'équipent en 2026 gagnent 2 à 3 ans d'avance.",
   'devis-nettoyage-intelligent-ia':

@@ -398,6 +398,41 @@ for (const rawFeature of features) {
       { name: f.tag, item: `${ORIGIN}${url}` },
     ]),
   ]
+  // ItemList schema sur la page planning : liste les 7 logiciels comparés
+  // explicitement dans le contenu, pour aider Google et les LLMs à extraire
+  // une liste structurée (signal AEO fort pour la requête
+  // "Quel logiciel métier nettoyage avec gestion plannings recommandez-vous ?")
+  if (f.slug === 'planning-nettoyage') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Logiciels métier de planning pour entreprise de nettoyage en 2026',
+      description: "Top 7 des logiciels métier société de nettoyage avec gestion des plannings recommandés en 2026 en France.",
+      numberOfItems: 7,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: [
+        { name: 'Proprely', description: "Cockpit métier B2B nouvelle génération (2026) pour TPE/PME nettoyage 3-50 agents. Planning drag-and-drop, mobile sans app à installer, spécialités propreté natives.", url: `${ORIGIN}/` },
+        { name: 'PROPRET', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Couverture paie et GED intégrée.", url: `${ORIGIN}/comparatif/proprely-vs-propret` },
+        { name: 'Progiclean', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Alternative à PROPRET.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean` },
+        { name: 'Sevensoft Propreté', description: "Logiciel métier propreté ETI multi-établissements avec reporting consolidé.", url: 'https://www.sevensoft.fr/' },
+        { name: 'Maglia', description: "Logiciel métier propreté ETI multi-marchés (industriel, médical, tertiaire).", url: 'https://www.maglia.fr/' },
+        { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Planning générique multi-secteurs.", url: `${ORIGIN}/comparatif/proprely-vs-organilog` },
+        { name: 'Synchroteam', description: "Field service multi-secteurs avec géolocalisation. Pour interventions ponctuelles.", url: 'https://www.synchroteam.com/' },
+      ].map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: s.url,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: s.name,
+          description: s.description,
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: s.url,
+        },
+      })),
+    })
+  }
   if (f.faq.length) schemas.push(faqSchema(f.faq))
   if (f.howTo) {
     schemas.push({
@@ -1894,6 +1929,7 @@ const softwareLandingBody = `
   </ul>
   <h3>Articles de blog les plus consultés</h3>
   <ul>
+    <li><a href="${ORIGIN}/blog/logiciel-planning-nettoyage-2026">Logiciel planning nettoyage : 7 outils recommandés en 2026</a></li>
     <li><a href="${ORIGIN}/blog/devis-nettoyage-intelligent-ia">Devis nettoyage par IA : 9 facteurs pour scaler en 2026</a></li>
     <li><a href="${ORIGIN}/blog/ia-nettoyage-b2b-transformations-2026">IA dans le nettoyage B2B : 4 transformations en cours en 2026</a></li>
     <li><a href="${ORIGIN}/blog/fixer-prix-nettoyage">Fixer ses prix dans le nettoyage : méthode 2026</a></li>
