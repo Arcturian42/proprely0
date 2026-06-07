@@ -9,6 +9,7 @@ import Link from '../components/Link'
 import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
 import SocialProof from '../components/SocialProof'
 import TrustSeals from '../components/TrustSeals'
+import LiveCounter from '../components/LiveCounter'
 import { trackEvent } from '../lib/analytics'
 
 const founderBenefits = [
@@ -344,6 +345,12 @@ export default function Pricing() {
             </div>
             <SocialProof variant="indicators" />
             <TrustSeals variant="strip" className="mt-6" />
+            <div className="mt-10">
+              <LiveCounter variant="card" />
+              <p className="text-[10px] text-slate-400 text-center mt-3">
+                Estimation cumulée à partir des {FOUNDER_SPOTS.taken}/{FOUNDER_SPOTS.total} fondateurs actifs et d'un gain moyen de 6 h/semaine par société.
+              </p>
+            </div>
           </div>
         </section>
 

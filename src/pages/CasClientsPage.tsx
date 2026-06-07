@@ -15,6 +15,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import LiveCounter from '../components/LiveCounter'
 import { caseStudies, type CaseStudy } from '../data/caseStudies'
 import { BETA_FORM_URL, FOUNDER_SPOTS } from '../config'
 import { trackEvent } from '../lib/analytics'
@@ -246,6 +247,13 @@ export default function CasClientsPage() {
                   </div>
                 )
               })}
+            </div>
+
+            <div className="mt-10 max-w-4xl">
+              <LiveCounter variant="card" />
+              <p className="text-[10px] text-slate-400 text-center mt-3">
+                Estimation cumulée à partir des fondateurs actifs et d'un gain moyen de 6 h/semaine par société.
+              </p>
             </div>
           </div>
         </section>
