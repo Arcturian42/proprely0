@@ -165,9 +165,9 @@ const META: Record<string, RouteMeta> = {
     title: 'Cas clients : ils pilotent leur société de nettoyage avec Proprely',
     description: "Retours détaillés de sociétés de nettoyage B2B fondatrices Proprely : défi initial, mise en place, résultats chiffrés (heures gagnées, marge, litiges).",
   },
-  '/integrations': {
-    title: 'Intégrations Proprely : Silae, Pennylane, Qonto, Brevo · Proprely',
-    description: "Toutes les intégrations Proprely : paie Silae, comptabilité Pennylane/Tiime/Indy, banque Qonto/Shine, email Brevo, Chorus Pro Factur-X. Cockpit nettoyage qui parle à votre stack.",
+  '/roadmap': {
+    title: 'Roadmap et changelog Proprely — Ce qui arrive · Proprely',
+    description: "Roadmap publique Proprely : ce qui a été livré, ce qui est en cours, ce qui arrive. Transparence totale sur les évolutions du cockpit nettoyage.",
   },
   '/auteurs': {
     title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
