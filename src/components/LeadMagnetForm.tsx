@@ -9,15 +9,16 @@ type Props = {
   resourceTitle: string
 }
 
-const ENDPOINT = (import.meta as unknown as { env: { VITE_LEAD_MAGNET_ENDPOINT?: string } }).env.VITE_LEAD_MAGNET_ENDPOINT
+// Endpoint Brevo via /api/subscribe (Vercel serverless).
+// Override possible via VITE_SUBSCRIBE_ENDPOINT en dev.
+const ENDPOINT = (import.meta as unknown as { env: { VITE_SUBSCRIBE_ENDPOINT?: string } }).env.VITE_SUBSCRIBE_ENDPOINT || '/api/subscribe'
 
 async function sendLead(payload: { email: string; company: string; resource: string; resourceTitle: string }) {
-  if (!ENDPOINT) return
   try {
     await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...payload, type: 'lead_magnet' }),
     })
   } catch {
     // Silent — analytics event toujours tracké, le download n'est pas bloqué.
