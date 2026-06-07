@@ -230,7 +230,7 @@ function injectArticleSchema(post: BlogPostType) {
       url,
       datePublished,
       dateModified,
-      image: 'https://proprely.fr/og-image.png',
+      image: `https://proprely.fr/og/blog-${post.slug}.png`,
       author: {
         '@type': 'Person',
         '@id': `https://proprely.fr/auteur/${author.slug}#person`,
@@ -315,6 +315,9 @@ export default function BlogPost({ slug }: Props) {
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title)
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.excerpt)
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
+    const ogImageUrl = `https://proprely.fr/og/blog-${post.slug}.png`
+    document.querySelector('meta[property="og:image"]')?.setAttribute('content', ogImageUrl)
+    document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', ogImageUrl)
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title)
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', post.excerpt)
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl)
