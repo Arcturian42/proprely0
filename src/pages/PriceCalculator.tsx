@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calculator, Euro, MapPin, Building2, Repeat, Info, HelpCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import MegaCTABanner from '../sections/MegaCTABanner'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
@@ -470,6 +471,13 @@ export default function PriceCalculator() {
             </div>
           </div>
         </section>
+
+        <MegaCTABanner
+          title="Calculer un prix, c'est bien. Le sécuriser à chaque devis, c'est mieux."
+          subtitle="Proprely calcule automatiquement le bon prix au m² selon votre coût horaire chargé, votre marché local et votre charge actuelle. 3 scénarios IA proposés à chaque devis. Bêta gratuite."
+          ctaLabel="Tester le devis IA — bêta gratuite"
+          location="price_calculator_mega_cta"
+        />
       </main>
 
       <Footer />

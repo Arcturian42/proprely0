@@ -4,6 +4,7 @@ import { ArrowRight, TrendingUp, TrendingDown, AlertTriangle, CheckCircle, Euro,
 import { useEffect } from 'react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
+import MegaCTABanner from '../sections/MegaCTABanner'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
@@ -437,6 +438,13 @@ export default function SimulateurRentabilite() {
             </div>
           </div>
         </section>
+
+        <MegaCTABanner
+          title="Vous voyez votre marge contrat par contrat. Proprely la calcule en temps réel."
+          subtitle="Plus besoin de simuler à la main : marge brute par client mise à jour automatiquement à chaque heure pointée. Bêta gratuite — 30 places fondateurs, onboarding 30 min."
+          ctaLabel="Voir la marge en temps réel — bêta"
+          location="simulateur_rentabilite_mega_cta"
+        />
       </main>
 
       <Footer />

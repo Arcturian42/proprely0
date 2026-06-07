@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Calculator, Euro, Clock, TrendingUp, Sparkles, type LucideIcon } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import MegaCTABanner from '../sections/MegaCTABanner'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
@@ -199,6 +200,13 @@ export default function ToolsIndex() {
             </div>
           </div>
         </section>
+
+        <MegaCTABanner
+          title="Les calculateurs sont gratuits. Le vrai gain est dans le cockpit complet."
+          subtitle="Ces 4 outils gratuits vous donnent une idée. Proprely automatise tout en temps réel : marge par client, planning agents, devis IA, preuve de passage. Bêta gratuite, onboarding 30 min."
+          ctaLabel="Demander mon accès bêta"
+          location="tools_index_mega_cta"
+        />
       </main>
 
       <Footer />
