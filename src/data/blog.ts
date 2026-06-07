@@ -4534,3 +4534,56 @@ export function getRelatedPosts(slug: string, max = 2): BlogPost[] {
   }
   return posts.filter((p) => p.slug !== slug).slice(0, max)
 }
+
+const FR_MONTHS_IDX: Record<string, number> = {
+  janvier: 0, février: 1, fevrier: 1, mars: 2, avril: 3, mai: 4, juin: 5,
+  juillet: 6, août: 7, aout: 7, septembre: 8, octobre: 9, novembre: 10, décembre: 11, decembre: 11,
+}
+
+function parsePostDate(s: string): number {
+  const m = s.toLowerCase().trim().match(/^(\d{1,2})\s+(\S+)\s+(\d{4})$/)
+  if (!m) return 0
+  const month = FR_MONTHS_IDX[m[2]]
+  if (month === undefined) return 0
+  return Date.UTC(Number(m[3]), month, Number(m[1]))
+}
+
+/**
+ * Renvoie l'article précédent et suivant chronologiquement (par date publication).
+ * Utilisé pour la navigation prev/next sur les articles blog.
+ * Newer = post publié AVANT (plus récent), Older = post publié APRÈS (plus ancien).
+ */
+export function getAdjacentPosts(slug: string): { newer?: BlogPost; older?: BlogPost } {
+  const sorted = [...posts].sort((a, b) => parsePostDate(b.date) - parsePostDate(a.date))
+  const idx = sorted.findIndex((p) => p.slug === slug)
+  if (idx === -1) return {}
+  return {
+    newer: idx > 0 ? sorted[idx - 1] : undefined,
+    older: idx < sorted.length - 1 ? sorted[idx + 1] : undefined,
+  }
+}
+
+/**
+ * Extrait les H2 (## ) d'un content markdown pour générer une table des matières.
+ * Retourne un array de { text, id } avec id slugifié pour ancres.
+ */
+export function extractTOC(content: string): { text: string; id: string }[] {
+  const lines = content.split('\n')
+  const headings: { text: string; id: string }[] = []
+  for (const line of lines) {
+    if (line.startsWith('## ') && !line.startsWith('### ')) {
+      const text = line.slice(3).trim()
+      const id = text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+        .slice(0, 60)
+      if (text && id) headings.push({ text, id })
+    }
+  }
+  return headings
+}

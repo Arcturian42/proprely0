@@ -1,11 +1,11 @@
 import { useEffect, useState, type ReactElement } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle, Zap } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle, Zap, List } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import NotFound from './NotFound'
-import { getPost, getRelatedPosts } from '../data/blog'
+import { getPost, getRelatedPosts, getAdjacentPosts, extractTOC } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
 import Link from '../components/Link'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -22,9 +22,20 @@ function renderMarkdown(content: string): ReactElement[] {
     const line = lines[i]
 
     if (line.startsWith('## ')) {
+      const text = line.slice(3)
+      // ID slugifié pour ancres de la table des matières
+      const id = text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+        .slice(0, 60)
       blocks.push(
-        <h2 key={key++} className="text-2xl sm:text-3xl font-black text-slate-900 mt-12 mb-4 leading-tight tracking-tight">
-          {line.slice(3)}
+        <h2 id={id} key={key++} className="text-2xl sm:text-3xl font-black text-slate-900 mt-12 mb-4 leading-tight tracking-tight scroll-mt-24">
+          {text}
         </h2>
       )
       i++
@@ -287,6 +298,10 @@ type Props = { slug: string }
 export default function BlogPost({ slug }: Props) {
   const post = getPost(slug)
   const others = getRelatedPosts(slug, 2)
+  const { newer, older } = getAdjacentPosts(slug)
+  // Table des matières uniquement pour articles longs (≥1500 mots) avec ≥3 H2
+  const toc = post && post.content.split(/\s+/).length >= 1500 ? extractTOC(post.content) : []
+  const showTOC = toc.length >= 3
 
   useEffect(() => {
     if (!post) return
@@ -408,6 +423,24 @@ export default function BlogPost({ slug }: Props) {
 
             <QuickSummary items={post.quickSummary} />
 
+            {showTOC && (
+              <nav aria-label="Table des matières" className="my-8 bg-slate-50 border border-slate-100 rounded-2xl p-5 sm:p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <List size={16} className="text-blue-600" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Table des matières</span>
+                </div>
+                <ol className="space-y-1.5 list-decimal list-inside marker:text-slate-400 marker:font-bold">
+                  {toc.map((h) => (
+                    <li key={h.id} className="text-sm text-slate-700">
+                      <a href={`#${h.id}`} className="hover:text-blue-700 hover:underline transition-colors">
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
             <div className="prose-content">
               {renderMarkdown(post.content)}
             </div>
@@ -437,6 +470,47 @@ export default function BlogPost({ slug }: Props) {
             </div>
           </div>
         </article>
+
+        {(newer || older) && (
+          <section className="bg-white py-10 sm:py-12 border-t border-slate-100">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid sm:grid-cols-2 gap-4">
+                {newer ? (
+                  <Link
+                    to={`/blog/${newer.slug}/`}
+                    className="group flex flex-col bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-white transition-colors text-left"
+                  >
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-blue-600 mb-2">
+                      <ArrowLeft size={11} />
+                      Article plus récent
+                    </span>
+                    <span className="text-sm font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
+                      {newer.title}
+                    </span>
+                  </Link>
+                ) : (
+                  <div />
+                )}
+                {older ? (
+                  <Link
+                    to={`/blog/${older.slug}/`}
+                    className="group flex flex-col bg-slate-50 border border-slate-100 rounded-2xl p-5 hover:border-blue-200 hover:bg-white transition-colors text-right sm:items-end"
+                  >
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-blue-600 mb-2">
+                      Article plus ancien
+                      <ArrowRight size={11} />
+                    </span>
+                    <span className="text-sm font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
+                      {older.title}
+                    </span>
+                  </Link>
+                ) : (
+                  <div />
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {others.length > 0 && (
           <section className="bg-slate-50 py-14 sm:py-20 border-t border-slate-100">
