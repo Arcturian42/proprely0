@@ -15,29 +15,29 @@ type MenuConfig = {
   footerLink?: { to: string; label: string }
 }
 
-const SOLUTION_MENU: MenuConfig = {
-  label: 'Solution',
+const SOLUTIONS_MENU: MenuConfig = {
+  label: 'Solutions',
   columns: [
     {
-      heading: 'Par type de société',
+      heading: 'Par contexte',
       links: [
-        { to: '/logiciel-societe-nettoyage', label: 'Logiciel société de nettoyage', desc: 'Le guide complet 2026' },
+        { to: '/logiciel-societe-nettoyage', label: 'Société de nettoyage', desc: 'Le guide complet 2026' },
         { to: '/logiciel-auto-entrepreneur-nettoyage', label: 'Auto-entrepreneur', desc: 'Démarrer seul, sans Excel' },
-        { to: '/logiciel-nettoyage-medical-bionettoyage', label: 'Secteur médical', desc: 'Bionettoyage et protocoles' },
+        { to: '/logiciel-nettoyage-medical-bionettoyage', label: 'Médical & bionettoyage', desc: 'Protocoles et traçabilité' },
         { to: '/logiciel-nettoyage-copropriete-syndic', label: 'Copropriété & syndic', desc: 'Multi-immeubles, PV automatique' },
       ],
     },
     {
-      heading: 'Par besoin',
+      heading: 'Par douleur métier',
       links: [
-        { to: '/crm-entreprise-proprete', label: 'CRM propreté', desc: 'Pipeline et marge par client' },
-        { to: '/convention-collective-nettoyage', label: 'Convention IDCC 3043', desc: 'Conformité grille salariale' },
-        { to: '/application-mobile-agents-nettoyage', label: 'App mobile agents', desc: 'Lien web, sans installation' },
-        { to: '/audit-gratuit', label: 'Audit gratuit 30 min', desc: 'Diagnostic offert par le fondateur' },
+        { to: '/proprely-vs-excel', label: 'Remplacer Excel & WhatsApp', desc: 'Centraliser planning, agents et clients' },
+        { to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App mobile, sans installation' },
+        { to: '/crm-entreprise-proprete', label: 'Centraliser clients & sites', desc: 'CRM propreté, marge par client' },
+        { to: '/convention-collective-nettoyage', label: 'Conformité IDCC 3043', desc: 'Grille salariale, article 7' },
       ],
     },
   ],
-  footerLink: { to: '/logiciel-societe-nettoyage', label: 'Voir le guide complet du logiciel' },
+  footerLink: { to: '/audit-gratuit', label: 'Audit gratuit 30 min avec le fondateur' },
 }
 
 const FEATURES_MENU: MenuConfig = {
@@ -115,7 +115,7 @@ const RESOURCES_MENU: MenuConfig = {
   footerLink: { to: '/blog', label: 'Voir tous les articles du blog' },
 }
 
-const MENUS: MenuConfig[] = [SOLUTION_MENU, FEATURES_MENU, COMPARATIFS_MENU, RESOURCES_MENU]
+const MENUS: MenuConfig[] = [SOLUTIONS_MENU, FEATURES_MENU, COMPARATIFS_MENU, RESOURCES_MENU]
 
 type Props = {
   /** Si true, ajoute un retour à l'accueil (utilisé sur les pages internes) */
@@ -252,6 +252,15 @@ export default function MegaMenuNav({ showHomeAccent = true }: Props) {
             href={BETA_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('audit_cta_click', { location: 'mega_menu_nav' })}
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+          >
+            Audit gratuit
+          </a>
+          <a
+            href={BETA_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackEvent('beta_cta_click', { location: 'mega_menu_nav' })}
             className="group relative bg-blue-600 text-white rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] active:scale-[0.97] inline-flex items-center gap-1.5 shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 overflow-hidden"
           >
@@ -325,6 +334,27 @@ export default function MegaMenuNav({ showHomeAccent = true }: Props) {
               <Link to="/tarifs" className="block py-3.5 font-semibold text-slate-900">
                 Tarifs
               </Link>
+            </div>
+            <div className="pt-5 flex flex-col gap-2.5">
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('beta_cta_click', { location: 'mega_menu_nav_mobile' })}
+                className="w-full inline-flex items-center justify-center gap-1.5 bg-blue-600 text-white rounded-lg px-4 py-3 text-sm font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Rejoindre la bêta
+                <ArrowRight size={14} />
+              </a>
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('audit_cta_click', { location: 'mega_menu_nav_mobile' })}
+                className="w-full inline-flex items-center justify-center gap-1.5 border border-slate-200 text-slate-700 rounded-lg px-4 py-3 text-sm font-semibold hover:bg-slate-50 transition-colors"
+              >
+                Audit gratuit 30 min
+              </a>
             </div>
           </div>
         </div>

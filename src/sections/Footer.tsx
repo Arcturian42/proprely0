@@ -1,400 +1,183 @@
-import { Calculator, BookOpen, Mail, ArrowUpRight, Tag, MapPin } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
+
+const linkClass = 'text-slate-400 hover:text-white text-sm transition-colors'
+const headingClass = 'text-white font-bold text-xs uppercase tracking-wider mb-4'
 
 export default function Footer() {
   return (
     <footer className="bg-slate-950 pt-16 pb-10 sm:pt-20 sm:pb-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 mb-12 pb-12 border-b border-slate-800">
-          <div className="col-span-2 sm:col-span-1">
-            <span className="text-white font-bold text-base block mb-2">Proprely</span>
-            <p className="text-slate-500 text-xs leading-relaxed">
-              Le cockpit métier pour piloter votre société de nettoyage.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-end mb-12 pb-12 border-b border-slate-800">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-white font-bold text-lg">Proprely</span>
+              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-blue-200 bg-blue-900/40 rounded-full px-2 py-0.5 border border-blue-800">
+                Bêta privée
+              </span>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed max-w-md">
+              Le cockpit métier des sociétés de nettoyage B2B : clients, agents, planning, devis, preuve de passage, rentabilité — au même endroit.
             </p>
           </div>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'footer_cta' })}
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors"
+            >
+              Rejoindre la bêta
+              <ArrowRight size={14} />
+            </a>
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('audit_cta_click', { location: 'footer_cta' })}
+              className="inline-flex items-center justify-center gap-2 border border-slate-700 hover:border-slate-500 hover:bg-slate-900 text-slate-200 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors"
+            >
+              Audit gratuit 30 min
+            </a>
+          </div>
+        </div>
 
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 mb-12 pb-12 border-b border-slate-800">
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              <Link to="/fonctionnalites" className="hover:text-slate-300 transition-colors">Fonctionnalités</Link>
+            <h4 className={headingClass}>
+              <Link to="/fonctionnalites" className="hover:text-slate-300 transition-colors">Produit</Link>
             </h4>
             <ul className="space-y-2.5">
-              <li>
-                <Link to="/logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors font-semibold">
-                  Logiciel nettoyage
-                </Link>
-              </li>
-              <li>
-                <Link to="/logiciel-auto-entrepreneur-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Auto-entrepreneur
-                </Link>
-              </li>
-              <li>
-                <Link to="/crm-entreprise-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  CRM propreté
-                </Link>
-              </li>
-              <li>
-                <Link to="/convention-collective-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Convention IDCC 3043
-                </Link>
-              </li>
-              <li>
-                <Link to="/logiciel-nettoyage-medical-bionettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Médical & bionettoyage
-                </Link>
-              </li>
-              <li>
-                <Link to="/logiciel-nettoyage-copropriete-syndic" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Copropriété & syndic
-                </Link>
-              </li>
-              <li>
-                <Link to="/application-mobile-agents-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Application mobile agents
-                </Link>
-              </li>
-              <li>
-                <Link to="/fonctionnalites/planning-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Planning
-                </Link>
-              </li>
-              <li>
-                <Link to="/fonctionnalites/devis-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Devis
-                </Link>
-              </li>
-              <li>
-                <Link to="/fonctionnalites/gestion-agents-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Gestion agents
-                </Link>
-              </li>
-              <li>
-                <Link to="/fonctionnalites/preuve-passage-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Preuve de passage
-                </Link>
-              </li>
+              <li><Link to="/fonctionnalites/planning-nettoyage" className={linkClass}>Planning agents</Link></li>
+              <li><Link to="/fonctionnalites/gestion-agents-nettoyage" className={linkClass}>Gestion des agents</Link></li>
+              <li><Link to="/fonctionnalites/pointage-agents-nettoyage" className={linkClass}>Pointage GPS</Link></li>
+              <li><Link to="/fonctionnalites/preuve-passage-nettoyage" className={linkClass}>Preuve de passage</Link></li>
+              <li><Link to="/fonctionnalites/suivi-interventions-nettoyage" className={linkClass}>Suivi interventions</Link></li>
+              <li><Link to="/fonctionnalites/devis-nettoyage" className={linkClass}>Devis intelligent</Link></li>
+              <li><Link to="/fonctionnalites/facturation-nettoyage" className={linkClass}>Facturation</Link></li>
+              <li><Link to="/fonctionnalites/gestion-sites-clients-nettoyage" className={linkClass}>Sites & clients</Link></li>
+              <li><Link to="/fonctionnalites" className={`${linkClass} font-semibold`}>Toutes les fonctionnalités →</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+            <h4 className={headingClass}>
+              <Link to="/solution" className="hover:text-slate-300 transition-colors">Solutions</Link>
+            </h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/logiciel-societe-nettoyage" className={`${linkClass} font-semibold`}>Société de nettoyage</Link></li>
+              <li><Link to="/logiciel-auto-entrepreneur-nettoyage" className={linkClass}>Auto-entrepreneur</Link></li>
+              <li><Link to="/logiciel-nettoyage-medical-bionettoyage" className={linkClass}>Médical & bionettoyage</Link></li>
+              <li><Link to="/logiciel-nettoyage-copropriete-syndic" className={linkClass}>Copropriété & syndic</Link></li>
+              <li><Link to="/proprely-vs-excel" className={linkClass}>Remplacer Excel & WhatsApp</Link></li>
+              <li><Link to="/application-mobile-agents-nettoyage" className={linkClass}>App mobile agents</Link></li>
+              <li><Link to="/crm-entreprise-proprete" className={linkClass}>CRM propreté</Link></li>
+              <li><Link to="/convention-collective-nettoyage" className={linkClass}>Conformité IDCC 3043</Link></li>
+              <li><Link to="/audit-gratuit" className={`${linkClass} font-semibold`}>Audit gratuit 30 min →</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className={headingClass}>
+              <Link to="/comparatif-logiciel-nettoyage" className="hover:text-slate-300 transition-colors">Comparatifs</Link>
+            </h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/comparatif-logiciel-nettoyage" className={`${linkClass} font-semibold`}>Comparatif logiciels 2026</Link></li>
+              <li><Link to="/proprely-vs-excel" className={linkClass}>Proprely vs Excel</Link></li>
+              <li><Link to="/comparatif/proprely-vs-organilog" className={linkClass}>vs Organilog</Link></li>
+              <li><Link to="/comparatif/proprely-vs-progiclean" className={linkClass}>vs Progiclean</Link></li>
+              <li><Link to="/comparatif/proprely-vs-propret" className={linkClass}>vs PROPRET</Link></li>
+              <li><Link to="/comparatif/proprely-vs-2bepragma" className={linkClass}>vs 2BePragma</Link></li>
+              <li><Link to="/comparatif/proprely-vs-synchroteam" className={linkClass}>vs Synchroteam</Link></li>
+              <li><Link to="/comparatif/proprely-vs-comete-proprete" className={linkClass}>vs Comète Propreté</Link></li>
+              <li><Link to="/alternative-organilog" className={`${linkClass} font-semibold`}>Alternatives →</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className={headingClass}>
               <Link to="/ressources" className="hover:text-slate-300 transition-colors">Ressources</Link>
             </h4>
             <ul className="space-y-2.5">
-              <li>
-                <Link to="/tarifs" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Tag size={12} />
-                  Tarifs
-                </Link>
-              </li>
-              <li>
-                <Link to="/outils" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Calculator size={12} />
-                  Outils gratuits
-                </Link>
-              </li>
-              <li>
-                <Link to="/calculateur-prix-nettoyage-m2" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Calculator size={12} />
-                  Prix nettoyage m²
-                </Link>
-              </li>
-              <li>
-                <Link to="/calculateur-roi" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Calculator size={12} />
-                  Calculateur ROI
-                </Link>
-              </li>
-              <li>
-                <Link to="/simulateur-rentabilite" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Calculator size={12} />
-                  Simulateur rentabilité
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  Comparatif logiciels
-                </Link>
-              </li>
-              <li>
-                <Link to="/proprely-vs-excel" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  Proprely vs Excel
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-organilog" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  vs Organilog
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  vs Progiclean
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-propret" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  vs PROPRET
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <BookOpen size={12} />
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/a-propos" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Mail size={12} />
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                  <Mail size={12} />
-                  Contact
-                </Link>
-              </li>
+              <li><Link to="/blog" className={`${linkClass} font-semibold`}>Blog</Link></li>
+              <li><Link to="/outils" className={linkClass}>Outils gratuits</Link></li>
+              <li><Link to="/calculateur-prix-nettoyage-m2" className={linkClass}>Prix nettoyage m²</Link></li>
+              <li><Link to="/calculateur-roi" className={linkClass}>Calculateur ROI</Link></li>
+              <li><Link to="/simulateur-rentabilite" className={linkClass}>Simulateur rentabilité</Link></li>
+              <li><Link to="/ressources" className={linkClass}>Modèles Excel gratuits</Link></li>
+              <li><Link to="/guides/quel-logiciel-societe-nettoyage" className={linkClass}>Guides réponse directe</Link></li>
+              <li><Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className={linkClass}>Grille salaire 2026</Link></li>
+              <li><Link to="/blog/creer-societe-nettoyage" className={linkClass}>Créer une société</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">Légal</h4>
+            <h4 className={headingClass}>Entreprise</h4>
             <ul className="space-y-2.5">
+              <li><Link to="/tarifs" className={`${linkClass} font-semibold`}>Tarifs</Link></li>
+              <li><Link to="/beta" className={linkClass}>Bêta privée</Link></li>
+              <li><Link to="/a-propos" className={linkClass}>À propos</Link></li>
+              <li><Link to="/contact" className={linkClass}>Contact</Link></li>
               <li>
-                <Link to="/mentions-legales" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Mentions légales
-                </Link>
+                <a
+                  href="https://www.linkedin.com/company/proprely/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkClass} inline-flex items-center gap-1`}
+                >
+                  LinkedIn
+                  <ArrowUpRight size={11} />
+                </a>
               </li>
               <li>
-                <Link to="/confidentialite" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Confidentialité
-                </Link>
-              </li>
-              <li>
-                <Link to="/cgu" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  CGU
-                </Link>
+                <a
+                  href="https://tiktok.com/@proprely"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${linkClass} inline-flex items-center gap-1`}
+                >
+                  TikTok
+                  <ArrowUpRight size={11} />
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 mb-12 pb-12 border-b border-slate-800">
-          <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              <Link to="/comparatif-logiciel-nettoyage" className="hover:text-slate-300 transition-colors">Comparatifs</Link>
-            </h4>
-            <ul className="grid grid-cols-2 gap-x-5 gap-y-2.5">
-              <li>
-                <Link to="/comparatif-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors font-semibold">
-                  Comparatif logiciels 2026
-                </Link>
-              </li>
-              <li>
-                <Link to="/proprely-vs-excel" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs Excel
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs Organilog
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs Progiclean
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-propret" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs PROPRET
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-2bepragma" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs 2BePragma
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-synchroteam" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs Synchroteam
-                </Link>
-              </li>
-              <li>
-                <Link to="/comparatif/proprely-vs-comete-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  vs Comète Propreté
-                </Link>
-              </li>
-              <li>
-                <Link to="/alternative-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Alternative Organilog
-                </Link>
-              </li>
-              <li>
-                <Link to="/alternative-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Alternative Progiclean
-                </Link>
-              </li>
-              <li>
-                <Link to="/alternative-propret" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Alternative PROPRET
-                </Link>
-              </li>
-              <li>
-                <Link to="/alternative-2bepragma" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Alternative 2BePragma
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              Guides réponse directe
-            </h4>
-            <ul className="space-y-2.5">
-              <li>
-                <Link to="/guides/quel-logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Quel logiciel pour une société de nettoyage ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/outils-gestion-entreprise-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Quels outils pour gérer une entreprise de propreté ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/alternative-simple-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Quelle alternative simple à Organilog ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/saas-societe-nettoyage-france" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Quel SaaS pour société de nettoyage en France ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/comment-fonctionne-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Comment fonctionne un logiciel de nettoyage ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/prix-logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Combien coûte un logiciel de nettoyage ?
-                </Link>
-              </li>
-              <li>
-                <Link to="/guides/pourquoi-logiciel-entreprise-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  Pourquoi utiliser un logiciel de nettoyage ?
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="mb-12 pb-12 border-b border-slate-800">
-          <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-            <Link to="/villes" className="hover:text-slate-300 transition-colors">Logiciel nettoyage par ville</Link>
+        <div className="mb-10 pb-10 border-b border-slate-800">
+          <h4 className={headingClass}>
+            <Link to="/villes" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1.5">
+              <MapPin size={12} />
+              Logiciel nettoyage par ville
+            </Link>
           </h4>
-          <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
-            <li>
-              <Link to="/villes/paris" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Paris &amp; Île-de-France
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/lyon" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Lyon &amp; Rhône-Alpes
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/marseille" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Marseille &amp; PACA
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/bordeaux" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Bordeaux &amp; Gironde
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/toulouse" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Toulouse &amp; Occitanie
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/nantes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Nantes &amp; Loire-Atlantique
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/lille" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Lille &amp; Hauts-de-France
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/nice" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Nice &amp; Côte d'Azur
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/strasbourg" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Strasbourg &amp; Alsace
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/montpellier" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Montpellier &amp; Hérault
-              </Link>
-            </li>
-            <li>
-              <Link to="/villes/rennes" className="text-slate-400 hover:text-white text-sm transition-colors inline-flex items-center gap-1.5">
-                <MapPin size={12} />
-                Rennes &amp; Bretagne
-              </Link>
-            </li>
+          <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <li><Link to="/villes/paris" className={linkClass}>Paris</Link></li>
+            <li><Link to="/villes/lyon" className={linkClass}>Lyon</Link></li>
+            <li><Link to="/villes/marseille" className={linkClass}>Marseille</Link></li>
+            <li><Link to="/villes/bordeaux" className={linkClass}>Bordeaux</Link></li>
+            <li><Link to="/villes/toulouse" className={linkClass}>Toulouse</Link></li>
+            <li><Link to="/villes/nantes" className={linkClass}>Nantes</Link></li>
+            <li><Link to="/villes/lille" className={linkClass}>Lille</Link></li>
+            <li><Link to="/villes/nice" className={linkClass}>Nice</Link></li>
+            <li><Link to="/villes/strasbourg" className={linkClass}>Strasbourg</Link></li>
+            <li><Link to="/villes/montpellier" className={linkClass}>Montpellier</Link></li>
+            <li><Link to="/villes/rennes" className={linkClass}>Rennes</Link></li>
+            <li><Link to="/villes" className={`${linkClass} font-semibold`}>Toutes les villes →</Link></li>
           </ul>
         </div>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-slate-500 text-xs">
-            © {new Date().getFullYear()} Proprely. Tous droits réservés.
+            © {new Date().getFullYear()} Proprely — Édité par Pershing Global Solutions LTD. Tous droits réservés.
           </p>
-          <div className="flex items-center gap-4 text-xs text-slate-500">
-            <a
-              href="https://www.linkedin.com/company/proprely/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Proprely sur LinkedIn"
-              className="hover:text-slate-300 transition-colors inline-flex items-center gap-1"
-            >
-              LinkedIn
-              <ArrowUpRight size={11} />
-            </a>
-            <a
-              href="https://tiktok.com/@proprely"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Proprely sur TikTok"
-              className="hover:text-slate-300 transition-colors inline-flex items-center gap-1"
-            >
-              TikTok
-              <ArrowUpRight size={11} />
-            </a>
+          <div className="flex items-center flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
+            <Link to="/mentions-legales" className="hover:text-slate-300 transition-colors">Mentions légales</Link>
+            <Link to="/confidentialite" className="hover:text-slate-300 transition-colors">Confidentialité</Link>
+            <Link to="/cgu" className="hover:text-slate-300 transition-colors">CGU</Link>
             <a href="https://proprely.fr" className="hover:text-slate-300 transition-colors inline-flex items-center gap-1">
               proprely.fr
               <ArrowUpRight size={11} />
