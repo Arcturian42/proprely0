@@ -30,6 +30,254 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'creer-societe-nettoyage',
+    title: "Créer une société de nettoyage en 2026 : le guide complet en 10 étapes",
+    excerpt: "Statut juridique, code APE 8121Z, convention IDCC 3043, assurance RC pro, premier matériel, recrutement, prospection : la méthode complète pour lancer une société de nettoyage B2B rentable en 2026.",
+    date: '7 juin 2026',
+    readTime: '15 min',
+    tag: 'Création',
+    tldr: "Pour créer une société de nettoyage en 2026, il faut : (1) choisir un statut juridique (SASU recommandée pour 90 % des cas, micro-entreprise pour démarrer seul), (2) immatriculer avec le code APE 8121Z, (3) souscrire une RC pro obligatoire (200 à 600 €/an), (4) s'affilier à la convention collective IDCC 3043, (5) s'équiper (3 000 à 8 000 € pour le matériel de base), (6) recruter selon la grille AS1 à 11,99 €/h brut, (7) prospecter le B2B local. Budget total de lancement : 5 000 à 15 000 €. Premiers clients sous 2-3 mois. Rentabilité réaliste : 12-18 mois.",
+    quickSummary: [
+      "Statut juridique : SASU pour 90 % des projets B2B, micro-entreprise pour tester seul (plafond 77 700 € HT).",
+      "Code APE 8121Z (nettoyage courant des bâtiments). Immatriculation au Guichet unique INPI : ~50 € en SASU.",
+      "Assurance RC pro obligatoire : 200 à 600 €/an selon le CA prévisionnel.",
+      "Affiliation IDCC 3043 dès le premier salarié : grille AS1 à 11,99 € brut/h en 2026.",
+      "Investissement matériel de départ : 3 000 à 8 000 € (aspirateurs pro, autolaveuse compacte, EPI, consommables).",
+      "Budget total réaliste de lancement : 5 000 à 15 000 €, hors fonds de roulement.",
+      "Premiers clients B2B : prospection locale, bouche-à-oreille, plateformes de référencement, appels d'offres copros et TPE.",
+      "Rentabilité : 12 à 18 mois en moyenne. Marge nette cible : 12 à 18 %.",
+    ],
+    relatedSlugs: ['cout-horaire-charge-agent-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'fixer-prix-nettoyage', 'trouver-clients-b2b-nettoyage'],
+    faq: [
+      { q: "Quel statut juridique choisir pour une société de nettoyage ?", a: "Pour 90 % des projets B2B en 2026, la SASU est le meilleur compromis : responsabilité limitée, régime social du dirigeant assimilé salarié, image professionnelle pour signer avec des syndics et grands comptes. La micro-entreprise convient pour démarrer seul en testant son marché (plafond 77 700 € HT), mais limite très vite la croissance et l'image B2B. L'EURL convient si vous voulez l'IS avec des charges sociales TNS plus basses." },
+      { q: "Combien coûte la création d'une société de nettoyage ?", a: "Les frais administratifs purs (immatriculation, statuts, publication) tournent autour de 200 à 800 € en SASU. Avec le matériel de base (3 000 à 8 000 €), l'assurance RC pro (200 à 600 €), la communication initiale (site web, cartes, signalétique) et 2 à 3 mois de trésorerie de sécurité, prévoyez un budget total de 5 000 à 15 000 €. C'est l'un des secteurs B2B avec le plus faible ticket d'entrée." },
+      { q: "Faut-il un diplôme pour ouvrir une entreprise de nettoyage ?", a: "Non. Le nettoyage courant des bâtiments (code APE 8121Z) n'est pas une activité réglementée : aucun diplôme ni qualification obligatoires. Des certifications volontaires existent (Qualipropre, CERTIPROP) et peuvent peser dans certains appels d'offres. Pour la désinfection en milieu médical, des protocoles et formations spécifiques sont attendus." },
+      { q: "Quelle assurance souscrire pour une société de nettoyage ?", a: "La Responsabilité Civile Professionnelle (RC pro) est obligatoire de fait : aucun client B2B ne signera sans attestation. Elle couvre les dommages causés chez les clients (casse, dégât des eaux, vol imputé). Budget : 200 à 600 €/an pour une jeune société. Ajoutez une assurance flotte si vous avez des véhicules, et une multirisque pro si vous avez des locaux." },
+      { q: "Quelle convention collective s'applique au nettoyage ?", a: "La convention collective nationale des entreprises de propreté (IDCC 3043) s'applique dès l'embauche du premier salarié. Elle fixe la grille salariale (AS1 à 11,99 € brut/h en 2026), les primes (panier, transport, salissure), le transfert de personnel article 7, et les obligations de formation. Voir le guide complet de l'IDCC 3043." },
+      { q: "Combien de temps avant qu'une société de nettoyage soit rentable ?", a: "Avec un démarrage maîtrisé (1 ou 2 contrats B2B récurrents dès les 3 premiers mois), la rentabilité opérationnelle est atteinte en 6 à 12 mois. La rentabilité nette globale (récupération de l'investissement initial) prend 12 à 18 mois. La main-d'œuvre représentant 70-85 % des coûts, la marge dépend principalement de votre coût horaire chargé réel et de votre prix de vente moyen." },
+      { q: "Quel chiffre d'affaires viser la première année ?", a: "Pour un dirigeant seul avec 1 à 2 agents salariés, viser 80 000 à 150 000 € de CA HT la première année est réaliste. Au-delà de 200 000 € la première année, il faut généralement 3 à 5 agents et une organisation déjà structurée (planning, devis, paie). Le seuil de rentabilité minimum tourne autour de 60 000 € de CA HT pour une SASU avec un dirigeant." },
+      { q: "Quel matériel acheter en priorité ?", a: "Pour démarrer en tertiaire standard : 2 chariots de ménage complets (~400 €), 2 aspirateurs professionnels (~600 € pièce), une monobrosse ou autolaveuse compacte (~1 500 à 3 500 €), les consommables 3 mois (1 000 €), les EPI et tenues (500 €). Achetez du matériel pro, pas du grand public : la durée de vie x4 amortit largement l'écart de prix." },
+    ],
+    content: `## Pourquoi 2026 est le bon moment pour créer une société de nettoyage
+
+Le marché de la propreté B2B en France pèse plus de **15 milliards d'euros** et reste fragmenté : plus de **30 000 entreprises**, dont 85 % font moins de 10 salariés. Cette fragmentation laisse une vraie place aux nouveaux entrants capables de se différencier sur la fiabilité, la traçabilité et le digital.
+
+Trois facteurs poussent dans le même sens en 2026 :
+
+- **La pénurie de fournisseurs fiables** pour les syndics, copropriétés et TPE, qui en ont assez des prestataires qui disparaissent ou ne tiennent pas leurs engagements.
+- **Le virage digital** (preuve de passage, planning en ligne, devis dématérialisés) qui devient un critère de choix dans les appels d'offres.
+- **La structuration RH du secteur** (article 7 de l'IDCC 3043) qui sécurise la reprise de marchés et la croissance.
+
+Le ticket d'entrée reste **l'un des plus bas du B2B** : entre 5 000 et 15 000 € pour démarrer proprement. Mais l'erreur classique est de croire que c'est un secteur "facile". La rentabilité se gagne sur la rigueur, la marge et le pilotage — pas sur le matériel.
+
+Ce guide détaille les **10 étapes concrètes** pour créer une société de nettoyage B2B en 2026, avec les chiffres, les pièges et les outils à mettre en place dès le jour 1.
+
+## ⚖️ Étape 1 — Choisir le statut juridique
+
+Le statut juridique conditionne votre fiscalité, votre protection sociale, votre image B2B et votre capacité à recruter. Voici les 4 options sérieuses en 2026.
+
+| Statut | Pour qui ? | Avantages | Limites |
+| --- | --- | --- | --- |
+| **Micro-entreprise** | Démarrer seul, tester un marché | Création gratuite, comptabilité ultra-simple | Plafond 77 700 € HT, pas de TVA récupérable, image B2B faible |
+| **SASU** *(recommandée)* | Projet B2B sérieux, dirigeant seul | Assimilé salarié, image pro, levée de fonds possible | Charges sociales élevées (~75 % du net) |
+| **EURL** | Optimisation TNS, optique solo IS | Charges TNS plus basses (~45 %) | Image moins forte que SASU |
+| **SAS / SARL** | Plusieurs associés dès le départ | Souplesse statutaire, partenariats | Création plus complexe |
+
+**Pour 90 % des projets B2B sérieux**, la **SASU** reste le meilleur compromis en 2026 : responsabilité limitée, régime assimilé salarié pour le dirigeant, image solide vis-à-vis des syndics et grands comptes, et capacité à transformer la structure en SAS plus tard pour faire entrer un associé ou un investisseur.
+
+La **micro-entreprise** convient pour démarrer **vraiment seul** et tester son marché sans risque, sans recruter. Au-delà de 2 ou 3 clients récurrents, le plafond de 77 700 € HT devient une contrainte forte. Voir notre [logiciel pour auto-entrepreneur en nettoyage](/logiciel-auto-entrepreneur-nettoyage) pour cette configuration.
+
+## 🏢 Étape 2 — Étudier le marché et trouver son positionnement
+
+L'erreur n°1 des nouveaux entrants est de vouloir "faire de tout pour tout le monde". Le marché du nettoyage B2B est segmenté, et **la rentabilité vient de la spécialisation**.
+
+Les principales niches à arbitrer :
+
+- **Tertiaire / bureaux** : volume élevé, marges serrées, exigence de régularité. Cibles : TPE/PME, plateaux de bureaux, professions libérales.
+- **Copropriétés et syndics** : marchés récurrents, paiement fiable, exigence forte de [preuve de passage](/fonctionnalites/preuve-passage-nettoyage) et PV automatique.
+- **Médical / bionettoyage** : marges supérieures (×1,5 à ×2 vs tertiaire) mais protocoles stricts. Voir le [logiciel pour le bionettoyage médical](/logiciel-nettoyage-medical-bionettoyage).
+- **Commerces et restauration** : créneaux décalés (avant ouverture / après fermeture), marges correctes.
+- **Industriel et chantiers** : très spécifique, matériel lourd, à éviter au démarrage.
+
+**Recommandation 2026** : démarrez sur 1 ou 2 niches maximum, dans un rayon de **30 km autour de votre base**. Une société de nettoyage qui prospecte tout, partout, finit en sous-traitance à 60 % de marge brute.
+
+## 📋 Étape 3 — Construire un business plan solide
+
+Un business plan crédible pour une société de nettoyage en 2026 tient en 6 sections :
+
+1. **Marché et positionnement** : zone géographique, niches ciblées, concurrence locale identifiée.
+2. **Offre et tarification** : prestations proposées, prix au m² ou à l'heure, marge brute cible. Utilisez le [calculateur prix nettoyage au m²](/calculateur-prix-nettoyage-m2) pour cadrer vos prix de vente.
+3. **Plan opérationnel** : matériel, organisation des tournées, qui fait quoi.
+4. **Plan RH** : nombre d'agents prévus à 6 et 12 mois, statut, [coût horaire chargé réel](/blog/cout-horaire-charge-agent-nettoyage).
+5. **Plan financier** : compte de résultat prévisionnel à 24 mois, seuil de rentabilité, besoin en fonds de roulement.
+6. **Plan commercial** : qui prospecter, comment, avec quel mémoire technique. Voir [trouver des clients B2B en nettoyage](/blog/trouver-clients-b2b-nettoyage).
+
+Le BFR (besoin en fonds de roulement) est **le piège principal** : entre les délais de paiement clients (45-60 jours en B2B) et les salaires payés tous les mois, prévoyez **2 à 3 mois de masse salariale en trésorerie de sécurité**.
+
+## 🚀 Étape 4 — Les démarches administratives en 2026
+
+Depuis 2023, l'immatriculation passe par le **Guichet unique INPI** (formalites.entreprises.gouv.fr). En 2026, voici le parcours type pour une SASU.
+
+| Étape | Coût | Délai |
+| --- | --- | --- |
+| Rédaction des statuts | 0 à 500 € (DIY ou avocat) | 1 à 3 jours |
+| Dépôt du capital social en banque | 1 € minimum (mais 500 à 2 000 € recommandé) | 1 à 5 jours |
+| Publication d'une annonce légale | 150 à 250 € | 1 jour |
+| Immatriculation au Guichet unique INPI | ~50 € | 5 à 15 jours pour le Kbis |
+| Activation du SIRET et de l'APE | Gratuit | Automatique |
+
+Le **code APE / NAF** de référence est **8121Z** ("Nettoyage courant des bâtiments"). Pour les activités spécialisées : 8122Z (nettoyage spécialisé : vitrerie hauteur, désinfection) et 8129A (autres activités de nettoyage : voirie).
+
+Une fois le Kbis reçu, vous obtenez automatiquement votre numéro de **TVA intracommunautaire** (sauf en micro-entreprise sous franchise). En B2B, le régime réel de TVA est presque toujours préférable : il vous permet de récupérer la TVA sur le matériel, les véhicules et les consommables.
+
+## 🛡️ Étape 5 — L'assurance RC pro et les protections obligatoires
+
+Aucun client B2B sérieux ne signera sans **attestation de Responsabilité Civile Professionnelle**. Cette assurance couvre les dommages que vous pouvez causer chez vos clients : dégât des eaux, casse, vol imputé à un agent, intoxication par produit chimique.
+
+| Assurance | Obligatoire ? | Budget annuel |
+| --- | --- | --- |
+| RC pro | De fait, oui | 200 à 600 € la 1ère année |
+| Assurance flotte véhicules | Oui dès 1 véhicule pro | 600 à 1 500 €/véhicule |
+| Multirisque pro (locaux) | Si locaux | 300 à 800 € |
+| Mutuelle entreprise | Obligatoire dès 1 salarié | 30 à 80 €/mois/salarié |
+| Prévoyance (forfait IDCC 3043) | Obligatoire conv. | Inclus dans les charges |
+
+Demandez plusieurs devis : les écarts entre assureurs spécialistes (Hiscox, Generali, MMA Pro) et bancassureurs sont souvent **du simple au double** sur la même couverture.
+
+## 📜 Étape 6 — La convention collective IDCC 3043
+
+Dès l'embauche de votre **premier salarié**, vous êtes obligatoirement affilié à la **convention collective nationale des entreprises de propreté (IDCC 3043)**. Elle est non négociable et structurante.
+
+Les points-clés à retenir en 2026 :
+
+- **Grille salariale** : niveau AS1 à 11,99 € brut/h. Voir la [grille salaire 2026 IDCC 3043 complète](/blog/grille-salaire-nettoyage-2026-idcc-3043).
+- **Primes obligatoires** : panier (~7 €/jour si plus de 6h travaillées), transport, salissure.
+- **Article 7 — Transfert du personnel** : en cas de reprise d'un marché existant, les agents affectés depuis 6 mois sont transférés avec leur ancienneté. C'est à la fois une protection et un risque à anticiper.
+- **Formation et qualifications** : obligation d'effort de formation, certifications volontaires reconnues (CQP).
+- **Mutuelle et prévoyance** : socle de garanties imposé.
+
+Plus de détails dans notre [guide complet de la convention IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043) et le [logiciel conforme à la grille salariale](/convention-collective-nettoyage).
+
+## 🧹 Étape 7 — S'équiper en matériel et produits
+
+Le matériel pèse 3 000 à 8 000 € pour un démarrage en **tertiaire standard avec 1 à 3 agents**. Voici le pack de base et son ordre de priorité.
+
+| Équipement | Quantité | Budget |
+| --- | --- | --- |
+| Chariot de ménage complet | 1 par agent | 200 à 400 € l'unité |
+| Aspirateur professionnel | 1 par agent | 400 à 800 € l'unité |
+| Monobrosse ou autolaveuse compacte | 1 société | 1 500 à 3 500 € |
+| Échelles, escabeaux, perches | 1 société | 200 à 400 € |
+| Consommables (3 mois) | — | 800 à 1 500 € |
+| EPI (gants, blouses, chaussures) | Par agent | 100 à 200 €/agent |
+| Tenues professionnelles | 2 jeux/agent | 80 à 150 €/agent |
+
+**Conseil non négociable** : achetez du matériel **professionnel**, pas du grand public. Un aspirateur pro Numatic ou Karcher tient 5-7 ans en usage quotidien, contre 12-18 mois pour un grand public. L'écart de prix est amorti dès la première année.
+
+Côté **produits chimiques**, privilégiez les **gammes pro concentrées** (Werner & Mertz, Tana, Ecolab) — dilution à 1-2 %, écolabels reconnus, fiches de sécurité disponibles. C'est un argument fort en appels d'offres RSE.
+
+## 👥 Étape 8 — Recruter et gérer les premiers agents
+
+Le recrutement est le **vrai goulet d'étranglement** d'une société de nettoyage en croissance. La sinistralité du secteur (TMS, accidents du travail), le turnover (souvent > 30 % par an) et la rémunération proche du SMIC rendent la fidélisation difficile.
+
+**Les bonnes pratiques RH dès le démarrage** :
+
+- **Contrats clairs** : CDI privilégié au CDD pour fidéliser, temps partiels modulés selon les sites.
+- **Heures complémentaires** : sur un temps partiel, les heures au-delà du contrat sont majorées (+10 % les 10 premières %, +25 % au-delà). Voir [le calcul des heures agents](/blog/calcul-heures-agents-nettoyage).
+- **Planning lisible** : un agent qui ne sait pas où il va le lendemain démissionne. Voir le [planning agents drag-and-drop](/fonctionnalites/planning-nettoyage).
+- **Reconnaissance et stabilité** : prime panier réelle, transport remboursé, sites stables. Voir [fidéliser ses agents](/blog/fideliser-agents-nettoyage-turnover).
+
+Côté paie, externalisez via un cabinet spécialisé propreté ou utilisez un outil avec **export Silae** intégré. La paie propreté est l'une des plus complexes (multi-sites, primes variables, heures complémentaires) : ne la faites pas vous-même au Excel.
+
+## 💼 Étape 9 — Trouver et signer ses premiers clients
+
+Les **3 canaux d'acquisition** qui marchent en 2026 pour une jeune société de nettoyage :
+
+1. **Prospection B2B locale ciblée** : copropriétés, syndics, TPE-PME tertiaires dans un rayon de 20-30 km. LinkedIn, base SIRENE filtrée, porte-à-porte commercial. Le détail dans [trouver des clients B2B en nettoyage](/blog/trouver-clients-b2b-nettoyage).
+2. **Réponses aux appels d'offres** : BOAMP, marches-publics.gouv.fr, profils acheteurs. Volume plus long à monter, mais récurrent. Méthode dans [répondre à un appel d'offres nettoyage](/blog/repondre-appel-offres-nettoyage).
+3. **Bouche-à-oreille et recommandations** : les premiers clients sont aussi vos meilleurs commerciaux si la prestation est tenue. Demandez explicitement des recommandations à 3 mois.
+
+**Le devis qui convertit** : prix juste (basé sur votre [coût horaire chargé réel](/blog/cout-horaire-charge-agent-nettoyage)), précisions sur fréquences et zones, intégration des [preuves de passage](/fonctionnalites/preuve-passage-nettoyage) en argument différenciant. Voir le [logiciel devis nettoyage avec IA](/fonctionnalites/devis-nettoyage) pour gagner du temps.
+
+**Erreur à éviter** : casser les prix pour signer le premier client. Un contrat à perte coûte plus cher qu'un client perdu — et impossible à renégocier à la hausse ensuite.
+
+## 🛠️ Étape 10 — S'outiller pour piloter dès le jour 1
+
+L'erreur la plus chère des dirigeants qui démarrent est de **rester sur Excel + WhatsApp** jusqu'à 5-8 agents. Passé ce seuil, la dispersion devient invisible (heures non comptées, marges qui fondent, litiges sans preuve) et la remise en ordre prend des mois.
+
+Les outils à mettre en place **dès les premiers contrats** :
+
+- **Logiciel métier** : centraliser clients, sites, agents, planning, devis, factures, preuves de passage et marges. Voir le [logiciel société de nettoyage complet](/logiciel-societe-nettoyage).
+- **Comptabilité en ligne** : Tiime, Pennylane, Indy — bas coût, exports automatiques, lien avec votre expert-comptable.
+- **Banque pro** : Qonto, Shine, Memo Bank — moins chères qu'une banque traditionnelle et mieux intégrées aux outils.
+- **Outils de devis et facturation** : intégrés au logiciel métier idéalement, avec **Factur-X 2026** (norme de facturation électronique obligatoire dès 2027 pour les grandes entreprises).
+
+**Le bon réflexe** : choisir un outil que vous garderez à 1 agent comme à 30 agents. Changer d'outil à 10 agents pendant la croissance, c'est 3 mois de chaos opérationnel. Testez gratuitement la [bêta privée Proprely](/beta) : import Excel inclus, onboarding 30 min avec le fondateur.
+
+## 💰 Combien ça coûte au total ? Récap budget
+
+| Poste | Budget minimum | Budget confortable |
+| --- | --- | --- |
+| Création société (SASU) | 400 € | 800 € |
+| Capital social | 500 € | 2 000 € |
+| Assurance RC pro (1ère année) | 200 € | 600 € |
+| Matériel et EPI | 3 000 € | 8 000 € |
+| Consommables 3 mois | 800 € | 1 500 € |
+| Communication initiale | 500 € | 2 000 € |
+| Trésorerie de sécurité (2-3 mois) | 3 000 € | 8 000 € |
+| **Total** | **~8 400 €** | **~22 900 €** |
+
+**Réalistiquement** : prévoyez **10 000 à 15 000 €** pour démarrer dans de bonnes conditions, dont **la moitié en trésorerie de sécurité**.
+
+## 📈 Combien de temps avant la rentabilité ?
+
+- **Mois 1 à 3** : démarches, premier matériel, premiers RDV commerciaux. CA proche de zéro.
+- **Mois 3 à 6** : signature des 2-3 premiers contrats récurrents. CA mensuel : 3 000 à 8 000 €. Rentabilité opérationnelle (vous couvrez vos charges courantes).
+- **Mois 6 à 12** : montée en puissance, 1 ou 2 recrutements, structuration RH et outils. CA mensuel : 8 000 à 15 000 €.
+- **Mois 12 à 18** : rentabilité nette globale atteinte (vous avez récupéré l'investissement initial). Première rémunération régulière du dirigeant.
+
+Pour mesurer la rentabilité contrat par contrat dès le début, utilisez le [simulateur de rentabilité](/simulateur-rentabilite) — il vous donne marge brute, marge nette et résultat horaire en 1 minute.
+
+## ⚠️ Les 5 erreurs qui plombent les sociétés de nettoyage à leurs débuts
+
+1. **Sous-tarifer pour gagner des marchés** : -40 % de marge invisible. Partez du [coût horaire chargé réel](/blog/cout-horaire-charge-agent-nettoyage), pas du prix concurrent.
+2. **Rester sur Excel + WhatsApp jusqu'à 8 agents** : la dispersion devient invisible et la marge fond. À digitaliser dès 2-3 agents.
+3. **Négliger les heures complémentaires majorées** sur les temps partiels : redressement URSSAF garanti, plus douloureux que l'évitement initial.
+4. **Recruter trop vite des agents** sans avoir sécurisé les contrats clients récurrents : vous vous retrouvez à payer des heures non vendues.
+5. **Faire la paie soi-même sur Excel** dans la propreté : la spécificité IDCC 3043 (primes, multi-sites, heures complémentaires) rend l'erreur quasi inévitable. Externalisez ou outillez-vous.
+
+## En résumé : la checklist pour créer sa société de nettoyage
+
+✅ Statut juridique choisi (SASU recommandée)
+✅ Statuts rédigés, capital déposé, annonce légale publiée
+✅ Immatriculation au Guichet unique INPI (code APE 8121Z)
+✅ Compte bancaire pro ouvert
+✅ Assurance RC pro souscrite
+✅ Affiliation IDCC 3043 préparée pour le premier recrutement
+✅ Matériel et produits pro commandés
+✅ Logiciel de gestion métier en place dès le 1er contrat
+✅ Plan de prospection des 30 prochains jours établi
+✅ Trésorerie de sécurité 2-3 mois sécurisée
+
+Pour gagner du temps sur la mise en place opérationnelle, [réservez un audit gratuit 30 min](/audit-gratuit) avec le fondateur de Proprely : on regarde ensemble votre projet, votre prévisionnel, et on identifie les outils à mettre en place dès le premier client pour éviter les pièges typiques de la première année.`,
+    howTo: {
+      name: "Créer une société de nettoyage en France en 2026",
+      description: "Méthode complète en 10 étapes pour lancer une société de nettoyage B2B rentable, du choix du statut juridique à la signature des premiers contrats.",
+      steps: [
+        { name: "Choisir un statut juridique", text: "SASU recommandée pour 90 % des projets B2B sérieux (image, responsabilité limitée, assimilé salarié). Micro-entreprise pour démarrer seul en testant son marché." },
+        { name: "Étudier le marché local et positionner son offre", text: "Choisir 1 à 2 niches (tertiaire, copropriétés, médical, commerces) dans un rayon de 30 km. Éviter de viser tout, partout." },
+        { name: "Construire un business plan", text: "6 sections : marché, offre, opérations, RH, finance, commercial. Prévoir 2-3 mois de masse salariale en BFR." },
+        { name: "Compléter les démarches administratives", text: "Statuts, capital, annonce légale, immatriculation au Guichet unique INPI avec le code APE 8121Z. Comptez 200 à 800 € et 2 à 3 semaines." },
+        { name: "Souscrire les assurances obligatoires", text: "RC pro obligatoire de fait (200 à 600 €/an). Ajouter assurance flotte si véhicules, multirisque si locaux." },
+        { name: "Se conformer à la convention IDCC 3043", text: "Grille salariale, primes (panier, transport, salissure), article 7 transfert du personnel, mutuelle et prévoyance." },
+        { name: "S'équiper en matériel professionnel", text: "Chariots, aspirateurs pro, monobrosse ou autolaveuse compacte, EPI, consommables 3 mois. Budget 3 000 à 8 000 €." },
+        { name: "Recruter et gérer les premiers agents", text: "Contrats clairs, planning lisible, externaliser la paie, anticiper les heures complémentaires majorées sur les temps partiels." },
+        { name: "Signer les premiers clients B2B", text: "Prospection locale ciblée, appels d'offres copros et publics, bouche-à-oreille. Devis basé sur le coût horaire chargé réel, jamais sur le prix concurrent." },
+        { name: "Mettre en place les outils de pilotage dès le jour 1", text: "Logiciel métier (clients, sites, planning, devis, preuve de passage, marges), comptabilité en ligne, banque pro, facturation Factur-X." },
+      ],
+    },
+  },
+  {
     slug: 'cout-horaire-charge-agent-nettoyage',
     title: "Coût horaire chargé agent nettoyage : calcul 2026",
     excerpt: "Salaire brut, charges, congés, primes, coûts indirects : la méthode complète pour calculer le vrai coût d'une heure d'agent — et arrêter de sous-tarifer.",
