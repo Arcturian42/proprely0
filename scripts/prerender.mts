@@ -1615,6 +1615,91 @@ const roadmapHtml = buildHtml({
 writePage('/roadmap', roadmapHtml)
 generated.push('/roadmap')
 
+const authorsIndexBody = `
+  <h1>Auteurs Proprely</h1>
+  <p>Aucun article publié sans avoir été cadré avec un dirigeant de société de nettoyage en exercice. Sources officielles citées (IDCC 3043, INSEE, Légifrance, BOAMP). Aucune fabrication, aucune affiliation cachée.</p>
+  <h2>Paul Munier — Business Developer &amp; rédacteur</h2>
+  <p>Business Developer chez Proprely depuis le lancement de la bêta privée, Paul accompagne chaque mois plusieurs dirigeants de société de nettoyage dans leur passage d'Excel + WhatsApp vers un cockpit métier intégré.</p>
+  <p><a href="${ORIGIN}/auteurs/paul-munier/">Voir le profil complet de Paul Munier</a></p>
+`.trim()
+
+const authorsIndexHtml = buildHtml({
+  url: '/auteurs',
+  title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
+  description: "Les auteurs du blog Proprely : profils, expertises et méthode éditoriale.",
+  schemas: [
+    webpageSchema(
+      'Auteurs Proprely',
+      "Profils des auteurs du blog Proprely.",
+      `${ORIGIN}/auteurs/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Auteurs', item: `${ORIGIN}/auteurs/` },
+      ]
+    ),
+  ],
+  bodyHtml: authorsIndexBody,
+})
+writePage('/auteurs', authorsIndexHtml)
+generated.push('/auteurs')
+
+const paulMunierBody = `
+  <h1>Paul Munier — Business Developer &amp; rédacteur</h1>
+  <p>Business Developer chez Proprely depuis le lancement de la bêta privée, Paul Munier accompagne chaque mois plusieurs dirigeants de société de nettoyage dans leur passage d'Excel + WhatsApp vers un cockpit métier intégré. Ces échanges nourrissent directement les articles publiés sur le blog Proprely.</p>
+  <p>Sa double casquette commercial / rédacteur lui permet de traduire les contraintes opérationnelles (planning, IDCC 3043, preuve de passage, marge par contrat) en contenus actionnables pour les TPE/PME du secteur.</p>
+  <h2>Expertises</h2>
+  <ul>
+    <li>Logiciels de gestion société de nettoyage</li>
+    <li>Convention collective IDCC 3043 (grille salariale, primes, article 7)</li>
+    <li>Pilotage de marge en propreté B2B</li>
+    <li>Planning multi-sites et terrain</li>
+    <li>Preuve de passage et conformité syndic</li>
+    <li>Marchés publics et appels d'offres propreté</li>
+  </ul>
+  <h2>Méthode éditoriale</h2>
+  <p>Aucun article publié sans avoir été cadré avec au moins un dirigeant en exercice. Sources officielles citées (IDCC 3043, INSEE, Légifrance, BOAMP). Données chiffrées vérifiables, ordres de grandeur observés en bêta. Mises à jour annuelles sur les sujets sensibles. Aucune fabrication, aucune affiliation cachée.</p>
+  <p>LinkedIn : <a href="https://www.linkedin.com/in/paulmunier/" rel="nofollow">paulmunier</a> — Contact : <a href="mailto:contact@proprely.fr">contact@proprely.fr</a></p>
+`.trim()
+
+const paulMunierHtml = buildHtml({
+  url: '/auteurs/paul-munier',
+  title: 'Paul Munier — Business Developer chez Proprely · Auteur',
+  description: "Paul Munier accompagne les dirigeants de société de nettoyage chez Proprely. Expertises : IDCC 3043, planning multi-sites, preuve de passage, pilotage de marge.",
+  schemas: [
+    webpageSchema(
+      'Paul Munier — Auteur Proprely',
+      "Profil de Paul Munier, Business Developer chez Proprely.",
+      `${ORIGIN}/auteurs/paul-munier/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Auteurs', item: `${ORIGIN}/auteurs/` },
+        { name: 'Paul Munier', item: `${ORIGIN}/auteurs/paul-munier/` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      '@id': `${ORIGIN}/auteurs/paul-munier/#person`,
+      name: 'Paul Munier',
+      jobTitle: 'Business Developer & rédacteur',
+      url: `${ORIGIN}/auteurs/paul-munier/`,
+      worksFor: { '@type': 'Organization', name: 'Proprely', url: `${ORIGIN}/` },
+      sameAs: ['https://www.linkedin.com/in/paulmunier/'],
+      knowsAbout: [
+        'Logiciel de gestion société de nettoyage',
+        'Convention collective propreté IDCC 3043',
+        'Pilotage de marge en propreté B2B',
+        'Planning multi-sites pour société de nettoyage',
+        'Preuve de passage et conformité syndic',
+        "Marchés publics et appels d'offres propreté",
+      ],
+    },
+  ],
+  bodyHtml: paulMunierBody,
+})
+writePage('/auteurs/paul-munier', paulMunierHtml)
+generated.push('/auteurs/paul-munier')
+
 const featureIndexBody = `
   <h1>Fonctionnalités logiciel nettoyage</h1>
   <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>

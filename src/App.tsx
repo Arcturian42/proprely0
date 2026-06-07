@@ -42,7 +42,9 @@ const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
 const SecuriteRGPD = lazy(() => import('./pages/SecuriteRGPD'))
 const CasClientsPage = lazy(() => import('./pages/CasClientsPage'))
-const RoadmapPage = lazy(() => import('./pages/RoadmapPage'))
+const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage'))
+const AuthorPage = lazy(() => import('./pages/AuthorPage'))
+const AuthorIndex = lazy(() => import('./pages/AuthorIndex'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -167,6 +169,10 @@ const META: Record<string, RouteMeta> = {
     title: 'Roadmap et changelog Proprely — Ce qui arrive · Proprely',
     description: "Roadmap publique Proprely : ce qui a été livré, ce qui est en cours, ce qui arrive. Transparence totale sur les évolutions du cockpit nettoyage.",
   },
+  '/auteurs': {
+    title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
+    description: "Les auteurs du blog Proprely : profils, expertises et méthode éditoriale. Aucun article publié sans cadrage avec un dirigeant en exercice.",
+  },
 }
 
 
@@ -287,7 +293,9 @@ function App() {
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
   else if (route === '/securite-rgpd' || route === '/securite-rgpd/') content = <SecuriteRGPD />
   else if (route === '/cas-clients' || route === '/cas-clients/') content = <CasClientsPage />
-  else if (route === '/roadmap' || route === '/roadmap/' || route === '/changelog' || route === '/changelog/') content = <RoadmapPage />
+  else if (route === '/integrations' || route === '/integrations/') content = <IntegrationsPage />
+  else if (route === '/auteurs' || route === '/auteurs/') content = <AuthorIndex />
+  else if (route.startsWith('/auteurs/')) content = <AuthorPage slug={route.slice(9).replace(/\/$/, '')} />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />
