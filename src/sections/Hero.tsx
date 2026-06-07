@@ -4,6 +4,7 @@ import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList,
 import { FOUNDER_SPOTS, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
 import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
+import SocialProof from '../components/SocialProof'
 import { trackEvent } from '../lib/analytics'
 
 const trackBetaClick = (location: string) => {
@@ -222,9 +223,11 @@ export default function Hero() {
           </Link>
         </div>
 
-        <p className="text-xs sm:text-sm text-slate-500 mb-14">
+        <p className="text-xs sm:text-sm text-slate-500 mb-8">
           Gratuit pendant la bêta · Sans carte bancaire · Réponse sous 24h
         </p>
+
+        <SocialProof variant="indicators" className="mb-14" />
 
         <ProductMockup />
       </div>

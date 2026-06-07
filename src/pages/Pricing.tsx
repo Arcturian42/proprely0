@@ -6,6 +6,7 @@ import Footer from '../sections/Footer'
 import { FOUNDER_SPOTS, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
 import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
+import SocialProof from '../components/SocialProof'
 import { trackEvent } from '../lib/analytics'
 
 const founderBenefits = [
@@ -198,6 +199,16 @@ export default function Pricing() {
                 Simulateur de rentabilité
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16 border-t border-slate-100">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-6">
+              <p className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">Ils rejoignent la bêta</p>
+              <h2 className="text-base sm:text-lg font-semibold text-slate-700">Les premiers fondateurs ont déjà signé</h2>
+            </div>
+            <SocialProof variant="indicators" />
           </div>
         </section>
 
