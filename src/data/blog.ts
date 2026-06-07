@@ -22,6 +22,10 @@ export type BlogPost = {
   faq?: BlogFAQ[]
   relatedSlugs?: string[]
   howTo?: { name: string; description: string; steps: HowToStep[] }
+  /** URL canonique override : utilisé pour rediriger Google vers une page
+   * pilier quand cet article est cannibalisé sur le même mot-clé.
+   * Format : URL absolue avec trailing slash. */
+  canonicalUrl?: string
 }
 
 export const posts: BlogPost[] = [
@@ -1172,6 +1176,10 @@ C'est exactement la philosophie derrière Proprely : centraliser pour rendre le 
     slug: 'comparatif-logiciels-nettoyage-2026',
     title: "Comparatif logiciels métier nettoyage 2026 : lequel ?",
     excerpt: "Comparatif Proprely, PROPRET, Progiclean, Sevensoft, Maglia, Organilog, Henrri, Bizyness : critères, tarifs, et lequel choisir selon votre profil.",
+    // Canonical override : page pilier /comparatif-logiciel-nettoyage/ cible le
+    // même mot-clé principal ("comparatif logiciels nettoyage"). On consolide
+    // le ranking sur la landing pilier pour éviter la cannibalisation.
+    canonicalUrl: 'https://proprely.fr/comparatif-logiciel-nettoyage/',
     date: '18 mai 2026',
     readTime: '9 min',
     tag: 'Outils',

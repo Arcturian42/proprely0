@@ -118,13 +118,17 @@ type PageMeta = {
   schemas: object[]
   bodyHtml: string
   robots?: string
+  /** URL canonique override : utilisé pour consolider le ranking sur une page
+   * pilier en cas de cannibalisation. URL absolue avec trailing slash. */
+  canonicalOverride?: string
 }
 
 function buildHtml(meta: PageMeta): string {
   // URL canonique AVEC slash final : c'est l'URL réellement servie par le
   // serveur (Apache DirectorySlash / Vercel trailingSlash) et celle déclarée
   // dans le sitemap. Évite les statuts "Page with redirect" dans GSC.
-  const canonical = `${ORIGIN}${meta.url}${meta.url.endsWith('/') ? '' : '/'}`
+  // Si canonicalOverride est fourni, on l'utilise (cas de cannibalisation).
+  const canonical = meta.canonicalOverride ?? `${ORIGIN}${meta.url}${meta.url.endsWith('/') ? '' : '/'}`
   const ogTitle = meta.ogTitle ?? meta.title
   const ogDesc = meta.ogDescription ?? meta.description
   const schemaScript = `<script type="application/ld+json">${JSON.stringify(meta.schemas)}</script>`
@@ -416,6 +420,7 @@ for (const rawPost of posts) {
     description: p.excerpt,
     schemas,
     bodyHtml,
+    canonicalOverride: p.canonicalUrl,
   })
   writePage(url, html)
   generated.push(url)
@@ -2541,6 +2546,95 @@ const auditGratuitHtml = buildHtml({
 })
 writePage('/audit-gratuit', auditGratuitHtml)
 generated.push('/audit-gratuit')
+
+// === Page /solution/ — hub navigationnel ===
+// IMPORTANT : cette page cible "solution gestion société nettoyage B2B" et NON
+// "logiciel société de nettoyage" pour ne pas cannibaliser la page pilier
+// /logiciel-societe-nettoyage/.
+const solutionHubBody = `
+  <h1>La solution complète pour gérer une société de nettoyage B2B en 2026</h1>
+  <p>Explorez l'écosystème Proprely selon votre besoin : par type de société (auto-entrepreneur, PME, secteur médical, copropriété) ou par fonctionnalité (planning, devis, agents, preuve de passage, facturation 2026). Tout part d'un cockpit unifié, gratuit pendant la bêta privée.</p>
+
+  <h2>Par type de société</h2>
+  <ul>
+    <li><a href="${ORIGIN}/logiciel-societe-nettoyage/">Logiciel société de nettoyage</a> — Le guide complet 2026 pour TPE/PME B2B 3-50 agents.</li>
+    <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/">Solution auto-entrepreneur nettoyage</a> — Démarrer seul en propreté sans Excel ni WhatsApp.</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/">Solution secteur médical</a> — Bionettoyage, protocoles HACCP, traçabilité agents.</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-copropriete-syndic/">Solution copropriété et syndic</a> — Multi-immeubles, PV automatique, format syndic standardisé.</li>
+  </ul>
+
+  <h2>Par besoin / fonctionnalité</h2>
+  <ul>
+    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">Planning agents</a> — Drag-and-drop avec affectation 1-clic selon spécialités.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">Devis intelligent IA</a> — Algorithme propriétaire : 9 facteurs, 3 scénarios optimisés.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">Gestion des agents</a> — Profils, spécialités, alertes surmenage, compteur d'heures.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">Preuve de passage</a> — QR code + photos avant-après + signature + PV automatique.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/facturation-nettoyage/">Facturation 2026</a> — Factur-X conforme + récurrente automatique + relances.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/pointage-agents-nettoyage/">Pointage GPS agents</a> — Mobile sans badgeuse + calcul majorations IDCC 3043.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/suivi-interventions-nettoyage/">Suivi interventions</a> — Statut temps réel + alertes retard + rapports automatiques.</li>
+    <li><a href="${ORIGIN}/fonctionnalites/gestion-sites-clients-nettoyage/">Sites et clients</a> — Multi-sites, protocoles, marge par client en temps réel.</li>
+    <li><a href="${ORIGIN}/application-mobile-agents-nettoyage/">Application mobile agents</a> — Lien web mobile sans application à installer.</li>
+    <li><a href="${ORIGIN}/crm-entreprise-proprete/">CRM entreprise propreté</a> — Pipeline commercial + marge par compte client.</li>
+  </ul>
+
+  <h2>Pas sûr du choix ? Démarrez par ces options</h2>
+  <ul>
+    <li><a href="${ORIGIN}/audit-gratuit/">Audit gratuit 30 minutes</a> — Diagnostic offert par le fondateur Proprely.</li>
+    <li><a href="${ORIGIN}/outils/">4 calculateurs gratuits</a> — Prix m², ROI, rentabilité, coût horaire chargé.</li>
+    <li><a href="${ORIGIN}/comparatif-logiciel-nettoyage/">Comparatif logiciels nettoyage 2026</a> — 6 outils notés sur 13 critères.</li>
+  </ul>
+
+  <p>Tout l'écosystème Proprely en bêta privée gratuite : 30 sociétés fondatrices, accès complet pendant la bêta, tarif fondateur à vie après. <a href="${ORIGIN}/beta/">Candidater à la bêta</a>.</p>
+`.trim()
+
+const solutionHubItems = [
+  { name: 'Logiciel société de nettoyage', url: `${ORIGIN}/logiciel-societe-nettoyage/` },
+  { name: 'Solution auto-entrepreneur', url: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/` },
+  { name: 'Solution secteur médical', url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/` },
+  { name: 'Solution copropriété et syndic', url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic/` },
+  { name: 'Planning agents', url: `${ORIGIN}/fonctionnalites/planning-nettoyage/` },
+  { name: 'Devis intelligent IA', url: `${ORIGIN}/fonctionnalites/devis-nettoyage/` },
+  { name: 'Gestion des agents', url: `${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/` },
+  { name: 'Preuve de passage', url: `${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/` },
+  { name: 'Facturation 2026', url: `${ORIGIN}/fonctionnalites/facturation-nettoyage/` },
+  { name: 'Pointage GPS agents', url: `${ORIGIN}/fonctionnalites/pointage-agents-nettoyage/` },
+  { name: 'Suivi interventions', url: `${ORIGIN}/fonctionnalites/suivi-interventions-nettoyage/` },
+  { name: 'Sites et clients', url: `${ORIGIN}/fonctionnalites/gestion-sites-clients-nettoyage/` },
+  { name: 'Application mobile agents', url: `${ORIGIN}/application-mobile-agents-nettoyage/` },
+  { name: 'CRM entreprise propreté', url: `${ORIGIN}/crm-entreprise-proprete/` },
+]
+
+const solutionHubHtml = buildHtml({
+  url: '/solution',
+  title: 'Solution gestion société de nettoyage B2B 2026 · Proprely',
+  description: "La solution complète pour gérer une société de nettoyage B2B en 2026 : par type de société, par fonctionnalité, par cas d'usage. Découvrez toutes les options.",
+  schemas: [
+    webpageSchema(
+      'Solution gestion société de nettoyage B2B',
+      "Hub navigationnel des solutions Proprely par type de société et par besoin opérationnel.",
+      `${ORIGIN}/solution/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Solution', item: `${ORIGIN}/solution/` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Solutions Proprely par segment et par besoin',
+      numberOfItems: solutionHubItems.length,
+      itemListElement: solutionHubItems.map((s, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: s.url,
+        name: s.name,
+      })),
+    },
+  ],
+  bodyHtml: solutionHubBody,
+})
+writePage('/solution', solutionHubHtml)
+generated.push('/solution')
 
 // Pages /guides/ — format réponse directe pour Generative Engines (ChatGPT,
 // Perplexity, Google AI Overviews, Gemini). Schemas WebPage + BreadcrumbList

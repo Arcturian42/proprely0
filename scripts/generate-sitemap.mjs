@@ -110,6 +110,7 @@ const urls = [
   { loc: `${ORIGIN}/outils`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Outils gratuits Proprely' },
   { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
   { loc: `${ORIGIN}/audit-gratuit`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Audit gratuit société de nettoyage' },
+  { loc: `${ORIGIN}/solution`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Solution gestion société de nettoyage B2B 2026' },
   ...alternativeSlugs.map((slug) => ({
     loc: `${ORIGIN}/${slug}`,
     priority: '0.8',

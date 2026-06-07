@@ -184,6 +184,118 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 mb-12 pb-12 border-b border-slate-800">
+          <div>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              <Link to="/comparatif-logiciel-nettoyage" className="hover:text-slate-300 transition-colors">Comparatifs</Link>
+            </h4>
+            <ul className="grid grid-cols-2 gap-x-5 gap-y-2.5">
+              <li>
+                <Link to="/comparatif-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors font-semibold">
+                  Comparatif logiciels 2026
+                </Link>
+              </li>
+              <li>
+                <Link to="/proprely-vs-excel" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs Excel
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs Organilog
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs Progiclean
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-propret" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs PROPRET
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-2bepragma" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs 2BePragma
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-synchroteam" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs Synchroteam
+                </Link>
+              </li>
+              <li>
+                <Link to="/comparatif/proprely-vs-comete-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  vs Comète Propreté
+                </Link>
+              </li>
+              <li>
+                <Link to="/alternative-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Alternative Organilog
+                </Link>
+              </li>
+              <li>
+                <Link to="/alternative-progiclean" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Alternative Progiclean
+                </Link>
+              </li>
+              <li>
+                <Link to="/alternative-propret" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Alternative PROPRET
+                </Link>
+              </li>
+              <li>
+                <Link to="/alternative-2bepragma" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Alternative 2BePragma
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              Guides réponse directe
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/guides/quel-logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Quel logiciel pour une société de nettoyage ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/outils-gestion-entreprise-proprete" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Quels outils pour gérer une entreprise de propreté ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/alternative-simple-organilog" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Quelle alternative simple à Organilog ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/saas-societe-nettoyage-france" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Quel SaaS pour société de nettoyage en France ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/comment-fonctionne-logiciel-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Comment fonctionne un logiciel de nettoyage ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/prix-logiciel-societe-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Combien coûte un logiciel de nettoyage ?
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/pourquoi-logiciel-entreprise-nettoyage" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  Pourquoi utiliser un logiciel de nettoyage ?
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div className="mb-12 pb-12 border-b border-slate-800">
           <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
             <Link to="/villes" className="hover:text-slate-300 transition-colors">Logiciel nettoyage par ville</Link>

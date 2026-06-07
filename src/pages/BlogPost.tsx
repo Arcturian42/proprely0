@@ -291,6 +291,9 @@ export default function BlogPost({ slug }: Props) {
   useEffect(() => {
     if (!post) return
     const url = `https://proprely.fr/blog/${post.slug}/`
+    // Canonical override : utilisé pour rediriger Google vers la page pilier
+    // quand un article est cannibalisé par une landing page sur le même mot-clé.
+    const canonicalUrl = post.canonicalUrl ?? url
     const title = `${post.title} · Proprely`
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt)
@@ -299,7 +302,7 @@ export default function BlogPost({ slug }: Props) {
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', url)
     document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', title)
     document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', post.excerpt)
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl)
     injectArticleSchema(post)
     return () => {
       document.getElementById('blog-post-schema')?.remove()
