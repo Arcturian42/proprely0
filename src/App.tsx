@@ -41,6 +41,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
 const SecuriteRGPD = lazy(() => import('./pages/SecuriteRGPD'))
+const CasClientsPage = lazy(() => import('./pages/CasClientsPage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -156,6 +157,10 @@ const META: Record<string, RouteMeta> = {
   '/securite-rgpd': {
     title: 'Sécurité & RGPD · Proprely',
     description: "Sécurité et conformité RGPD chez Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables en un email.",
+  },
+  '/cas-clients': {
+    title: 'Cas clients : ils pilotent leur société de nettoyage avec Proprely',
+    description: "Retours détaillés de sociétés de nettoyage B2B fondatrices Proprely : défi initial, mise en place, résultats chiffrés (heures gagnées, marge, litiges).",
   },
 }
 
@@ -276,6 +281,7 @@ function App() {
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
   else if (route === '/securite-rgpd' || route === '/securite-rgpd/') content = <SecuriteRGPD />
+  else if (route === '/cas-clients' || route === '/cas-clients/') content = <CasClientsPage />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />
