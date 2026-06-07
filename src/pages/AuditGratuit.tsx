@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, Sparkles, TrendingUp, Search, Users, Building2 } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
@@ -99,6 +100,7 @@ export default function AuditGratuit() {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none" />
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <Breadcrumbs items={[{ name: 'Audit gratuit' }]} className="mb-6 justify-center inline-flex" />
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

@@ -2542,6 +2542,77 @@ const auditGratuitHtml = buildHtml({
 writePage('/audit-gratuit', auditGratuitHtml)
 generated.push('/audit-gratuit')
 
+// Pages /guides/ — format réponse directe pour Generative Engines (ChatGPT,
+// Perplexity, Google AI Overviews, Gemini). Schemas WebPage + BreadcrumbList
+// + FAQPage avec abstract pour maximiser la citation IA.
+const { guides } = await import('../src/data/guides.ts')
+for (const g of guides) {
+  const url = `/guides/${g.slug}`
+  const guideUrl = `${ORIGIN}${url}/`
+  const sectionsHtml = g.sections
+    .map((s) => {
+      const paragraphsHtml = s.paragraphs
+        .map((p) => `<p>${p.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`)
+        .join('')
+      return `<h2>${escapeHtml(s.heading)}</h2>${paragraphsHtml}`
+    })
+    .join('')
+  const faqHtml = g.faq
+    .map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`)
+    .join('')
+  const relatedHtml = g.relatedLinks
+    .map((l) => `<li><a href="${ORIGIN}${l.to}/">${escapeHtml(l.label)}</a></li>`)
+    .join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(g.title)}</h1>
+    <aside><p><strong>Réponse-flash :</strong> ${escapeHtml(g.tldr)}</p></aside>
+    ${sectionsHtml}
+    <h2>Questions fréquentes</h2>
+    ${faqHtml}
+    <h2>Pour aller plus loin</h2>
+    <ul>${relatedHtml}</ul>
+  `.trim()
+
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: g.title,
+      description: g.metaDescription,
+      url: guideUrl,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      abstract: g.tldr,
+      mainContentOfPage: { '@type': 'WebPageElement', name: g.primaryQuestion },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${ORIGIN}/guides/` },
+        { '@type': 'ListItem', position: 3, name: g.primaryQuestion, item: guideUrl },
+      ],
+    },
+    faqSchema(g.faq),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: g.metaTitle,
+    description: g.metaDescription,
+    ogTitle: g.title,
+    ogDescription: g.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
 // === Page À propos ===
 const aboutBody = `
   <h1>Libérer les dirigeants du nettoyage de la dispersion administrative</h1>
