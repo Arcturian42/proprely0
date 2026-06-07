@@ -1557,6 +1557,64 @@ const casClientsHtml = buildHtml({
 writePage('/cas-clients', casClientsHtml)
 generated.push('/cas-clients')
 
+const roadmapBody = `
+  <h1>Roadmap publique Proprely</h1>
+  <p>Ce qui a été livré, ce qui est en cours, ce qui arrive. Les membres fondateurs influencent directement les priorités. Aucun item caché, aucune date promise sans cadence réelle.</p>
+  <h2>Livré récemment</h2>
+  <ul>
+    <li><strong>Page Intégrations</strong> — 14 connecteurs documentés (Silae, Brevo, Qonto, Pennylane, Chorus Pro Factur-X…)</li>
+    <li><strong>Page Cas clients</strong> — structure prête pour les retours détaillés des fondateurs</li>
+    <li><strong>Page Sécurité &amp; RGPD</strong> — 6 piliers, sous-traitants, droits, DPA</li>
+    <li><strong>Tarifs : tableau comparatif chiffré</strong> + FAQ étoffée + schemas Product/Offer</li>
+    <li><strong>Capture leads Brevo</strong> automatisée pour newsletter et lead magnets</li>
+    <li><strong>Pixels Meta + LinkedIn</strong> avec gating consentement</li>
+    <li><strong>Header et footer SaaS B2B mature</strong> avec mega-menu Solutions et colonne Entreprise</li>
+    <li><strong>Landing /fonctionnalites/ par modules</strong> avec diagramme de flux</li>
+  </ul>
+  <h2>En cours</h2>
+  <ul>
+    <li><strong>Module Devis intelligent IA</strong> — phase 2, pondération par secteur</li>
+    <li><strong>Pennylane : sync factures</strong> — bêta technique en cours</li>
+    <li><strong>Collecte des premiers cas clients</strong> détaillés (60-90 jours)</li>
+  </ul>
+  <h2>Planifié — Q3 et Q4 2026</h2>
+  <ul>
+    <li><strong>Google Calendar</strong> — sync interventions vers calendrier encadrement</li>
+    <li><strong>Application mobile native (PWA renforcée)</strong> — mode hors-ligne + notifications</li>
+    <li><strong>ISO 27001</strong> — préparation certification</li>
+    <li><strong>Chorus Pro Factur-X généralisé</strong> — émission native conforme 2027</li>
+    <li><strong>Cockpit dirigeant : KPI prédictifs</strong> — marge prévisionnelle, alertes dérive</li>
+    <li><strong>Slack</strong> — notifications mission en retard, agent absent, devis signé</li>
+  </ul>
+  <h2>À l'étude</h2>
+  <ul>
+    <li><strong>Module DPO automatisé (RGPD)</strong> pour aider les petites structures</li>
+    <li><strong>Portail client public</strong> — espace de demandes client</li>
+    <li><strong>Microsoft Teams</strong> — alternative à Slack</li>
+  </ul>
+  <p>Le changelog est également publié sur notre <a href="${ORIGIN}/rss.xml">flux RSS</a> à côté des articles du blog.</p>
+`.trim()
+
+const roadmapHtml = buildHtml({
+  url: '/roadmap',
+  title: 'Roadmap et changelog Proprely — Ce qui arrive · Proprely',
+  description: "Roadmap publique Proprely : ce qui a été livré, ce qui est en cours, ce qui arrive. Transparence totale.",
+  schemas: [
+    webpageSchema(
+      'Roadmap Proprely',
+      "Ce qui a été livré, ce qui est en cours, ce qui arrive.",
+      `${ORIGIN}/roadmap/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Roadmap', item: `${ORIGIN}/roadmap/` },
+      ]
+    ),
+  ],
+  bodyHtml: roadmapBody,
+})
+writePage('/roadmap', roadmapHtml)
+generated.push('/roadmap')
+
 const featureIndexBody = `
   <h1>Fonctionnalités logiciel nettoyage</h1>
   <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>

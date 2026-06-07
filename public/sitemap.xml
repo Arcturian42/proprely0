@@ -218,6 +218,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/roadmap/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Roadmap Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/outils/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
