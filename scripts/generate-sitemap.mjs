@@ -65,6 +65,7 @@ const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
 const resourceSlugs = extractField(resolve(root, 'src/data/resources.ts'), 'slug')
 const comparisonSlugs = extractField(resolve(root, 'src/data/comparisons.ts'), 'slug')
 const alternativeSlugs = extractField(resolve(root, 'src/data/alternatives.ts'), 'slug')
+const guideSlugs = extractField(resolve(root, 'src/data/guides.ts'), 'slug')
 
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
@@ -116,6 +117,14 @@ const urls = [
     lastmod: CONTENT_LASTMOD,
     image: DEFAULT_OG_IMAGE,
     imageTitle: `Alternative ${slug.replace('alternative-', '')}`,
+  })),
+  ...guideSlugs.map((slug) => ({
+    loc: `${ORIGIN}/guides/${slug}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: CONTENT_LASTMOD,
+    image: DEFAULT_OG_IMAGE,
+    imageTitle: `Guide : ${slug.replace(/-/g, ' ')}`,
   })),
   ...comparisonSlugs.map((slug) => ({
     loc: `${ORIGIN}/comparatif/${slug}`,

@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowLeft, TrendingUp, TrendingDown, AlertTriangle, CheckCircle, Euro, Lightbulb, Sparkles } from 'lucide-react'
+import { ArrowRight, TrendingUp, TrendingDown, AlertTriangle, CheckCircle, Euro, Lightbulb, Sparkles } from 'lucide-react'
 import { useEffect } from 'react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
@@ -193,13 +194,7 @@ export default function SimulateurRentabilite() {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
 
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
-            <Link
-              to="/ressources"
-              className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors mb-6"
-            >
-              <ArrowLeft size={12} />
-              Toutes les ressources
-            </Link>
+            <Breadcrumbs items={[{ name: 'Outils', href: '/outils' }, { name: 'Simulateur de rentabilité' }]} className="mb-6" />
 
             <div className="text-center mb-10 sm:mb-12">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-5">

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowLeft, Download, CheckCircle, Sparkles, ExternalLink } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import { getResource, resources } from '../data/resources'
 import type { Resource } from '../data/resources'
@@ -112,13 +113,7 @@ export default function ResourceDetail({ slug }: Props) {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none" />
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
-            <Link
-              to="/ressources"
-              className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors mb-6"
-            >
-              <ArrowLeft size={12} />
-              Toutes les ressources
-            </Link>
+            <Breadcrumbs items={[{ name: 'Ressources', href: '/ressources' }, { name: r.title }]} className="mb-6" />
 
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-3">

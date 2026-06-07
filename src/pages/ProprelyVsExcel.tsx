@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  ArrowLeft,
   Check,
   X,
   AlertTriangle,
@@ -14,6 +13,7 @@ import {
   HelpCircle,
 } from 'lucide-react'
 import PageNav from '../components/PageNav'
+import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
@@ -202,13 +202,7 @@ export default function ProprelyVsExcel() {
           <div className="absolute top-40 -right-32 w-[28rem] h-[28rem] rounded-full bg-sky-100/40 blur-3xl pointer-events-none animate-blob-2" />
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-900 transition-colors mb-6"
-            >
-              <ArrowLeft size={12} />
-              Retour à l'accueil
-            </Link>
+            <Breadcrumbs items={[{ name: 'Comparatif', href: '/comparatif-logiciel-nettoyage' }, { name: 'Proprely vs Excel' }]} className="mb-6 justify-center inline-flex" />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
