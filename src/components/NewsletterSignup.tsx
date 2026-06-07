@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Mail, CheckCircle, ArrowRight } from 'lucide-react'
 import { trackEvent } from '../lib/analytics'
+import { trackPixelLead } from '../lib/pixels'
 
 // Endpoint configurable via env (Brevo/Mailchimp/ConvertKit/Fillout webhook).
 // Si non défini, l'email n'est PAS envoyé mais l'event GA et le succès UI le sont.
@@ -58,6 +59,7 @@ export default function NewsletterSignup({
       source,
       email_domain: cleanEmail.split('@')[1] || '',
     })
+    trackPixelLead({ content_name: 'newsletter', content_category: source })
     await sendSubscription({ email: cleanEmail, source })
 
     setSubmitted(true)

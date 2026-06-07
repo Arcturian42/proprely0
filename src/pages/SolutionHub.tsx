@@ -1,38 +1,32 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Building2, Hotel, Stethoscope, Home as HomeIcon, Users, Calendar, FileText, QrCode, Smartphone, MapPin, FileSignature, Clock } from 'lucide-react'
+import { ArrowRight, Sparkles, Building2, Hotel, Stethoscope, Home as HomeIcon, Users, Smartphone, FileWarning, ShieldCheck, TrendingDown, Layers } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
 const URL = 'https://proprely.fr/solution/'
-const TITLE = 'Solution gestion société de nettoyage B2B 2026 · Proprely'
-const DESCRIPTION = "La solution complète pour gérer une société de nettoyage B2B en 2026 : par type de société, par fonctionnalité, par cas d'usage. Découvrez toutes les options."
+const TITLE = 'Solutions société de nettoyage B2B : par contexte et par douleur · Proprely'
+const DESCRIPTION = "Solutions pour société de nettoyage B2B : par contexte (auto-entrepreneur, médical, copropriété) et par douleur métier (remplacer Excel, suivre agents, conformité IDCC, rentabilité). Toutes les pages fonctionnalités sur /fonctionnalites/."
 
-// Hub navigationnel — NE cible PAS le mot-clé "logiciel société de nettoyage"
-// (pilier /logiciel-societe-nettoyage/) mais "solution gestion société nettoyage B2B"
-// pour éviter toute cannibalisation. Cluster d'entrée vers les différentes
-// landing pages selon le besoin utilisateur.
+// Hub navigationnel — Solutions = pourquoi & pour qui (use cases / pains),
+// pas redondant avec /fonctionnalites/ qui décrit le QUOI (modules produit).
 
 const bySector = [
   { icon: Building2, to: '/logiciel-societe-nettoyage', label: 'Logiciel société de nettoyage', desc: 'Le guide complet 2026 pour TPE/PME B2B 3-50 agents.' },
-  { icon: HomeIcon, to: '/logiciel-auto-entrepreneur-nettoyage', label: 'Solution auto-entrepreneur', desc: 'Démarrer seul en propreté sans Excel ni WhatsApp.' },
-  { icon: Stethoscope, to: '/logiciel-nettoyage-medical-bionettoyage', label: 'Solution secteur médical', desc: 'Bionettoyage, protocoles HACCP, traçabilité agents.' },
-  { icon: Hotel, to: '/logiciel-nettoyage-copropriete-syndic', label: 'Solution copropriété & syndic', desc: 'Multi-immeubles, PV automatique, fil syndic standardisé.' },
+  { icon: HomeIcon, to: '/logiciel-auto-entrepreneur-nettoyage', label: 'Auto-entrepreneur', desc: 'Démarrer seul en propreté sans Excel ni WhatsApp.' },
+  { icon: Stethoscope, to: '/logiciel-nettoyage-medical-bionettoyage', label: 'Médical & bionettoyage', desc: 'Bionettoyage, protocoles HACCP, traçabilité agents.' },
+  { icon: Hotel, to: '/logiciel-nettoyage-copropriete-syndic', label: 'Copropriété & syndic', desc: 'Multi-immeubles, PV automatique, fil syndic standardisé.' },
 ]
 
-const byNeed = [
-  { icon: Calendar, to: '/fonctionnalites/planning-nettoyage', label: 'Planning agents', desc: 'Drag-and-drop avec affectation 1-clic selon spécialités.' },
-  { icon: FileText, to: '/fonctionnalites/devis-nettoyage', label: 'Devis intelligent IA', desc: 'Algorithme propriétaire : 9 facteurs, 3 scénarios optimisés.' },
-  { icon: Users, to: '/fonctionnalites/gestion-agents-nettoyage', label: 'Gestion des agents', desc: 'Profils, spécialités, alertes surmenage, compteur d\'heures.' },
-  { icon: QrCode, to: '/fonctionnalites/preuve-passage-nettoyage', label: 'Preuve de passage', desc: 'QR code + photos avant-après + signature + PV automatique.' },
-  { icon: FileSignature, to: '/fonctionnalites/facturation-nettoyage', label: 'Facturation 2026', desc: 'Factur-X conforme + récurrente automatique + relances.' },
-  { icon: Clock, to: '/fonctionnalites/pointage-agents-nettoyage', label: 'Pointage GPS', desc: 'Mobile sans badgeuse + calcul majorations IDCC 3043.' },
-  { icon: MapPin, to: '/fonctionnalites/suivi-interventions-nettoyage', label: 'Suivi interventions', desc: 'Statut temps réel + alertes retard + rapports automatiques.' },
-  { icon: Building2, to: '/fonctionnalites/gestion-sites-clients-nettoyage', label: 'Sites & clients', desc: 'Multi-sites, protocoles, marge par client en temps réel.' },
-  { icon: Smartphone, to: '/application-mobile-agents-nettoyage', label: 'App mobile agents', desc: 'Lien web mobile sans application à installer.' },
-  { icon: Users, to: '/crm-entreprise-proprete', label: 'CRM propreté', desc: 'Pipeline commercial + marge par compte client.' },
+const byPain = [
+  { icon: Layers, to: '/proprely-vs-excel', label: 'Remplacer Excel & WhatsApp', desc: 'Centraliser planning, agents et clients. Fini la dispersion.' },
+  { icon: Smartphone, to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App mobile sans installation, preuve de passage, pointage GPS.' },
+  { icon: Users, to: '/crm-entreprise-proprete', label: 'Centraliser clients & sites', desc: 'CRM propreté, multi-sites, marge par compte client.' },
+  { icon: ShieldCheck, to: '/convention-collective-nettoyage', label: 'Conformité IDCC 3043', desc: 'Grille salariale, primes panier/transport, article 7.' },
+  { icon: FileWarning, to: '/fonctionnalites/preuve-passage-nettoyage', label: 'Éviter les litiges clients', desc: 'QR code, photos horodatées, signature, PV automatique.' },
+  { icon: TrendingDown, to: '/simulateur-rentabilite', label: 'Calculer la rentabilité par contrat', desc: 'Marge brute, marge nette, résultat horaire en 1 minute.' },
 ]
 
 function injectSchema() {
@@ -62,8 +56,8 @@ function injectSchema() {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
       name: 'Solutions Proprely par segment et par besoin',
-      numberOfItems: bySector.length + byNeed.length,
-      itemListElement: [...bySector, ...byNeed].map((item, i) => ({
+      numberOfItems: bySector.length + byPain.length,
+      itemListElement: [...bySector, ...byPain].map((item, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         url: `https://proprely.fr${item.to}/`,
@@ -121,8 +115,8 @@ export default function SolutionHub() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6"
             >
-              La solution complète pour <br className="hidden sm:block" />
-              <span className="text-blue-600">gérer une société de nettoyage B2B</span>
+              Solutions pour <br className="hidden sm:block" />
+              <span className="text-blue-600">votre société de nettoyage B2B</span>
             </motion.h1>
 
             <motion.p
@@ -131,7 +125,7 @@ export default function SolutionHub() {
               transition={{ duration: 0.4, delay: 0.12 }}
               className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed"
             >
-              Explorez l'écosystème Proprely selon votre besoin : par type de société (auto-entrepreneur, PME, secteur médical, copropriété) ou par fonctionnalité (planning, devis, agents, preuve de passage, facturation 2026). Tout part d'un cockpit unifié, gratuit pendant la bêta privée.
+              Choisissez l'angle qui colle à votre situation : par <strong>contexte</strong> (auto-entrepreneur, médical, copropriété) ou par <strong>douleur métier</strong> (remplacer Excel, suivre les agents, conformité IDCC, rentabilité). Pour le détail des modules produit, voir la page <Link to="/fonctionnalites" className="text-blue-600 font-bold hover:underline">Fonctionnalités</Link>.
             </motion.p>
           </div>
         </section>
@@ -178,14 +172,17 @@ export default function SolutionHub() {
         <section className="py-14 sm:py-20 border-y border-slate-100 bg-slate-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Par besoin / fonctionnalité</p>
+              <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Par douleur métier</p>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                Sélectionnez votre besoin opérationnel
+                Quel problème voulez-vous régler en premier ?
               </h2>
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mt-4 leading-relaxed">
+                Chaque entrée pointe vers la solution la plus rapide à mettre en place pour la douleur correspondante. Pour le détail des modules, voir <Link to="/fonctionnalites" className="text-blue-600 font-bold hover:underline">Fonctionnalités</Link>.
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {byNeed.map((n, i) => (
+              {byPain.map((n, i) => (
                 <motion.div
                   key={n.to}
                   initial={{ opacity: 0, y: 12 }}

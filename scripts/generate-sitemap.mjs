@@ -107,6 +107,7 @@ const urls = [
   { loc: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel nettoyage copropriété et syndic' },
   { loc: `${ORIGIN}/application-mobile-agents-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Application mobile agents nettoyage' },
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
+  { loc: `${ORIGIN}/securite-rgpd`, priority: '0.7', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Sécurité & RGPD Proprely' },
   { loc: `${ORIGIN}/outils`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Outils gratuits Proprely' },
   { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
   { loc: `${ORIGIN}/audit-gratuit`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Audit gratuit société de nettoyage' },
