@@ -228,6 +228,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/solution/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Solution gestion société de nettoyage B2B 2026</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/alternative-organilog/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
