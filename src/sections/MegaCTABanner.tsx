@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles, Clock, ShieldCheck, Zap } from 'lucide-react'
-import { BETA_FORM_URL } from '../config'
+import { BETA_FORM_URL, FOUNDER_SPOTS, remainingSpots } from '../config'
 import { trackEvent } from '../lib/analytics'
 
 type Props = {
@@ -38,7 +38,7 @@ export default function MegaCTABanner({
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mb-6">
           <Sparkles size={12} />
-          Bêta privée gratuite — 30 places fondateurs
+          Bêta privée gratuite — Plus que {remainingSpots()} places sur {FOUNDER_SPOTS.total}
         </div>
 
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-5 leading-tight">

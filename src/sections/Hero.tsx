@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Flame, Calculator } from 'lucide-react'
-import { FOUNDER_SPOTS, remainingSpots, BETA_FORM_URL } from '../config'
+import { ArrowRight, LayoutDashboard, Calendar, Users, Building2, ClipboardList, FileText, FolderOpen, MoreHorizontal, Calculator } from 'lucide-react'
+import { FOUNDER_SPOTS, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
+import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
 import { trackEvent } from '../lib/analytics'
 
 const trackBetaClick = (location: string) => {
@@ -169,7 +170,6 @@ function ProductMockup() {
 }
 
 export default function Hero() {
-  const remaining = remainingSpots()
 
   return (
     <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-20 sm:pt-28 pb-16 sm:pb-24 overflow-hidden">
@@ -197,9 +197,8 @@ export default function Hero() {
           Vos clients, sites, agents, plannings et devis dans <strong className="text-slate-900 font-semibold">un seul outil</strong> — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.
         </p>
 
-        <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-5">
-          <Flame size={14} className="text-amber-600" />
-          <span>{remaining} places restantes sur {FOUNDER_SPOTS.total}</span>
+        <div className="mb-5">
+          <RemainingSpotsBadge variant="banner" />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
