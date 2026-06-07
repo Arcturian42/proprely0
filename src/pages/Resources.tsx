@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Download, Sparkles, ExternalLink, CheckCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
+import MegaCTABanner from '../sections/MegaCTABanner'
 import Footer from '../sections/Footer'
 import { resources } from '../data/resources'
 import Link from '../components/Link'
@@ -221,6 +222,13 @@ export default function Resources() {
             </div>
           </div>
         </section>
+
+        <MegaCTABanner
+          title="Les modèles Excel sont gratuits. Le cockpit complet aussi (pour les 30 fondateurs)."
+          subtitle="Excel atteint vite ses limites passé 5-8 agents. Proprely centralise planning, devis, agents, preuve de passage et marge par client — sans installation, sans engagement. Bêta privée gratuite."
+          ctaLabel="Rejoindre la bêta — 30 places"
+          location="resources_mega_cta"
+        />
       </main>
 
       <Footer />

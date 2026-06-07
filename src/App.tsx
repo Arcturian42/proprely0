@@ -35,6 +35,7 @@ const AlternativePage = lazy(() => import('./pages/AlternativePage'))
 const AuditGratuit = lazy(() => import('./pages/AuditGratuit'))
 const GuidePage = lazy(() => import('./pages/GuidePage'))
 const SolutionHub = lazy(() => import('./pages/SolutionHub'))
+const StickyCTAMobile = lazy(() => import('./sections/StickyCTAMobile'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
@@ -279,11 +280,22 @@ function App() {
   else if (route.startsWith('/ressources/')) content = <ResourceDetail slug={route.slice(12).replace(/\/$/, '')} />
   else content = <NotFound />
 
+  // Sticky CTA mobile global : exclu sur les pages déjà conversion-first
+  // (/beta/, /beta/merci/, /audit-gratuit/, /contact/) pour éviter la
+  // surcharge visuelle. Affiché partout ailleurs pour maximiser inscriptions.
+  const stickyExcluded = ['/beta', '/beta/', '/beta/merci', '/beta/merci/', '/audit-gratuit', '/audit-gratuit/', '/contact', '/contact/']
+  const showStickyCTA = !stickyExcluded.includes(route)
+
   if (route === '/') {
     return (
       <div className="w-full bg-white">
         <ScrollProgress />
         {content}
+        {showStickyCTA && (
+          <Suspense fallback={null}>
+            <StickyCTAMobile />
+          </Suspense>
+        )}
         <CookieBanner />
       </div>
     )
@@ -293,6 +305,11 @@ function App() {
     <div className="w-full bg-white">
       <ScrollProgress />
       <Suspense fallback={<PageLoading />}>{content}</Suspense>
+      {showStickyCTA && (
+        <Suspense fallback={null}>
+          <StickyCTAMobile />
+        </Suspense>
+      )}
       <CookieBanner />
     </div>
   )

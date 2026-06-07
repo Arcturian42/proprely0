@@ -19,8 +19,6 @@ const FounderForm = lazy(() => import('../sections/FounderForm'))
 const FAQ = lazy(() => import('../sections/FAQ'))
 const FinalCTA = lazy(() => import('../sections/FinalCTA'))
 const Footer = lazy(() => import('../sections/Footer'))
-const StickyCTAMobile = lazy(() => import('../sections/StickyCTAMobile'))
-
 export default function Landing() {
   useEffect(() => {
     const hash = window.location.hash.slice(1)
@@ -56,7 +54,6 @@ export default function Landing() {
         <FAQ />
         <FinalCTA />
         <Footer />
-        <StickyCTAMobile />
       </Suspense>
     </>
   )

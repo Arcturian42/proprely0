@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Mail, MapPin, Building2, Clock, ShieldCheck } from 'lucide-react'
+import { Mail, MapPin, Building2, Clock, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -31,9 +31,37 @@ export default function Contact() {
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4 leading-tight">
           Contacter Proprely
         </h1>
-        <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-          Une question sur le logiciel, la bêta privée, ou votre candidature de membre fondateur ? Écrivez-nous, nous revenons vers vous sous 24h ouvrées.
+        <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+          Le moyen le plus rapide d'avoir une réponse : <strong className="text-slate-900">candidater à la bêta privée</strong> ci-dessous (2 min). Sinon, écrivez-nous, nous revenons sous 24 h ouvrées.
         </p>
+
+        <div className="relative mb-10 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 rounded-3xl p-6 sm:p-10 text-white overflow-hidden shadow-xl shadow-blue-900/20">
+          <div className="absolute top-0 -left-32 w-[20rem] h-[20rem] rounded-full bg-cyan-400/15 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 -right-32 w-[20rem] h-[20rem] rounded-full bg-blue-400/15 blur-3xl pointer-events-none" />
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4">
+              <Sparkles size={12} />
+              Bêta privée — 30 places fondateurs
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight mb-3 leading-tight">
+              Rejoignez les 30 sociétés fondatrices.
+            </h2>
+            <p className="text-slate-200 text-sm sm:text-base mb-6 leading-relaxed">
+              Accès gratuit pendant toute la bêta. Tarif fondateur conservé à vie. Onboarding 30 min directement avec le fondateur. Sans carte bancaire, sans engagement.
+            </p>
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'contact_page_hero' })}
+              className="group inline-flex items-center justify-center gap-2 bg-white text-blue-700 rounded-xl px-7 py-3.5 font-bold text-sm sm:text-base hover:bg-blue-50 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-900/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
+            >
+              Candidater à la bêta (2 min)
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-xs text-slate-300 mt-4">Réponse sous 24 h ouvrées</p>
+          </div>
+        </div>
 
         <div className="grid sm:grid-cols-2 gap-4 mb-10">
           <a
@@ -43,30 +71,27 @@ export default function Contact() {
           >
             <div className="flex items-center gap-2 mb-2">
               <Mail size={16} className="text-blue-600" />
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Email</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Email direct</span>
             </div>
             <div className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
               contact@proprely.fr
             </div>
-            <div className="text-sm text-slate-600 mt-1">Réponse sous 24h ouvrées</div>
+            <div className="text-sm text-slate-600 mt-1">Pour toute question hors bêta</div>
           </a>
 
-          <a
-            href={BETA_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent('beta_cta_click', { location: 'contact_page' })}
-            className="group bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-slate-300 hover:bg-slate-100 transition-colors"
+          <Link
+            to="/audit-gratuit"
+            className="group bg-emerald-50 border border-emerald-100 rounded-2xl p-5 hover:border-emerald-200 hover:bg-emerald-100/60 transition-colors"
           >
             <div className="flex items-center gap-2 mb-2">
-              <ShieldCheck size={16} className="text-slate-600" />
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-600">Bêta privée</span>
+              <ShieldCheck size={16} className="text-emerald-600" />
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">Audit gratuit</span>
             </div>
-            <div className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-              Candidater à la bêta
+            <div className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+              Diagnostic 30 min offert
             </div>
-            <div className="text-sm text-slate-600 mt-1">Formulaire 2 minutes, 30 places fondateurs</div>
-          </a>
+            <div className="text-sm text-slate-600 mt-1">Pour identifier vos pertes de temps + ROI</div>
+          </Link>
         </div>
 
         <h2 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">Informations</h2>

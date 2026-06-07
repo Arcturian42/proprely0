@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Euro, TrendingUp, Calendar } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import MegaCTABanner from '../sections/MegaCTABanner'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
@@ -194,6 +195,13 @@ export default function RoiCalculator() {
             </div>
           </div>
         </section>
+
+        <MegaCTABanner
+          title="Et si vous arrêtiez de calculer pour piloter ?"
+          subtitle="Le coût caché vous l'avez chiffré. Maintenant supprimez-le avec Proprely : planning, devis, agents, preuve de passage et marge par client dans un seul cockpit. Bêta gratuite, onboarding 30 min avec le fondateur."
+          ctaLabel="Rejoindre la bêta gratuite"
+          location="roi_calculator_mega_cta"
+        />
       </main>
 
       <Footer />
