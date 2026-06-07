@@ -6,9 +6,9 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
 
-const URL = 'https://proprely.fr/comparatif-logiciel-nettoyage'
-const TITLE = 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely'
-const DESCRIPTION = "Comparatif des logiciels métier société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Critères et tarifs."
+const URL = 'https://proprely.fr/comparatif-logiciel-nettoyage/'
+const TITLE = 'Comparatif logiciels nettoyage 2026 : 6 outils notés · Proprely'
+const DESCRIPTION = "Proprely, Organilog, Progiclean, PROPRET, Synchroteam, Excel : 13 critères comparés, tarifs 2026 et recommandations par taille d'entreprise."
 
 type Tool = {
   name: string

@@ -8,8 +8,8 @@ import Link from '../components/Link'
 import { FOUNDER_SPOTS, remainingSpots } from '../config'
 
 const URL = 'https://proprely.fr/logiciel-societe-nettoyage/'
-const TITLE = 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely'
-const DESCRIPTION = "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places."
+const TITLE = 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely'
+const DESCRIPTION = "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026."
 
 const painPoints = [
   "Excel, WhatsApp, Word et Google Agenda — 7 outils dispersés, 6 à 10 heures perdues par semaine",

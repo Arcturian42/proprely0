@@ -368,8 +368,8 @@ Les leviers anti-absentéisme rejoignent ceux de la fidélisation : conditions d
   },
   {
     slug: 'fixer-prix-nettoyage',
-    title: 'Fixer ses prix dans le nettoyage : méthode 2026',
-    excerpt: "8 dirigeants sur 10 sous-tarifent sans le savoir. La règle des 3×, les 4 facteurs qui font monter le prix, et la grille qui protège vos marges.",
+    title: 'Prix nettoyage 2026 : règle des 3× + grille tarifaire',
+    excerpt: "La règle des 3× le coût chargé, les 4 facteurs qui font monter le prix, la grille tarifaire. 8 dirigeants sur 10 sous-tarifent — vérifiez vos marges.",
     date: '15 mai 2026',
     readTime: '7 min',
     tag: 'Stratégie',
@@ -495,7 +495,7 @@ Sans visibilité sur votre marge réelle par client, vous facturez à l'aveugle.
 
 Un cockpit qui affiche la **marge par client en temps réel** change la dynamique : vous identifiez les clients déficitaires, vous renégociez ou vous sortez. Vous identifiez les clients premium, vous y consacrez vos meilleurs agents.
 
-C'est exactement ce que fait Proprely. [Rejoignez la bêta privée](/) si vous voulez voir vos vraies marges, plutôt que de les estimer en fin de trimestre.`,
+C'est exactement ce que fait Proprely. Voir le [guide complet logiciel société de nettoyage](/logiciel-societe-nettoyage) pour comprendre comment un cockpit affiche la marge par client en temps réel, ou [rejoignez la bêta privée](/) si vous voulez voir vos vraies marges plutôt que de les estimer en fin de trimestre.`,
   },
   {
     slug: 'gestion-societe-nettoyage-outils',
@@ -754,8 +754,8 @@ Chez Proprely, c'est l'inverse : la bêta est **gratuite pendant toute sa durée
   },
   {
     slug: 'calcul-heures-agents-nettoyage',
-    title: "Calcul des heures agents nettoyage : méthode et coût 2026",
-    excerpt: "Le 22 du mois, vous additionnez les heures de chaque agent pour la paie. Combien ça coûte vraiment ? Bien plus que ce que vous imaginez.",
+    title: "Calcul heures agents nettoyage : formule 2026 + outil",
+    excerpt: "Formule exacte pour calculer les heures de vos agents : heures complémentaires, supplémentaires, nuit, dimanche. Méthode et coût caché 2026.",
     date: '5 mai 2026',
     readTime: '5 min',
     tag: 'Productivité',
@@ -866,7 +866,7 @@ Même logique, en miroir. Chaque intervention est tracée, photographiée, sign�
 
 Pour les contrats à l'heure réelle, ce passage à l'automatisation permet souvent de récupérer 2 à 5 % de chiffre d'affaires sur des heures jusqu'ici "perdues" : les remplacements ad hoc, les interventions allongées, les passages exceptionnels non saisis.
 
-C'est ce que fait Proprely. Si vous voulez tester pendant la bêta, [c'est gratuit](/) et la mise en route prend 30 minutes avec le fondateur.`,
+C'est ce que fait Proprely. Voir le [guide complet logiciel société de nettoyage](/logiciel-societe-nettoyage) pour la vue d'ensemble du cockpit, ou tester pendant la bêta — [c'est gratuit](/) et la mise en route prend 30 minutes avec le fondateur.`,
   },
   {
     slug: 'rgpd-societe-nettoyage-2026',
@@ -1352,8 +1352,8 @@ Aujourd'hui en **bêta privée gratuite** pour 30 sociétés fondatrices. Onboar
   },
   {
     slug: 'logiciel-devis-nettoyage-gratuit',
-    title: "Logiciel devis nettoyage gratuit : guide 2026",
-    excerpt: "\"Gratuit\" cache 3 réalités : freemium limité, vraie gratuité bêta, ou modèle qui revend vos données. Comment trier si vous démarrez.",
+    title: "Logiciel devis nettoyage gratuit 2026 : top 5 outils",
+    excerpt: "Freemium limité, bêta gratuite ou modèle qui revend vos données : comment trier en 2026. Comparatif des 5 meilleurs outils gratuits pour PME nettoyage.",
     date: '19 mai 2026',
     readTime: '6 min',
     tag: 'Outils',
@@ -1474,7 +1474,9 @@ Si vous êtes encore en pré-amorçage et que les devis restent occasionnels, le
 
 Génération en 2 minutes depuis un template à votre charte, signature électronique native, suivi automatique des relances, conversion devis → facture en 1 clic. Marge brute affichée en temps réel pendant que vous construisez votre devis.
 
-Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, [candidater à la bêta](/) prend 2 minutes.`,
+Aujourd'hui [30 places fondateurs gratuites](/tarifs). Si le profil correspond, [candidater à la bêta](/) prend 2 minutes.
+
+Pour situer le module devis dans la vision globale du produit (planning, agents, preuve de passage, marge par client), voir le [guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage).`,
   },
   {
     slug: 'societe-nettoyage-paris',
@@ -2156,8 +2158,8 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention collective propreté IDCC 3043 : salaires 2026",
-    excerpt: "La convention collective propreté (IDCC 3043) régit 500 000 salariés. Grille de salaires 2026, calcul des heures, article 7, primes : le guide.",
+    title: "Convention propreté 2026 (IDCC 3043) : salaires + PDF",
+    excerpt: "Grille salariale 2026 : AS1 à 11,99€/h, ASP 12,42€/h. Calcul heures, article 7, primes, transport. Téléchargez la convention IDCC 3043 (500 000 salariés).",
     date: '20 mai 2026',
     readTime: '12 min',
     tag: 'Conformité',
@@ -2318,7 +2320,7 @@ Pour voir comment Proprely intègre la conformité IDCC 3043 en pratique : [logi
 - Accords annuels de branche (révision salaires) — publiés au BO Travail
 - Site officiel FEP (Fédération des Entreprises de Propreté)
 
-Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conformité IDCC 3043 est conçue dans le produit, pas en option.`,
+Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conformité IDCC 3043 est conçue dans le produit, pas en option. Vue d'ensemble du cockpit : [guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage).`,
   },
   {
     slug: 'tarif-nettoyage-bureaux-m2-2026',
