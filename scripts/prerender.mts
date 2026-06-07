@@ -115,6 +115,9 @@ type PageMeta = {
   description: string
   ogTitle?: string
   ogDescription?: string
+  /** URL relative ou absolue de l'image OG personnalisée.
+   *  Si omise, utilise /og-image.png (image générique du site). */
+  ogImage?: string
   schemas: object[]
   bodyHtml: string
   robots?: string
@@ -170,6 +173,19 @@ function buildHtml(meta: PageMeta): string {
   html = html.replace(
     /<meta name="twitter:description" content="[^"]*" \/>/,
     `<meta name="twitter:description" content="${escapeAttr(ogDesc)}" />`
+  )
+
+  // Image OG personnalisée par page si fournie, sinon image générique
+  const ogImageUrl = meta.ogImage
+    ? (meta.ogImage.startsWith('http') ? meta.ogImage : `${ORIGIN}${meta.ogImage}`)
+    : `${ORIGIN}/og-image.png`
+  html = html.replace(
+    /<meta property="og:image" content="[^"]*" \/>/,
+    `<meta property="og:image" content="${escapeAttr(ogImageUrl)}" />`
+  )
+  html = html.replace(
+    /<meta name="twitter:image" content="[^"]*" \/>/,
+    `<meta name="twitter:image" content="${escapeAttr(ogImageUrl)}" />`
   )
 
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, schemaScript)
@@ -418,6 +434,7 @@ for (const rawPost of posts) {
     url,
     title: `${p.title} · Proprely`,
     description: p.excerpt,
+    ogImage: `/og/blog-${p.slug}.png`,
     schemas,
     bodyHtml,
     canonicalOverride: p.canonicalUrl,
@@ -888,6 +905,7 @@ const pricingHtml = buildHtml({
   url: '/tarifs',
   title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
   description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
+  ogImage: '/og/tarifs.png',
   schemas: [
     webpageSchema(
       'Tarifs Proprely',
@@ -1505,6 +1523,7 @@ const securiteRgpdHtml = buildHtml({
   url: '/securite-rgpd',
   title: 'Sécurité & RGPD · Proprely',
   description: "Sécurité et conformité RGPD chez Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables en un email.",
+  ogImage: '/og/securite-rgpd.png',
   schemas: [
     webpageSchema(
       'Sécurité & RGPD Proprely',
@@ -1540,6 +1559,7 @@ const casClientsBody = `
 const casClientsHtml = buildHtml({
   url: '/cas-clients',
   title: 'Cas clients : ils pilotent leur société de nettoyage avec Proprely',
+  ogImage: '/og/cas-clients.png',
   description: "Retours détaillés de sociétés de nettoyage B2B fondatrices Proprely : défi initial, mise en place, résultats chiffrés (heures gagnées, marge, litiges).",
   schemas: [
     webpageSchema(
@@ -1599,6 +1619,7 @@ const roadmapHtml = buildHtml({
   url: '/roadmap',
   title: 'Roadmap et changelog Proprely — Ce qui arrive · Proprely',
   description: "Roadmap publique Proprely : ce qui a été livré, ce qui est en cours, ce qui arrive. Transparence totale.",
+  ogImage: '/og/roadmap.png',
   schemas: [
     webpageSchema(
       'Roadmap Proprely',
@@ -1627,6 +1648,7 @@ const authorsIndexHtml = buildHtml({
   url: '/auteurs',
   title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
   description: "Les auteurs du blog Proprely : profils, expertises et méthode éditoriale.",
+  ogImage: '/og/auteurs.png',
   schemas: [
     webpageSchema(
       'Auteurs Proprely',
@@ -1720,6 +1742,7 @@ const featureIndexHtml = buildHtml({
   url: '/fonctionnalites',
   title: 'Fonctionnalités logiciel nettoyage · Proprely',
   description: "Toutes les fonctionnalités Proprely : planning agents, devis, gestion agents, preuve de passage. Logiciel propreté B2B. Bêta gratuite.",
+  ogImage: '/og/fonctionnalites.png',
   schemas: [
     webpageSchema(
       'Fonctionnalités Proprely',
@@ -2253,6 +2276,7 @@ const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
   title: 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely',
   description: "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026.",
+  ogImage: '/og/logiciel-societe-nettoyage.png',
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -2353,6 +2377,7 @@ const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
   title: 'Comparatif logiciels nettoyage 2026 : 6 outils notés · Proprely',
   description: "Proprely, Organilog, Progiclean, PROPRET, Synchroteam, Excel : 13 critères comparés, tarifs 2026 et recommandations par taille d'entreprise.",
+  ogImage: '/og/comparatif-logiciel-nettoyage.png',
   schemas: [
     webpageSchema(
       'Comparatif logiciel nettoyage 2026',
@@ -2735,6 +2760,7 @@ const auditGratuitHtml = buildHtml({
   url: '/audit-gratuit',
   title: 'Audit gratuit de votre société de nettoyage : 30 min · Proprely',
   description: "30 minutes pour identifier vos pertes de temps et d'argent, et chiffrer le ROI d'une digitalisation. Audit offert avec le fondateur Proprely, sans engagement.",
+  ogImage: '/og/audit-gratuit.png',
   schemas: [
     webpageSchema(
       'Audit gratuit société de nettoyage',
