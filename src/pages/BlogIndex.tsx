@@ -33,7 +33,7 @@ function injectBlogIndexSchema() {
       publisher: { '@id': 'https://proprely.fr/#organization' },
       blogPost: posts.slice(0, 12).map((p) => ({
         '@type': 'BlogPosting',
-        url: `https://proprely.fr/blog/${p.slug}`,
+        url: `https://proprely.fr/blog/${p.slug}/`,
         headline: p.title,
         description: p.excerpt,
       })),
@@ -44,7 +44,7 @@ function injectBlogIndexSchema() {
       itemListElement: posts.map((p, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://proprely.fr/blog/${p.slug}`,
+        url: `https://proprely.fr/blog/${p.slug}/`,
         name: p.title,
       })),
     },

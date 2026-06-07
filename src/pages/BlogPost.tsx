@@ -109,7 +109,16 @@ function renderMarkdown(content: string): ReactElement[] {
 function renderInline(text: string): string {
   let html = text
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>')
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 font-semibold hover:underline">$1</a>')
+  // Canonicalise les liens internes en ajoutant un trailing slash (sauf racine,
+  // hash, ancres et liens externes) pour éviter les redirections 301 qui
+  // créent des "Page with redirect" dans Google Search Console.
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const isExternal = /^(https?:|mailto:|tel:|#)/.test(href)
+    const [path, hash] = href.split('#')
+    const needsSlash = !isExternal && path !== '/' && path && !path.endsWith('/')
+    const canonical = needsSlash ? `${path}/${hash ? `#${hash}` : ''}` : href
+    return `<a href="${canonical}" class="text-blue-600 font-semibold hover:underline">${label}</a>`
+  })
   return html
 }
 
@@ -434,7 +443,7 @@ export default function BlogPost({ slug }: Props) {
                 {others.map((p) => (
                   <Link
                     key={p.slug}
-                    to={`/blog/${p.slug}`}
+                    to={`/blog/${p.slug}/`}
                     className="group block text-left bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
                   >
                     <div className="flex items-center gap-3 text-[10px] text-slate-500 mb-2">

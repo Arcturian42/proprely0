@@ -61,8 +61,8 @@ const itemsXml = items
   .map(
     (it) => `    <item>
       <title>${escapeXml(it.title)}</title>
-      <link>${ORIGIN}/blog/${it.slug}</link>
-      <guid isPermaLink="true">${ORIGIN}/blog/${it.slug}</guid>
+      <link>${ORIGIN}/blog/${it.slug}/</link>
+      <guid isPermaLink="true">${ORIGIN}/blog/${it.slug}/</guid>
       <description>${escapeXml(it.excerpt)}</description>
       <category>${escapeXml(it.tag)}</category>
       <pubDate>${it.date.toUTCString()}</pubDate>
@@ -74,7 +74,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Proprely · Blog</title>
-    <link>${ORIGIN}/blog</link>
+    <link>${ORIGIN}/blog/</link>
     <atom:link href="${ORIGIN}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage B2B. Productivité, RGPD, outils, prix, fidélisation.</description>
     <language>fr-FR</language>

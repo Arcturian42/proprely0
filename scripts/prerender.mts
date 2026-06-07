@@ -96,7 +96,16 @@ function md2html(content: string): string {
 function renderInline(text: string): string {
   let s = escapeHtml(text)
   s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+  // Canonicalise les liens internes en ajoutant un trailing slash (sauf
+  // racine, hash et liens externes) pour éviter les redirections 301 qui
+  // créent des entrées "Page with redirect" dans Google Search Console.
+  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const isExternal = /^(https?:|mailto:|tel:|#)/.test(href)
+    const [path, hash] = href.split('#')
+    const needsSlash = !isExternal && path !== '/' && path && !path.endsWith('/')
+    const canonical = needsSlash ? `${path}/${hash ? `#${hash}` : ''}` : href
+    return `<a href="${canonical}">${label}</a>`
+  })
   return s
 }
 
@@ -302,7 +311,7 @@ for (const rawPost of posts) {
     ? `<aside><h2>À lire aussi</h2><ul>${relatedPosts
         .map(
           (q) =>
-            `<li><a href="${ORIGIN}/blog/${q.slug}"><strong>${escapeHtml(q.title)}</strong></a> — ${escapeHtml(q.excerpt)}</li>`,
+            `<li><a href="${ORIGIN}/blog/${q.slug}/"><strong>${escapeHtml(q.title)}</strong></a> — ${escapeHtml(q.excerpt)}</li>`,
         )
         .join('')}</ul></aside>`
     : ''
@@ -334,7 +343,7 @@ for (const rawPost of posts) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${ORIGIN}/blog` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${ORIGIN}/blog/` },
       { '@type': 'ListItem', position: 3, name: p.title, item: `${ORIGIN}${url}` },
     ],
   }
@@ -394,7 +403,7 @@ for (const rawFeature of features) {
   const schemas: object[] = [
     webpageSchema(f.title, f.metaDescription, `${ORIGIN}${url}`, [
       { name: 'Accueil', item: `${ORIGIN}/` },
-      { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
+      { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites/` },
       { name: f.tag, item: `${ORIGIN}${url}` },
     ]),
   ]
@@ -412,11 +421,11 @@ for (const rawFeature of features) {
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: [
         { name: 'Proprely', description: "Cockpit métier B2B nouvelle génération (2026) pour TPE/PME nettoyage 3-50 agents. Planning drag-and-drop, mobile sans app à installer, spécialités propreté natives.", url: `${ORIGIN}/` },
-        { name: 'PROPRET', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Couverture paie et GED intégrée.", url: `${ORIGIN}/comparatif/proprely-vs-propret` },
-        { name: 'Progiclean', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Alternative à PROPRET.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean` },
+        { name: 'PROPRET', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Couverture paie et GED intégrée.", url: `${ORIGIN}/comparatif/proprely-vs-propret/` },
+        { name: 'Progiclean', description: "ERP métier propreté historique pour PME/ETI 50+ agents. Alternative à PROPRET.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean/` },
         { name: 'Sevensoft Propreté', description: "Logiciel métier propreté ETI multi-établissements avec reporting consolidé.", url: 'https://www.sevensoft.fr/' },
         { name: 'Maglia', description: "Logiciel métier propreté ETI multi-marchés (industriel, médical, tertiaire).", url: 'https://www.maglia.fr/' },
-        { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Planning générique multi-secteurs.", url: `${ORIGIN}/comparatif/proprely-vs-organilog` },
+        { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Planning générique multi-secteurs.", url: `${ORIGIN}/comparatif/proprely-vs-organilog/` },
         { name: 'Synchroteam', description: "Field service multi-secteurs avec géolocalisation. Pour interventions ponctuelles.", url: 'https://www.synchroteam.com/' },
       ].map((s, i) => ({
         '@type': 'ListItem',
@@ -507,7 +516,7 @@ for (const rawCity of cities) {
       ${relatedPosts
         .map(
           (p) =>
-            `<li><a href="${ORIGIN}/blog/${p.slug}"><strong>${escapeHtml(p.title)}</strong></a> — ${escapeHtml(p.excerpt)}</li>`,
+            `<li><a href="${ORIGIN}/blog/${p.slug}/"><strong>${escapeHtml(p.title)}</strong></a> — ${escapeHtml(p.excerpt)}</li>`,
         )
         .join('')}
     </ul>`
@@ -525,7 +534,7 @@ for (const rawCity of cities) {
     ? `
     <h2>Prix de marché propreté à ${escapeHtml(c.city)} en 2026</h2>
     <p><strong>Tarif bureaux :</strong> ${escapeHtml(c.marketPricing.range)}. ${escapeHtml(c.marketPricing.note)}</p>
-    <p>Pour calibrer votre tarification au m², consultez le <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">guide complet du tarif nettoyage bureaux 2026</a>.</p>`
+    <p>Pour calibrer votre tarification au m², consultez le <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026/">guide complet du tarif nettoyage bureaux 2026</a>.</p>`
     : ''
 
   const bodyHtml = `
@@ -630,7 +639,7 @@ for (const rawCity of cities) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/villes` },
+        { '@type': 'ListItem', position: 2, name: 'Villes', item: `${ORIGIN}/villes/` },
         { '@type': 'ListItem', position: 3, name: c.city, item: cityUrl },
       ],
     },
@@ -658,7 +667,7 @@ const blogIndexBody = `
     ${posts
       .map(
         (p) =>
-          `<li><a href="${ORIGIN}/blog/${p.slug}"><strong>${escapeHtml(p.title)}</strong></a> — ${escapeHtml(
+          `<li><a href="${ORIGIN}/blog/${p.slug}/"><strong>${escapeHtml(p.title)}</strong></a> — ${escapeHtml(
             p.excerpt
           )} (${escapeHtml(p.readTime)})</li>`
       )
@@ -673,7 +682,7 @@ const blogSchema = {
   name: 'Blog Proprely · Gestion, terrain et propreté B2B',
   description:
     "Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage : productivité, RGPD, outils, prix, fidélisation, marchés locaux.",
-  url: `${ORIGIN}/blog`,
+  url: `${ORIGIN}/blog/`,
   inLanguage: 'fr-FR',
   isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
   publisher: { '@id': `${ORIGIN}/#organization` },
@@ -684,7 +693,7 @@ const blogSchema = {
     description: p.excerpt,
     datePublished: p.date,
     dateModified: getPost(p.slug)?.dateModified ?? p.date,
-    url: `${ORIGIN}/blog/${p.slug}`,
+    url: `${ORIGIN}/blog/${p.slug}/`,
     author: (() => {
       const a = getAuthor(p.authorSlug)
       return { '@type': 'Person', '@id': `${ORIGIN}/auteur/${a.slug}#person`, name: a.name }
@@ -698,7 +707,7 @@ const blogItemList = {
   itemListElement: posts.map((p, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    url: `${ORIGIN}/blog/${p.slug}`,
+    url: `${ORIGIN}/blog/${p.slug}/`,
     name: p.title,
   })),
 }
@@ -712,10 +721,10 @@ const blogIndexHtml = buildHtml({
     webpageSchema(
       'Blog Proprely',
       "Analyses et retours d'expérience pour les dirigeants de sociétés de nettoyage.",
-      `${ORIGIN}/blog`,
+      `${ORIGIN}/blog/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Blog', item: `${ORIGIN}/blog` },
+        { name: 'Blog', item: `${ORIGIN}/blog/` },
       ]
     ),
     blogSchema,
@@ -756,7 +765,7 @@ const roiBody = `
   <h2>Ce que ce calcul ne couvre pas (et qui augmente votre vrai ROI)</h2>
   <p>Le ROI réel est généralement 30 à 50 % supérieur à l'estimation de base parce que le calculateur ne tient compte que du temps dirigeant. Vous récupérez en plus : le temps des agents (saisie pointage, recherche planning), la marge sur les contrats actuellement sous-tarifés (visibilité marge par client), la qualité avec moins de litiges grâce à la preuve de passage standardisée, et la baisse de turnover qui résulte d'un meilleur pilotage de la charge horaire.</p>
   <h2>Aller plus loin</h2>
-  <p>Pour calibrer votre tarification au m² : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur de prix nettoyage bureaux au m²</a>. Pour estimer la marge brute d'un contrat précis : <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité contrat nettoyage</a>. Pour le guide complet du choix de logiciel : <a href="${ORIGIN}/logiciel-societe-nettoyage">logiciel société de nettoyage — guide complet 2026</a> ou le <a href="${ORIGIN}/comparatif-logiciel-nettoyage">comparatif Proprely vs PROPRET, Progiclean, Organilog</a>. La bêta privée Proprely est gratuite pour 30 sociétés fondatrices : <a href="${ORIGIN}/beta">candidater à la bêta</a>.</p>
+  <p>Pour calibrer votre tarification au m² : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2/">calculateur de prix nettoyage bureaux au m²</a>. Pour estimer la marge brute d'un contrat précis : <a href="${ORIGIN}/simulateur-rentabilite/">simulateur de rentabilité contrat nettoyage</a>. Pour le guide complet du choix de logiciel : <a href="${ORIGIN}/logiciel-societe-nettoyage/">logiciel société de nettoyage — guide complet 2026</a> ou le <a href="${ORIGIN}/comparatif-logiciel-nettoyage/">comparatif Proprely vs PROPRET, Progiclean, Organilog</a>. La bêta privée Proprely est gratuite pour 30 sociétés fondatrices : <a href="${ORIGIN}/beta/">candidater à la bêta</a>.</p>
 `.trim()
 
 const roiHtml = buildHtml({
@@ -768,10 +777,10 @@ const roiHtml = buildHtml({
     webpageSchema(
       'Calculateur ROI Proprely',
       'Combien vous coûte la dispersion entre Excel, WhatsApp et Word pour gérer votre société de nettoyage.',
-      `${ORIGIN}/calculateur-roi`,
+      `${ORIGIN}/calculateur-roi/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Calculateur ROI', item: `${ORIGIN}/calculateur-roi` },
+        { name: 'Calculateur ROI', item: `${ORIGIN}/calculateur-roi/` },
       ]
     ),
     faqSchema(roiFaqs),
@@ -796,7 +805,7 @@ const pricingBody = `
   <h2>Lancement public</h2>
   <p>Le tarif public sera défini avec les retours des fondateurs. L'objectif : un prix lisible, prévisible, qui ne pénalise pas la croissance. Modèle hypothèse : forfait par tranche d'agents.</p>
   <h2>Combien coûte la gestion d'une société de nettoyage SANS logiciel ?</h2>
-  <p>Le vrai coût n'est pas le logiciel : c'est son absence. Diriger sur Excel, WhatsApp, Word et le papier représente 6 à 10 heures d'administration dispersée par semaine. À 45 € de coût horaire dirigeant chargé, c'est 12 600 à 21 000 € par an — sans compter les erreurs de pointage, les contrats sous-tarifés et les litiges clients faute de preuve de passage. Chiffrez votre propre coût avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</p>
+  <p>Le vrai coût n'est pas le logiciel : c'est son absence. Diriger sur Excel, WhatsApp, Word et le papier représente 6 à 10 heures d'administration dispersée par semaine. À 45 € de coût horaire dirigeant chargé, c'est 12 600 à 21 000 € par an — sans compter les erreurs de pointage, les contrats sous-tarifés et les litiges clients faute de preuve de passage. Chiffrez votre propre coût avec le <a href="${ORIGIN}/calculateur-roi/">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite/">simulateur de rentabilité</a>.</p>
   <h2>Tout est inclus</h2>
   <p>Aucun module en option, aucune limite d'utilisation. Clients, sites et contacts illimités. Agents et spécialités sans limite. Planning et affectation 1-clic. Missions avec preuve de passage (QR, photos, signature). Devis et factures avec signature électronique. Documents centralisés. Pilotage et marge par client en temps réel. Hébergement européen, conformité RGPD. Export de vos données en 1 clic à tout moment.</p>
   <h2>Sans risque, sans engagement, sans lock-in</h2>
@@ -819,10 +828,10 @@ const pricingHtml = buildHtml({
     webpageSchema(
       'Tarifs Proprely',
       'Gratuit pendant la bêta privée. Tarif fondateur à vie pour les 30 premières sociétés sélectionnées.',
-      `${ORIGIN}/tarifs`,
+      `${ORIGIN}/tarifs/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Tarifs', item: `${ORIGIN}/tarifs` },
+        { name: 'Tarifs', item: `${ORIGIN}/tarifs/` },
       ]
     ),
     {
@@ -835,7 +844,7 @@ const pricingHtml = buildHtml({
       offers: {
         '@type': 'Offer',
         '@id': `${ORIGIN}/tarifs#offer-beta`,
-        url: `${ORIGIN}/tarifs`,
+        url: `${ORIGIN}/tarifs/`,
         name: 'Bêta privée Proprely — accès gratuit',
         description: "Accès complet au cockpit pendant toute la durée de la bêta privée, réservé aux 30 sociétés fondatrices. Tarif fondateur conservé à vie après le lancement public.",
         price: '0',
@@ -865,9 +874,9 @@ const notFoundBody = `
   <h2>Où aller maintenant ?</h2>
   <ul>
     <li><a href="${ORIGIN}/">Accueil — Découvrir le cockpit Proprely</a></li>
-    <li><a href="${ORIGIN}/tarifs">Tarifs — Gratuit pendant la bêta</a></li>
-    <li><a href="${ORIGIN}/calculateur-roi">Calculateur ROI — Combien la dispersion vous coûte</a></li>
-    <li><a href="${ORIGIN}/blog">Blog — Analyses pour les dirigeants du nettoyage</a></li>
+    <li><a href="${ORIGIN}/tarifs/">Tarifs — Gratuit pendant la bêta</a></li>
+    <li><a href="${ORIGIN}/calculateur-roi/">Calculateur ROI — Combien la dispersion vous coûte</a></li>
+    <li><a href="${ORIGIN}/blog/">Blog — Analyses pour les dirigeants du nettoyage</a></li>
   </ul>
 `.trim()
 
@@ -882,7 +891,7 @@ const notFoundHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Page introuvable',
       description: "La page que vous cherchez n'existe pas ou a été déplacée.",
-      url: `${ORIGIN}/404`,
+      url: `${ORIGIN}/404/`,
       inLanguage: 'fr-FR',
     },
   ],
@@ -900,10 +909,10 @@ const thankYouHtml = buildHtml({
     webpageSchema(
       'Candidature enregistrée',
       'Confirmation de candidature à la bêta privée Proprely.',
-      `${ORIGIN}/beta/merci`,
+      `${ORIGIN}/beta/merci/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Merci', item: `${ORIGIN}/beta/merci` },
+        { name: 'Merci', item: `${ORIGIN}/beta/merci/` },
       ]
     ),
   ],
@@ -932,16 +941,16 @@ const contactHtml = buildHtml({
     webpageSchema(
       'Contact Proprely',
       'Contactez Proprely : email, zones d\'opération, éditeur.',
-      `${ORIGIN}/contact`,
+      `${ORIGIN}/contact/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Contact', item: `${ORIGIN}/contact` },
+        { name: 'Contact', item: `${ORIGIN}/contact/` },
       ]
     ),
     {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      url: `${ORIGIN}/contact`,
+      url: `${ORIGIN}/contact/`,
       name: 'Contacter Proprely',
       inLanguage: 'fr-FR',
       mainEntity: { '@id': `${ORIGIN}/#organization` },
@@ -989,7 +998,7 @@ const conventionBody = `
     <li><strong>Reporting paie standardisé</strong> — export mensuel des heures par agent avec toutes majorations conformes IDCC 3043</li>
   </ul>
   <h2>Le guide complet convention collective propreté</h2>
-  <p>Cette page présente le logiciel. Pour comprendre en profondeur la convention IDCC 3043 (grille 2024/2025/2026, calcul détaillé des heures, mécanique de l'article 7, primes, formation, pénibilité, sources Légifrance/FEP), consultez notre <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">guide de référence convention collective propreté IDCC 3043</a>.</p>
+  <p>Cette page présente le logiciel. Pour comprendre en profondeur la convention IDCC 3043 (grille 2024/2025/2026, calcul détaillé des heures, mécanique de l'article 7, primes, formation, pénibilité, sources Légifrance/FEP), consultez notre <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043/">guide de référence convention collective propreté IDCC 3043</a>.</p>
 `.trim()
 
 const conventionHtml = buildHtml({
@@ -1002,7 +1011,7 @@ const conventionHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Logiciel conforme convention collective propreté IDCC 3043',
       description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes.",
-      url: `${ORIGIN}/convention-collective-nettoyage`,
+      url: `${ORIGIN}/convention-collective-nettoyage/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-06-01',
       dateModified: TODAY,
@@ -1017,7 +1026,7 @@ const conventionHtml = buildHtml({
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-          { '@type': 'ListItem', position: 2, name: 'Convention collective nettoyage IDCC 3043', item: `${ORIGIN}/convention-collective-nettoyage` },
+          { '@type': 'ListItem', position: 2, name: 'Convention collective nettoyage IDCC 3043', item: `${ORIGIN}/convention-collective-nettoyage/` },
         ],
       },
     },
@@ -1026,7 +1035,7 @@ const conventionHtml = buildHtml({
       '@type': 'ProfessionalService',
       name: 'Proprely — logiciel conforme convention collective propreté IDCC 3043',
       description: "Logiciel pour société de nettoyage conforme à la convention collective propreté IDCC 3043 : grille de salaires 2026, calcul des heures, article 7, primes.",
-      url: `${ORIGIN}/convention-collective-nettoyage`,
+      url: `${ORIGIN}/convention-collective-nettoyage/`,
       image: `${ORIGIN}/og-image.png`,
       provider: { '@id': `${ORIGIN}/#organization` },
       serviceType: 'Logiciel de gestion société de nettoyage conforme IDCC 3043',
@@ -1078,7 +1087,7 @@ const medicalBody = `
     <li>Marge par contrat médical en temps réel pour éviter la sous-tarification</li>
   </ul>
   <h2>Pour aller plus loin</h2>
-  <p>Voir le <a href="${ORIGIN}/blog/bionettoyage-medical-protocoles">guide bionettoyage médical complet</a>, la <a href="${ORIGIN}/convention-collective-nettoyage">conformité convention collective IDCC 3043</a>, le module <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">gestion agents avec spécialités et exposition CMR</a>, et la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage avec PV automatique</a>. <a href="${ORIGIN}/beta">Candidater à la bêta privée</a>.</p>
+  <p>Voir le <a href="${ORIGIN}/blog/bionettoyage-medical-protocoles/">guide bionettoyage médical complet</a>, la <a href="${ORIGIN}/convention-collective-nettoyage/">conformité convention collective IDCC 3043</a>, le module <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">gestion agents avec spécialités et exposition CMR</a>, et la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">preuve de passage avec PV automatique</a>. <a href="${ORIGIN}/beta/">Candidater à la bêta privée</a>.</p>
 `.trim()
 
 const medicalHtml = buildHtml({
@@ -1091,7 +1100,7 @@ const medicalHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Logiciel nettoyage médical et bionettoyage',
       description: "Logiciel pour société de bionettoyage médical conforme à la convention collective propreté IDCC 3043.",
-      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage`,
+      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-06-03',
       dateModified: TODAY,
@@ -1100,7 +1109,7 @@ const medicalHtml = buildHtml({
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage médical', item: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage` },
+          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage médical', item: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/` },
         ],
       },
     },
@@ -1109,7 +1118,7 @@ const medicalHtml = buildHtml({
       '@type': 'ProfessionalService',
       name: 'Proprely — logiciel pour société de bionettoyage médical',
       description: "Logiciel pour société de bionettoyage médical : protocoles, traçabilité CMR, PV automatique. Conforme IDCC 3043.",
-      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage`,
+      url: `${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/`,
       image: `${ORIGIN}/og-image.png`,
       provider: { '@id': `${ORIGIN}/#organization` },
       serviceType: 'Logiciel de gestion société de bionettoyage médical',
@@ -1161,7 +1170,7 @@ const coproBody = `
     <li>Catalogue prestations syndic pour répondre rapidement aux appels d'offres triennaux</li>
   </ul>
   <h2>Pour aller plus loin</h2>
-  <p>Voir le <a href="${ORIGIN}/blog/nettoyage-copropriete-obligations-prix">guide nettoyage copropriété : obligations et prix</a>, le module <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage avec QR et PV automatique</a>, le module <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">devis et facturation automatisée</a>, le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning multi-sites</a>, et la page <a href="${ORIGIN}/villes/paris">logiciel nettoyage Paris</a> (50 000+ copropriétés intra-muros).</p>
+  <p>Voir le <a href="${ORIGIN}/blog/nettoyage-copropriete-obligations-prix/">guide nettoyage copropriété : obligations et prix</a>, le module <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">preuve de passage avec QR et PV automatique</a>, le module <a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">devis et facturation automatisée</a>, le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">planning multi-sites</a>, et la page <a href="${ORIGIN}/villes/paris/">logiciel nettoyage Paris</a> (50 000+ copropriétés intra-muros).</p>
 `.trim()
 
 const coproHtml = buildHtml({
@@ -1174,7 +1183,7 @@ const coproHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Logiciel nettoyage copropriété et syndic',
       description: "Logiciel pour société de nettoyage qui travaille avec des syndics de copropriété.",
-      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`,
+      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-06-03',
       dateModified: TODAY,
@@ -1183,7 +1192,7 @@ const coproHtml = buildHtml({
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage copropriété', item: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic` },
+          { '@type': 'ListItem', position: 2, name: 'Logiciel nettoyage copropriété', item: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic/` },
         ],
       },
     },
@@ -1192,7 +1201,7 @@ const coproHtml = buildHtml({
       '@type': 'ProfessionalService',
       name: 'Proprely — logiciel pour société de nettoyage de copropriétés',
       description: "Logiciel pour société de nettoyage intervenant pour syndics et copropriétés : preuve de passage, PV automatique, facturation récurrente.",
-      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`,
+      url: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic/`,
       image: `${ORIGIN}/og-image.png`,
       provider: { '@id': `${ORIGIN}/#organization` },
       serviceType: 'Logiciel de gestion société de nettoyage copropriétés',
@@ -1248,7 +1257,7 @@ const mobileBody = `
     <li><strong>Consignes en français simple</strong> — pour équipes intergénérationnelles</li>
   </ul>
   <h2>Pour aller plus loin</h2>
-  <p>Voir le module <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning agents (cockpit dirigeant)</a>, la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">preuve de passage mobile</a>, la <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">gestion agents (profils, spécialités, alertes)</a>, le <a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage">guide calcul des heures agents 2026</a>, et le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier 2026</a>.</p>
+  <p>Voir le module <a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">planning agents (cockpit dirigeant)</a>, la <a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">preuve de passage mobile</a>, la <a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">gestion agents (profils, spécialités, alertes)</a>, le <a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage/">guide calcul des heures agents 2026</a>, et le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">comparatif logiciels métier 2026</a>.</p>
 `.trim()
 
 const mobileHtml = buildHtml({
@@ -1261,7 +1270,7 @@ const mobileHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Application mobile agents nettoyage',
       description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — sans app à installer.",
-      url: `${ORIGIN}/application-mobile-agents-nettoyage`,
+      url: `${ORIGIN}/application-mobile-agents-nettoyage/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-06-03',
       dateModified: TODAY,
@@ -1270,7 +1279,7 @@ const mobileHtml = buildHtml({
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-          { '@type': 'ListItem', position: 2, name: 'Application mobile agents nettoyage', item: `${ORIGIN}/application-mobile-agents-nettoyage` },
+          { '@type': 'ListItem', position: 2, name: 'Application mobile agents nettoyage', item: `${ORIGIN}/application-mobile-agents-nettoyage/` },
         ],
       },
     },
@@ -1279,7 +1288,7 @@ const mobileHtml = buildHtml({
       '@type': 'MobileApplication',
       name: 'Proprely — application agent terrain',
       description: "Application mobile pour agents de nettoyage via lien web personnel : planning, pointage, preuve de passage, signalements.",
-      url: `${ORIGIN}/application-mobile-agents-nettoyage`,
+      url: `${ORIGIN}/application-mobile-agents-nettoyage/`,
       operatingSystem: 'Web (Android 8+, iOS 13+, navigateur récent)',
       applicationCategory: 'BusinessApplication',
       publisher: { '@id': `${ORIGIN}/#organization` },
@@ -1321,10 +1330,10 @@ const mentionsHtml = buildHtml({
     webpageSchema(
       'Mentions légales Proprely',
       'Éditeur, hébergeur, propriété intellectuelle, contact.',
-      `${ORIGIN}/mentions-legales`,
+      `${ORIGIN}/mentions-legales/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Mentions légales', item: `${ORIGIN}/mentions-legales` },
+        { name: 'Mentions légales', item: `${ORIGIN}/mentions-legales/` },
       ]
     ),
   ],
@@ -1359,10 +1368,10 @@ const privacyHtml = buildHtml({
     webpageSchema(
       'Politique de confidentialité Proprely',
       'Données collectées, finalités, durée de conservation, droits RGPD.',
-      `${ORIGIN}/confidentialite`,
+      `${ORIGIN}/confidentialite/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Confidentialité', item: `${ORIGIN}/confidentialite` },
+        { name: 'Confidentialité', item: `${ORIGIN}/confidentialite/` },
       ]
     ),
   ],
@@ -1396,10 +1405,10 @@ const cguHtml = buildHtml({
     webpageSchema(
       'CGU Proprely',
       "Accès au service, engagements, propriété des données, résiliation.",
-      `${ORIGIN}/cgu`,
+      `${ORIGIN}/cgu/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'CGU', item: `${ORIGIN}/cgu` },
+        { name: 'CGU', item: `${ORIGIN}/cgu/` },
       ]
     ),
   ],
@@ -1432,17 +1441,17 @@ const featureIndexHtml = buildHtml({
     webpageSchema(
       'Fonctionnalités Proprely',
       "Planning, devis, gestion agents, preuve de passage pour société de nettoyage.",
-      `${ORIGIN}/fonctionnalites`,
+      `${ORIGIN}/fonctionnalites/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites` },
+        { name: 'Fonctionnalités', item: `${ORIGIN}/fonctionnalites/` },
       ]
     ),
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: 'Fonctionnalités Proprely',
-      url: `${ORIGIN}/fonctionnalites`,
+      url: `${ORIGIN}/fonctionnalites/`,
       inLanguage: 'fr-FR',
       hasPart: features.map((f) => ({
         '@type': 'WebPage',
@@ -1481,17 +1490,17 @@ const cityIndexHtml = buildHtml({
     webpageSchema(
       'Proprely par ville',
       "Logiciel nettoyage pour Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes.",
-      `${ORIGIN}/villes`,
+      `${ORIGIN}/villes/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Villes', item: `${ORIGIN}/villes` },
+        { name: 'Villes', item: `${ORIGIN}/villes/` },
       ]
     ),
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
       name: 'Logiciel nettoyage par ville',
-      url: `${ORIGIN}/villes`,
+      url: `${ORIGIN}/villes/`,
       inLanguage: 'fr-FR',
       hasPart: cities.map((c) => ({
         '@type': 'WebPage',
@@ -1546,10 +1555,10 @@ const betaHtml = buildHtml({
     webpageSchema(
       'Bêta privée Proprely',
       "Rejoignez les 30 sociétés fondatrices de Proprely. Accès gratuit pendant la bêta, tarif fondateur conservé à vie.",
-      `${ORIGIN}/beta`,
+      `${ORIGIN}/beta/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Bêta privée', item: `${ORIGIN}/beta` },
+        { name: 'Bêta privée', item: `${ORIGIN}/beta/` },
       ]
     ),
     faqSchema(betaFaqs),
@@ -1586,10 +1595,10 @@ const resourcesHtml = buildHtml({
     webpageSchema(
       'Ressources Proprely',
       "Modèles Excel et outils interactifs pour les dirigeants de société de nettoyage.",
-      `${ORIGIN}/ressources`,
+      `${ORIGIN}/ressources/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Ressources', item: `${ORIGIN}/ressources` },
+        { name: 'Ressources', item: `${ORIGIN}/ressources/` },
       ]
     ),
     {
@@ -1624,13 +1633,13 @@ for (const r of resources) {
     <h2>Ce modèle convient si</h2>
     <ul>${whoForHtml}</ul>
     <h2>Aller plus loin que le modèle</h2>
-    <p>${escapeHtml(r.bestFor)} Proprely automatise ce que ce modèle vous demande de faire à la main. <a href="${ORIGIN}/beta">Rejoindre la bêta gratuite</a>.</p>
+    <p>${escapeHtml(r.bestFor)} Proprely automatise ce que ce modèle vous demande de faire à la main. <a href="${ORIGIN}/beta/">Rejoindre la bêta gratuite</a>.</p>
   `.trim()
 
   const schemas: object[] = [
     webpageSchema(r.title, r.metaDescription, `${ORIGIN}${url}`, [
       { name: 'Accueil', item: `${ORIGIN}/` },
-      { name: 'Ressources', item: `${ORIGIN}/ressources` },
+      { name: 'Ressources', item: `${ORIGIN}/ressources/` },
       { name: r.shortTitle, item: `${ORIGIN}${url}` },
     ]),
   ]
@@ -1676,7 +1685,7 @@ const vsExcelBody = `
     <li>Pas d'enjeu de marge par client à suivre finement</li>
     <li>Pas de contraintes réglementaires fortes (médical, agroalimentaire)</li>
   </ul>
-  <p>Dans ce cadre, nous proposons même des <a href="${ORIGIN}/ressources">modèles Excel gratuits téléchargeables</a> pour démarrer : devis, planning hebdomadaire, suivi des heures agents.</p>
+  <p>Dans ce cadre, nous proposons même des <a href="${ORIGIN}/ressources/">modèles Excel gratuits téléchargeables</a> pour démarrer : devis, planning hebdomadaire, suivi des heures agents.</p>
 
   <h2>Quand Excel devient le frein principal à la croissance</h2>
   <ul>
@@ -1693,7 +1702,7 @@ const vsExcelBody = `
 
   <h2>Coût caché d'Excel pour une société de nettoyage</h2>
   <p>Quand on additionne les heures perdues en dispersion administrative, les erreurs de devis et de pointage, et les risques (perte de contrat faute de preuve de passage, redressement URSSAF sur les heures sup non majorées), Excel coûte plus cher qu'une licence d'outil métier. Estimation chiffrée : pour une société B2B nettoyage de 8 à 15 agents, à 45 € de coût horaire dirigeant chargé, 6 à 10 heures perdues par semaine représentent <strong>12 600 à 21 000 € de coût caché par an</strong> — sans compter les opportunités commerciales loupées par lenteur de devis ou les contrats perdus par sous-tarification invisible.</p>
-  <p>Mesurez votre coût réel avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI logiciel société de nettoyage</a>.</p>
+  <p>Mesurez votre coût réel avec le <a href="${ORIGIN}/calculateur-roi/">calculateur ROI logiciel société de nettoyage</a>.</p>
 
   <h2>Comparatif tableau : Proprely vs Excel sur 10 critères</h2>
   <ul>
@@ -1714,11 +1723,11 @@ const vsExcelBody = `
 
   <h2>Aller plus loin</h2>
   <ul>
-    <li>Pour comparer avec d'autres logiciels métier société de nettoyage : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a></li>
-    <li>Pour mesurer votre ROI : <a href="${ORIGIN}/calculateur-roi">calculateur ROI logiciel société de nettoyage</a></li>
-    <li>Pour préparer la digitalisation : <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes">Digitaliser sa société de nettoyage : 5 étapes 2026</a></li>
-    <li>Modèles Excel gratuits pour démarrer : <a href="${ORIGIN}/ressources">devis, planning, suivi heures</a></li>
-    <li><a href="${ORIGIN}/beta">Candidater à la bêta Proprely</a> — gratuit, sans carte bancaire</li>
+    <li>Pour comparer avec d'autres logiciels métier société de nettoyage : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">comparatif logiciels métier nettoyage 2026</a></li>
+    <li>Pour mesurer votre ROI : <a href="${ORIGIN}/calculateur-roi/">calculateur ROI logiciel société de nettoyage</a></li>
+    <li>Pour préparer la digitalisation : <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes/">Digitaliser sa société de nettoyage : 5 étapes 2026</a></li>
+    <li>Modèles Excel gratuits pour démarrer : <a href="${ORIGIN}/ressources/">devis, planning, suivi heures</a></li>
+    <li><a href="${ORIGIN}/beta/">Candidater à la bêta Proprely</a> — gratuit, sans carte bancaire</li>
   </ul>
 `.trim()
 
@@ -1738,10 +1747,10 @@ const vsExcelHtml = buildHtml({
     webpageSchema(
       'Proprely vs Excel',
       "Comparatif honnête entre Excel et Proprely pour piloter une société de nettoyage B2B.",
-      `${ORIGIN}/proprely-vs-excel`,
+      `${ORIGIN}/proprely-vs-excel/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Proprely vs Excel', item: `${ORIGIN}/proprely-vs-excel` },
+        { name: 'Proprely vs Excel', item: `${ORIGIN}/proprely-vs-excel/` },
       ]
     ),
     faqSchema(vsExcelFaqs),
@@ -1785,7 +1794,7 @@ const simulateurBody = `
   <h2>Ce qui n'est pas pris en compte</h2>
   <p>Le simulateur ne prend pas en compte les prestations ponctuelles facturées hors contrat, l'écart entre heures contractuelles et heures réellement effectuées, ni les coûts liés aux remplacements et absences imprévues. Le module pilotage de Proprely intègre ces éléments avec vos données réelles agent par agent et site par site, et affiche la marge en temps réel.</p>
   <h2>Aller plus loin</h2>
-  <p>Pour fixer un prix juste avant de signer : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur de prix nettoyage au m²</a> et <a href="${ORIGIN}/blog/fixer-prix-nettoyage">guide méthode prix nettoyage 2026</a>. Pour comprendre le vrai coût horaire chargé de vos agents : <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">guide coût horaire chargé 2026</a>. Pour calculer le ROI global de la digitalisation : <a href="${ORIGIN}/calculateur-roi">calculateur ROI société de nettoyage</a>. La bêta privée Proprely intègre la marge par client en temps réel — <a href="${ORIGIN}/beta">candidater à la bêta</a>.</p>
+  <p>Pour fixer un prix juste avant de signer : <a href="${ORIGIN}/calculateur-prix-nettoyage-m2/">calculateur de prix nettoyage au m²</a> et <a href="${ORIGIN}/blog/fixer-prix-nettoyage/">guide méthode prix nettoyage 2026</a>. Pour comprendre le vrai coût horaire chargé de vos agents : <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage/">guide coût horaire chargé 2026</a>. Pour calculer le ROI global de la digitalisation : <a href="${ORIGIN}/calculateur-roi/">calculateur ROI société de nettoyage</a>. La bêta privée Proprely intègre la marge par client en temps réel — <a href="${ORIGIN}/beta/">candidater à la bêta</a>.</p>
 `.trim()
 
 const simulateurHtml = buildHtml({
@@ -1796,10 +1805,10 @@ const simulateurHtml = buildHtml({
     webpageSchema(
       'Simulateur de rentabilité Proprely',
       "Calculez la rentabilité réelle d'un contrat de nettoyage avec un verdict immédiat et des recommandations actionnables.",
-      `${ORIGIN}/simulateur-rentabilite`,
+      `${ORIGIN}/simulateur-rentabilite/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Simulateur de rentabilité', item: `${ORIGIN}/simulateur-rentabilite` },
+        { name: 'Simulateur de rentabilité', item: `${ORIGIN}/simulateur-rentabilite/` },
       ]
     ),
     faqSchema(simulateurFaqs),
@@ -1824,7 +1833,7 @@ const softwareLandingBody = `
     <li>Vos devis prennent 20 minutes sur Word, le concurrent envoie en 5</li>
     <li>Pas de visibilité sur le surmenage agents, vous découvrez les arrêts maladie après-coup</li>
   </ul>
-  <p>Pour une société de 10 agents perdant 8 heures par semaine en administration dispersée (à 45 € de coût horaire dirigeant chargé), le coût caché atteint environ 16 800 € par an. Estimez le vôtre avec le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</p>
+  <p>Pour une société de 10 agents perdant 8 heures par semaine en administration dispersée (à 45 € de coût horaire dirigeant chargé), le coût caché atteint environ 16 800 € par an. Estimez le vôtre avec le <a href="${ORIGIN}/calculateur-roi/">calculateur ROI</a> ou la marge d'un contrat avec le <a href="${ORIGIN}/simulateur-rentabilite/">simulateur de rentabilité</a>.</p>
 
   <h2>Les 7 fonctionnalités indispensables d'un logiciel de nettoyage</h2>
   <ol>
@@ -1840,19 +1849,19 @@ const softwareLandingBody = `
   <h2>Proprely : le cockpit métier des sociétés de nettoyage B2B</h2>
   <p>Proprely n'est pas un logiciel généraliste sur lequel on aurait collé un module nettoyage : c'est un cockpit conçu dès l'origine pour la propreté B2B, avec des dirigeants du secteur. Les sept briques essentielles y sont réunies et connectées, le produit est mobile-first pour les agents (un simple lien web, sans application à installer), hébergé en Europe et conforme au RGPD. Quatre modules à explorer en priorité :</p>
   <ul>
-    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage">Planning agents</a> — affectation 1-clic, mobile-first sans app à installer</li>
-    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage">Devis professionnels</a> — 2 minutes par devis, signature électronique native</li>
-    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">Gestion des agents</a> — profils, spécialités, charge horaire, paie</li>
-    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">Preuve de passage</a> — QR, photos avant-après, signature client, PV automatique</li>
+    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">Planning agents</a> — affectation 1-clic, mobile-first sans app à installer</li>
+    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">Devis professionnels</a> — 2 minutes par devis, signature électronique native</li>
+    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">Gestion des agents</a> — profils, spécialités, charge horaire, paie</li>
+    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">Preuve de passage</a> — QR, photos avant-après, signature client, PV automatique</li>
   </ul>
-  <p>Volet commercial : le <a href="${ORIGIN}/crm-entreprise-proprete">CRM entreprise propreté</a> intégré. Voir aussi toutes les <a href="${ORIGIN}/fonctionnalites">fonctionnalités</a>.</p>
+  <p>Volet commercial : le <a href="${ORIGIN}/crm-entreprise-proprete/">CRM entreprise propreté</a> intégré. Voir aussi toutes les <a href="${ORIGIN}/fonctionnalites/">fonctionnalités</a>.</p>
 
   <h2>Pour quelle taille de société ?</h2>
   <ul>
-    <li><strong>Auto-entrepreneur &amp; solo</strong> — utile dès 3-5 clients récurrents (devis à votre charte, preuve de passage). Voir le <a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage">logiciel auto-entrepreneur nettoyage</a>.</li>
+    <li><strong>Auto-entrepreneur &amp; solo</strong> — utile dès 3-5 clients récurrents (devis à votre charte, preuve de passage). Voir le <a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/">logiciel auto-entrepreneur nettoyage</a>.</li>
     <li><strong>3 à 15 agents</strong> — le moment idéal pour structurer avant que la dispersion ne plafonne la croissance. Cœur de cible de Proprely.</li>
     <li><strong>15 à 50 agents</strong> — agilité et pilotage de la marge en priorité, sans projet d'intégration de plusieurs mois.</li>
-    <li><strong>50 agents et plus</strong> — une couche comptable/ERP peut compléter le dispositif ; comparez objectivement via le <a href="${ORIGIN}/comparatif-logiciel-nettoyage">comparatif</a>.</li>
+    <li><strong>50 agents et plus</strong> — une couche comptable/ERP peut compléter le dispositif ; comparez objectivement via le <a href="${ORIGIN}/comparatif-logiciel-nettoyage/">comparatif</a>.</li>
   </ul>
 
   <h2>Comment choisir son logiciel de nettoyage</h2>
@@ -1867,7 +1876,7 @@ const softwareLandingBody = `
     <li>Onboarding accompagné et prise en main rapide</li>
     <li>Tarif transparent et prévisible, sans coût d'intégration caché</li>
   </ul>
-  <p>Comparatif Proprely vs Excel, PROPRET, Progiclean et Organilog : voir le <a href="${ORIGIN}/comparatif-logiciel-nettoyage">comparatif détaillé</a>.</p>
+  <p>Comparatif Proprely vs Excel, PROPRET, Progiclean et Organilog : voir le <a href="${ORIGIN}/comparatif-logiciel-nettoyage/">comparatif détaillé</a>.</p>
 
   <h2>Questions fréquentes</h2>
   <h3>Qu'est-ce qu'un logiciel pour société de nettoyage ?</h3>
@@ -1891,59 +1900,59 @@ const softwareLandingBody = `
   <p>Pour aller plus loin dans le choix et la mise en place de votre logiciel métier société de nettoyage, voici les ressources organisées par usage :</p>
   <h3>Comparer Proprely aux concurrents du marché</h3>
   <ul>
-    <li><a href="${ORIGIN}/comparatif-logiciel-nettoyage">Comparatif général logiciels société de nettoyage 2026</a></li>
-    <li><a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels métier société de nettoyage : lequel choisir ?</a></li>
-    <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a></li>
-    <li><a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a></li>
-    <li><a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a></li>
-    <li><a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
+    <li><a href="${ORIGIN}/comparatif-logiciel-nettoyage/">Comparatif général logiciels société de nettoyage 2026</a></li>
+    <li><a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">Comparatif logiciels métier société de nettoyage : lequel choisir ?</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog/">Proprely vs Organilog</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-progiclean/">Proprely vs Progiclean</a></li>
+    <li><a href="${ORIGIN}/comparatif/proprely-vs-propret/">Proprely vs PROPRET</a></li>
+    <li><a href="${ORIGIN}/proprely-vs-excel/">Proprely vs Excel</a></li>
   </ul>
   <h3>Explorer les fonctionnalités métier</h3>
   <ul>
-    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage">Logiciel planning agents nettoyage</a> — affectation 1-clic, mobile sans app</li>
-    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage">Logiciel devis et facturation automatisée nettoyage</a> — contrats récurrents auto</li>
-    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage">Gestion agents nettoyage</a> — profils, spécialités, alertes surmenage</li>
-    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage">Preuve de passage nettoyage</a> — QR, photos, signature, PV automatique</li>
-    <li><a href="${ORIGIN}/crm-entreprise-proprete">CRM entreprise propreté</a> — pipeline commercial, relances</li>
+    <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">Logiciel planning agents nettoyage</a> — affectation 1-clic, mobile sans app</li>
+    <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">Logiciel devis et facturation automatisée nettoyage</a> — contrats récurrents auto</li>
+    <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">Gestion agents nettoyage</a> — profils, spécialités, alertes surmenage</li>
+    <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">Preuve de passage nettoyage</a> — QR, photos, signature, PV automatique</li>
+    <li><a href="${ORIGIN}/crm-entreprise-proprete/">CRM entreprise propreté</a> — pipeline commercial, relances</li>
   </ul>
   <h3>Calculer et chiffrer avant de signer</h3>
   <ul>
-    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2">Calculateur prix de nettoyage au m²</a> — surface, fréquence, zone, type de site</li>
-    <li><a href="${ORIGIN}/simulateur-rentabilite">Simulateur rentabilité contrat</a> — marge brute, marge nette, verdict</li>
-    <li><a href="${ORIGIN}/calculateur-roi">Calculateur ROI logiciel société de nettoyage</a> — coût caché de la dispersion</li>
-    <li><a href="${ORIGIN}/outils">Tous les outils gratuits</a></li>
+    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2/">Calculateur prix de nettoyage au m²</a> — surface, fréquence, zone, type de site</li>
+    <li><a href="${ORIGIN}/simulateur-rentabilite/">Simulateur rentabilité contrat</a> — marge brute, marge nette, verdict</li>
+    <li><a href="${ORIGIN}/calculateur-roi/">Calculateur ROI logiciel société de nettoyage</a> — coût caché de la dispersion</li>
+    <li><a href="${ORIGIN}/outils/">Tous les outils gratuits</a></li>
   </ul>
   <h3>Cas spécifiques par taille, profil et vertical</h3>
   <ul>
-    <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage">Logiciel pour auto-entrepreneur nettoyage</a> — solo et indépendants</li>
-    <li><a href="${ORIGIN}/convention-collective-nettoyage">Logiciel conforme convention collective propreté IDCC 3043</a> — grille salaires, article 7</li>
-    <li><a href="${ORIGIN}/logiciel-nettoyage-medical-bionettoyage">Logiciel nettoyage médical et bionettoyage</a> — traçabilité, protocoles, CMR</li>
-    <li><a href="${ORIGIN}/logiciel-nettoyage-copropriete-syndic">Logiciel nettoyage copropriété et syndic</a> — PV automatique, facturation récurrente</li>
-    <li><a href="${ORIGIN}/application-mobile-agents-nettoyage">Application mobile pour agents de nettoyage</a> — sans app à installer</li>
+    <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/">Logiciel pour auto-entrepreneur nettoyage</a> — solo et indépendants</li>
+    <li><a href="${ORIGIN}/convention-collective-nettoyage/">Logiciel conforme convention collective propreté IDCC 3043</a> — grille salaires, article 7</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/">Logiciel nettoyage médical et bionettoyage</a> — traçabilité, protocoles, CMR</li>
+    <li><a href="${ORIGIN}/logiciel-nettoyage-copropriete-syndic/">Logiciel nettoyage copropriété et syndic</a> — PV automatique, facturation récurrente</li>
+    <li><a href="${ORIGIN}/application-mobile-agents-nettoyage/">Application mobile pour agents de nettoyage</a> — sans app à installer</li>
   </ul>
   <h3>Pages locales — couverture nationale</h3>
   <ul>
-    <li><a href="${ORIGIN}/villes/paris">Paris &amp; Île-de-France</a> · <a href="${ORIGIN}/villes/lyon">Lyon &amp; Rhône-Alpes</a> · <a href="${ORIGIN}/villes/marseille">Marseille &amp; PACA</a> · <a href="${ORIGIN}/villes/bordeaux">Bordeaux &amp; Gironde</a> · <a href="${ORIGIN}/villes/toulouse">Toulouse &amp; Occitanie</a></li>
-    <li><a href="${ORIGIN}/villes/nantes">Nantes</a> · <a href="${ORIGIN}/villes/lille">Lille</a> · <a href="${ORIGIN}/villes/nice">Nice</a> · <a href="${ORIGIN}/villes/strasbourg">Strasbourg</a> · <a href="${ORIGIN}/villes/montpellier">Montpellier</a> · <a href="${ORIGIN}/villes/rennes">Rennes</a></li>
-    <li><a href="${ORIGIN}/villes">Voir toutes les pages villes</a></li>
+    <li><a href="${ORIGIN}/villes/paris/">Paris &amp; Île-de-France</a> · <a href="${ORIGIN}/villes/lyon/">Lyon &amp; Rhône-Alpes</a> · <a href="${ORIGIN}/villes/marseille/">Marseille &amp; PACA</a> · <a href="${ORIGIN}/villes/bordeaux/">Bordeaux &amp; Gironde</a> · <a href="${ORIGIN}/villes/toulouse/">Toulouse &amp; Occitanie</a></li>
+    <li><a href="${ORIGIN}/villes/nantes/">Nantes</a> · <a href="${ORIGIN}/villes/lille/">Lille</a> · <a href="${ORIGIN}/villes/nice/">Nice</a> · <a href="${ORIGIN}/villes/strasbourg/">Strasbourg</a> · <a href="${ORIGIN}/villes/montpellier/">Montpellier</a> · <a href="${ORIGIN}/villes/rennes/">Rennes</a></li>
+    <li><a href="${ORIGIN}/villes/">Voir toutes les pages villes</a></li>
   </ul>
   <h3>Articles de blog les plus consultés</h3>
   <ul>
-    <li><a href="${ORIGIN}/blog/logiciel-planning-nettoyage-2026">Logiciel planning nettoyage : 7 outils recommandés en 2026</a></li>
-    <li><a href="${ORIGIN}/blog/devis-nettoyage-intelligent-ia">Devis nettoyage par IA : 9 facteurs pour scaler en 2026</a></li>
-    <li><a href="${ORIGIN}/blog/ia-nettoyage-b2b-transformations-2026">IA dans le nettoyage B2B : 4 transformations en cours en 2026</a></li>
-    <li><a href="${ORIGIN}/blog/fixer-prix-nettoyage">Fixer ses prix dans le nettoyage : méthode 2026</a></li>
-    <li><a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">Convention collective propreté IDCC 3043 : grille salaires 2026</a></li>
-    <li><a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage">Calcul des heures agents nettoyage : méthode et coût 2026</a></li>
-    <li><a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">Tarif nettoyage bureaux au m² 2026</a></li>
-    <li><a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">Coût horaire chargé d'un agent en 2026</a></li>
-    <li><a href="${ORIGIN}/blog/rgpd-societe-nettoyage-2026">RGPD société de nettoyage 2026</a></li>
-    <li><a href="${ORIGIN}/blog/fideliser-agents-nettoyage-turnover">Fidéliser les agents : 6 leviers contre 35 % de turnover</a></li>
-    <li><a href="${ORIGIN}/blog">Voir tous les articles du blog</a></li>
+    <li><a href="${ORIGIN}/blog/logiciel-planning-nettoyage-2026/">Logiciel planning nettoyage : 7 outils recommandés en 2026</a></li>
+    <li><a href="${ORIGIN}/blog/devis-nettoyage-intelligent-ia/">Devis nettoyage par IA : 9 facteurs pour scaler en 2026</a></li>
+    <li><a href="${ORIGIN}/blog/ia-nettoyage-b2b-transformations-2026/">IA dans le nettoyage B2B : 4 transformations en cours en 2026</a></li>
+    <li><a href="${ORIGIN}/blog/fixer-prix-nettoyage/">Fixer ses prix dans le nettoyage : méthode 2026</a></li>
+    <li><a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043/">Convention collective propreté IDCC 3043 : grille salaires 2026</a></li>
+    <li><a href="${ORIGIN}/blog/calcul-heures-agents-nettoyage/">Calcul des heures agents nettoyage : méthode et coût 2026</a></li>
+    <li><a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026/">Tarif nettoyage bureaux au m² 2026</a></li>
+    <li><a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage/">Coût horaire chargé d'un agent en 2026</a></li>
+    <li><a href="${ORIGIN}/blog/rgpd-societe-nettoyage-2026/">RGPD société de nettoyage 2026</a></li>
+    <li><a href="${ORIGIN}/blog/fideliser-agents-nettoyage-turnover/">Fidéliser les agents : 6 leviers contre 35 % de turnover</a></li>
+    <li><a href="${ORIGIN}/blog/">Voir tous les articles du blog</a></li>
   </ul>
 
   <h2>Bêta privée Proprely</h2>
-  <p>30 sociétés fondatrices, accès gratuit pendant toute la bêta, tarif privilégié à vie après le lancement public. Onboarding 30 min avec le fondateur. <a href="${ORIGIN}/beta">Candidater à la bêta</a> · <a href="${ORIGIN}/tarifs">Tarifs</a>.</p>
+  <p>30 sociétés fondatrices, accès gratuit pendant toute la bêta, tarif privilégié à vie après le lancement public. Onboarding 30 min avec le fondateur. <a href="${ORIGIN}/beta/">Candidater à la bêta</a> · <a href="${ORIGIN}/tarifs/">Tarifs</a>.</p>
 `.trim()
 
 const softwareLandingFaqs = [
@@ -1959,8 +1968,8 @@ const softwareLandingFaqs = [
 
 const softwareLandingHtml = buildHtml({
   url: '/logiciel-societe-nettoyage',
-  title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
-  description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
+  title: 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely',
+  description: "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026.",
   schemas: [
     {
       '@context': 'https://schema.org',
@@ -1969,7 +1978,7 @@ const softwareLandingHtml = buildHtml({
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage.",
-      url: `${ORIGIN}/logiciel-societe-nettoyage`,
+      url: `${ORIGIN}/logiciel-societe-nettoyage/`,
       publisher: { '@id': `${ORIGIN}/#organization` },
       offers: {
         '@type': 'Offer',
@@ -1983,10 +1992,10 @@ const softwareLandingHtml = buildHtml({
     webpageSchema(
       'Logiciel pour société de nettoyage',
       "Guide complet 2026 pour choisir un logiciel propreté B2B.",
-      `${ORIGIN}/logiciel-societe-nettoyage`,
+      `${ORIGIN}/logiciel-societe-nettoyage/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Logiciel société de nettoyage', item: `${ORIGIN}/logiciel-societe-nettoyage` },
+        { name: 'Logiciel société de nettoyage', item: `${ORIGIN}/logiciel-societe-nettoyage/` },
       ]
     ),
     faqSchema(softwareLandingFaqs),
@@ -2001,8 +2010,8 @@ const comparatifBody = `
   <p>Le comparatif des logiciels métier pour société de nettoyage en France en 2026 oppose trois familles : les SaaS verticaux nouvelle génération (Proprely), les logiciels métier historiques (PROPRET, Progiclean, Sevensoft, Maglia), les suites multi-métiers (Organilog, Synchroteam) et Excel. Le bon choix dépend de votre taille, votre mix client et votre niveau de digitalisation actuel.</p>
   <h2>Réponse rapide selon votre profil</h2>
   <ul>
-    <li><strong>1 à 5 agents (démarrage solo ou TPE)</strong> — Excel + modèles Proprely gratuits suffisent. Voir nos <a href="${ORIGIN}/ressources">modèles de devis, planning et suivi des heures</a>.</li>
-    <li><strong>3 à 15 agents en structuration</strong> — Proprely (SaaS vertical moderne) : mobile-first sans app, marge par client, onboarding 30 min. <a href="${ORIGIN}/beta">Candidater à la bêta gratuite</a>.</li>
+    <li><strong>1 à 5 agents (démarrage solo ou TPE)</strong> — Excel + modèles Proprely gratuits suffisent. Voir nos <a href="${ORIGIN}/ressources/">modèles de devis, planning et suivi des heures</a>.</li>
+    <li><strong>3 à 15 agents en structuration</strong> — Proprely (SaaS vertical moderne) : mobile-first sans app, marge par client, onboarding 30 min. <a href="${ORIGIN}/beta/">Candidater à la bêta gratuite</a>.</li>
     <li><strong>15 à 50 agents</strong> — Proprely pour l'agilité et la marge, ou PROPRET/Progiclean si vous avez besoin d'une couverture comptable intégrée.</li>
     <li><strong>50+ agents avec besoins paie/GED avancés</strong> — ERP métier propreté (PROPRET, Progiclean, Sevensoft, Maglia) ou ERP généraliste (Sage, Cegid, Divalto).</li>
     <li><strong>Multi-métiers (BTP + sécurité + nettoyage)</strong> — Organilog (couverture multi-secteurs) ; compromis : moins spécialisé propreté.</li>
@@ -2032,9 +2041,9 @@ const comparatifBody = `
 
   <h2>Pour aller plus loin</h2>
   <ul>
-    <li>Comparatifs détaillés un-à-un : <a href="${ORIGIN}/comparatif/proprely-vs-organilog">Proprely vs Organilog</a> · <a href="${ORIGIN}/comparatif/proprely-vs-progiclean">Proprely vs Progiclean</a> · <a href="${ORIGIN}/comparatif/proprely-vs-propret">Proprely vs PROPRET</a> · <a href="${ORIGIN}/proprely-vs-excel">Proprely vs Excel</a></li>
-    <li>Méthode complète : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">Comparatif logiciels métier nettoyage 2026 — lequel choisir ?</a> (article de référence sur les trois familles)</li>
-    <li>Aller plus loin : <a href="${ORIGIN}/tarifs">Tarifs Proprely</a> · <a href="${ORIGIN}/fonctionnalites">Toutes les fonctionnalités</a> · <a href="${ORIGIN}/logiciel-societe-nettoyage">Logiciel société de nettoyage : guide complet</a> · <a href="${ORIGIN}/calculateur-roi">Calculateur ROI logiciel société de nettoyage</a></li>
+    <li>Comparatifs détaillés un-à-un : <a href="${ORIGIN}/comparatif/proprely-vs-organilog/">Proprely vs Organilog</a> · <a href="${ORIGIN}/comparatif/proprely-vs-progiclean/">Proprely vs Progiclean</a> · <a href="${ORIGIN}/comparatif/proprely-vs-propret/">Proprely vs PROPRET</a> · <a href="${ORIGIN}/proprely-vs-excel/">Proprely vs Excel</a></li>
+    <li>Méthode complète : <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">Comparatif logiciels métier nettoyage 2026 — lequel choisir ?</a> (article de référence sur les trois familles)</li>
+    <li>Aller plus loin : <a href="${ORIGIN}/tarifs/">Tarifs Proprely</a> · <a href="${ORIGIN}/fonctionnalites/">Toutes les fonctionnalités</a> · <a href="${ORIGIN}/logiciel-societe-nettoyage/">Logiciel société de nettoyage : guide complet</a> · <a href="${ORIGIN}/calculateur-roi/">Calculateur ROI logiciel société de nettoyage</a></li>
   </ul>
 `.trim()
 
@@ -2051,24 +2060,24 @@ const comparatifFaqs = [
 
 const comparatifSoftwares: { name: string; description: string; url: string }[] = [
   { name: 'Proprely', description: "Cockpit métier B2B nouvelle génération (2026) conçu pour les TPE/PME nettoyage 3-50 agents. Planning, devis, preuve de passage, marge par client.", url: `${ORIGIN}/` },
-  { name: 'PROPRET', description: "ERP métier historique de la propreté (depuis ~2005). Couverture fonctionnelle large (paie, GED) destinée aux PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-propret` },
-  { name: 'Progiclean', description: "ERP métier propreté historique (depuis ~2000). Setup sur devis, abonnement annuel, cible PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean` },
-  { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Forfait par utilisateur/mois, non spécifique propreté.", url: `${ORIGIN}/comparatif/proprely-vs-organilog` },
+  { name: 'PROPRET', description: "ERP métier historique de la propreté (depuis ~2005). Couverture fonctionnelle large (paie, GED) destinée aux PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-propret/` },
+  { name: 'Progiclean', description: "ERP métier propreté historique (depuis ~2000). Setup sur devis, abonnement annuel, cible PME/ETI 50+ agents.", url: `${ORIGIN}/comparatif/proprely-vs-progiclean/` },
+  { name: 'Organilog', description: "Suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Forfait par utilisateur/mois, non spécifique propreté.", url: `${ORIGIN}/comparatif/proprely-vs-organilog/` },
   { name: 'Synchroteam', description: "Solution de gestion d'interventions multi-secteurs avec planning et géolocalisation, non spécifique au nettoyage.", url: 'https://www.synchroteam.com/' },
 ]
 
 const comparatifHtml = buildHtml({
   url: '/comparatif-logiciel-nettoyage',
-  title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
-  description: "Comparatif des logiciels métier société de nettoyage en 2026 : Proprely, Organilog, Progiclean, PROPRET, Synchroteam. Critères et tarifs.",
+  title: 'Comparatif logiciels nettoyage 2026 : 6 outils notés · Proprely',
+  description: "Proprely, Organilog, Progiclean, PROPRET, Synchroteam, Excel : 13 critères comparés, tarifs 2026 et recommandations par taille d'entreprise.",
   schemas: [
     webpageSchema(
       'Comparatif logiciel nettoyage 2026',
       "Comparatif factuel des 5 principaux outils du marché propreté B2B.",
-      `${ORIGIN}/comparatif-logiciel-nettoyage`,
+      `${ORIGIN}/comparatif-logiciel-nettoyage/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Comparatif logiciel nettoyage', item: `${ORIGIN}/comparatif-logiciel-nettoyage` },
+        { name: 'Comparatif logiciel nettoyage', item: `${ORIGIN}/comparatif-logiciel-nettoyage/` },
       ]
     ),
     {
@@ -2120,13 +2129,13 @@ const autoEntrepreneurBody = `
   <p>Avant Proprely (mix Word + Excel + WhatsApp + Gmail) : 5 à 6 heures d'admin par semaine pour 8 à 12 clients. Avec Proprely : 1 h 30 par semaine. Sur un an, à 30 €/heure réelle de votre temps, c'est <strong>environ 600 € par mois récupérés</strong> en pratique — du temps qui peut être consacré à la prospection ou aux chantiers facturables.</p>
 
   <h2>Faut-il un logiciel quand on a 2-3 clients ?</h2>
-  <p>Probablement non. En dessous de 5 clients récurrents, un template Word pour les devis + Excel pour le planning suffit. Voir nos <a href="${ORIGIN}/ressources">modèles gratuits téléchargeables</a>. Dès que vous dépassez 5 clients récurrents ou commencez à perdre du temps à chercher l'info, basculer vers un logiciel métier vous récupère du temps immédiatement.</p>
+  <p>Probablement non. En dessous de 5 clients récurrents, un template Word pour les devis + Excel pour le planning suffit. Voir nos <a href="${ORIGIN}/ressources/">modèles gratuits téléchargeables</a>. Dès que vous dépassez 5 clients récurrents ou commencez à perdre du temps à chercher l'info, basculer vers un logiciel métier vous récupère du temps immédiatement.</p>
 
   <h2>Quand vous embauchez votre premier salarié</h2>
   <p>Proprely bascule sans rupture du mode solo au mode multi-agents : vos données restent, vous ajoutez les profils des agents, ils accèdent à leur planning depuis leur téléphone via un lien web personnel — toujours sans application à installer. C'est exactement la même interface qu'en solo, juste avec plus de monde.</p>
 
   <h2>Gratuit pendant la bêta privée</h2>
-  <p>30 places fondateurs incluant des auto-entrepreneurs et solo. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire demandée, onboarding 30 minutes avec le fondateur. <a href="${ORIGIN}/beta">Candidater à la bêta</a> ou voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a> pour comparer avec les alternatives (Henrri, Bizyness, Organilog).</p>
+  <p>30 places fondateurs incluant des auto-entrepreneurs et solo. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire demandée, onboarding 30 minutes avec le fondateur. <a href="${ORIGIN}/beta/">Candidater à la bêta</a> ou voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">comparatif logiciels métier nettoyage 2026</a> pour comparer avec les alternatives (Henrri, Bizyness, Organilog).</p>
 `.trim()
 
 const autoEntrepreneurFaqs = [
@@ -2147,10 +2156,10 @@ const autoEntrepreneurHtml = buildHtml({
     webpageSchema(
       'Logiciel auto-entrepreneur nettoyage',
       "Logiciel pour auto-entrepreneur en nettoyage : devis, planning, facturation, suivi.",
-      `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage`,
+      `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'Logiciel auto-entrepreneur nettoyage', item: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage` },
+        { name: 'Logiciel auto-entrepreneur nettoyage', item: `${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/` },
       ]
     ),
     faqSchema(autoEntrepreneurFaqs),
@@ -2186,16 +2195,16 @@ const crmBody = `
   </ul>
 
   <h2>Tout connecté dans un seul écran</h2>
-  <p>L'avantage d'un cockpit unifié vs un CRM séparé : un prospect signé devient un client avec ses sites en 1 clic. Les sites alimentent automatiquement le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage">planning des agents</a>. Les missions validées génèrent le PV de passage automatique. La facturation récurrente part chaque mois sans intervention manuelle (voir le <a href="${ORIGIN}/fonctionnalites/devis-nettoyage">module devis et facturation auto</a>). La marge par client se calcule en temps réel sur les heures réellement passées. Aucune ressaisie, aucune perte d'information entre les étapes.</p>
+  <p>L'avantage d'un cockpit unifié vs un CRM séparé : un prospect signé devient un client avec ses sites en 1 clic. Les sites alimentent automatiquement le <a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">planning des agents</a>. Les missions validées génèrent le PV de passage automatique. La facturation récurrente part chaque mois sans intervention manuelle (voir le <a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">module devis et facturation auto</a>). La marge par client se calcule en temps réel sur les heures réellement passées. Aucune ressaisie, aucune perte d'information entre les étapes.</p>
 
   <h2>Profils de sociétés concernées</h2>
   <p>Le CRM Proprely couvre les besoins typiques d'une société de nettoyage B2B de 3 à 50 agents avec 10 à 150 sites clients : prestataires multi-sites pour syndics de copropriété, sociétés intervenant sur bureaux tertiaires, cabinets médicaux, hôtellerie, retail. Au-delà de 50 agents avec besoins commerciaux structurés (commerciaux dédiés, comptes-clés stratégiques), un CRM dédié type HubSpot Sales Hub couplé à un ERP métier reste plus adapté.</p>
 
   <h2>Coût et alternatives</h2>
-  <p>Tarifs CRM 2026 pour entreprise de propreté : Proprely gratuit pendant la bêta privée (tarif fondateur à vie après) ; HubSpot Starter 20 €/utilisateur/mois (mais sans la spécificité propreté) ; Pipedrive 15-30 €/utilisateur/mois (idem) ; Salesforce Essentials 25 €+/utilisateur/mois (idem, et setup lourd). Pour une comparaison plus large des logiciels métier société de nettoyage, voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a>.</p>
+  <p>Tarifs CRM 2026 pour entreprise de propreté : Proprely gratuit pendant la bêta privée (tarif fondateur à vie après) ; HubSpot Starter 20 €/utilisateur/mois (mais sans la spécificité propreté) ; Pipedrive 15-30 €/utilisateur/mois (idem) ; Salesforce Essentials 25 €+/utilisateur/mois (idem, et setup lourd). Pour une comparaison plus large des logiciels métier société de nettoyage, voir le <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">comparatif logiciels métier nettoyage 2026</a>.</p>
 
   <h2>Gratuit pendant la bêta privée</h2>
-  <p>30 places fondateurs, tarif fondateur conservé à vie après le lancement public. Onboarding 30 min avec le fondateur : import de vos comptes clients + sites + contacts, configuration du catalogue prestations, et vous êtes opérationnel. <a href="${ORIGIN}/beta">Candidater à la bêta</a> ou voir <a href="${ORIGIN}/logiciel-societe-nettoyage">le guide complet logiciel société de nettoyage</a>.</p>
+  <p>30 places fondateurs, tarif fondateur conservé à vie après le lancement public. Onboarding 30 min avec le fondateur : import de vos comptes clients + sites + contacts, configuration du catalogue prestations, et vous êtes opérationnel. <a href="${ORIGIN}/beta/">Candidater à la bêta</a> ou voir <a href="${ORIGIN}/logiciel-societe-nettoyage/">le guide complet logiciel société de nettoyage</a>.</p>
 `.trim()
 
 const crmFaqs = [
@@ -2216,10 +2225,10 @@ const crmHtml = buildHtml({
     webpageSchema(
       'CRM entreprise propreté Proprely',
       "CRM métier propreté : comptes + sites, pipeline devis, marge par client.",
-      `${ORIGIN}/crm-entreprise-proprete`,
+      `${ORIGIN}/crm-entreprise-proprete/`,
       [
         { name: 'Accueil', item: `${ORIGIN}/` },
-        { name: 'CRM entreprise propreté', item: `${ORIGIN}/crm-entreprise-proprete` },
+        { name: 'CRM entreprise propreté', item: `${ORIGIN}/crm-entreprise-proprete/` },
       ]
     ),
     faqSchema(crmFaqs),
@@ -2290,7 +2299,7 @@ for (const c of comparisons) {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Comparatif', item: `${ORIGIN}/comparatif-logiciel-nettoyage` },
+        { '@type': 'ListItem', position: 2, name: 'Comparatif', item: `${ORIGIN}/comparatif-logiciel-nettoyage/` },
         { '@type': 'ListItem', position: 3, name: `Proprely vs ${c.competitorName}`, item: cmpUrl },
       ],
     },
@@ -2348,7 +2357,7 @@ const aboutHtml = buildHtml({
       '@type': 'AboutPage',
       name: 'À propos de Proprely',
       description: "Mission, engagements, histoire et éditeur de Proprely.",
-      url: `${ORIGIN}/a-propos`,
+      url: `${ORIGIN}/a-propos/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-01-01',
       dateModified: TODAY,
@@ -2361,7 +2370,7 @@ const aboutHtml = buildHtml({
       '@id': `${ORIGIN}/a-propos#paul-munier`,
       name: 'Paul Munier',
       jobTitle: 'Business Developer & rédacteur',
-      url: `${ORIGIN}/a-propos`,
+      url: `${ORIGIN}/a-propos/`,
       sameAs: ['https://www.linkedin.com/in/paulmunier/'],
       worksFor: { '@id': `${ORIGIN}/#organization` },
       knowsAbout: [
@@ -2378,7 +2387,7 @@ const aboutHtml = buildHtml({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'À propos', item: `${ORIGIN}/a-propos` },
+        { '@type': 'ListItem', position: 2, name: 'À propos', item: `${ORIGIN}/a-propos/` },
       ],
     },
   ],
@@ -2393,20 +2402,20 @@ const toolsBody = `
   <p>Pour piloter une société de nettoyage B2B sereinement, quatre calculs sont décisifs : le prix de vente au m², la marge nette par contrat, le coût horaire chargé des agents et le ROI de la digitalisation. Proprely met à disposition quatre outils en accès libre, sans inscription, pour répondre à chacune de ces questions en moins de 5 minutes.</p>
   <h2>Quatre outils utilisables tout de suite</h2>
   <ul>
-    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2"><strong>Calculateur prix de nettoyage au m²</strong></a> — estimez le prix de vente d'une prestation selon surface, fréquence (quotidienne, 3×/semaine, hebdomadaire), zone géographique (Paris, IDF, métropoles, villes moyennes, rural) et type de site (bureaux, médical, hôtellerie, industriel). Bénéfice : éviter de sous-tarifer un contrat avant de le signer (1 min).</li>
-    <li><a href="${ORIGIN}/simulateur-rentabilite"><strong>Simulateur de rentabilité par contrat</strong></a> — marge brute, marge nette, résultat horaire et verdict immédiat (très rentable / rentable / limite / non rentable) avec recommandations actionnables selon votre situation. Bénéfice : identifier les contrats qui rongent votre rentabilité avant qu'ils ne creusent un trou (1 min).</li>
-    <li><a href="${ORIGIN}/calculateur-roi"><strong>Calculateur ROI dispersion administrative</strong></a> — combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word. Benchmark : 6 à 10 h/semaine perdues pour une PME de 8-15 agents, soit 12 600 à 21 000 €/an. Bénéfice : objectiver le coût caché de la non-digitalisation (30 sec).</li>
-    <li><a href="${ORIGIN}/ressources/modele-suivi-heures-agents"><strong>Coût horaire chargé d'un agent — modèle Excel</strong></a> — calcul du coût horaire réel d'un agent au SMIC propreté 2026, charges sociales et primes incluses (panier, transport, salissure). Bénéfice : connaître précisément le coût horaire à charger sur chaque contrat. À télécharger et adapter à vos paramètres (5 min).</li>
+    <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2/"><strong>Calculateur prix de nettoyage au m²</strong></a> — estimez le prix de vente d'une prestation selon surface, fréquence (quotidienne, 3×/semaine, hebdomadaire), zone géographique (Paris, IDF, métropoles, villes moyennes, rural) et type de site (bureaux, médical, hôtellerie, industriel). Bénéfice : éviter de sous-tarifer un contrat avant de le signer (1 min).</li>
+    <li><a href="${ORIGIN}/simulateur-rentabilite/"><strong>Simulateur de rentabilité par contrat</strong></a> — marge brute, marge nette, résultat horaire et verdict immédiat (très rentable / rentable / limite / non rentable) avec recommandations actionnables selon votre situation. Bénéfice : identifier les contrats qui rongent votre rentabilité avant qu'ils ne creusent un trou (1 min).</li>
+    <li><a href="${ORIGIN}/calculateur-roi/"><strong>Calculateur ROI dispersion administrative</strong></a> — combien d'heures et d'euros vous perdez chaque année à jongler entre Excel, WhatsApp et Word. Benchmark : 6 à 10 h/semaine perdues pour une PME de 8-15 agents, soit 12 600 à 21 000 €/an. Bénéfice : objectiver le coût caché de la non-digitalisation (30 sec).</li>
+    <li><a href="${ORIGIN}/ressources/modele-suivi-heures-agents/"><strong>Coût horaire chargé d'un agent — modèle Excel</strong></a> — calcul du coût horaire réel d'un agent au SMIC propreté 2026, charges sociales et primes incluses (panier, transport, salissure). Bénéfice : connaître précisément le coût horaire à charger sur chaque contrat. À télécharger et adapter à vos paramètres (5 min).</li>
   </ul>
   <h2>Pour quel profil quel outil ?</h2>
   <ul>
-    <li><strong>Vous êtes en phase de prospection</strong> et préparez une réponse à un nouveau client : commencez par le <a href="${ORIGIN}/calculateur-prix-nettoyage-m2">calculateur prix au m²</a>, puis validez la rentabilité prévisionnelle avec le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a>.</li>
-    <li><strong>Vous voulez auditer un contrat existant</strong> qui vous semble fragile : utilisez directement le <a href="${ORIGIN}/simulateur-rentabilite">simulateur de rentabilité</a> avec les vraies données du contrat (CA, heures, coûts).</li>
-    <li><strong>Vous hésitez à digitaliser votre gestion</strong> : commencez par le <a href="${ORIGIN}/calculateur-roi">calculateur ROI</a> pour mesurer le coût caché de la dispersion, puis lisez le <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes">guide digitalisation en 5 étapes</a>.</li>
-    <li><strong>Vous préparez votre prochaine grille de salaires</strong> : téléchargez le <a href="${ORIGIN}/ressources/modele-suivi-heures-agents">modèle coût horaire chargé</a> et croisez avec la <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043">convention collective propreté IDCC 3043</a>.</li>
+    <li><strong>Vous êtes en phase de prospection</strong> et préparez une réponse à un nouveau client : commencez par le <a href="${ORIGIN}/calculateur-prix-nettoyage-m2/">calculateur prix au m²</a>, puis validez la rentabilité prévisionnelle avec le <a href="${ORIGIN}/simulateur-rentabilite/">simulateur de rentabilité</a>.</li>
+    <li><strong>Vous voulez auditer un contrat existant</strong> qui vous semble fragile : utilisez directement le <a href="${ORIGIN}/simulateur-rentabilite/">simulateur de rentabilité</a> avec les vraies données du contrat (CA, heures, coûts).</li>
+    <li><strong>Vous hésitez à digitaliser votre gestion</strong> : commencez par le <a href="${ORIGIN}/calculateur-roi/">calculateur ROI</a> pour mesurer le coût caché de la dispersion, puis lisez le <a href="${ORIGIN}/blog/digitaliser-entreprise-nettoyage-5-etapes/">guide digitalisation en 5 étapes</a>.</li>
+    <li><strong>Vous préparez votre prochaine grille de salaires</strong> : téléchargez le <a href="${ORIGIN}/ressources/modele-suivi-heures-agents/">modèle coût horaire chargé</a> et croisez avec la <a href="${ORIGIN}/blog/convention-collective-nettoyage-idcc-3043/">convention collective propreté IDCC 3043</a>.</li>
   </ul>
   <h2>Aller plus loin — guides et ressources</h2>
-  <p>Pour approfondir le pilotage de votre société : <a href="${ORIGIN}/blog/fixer-prix-nettoyage">méthode prix nettoyage 2026</a>, <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage">coût horaire chargé d'un agent</a>, <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026">tarif nettoyage bureaux au m² 2026</a>, <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026">comparatif logiciels métier nettoyage 2026</a>. Tous les <a href="${ORIGIN}/ressources">modèles Excel téléchargeables</a> sont accessibles sans inscription. Pour passer à un cockpit unifié, la <a href="${ORIGIN}/beta">bêta privée Proprely</a> est gratuite pour les 30 sociétés fondatrices.</p>
+  <p>Pour approfondir le pilotage de votre société : <a href="${ORIGIN}/blog/fixer-prix-nettoyage/">méthode prix nettoyage 2026</a>, <a href="${ORIGIN}/blog/cout-horaire-charge-agent-nettoyage/">coût horaire chargé d'un agent</a>, <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026/">tarif nettoyage bureaux au m² 2026</a>, <a href="${ORIGIN}/blog/comparatif-logiciels-nettoyage-2026/">comparatif logiciels métier nettoyage 2026</a>. Tous les <a href="${ORIGIN}/ressources/">modèles Excel téléchargeables</a> sont accessibles sans inscription. Pour passer à un cockpit unifié, la <a href="${ORIGIN}/beta/">bêta privée Proprely</a> est gratuite pour les 30 sociétés fondatrices.</p>
 `.trim()
 
 const toolsHtml = buildHtml({
@@ -2419,7 +2428,7 @@ const toolsHtml = buildHtml({
       '@type': 'CollectionPage',
       name: 'Outils gratuits pour société de nettoyage',
       description: "Calculateurs et simulateurs gratuits : prix au m², coût horaire chargé, marge de contrat, ROI dispersion.",
-      url: `${ORIGIN}/outils`,
+      url: `${ORIGIN}/outils/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-05-21',
       dateModified: TODAY,
@@ -2427,10 +2436,10 @@ const toolsHtml = buildHtml({
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Calculateur prix de nettoyage au m²', url: `${ORIGIN}/calculateur-prix-nettoyage-m2` },
-          { '@type': 'ListItem', position: 2, name: 'Simulateur de rentabilité contrat', url: `${ORIGIN}/simulateur-rentabilite` },
-          { '@type': 'ListItem', position: 3, name: 'Calculateur ROI dispersion', url: `${ORIGIN}/calculateur-roi` },
-          { '@type': 'ListItem', position: 4, name: "Coût horaire chargé d'un agent (modèle Excel)", url: `${ORIGIN}/ressources/modele-suivi-heures-agents` },
+          { '@type': 'ListItem', position: 1, name: 'Calculateur prix de nettoyage au m²', url: `${ORIGIN}/calculateur-prix-nettoyage-m2/` },
+          { '@type': 'ListItem', position: 2, name: 'Simulateur de rentabilité contrat', url: `${ORIGIN}/simulateur-rentabilite/` },
+          { '@type': 'ListItem', position: 3, name: 'Calculateur ROI dispersion', url: `${ORIGIN}/calculateur-roi/` },
+          { '@type': 'ListItem', position: 4, name: "Coût horaire chargé d'un agent (modèle Excel)", url: `${ORIGIN}/ressources/modele-suivi-heures-agents/` },
         ],
       },
     },
@@ -2439,7 +2448,7 @@ const toolsHtml = buildHtml({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils` },
+        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils/` },
       ],
     },
   ],
@@ -2499,7 +2508,7 @@ const priceHtml = buildHtml({
       '@type': 'WebPage',
       name: 'Calculateur prix nettoyage bureaux au m²',
       description: "Estimation du prix de vente d'une prestation de nettoyage selon surface, fréquence, zone géographique, type de local.",
-      url: `${ORIGIN}/calculateur-prix-nettoyage-m2`,
+      url: `${ORIGIN}/calculateur-prix-nettoyage-m2/`,
       inLanguage: 'fr-FR',
       datePublished: '2026-05-21',
       dateModified: TODAY,
@@ -2510,8 +2519,8 @@ const priceHtml = buildHtml({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils` },
-        { '@type': 'ListItem', position: 3, name: 'Calculateur prix nettoyage', item: `${ORIGIN}/calculateur-prix-nettoyage-m2` },
+        { '@type': 'ListItem', position: 2, name: 'Outils', item: `${ORIGIN}/outils/` },
+        { '@type': 'ListItem', position: 3, name: 'Calculateur prix nettoyage', item: `${ORIGIN}/calculateur-prix-nettoyage-m2/` },
       ],
     },
     faqSchema(priceFaqs),
