@@ -415,6 +415,33 @@ export default function SimulateurRentabilite() {
             </div>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide rentabilité contrat nettoyage 2026</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Comprendre la rentabilité d'un contrat de nettoyage B2B en 2026
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>La rentabilité d'un contrat de nettoyage B2B en France se mesure principalement via la marge brute (CA contrat − coût direct des heures agents). En 2026, sur les retours bêta privée Proprely, 15-25 % des contrats d'une société de nettoyage sont structurellement déficitaires sans que le dirigeant le sache. Les calculer en temps réel est le KPI le plus stratégique du pilotage opérationnel.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les 4 seuils de marge brute à connaître</h3>
+              <p><strong>Plus de 35 % :</strong> excellent (segments premium, technicité, contrats exclusifs). Conserver, demander référencement, étudier upsell.</p>
+              <p><strong>25 à 35 % :</strong> bon (cible standard pour la propreté B2B). Conserver, surveiller dans le temps.</p>
+              <p><strong>15 à 25 % :</strong> à surveiller. Étudier optimisations internes, renégocier au renouvellement.</p>
+              <p><strong>Moins de 15 % :</strong> à renégocier dans 90 jours (+15-25 % de tarif) ou à sortir. Tout contrat à moins de 10 % de marge brute est structurellement déficitaire car ne couvre pas les frais de structure (12-15 % typique) et la marge nette cible.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les causes typiques d'un contrat déficitaire</h3>
+              <p>4 causes récurrentes : (1) <strong>Sous-tarification au démarrage</strong> (peur de perdre le prospect, prix à 50 €/h au lieu de 60-65 €/h cible) ; (2) <strong>Dérapage des heures réelles vs heures contractuelles</strong> (les agents font 23 h/semaine au lieu de 20 h prévues — surfacturation interne non détectée) ; (3) <strong>Coût horaire chargé sous-estimé</strong> (raisonnement en brut 12 € au lieu du chargé 20-22 €) ; (4) <strong>Hausses IDCC 3043 annuelles non répercutées</strong> dans les contrats (rogne 1-3 points de marge/an).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Comment automatiser le suivi de la rentabilité</h3>
+              <p>Le calcul manuel mensuel demande 4-6 h/mois et arrive avec 30-60 jours de retard. Un logiciel métier intégré (planning + pointage + facturation) calcule la marge par client en temps réel : pour chaque contrat, agrégation auto des heures pointées × coût horaire chargé paramétré, comparaison au CA facturé, affichage dashboard avec code couleur (vert/orange/rouge). Voir notre <Link to="/blog/calculer-rentabilite-client-nettoyage" className="text-blue-600 font-semibold hover:underline">méthode complète pour calculer la rentabilité par client en nettoyage</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/ameliorer-rentabilite-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">améliorer la rentabilité société de nettoyage : 5 leviers 2026</Link> · <Link to="/blog/cout-horaire-charge-agent-nettoyage" className="text-blue-600 font-semibold hover:underline">coût horaire chargé agent nettoyage 2026 : méthode</Link> · <Link to="/blog/fixer-prix-nettoyage" className="text-blue-600 font-semibold hover:underline">prix nettoyage 2026 : règle des 3× + grille tarifaire</Link> · <Link to="/blog/kpi-societe-nettoyage-2026" className="text-blue-600 font-semibold hover:underline">12 KPI société de nettoyage à suivre en 2026</Link> · <Link to="/fonctionnalites/suivi-interventions-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel suivi interventions nettoyage temps réel</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel société de nettoyage : guide complet 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

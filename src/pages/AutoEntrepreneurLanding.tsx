@@ -289,6 +289,38 @@ export default function AutoEntrepreneurLanding() {
             </Link>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide auto-entrepreneur nettoyage 2026</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Auto-entrepreneur en nettoyage : tout ce qu'il faut savoir en 2026
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>Le statut auto-entrepreneur (micro-entreprise) est l'entrée la plus simple pour démarrer une activité de nettoyage en France. En 2026, environ 25 000 auto-entrepreneurs exercent en propreté en France, principalement sur des prestations TPE B2B (bureaux 1-5 sites, copropriétés indépendantes, petits commerces). Le statut est viable jusqu'à 3-5 clients récurrents, mais bloque la croissance dès que vous voulez embaucher.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les avantages du statut auto-entrepreneur en nettoyage</h3>
+              <p><strong>Démarrage 0 €.</strong> Pas de capital social, pas de frais d'avocat ou d'expert-comptable, immatriculation en ligne en 15 minutes via le guichet unique INPI. Vous êtes opérationnel sous 1-2 semaines.</p>
+              <p><strong>Comptabilité ultra-simplifiée.</strong> Pas de bilan annuel obligatoire, pas de TVA jusqu'au seuil de franchise (37 500 € HT en 2026), déclaration trimestrielle ou mensuelle du CA sur autoentrepreneur.urssaf.fr. Comptez 30 min/mois de gestion administrative au démarrage.</p>
+              <p><strong>Charges sociales simplifiées.</strong> ~22 % du CA HT au régime de croisière (vs 45 % de charges patronales + 22 % salariales en société). Régime attractif pour démarrer avec une marge brute correcte.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les limites du statut auto-entrepreneur en propreté</h3>
+              <p><strong>Plafond CA 77 700 €/an</strong> (services en 2026). Au-delà, vous devez basculer en société (SASU, SARL, EI à l'IS) sous peine de requalification fiscale. Pour un auto-entrepreneur nettoyage à 60 €/h facturés, 77 700 € = ~1 295 heures/an = ~25 h/semaine. Vite atteint avec 5-6 clients récurrents.</p>
+              <p><strong>Pas d'embauche possible.</strong> Le statut auto-entrepreneur n'autorise pas l'embauche de salariés. Si vous voulez recruter votre premier agent, basculement obligatoire en SASU ou SARL — qui demande 1-3 semaines de démarches.</p>
+              <p><strong>Pas de récupération de TVA.</strong> Sous le seuil de franchise, vous ne facturez pas de TVA mais ne récupérez pas non plus celle sur vos achats (matériel, consommables, véhicule). Sur un volume d'achats annuel 5 000-10 000 €, c'est 1 000-2 000 € de TVA non récupérée.</p>
+              <p><strong>Image B2B parfois limitée.</strong> Certains grands comptes (facility, syndics nationaux) refusent encore systématiquement les auto-entrepreneurs (perçus comme moins fiables sur la durée). Vous accédez aux TPE/PME mais pas aux grands comptes.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Quand basculer en société ?</h3>
+              <p>Trois signaux de bascule prioritaires : (1) Vous approchez 60-70 k€ de CA annualisé (proximité du plafond 77 700 €) ; (2) Vous voulez embaucher votre premier agent (statut auto-entrepreneur interdit l'embauche) ; (3) Vos achats matériel/véhicule deviennent significatifs (plus de 5 000 €/an, intérêt de récupérer la TVA). Le statut recommandé pour la bascule : SASU (responsabilité limitée, président assimilé salarié, dividendes peu chargés). Voir notre guide complet <Link to="/blog/creer-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">créer une société de nettoyage en 2026 : guide en 10 étapes</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les outils essentiels pour un auto-entrepreneur nettoyage</h3>
+              <p>5 outils minimum pour démarrer sereinement : (1) <strong>Logiciel de devis et facturation</strong> (Henrri, Bizyness, ou Proprely en bêta gratuite) ; (2) <strong>Compte bancaire pro</strong> obligatoire dès 10 000 € CA annuel (Qonto, Shine ou banque traditionnelle) ; (3) <strong>Assurance RC Pro</strong> indispensable (1 000-2 000 €/an pour la propreté) ; (4) <strong>Logiciel comptable</strong> simple (autoentrepreneur.urssaf.fr pour les déclarations, voir aussi Tiime ou Pennylane) ; (5) <strong>Outil de planning</strong> (Excel + Google Calendar minimum, ou Proprely pour passer au niveau supérieur).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/creer-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">créer une société de nettoyage en 2026 : guide en 10 étapes</Link> · <Link to="/blog/fixer-prix-nettoyage" className="text-blue-600 font-semibold hover:underline">prix nettoyage 2026 : règle des 3× + grille tarifaire</Link> · <Link to="/blog/trouver-clients-b2b-nettoyage" className="text-blue-600 font-semibold hover:underline">trouver des clients B2B nettoyage : 5 canaux qui marchent</Link> · <Link to="/ressources" className="text-blue-600 font-semibold hover:underline">modèles Excel gratuits (devis, planning, suivi heures)</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel société de nettoyage : guide complet 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

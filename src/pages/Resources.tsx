@@ -195,6 +195,30 @@ export default function Resources() {
             <p className="text-xs text-slate-500 mt-4">Gratuit pendant la bêta · Pas de carte bancaire · Réponse sous 24h</p>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide ressources société de nettoyage</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Modèles, templates et guides gratuits pour société de nettoyage en 2026
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>Démarrer ou structurer une société de nettoyage B2B demande des outils opérationnels prêts à l'emploi. Proprely met à disposition gratuitement des modèles Excel et des guides pratiques pour les TPE/PME nettoyage qui n'ont pas encore basculé vers un logiciel métier complet. Ces ressources couvrent les trois besoins essentiels : devis professionnel, planning hebdomadaire et suivi des heures pour la paie.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Modèle devis nettoyage professionnel (Excel)</h3>
+              <p>Template Excel structuré : header avec votre logo et SIRET, table prestations avec lignes pré-formatées (quotidien, vitrerie, décapage, bionettoyage), calcul automatique sous-total + TVA 20 % (ou 10 % pour copropriétés) + total TTC, conditions de paiement et clauses légales. Adapté à un démarrage TPE 1-5 clients récurrents. Voir aussi notre <Link to="/blog/logiciel-devis-nettoyage-gratuit" className="text-blue-600 font-semibold hover:underline">comparatif des 5 meilleurs logiciels devis nettoyage gratuits 2026</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Modèle planning agents nettoyage (Excel)</h3>
+              <p>Planning hebdomadaire : colonnes jours (lundi-dimanche) × lignes agents, cellules avec sites affectés et horaires, codes couleur par client, ligne récap heures par agent en bas. Idéal pour TPE 1-8 agents et 5-15 sites. Au-delà, les limites Excel deviennent bloquantes — voir notre <Link to="/blog/modele-planning-agents-nettoyage-excel" className="text-blue-600 font-semibold hover:underline">guide complet modèle planning agents Excel</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Modèle suivi des heures par agent (Excel)</h3>
+              <p>Journal mensuel : 1 onglet par agent, saisie quotidienne des heures, calcul automatique des majorations (heures complémentaires temps partiel +10 %/+25 %, heures supplémentaires +25 %/+50 %, nuit, dimanche, jours fériés) selon convention collective IDCC 3043. Récapitulatif prêt pour transmission au comptable ou import paie Silae. Voir notre <Link to="/blog/calcul-heures-agents-nettoyage" className="text-blue-600 font-semibold hover:underline">méthode complète calcul des heures agents nettoyage 2026</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/creer-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">créer une société de nettoyage en 2026 : guide en 10 étapes</Link> · <Link to="/blog/fixer-prix-nettoyage" className="text-blue-600 font-semibold hover:underline">prix nettoyage 2026 : règle des 3× + grille tarifaire</Link> · <Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className="text-blue-600 font-semibold hover:underline">grille salaire nettoyage 2026 (IDCC 3043) : tableau complet</Link> · <Link to="/outils" className="text-blue-600 font-semibold hover:underline">4 calculateurs gratuits Proprely</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel société de nettoyage : guide complet 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

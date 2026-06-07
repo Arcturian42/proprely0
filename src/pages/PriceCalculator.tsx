@@ -438,6 +438,38 @@ export default function PriceCalculator() {
             <p className="text-xs text-slate-400 mt-4">Gratuit · Sans carte bancaire · Réponse sous 24h</p>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide prix nettoyage bureaux au m² 2026</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Tarif nettoyage bureaux au m² 2026 : grille et méthode
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>Le tarif de nettoyage de bureaux au m² en 2026 en France varie selon 4 facteurs principaux : type de local (bureaux standards vs technique), zone géographique (densité urbaine, coût horaire des agents), fréquence d'intervention (quotidien vs hebdo), et technicité requise (sols PVC standards vs salles propres). Comprendre cette grille permet de tarifer juste vos prestations et d'éviter les deux écueils majeurs : sous-tarifer (8 dirigeants sur 10) ou sur-tarifer (perte d'appels d'offres).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Grille indicative 2026 par type de local</h3>
+              <p><strong>Bureaux tertiaires standards (Paris/IDF) :</strong> 1,80-3,20 €/m²/mois pour un passage quotidien 5j/7, 0,80-1,50 €/m²/mois pour un passage 3×/sem, 0,40-0,80 €/m²/mois pour un passage hebdomadaire.</p>
+              <p><strong>Bureaux tertiaires standards (province) :</strong> tarifs 15-30 % inférieurs vs Paris/IDF (coût horaire des agents IDCC 3043 minimum identique, mais frais structure moindres + concurrence locale différente).</p>
+              <p><strong>Cabinets médicaux / EHPAD :</strong> +30 à +50 % vs bureaux standards (technicité bionettoyage, protocole HACCP, exigence qualité).</p>
+              <p><strong>Restauration / cuisines :</strong> +40 à +80 % vs bureaux standards (technicité HACCP, dégraissage hottes, sols antidérapants).</p>
+              <p><strong>Hôtellerie 4-5 étoiles :</strong> +30 à +60 % vs bureaux standards (exigence qualité gouvernante, plages horaires contraintes, parties communes premium).</p>
+              <p><strong>Salles propres ISO classe 7-8 :</strong> 5 à 10× le tarif bureaux standards (technicité salle blanche, agents formés ISO, contrôle particulaire).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">La méthode pour calibrer votre tarif au m²</h3>
+              <p><strong>Étape 1 :</strong> calculez votre coût horaire chargé réel (méthode complète dans notre <Link to="/blog/cout-horaire-charge-agent-nettoyage" className="text-blue-600 font-semibold hover:underline">guide coût horaire chargé agent nettoyage 2026</Link>). Pour un agent IDCC 3043 niveau AS1 en 2026 : 19-23 €/h selon configuration.</p>
+              <p><strong>Étape 2 :</strong> appliquez la règle des 3× : prix de vente = coût horaire chargé × 2,8 à 3,2. Pour AS1 = 54 à 64 €/h facturés.</p>
+              <p><strong>Étape 3 :</strong> convertissez en €/m² selon le ratio mètres carrés par heure d'intervention : ~120-200 m²/h pour bureaux standards (selon densité), ~80-120 m²/h pour cabinets médicaux (technicité), ~40-80 m²/h pour cuisines (technicité + matériel).</p>
+              <p><strong>Étape 4 :</strong> ajustez selon les contraintes spécifiques du site (horaires décalés +30-60 %, accès difficile +10-20 %, exigence qualité premium +20-40 %).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les erreurs fréquentes de tarification</h3>
+              <p>4 erreurs récurrentes : (1) <strong>Raisonner sur le coût horaire brut</strong> (12 € au lieu du chargé 20-22 €) → marge négative invisible ; (2) <strong>Oublier la quote-part frais de structure</strong> (12-15 % typique) → marge nette faible ; (3) <strong>Ne pas répercuter les hausses annuelles IDCC 3043</strong> dans les contrats → érosion de 1-3 points de marge/an ; (4) <strong>Baisser le tarif pour gagner un prospect en pensant rattraper avec le volume</strong> → spirale déficitaire impossible à corriger sans perdre le client.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/tarif-nettoyage-bureaux-m2-2026" className="text-blue-600 font-semibold hover:underline">grille complète tarif nettoyage bureaux au m² 2026</Link> · <Link to="/blog/fixer-prix-nettoyage" className="text-blue-600 font-semibold hover:underline">prix nettoyage 2026 : règle des 3× + grille tarifaire</Link> · <Link to="/blog/cout-horaire-charge-agent-nettoyage" className="text-blue-600 font-semibold hover:underline">coût horaire chargé agent nettoyage 2026 : méthode</Link> · <Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className="text-blue-600 font-semibold hover:underline">grille salaire nettoyage 2026 (IDCC 3043)</Link> · <Link to="/simulateur-rentabilite" className="text-blue-600 font-semibold hover:underline">simulateur de rentabilité contrat nettoyage</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel société de nettoyage : guide complet 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

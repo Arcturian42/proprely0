@@ -365,6 +365,45 @@ export default function ConventionCollectiveLanding() {
             <p className="text-xs text-slate-400 mt-4">Gratuit · Sans carte bancaire · Réponse sous 24h</p>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Conformité IDCC 3043 approfondie</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Les 7 obligations IDCC 3043 que les contrôles URSSAF vérifient en priorité
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>La convention collective propreté (IDCC 3043) régit ~500 000 salariés en France. Les sociétés de nettoyage subissent un taux de contrôle URSSAF supérieur à la moyenne (~3-5 %/an vs ~1-2 % tous secteurs), avec un montant moyen de redressement de 8 000 à 25 000 € pour une PME 10-20 agents. Voici les 7 points que les inspecteurs vérifient en priorité.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">1. Conformité de la grille salariale</h3>
+              <p>Vérification : votre grille interne respecte les minima IDCC 3043 2026 (AS1 à 11,99 €/h brut, ASP 12,42 €, ATQS 13,32 €, etc.) sur tous les coefficients utilisés. Risque : rappel de salaire + cotisations sur 3 ans rétroactifs (prescription civile). Outil : grille évolue annuellement par accord de branche, à mettre à jour chaque janvier. Voir notre <Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className="text-blue-600 font-semibold hover:underline">grille salaire nettoyage 2026 complète</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">2. Calcul des heures complémentaires majorées (temps partiel)</h3>
+              <p>Vérification : majoration +10 % pour les 1 à 8 premières heures au-delà du contrat temps partiel, +25 % au-delà. Limite : 1/3 de la durée contractuelle (sinon requalification temps plein). Risque le plus fréquent : oubli de majoration, redressement typique 5-15 k€ pour une PME 15 agents (60-70 % de temps partiels dans le secteur). Voir notre <Link to="/blog/calcul-heures-agents-nettoyage" className="text-blue-600 font-semibold hover:underline">méthode complète calcul des heures</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">3. Article 7 — Transfert de personnel</h3>
+              <p>Vérification : lors d'un gain ou perte de marché, vous avez correctement repris (ou transmis) les agents éligibles (plus de 6 mois d'ancienneté et plus de 30 % du temps sur le marché concerné). Documentation : fiche par agent avec ancienneté, marché d'affectation, % temps. Risque : litige prud'homal du salarié non transféré, dommages-intérêts 6-12 mois de salaire.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">4. Prime d'expérience à partir de 4 ans d'ancienneté</h3>
+              <p>Vérification : versement de la prime d'expérience à partir de 4 ans d'ancienneté chez le même employeur (3 % du salaire de base typiquement à 4-7 ans, 5 % à 7-15 ans, 7 % au-delà). Risque fréquent : oubli pour les agents transférés via article 7 (ancienneté à reprendre du précédent employeur).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">5. Indemnité transport</h3>
+              <p>Vérification : remboursement 50 % du titre de transport public (obligatoire toute France) + prime de transport conventionnelle propreté selon accord d'entreprise. Documentation : justificatifs Navigo/abonnement conservés 3 ans, déclaration kilométrique pour véhicule personnel. Voir notre <Link to="/blog/indemnite-transport-proprete-2026" className="text-blue-600 font-semibold hover:underline">guide complet indemnité transport propreté 2026</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">6. Formation 0,55 % et plan annuel</h3>
+              <p>Vérification : versement de la contribution formation (0,55 % de la masse salariale au minimum, plus selon accord d'entreprise) + plan annuel de formation. Risque : majoration de cotisation OPCO + redressement URSSAF.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">7. Pénibilité et exposition aux produits CMR</h3>
+              <p>Vérification : pour les agents exposés à des produits CMR (Cancérogènes, Mutagènes, Reprotoxiques) en bionettoyage médical ou décontamination, suivi médical renforcé + fiche d'exposition annuelle + traçabilité. Risque : suite à un cancer professionnel reconnu, surcotisation AT/MP sur 10 ans + risque pénal employeur.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Comment Proprely automatise la conformité IDCC 3043</h3>
+              <p>La conformité IDCC 3043 demande un suivi rigoureux et continu, impossible à tenir manuellement sur Excel au-delà de 10 agents. Proprely intègre nativement : grille IDCC 3043 paramétrée et mise à jour annuellement, calcul automatique des majorations heures (complémentaires/supplémentaires/nuit/dimanche/fériés), fiches agents avec ancienneté et marché d'affectation prêtes pour audit article 7, registre formation et exposition CMR, export paie au format Silae directement importable. Vous gagnez 4-6 heures par mois sur la gestion conformité et vous dormez tranquille en cas de contrôle URSSAF.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/convention-collective-nettoyage-idcc-3043" className="text-blue-600 font-semibold hover:underline">convention collective propreté 2026 (IDCC 3043) : salaires + PDF</Link> · <Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className="text-blue-600 font-semibold hover:underline">grille salaire nettoyage 2026 complète</Link> · <Link to="/blog/calcul-heures-agents-nettoyage" className="text-blue-600 font-semibold hover:underline">calcul des heures agents nettoyage 2026</Link> · <Link to="/blog/indemnite-transport-proprete-2026" className="text-blue-600 font-semibold hover:underline">indemnité transport propreté 2026</Link> · <Link to="/fonctionnalites/pointage-agents-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel pointage GPS agents nettoyage</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">guide complet logiciel société de nettoyage 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

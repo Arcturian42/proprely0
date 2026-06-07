@@ -308,6 +308,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/comparatif/proprely-vs-synchroteam/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs synchroteam</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/comparatif/proprely-vs-comete-proprete/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs comete proprete</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/ressources/modele-devis-nettoyage/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -838,93 +858,23 @@
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/eviter-oublis-passage-nettoyage/</loc>
+    <loc>https://proprely.fr/blog/indemnite-transport-proprete-2026/</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : eviter oublis passage nettoyage</image:title>
+      <image:title>Article : indemnite transport proprete 2026</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://proprely.fr/blog/gerer-agents-plusieurs-sites/</loc>
+    <loc>https://proprely.fr/blog/modele-planning-agents-nettoyage-excel/</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : gerer agents plusieurs sites</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/ameliorer-rentabilite-societe-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : ameliorer rentabilite societe nettoyage</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/calculer-rentabilite-client-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : calculer rentabilite client nettoyage</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/erreurs-planning-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : erreurs planning nettoyage</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/preuve-passage-nettoyage-importance/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : preuve passage nettoyage importance</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/gerer-remplacements-agents-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : gerer remplacements agents nettoyage</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/facturation-electronique-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : facturation electronique nettoyage</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://proprely.fr/blog/creer-societe-nettoyage/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://proprely.fr/og-image.png</image:loc>
-      <image:title>Article : creer societe nettoyage</image:title>
+      <image:title>Article : modele planning agents nettoyage excel</image:title>
     </image:image>
   </url>
 </urlset>

@@ -4065,1548 +4065,373 @@ Suivre ces 12 KPI manuellement sur Excel demande typiquement 4-6 heures par mois
 Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
   },
   {
-    slug: 'eviter-oublis-passage-nettoyage',
-    title: "Éviter les oublis de passage en nettoyage : 3 systèmes qui fonctionnent 2026",
-    excerpt: "3 systèmes concrets (technique, organisationnel, contractuel) pour ne plus jamais oublier un passage et éviter de perdre des clients. ROI et comparatif.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '9 min',
-    tag: 'Productivité',
-    tldr: "Un oubli de passage coûte en moyenne 800 à 3 000 € par incident (perte du contrat, pénalité, temps de gestion). Pour les éviter en 2026, combinez 3 systèmes : technique (QR code + alerte planning + dashboard temps réel), organisationnel (double check chef d'équipe + brigade tournante), contractuel (SLA explicite + reporting automatique). Un seul système ne suffit pas — les meilleures sociétés activent les 3 en parallèle et descendent sous 0,5 % d'oublis.",
-    quickSummary: [
-      "Coût moyen d'un oubli : 800 à 3 000 € selon le client (perte directe, pénalités, temps de gestion).",
-      "Système 1 — Technique : planning numérique + QR code + alerte automatique si pas de scan 30 min après l'horaire.",
-      "Système 2 — Organisationnel : double check par chef d'équipe + brigade tournante sur les sites critiques.",
-      "Système 3 — Contractuel : SLA explicite, reporting automatique au client, pénalités symboliques traduisant l'engagement.",
-      "Cible saine : <0,5 % d'oublis. Moyenne secteur : 2-4 %. Au-delà de 5 % = problème structurel à traiter en priorité.",
-      "Les 3 systèmes activés en parallèle divisent les oublis par 8-10 en 3 mois sur les retours bêta Proprely.",
-    ],
-    relatedSlugs: ['gerer-remplacements-agents-nettoyage', 'preuve-passage-nettoyage-importance', 'erreurs-planning-nettoyage'],
-    faq: [
-      { q: "Combien coûte un oubli de passage dans le nettoyage B2B ?", a: "Entre 800 et 3 000 € par incident selon le type de client. Décomposition : perte directe sur le passage non facturé (50-300 €), risque de pénalité contractuelle (200-1 000 € sur certains contrats syndics/facility), risque de perte du contrat à terme (LTV moyen 15 000-50 000 €), temps de gestion de la contestation (2-4 h dirigeant à 45 €/h = 90-180 €). Un seul oubli sur 100 interventions ronge 1-3 % de marge brute." },
-      { q: "Quel taux d'oublis est acceptable en propreté B2B ?", a: "Cible saine : <0,5 % (1 oubli sur 200 interventions). Moyenne secteur : 2-4 %. Au-delà de 5 %, vous avez un problème structurel (planning, organisation, suivi) qui menace la rentabilité et la rétention client. Les meilleures sociétés combinent 3 systèmes (technique, organisationnel, contractuel) pour descendre sous 0,5 %." },
-      { q: "Quel système anti-oublis pour une TPE 3-5 agents ?", a: "Système organisationnel suffit en théorie (double check matinal du dirigeant + appel agent à 8h pour vérifier démarrage). Mais dès 3-5 sites multipliés par 2-3 passages/semaine, le système manuel craque. Recommandation : planning numérique avec rappel automatique J-1 à 18h + check rapide chaque matin. Coût : 0 € si vous utilisez la bêta gratuite Proprely." },
-      { q: "Quel système anti-oublis pour une PME 15-50 agents ?", a: "Les 3 systèmes en parallèle sont obligatoires. Technique : QR code + alerte automatique 30 min après horaire si pas de scan, dashboard temps réel pour le dirigeant. Organisationnel : 1-2 chefs d'équipe avec tournée matinale virtuelle (dashboard mobile) + brigade tournante de remplaçants. Contractuel : SLA explicite dans tous les nouveaux contrats avec reporting mensuel automatique." },
-      { q: "Comment l'alerte automatique fonctionne ?", a: "Le logiciel planning compare en temps réel les horaires théoriques d'intervention avec les check-ins effectifs des agents (scan QR ou pointage GPS). Si à H+30 min un agent n'a pas pointé, alerte SMS/notification au chef d'équipe ou dirigeant qui peut appeler l'agent ou réaffecter en 5 minutes. Sur les retours bêta Proprely : 95 % des oublis détectés et corrigés AVANT que le client s'en aperçoive." },
-      { q: "Faut-il prévenir le client en cas d'oubli détecté ?", a: "Oui, et tout de suite. Règle d'or : si vous détectez l'oubli AVANT le client, prévenez-le proactivement (\"un imprévu agent ce matin, intervention décalée à 14h, voici la nouvelle preuve de passage\"). Effet psychologique : le client perçoit votre maîtrise plutôt qu'un échec. Si vous attendez qu'il appelle furieux, vous perdez sur les deux tableaux." },
-      { q: "Quel impact d'un système anti-oublis sur la rentabilité ?", a: "Sur les retours bêta : passage de 3 % à 0,3 % d'oublis = économie estimée de 1,5 à 3 points de marge brute annuelle (selon le mix client). Pour une PME 15 agents à 800 k€ de CA : 12-24 k€ récupérés/an. Auquel s'ajoute la réduction du churn client (-2 à -4 % sur 12 mois) qui sécurise la base récurrente." },
-    ],
-    content: `## Pourquoi un oubli de passage coûte plus cher qu'on ne le pense
-
-Dans le nettoyage B2B, un oubli de passage isolé semble anodin : "on rattrape demain". La réalité est plus brutale.
-
-| Impact d'un oubli | Coût moyen |
-| --- | --- |
-| Passage non facturé (perte directe) | 50 à 300 € |
-| Pénalité contractuelle (syndic, facility) | 200 à 1 000 € |
-| Temps gestion contestation (2-4 h dirigeant) | 90 à 180 € |
-| Risque perte du contrat (LTV moyen 15-50 k€) | 0 à 50 000 € (probabilité 5-15 %) |
-| **Coût moyen par oubli** | **800 à 3 000 €** |
-
-Sur 100 interventions, un taux d'oublis de 3 % (moyenne secteur) coûte donc **2 400 à 9 000 €** en risque pondéré. Multiplié par 12 mois d'activité, c'est plusieurs dizaines de milliers d'euros qui s'évaporent silencieusement de la marge.
-
-## Les 3 systèmes qui éliminent les oublis (et pourquoi un seul ne suffit pas)
-
-Les sociétés de nettoyage qui descendent sous 0,5 % d'oublis combinent **3 systèmes en parallèle**. Aucun n'est suffisant seul.
-
-### Système 1 — Technique : planning numérique + alertes temps réel
-
-Le socle. Sans planning numérique mis à jour en temps réel, vous pilotez en aveugle.
-
-**Brique 1 — Planning numérique avec horaires précis**
-Chaque intervention a une date, un horaire et un agent assigné. Visible par le dirigeant et l'agent en temps réel. Sortie de l'Excel hebdomadaire et de WhatsApp.
-
-**Brique 2 — QR code par site + check-in agent**
-L'agent scanne un QR code à l'arrivée sur site. Horodatage à la seconde, géolocalisation optionnelle. Plus aucune ambiguïté sur "qui est passé quand".
-
-**Brique 3 — Alerte automatique si pas de check-in 30 min après horaire**
-Si à H+30 min l'agent n'a pas scanné, alerte automatique au chef d'équipe ou dirigeant. Décision en 5 minutes : appel agent ou réaffectation.
-
-**Brique 4 — Dashboard temps réel**
-Le dirigeant ouvre son écran le matin et voit : combien d'interventions planifiées aujourd'hui, combien démarrées, combien terminées, combien à risque (rouge/orange/vert).
-
-### Système 2 — Organisationnel : double check + brigade tournante
-
-La technique seule ne suffit pas : il faut une organisation humaine derrière.
-
-**Tournée matinale virtuelle du chef d'équipe**
-Chaque matin à 7h-7h30, le chef d'équipe (ou dirigeant en TPE) ouvre le dashboard et vérifie que les agents du matin ont démarré. 5 minutes par jour, économie de plusieurs incidents par mois.
-
-**Brigade tournante de remplaçants**
-2-3 agents flexibles (statut intérim/intermittent ou CDI avec plages flexibles) prêts à intervenir en moins de 2 h sur les sites critiques. Coût : 200-400 €/mois en astreinte non utilisée, ROI > 10× par incident évité. Voir notre article [comment gérer les remplacements d'agents en urgence](/blog/gerer-remplacements-agents-nettoyage).
-
-**Procédure d'escalade claire**
-Niveau 1 : appel agent. Niveau 2 : appel chef d'équipe. Niveau 3 : appel dirigeant + activation brigade tournante. Niveau 4 : prévention client proactive. Chaque agent connaît cette procédure.
-
-### Système 3 — Contractuel : SLA + reporting + pénalités symboliques
-
-La protection juridique et commerciale.
-
-**SLA explicite dans le contrat**
-Engagement écrit sur le taux de respect du planning (ex : "98 % minimum sur le trimestre"). En dessous, pénalité financière (ex : 10 % de la facturation mensuelle). Effet : focalise l'opérationnel sur le respect du planning.
-
-**Reporting automatique au client**
-Email mensuel automatique au client : "intervention X passages prévus, Y réalisés, Z reportés/annulés (avec justification)". Transparence absolue qui désamorce 90 % des contestations avant qu'elles n'arrivent.
-
-**Pénalité symbolique self-imposed**
-Sur les contrats premium, certaines sociétés s'imposent volontairement une pénalité de 50-200 € par oubli déclaré (sans contestation). Effet psychologique fort sur le client (perçoit l'engagement) et focalise l'équipe interne sur la performance.
-
-## Comparatif des 3 systèmes : coût, effort, ROI
-
-| Système | Coût installation | Effort hebdo | ROI (réduction oublis) |
-| --- | --- | --- | --- |
-| Technique | 0-200 €/mois (logiciel) | 30 min/sem | -60 à -80 % |
-| Organisationnel | 200-500 €/mois (brigade) | 1 h/jour | -40 à -60 % |
-| Contractuel | 0 € (clauses) | 1 h/mois | -20 à -30 % |
-| **3 systèmes combinés** | **300-700 €/mois** | **2 h/sem** | **-90 à -97 %** |
-
-L'investissement total (300-700 €/mois) est récupéré dès le premier oubli évité dans le mois.
-
-## Plan d'action selon votre taille
-
-### TPE 3-5 agents
-- Activer immédiatement le système 1 (technique) — gratuit avec la [bêta privée Proprely](/beta)
-- Mettre en place le système 3 (contractuel) sur les nouveaux contrats
-- Système 2 (organisationnel) à activer dès 6-8 agents
-
-### PME 8-25 agents
-- Les 3 systèmes en parallèle, dès maintenant
-- Investir dans 1-2 chefs d'équipe formés au pilotage opérationnel
-- Brigade tournante 2-3 agents
-
-### PME 25-50 agents
-- Les 3 systèmes + tableau de bord dirigeant hebdomadaire
-- Brigade tournante 4-6 agents + procédure escalade documentée
-- Reporting client automatisé pour 100 % des contrats
-
-## Erreurs à éviter
-
-1. **Penser que la technique seule suffit** : un planning numérique sans humain qui surveille = oublis non détectés
-2. **Mettre en place le SLA sans le suivi associé** : les clients vont l'utiliser contre vous si vous n'avez pas le système de reporting derrière
-3. **Sous-dimensionner la brigade tournante** : 1 seul remplaçant = pas de marge en cas d'absence simultanée
-4. **Ne pas former les agents au QR code** : l'agent qui ne scanne pas = oubli détecté à tort (faux positif)
-
-## Pour aller plus loin
-
-- [Logiciel suivi interventions nettoyage](/fonctionnalites/suivi-interventions-nettoyage) — la brique technique avec alertes automatiques
-- [Logiciel preuve de passage QR code et photos](/fonctionnalites/preuve-passage-nettoyage) — la couche traçabilité incontestable
-- [Pourquoi la preuve de passage est essentielle](/blog/preuve-passage-nettoyage-importance) — l'argumentation côté client
-- [Comment gérer les remplacements d'agents en urgence](/blog/gerer-remplacements-agents-nettoyage) — le système brigade tournante
-- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
-
-Pour activer le système technique anti-oublis en 30 minutes (planning numérique + QR + alertes), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta.`,
-  },
-  {
-    slug: 'gerer-agents-plusieurs-sites',
-    title: "Gérer des agents de nettoyage multi-sites : la méthode 2026",
-    excerpt: "Organiser ses équipes multi-sites sans perdre le fil : organisation par zones vs compétences, outils, KPI, cas pratiques. Méthode complète 2026.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '10 min',
-    tag: 'Gestion',
-    tldr: "Gérer des agents de nettoyage sur plusieurs sites en 2026 demande une organisation structurée selon 2 logiques principales : par zones géographiques (réduction trajets, idéal urbain dense) ou par compétences (vitrerie, bionettoyage, idéal si spécialisations fortes). La règle d'or : un planning unique pour tous les sites, des chefs d'équipe par zone ou par segment, et un dashboard temps réel pour le dirigeant. À partir de 15 agents et 10 sites, le multi-sites devient ingérable sans logiciel métier.",
-    quickSummary: [
-      "2 logiques d'organisation multi-sites : par zones géographiques OU par compétences. Hybride possible.",
-      "Règle d'or : un planning unique consolidé, jamais multiple Excel par zone.",
-      "Cible 1 chef d'équipe pour 8-12 agents (selon densité et complexité).",
-      "Dashboard temps réel dirigeant : critique au-delà de 10 sites.",
-      "KPI clés : temps trajet moyen, respect planning par zone, marge par site.",
-      "Outils : planning numérique + lien web agent + check-in QR + reporting automatique.",
-    ],
-    relatedSlugs: ['eviter-oublis-passage-nettoyage', 'gerer-remplacements-agents-nettoyage', 'kpi-societe-nettoyage-2026'],
-    faq: [
-      { q: "Comment organiser une équipe de nettoyage multi-sites ?", a: "Deux logiques principales : (1) Par zones géographiques — chaque zone a sa brigade dédiée, réduit les trajets, idéal pour urbain dense (Paris, Lyon) ; (2) Par compétences — équipes spécialisées (vitrerie, bionettoyage médical, décapage) qui interviennent partout, idéal si forte spécialisation. Hybride possible : zones pour le quotidien, compétences pour les missions techniques. Quelle que soit la logique, un planning numérique unique consolidé reste indispensable." },
-      { q: "À partir de combien de sites le multi-sites devient ingérable sans logiciel ?", a: "Empiriquement : 10 sites × 5 agents = 50 combinaisons site/agent à suivre = limite humaine de l'organisation Excel + WhatsApp. Au-delà, le coût d'erreur (oublis, doubles affectations, agents surmenés) dépasse largement le coût d'un logiciel métier. Pour une TPE 3-8 sites, Excel + WhatsApp tient encore (avec friction). Pour une PME 15+ sites, le logiciel devient ROI positif dès le premier mois." },
-      { q: "Combien de chefs d'équipe pour piloter des agents multi-sites ?", a: "Ratio standard : 1 chef d'équipe pour 8 à 12 agents (selon complexité des sites et autonomie des agents). En cas de forte dispersion géographique : 1 pour 6-8. En cas de prestations standardisées sur des sites peu exigeants : 1 pour 12-15. Le chef d'équipe est responsable de la qualité, des remplacements et du lien client de niveau 1." },
-      { q: "Faut-il regrouper les agents par zone ou par compétence ?", a: "Cela dépend de votre mix client. Si vous avez beaucoup de prestations standardisées dispersées géographiquement (bureaux tertiaires en bassin urbain) : organisez par zones, agents polyvalents. Si vous avez beaucoup de prestations techniques (bionettoyage médical, vitrerie hauteur) : organisez par compétences, équipes spécialisées qui se déplacent. Le plus fréquent : hybride — quotidien par zones, techniques par compétences." },
-      { q: "Comment réduire le temps de trajet entre sites ?", a: "Trois leviers : (1) Regroupement géographique des affectations (agents dans leur zone résidentielle), (2) Optimisation tournée par algorithme (sites du matin proches géographiquement), (3) Multi-employeur opt-in agent (l'agent intervient sur 2-3 sites contigus appartenant à 2-3 clients différents dans la même tranche horaire). Économie potentielle : 30-90 min/jour/agent, soit 10-30 h/mois récupérées sur du temps non facturable." },
-      { q: "Quels KPI surveiller en multi-sites ?", a: "Cinq KPI essentiels multi-sites : (1) Temps trajet moyen par agent par jour — cible <60 min ; (2) Taux respect planning par zone — cible >95 % ; (3) Marge brute par site — identifier les sites déficitaires ; (4) Taux contestation par site — repérer les sites à risque ; (5) Charge horaire par agent et par zone — éviter la surcharge concentrée. Tableau de bord hebdomadaire idéalement, mensuel minimum." },
-    ],
-    content: `## Pourquoi le multi-sites est complexe (et le devient encore plus en croissance)
-
-Une société de nettoyage qui passe de 3 sites à 30 sites ne devient pas \"10 × plus complexe\" : elle devient **30-50 × plus complexe** sur le plan opérationnel. Les raisons :
-
-- Chaque site a sa fréquence, son horaire, ses contraintes d'accès, son contact, son protocole
-- Chaque agent a ses spécialités, sa zone résidentielle, ses contraintes horaires, ses sites attribués
-- Les combinaisons site × agent × jour × horaire explosent géométriquement
-- Les imprévus (absence, retard, urgence client) cascadent sur toute l'organisation
-
-Sans organisation structurée, le dirigeant passe ses journées à \"recoller les morceaux\" au lieu de piloter la croissance.
-
-## Les 2 logiques d'organisation multi-sites
-
-### Logique 1 — Par zones géographiques
-
-**Principe :** chaque zone géographique a sa brigade dédiée d'agents qui interviennent exclusivement sur cette zone. Un chef d'équipe pilote chaque zone.
-
-**Avantages :**
-- Temps de trajet minimisé (agents dans leur zone résidentielle)
-- Connaissance fine des sites (mêmes agents toujours)
-- Lien client renforcé (gardiens, syndics reconnaissent les agents)
-- Logistique simplifiée (matériel stocké par zone)
-
-**Inconvénients :**
-- Difficile pour les missions spécialisées (vitrerie, décapage) si une zone n'a pas l'agent qualifié
-- Risque de \"silos\" entre zones, manque de communication
-- Sur-spécialisation = moins de flexibilité en cas d'absence
-
-**Idéal pour :** sociétés avec mix client homogène (beaucoup de bureaux tertiaires) dans un bassin urbain dense (Paris, Lyon, Marseille).
-
-### Logique 2 — Par compétences
-
-**Principe :** équipes spécialisées par type de prestation (quotidien, vitrerie, bionettoyage médical, décapage), qui interviennent partout sur le territoire selon les besoins.
-
-**Avantages :**
-- Expertise pointue par segment
-- Justifie un tarif premium sur les prestations techniques
-- Flexibilité géographique
-- Valorise les agents (carrière par spécialisation)
-
-**Inconvénients :**
-- Trajets plus longs (couverture territoriale large)
-- Coût horaire des spécialistes plus élevé à amortir
-- Logistique matériel complexe (transport machines spécifiques)
-
-**Idéal pour :** sociétés avec mix client hétérogène (médical + tertiaire + remise en état) sur un territoire étendu.
-
-### Logique hybride (la plus fréquente)
-
-Combinaison des deux : **organisation par zones pour le quotidien**, **équipes spécialisées par compétences** qui interviennent ponctuellement.
-
-| Configuration | Quand l'utiliser |
-| --- | --- |
-| 100 % par zones | Mix très homogène, bassin dense, 5-15 sites |
-| 100 % par compétences | Mix très technique, territoire large, 5-15 sites |
-| Hybride (zones + spécialistes) | Mix mixte, **15+ sites** (cas le plus fréquent) |
-
-## La règle d'or : un planning unique consolidé
-
-Quelle que soit votre logique d'organisation, **un planning unique** est non négociable. Le piège classique :
-
-- Excel par zone géographique (un par chef d'équipe)
-- Excel séparé pour les spécialistes
-- Un troisième pour les urgences
-- Des modifications WhatsApp partout
-
-→ Au bout de 3 mois, personne ne sait plus quel planning fait foi. Les doublons, oublis et conflits explosent.
-
-**Solution :** planning numérique unique consolidé, segmenté par filtres (zone, compétence, agent, client) pour les vues opérationnelles. Le dirigeant a une vue d'ensemble, les chefs d'équipe ont leur filtre zone, les agents ont leur planning personnel.
-
-Voir [logiciel planning agents multi-sites](/fonctionnalites/planning-nettoyage) — la mécanique technique d'un planning consolidé.
-
-## Combien de chefs d'équipe ? Le ratio à respecter
-
-| Configuration | Ratio chef/agents |
-| --- | --- |
-| Sites simples, agents autonomes, faible dispersion | 1 pour 12-15 |
-| Sites standards, dispersion moyenne | 1 pour 8-12 |
-| Sites complexes (médical, sécurité), forte dispersion | 1 pour 6-8 |
-| Sites premium (hôtellerie 4-5*, exigence qualité max) | 1 pour 4-6 |
-
-Au-delà de 15 agents, sans chef d'équipe intermédiaire, le dirigeant devient le goulot d'étranglement et la qualité chute mécaniquement.
-
-## Les 5 KPI à suivre en multi-sites
-
-| KPI | Cible | Fréquence |
-| --- | --- | --- |
-| Temps trajet moyen agent | <60 min/jour | Mensuelle |
-| Respect planning par zone | >95 % | Hebdomadaire |
-| Marge brute par site | >25 % | Mensuelle |
-| Contestation par site | <2 % | Mensuelle |
-| Charge horaire par zone | 95-105 % | Hebdomadaire |
-
-Voir [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026) pour le détail complet.
-
-## Cas pratique — passage de 5 à 25 sites en 12 mois
-
-**Société exemple :** PME bordelaise, 8 agents → 22 agents, 5 sites → 25 sites sur 12 mois.
-
-**Avant (5 sites, 8 agents) :**
-- Excel hebdomadaire mis à jour par la dirigeante
-- WhatsApp pour les changements
-- 6-8 h/semaine de gestion dirigeante
-- ~3 % d'oublis
-
-**Après (25 sites, 22 agents) :**
-- Planning numérique unique
-- 2 chefs d'équipe par zone (intra-muros + périphérie)
-- Brigade vitrerie/décapage spécialisée (3 agents)
-- Dashboard temps réel pour la dirigeante
-- 1,5 h/semaine de gestion dirigeante
-- 0,4 % d'oublis
-
-**ROI :** sans changement d'organisation, la dirigeante aurait dû y consacrer 25-30 h/semaine. Avec l'organisation structurée + logiciel, elle a libéré 24 h/semaine pour la prospection commerciale (+8 nouveaux contrats en 6 mois).
-
-## Plan d'action selon votre taille actuelle
-
-### 5-10 sites, 5-10 agents
-- Planning numérique simple
-- Pas de chef d'équipe encore (le dirigeant pilote)
-- Préparer la documentation des sites (codes accès, contacts, protocoles)
-
-### 10-20 sites, 10-18 agents
-- Planning numérique unique consolidé
-- 1 chef d'équipe (zone principale)
-- Commencer les KPI hebdomadaires
-
-### 20-40 sites, 18-35 agents
-- Organisation hybride zones + compétences
-- 2-3 chefs d'équipe
-- Dashboard temps réel dirigeant
-- Brigade tournante remplaçants
-
-### 40+ sites, 35+ agents
-- Structuration complète : zones + spécialistes + brigade
-- 4+ chefs d'équipe
-- Manager opérationnel (responsable de tous les chefs)
-- Reporting client automatisé pour 100 % des contrats
-
-## Pour aller plus loin
-
-- [Logiciel gestion sites et clients de nettoyage](/fonctionnalites/gestion-sites-clients-nettoyage) — la brique technique multi-sites
-- [Logiciel planning agents multi-sites](/fonctionnalites/planning-nettoyage) — le planning consolidé
-- [Éviter les oublis de passage : 3 systèmes](/blog/eviter-oublis-passage-nettoyage)
-- [Gérer les remplacements d'agents en urgence](/blog/gerer-remplacements-agents-nettoyage)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-
-Pour structurer votre organisation multi-sites avec un cockpit unifié, [candidater à la bêta privée Proprely](/beta) — onboarding 30 min avec le fondateur, import de vos sites et agents inclus.`,
-  },
-  {
-    slug: 'ameliorer-rentabilite-societe-nettoyage',
-    title: "Améliorer la rentabilité d'une société de nettoyage : 5 leviers 2026",
-    excerpt: "5 leviers prouvés pour identifier vos clients non rentables et augmenter votre marge nette de 3 à 8 points en 12 mois. Méthode, ROI, plan d'action.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '11 min',
-    tag: 'Stratégie',
-    tldr: "Améliorer la rentabilité d'une société de nettoyage en 2026 passe par 5 leviers prioritaires : (1) identifier et renégocier les clients déficitaires (gain 1-3 pts marge), (2) corriger la sous-tarification chronique (gain 2-5 pts), (3) activer l'upsell systématique (gain 1-2 pts), (4) réduire l'absentéisme et le turnover (gain 1-2 pts), (5) automatiser la gestion administrative (gain 0,5-1,5 pt). Cumulés, ces 5 leviers font gagner 5 à 13 points de marge nette en 12 mois.",
-    quickSummary: [
-      "5 leviers cumulables : clients non-rentables (+1-3 pts), prix (+2-5 pts), upsell (+1-2 pts), RH (+1-2 pts), automatisation (+0,5-1,5 pts).",
-      "Levier 1 priorité : 15-25 % des contrats sont structurellement déficitaires sans que le dirigeant le sache.",
-      "Levier 2 : 8 dirigeants sur 10 sous-tarifent. La règle des 3× le coût horaire chargé est trop souvent ignorée.",
-      "Levier 3 : un client existant a une probabilité 5-7× supérieure de signer un nouveau contrat vs un prospect froid.",
-      "Levier 4 : turnover et absentéisme représentent ensemble 6-12 % de la masse salariale en coûts cachés.",
-      "Cible 12 mois : gain de 5 à 13 points de marge nette en activant les 5 leviers en parallèle.",
-    ],
-    relatedSlugs: ['calculer-rentabilite-client-nettoyage', 'fixer-prix-nettoyage', 'kpi-societe-nettoyage-2026'],
-    faq: [
-      { q: "Quelle est la marge nette moyenne d'une société de nettoyage B2B ?", a: "Marge nette moyenne secteur : 4-8 % en France en 2026 (très variable selon segment et structure). Cible saine pour une société bien gérée : 10-18 %. Les meilleures dépassent 20 %. Les TPE en démarrage sont souvent à 2-5 % (parfois négatif), les PME structurées entre 8-15 %, les ETI matures entre 10-18 %." },
-      { q: "Comment identifier mes clients non-rentables ?", a: "Calculez la marge brute par client : (CA contrat annuel - coût horaire chargé × heures réelles passées). Tout contrat en dessous de 18 % de marge brute est à surveiller. En dessous de 10 % = renégocier dans les 90 jours ou sortir. Sans logiciel qui calcule cela en temps réel, vous découvrez les clients déficitaires en fin d'exercice avec 12 mois de retard." },
-      { q: "Combien de clients sont déficitaires en moyenne dans une société de nettoyage ?", a: "Empiriquement : 15-25 % du portefeuille client est structurellement déficitaire dans une société qui ne pilote pas activement la rentabilité par client. Ces clients représentent souvent 5-10 % du CA mais consomment 15-25 % du temps opérationnel (heures agents, gestion administrative, contestations). Les renégocier ou les sortir libère mécaniquement du temps et de la marge." },
-      { q: "Quelle est la règle pour fixer un prix nettoyage en 2026 ?", a: "La règle des 3× : prix de vente = coût horaire chargé × 2,8 à 3,2. Pour un agent au SMIC 2026 (coût chargé 19-20 €/h), le prix de vente cible est 54-64 €/h. Au-delà, ajustements selon technicité (×4-5), horaires décalés (+30-60 %), accessibilité, urgence. Voir notre [méthode complète prix nettoyage 2026](/blog/fixer-prix-nettoyage)." },
-      { q: "Comment activer l'upsell sur les clients existants ?", a: "Trois opportunités d'upsell typiques en propreté B2B : (1) Fréquence — passer d'1×/semaine à 2-3×/semaine si justifié ; (2) Surface — ajouter zones non couvertes (parties communes, vitrerie, espaces extérieurs) ; (3) Services premium — bionettoyage trimestriel, décapage annuel, consommables. Un client existant signe 5-7× plus facilement qu'un prospect froid : faites une revue commerciale trimestrielle pour identifier les opportunités." },
-      { q: "Quel est l'impact de l'absentéisme sur la rentabilité ?", a: "Chaque point d'absentéisme ajoute 1,5 à 2,5 €/h au coût horaire chargé (remplacements, maintien de salaire, désorganisation). Moyenne secteur : 8-10 %. Cible saine : <7 %. Passer de 12 % à 6 % d'absentéisme sur une équipe de 15 agents libère typiquement 10-15 k€/an. Voir [comment réduire l'absentéisme](/blog/reduire-absenteisme-agents-nettoyage)." },
-    ],
-    content: `## Pourquoi la rentabilité d'une société de nettoyage stagne ou recule sans pilotage actif
-
-La marge nette moyenne d'une société de nettoyage B2B en France oscille entre **4 et 8 %** en 2026, contre **10 à 18 %** pour les sociétés qui pilotent activement leur rentabilité. L'écart n'est pas dû à la chance ou à un meilleur marché : il vient de l'activation systématique de **5 leviers cumulables** que la majorité ignorent.
-
-Voici le bilan d'impact cumulé typique sur 12 mois :
-
-| Levier | Gain marge nette potentiel |
-| --- | --- |
-| 1. Identifier et renégocier les clients déficitaires | +1 à +3 pts |
-| 2. Corriger la sous-tarification chronique | +2 à +5 pts |
-| 3. Activer l'upsell sur clients existants | +1 à +2 pts |
-| 4. Réduire absentéisme et turnover | +1 à +2 pts |
-| 5. Automatiser la gestion administrative | +0,5 à +1,5 pt |
-| **TOTAL 12 mois** | **+5 à +13 pts** |
-
-Pour une PME 15 agents à 800 k€ de CA, c'est **40 à 100 k€/an** de marge nette supplémentaire.
-
-## Levier 1 — Identifier et renégocier les clients déficitaires
-
-### Le constat : 15-25 % de votre portefeuille est déficitaire (et vous ne le savez pas)
-
-Sans calcul de marge par client en temps réel, vous ne savez pas quels clients vous rapportent vraiment. Le pattern typique :
-
-- 60-70 % des clients sont rentables (marge brute >25 %)
-- 10-15 % sont en zone grise (marge 15-25 %, à surveiller)
-- **15-25 % sont structurellement déficitaires** (marge <15 %, parfois <5 %)
-
-Ces clients déficitaires concentrent souvent 15-25 % de votre temps opérationnel (heures agents, gestion, contestations) pour 5-10 % du CA.
-
-### La méthode : calcul marge brute par client
-
-**Formule :** (CA contrat annuel - coût horaire chargé × heures réelles passées) / CA contrat annuel × 100
-
-Voir [comment calculer la rentabilité par client en nettoyage](/blog/calculer-rentabilite-client-nettoyage) pour la formule détaillée avec exemple chiffré.
-
-### Le plan d'action
-
-| Marge brute | Action |
-| --- | --- |
-| >35 % | Conserver, demander référencement, étudier upsell |
-| 25-35 % | Conserver, surveiller dans le temps |
-| 15-25 % | Surveiller activement, étudier optimisation interne |
-| 10-15 % | Renégocier dans les 90 jours (+15-25 %) |
-| <10 % | Renégocier (+25-40 %) ou sortir |
-
-**Note** : sortir un client déficitaire est rentable même si le CA baisse, car vous libérez le temps opérationnel qui peut être consacré à des clients premium ou de nouveaux prospects.
-
-## Levier 2 — Corriger la sous-tarification chronique
-
-### Le constat : 8 dirigeants sur 10 sous-tarifent
-
-La sous-tarification chronique a 3 causes typiques :
-
-1. **Raisonnement en coût horaire brut** (\"mon agent est à 12 €\") au lieu du coût chargé (19-23 €)
-2. **Oubli d'imputer les frais de structure et marketing** dans le calcul du prix
-3. **Peur de perdre le contrat** qui pousse à baisser sous le seuil de rentabilité
-
-### La règle : prix de vente = coût horaire chargé × 2,8 à 3,2
-
-Pour un agent AS1 en 2026 :
-- Coût horaire chargé : 19-20 €
-- Prix de vente cible : 54-64 €/h
-- Ajustements : +30-60 % pour horaires décalés, +20-50 % pour technicité, +10-20 % pour accessibilité difficile
-
-Voir [méthode complète fixer ses prix dans le nettoyage](/blog/fixer-prix-nettoyage).
-
-### Plan d'action en 3 vagues
-
-**Vague 1 (mois 1-3) :** ré-évaluer tous les contrats en cours, identifier ceux en dessous de la grille. Renégocier au renouvellement.
-
-**Vague 2 (mois 4-6) :** mettre à jour votre grille interne avec les coûts 2026 (grille IDCC 3043, charges, primes). [Voir grille salaire propreté 2026](/blog/grille-salaire-nettoyage-2026-idcc-3043).
-
-**Vague 3 (mois 7-12) :** appliquer la nouvelle grille systématiquement sur tous les nouveaux devis. Avec un module devis IA, vous gardez la marge cible automatiquement.
-
-## Levier 3 — Activer l'upsell sur clients existants
-
-### Le constat : un client existant signe 5-7× plus facilement qu'un prospect froid
-
-Pourtant, la majorité des sociétés de nettoyage ne font pas d'upsell systématique. Trois opportunités classiques :
-
-**1. Augmenter la fréquence**
-Passer d'1×/semaine à 2-3×/semaine si justifié par l'évolution du client (croissance effectifs, exigence qualité).
-
-**2. Étendre la couverture**
-Ajouter zones non couvertes : parties communes, vitrerie, espaces extérieurs, sanitaires complémentaires.
-
-**3. Vendre des services premium**
-- Bionettoyage trimestriel (cabinets médicaux, salles de réunion)
-- Décapage annuel (sols PVC, carrelage)
-- Vitrerie hauteur (façades, baies vitrées)
-- Consommables (savons, papier toilette, essuie-mains) en contrat all-inclusive
-
-### La méthode : revue commerciale trimestrielle
-
-Pour chaque client, tous les 3 mois :
-1. Quels sont les sujets remontés par les agents et les contestations ?
-2. Quels nouveaux besoins ont émergé chez le client (croissance, déménagement) ?
-3. Quels services complémentaires sont pertinents ?
-4. Quelle marge actuelle vs cible — y a-t-il un sujet à traiter ?
-
-Un email proactif au client \"on a remarqué X et on vous propose Y\" convertit 30-45 % du temps.
-
-## Levier 4 — Réduire l'absentéisme et le turnover
-
-### Le constat : absentéisme + turnover = 6-12 % de masse salariale en coûts cachés
-
-| Coût caché | Montant moyen |
-| --- | --- |
-| Absentéisme (8-10 % moyenne secteur) | 4-7 % de la masse salariale |
-| Turnover (35 % moyen, 3-5 k€/départ) | 2-5 % de la masse salariale |
-| Total coûts cachés RH | **6-12 % de la masse salariale** |
-
-Sur une PME 15 agents (masse salariale ~400 k€), c'est 24-48 k€/an de coûts récupérables.
-
-### Les actions à fort ROI
-
-- Pilotage de la charge horaire (alertes surmenage) → -30 à -50 % de turnover
-- Reconnaissance et carrière (spécialisations, formations) → fidélisation
-- Conditions de travail (matériel, EPI, horaires raisonnables) → -20 à -40 % absentéisme
-- Salaire et primes au-dessus de la grille minimum
-
-Voir [6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover) et [réduire l'absentéisme : 5 leviers](/blog/reduire-absenteisme-agents-nettoyage).
-
-## Levier 5 — Automatiser la gestion administrative
-
-### Le constat : 6-10 h/semaine perdues en gestion dispersée
-
-Excel + WhatsApp + Word + Google Drive + papier = 6-10 h/semaine pour le dirigeant (et autant pour les chefs d'équipe en PME), sans création de valeur.
-
-Coût caché : 6-10 h × 4 sem × 45 €/h = **1 080 à 1 800 €/mois** par personne en gestion.
-
-### L'automatisation à viser
-
-| Tâche | Avant | Après automatisation |
-| --- | --- | --- |
-| Planning hebdomadaire | 2-4 h/sem | 30 min/sem |
-| Facturation récurrente | 4-6 h/mois | 15 min/mois |
-| Relances paiement | 2-3 h/mois | 0 (auto) |
-| Calcul heures pour la paie | 3-5 h/mois | 30 min (export) |
-| Reporting clients | 4-6 h/mois | 1 h (validation) |
-| **Total** | **15-25 h/mois** | **3-5 h/mois** |
-
-Gain : 12-20 h/mois récupérées par le dirigeant, soit l'équivalent de 1,5 à 2,5 jours de travail mensuel — à consacrer à la prospection commerciale, dont le ROI est mécaniquement supérieur.
-
-## Plan d'action sur 12 mois
-
-| Mois | Levier prioritaire | Action |
-| --- | --- | --- |
-| 1-3 | Levier 1 (clients) | Audit marge par client, plan renégociation |
-| 1-3 | Levier 5 (automatisation) | Migration logiciel métier, formation équipe |
-| 4-6 | Levier 2 (prix) | Mise à jour grille interne, application sur nouveaux devis |
-| 4-6 | Levier 4 (RH) | Audit absentéisme + plan turnover |
-| 7-9 | Levier 3 (upsell) | Revue commerciale trimestrielle 100 % des clients |
-| 10-12 | Tous | Mesure d'impact + ajustements |
-
-## Pour aller plus loin
-
-- [Comment calculer la rentabilité par client en nettoyage](/blog/calculer-rentabilite-client-nettoyage)
-- [Fixer ses prix dans le nettoyage : méthode 2026](/blog/fixer-prix-nettoyage)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-- [Réduire le turnover : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover)
-- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
-
-Pour piloter ces 5 leviers en parallèle avec un cockpit unifié (marge par client, planning, automatisation), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
-  },
-  {
-    slug: 'calculer-rentabilite-client-nettoyage',
-    title: "Calculer la rentabilité par client en nettoyage : formule + exemple 2026",
-    excerpt: "La méthode et la formule pour calculer la marge brute par client en nettoyage B2B. Exemple chiffré, automatisation, plan d'action selon les seuils.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '10 min',
-    tag: 'Stratégie',
-    tldr: "La rentabilité par client dans le nettoyage se calcule via la marge brute : (CA contrat annuel - coût horaire chargé × heures réellement passées) / CA contrat × 100. Cible saine : >25 %. En dessous de 15 %, le client est à renégocier ou sortir. En 2026, le suivi en temps réel via un logiciel métier est devenu standard car le calcul manuel sur Excel demande 4-6 h/mois et arrive avec 30-90 jours de retard.",
-    quickSummary: [
-      "Formule : (CA contrat annuel - coût horaire chargé × heures réelles) / CA contrat × 100.",
-      "Composantes : CA TTC du contrat, heures réelles agents (pointage), coût horaire chargé (~21-23 €/h en 2026 pour AS1).",
-      "Seuils : >35 % excellent, 25-35 % bon, 15-25 % à surveiller, <15 % à renégocier ou sortir.",
-      "Empiriquement : 15-25 % des contrats sont déficitaires sans que le dirigeant le sache.",
-      "Calcul manuel Excel : 4-6 h/mois + 30-90 jours de retard. Automatisé : temps réel, 0 effort.",
-      "ROI : identifier et renégocier les 15-25 % de clients déficitaires libère 1-3 points de marge nette annuelle.",
-    ],
-    relatedSlugs: ['ameliorer-rentabilite-societe-nettoyage', 'cout-horaire-charge-agent-nettoyage', 'kpi-societe-nettoyage-2026'],
-    faq: [
-      { q: "Comment calculer la rentabilité d'un client en nettoyage B2B ?", a: "Formule : marge brute = (CA contrat annuel - coût horaire chargé × heures réelles passées par les agents sur ce client) / CA contrat annuel × 100. Exemple : client à 24 000 € HT/an, 1 200 h consommées à 20 €/h chargé = coût direct 24 000 €. Marge brute = 0 %. Si le coût chargé complet (avec absentéisme et encadrement) est 22 €/h : marge = -10 %. Ce contrat est structurellement déficitaire." },
-      { q: "Quel seuil de marge brute viser par client en nettoyage ?", a: "Seuils de référence pour la propreté B2B en 2026 : >35 % = excellent (premium, technicité, exclusivité) ; 25-35 % = bon (cible standard) ; 15-25 % = à surveiller (renégocier prochain renouvellement) ; <15 % = renégocier dans les 90 jours ou sortir. Tout contrat sous 10 % de marge brute est structurellement déficitaire car ne couvre pas les frais de structure et la marge nette cible." },
-      { q: "Quelle différence entre marge brute et marge nette par client ?", a: "Marge brute = CA - coût direct (heures agents × coût chargé). Marge nette = marge brute - quote-part frais de structure et marketing attribués au client. Pour une société à 12 % de frais structure/CA et 3 % marketing, un contrat à 25 % de marge brute donne ~10 % de marge nette. Cible saine marge nette par client : >10 %, idéalement >15 %." },
-      { q: "Combien de temps prend le calcul manuel sur Excel ?", a: "Pour une PME 30 contrats : 4-6 h/mois pour collecter les heures réelles (pointages agents), calculer le coût chargé, croiser avec la facturation, mettre à jour le tableau. Et le résultat arrive avec 30-90 jours de retard (clôture des heures puis traitement). Trop tard pour agir sur les contrats déficitaires en cours." },
-      { q: "Comment automatiser le calcul de marge par client ?", a: "Un logiciel métier qui intègre planning, pointage et facturation calcule la marge en temps réel : pour chaque contrat, il agrège automatiquement les heures pointées des agents intervenus, multiplie par votre coût horaire chargé paramétré, et compare au CA facturé. Le dashboard affiche la marge en couleur (vert/orange/rouge). Voir [logiciel suivi interventions](/fonctionnalites/suivi-interventions-nettoyage)." },
-      { q: "Quel pourcentage de clients sont déficitaires en moyenne ?", a: "Empiriquement : 15-25 % du portefeuille client d'une société de nettoyage qui ne pilote pas activement la rentabilité par client. Ces clients représentent souvent 5-10 % du CA mais consomment 15-25 % du temps opérationnel. Les renégocier ou sortir libère 1-3 points de marge nette annuelle (40-100 k€ pour une PME 15 agents à 800 k€ CA)." },
-    ],
-    content: `## Pourquoi 8 dirigeants sur 10 ne connaissent pas leur marge par client
-
-Dans le nettoyage B2B, la rentabilité réelle par client est l'indicateur le plus stratégique mais le moins suivi. Pourquoi ?
-
-- **Le calcul est techniquement complexe** : croiser CA facturé, heures pointées, coût horaire chargé, sur 12 mois glissants
-- **Les données sont dispersées** : Excel pointage, Word facture, WhatsApp planning, classeur paie
-- **Le résultat arrive trop tard** : clôture mensuelle des heures + traitement = 30-90 jours après les faits
-- **Sans suivi, l'effort de calcul ponctuel décourage** : 4-6 h/mois pour une donnée arrivant en retard
-
-Résultat : 8 dirigeants sur 10 découvrent leurs clients déficitaires en fin d'année (audit comptable), avec 12 mois de marge perdue impossibles à rattraper.
-
-## La formule de la marge brute par client
-
-### Formule simple
-
-**Marge brute par client = (CA contrat annuel - Coût direct du contrat) / CA contrat annuel × 100**
-
-Avec : **Coût direct = Coût horaire chargé × Heures réelles passées par les agents sur ce client**
-
-### Composantes détaillées
-
-| Composante | Source | Fréquence de mise à jour |
-| --- | --- | --- |
-| CA contrat annuel | Facturation | Mensuelle |
-| Heures réelles agents | Pointage GPS / planning | Quotidienne |
-| Coût horaire chargé direct | Paramètre RH (grille IDCC + charges + primes) | Annuelle (révision janvier) |
-| Coût horaire chargé complet | Direct + absentéisme + encadrement + matériel | Annuelle |
-
-Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) pour calculer votre coût horaire chargé.
-
-### Marge brute vs marge nette
-
-**Marge brute** = CA - coût direct (heures × coût chargé)
-**Marge nette** = Marge brute - quote-part frais de structure et marketing
-
-Pour une société moyenne :
-- Frais de structure (loyers, admin, comptabilité, assurances) : 8-15 % du CA
-- Marketing et commercial : 2-5 % du CA
-- Quote-part par client : ~12-15 % du CA du client
-
-Donc : **Marge nette par client = Marge brute par client - 12-15 %**
-
-Un contrat à 25 % de marge brute donne ~10 % de marge nette. Un contrat à 15 % de marge brute donne ~0-3 % de marge nette (limite de rentabilité).
-
-## Exemple chiffré complet
-
-### Client : syndic immeuble Paris 11e
-
-| Donnée | Valeur |
-| --- | --- |
-| CA contrat annuel HT | 24 000 € (2 000 €/mois × 12) |
-| Heures planifiées annuelles | 1 040 h (20 h/sem × 52) |
-| Heures réelles annuelles (pointage) | 1 200 h (réalité : 23 h/sem en moyenne) |
-| Coût horaire chargé direct (2026) | 20,50 € |
-| Coût horaire chargé complet | 22,50 € |
-
-**Calcul marge brute :**
-- Coût direct = 1 200 h × 20,50 € = 24 600 €
-- Marge brute = (24 000 - 24 600) / 24 000 × 100 = **-2,5 %**
-
-**Le contrat est en perte directe** (avant même imputation des frais de structure).
-
-**Calcul marge nette :**
-- Coût complet = 1 200 h × 22,50 € = 27 000 €
-- Quote-part frais structure (12 %) = 2 880 €
-- Coût total = 29 880 €
-- Marge nette = (24 000 - 29 880) / 24 000 × 100 = **-24,5 %**
-
-**Ce contrat fait perdre 5 880 €/an.** Sans calcul, le dirigeant pensait probablement faire 10-15 % de marge sur ce client.
-
-### Cause du dérapage
-
-- Tarification basée sur 1 040 h prévues (20 h/sem)
-- Réalité : 1 200 h consommées (23 h/sem en moyenne — surfacturation interne par les agents pour finir le travail)
-- Ratio prévu vs réel : +15 % d'heures non détectées
-
-### Plan d'action
-
-1. **Renégocier le tarif** : +20 % minimum pour passer à 28 800 €/an et marge brute positive
-2. **Re-spécifier le contrat** : 20 h fermes ou facturation des heures supplémentaires
-3. **Surveiller** : suivi marge en temps réel pour détecter une nouvelle dérive
-
-## Les 5 seuils de marge brute à connaître
-
-| Marge brute | Catégorie | Action recommandée |
-| --- | --- | --- |
-| >35 % | Excellent | Conserver, demander référencement, étudier upsell |
-| 25-35 % | Bon | Conserver, surveiller dans le temps |
-| 15-25 % | À surveiller | Étudier optimisations, renégocier au renouvellement |
-| 10-15 % | À renégocier | Renégocier dans 90 jours (+15-25 %) |
-| <10 % | Déficitaire | Renégocier (+25-40 %) ou sortir |
-
-**Cible globale portefeuille :** marge brute moyenne pondérée >28 %.
-
-## Pourquoi le calcul manuel ne tient pas la route
-
-| Étape | Temps mensuel | Délai info |
-| --- | --- | --- |
-| Collecte heures pointage (agents) | 1-2 h | J+5 |
-| Croisement avec planning théorique | 1 h | J+7 |
-| Calcul coût direct par contrat | 1-2 h | J+10 |
-| Imputation frais de structure | 30 min | J+12 |
-| Mise à jour tableau Excel | 30 min | J+13 |
-| **Total** | **4-6 h/mois** | **J+30-60** |
-
-Conclusion : le calcul manuel arrive avec 30 à 60 jours de retard, donc les actions correctives interviennent trop tard. Et 4-6 h/mois de travail sans valeur ajoutée.
-
-## L'automatisation : marge en temps réel
-
-Un logiciel métier qui intègre planning, pointage et facturation calcule la marge par client en temps réel :
-
-1. Les agents pointent à l'arrivée et au départ (QR + horodatage)
-2. Les heures réelles sont agrégées par client/site automatiquement
-3. Le coût horaire chargé est paramétré une fois et appliqué
-4. Le dashboard affiche la marge brute par client en couleur (vert/orange/rouge)
-5. Alerte automatique dès qu'un client passe sous 15 % de marge brute
-
-Voir [logiciel suivi interventions nettoyage](/fonctionnalites/suivi-interventions-nettoyage) — la brique technique qui automatise ce calcul.
-
-## Plan d'action selon votre niveau actuel
-
-### Niveau 1 — Vous n'avez aucune donnée
-- Mois 1 : déployer un pointage agent (papier ou numérique)
-- Mois 2 : calcul Excel pour vos 5-10 plus gros clients
-- Mois 3 : audit complet du portefeuille
-
-### Niveau 2 — Vous avez les données mais en silos
-- Mois 1 : centralisation des données dans un seul Excel
-- Mois 2 : automatiser le calcul mensuel (formules Excel ou logiciel)
-- Mois 3 : commencer les renégociations sur les déficitaires identifiés
-
-### Niveau 3 — Vous calculez ponctuellement (annuel)
-- Mois 1 : passer à un suivi mensuel
-- Mois 2 : mettre en place un logiciel métier pour temps réel
-- Mois 3 : ritualiser une revue mensuelle de marge
-
-### Niveau 4 — Vous voulez le temps réel
-- Migrer vers un logiciel métier intégré (planning + pointage + facturation + marge)
-- Onboarding 30 min avec [Proprely en bêta privée gratuite](/beta)
-
-## Pour aller plus loin
-
-- [Améliorer la rentabilité société de nettoyage : 5 leviers 2026](/blog/ameliorer-rentabilite-societe-nettoyage)
-- [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage)
-- [Fixer ses prix dans le nettoyage : méthode 2026](/blog/fixer-prix-nettoyage)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-- [Logiciel suivi interventions nettoyage](/fonctionnalites/suivi-interventions-nettoyage)
-- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
-
-Pour calculer la marge par client en temps réel sans Excel, [candidater à la bêta privée Proprely](/beta) — onboarding 30 min avec le fondateur.`,
-  },
-  {
-    slug: 'erreurs-planning-nettoyage',
-    title: "7 erreurs de planning nettoyage qui coûtent du chiffre d'affaires en 2026",
-    excerpt: "Les 7 erreurs de planning les plus coûteuses pour une société de nettoyage : sous-affectation, oublis remplacements, sites non priorisés. Corrections.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '10 min',
-    tag: 'Productivité',
-    tldr: "Les 7 erreurs de planning nettoyage les plus coûteuses en 2026 : (1) planning sur Excel non partagé, (2) absence de réaffectation rapide, (3) sous-utilisation des spécialités agents, (4) tournées non optimisées, (5) charge horaire mal équilibrée, (6) absence d'alerte surmenage, (7) planning J-1 vs vue mensuelle. Chacune coûte 2 000 à 8 000 €/an pour une PME 10 agents. Cumulées, ces erreurs représentent 5-15 % de marge brute perdue.",
-    quickSummary: [
-      "Erreur 1 — Planning Excel non partagé : 4-6 h/sem de re-synchronisation, oublis garantis.",
-      "Erreur 2 — Pas de réaffectation rapide : 2-4 missions perdues/mois à 200-500 € de coût client.",
-      "Erreur 3 — Spécialités sous-utilisées : 15-25 % d'agents qualifiés sur des missions standards (sur-coût).",
-      "Erreur 4 — Tournées non optimisées : 30-90 min/jour/agent de trajet inutile.",
-      "Erreur 5 — Charge mal équilibrée : 20-30 % des agents en surcharge, 20-30 % en sous-charge.",
-      "Erreur 6 — Pas d'alerte surmenage : burn-out détecté trop tard, départs en cascade.",
-      "Erreur 7 — Vue J-1 vs mensuelle : pas d'anticipation, gestion en mode pompier permanent.",
-    ],
-    relatedSlugs: ['eviter-oublis-passage-nettoyage', 'gerer-agents-plusieurs-sites', 'gerer-remplacements-agents-nettoyage'],
-    faq: [
-      { q: "Quelle est l'erreur de planning la plus coûteuse dans le nettoyage ?", a: "L'absence de réaffectation rapide en cas d'absence imprévue est statistiquement la plus coûteuse. Sans système structuré, 2-4 missions/mois sont perdues, soit 400-2 000 €/mois de coût direct (refacturation impossible, pénalité contractuelle, risque churn). Sur 12 mois pour une PME 10 agents : 4 800-24 000 € évaporés." },
-      { q: "Combien d'heures perd un dirigeant avec un planning Excel ?", a: "4 à 6 heures par semaine en moyenne pour : mise à jour, synchronisation entre Excel et WhatsApp, vérification que les agents ont vu les changements, re-confirmations. Soit 16-25 h/mois × 45 €/h coût chargé dirigeant = 720-1 125 €/mois de coût caché, sans création de valeur." },
-      { q: "Comment éviter la surcharge horaire des meilleurs agents ?", a: "Trois leviers : (1) Système d'alerte automatique dès qu'un agent dépasse un seuil (ex : 145 h/mois) sur 2 semaines consécutives ; (2) Règle interne de non-affectation tant qu'un agent est en alerte ; (3) Brigade tournante de remplaçants pour absorber les pics. Sans alerte, le pattern typique est : 20 % des agents font 130-150 % de la charge moyenne et démissionnent dans les 6-12 mois." },
-      { q: "Comment optimiser les tournées multi-sites ?", a: "Quatre actions : (1) Regroupement géographique des affectations (agents dans leur zone résidentielle), (2) Sites du matin proches géographiquement, (3) Multi-employeur opt-in agent sur sites contigus, (4) Algorithme de tournée si volume important (>20 agents). Économie : 30-90 min/jour/agent de temps non facturable, soit 10-30 h/mois récupérées." },
-      { q: "Faut-il un planning vue jour, semaine ou mois ?", a: "Les 3 vues sont nécessaires : (1) Vue jour pour le pilotage opérationnel quotidien (agents, sites, statuts), (2) Vue semaine pour la coordination équipe et chefs (charge par agent, sites à risque), (3) Vue mois pour la planification stratégique (anticipation absences, congés, formations, montée en charge). Un logiciel doit proposer les 3 vues avec navigation fluide entre elles." },
-      { q: "Quelle alerte automatique pour anticiper les problèmes planning ?", a: "Cinq alertes critiques : (1) Pas de scan agent 30 min après horaire de mission (oubli probable) ; (2) Agent en surcharge sur 2 semaines (risque burn-out) ; (3) Agent en sous-charge sur 2 semaines (gaspillage masse salariale) ; (4) Mission non affectée 48 h avant échéance (faille planning) ; (5) Conflit de planning (double affectation détectée à la création)." },
-    ],
-    content: `## Pourquoi le planning est le système nerveux d'une société de nettoyage
-
-Le planning n'est pas un \"outil parmi d'autres\" : c'est le système nerveux central de votre activité. Une erreur planning cascade immédiatement sur :
-
-- Qualité de service (oubli, retard)
-- Satisfaction client (contestation, churn)
-- Rentabilité (heures perdues, sites déficitaires)
-- Climat social (surcharge, burn-out, turnover)
-- Trésorerie (refacturation impossible, pénalités)
-
-Voici les **7 erreurs planning les plus coûteuses** en 2026, avec leur coût estimé et la correction.
-
-## Erreur 1 — Planning Excel non partagé en temps réel
-
-### Le coût
-4-6 h/semaine de re-synchronisation entre Excel, WhatsApp, appels. Oublis structurels garantis. Coût pour le dirigeant : **720-1 125 €/mois** de temps caché.
-
-### La correction
-Planning numérique partagé en temps réel, accessible :
-- Dirigeant en vue d'ensemble
-- Chefs d'équipe en vue zone
-- Agents en vue planning personnel (lien web mobile, sans app à installer)
-
-Toute modification est instantanément visible par tous. Fin du \"je t'ai envoyé un WhatsApp tu n'as pas vu ?\".
-
-## Erreur 2 — Absence de système de réaffectation rapide
-
-### Le coût
-2-4 missions/mois perdues en moyenne pour une PME 10 agents = 4 800-24 000 €/an. Le pattern : un agent absent à 6h le matin, pas de remplaçant identifié, mission annulée, client mécontent.
-
-### La correction
-- Brigade tournante de 2-3 remplaçants (statut intérim/flexible)
-- Procédure de réaffectation documentée (qui appelle qui dans quel ordre)
-- Logiciel qui propose automatiquement les remplaçants pertinents (proximité, spécialité, charge horaire)
-
-Voir [comment gérer les remplacements d'agents en urgence](/blog/gerer-remplacements-agents-nettoyage).
-
-## Erreur 3 — Sous-utilisation des spécialités agents
-
-### Le coût
-15-25 % d'agents qualifiés (vitrerie hauteur, décapage, bionettoyage) affectés à des missions standards. Sur-coût horaire (l'agent qualifié coûte 1,50-3 €/h de plus) + sous-emploi de la qualification. Pour une PME : **3 000-8 000 €/an** de marge brute perdue.
-
-### La correction
-- Profil détaillé par agent avec spécialités natives (vitrerie, moquette, décapage, bionettoyage)
-- Logiciel qui filtre automatiquement les agents qualifiés pour les missions techniques
-- Tarif premium sur les missions techniques (×1,3 à ×1,5 vs standard) pour valoriser la qualification
-
-Voir [logiciel gestion agents nettoyage avec spécialités](/fonctionnalites/gestion-agents-nettoyage).
-
-## Erreur 4 — Tournées non optimisées géographiquement
-
-### Le coût
-30-90 min/jour/agent de temps de trajet inutile. Pour une PME 10 agents : 5-15 h/jour cumulées = 100-300 h/mois de temps non facturable. Coût caché : **2 000-6 000 €/mois** (à 20 €/h coût chargé).
-
-### La correction
-- Regroupement géographique des affectations (chaque agent a sa zone résidentielle)
-- Sites du matin proches géographiquement (limiter inter-trajets)
-- Multi-employeur opt-in agent (l'agent intervient sur 2-3 sites contigus appartenant à 2-3 clients différents)
-- Algorithme de tournée pour les sociétés >20 agents
-
-## Erreur 5 — Charge horaire mal équilibrée
-
-### Le coût
-Pattern typique sans pilotage actif :
-- 20-30 % des agents en surcharge (>110 % de la charge contractuelle)
-- 20-30 % des agents en sous-charge (<90 %)
-- 40-60 % autour de l'équilibre
-
-Conséquences : turnover des sur-chargés (40-60 % démissionnent dans les 12 mois), gaspillage masse salariale des sous-chargés. Coût annuel : **5 000-15 000 €** pour une PME 10 agents.
-
-### La correction
-- Suivi temps réel de la charge horaire par agent (hebdo)
-- Alerte automatique si dépassement >110 % sur 2 semaines
-- Règle de ré-équilibrage mensuelle (revue de la charge par chef d'équipe)
-- Compteur d'heures visible par l'agent (transparence = anticipation)
-
-## Erreur 6 — Pas d'alerte surmenage = burn-out détecté trop tard
-
-### Le coût
-Sans alerte, vous découvrez le burn-out d'un agent le jour de sa démission ou de son arrêt longue maladie. Coût d'un départ : 3 500-5 000 € (recrutement, formation, perte productivité initiale, surcharge des restants). Pour 2-3 départs/an évitables : **7 000-15 000 €/an**.
-
-### La correction
-Définir un seuil de surcharge par agent (par défaut 145 h/mois, configurable). Alerte automatique dès dépassement sur 2 semaines consécutives. Action concrète : ré-équilibrage immédiat, conversation 1-1 avec l'agent, jour de repos compensateur.
-
-## Erreur 7 — Vue J-1 vs vue mensuelle = gestion pompier permanent
-
-### Le coût
-Sans planification mensuelle, vous êtes en mode \"pompier\" en permanence : congés non anticipés, formations non planifiées, montées en charge subies. Stress dirigeant + équipe + erreurs en cascade. Difficile à chiffrer mais **structurellement bloquant pour la croissance**.
-
-### La correction
-Planning à 3 horizons :
-- **Vue jour** : pilotage opérationnel quotidien (statuts, agents, sites)
-- **Vue semaine** : coordination équipe et chefs (charge, sites à risque)
-- **Vue mois** : planification stratégique (congés, formations, montées en charge)
-
-Idéalement avec navigation fluide entre les 3 vues dans le même logiciel.
-
-## Tableau récapitulatif — coût annuel par erreur (PME 10 agents)
-
-| Erreur | Coût annuel estimé |
-| --- | --- |
-| 1. Planning Excel non partagé | 8 600 à 13 500 € (temps dirigeant) |
-| 2. Pas de réaffectation rapide | 4 800 à 24 000 € (missions perdues) |
-| 3. Spécialités sous-utilisées | 3 000 à 8 000 € (sur-coût) |
-| 4. Tournées non optimisées | 24 000 à 72 000 € (temps non facturable) |
-| 5. Charge mal équilibrée | 5 000 à 15 000 € (turnover + gaspillage) |
-| 6. Pas d'alerte surmenage | 7 000 à 15 000 € (départs évitables) |
-| 7. Vue J-1 vs mensuelle | Difficile à chiffrer (structurellement bloquant) |
-| **Total estimé** | **52 000 à 148 000 €/an** |
-
-Pour une PME 10 agents à 600-800 k€ de CA, c'est **6-25 % de la marge brute totale** qui s'évapore sur ces 7 erreurs cumulées.
-
-## Plan d'action pour corriger les 7 erreurs
-
-### Mois 1 — Quick wins
-- Migrer le planning Excel vers un logiciel numérique partagé (erreur 1)
-- Mettre en place les alertes surmenage (erreur 6)
-
-### Mois 2 — Organisation
-- Documenter et déployer la procédure de réaffectation (erreur 2)
-- Constituer la brigade tournante (2-3 remplaçants)
-- Activer les profils agents avec spécialités (erreur 3)
-
-### Mois 3 — Optimisation
-- Re-organisation géographique des affectations (erreur 4)
-- Ré-équilibrage charge horaire (erreur 5)
-
-### Mois 4-6 — Planification
-- Activer la vue mensuelle (erreur 7)
-- Ritualiser la revue planning hebdo + mensuelle
-
-## Pour aller plus loin
-
-- [Logiciel planning agents nettoyage : drag-and-drop + spécialités](/fonctionnalites/planning-nettoyage)
-- [Logiciel gestion agents nettoyage](/fonctionnalites/gestion-agents-nettoyage)
-- [Éviter les oublis de passage : 3 systèmes 2026](/blog/eviter-oublis-passage-nettoyage)
-- [Gérer les remplacements d'agents en urgence](/blog/gerer-remplacements-agents-nettoyage)
-- [Gérer des agents multi-sites : la méthode 2026](/blog/gerer-agents-plusieurs-sites)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-
-Pour corriger ces 7 erreurs avec un cockpit unifié (planning numérique, alertes, vues multiples), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
-  },
-  {
-    slug: 'preuve-passage-nettoyage-importance',
-    title: "Preuve de passage nettoyage : pourquoi c'est devenu essentiel en 2026",
-    excerpt: "Pourquoi la preuve de passage protège votre société de nettoyage des contestations, sécurise les contrats syndics et facility, et augmente votre marge.",
+    slug: 'indemnite-transport-proprete-2026',
+    title: "Indemnité transport propreté 2026 : montant, calcul et remboursement",
+    excerpt: "Indemnité transport propreté 2026 (IDCC 3043) : barèmes, calcul, conditions, remboursement employeur. Tableaux par zone et par mode de transport.",
     date: '7 juin 2026',
     dateModified: '7 juin 2026',
     readTime: '9 min',
     tag: 'Conformité',
-    tldr: "La preuve de passage (QR code + photos avant-après + signature + horodatage) est devenue un critère éliminatoire des appels d'offres syndics et facility en 2026. Pour une société de nettoyage B2B, elle remplit 4 fonctions critiques : protection juridique contre contestations (-80 % de litiges), accès aux marchés premium (+30 % LTV en moyenne), pilotage qualité interne, et conformité RGPD/sectorielle. Une société qui ne l'implémente pas en 2026 perd structurellement 15-30 % des opportunités commerciales.",
+    tldr: "L'indemnité transport dans la propreté (IDCC 3043) en 2026 comprend deux dispositifs cumulables : (1) le remboursement obligatoire de 50 % du titre de transport public (Navigo, abonnement train, bus, métro), valable partout en France ; (2) la prime de transport conventionnelle propreté qui couvre l'usage de véhicule personnel ou les déplacements non couverts par les transports en commun. Montant moyen 2026 : 75-150 €/mois selon zone et trajet. Cumulable avec la prime de mobilité durable (forfait vélo, covoiturage).",
     quickSummary: [
-      "Définition : QR code site + photos avant-après horodatées + signature client + PV automatique = preuve cumulative opposable.",
-      "Critère éliminatoire pour : appels d'offres publics, syndics professionnels, facility managers, cabinets médicaux, hôtellerie 4-5*.",
-      "Impact litiges : -80 % de contestations clients en moyenne sur les retours bêta Proprely.",
-      "Impact commercial : +15-30 % de taux de signature sur les segments exigeants.",
-      "Conservation légale : 5 ans en standard, conforme aux exigences syndics et appels d'offres publics.",
-      "Coût d'implémentation : ~50-200 €/mois (logiciel), ROI typique < 30 jours.",
+      "Remboursement transport public 50 % obligatoire (loi française, applicable tous secteurs).",
+      "Prime de transport conventionnelle propreté : variable selon accord d'entreprise (50-100 €/mois moyenne).",
+      "Forfait mobilité durable (vélo, covoiturage) : jusqu'à 800 €/an exonéré.",
+      "Cumul possible entre les 3 dispositifs.",
+      "Calcul mensuel sur base réelle (jours travaillés ou prorata temps partiel).",
+      "Exonération sociale + fiscale dans la limite des plafonds URSSAF.",
     ],
-    relatedSlugs: ['eviter-oublis-passage-nettoyage', 'rgpd-societe-nettoyage-2026', 'ameliorer-rentabilite-societe-nettoyage'],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'grille-salaire-nettoyage-2026-idcc-3043', 'cout-horaire-charge-agent-nettoyage'],
     faq: [
-      { q: "Qu'est-ce qu'une preuve de passage en nettoyage B2B ?", a: "Une preuve de passage est un système qui trace de manière incontestable qu'une intervention a été réalisée à un moment donné, par un agent identifié, sur un site spécifique. En 2026, le standard est la combinaison : (1) QR code unique par site scanné par l'agent à l'arrivée (horodatage + géoloc optionnelle), (2) Photos avant-après horodatées de l'intervention, (3) Signature électronique du client (si présent), (4) PV PDF automatique envoyé au client. L'ensemble forme une preuve cumulative opposable juridiquement." },
-      { q: "Pourquoi la preuve de passage est-elle devenue critique en 2026 ?", a: "Trois facteurs cumulés depuis 2022-2023 : (1) Les syndics professionnels et facility managers nationaux l'exigent dans 80 % des appels d'offres ; (2) Les cabinets médicaux et hôtellerie 4-5* en font un critère éliminatoire ; (3) Les jeunes acheteurs B2B (digital natives) considèrent que toute société sans traçabilité numérique est obsolète. Sans preuve de passage, vous perdez l'accès à 30-50 % des opportunités commerciales en 2026." },
-      { q: "Combien de temps faut-il conserver les preuves de passage ?", a: "5 ans en standard, conforme aux exigences contractuelles des syndics et facility managers, et aux délais de prescription civile. Pour les marchés publics : durée du marché + 5 ans. Hébergement européen recommandé (RGPD). Voir [logiciel preuve de passage QR code nettoyage](/fonctionnalites/preuve-passage-nettoyage) pour les modalités techniques." },
-      { q: "Quel impact sur les contestations clients ?", a: "Les sociétés qui implémentent un système de preuve de passage standardisé constatent en moyenne -80 % de contestations clients dans les 3-6 mois. Mécanisme : (1) Le client a un PV objectif à chaque passage qui désamorce 90 % des contestations potentielles ; (2) Les rares contestations restantes se tranchent en 5 minutes avec les photos horodatées ; (3) Effet psychologique : le client conteste moins quand il sait que vous avez la preuve." },
-      { q: "Une preuve de passage papier est-elle suffisante ?", a: "Non en 2026 pour les segments exigeants. La preuve papier (cahier de passage signé par le gardien) présente plusieurs faiblesses : pas d'horodatage à la seconde, falsification possible, pas de photos avant-après, pas de centralisation pour audit, perte/destruction du cahier. Acceptable pour des clients TPE peu exigeants, mais éliminatoire pour les syndics nationaux, facility, médical, hôtellerie premium." },
-      { q: "Comment mettre en place une preuve de passage rapidement ?", a: "Trois étapes : (1) Choisir un logiciel métier avec module preuve de passage natif (vs configurable) — gain de temps majeur ; (2) Imprimer et coller les QR codes uniques par site (10 min par site) ; (3) Former les agents en 10 minutes (scanner QR + photos + valider). Le système est opérationnel en 1-2 semaines. Voir [logiciel preuve de passage native QR + photos + signature](/fonctionnalites/preuve-passage-nettoyage)." },
-      { q: "Quel coût d'implémentation pour une preuve de passage numérique ?", a: "Logiciel métier avec preuve native : 50-200 €/mois pour une PME 10-30 agents (selon éditeur). Pas de hardware à acheter (les agents utilisent leur téléphone). ROI typique < 30 jours via : -80 % contestations (économie temps gestion), +15-30 % taux signature sur segments exigeants. Pour Proprely en bêta privée : gratuit jusqu'au lancement public, tarif fondateur conservé à vie après." },
+      { q: "Quelle est l'indemnité transport en propreté en 2026 ?", a: "Trois dispositifs cumulables : (1) Remboursement obligatoire 50 % du titre de transport public (Navigo, abonnement train, bus, métro) — applicable partout en France ; (2) Prime de transport conventionnelle propreté variable selon accord d'entreprise (50-100 €/mois moyenne, plus en grande couronne ou zones rurales) ; (3) Forfait mobilité durable (vélo, covoiturage) jusqu'à 800 €/an. Le montant total typique pour un agent francilien : 75-150 €/mois." },
+      { q: "Le remboursement 50 % du Navigo est-il obligatoire dans la propreté ?", a: "Oui, c'est une obligation légale (Code du travail article L3261-2) applicable à toutes les entreprises françaises, y compris en propreté. L'employeur rembourse 50 % du prix du titre d'abonnement (Pass Navigo, abonnements train SNCF/TER, abonnements bus/tram/métro régionaux), sur présentation du justificatif. Le remboursement est mensuel, exonéré de cotisations sociales et d'impôt sur le revenu." },
+      { q: "Comment se calcule la prime de transport propreté conventionnelle ?", a: "La prime conventionnelle propreté n'a pas de barème national unique : elle est définie par accord d'entreprise (ou de branche locale). Méthode typique : barème kilométrique × distance domicile-travail × jours travaillés / mois. Exemple : 0,25 €/km × 15 km AR × 22 jours = 82,50 €/mois. Conditions fréquentes : transports en commun non praticables (horaires nuit, zones non desservies), ou trajet > seuil défini par accord (souvent 5-10 km)." },
+      { q: "Peut-on cumuler les 3 dispositifs (Navigo 50 % + prime transport + forfait mobilité durable) ?", a: "Oui, mais avec un plafond cumulé pour bénéficier de l'exonération sociale et fiscale. En 2026, le plafond cumulé est de 800 €/an (forfait mobilité durable + prime transport pour usage véhicule personnel). Au-delà, l'excédent devient soumis à cotisations et impôt. Le remboursement 50 % du transport public est exonéré sans plafond." },
+      { q: "Le forfait mobilité durable est-il obligatoire ?", a: "Non, il est optionnel pour l'employeur, mais incité fiscalement (exonération totale dans la limite de 800 €/an). Couvre : vélo personnel ou électrique, covoiturage (chauffeur ou passager), véhicules en libre-service (vélo, trottinette), véhicules à hydrogène ou électriques personnels. Mise en place par accord d'entreprise ou DUE. De plus en plus utilisé dans la propreté pour fidéliser les agents et améliorer l'attractivité RH." },
+      { q: "Comment justifier l'indemnité transport pour l'URSSAF ?", a: "Conservation des justificatifs pendant 3 ans minimum : (1) Photocopie du titre de transport public (Navigo, abonnement) ou attestation d'abonnement ; (2) Pour la prime transport véhicule personnel : déclaration sur l'honneur de l'agent + carte grise (preuve propriété) + relevé kilométrique trimestriel ; (3) Pour le forfait mobilité durable : attestation employeur + déclaration agent. Audit URSSAF type : contrôle aléatoire 1-2 % des entreprises/an." },
+      { q: "L'indemnité transport rentre-t-elle dans le coût horaire chargé d'un agent ?", a: "Oui. Pour un agent francilien type 2026 : remboursement Navigo (~38 €/mois) + prime transport optionnelle (~50-100 €/mois) = 88-138 €/mois soit 0,55-0,90 €/h sur base 151,67 h. À intégrer dans le coût horaire chargé pour le calcul de marge par client et la tarification. Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage)." },
+      { q: "Que se passe-t-il pour les agents en temps partiel ?", a: "Le remboursement 50 % du transport public est intégral si le titre couvre les jours travaillés (pas de prorata). La prime de transport conventionnelle est généralement prorata du temps de présence (jours réellement travaillés vs jours ouvrés du mois). Le forfait mobilité durable est aussi prorata. Une bonne pratique : préciser le mode de calcul dans le contrat de travail dès l'embauche." },
     ],
-    content: `## Le passage de \"option\" à \"critère éliminatoire\" en 3 ans
+    content: `## Les 3 dispositifs d'indemnité transport en propreté 2026
 
-Jusqu'en 2021, la preuve de passage était une fonctionnalité \"bonus\" mise en avant par quelques éditeurs SaaS. En 2026, elle est devenue **critère éliminatoire** dans la majorité des appels d'offres B2B exigeants en France.
+En 2026, un agent de nettoyage en France peut bénéficier de **3 dispositifs cumulables** pour les frais de transport domicile-travail :
 
-### Pourquoi cette accélération ?
-
-Trois facteurs cumulés depuis 2022 :
-
-1. **Industrialisation des syndics et facility** : les grands acteurs nationaux (syndics groupes 50+ immeubles, facility multi-sites tertiaires) ont structuré leurs exigences. Sans traçabilité numérique, vous n'êtes plus listé dans leurs appels d'offres.
-
-2. **Exigences sanitaires post-COVID** : les cabinets médicaux, EHPAD, laboratoires exigent désormais une preuve formelle du respect des protocoles bionettoyage. Sans photos horodatées et signature, vous n'accédez pas au segment médical.
-
-3. **Acheteurs B2B digital natives** : la génération d'acheteurs (40-50 ans en 2026) considère qu'une société sans traçabilité numérique est obsolète. Conséquence : difficulté à signer les nouveaux contrats même sur segments traditionnellement moins exigeants.
-
-## Les 4 fonctions critiques de la preuve de passage
-
-### Fonction 1 — Protection juridique contre les contestations
-
-**Le problème :** sans preuve, la contestation client est parole contre parole. Vous perdez systématiquement (le client paye, vous remboursez ou re-faites le passage gratuitement).
-
-**La preuve cumulative opposable :**
-- QR code scanné à l'arrivée (horodatage à la seconde + géoloc optionnelle)
-- Photos avant-après horodatées
-- Signature client (si présent)
-- PV PDF automatique envoyé au client
-
-→ Impact : **-80 % de contestations** en 3-6 mois sur les retours bêta Proprely.
-
-### Fonction 2 — Accès aux marchés premium
-
-**Segments où la preuve de passage est éliminatoire :**
-
-| Segment | Niveau d'exigence | Format demandé |
-| --- | --- | --- |
-| Syndics nationaux (50+ immeubles) | Éliminatoire | QR + photos + PV automatique |
-| Facility managers tertiaires | Éliminatoire | QR + photos + reporting mensuel |
-| Cabinets médicaux / EHPAD | Éliminatoire | Photos protocole + signature référent |
-| Hôtellerie 4-5* | Éliminatoire | Photos chambre par chambre + signature gouvernante |
-| Marchés publics | Éliminatoire | PV horodaté + archive 5 ans |
-| Syndics indépendants | Souhaité | Cahier numérique acceptable |
-| Bureaux TPE | Optionnel | Cahier papier toléré |
-
-Sans preuve de passage numérique, vous perdez l'accès à **30-50 % des opportunités B2B** en 2026.
-
-### Fonction 3 — Pilotage qualité interne
-
-La preuve de passage est aussi un outil de management interne :
-
-- Suivi de la qualité par agent et par site (qui fait quoi, comment)
-- Identification des sites à risque (contestations récurrentes, photos défaillantes)
-- Base de coaching pour les agents nouveaux (photos de référence \"avant\")
-- Données pour les audits qualité internes
-
-### Fonction 4 — Conformité RGPD et sectorielle
-
-Une preuve de passage numérique bien implémentée respecte :
-- RGPD (hébergement européen, chiffrement, droit à l'oubli sur demande)
-- Conservation légale 5 ans
-- Traçabilité pour les contrôles URSSAF (lien intervention/heures pointées)
-- Conformité sectorielle (HACCP pour la restauration, protocoles bionettoyage médical)
-
-## Le standard 2026 : les 4 briques cumulées
-
-| Brique | Rôle | Pourquoi c'est important |
-| --- | --- | --- |
-| QR code par site | Horodatage à la seconde, géoloc optionnelle | Preuve que l'agent était bien sur place |
-| Photos avant-après | Preuve visuelle du travail réalisé | Désamorce 90 % des contestations |
-| Signature client | Preuve d'acceptation par le client présent | Force juridique maximale |
-| PV PDF automatique | Document opposable envoyé au client | Transparence + archivage |
-
-**Pas une seule brique : les 4 cumulées.** Une preuve de passage \"QR seul\" ou \"photos seules\" n'a pas la même force qu'une preuve cumulative.
-
-## Impact business mesuré
-
-### Sur les contestations clients
-| Avant preuve numérique | Après preuve numérique |
-| --- | --- |
-| 3-5 % contestations/intervention | 0,3-0,8 % |
-| 30-60 min de gestion par contestation | 5 min |
-| Coût annuel contestations | -75 à -85 % |
-
-### Sur le taux de signature commercial
-| Segment | Taux signature avant | Taux signature après |
-| --- | --- | --- |
-| Bureaux TPE | 45 % | 50 % (impact faible) |
-| Syndics indépendants | 35 % | 50 % (+43 %) |
-| Syndics nationaux | 10 % | 35 % (×3,5) |
-| Facility managers | 15 % | 40 % (×2,7) |
-| Médical / hôtellerie premium | 5 % | 30 % (×6) |
-
-### Sur la lifetime value client
-+20-40 % de LTV moyenne sur les segments exigeants, mécaniquement (meilleure rétention car moins de contestations + accès à des contrats plus longs/premium).
-
-## Comment implémenter rapidement
-
-### Étape 1 — Choisir un logiciel avec preuve native (vs configurable)
-Éviter les logiciels où il faut paramétrer la preuve : le standard 2026 demande la combinaison QR + photos + signature + PV automatique, native dès l'installation.
-
-### Étape 2 — Imprimer et coller les QR codes
-10 min par site. Coller à un endroit visible (entrée, accueil, local technique).
-
-### Étape 3 — Former les agents (10 min/agent)
-- Scanner le QR à l'arrivée
-- Prendre 2-3 photos avant intervention
-- Prendre 2-3 photos après intervention
-- Demander la signature si client/gardien présent
-- Valider la mission
-
-### Étape 4 — Activer l'envoi automatique des PV
-Configurer une fois pour tous les clients : email automatique à la fin de chaque mission avec le PV en pièce jointe.
-
-### Étape 5 — Communiquer auprès des clients
-Email aux clients existants : \"À compter du [date], vous recevrez automatiquement après chaque intervention un PV avec photos horodatées et signature. Aucune action de votre part requise.\"
-
-→ Effet immédiat : perçu comme une montée en gamme, justifie un éventuel ajustement tarifaire au renouvellement.
-
-## Erreurs à éviter
-
-1. **Photos non horodatées** : photos jolies mais sans horodatage = preuve faible juridiquement
-2. **Stockage non sécurisé** : photos sur le téléphone personnel de l'agent = risque RGPD majeur (perte, vol, départ agent)
-3. **PV non automatique** : si le PV doit être envoyé manuellement, il ne sera jamais envoyé en pratique
-4. **QR collé à un endroit caché** : si l'agent ne le voit pas, il ne le scanne pas
-5. **Pas de mode hors-ligne** : si l'agent doit avoir du réseau pour valider, les sous-sols et locaux techniques bloquent
-
-## Pour aller plus loin
-
-- [Logiciel preuve de passage native QR + photos + signature](/fonctionnalites/preuve-passage-nettoyage)
-- [Logiciel suivi interventions nettoyage temps réel](/fonctionnalites/suivi-interventions-nettoyage)
-- [Éviter les oublis de passage : 3 systèmes 2026](/blog/eviter-oublis-passage-nettoyage)
-- [RGPD société de nettoyage 2026 : guide dirigeant](/blog/rgpd-societe-nettoyage-2026)
-- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
-
-Pour activer une preuve de passage native (QR + photos + signature + PV automatique) en 1-2 semaines, [candidater à la bêta privée Proprely](/beta) — onboarding 30 min avec le fondateur.`,
-  },
-  {
-    slug: 'gerer-remplacements-agents-nettoyage',
-    title: "Remplacement agent nettoyage : système 2026 pour gérer les urgences",
-    excerpt: "Le système pour trouver un remplaçant en moins de 30 minutes quand un agent manque : brigade tournante, procédure escalade, outils, KPI.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '9 min',
-    tag: 'Productivité',
-    tldr: "Gérer les remplacements d'agents en urgence dans le nettoyage B2B en 2026 demande un système structuré en 3 briques : (1) Brigade tournante de 2-3 remplaçants flexibles disponibles sous 30 min ; (2) Procédure d'escalade documentée (appel agent → chef → dirigeant → brigade → prévention client) ; (3) Logiciel qui propose automatiquement les remplaçants pertinents selon spécialité, proximité, charge horaire. Un système rodé divise les missions perdues par 8-10 et réduit le coût d'absence de 70 %.",
-    quickSummary: [
-      "Brigade tournante : 2-3 remplaçants flexibles (intérim CDD/CDI flexibles), coût astreinte 200-400 €/mois.",
-      "Cible : remplaçant identifié et confirmé en <30 minutes, sur site en <2 heures.",
-      "ROI : économie 2 000-8 000 €/mois sur missions perdues (PME 10 agents).",
-      "Procédure escalade : 4 niveaux (agent direct → chef d'équipe → dirigeant → brigade tournante → prévention client).",
-      "Logiciel : filtre automatique des remplaçants pertinents (spécialité, proximité, charge horaire actuelle).",
-      "Coût d'une mission perdue : 800-3 000 € (perte directe + pénalité + risque churn).",
-    ],
-    relatedSlugs: ['eviter-oublis-passage-nettoyage', 'erreurs-planning-nettoyage', 'gerer-agents-plusieurs-sites'],
-    faq: [
-      { q: "Comment gérer un remplacement d'agent en urgence dans le nettoyage ?", a: "Système en 3 briques : (1) Constituer une brigade tournante de 2-3 remplaçants flexibles disponibles sous 30 min (statut intérim, CDD complémentaires ou CDI avec plages flexibles) ; (2) Documenter et appliquer une procédure d'escalade claire (appel agent → chef d'équipe → dirigeant → brigade → prévention client) ; (3) Utiliser un logiciel qui propose automatiquement les remplaçants pertinents selon leur spécialité, proximité géographique et charge horaire. Avec ce système, 95 % des absences sont couvertes sans missions perdues." },
-      { q: "Combien de remplaçants prévoir dans une brigade tournante ?", a: "Ratio recommandé : 1 remplaçant pour 10-15 agents actifs. Pour une PME 15 agents : 2-3 remplaçants en brigade tournante. Pour une PME 30 agents : 4-5 remplaçants. Le ratio peut être ajusté selon le taux d'absentéisme (>10 % = augmenter le ratio) et la criticité des sites (médical, hôtellerie premium = plus de marge de sécurité)." },
-      { q: "Quel statut juridique pour les remplaçants ?", a: "Trois options principales : (1) Intérim via agence (flexibilité max, coût horaire ×1,3-1,5 vs CDI) ; (2) CDD complémentaires (intérim sur courte durée, moins cher) ; (3) CDI avec plages flexibles (engagement long terme, coût normal, mais nécessite volume d'activité). Le plus fréquent : mix CDI flexible + intérim ponctuel pour absorber les pics." },
-      { q: "Combien coûte une brigade tournante de remplaçants ?", a: "Coût d'astreinte (heures non utilisées) : 200-400 €/mois pour une brigade de 2-3 remplaçants partiels. Coût d'activation (heures utilisées) : tarif horaire standard +30-50 %. ROI typique : économie 2 000-8 000 €/mois sur missions perdues (PME 10 agents) vs coût brigade 200-400 €/mois = ROI ×10 minimum." },
-      { q: "Combien de temps pour réaffecter un agent absent avec un bon système ?", a: "Cible : remplaçant identifié et confirmé sous 30 minutes, sur site sous 2 heures. Avec un logiciel qui propose automatiquement les remplaçants pertinents (filtrés par spécialité, proximité, charge horaire), la réaffectation prend 1-3 minutes (sélection + notification). Sans logiciel, le pattern Excel + WhatsApp + appels prend typiquement 30-60 minutes et échoue dans 30-50 % des cas." },
-      { q: "Faut-il prévenir le client en cas de remplacement ?", a: "Cela dépend du niveau d'exigence. Pour les clients premium (médical, hôtellerie, syndics nationaux) : OUI systématiquement par email ou SMS proactif (\"agent X absent ce matin, remplacé par agent Y formé au site, intervention assurée à l'horaire prévu\"). Pour les clients standards : seulement si retard >30 min vs horaire planifié. Règle d'or : la transparence proactive renforce la confiance, le silence inquiète." },
-      { q: "Quel impact d'une bonne gestion des remplacements sur le turnover ?", a: "Effet indirect mais significatif : une bonne brigade tournante évite de surcharger les agents disponibles avec des missions \"en plus\" en cas d'absence collègue. Sans brigade, les meilleurs agents font 130-150 % de leur charge en mode pompier permanent et démissionnent dans 70 % des cas en 12 mois. Avec brigade : pas de surcharge subie, turnover réduit de 30-50 %." },
-    ],
-    content: `## Pourquoi les absences imprévues coûtent si cher
-
-Dans le nettoyage B2B, une absence imprévue (arrêt maladie matin même, accident, urgence personnelle) déclenche une cascade :
-
-1. L'agent ne vient pas, vous l'apprenez à 6h30 ou pire, à 8h quand le client appelle
-2. Vous cherchez un remplaçant en panique : appels, WhatsApp, négociation
-3. Soit vous trouvez (en 30-90 min de stress) → mission décalée, client mécontent
-4. Soit vous ne trouvez pas → mission annulée, contestation client, pénalité contractuelle
-
-**Coût direct par mission annulée : 800 à 3 000 €** (perte refacturation, pénalité, risque churn).
-**Coût indirect** : stress dirigeant, énervement équipe, perception qualité dégradée chez le client.
-
-Sur une PME 10 agents avec 8 % d'absentéisme : ~2-4 absences imprévues/mois × 800-3 000 € = **1 600 à 12 000 €/mois** de coût d'absence si mal géré.
-
-## Le système qui fonctionne : 3 briques
-
-### Brique 1 — La brigade tournante de remplaçants
-
-**Principe :** 2-3 (PME 15 agents) à 4-6 (PME 30+ agents) remplaçants flexibles disponibles sous 30 min, sur site sous 2 h.
-
-**Statuts juridiques possibles :**
-
-| Statut | Avantages | Inconvénients | Coût horaire |
+| Dispositif | Statut | Montant moyen | Conditions |
 | --- | --- | --- | --- |
-| Intérim agence | Flexibilité max, gestion juridique externalisée | Coût horaire ×1,3-1,5 vs CDI | 22-30 €/h |
-| CDD complémentaires | Moins cher que l'intérim | Gestion juridique interne, formation à chaque CDD | 17-22 €/h |
-| CDI plages flexibles | Engagement long terme, formation amortie | Nécessite volume d'activité régulier | 19-24 €/h |
-| Multi-employeur opt-in | Mutualisation entre 2-3 sociétés voisines | Coordination complexe | 19-23 €/h |
+| Remboursement 50 % transport public | **Obligatoire** | 38-50 €/mois (Navigo IDF) | Sur présentation du titre d'abonnement |
+| Prime transport conventionnelle propreté | Selon accord | 50-100 €/mois | Usage véhicule personnel ou transports non praticables |
+| Forfait mobilité durable | Optionnel | Jusqu'à 800 €/an | Vélo, covoiturage, véhicule libre-service |
 
-**Le plus fréquent : mix CDI flexible (1-2 personnes) + intérim ponctuel (à activer en cas de pic).**
+**Total typique pour un agent francilien :** 75-150 €/mois selon mode de transport et zone.
 
-**Coût d'astreinte (heures non utilisées) :** 200-400 €/mois pour une brigade de 2-3 remplaçants partiels. Largement amorti par les missions sauvées.
+## Dispositif 1 — Remboursement 50 % du transport public (obligation légale)
 
-### Brique 2 — La procédure d'escalade documentée
+### Cadre juridique
+Article L3261-2 du Code du travail : tout employeur français doit rembourser 50 % du prix de l'abonnement de transport public utilisé par le salarié pour son trajet domicile-travail.
 
-Sans procédure écrite, chaque absence devient une improvisation stressante. Avec procédure, c'est un réflexe en 5 étapes :
+### Modalités
+- **Sur présentation** : titre d'abonnement (Pass Navigo, abonnement SNCF/TER, abonnements bus/métro/tram régionaux)
+- **Mensuel** : remboursement chaque mois sur la fiche de paie
+- **Exonération totale** : pas de cotisations sociales, pas d'impôt sur le revenu
 
-**Niveau 1 — Appel agent (0-5 min)**
-L'agent absent est appelé. S'il est joignable et que c'est une urgence courte (1-2h), on décale la mission.
+### Exemples 2026 par zone
 
-**Niveau 2 — Appel chef d'équipe (5-10 min)**
-Si l'agent est inatteignable ou absent pour la journée, le chef d'équipe est alerté. Il évalue la situation et décide.
-
-**Niveau 3 — Activation brigade tournante (10-30 min)**
-Le chef d'équipe ouvre le logiciel, sélectionne le remplaçant le plus pertinent (spécialité, proximité, charge horaire), le contacte. Confirmation sous 30 min.
-
-**Niveau 4 — Prévention client (avant H+30 min)**
-Si le remplaçant arrivera en retard ou si la mission est décalée, email ou SMS proactif au client : transparence avant qu'il ne s'en aperçoive.
-
-**Niveau 5 — Post-mortem (mission terminée)**
-PV automatique au client, validation de la mission, log de l'absence pour analyse mensuelle (récurrence, agent, type).
-
-### Brique 3 — Le logiciel qui propose automatiquement les remplaçants pertinents
-
-Sans logiciel, le chef d'équipe doit mémoriser :
-- Qui est libre cet après-midi (planning)
-- Qui maîtrise le bionettoyage médical (spécialité)
-- Qui habite près du 11e arrondissement (proximité)
-- Qui n'est pas déjà en surcharge cette semaine (charge horaire)
-
-→ Impossible à tenir en tête au-delà de 10 agents.
-
-**Avec logiciel** : sélection \"site Cabinet Médical 11e, mission urgente cet après-midi\" → liste filtrée automatiquement des 3-5 remplaçants pertinents avec leur statut (disponible, occupé, en surcharge). Choix en 30 secondes.
-
-Voir [logiciel suivi interventions avec alerte automatique](/fonctionnalites/suivi-interventions-nettoyage).
-
-## Le plan d'activation en 30 jours
-
-### Semaine 1 — Bilan et préparation
-- Audit des absences sur les 6 derniers mois : combien, quand, conséquences
-- Identification des sites critiques (forte sensibilité aux retards/absences)
-- Identification des agents flexibles existants candidats à la brigade
-
-### Semaine 2 — Constitution brigade
-- Recrutement 1-2 CDI flexibles ou contractualisation avec 1 agence intérim
-- Formation aux sites critiques (visite, protocoles, codes accès)
-- Documentation des contacts et disponibilités
-
-### Semaine 3 — Procédure documentée
-- Rédaction et diffusion de la procédure d'escalade (1 page A4)
-- Formation des chefs d'équipe à la procédure
-- Test à blanc sur 1-2 absences réelles
-
-### Semaine 4 — Logiciel
-- Activation du logiciel avec alertes automatiques
-- Paramétrage des seuils (alerte si pas de scan H+30 min, alerte surcharge >110 %)
-- Premier mois de pilotage avec mesure d'impact
-
-## KPI à suivre pour la gestion des remplacements
-
-| KPI | Cible | Fréquence |
-| --- | --- | --- |
-| Taux de couverture absences (% missions sauvées) | >95 % | Mensuelle |
-| Temps moyen de réaffectation | <30 min | Mensuelle |
-| Taux d'utilisation brigade | 30-60 % | Mensuelle |
-| Contestations clients liées à des remplacements | <0,5 % | Mensuelle |
-| Coût mensuel brigade vs missions sauvées | ROI >5× | Trimestrielle |
-
-## Erreurs à éviter
-
-1. **Brigade sous-dimensionnée** : 1 seul remplaçant = pas de marge si absence simultanée
-2. **Pas de formation aux sites critiques** : le remplaçant arrive et perd 30 min à comprendre le protocole
-3. **Procédure orale** : sans écrit, chaque chef d'équipe applique sa propre version
-4. **Pas de prévention client proactive** : le client appelle en premier = perception négative
-5. **Pas d'analyse post-mortem** : les patterns d'absence (récurrence, agent, motif) ne sont pas exploités pour traitement de fond
-
-## Pour aller plus loin
-
-- [Logiciel suivi interventions avec alerte automatique](/fonctionnalites/suivi-interventions-nettoyage)
-- [Logiciel gestion agents nettoyage avec spécialités](/fonctionnalites/gestion-agents-nettoyage)
-- [Éviter les oublis de passage : 3 systèmes 2026](/blog/eviter-oublis-passage-nettoyage)
-- [7 erreurs de planning nettoyage qui coûtent du CA](/blog/erreurs-planning-nettoyage)
-- [Gérer des agents multi-sites : la méthode 2026](/blog/gerer-agents-plusieurs-sites)
-- [Réduire l'absentéisme agents nettoyage : 5 leviers](/blog/reduire-absenteisme-agents-nettoyage)
-
-Pour automatiser la gestion des remplacements (alertes + filtre remplaçants pertinents en 30 sec), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
-  },
-  {
-    slug: 'facturation-electronique-nettoyage',
-    title: "Facturation électronique nettoyage 2026 : guide réforme + conformité",
-    excerpt: "La réforme facturation électronique 2026-2027 expliquée aux sociétés de nettoyage B2B : calendrier, obligations, PDP, Factur-X, mise en conformité.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '11 min',
-    tag: 'Conformité',
-    tldr: "La réforme facturation électronique B2B en France s'applique progressivement entre 2026 et 2027. Les sociétés de nettoyage B2B doivent : (1) à compter du 1er septembre 2026, recevoir les factures électroniques au format Factur-X ; (2) à compter du 1er septembre 2027, émettre les factures électroniques via une PDP (Plateforme de Dématérialisation Partenaire) agréée. La mise en conformité demande un logiciel de facturation conforme (format Factur-X natif, connexion PDP/PPF). Coût d'implémentation : 0 € si vous utilisez un logiciel SaaS moderne déjà conforme, 1 000-5 000 € si migration nécessaire.",
-    quickSummary: [
-      "Calendrier : réception obligatoire au 1er sept 2026, émission obligatoire au 1er sept 2027 (toutes tailles).",
-      "Format imposé : Factur-X (PDF + données XML structurées) ou XML pur (UBL, CII).",
-      "Canal imposé : PPF (Portail Public de Facturation) ou PDP (Plateforme de Dématérialisation Partenaire agréée).",
-      "Sanctions : 15 €/facture non conforme (max 15 000 €/an), 1 500 € pour absence de PDP/PPF.",
-      "Coût mise en conformité : 0 € si logiciel SaaS moderne déjà conforme, 1 000-5 000 € sinon.",
-      "Bénéfice indirect : réduction DSO 5-10 jours (lien paiement intégré + traçabilité opposable).",
-    ],
-    relatedSlugs: ['rgpd-societe-nettoyage-2026', 'logiciel-devis-nettoyage-gratuit', 'kpi-societe-nettoyage-2026'],
-    faq: [
-      { q: "Quand la facturation électronique devient-elle obligatoire en France ?", a: "Calendrier officiel suite au décalage 2024 : (1) 1er septembre 2026 : obligation de RÉCEPTION des factures électroniques pour toutes les entreprises B2B (toutes tailles) ; (2) 1er septembre 2027 : obligation d'ÉMISSION des factures électroniques pour les grandes entreprises et ETI ; (3) 1er septembre 2027 : obligation d'émission pour les PME et TPE. Aucune entreprise B2B ne pourra plus envoyer de facture PDF par email simple après 2027." },
-      { q: "Quel format de facture est imposé ?", a: "Trois formats acceptés : (1) Factur-X (recommandé) : PDF visible + données XML structurées dans le même fichier — le plus simple pour les sociétés de nettoyage ; (2) UBL (Universal Business Language) : XML pur, plus technique ; (3) CII (Cross Industry Invoice) : XML pur, standard international. Le format Factur-X est le plus pratique car il permet une lecture humaine (PDF) et machine (XML) dans le même fichier." },
-      { q: "Qu'est-ce qu'une PDP (Plateforme de Dématérialisation Partenaire) ?", a: "Une PDP est une plateforme privée agréée par l'État qui sert d'intermédiaire entre votre logiciel de facturation et le système national (Chorus Pro pour le public, futur PPF pour le B2B). Liste des PDP agréées sur le site de la DGFiP. Alternative : utiliser directement le PPF (Portail Public de Facturation) gratuit mais moins ergonomique. La plupart des logiciels SaaS modernes intègrent une connexion native vers une ou plusieurs PDP." },
-      { q: "Quelles sanctions en cas de non-conformité ?", a: "Sanctions définies par la DGFiP : (1) 15 € par facture non conforme (format ou canal), plafonné à 15 000 € par an et par société ; (2) 1 500 € pour absence d'inscription à une PDP/PPF ; (3) Risque de rejet de la facture par le client (paiement bloqué jusqu'à régularisation). Au-delà du financier, le risque commercial est majeur : un client qui ne peut pas traiter votre facture peut résilier ou ne pas renouveler." },
-      { q: "Combien coûte la mise en conformité pour une PME nettoyage ?", a: "Trois scénarios : (1) Vous utilisez déjà un logiciel SaaS moderne (Pennylane, Tiime, Proprely, etc.) qui intègre nativement Factur-X et PDP : coût = 0 € (déjà inclus) ; (2) Vous utilisez un logiciel comptable plus ancien : mise à jour 200-1 000 € selon éditeur ; (3) Vous facturez sur Word/Excel : migration vers un logiciel conforme 1 000-5 000 € (logiciel + paramétrage + formation). Le ROI est largement positif : éviter 15 000 €/an de sanction + réduction DSO 5-10 jours." },
-      { q: "Faut-il une PDP différente pour les marchés publics ?", a: "Non. Le système Chorus Pro (marchés publics) reste en place et est compatible avec la nouvelle réforme. Si vous facturez à la fois à des clients privés (PDP B2B) et publics (Chorus Pro), un logiciel de facturation moderne route automatiquement vers le bon canal selon le type de client. Aucune double saisie." },
-      { q: "Le format Factur-X remplace-t-il le PDF simple ?", a: "Oui pour le B2B à compter de 2027. Le PDF simple par email ne sera plus accepté légalement. Factur-X est rétrocompatible : c'est un PDF \"normal\" visible par l'humain, avec des données XML structurées intégrées qui permettent le traitement automatique. Pour le destinataire, ça ressemble à un PDF classique mais avec en plus le traitement comptable automatisé." },
-    ],
-    content: `## La réforme en bref : pourquoi, quoi, quand
-
-La France impose progressivement la facturation électronique B2B entre 2026 et 2027 pour 3 objectifs :
-
-1. **Lutter contre la fraude TVA** (estimée à 15-20 milliards €/an)
-2. **Accélérer les paiements** (réduction du DSO moyen)
-3. **Simplifier la gestion comptable** (traitement automatisé)
-
-Toutes les entreprises B2B sont concernées, du commerçant TPE à la multinationale, **toutes tailles, tous secteurs**.
-
-## Calendrier officiel 2026-2027
-
-| Date | Obligation | Qui est concerné |
-| --- | --- | --- |
-| 1er septembre 2026 | **Réception** factures électroniques | Toutes entreprises B2B (toutes tailles) |
-| 1er septembre 2027 | **Émission** factures électroniques | Grandes entreprises et ETI |
-| 1er septembre 2027 | **Émission** factures électroniques | PME (moins de 250 salariés) |
-| 1er septembre 2027 | **Émission** factures électroniques | TPE (moins de 50 salariés) |
-
-**Note : ce calendrier a été décalé par rapport à la version initiale (2024-2026).** Il pourrait évoluer encore selon les négociations parlementaires en cours.
-
-## Formats imposés
-
-| Format | Description | Recommandé pour |
-| --- | --- | --- |
-| **Factur-X** | PDF visible + données XML structurées dans le même fichier | **Sociétés de nettoyage** (le plus simple) |
-| UBL | XML pur (Universal Business Language) | Grandes entreprises avec ERP |
-| CII | XML pur (Cross Industry Invoice) | Standard international |
-
-**Recommandation pour le nettoyage B2B : Factur-X.**
-Avantages :
-- PDF lisible par humain (votre client comme vous)
-- XML intégré pour traitement automatique côté client
-- Compatible toutes les PDP et le PPF
-- Génération native par la plupart des logiciels SaaS modernes
-
-## Canaux d'émission imposés
-
-Vous ne pourrez plus envoyer une facture PDF par simple email à compter du 1er sept 2027. Deux canaux possibles :
-
-### Option A — PPF (Portail Public de Facturation)
-- Plateforme publique gratuite gérée par l'État (AIFE)
-- Inscription en ligne avec votre SIREN
-- Saisie manuelle ou import de fichiers
-- **Inconvénient :** ergonomie limitée, gestion manuelle au-delà de quelques factures/mois
-
-### Option B — PDP (Plateforme de Dématérialisation Partenaire)
-- Plateformes privées agréées par l'État
-- Liste des PDP agréées sur impots.gouv.fr
-- Intégration native dans la plupart des logiciels SaaS comptables et métier
-- **Avantage :** automatisation complète, statistiques, suivi des paiements
-
-**Recommandation :** PDP via votre logiciel de facturation. Vous n'avez rien à gérer manuellement.
-
-## Sanctions en cas de non-conformité
-
-| Manquement | Sanction |
-| --- | --- |
-| Facture non au format imposé | 15 € par facture, plafonné 15 000 €/an |
-| Absence d'inscription à une PDP/PPF | 1 500 € |
-| Rejet de facture par le client | Paiement bloqué jusqu'à régularisation |
-
-Au-delà du financier, le **risque commercial** est majeur : un client qui ne peut pas traiter votre facture peut résilier ou ne pas renouveler. Plusieurs grands comptes ont déjà prévenu qu'ils ne paieraient plus les factures non conformes dès 2026.
-
-## Implications pour les sociétés de nettoyage B2B
-
-### Cas n°1 — Vous utilisez déjà un logiciel SaaS moderne
-Si vous utilisez Pennylane, Tiime, Sellsy, Henrri, Bizyness, Sage Business Cloud, Cegid Quadra ON ou un logiciel métier propreté moderne comme Proprely : **vous êtes déjà conforme ou le serez automatiquement** via une mise à jour avant l'échéance.
-
-**Action requise :** vérifier auprès de votre éditeur la roadmap conformité 2026-2027 et activer la connexion PDP quand elle sera disponible.
-
-### Cas n°2 — Vous utilisez un logiciel comptable plus ancien
-Si vous utilisez un logiciel installé localement (Ciel Compta version installée, Sage version locale, etc.) : **mise à jour nécessaire**. Coût typique : 200-1 000 €/an selon l'éditeur. Vérifiez la roadmap éditeur.
-
-**Action requise :** demander un devis de mise à niveau auprès de votre éditeur ou envisager une migration vers un SaaS moderne.
-
-### Cas n°3 — Vous facturez sur Word/Excel
-Si vous générez vos factures sur Word ou Excel et les envoyez par email : **migration obligatoire** vers un logiciel conforme. Coût typique : 1 000-5 000 € (logiciel + paramétrage + formation).
-
-**Action requise :** sélectionner et migrer vers un logiciel SaaS conforme dans les 6-12 prochains mois pour avoir le temps de la prise en main.
-
-## Plan de mise en conformité — 6 mois
-
-### Mois 1 — Audit
-- Listez vos canaux de facturation actuels
-- Vérifiez la conformité de votre logiciel actuel auprès de l'éditeur
-- Identifiez les ajustements nécessaires (mise à jour, migration, formation)
-
-### Mois 2 — Décision logiciel
-- Si conforme : planifier la mise à jour
-- Si non conforme : sélectionner un nouveau logiciel (3-5 devis comparés)
-- Critères : conformité Factur-X + PDP + sectoriel propreté + tarif
-
-### Mois 3 — Migration (si nécessaire)
-- Import des données clients/contrats vers le nouveau logiciel
-- Paramétrage du format Factur-X et de la PDP
-- Formation des équipes
-
-### Mois 4 — Test en parallèle
-- Émission de quelques factures électroniques en test
-- Validation des PDF Factur-X reçus par les clients
-- Ajustements éventuels
-
-### Mois 5 — Bascule progressive
-- 25 % des clients en facturation électronique
-- Puis 50 %, puis 100 % progressivement
-- Communication aux clients (\"À compter du [date], vous recevrez vos factures au format Factur-X via [PDP]\")
-
-### Mois 6 — Stabilisation et optimisation
-- 100 % en facturation électronique
-- Activation des automatisations (relances, suivi paiements)
-- Mesure d'impact (DSO, temps administratif)
-
-## Bénéfices induits de la réforme
-
-Au-delà de la conformité, la réforme apporte des bénéfices opérationnels significatifs :
-
-| Bénéfice | Impact mesuré |
-| --- | --- |
-| Réduction DSO (lien paiement intégré) | -5 à -10 jours |
-| Réduction impayés (traçabilité opposable) | -30 à -50 % |
-| Réduction temps administratif facturation | -50 à -70 % |
-| Réduction litiges (preuve format normalisé) | -40 à -60 % |
-| Automatisation relances paiement | 100 % (vs 30-50 % en manuel) |
-
-Pour une PME 15 contrats récurrents : **3 000-8 000 €/an** d'économies opérationnelles + gain trésorerie (DSO -7 jours = ~15-25 k€ libérés).
-
-## Erreurs à éviter
-
-1. **Attendre 2027 pour s'y mettre** : la prise en main demande 3-6 mois pour être fluide
-2. **Choisir un logiciel non conforme parce qu'il est moins cher** : risque sanctions + migration future obligatoire
-3. **Ne pas former les équipes** : conformité technique sans appropriation = factures émises mais erreurs paramétrage
-4. **Ne pas communiquer aux clients** : ils doivent savoir d'où viennent les nouvelles factures (sinon spam/oubli)
-
-## Pour aller plus loin
-
-- [Logiciel facturation nettoyage Factur-X + PDP conforme](/fonctionnalites/facturation-nettoyage)
-- [Logiciel devis nettoyage gratuit : top 5 outils 2026](/blog/logiciel-devis-nettoyage-gratuit)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-- [RGPD société de nettoyage 2026 : guide dirigeant](/blog/rgpd-societe-nettoyage-2026)
-- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
-
-Pour une facturation électronique conforme 2026-2027 (Factur-X natif + PDP intégrée + facturation récurrente automatique), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
-  },
-  {
-    slug: 'creer-societe-nettoyage',
-    title: "Créer une société de nettoyage en 2026 : guide complet en 10 étapes",
-    excerpt: "Toutes les étapes pour lancer votre entreprise de nettoyage en 2026 : statut, capital, conventions, premiers clients, outils, prix. Guide chiffré complet.",
-    date: '7 juin 2026',
-    dateModified: '7 juin 2026',
-    readTime: '13 min',
-    tag: 'Stratégie',
-    tldr: "Créer une société de nettoyage B2B en 2026 demande de suivre 10 étapes clés : (1) étude marché local, (2) choix statut juridique (SASU souvent recommandé), (3) capital de démarrage 5-20 k€, (4) immatriculation SIREN/RCS, (5) conventions IDCC 3043 + assurances RC pro, (6) prix de prestation calibré (règle des 3×), (7) premier client (recommandation, réseau, démarchage), (8) outils essentiels (logiciel métier + comptable), (9) embauche premier agent (étape critique), (10) scale 6-12 mois. Investissement total démarrage : 8-25 k€ selon ambition.",
-    quickSummary: [
-      "Statut juridique recommandé : SASU pour démarrer seul, SAS si associés.",
-      "Capital de démarrage : 5-20 k€ (matériel léger, marketing, trésorerie 3 mois).",
-      "Convention collective : IDCC 3043 (propreté) obligatoire dès le 1er salarié.",
-      "Assurance : RC pro indispensable (1 000-3 000 €/an).",
-      "Prix : règle des 3× le coût horaire chargé (54-64 €/h en 2026 pour AS1).",
-      "Premier client : réseau + bouche-à-oreille convertissent 8× plus que démarchage froid.",
-      "Embauche premier agent : étape la plus risquée (turnover, gestion paie, conformité).",
-      "Cible 6 mois : 3-5 contrats récurrents, 200-400 k€ CA annualisé.",
-    ],
-    relatedSlugs: ['fixer-prix-nettoyage', 'trouver-clients-b2b-nettoyage', 'convention-collective-nettoyage-idcc-3043'],
-    faq: [
-      { q: "Quel statut juridique pour créer une société de nettoyage en 2026 ?", a: "Recommandation pour démarrer seul : SASU (Société par Actions Simplifiée Unipersonnelle). Avantages : responsabilité limitée au capital, régime social TNS attractif (~30 % de charges sur les rémunérations vs ~45 % salarié), flexibilité statutaire, possibilité d'évoluer en SAS si associés. Alternative : SAS dès le départ si vous démarrez à 2-3 associés. Auto-entrepreneur : viable jusqu'à 3-5 clients mais bloque la croissance (pas d'embauche possible, plafond CA 77 700 €)." },
-      { q: "Quel capital pour créer une société de nettoyage ?", a: "Investissement de démarrage typique 2026 : 8-25 k€ selon ambition. Décomposition : capital social statutaire (1-5 k€), matériel léger (aspirateurs, machines, EPI : 2-5 k€), marketing et identité visuelle (1-3 k€), trésorerie 3 mois de fonctionnement (4-12 k€), formation gestion/comptabilité (0-2 k€). Pour un démarrage solo TPE : 8-12 k€ suffisent. Pour une ambition PME 5-10 agents en 18 mois : 15-25 k€." },
-      { q: "Faut-il une qualification pour ouvrir une société de nettoyage ?", a: "Non, pas de qualification obligatoire pour la propreté de base (bureaux, commerces, copropriétés). Quelques exceptions : (1) Bionettoyage médical : formation HACCP + protocoles obligatoires ; (2) Désinfection (3D : dératisation, désinsectisation, désinfection) : certificat Certibiocide obligatoire ; (3) Décontamination amiante : certification Qualibat obligatoire. Pour la propreté B2B standard, aucune barrière réglementaire à l'entrée." },
-      { q: "Comment trouver ses premiers clients en société de nettoyage ?", a: "Trois canaux par ordre de ROI : (1) Réseau personnel et bouche-à-oreille (taux conversion 30-50 %, démarrage immédiat) ; (2) Recommandation cross-sell avec autres prestataires services B2B (comptables, syndics, agences immobilières — taux 15-25 %) ; (3) Démarchage actif ciblé (porte-à-porte zones tertiaires, LinkedIn — taux 3-8 %). Évitez les annuaires SaaS génériques peu efficaces. Voir [trouver des clients B2B nettoyage : 5 canaux qui marchent](/blog/trouver-clients-b2b-nettoyage)." },
-      { q: "Quel chiffre d'affaires viser en première année ?", a: "Réaliste pour un démarrage solo : 60-150 k€ HT en année 1 (3-8 contrats récurrents). Pour un démarrage avec ambition : 150-300 k€ HT (8-15 contrats + 1-2 embauches). Marge brute cible : 25-35 % en démarrage (en montée vers 35-45 % en année 3). Marge nette en année 1 souvent faible (5-15 %) car structure pas amortie, investissements en cours." },
-      { q: "Combien coûte d'embaucher son premier agent de nettoyage ?", a: "Coût total embauche premier agent AS1 (smic propreté 2026 = 11,99 €/h) sur 1 mois temps plein 35h : Salaire brut 1 819 € + charges patronales 42 % (764 €) + primes panier/transport (~250 €) = ~2 833 € de coût direct. Sur l'année avec congés payés : ~34 000 € de coût direct, ~38 000-40 000 € de coût complet (avec matériel, formation, encadrement). Cet agent doit générer au minimum 50 000 € de CA pour être rentable (ratio 1,3-1,5)." },
-      { q: "Quelle assurance pour une société de nettoyage ?", a: "Trois assurances obligatoires ou fortement recommandées : (1) RC Pro (Responsabilité Civile Professionnelle) : indispensable, 1 000-3 000 €/an, couvre les dommages causés aux clients ; (2) Assurance flotte véhicules si vous transportez du matériel ; (3) Mutuelle entreprise obligatoire dès le 1er salarié. Optionnelle mais recommandée : Protection Juridique pro (300-800 €/an), assurance perte d'exploitation, RC dirigeant." },
-    ],
-    content: `## Pourquoi ouvrir une société de nettoyage en 2026 ?
-
-Le marché français de la propreté B2B représente **15-20 milliards € de CA en 2026**, ~500 000 salariés, ~30 000 entreprises dont 90 % de TPE/PME. Croissance moyenne du secteur : +3-4 %/an, accélérée par :
-
-- Hausse des exigences qualité (post-COVID, exigences ESG)
-- Externalisation continue par les entreprises (vs internalisation des années 1980)
-- Pénurie de prestataires fiables sur certains segments (médical, hôtellerie premium)
-- Digitalisation du secteur qui crée un fossé entre les sociétés modernes et les anciennes
-
-C'est un secteur **accessible** (peu de barrières réglementaires), **scalable** (le ROI s'améliore avec la taille jusqu'à 50-100 agents), avec **opportunités de différenciation** (digitalisation, IA, segments premium).
-
-## Étape 1 — Étude de marché local
-
-Avant de créer juridiquement, validez votre projet sur votre territoire :
-
-**Questions à se poser :**
-- Combien de sociétés de nettoyage concurrentes dans votre bassin (rayon 30 km) ?
-- Quels segments sont sur-saturés (bureaux TPE) vs sous-servis (bionettoyage médical, hôtellerie premium) ?
-- Quels prix pratiquent les concurrents ?
-- Quels syndics et facility managers structurants opèrent localement ?
-
-**Outils :**
-- Société.com (concurrents par code NAF 81.2)
-- Pages Jaunes Pro (mapping géographique)
-- Pôle Emploi (tensions sur métiers propreté = signe de demande)
-- LinkedIn (acheteurs et décideurs locaux)
-
-**Livrable :** 1 page A4 avec votre positionnement (segment cible, géographie, différenciation, prix indicatif).
-
-## Étape 2 — Choix du statut juridique
-
-| Statut | Avantages | Inconvénients | Cible |
+| Zone | Abonnement | Coût agent | Remboursement employeur |
 | --- | --- | --- | --- |
-| Auto-entrepreneur | Démarrage 0 €, gestion simple | Plafond CA 77 700 €, pas d'embauche, image | TPE 1-3 clients |
-| EURL/SARL | Cadre éprouvé, gérant majoritaire = TNS | Charges sociales gérant >SASU sur dividendes | Solo + 1-3 agents |
-| **SASU** | **Souplesse statutaire, président assimilé salarié, dividendes peu chargés** | Charges sociales >TNS sur rémunération | **Solo recommandé** |
-| SAS | Multi-associés, flexibilité, attractif investisseurs | Gestion plus lourde, comptes annuels | 2-5 associés |
+| Île-de-France | Navigo annuel | 86,40 €/mois | 43,20 €/mois |
+| Lyon | TCL annuel | 64,60 €/mois | 32,30 €/mois |
+| Marseille | RTM mensuel | 53 €/mois | 26,50 €/mois |
+| Bordeaux | TBM mensuel | 50,50 €/mois | 25,25 €/mois |
+| Toulouse | Tisséo annuel | 47,50 €/mois | 23,75 €/mois |
+| Lille | Ilévia mensuel | 70 €/mois | 35 €/mois |
 
-**Recommandation pour démarrer seul en 2026 : SASU.** Évolution vers SAS possible si associés futurs.
+**Note :** ces tarifs évoluent annuellement (généralement en août pour la rentrée). Vérifier les barèmes en vigueur.
 
-## Étape 3 — Capital de démarrage
+## Dispositif 2 — Prime de transport conventionnelle propreté
 
-Budget réaliste pour démarrer une société de nettoyage B2B en 2026 :
+### Quand s'applique-t-elle ?
+La prime de transport conventionnelle propreté est définie par **accord d'entreprise** (ou de branche locale). Elle vise les situations où :
+- Les transports en commun ne sont pas praticables (horaires nuit, zones rurales non desservies)
+- L'agent utilise son véhicule personnel (voiture, deux-roues)
+- Le trajet domicile-travail dépasse un seuil défini par accord (souvent 5-10 km)
 
-| Poste | Démarrage TPE (1-3 clients) | Démarrage PME (5-10 clients en 12 mois) |
+### Calcul typique
+**Formule courante :** Barème kilométrique × Distance domicile-travail aller-retour × Jours travaillés / mois
+
+**Exemple :** Agent en zone rurale, 15 km AR, 22 jours/mois, barème 0,25 €/km :
+- Calcul : 0,25 × 15 × 22 = **82,50 €/mois**
+
+### Barèmes 2026 indicatifs
+
+| Distance AR | Barème €/km | Jours/mois | Prime mensuelle |
+| --- | --- | --- | --- |
+| 5-10 km | 0,15-0,20 € | 22 | 16-44 € |
+| 10-20 km | 0,20-0,30 € | 22 | 44-132 € |
+| 20-40 km | 0,25-0,35 € | 22 | 110-308 € |
+| 40+ km | 0,30-0,40 € | 22 | 264-352 € |
+
+**Note :** ces barèmes sont indicatifs et dépendent strictement de l'accord d'entreprise applicable.
+
+## Dispositif 3 — Forfait mobilité durable (FMD)
+
+### Cadre
+Créé en 2020, renforcé en 2024-2026, le forfait mobilité durable permet à l'employeur de couvrir les frais des modes de transport alternatifs :
+
+- **Vélo** personnel ou électrique (acquisition, entretien, accessoires)
+- **Covoiturage** (chauffeur ou passager)
+- **Véhicules en libre-service** (vélo, trottinette électrique, autopartage)
+- **Véhicules à hydrogène ou électriques** personnels (location, recharge)
+
+### Plafond 2026
+- **800 €/an** par salarié, totalement exonéré de cotisations sociales et d'impôt
+- Cumul avec remboursement transport public possible (plafond global différent à vérifier annuellement)
+
+### Mise en place
+- Accord d'entreprise OU décision unilatérale de l'employeur (DUE)
+- Conditions d'attribution claires (justificatifs demandés)
+- Montant uniforme par salarié ou variable selon distance
+
+### Pourquoi c'est intéressant en propreté
+La propreté souffre d'une attractivité RH faible. Un FMD bien communiqué peut différencier l'employeur sur le marché du travail : "chez nous, votre vélo est financé jusqu'à 800 €/an". Argument fort en recrutement et en fidélisation.
+
+## Cumul des 3 dispositifs : comment ça marche
+
+**Exemple complet — Agent francilien 2026 :**
+
+| Dispositif | Montant mensuel | Exonération |
 | --- | --- | --- |
-| Capital social statutaire | 1 000 € | 3 000-5 000 € |
-| Matériel léger (aspirateurs, machines, EPI) | 2 000-3 000 € | 4 000-7 000 € |
-| Marketing + identité visuelle | 500-1 500 € | 2 000-4 000 € |
-| Trésorerie 3 mois | 3 000-5 000 € | 6 000-10 000 € |
-| Formation gestion/compta | 0-1 000 € | 1 000-2 000 € |
-| Outils logiciels (1ère année) | 500-1 500 € | 1 000-3 000 € |
-| **Total** | **8 000-13 000 €** | **17 000-31 000 €** |
+| Remboursement 50 % Pass Navigo | 43,20 € | Totale |
+| Prime transport pour week-end/nuit | 30,00 € (sur jours hors RER) | Dans plafond cumulé 800 €/an |
+| Forfait mobilité durable (vélo personnel) | 30,00 € | Dans plafond cumulé 800 €/an |
+| **Total mensuel** | **103,20 €** | |
 
-**Note :** la trésorerie 3 mois est critique car les premiers clients paient à 30-45 jours alors que vos charges (salaires si embauche, loyers, charges sociales) tombent mensuellement.
+**Plafond cumulé prime transport + FMD :** 800 €/an exonéré (montant 2026, à vérifier). Au-delà : excédent soumis à cotisations sociales et impôt.
 
-## Étape 4 — Immatriculation et démarches juridiques
+## Justification URSSAF
 
-**Code NAF :** 81.21Z (Nettoyage courant des bâtiments) ou 81.22Z (Autres activités de nettoyage des bâtiments).
+### Documents à conserver (3 ans minimum)
+- **Remboursement transport public** : copie du titre d'abonnement (Navigo, abonnement) ou attestation employeur
+- **Prime transport véhicule personnel** : déclaration sur l'honneur agent + carte grise + relevé kilométrique trimestriel
+- **Forfait mobilité durable** : attestation employeur précisant le mode (vélo, covoiturage…) + déclaration agent
 
-**Procédure SASU :**
-1. Rédaction des statuts (modèle en ligne 100-300 € ou avocat 800-2 000 €)
-2. Dépôt du capital social (banque pro)
-3. Publication annonce légale (~150-250 €)
-4. Dépôt dossier au greffe du tribunal de commerce (~50 €)
-5. Réception Kbis sous 1-2 semaines
-6. Inscription URSSAF, impôts, OPCO Mobilités (formation)
-7. Ouverture compte bancaire pro définitif
+### Risques en cas de contrôle URSSAF
+- **Remboursement non justifié** : requalification en avantage en nature (cotisations + impôt rétroactifs)
+- **Cumul au-delà du plafond non déclaré** : redressement sur la partie excédentaire
+- **Prime transport non conventionnelle versée sans accord** : risque de requalification
 
-**Coût total démarches juridiques :** 400 € (DIY) à 3 000 € (avocat + expert-compta).
+## Impact sur le coût horaire chargé d'un agent
 
-## Étape 5 — Conventions collectives et assurances
+Pour un agent francilien type 2026 avec cumul classique (Navigo 50 % + prime transport modeste) :
 
-### Convention collective IDCC 3043 (Propreté)
-**Obligatoire** dès le premier salarié. Couvre :
-- Grille salariale (17 coefficients, AS1 à MP5)
-- Primes obligatoires (panier, transport, salissure, ancienneté)
-- Heures complémentaires/supplémentaires majorations
-- Article 7 (reprise du personnel en cas de perte/gain de marché)
+| Poste | Montant |
+| --- | --- |
+| Remboursement Navigo 50 % | 43 €/mois |
+| Prime transport | 50 €/mois |
+| **Total transport** | **93 €/mois** |
+| **Impact /heure (151,67 h)** | **0,61 €/h** |
 
-Voir [grille salaire nettoyage 2026 IDCC 3043 : tableau complet](/blog/grille-salaire-nettoyage-2026-idcc-3043) et [convention collective propreté 2026 (IDCC 3043) : salaires + PDF](/blog/convention-collective-nettoyage-idcc-3043).
+À intégrer dans votre **coût horaire chargé** pour la tarification précise des contrats. Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage).
 
-### Assurances
+## Bonnes pratiques pour les dirigeants
 
-| Assurance | Statut | Coût annuel |
-| --- | --- | --- |
-| RC Pro | Indispensable | 1 000-3 000 € |
-| Mutuelle salariés | Obligatoire dès 1er agent | ~50-80 €/agent/mois |
-| Assurance flotte véhicule | Selon usage | 500-1 500 €/véhicule |
-| Protection juridique pro | Recommandé | 300-800 € |
-| RC dirigeant | Optionnel | 500-1 500 € |
+### 1. Auditer vos pratiques actuelles
+Beaucoup de TPE/PME propreté ne respectent pas strictement les obligations légales (Navigo 50 %). Risque URSSAF + risque social (mauvaise image).
 
-## Étape 6 — Tarification : la règle des 3×
+### 2. Formaliser par accord d'entreprise
+Au-delà du minimum légal, formaliser votre politique transport (prime, FMD) par un accord d'entreprise ou DUE clair. Évite les contestations individuelles.
 
-Pour fixer vos prix dès le démarrage :
+### 3. Communiquer comme avantage RH
+Mettre en avant la politique transport dans vos offres d'emploi et entretiens. Différenciateur fort sur un marché du travail tendu.
 
-**Formule :** Prix de vente = Coût horaire chargé × 2,8 à 3,2
-
-**Pour un agent AS1 en 2026 :**
-- Coût horaire chargé : 19-20 €
-- Prix de vente cible : **54-64 €/h**
-- Ajustements : +30-60 % horaires décalés, +20-50 % technicité, +10-20 % accessibilité difficile
-
-Voir [méthode complète fixer ses prix dans le nettoyage 2026](/blog/fixer-prix-nettoyage) et [tarif nettoyage bureaux au m² 2026 : la grille](/blog/tarif-nettoyage-bureaux-m2-2026).
-
-**Erreur la plus fréquente :** sous-tarifer pour \"gagner le premier client\". Conséquence : marge négative dès le jour 1, impossible de corriger sans perdre le client.
-
-## Étape 7 — Premier client : le moteur de tout
-
-### Hiérarchie des canaux par ROI
-
-| Canal | Taux conversion | Temps avant signature |
-| --- | --- | --- |
-| Réseau personnel et bouche-à-oreille | 30-50 % | 0-30 jours |
-| Recommandation cross-sell (comptables, syndics, agences immo) | 15-25 % | 30-60 jours |
-| Démarchage actif ciblé (porte-à-porte tertiaire, LinkedIn) | 3-8 % | 60-180 jours |
-| Annuaires SaaS génériques | <1 % | 90-365 jours |
-
-**Recommandation :** activez les 3 premiers canaux dès le jour 1. Le réseau personnel doit générer 60-80 % de vos 5 premiers clients.
-
-### Mécanique du bouche-à-oreille
-1. Listez 30-50 personnes de votre réseau professionnel (anciens collègues, prestataires, amis dirigeants)
-2. Envoyez un message personnalisé annonçant le lancement avec votre positionnement
-3. Demandez explicitement \"connaissez-vous quelqu'un qui pourrait avoir besoin ?\"
-4. Suivi structuré (CRM léger même Excel) avec relances mensuelles
-
-Voir [trouver des clients B2B nettoyage : 5 canaux qui marchent](/blog/trouver-clients-b2b-nettoyage).
-
-## Étape 8 — Outils essentiels dès le jour 1
-
-| Outil | Recommandation | Coût mensuel |
-| --- | --- | --- |
-| Logiciel métier (planning, devis, agents) | [Proprely](/logiciel-societe-nettoyage) en bêta gratuite, ou Excel les 3 premiers mois | 0 € (bêta) ou 50-200 €/mois après |
-| Comptabilité | Pennylane, Tiime, Sellsy | 30-80 €/mois |
-| Banque pro | Qonto, Shine ou banque traditionnelle | 10-50 €/mois |
-| Communication client | WhatsApp Business + email pro | 0-15 €/mois |
-| Stockage documents | Google Drive ou OneDrive | 5-15 €/mois |
-| Site web simple | Webflow, Carrd ou template WordPress | 10-30 €/mois |
-
-**Total outils :** ~50-150 €/mois dès le démarrage (négligeable vs valeur ajoutée).
-
-## Étape 9 — Embauche du premier agent : l'étape la plus risquée
-
-Statistiquement, **30-50 % des sociétés de nettoyage en démarrage échouent leur première embauche** (turnover sous 6 mois, conflit, erreur conformité, sous-rentabilité).
-
-### Bonnes pratiques
-- Embauchez seulement quand vous avez **3-5 contrats récurrents stables** générant suffisamment d'heures pour un temps plein (40-60 heures/semaine minimum)
-- Privilégiez la **recommandation par un agent existant** d'une autre société (réseau propreté local)
-- **Période d'essai** : 2 mois (renouvelable 1 fois)
-- **Formation aux sites** : 2-5 demi-journées avant prise en autonomie
-- **Salaire au-dessus de la grille minimum** : +5-10 % vs SMIC propreté, différenciant majeur sur un marché tendu
-- **Outils numériques dès le jour 1** : planning, pointage, preuve de passage
-
-### Erreurs fréquentes
-- Embaucher trop tôt (sans volume d'heures suffisant) → agent sous-employé, démotivé, départ
-- Embaucher en CDI directement sans CDD test → risque juridique en cas de mauvaise pioche
-- Salaire au minimum strict → turnover quasi-garanti
-- Pas de formation aux sites → erreurs qualité, contestations
-
-## Étape 10 — Scale 6-12 mois : les KPI à viser
-
-| KPI | Cible 6 mois | Cible 12 mois |
-| --- | --- | --- |
-| Nombre contrats récurrents | 3-5 | 8-15 |
-| CA annualisé | 80-150 k€ | 200-400 k€ |
-| Nombre agents | 1-2 | 3-6 |
-| Marge brute par client | >25 % | >30 % |
-| Marge nette globale | 5-12 % | 8-15 % |
-| Taux signature devis | 30-40 % | 40-50 % |
-| Turnover agents | 0 % (vous + 1-2 fidèles) | <20 % |
-
-Voir [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026) pour le tableau de bord complet.
-
-## Erreurs à éviter en démarrage
-
-1. **Sous-tarification \"pour gagner le premier client\"** → marge négative impossible à corriger
-2. **Embauche trop tôt** → agent sous-employé, démotivé, échec premier recrutement
-3. **Comptabilité approximative** → rattrapage coûteux + risque URSSAF
-4. **Pas de RC Pro** → un dommage non assuré peut faire faillite la société
-5. **Pas de preuve de passage** → contestation client = parole contre parole, perte du contrat
-6. **Pas de calcul marge par client** → vous découvrez les déficitaires en fin d'année
-7. **Tout sur Excel et WhatsApp** → vous bloquez la croissance dès 5-8 agents
+### 4. Automatiser le calcul mensuel
+Avec un logiciel métier nettoyage moderne, le calcul de l'indemnité transport est automatisé chaque mois sur la base des jours réellement travaillés. Évite les erreurs et les rattrapages.
 
 ## Pour aller plus loin
 
-- [Fixer ses prix dans le nettoyage : méthode 2026](/blog/fixer-prix-nettoyage)
-- [Trouver des clients B2B nettoyage : 5 canaux qui marchent](/blog/trouver-clients-b2b-nettoyage)
 - [Convention collective propreté 2026 (IDCC 3043) : salaires + PDF](/blog/convention-collective-nettoyage-idcc-3043)
 - [Grille salaire nettoyage 2026 IDCC 3043 : tableau complet](/blog/grille-salaire-nettoyage-2026-idcc-3043)
-- [12 KPI société de nettoyage à suivre en 2026](/blog/kpi-societe-nettoyage-2026)
-- [Logiciel auto-entrepreneur nettoyage : gérer seul](/logiciel-auto-entrepreneur-nettoyage)
+- [Coût horaire chargé agent nettoyage 2026 : méthode](/blog/cout-horaire-charge-agent-nettoyage)
+- [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage)
+- [Fidéliser les agents : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover)
 - [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
 
-Pour démarrer avec un cockpit unifié dès le jour 1 (planning, devis, agents, preuve de passage, marge), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+Pour automatiser le calcul mensuel des indemnités transport et préparer la paie sans erreur, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+  },
+  {
+    slug: 'modele-planning-agents-nettoyage-excel',
+    title: "Modèle planning agents nettoyage Excel : template gratuit 2026",
+    excerpt: "Template Excel gratuit pour le planning de vos agents de nettoyage : multi-sites, semaine, mensuel. Téléchargement direct + guide d'utilisation.",
+    date: '7 juin 2026',
+    dateModified: '7 juin 2026',
+    readTime: '9 min',
+    tag: 'Outils',
+    tldr: "Un modèle de planning agents nettoyage sur Excel est viable pour une TPE 1-5 agents en démarrage. Au-delà de 5-8 agents et 8-10 sites, les limites d'Excel deviennent bloquantes : pas de mise à jour temps réel, pas d'accès mobile agent, pas d'alertes, pas de gestion des remplacements. Proprely propose 3 modèles Excel téléchargeables gratuits (planning semaine, planning multi-sites, suivi des heures) pour démarrer, et un logiciel métier gratuit en bêta pour passer au niveau supérieur.",
+    quickSummary: [
+      "Excel viable pour TPE 1-5 agents en démarrage.",
+      "Limites apparaissent dès 5-8 agents et 8-10 sites : pas de mobile, pas de temps réel, pas d'alertes.",
+      "3 modèles Proprely téléchargeables gratuits : planning semaine, planning multi-sites, suivi heures.",
+      "Comparatif Excel vs logiciel métier : ROI bascule en faveur du logiciel dès 5-8 agents.",
+      "Bonnes pratiques : 1 onglet par semaine, codes couleur par agent, ligne récap heures.",
+      "Pour passer à l'échelle : logiciel métier moderne avec import depuis Excel.",
+    ],
+    relatedSlugs: ['logiciel-planning-nettoyage-2026', 'erreurs-planning-nettoyage', 'gerer-agents-plusieurs-sites'],
+    faq: [
+      { q: "Où télécharger un modèle Excel planning agents nettoyage gratuit ?", a: "Proprely propose 3 modèles Excel téléchargeables gratuits sur sa page [Ressources](/ressources) : (1) modèle planning hebdomadaire agents (semaine type) ; (2) modèle planning multi-sites (vue agents × sites) ; (3) modèle suivi des heures par agent. Pas d'inscription requise, téléchargement direct au format .xlsx. Idéal pour démarrer une TPE propreté." },
+      { q: "À partir de combien d'agents Excel devient insuffisant ?", a: "Empiriquement : 5-8 agents et 8-10 sites = limite de viabilité d'Excel pour la propreté. Au-delà, les limites deviennent bloquantes : pas de mise à jour temps réel partagée (un seul utilisateur à la fois), pas d'accès mobile agent, pas d'alertes automatiques, pas de gestion des remplacements proposés, pas de calcul automatique des marges par client. Le coût d'erreur Excel (oublis, doubles affectations, heures sous-déclarées) dépasse alors le coût d'un logiciel métier." },
+      { q: "Quels sont les 3 onglets indispensables d'un planning Excel agents nettoyage ?", a: "Pour un modèle Excel viable : (1) Onglet \"Planning semaine\" — colonnes jours × lignes agents, cellules avec sites affectés et horaires ; (2) Onglet \"Agents\" — fiche par agent avec contrat, charge horaire cible, spécialités ; (3) Onglet \"Sites\" — liste des clients/sites avec fréquence et horaires demandés. Compléments utiles : onglet \"Heures du mois\" pour la préparation paie, onglet \"Remplaçants\" pour la brigade tournante." },
+      { q: "Comment partager un planning Excel avec les agents ?", a: "Trois options : (1) Imprimer le planning hebdomadaire et l'afficher en local ou le distribuer en début de semaine ; (2) Envoyer le fichier Excel par email aux agents (problème : pas de mise à jour en temps réel) ; (3) Héberger sur Google Sheets ou OneDrive partagé (mieux pour le temps réel, mais limite UX mobile). Aucune de ces options ne remplace un logiciel métier avec accès mobile natif par lien web." },
+      { q: "Quels sont les risques d'utiliser Excel comme planning agents ?", a: "Cinq risques principaux : (1) Versions multiples non synchronisées (1 fichier par chef d'équipe = chaos garanti) ; (2) Pas d'alerte automatique si oubli ; (3) Pas de calcul automatique des majorations heures (IDCC 3043) → risque URSSAF ; (4) Difficile à scaler au-delà de 5-8 agents (formules cassent, fichier devient lent) ; (5) Pas de preuve de passage liée au planning (critère éliminatoire des appels d'offres syndics/facility 2026)." },
+      { q: "Comment migrer mon planning Excel vers un logiciel métier ?", a: "Avec un logiciel métier moderne comme Proprely : (1) Vous exportez vos onglets Excel en CSV (5 min) ; (2) Onboarding 30 min avec le fondateur Proprely qui importe vos sites, agents et planning ; (3) Le logiciel est opérationnel à la fin de l'appel. Vos agents accèdent à leur planning sur leur téléphone via un lien web (sans app à installer)." },
+    ],
+    content: `## Excel ou logiciel métier ? Le seuil de bascule
+
+Le planning Excel est viable pour une **TPE 1-5 agents en démarrage**. C'est même recommandé : pas d'investissement, prise en main immédiate, suffisant pour le volume.
+
+Mais dès **5-8 agents et 8-10 sites**, les limites deviennent structurellement bloquantes :
+
+| Limitation Excel | Impact concret |
+| --- | --- |
+| Pas de mise à jour temps réel partagée | Un seul utilisateur à la fois, sinon versions concurrentes |
+| Pas d'accès mobile agent natif | Agent doit recevoir un PDF imprimé ou consulter un email |
+| Pas d'alertes automatiques | Oublis non détectés avant le client |
+| Pas de calcul automatique des majorations heures | Risque URSSAF (IDCC 3043) |
+| Pas de preuve de passage liée | Critère éliminatoire des appels d'offres syndics/facility 2026 |
+| Pas de gestion automatique des remplacements | Recherche manuelle stressante en cas d'absence |
+| Pas de calcul de marge par client | Vous découvrez les déficitaires en fin d'année |
+
+**Règle pratique :** restez sur Excel jusqu'à 5-8 agents, migrez vers un logiciel métier dès le passage à l'étape suivante.
+
+## 3 modèles Excel gratuits Proprely
+
+Proprely propose **3 modèles Excel téléchargeables gratuits** sur sa page [Ressources](/ressources). Pas d'inscription requise, téléchargement direct au format .xlsx.
+
+### Modèle 1 — Planning hebdomadaire agents
+**Format :** semaine type 7 jours × N agents.
+
+**Onglets inclus :**
+- Vue planning (jours en colonnes, agents en lignes)
+- Liste des sites/clients (référence)
+- Récapitulatif heures par agent (formules automatiques)
+
+**Idéal pour :** TPE 1-5 agents avec 5-10 sites récurrents.
+
+### Modèle 2 — Planning multi-sites
+**Format :** matrice agents × sites avec fréquences.
+
+**Onglets inclus :**
+- Mapping agents/sites par jour de la semaine
+- Liste des fréquences (quotidien, 2×/semaine, hebdo, mensuel)
+- Vue récapitulative charge par agent
+
+**Idéal pour :** TPE 5-8 agents avec 10-15 sites multi-fréquences.
+
+### Modèle 3 — Suivi des heures par agent
+**Format :** journal mensuel par agent avec calcul majorations.
+
+**Onglets inclus :**
+- Saisie quotidienne heures par agent
+- Calcul automatique heures complémentaires/supplémentaires
+- Récapitulatif mensuel pour la paie
+
+**Idéal pour :** préparation paie mensuelle conforme IDCC 3043.
+
+## Comment structurer son propre planning Excel (si vous voulez le faire vous-même)
+
+### Onglets indispensables (le minimum vital)
+
+**1. Planning semaine (onglet principal)**
+- Colonnes : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche
+- Lignes : 1 ligne par agent
+- Cellules : site affecté + horaire (ex : "Atrium 6h-10h")
+- Codes couleur : 1 couleur par client pour visualisation rapide
+
+**2. Agents (référentiel)**
+- Nom, prénom, contact
+- Type contrat (CDI temps plein, CDI temps partiel, CDD)
+- Charge horaire contractuelle hebdomadaire
+- Spécialités (vitrerie, décapage, bionettoyage…)
+- Zone résidentielle (pour optimisation tournée)
+
+**3. Sites (référentiel)**
+- Nom du client / site
+- Adresse complète + code accès
+- Contact gardien/syndic + téléphone
+- Fréquence et horaires demandés
+- Tarif négocié (pour calcul marge ultérieur)
+
+### Onglets recommandés (pour passer le cap)
+
+**4. Heures du mois**
+- Saisie quotidienne des heures réalisées par chaque agent
+- Formules de calcul : heures normales, complémentaires, supplémentaires, nuit, dimanche, jours fériés
+- Récapitulatif pour transmission paie
+
+**5. Remplaçants (brigade tournante)**
+- Liste des 2-3 remplaçants flexibles
+- Disponibilités et spécialités
+- Téléphones d'urgence
+
+**6. Marge par client**
+- CA facturé annuel par client
+- Heures réelles consommées
+- Coût horaire chargé × heures = coût direct
+- Marge brute = (CA - coût direct) / CA
+
+## Bonnes pratiques Excel pour le planning nettoyage
+
+### Codes couleur cohérents
+- 1 couleur par client → repérage visuel rapide
+- Code couleur statut : vert (confirmé), orange (à confirmer), rouge (problème)
+- Code couleur charge : alerte si dépassement >110 % de la charge contractuelle
+
+### Validation des données
+- Listes déroulantes pour les sites (évite les fautes de frappe)
+- Listes déroulantes pour les agents
+- Plages de cellules verrouillées (évite les modifications accidentelles)
+
+### Formules récurrentes utiles
+- SOMME(plage) : total heures par agent par semaine
+- NB.SI(plage; "Atrium") : nombre de passages par site
+- SI(heures supérieures au seuil; "Alerte"; "OK") : alerte surcharge
+- SOMMEPROD() : marge par client (CA - coût direct)
+
+### Sauvegardes
+- Versioning par semaine (Planning_S26.xlsx, Planning_S27.xlsx)
+- Sauvegarde cloud (OneDrive, Google Drive) automatique
+- Backup mensuel sur disque externe (sécurité)
+
+## Quand basculer vers un logiciel métier ?
+
+### Signaux d'alerte
+- Vous passez plus de 2-3 h/semaine à mettre à jour le planning Excel
+- Vous avez plusieurs versions concurrentes (1 par chef d'équipe)
+- Vous oubliez de mettre à jour les agents quand changement
+- Vous avez eu 2-3 oublis de passage dans les 3 derniers mois
+- Vous perdez des appels d'offres pour manque de preuve de passage
+- Vous ne savez pas votre marge réelle par client
+
+→ **Si vous cochez 2 cases ou plus : il est temps de migrer.**
+
+### Migration vers logiciel métier
+Avec un logiciel moderne comme Proprely :
+
+1. **Exportez vos onglets Excel en CSV** (5 min)
+2. **Onboarding 30 min avec le fondateur Proprely**
+   - Import des sites, agents, plannings
+   - Configuration des spécialités, fréquences, contrats
+   - Test du planning sur écran agent (lien web mobile)
+3. **À la fin de l'appel : vous êtes opérationnel**
+4. **Test parallèle 1-2 semaines** : Excel + Proprely en même temps pour valider
+5. **Bascule complète** : abandon d'Excel, agents sur lien web mobile
+
+**Coût migration : 0 € en bêta privée Proprely. ROI typique < 30 jours.**
+
+## Comparatif Excel vs logiciel métier
+
+| Critère | Excel | Logiciel métier (Proprely) |
+| --- | --- | --- |
+| Coût | 0 € (si Microsoft 365 déjà payé) | Gratuit en bêta, ~50-200 €/mois après |
+| Temps de mise en route | 0 (déjà installé) | 30 min onboarding |
+| Mise à jour temps réel partagée | Non (1 user à la fois) | Oui (multi-users) |
+| Accès mobile agent | Non (PDF ou email) | Oui (lien web sans app) |
+| Alertes automatiques | Non | Oui (oublis, surcharge) |
+| Calcul majorations IDCC 3043 | Manuel | Automatique |
+| Preuve de passage liée | Non | Oui (QR + photos + signature) |
+| Marge par client temps réel | Manuel (formules) | Natif dashboard |
+| Gestion remplacements | Manuel (appels) | Filtre auto remplaçants pertinents |
+| Limite scaling | 5-8 agents | 50+ agents |
+
+## Pour aller plus loin
+
+- [Ressources Proprely : modèles Excel gratuits](/ressources) — téléchargement direct des 3 modèles
+- [Logiciel planning nettoyage 2026 : 7 outils recommandés](/blog/logiciel-planning-nettoyage-2026)
+- [Logiciel planning agents nettoyage : drag-and-drop + spécialités](/fonctionnalites/planning-nettoyage)
+- [7 erreurs de planning nettoyage qui coûtent du CA](/blog/erreurs-planning-nettoyage)
+- [Gérer des agents multi-sites : la méthode 2026](/blog/gerer-agents-plusieurs-sites)
+- [Proprely vs Excel : pourquoi quitter le tableur ?](/proprely-vs-excel)
+- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
+
+Pour passer du planning Excel au logiciel métier en 30 minutes, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après. Import de votre Excel inclus.`,
   },
 ]
 

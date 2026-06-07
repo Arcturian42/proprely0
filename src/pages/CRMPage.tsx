@@ -264,6 +264,34 @@ export default function CRMPage() {
             </Link>
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide CRM propreté 2026</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              Pourquoi un CRM dédié propreté change la donne en 2026
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>Dans la propreté B2B, la gestion commerciale a 4 spécificités structurantes que les CRM généralistes (HubSpot, Salesforce, Pipedrive) ne couvrent pas nativement : (1) un client = N sites avec fréquences distinctes ; (2) catalogue prestations métier (quotidien, vitrerie hauteur, décapage, bionettoyage médical) ; (3) lien direct prospect signé → planning agents → marge réelle ; (4) cycle commercial court (devis → signature en 1-3 semaines vs 6-12 mois en SaaS B2B). Un CRM propreté natif gère ces 4 dimensions sans bricolage.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Les 5 cas d'usage du CRM propreté</h3>
+              <p><strong>1. Gérer le pipeline commercial multi-sites.</strong> Un syndic prospect = potentiellement 15-30 immeubles à chiffrer. Le CRM propreté permet de gérer ce prospect avec un opportunity parent + N sites enfants à chiffrer, suivre les devis individuellement, consolider la décision globale.</p>
+              <p><strong>2. Suivre les relances devis.</strong> Devis envoyé J0, relance auto J+5 (\"avez-vous reçu ?\"), relance auto J+10 (\"besoin de précisions ?\"), alerte dirigeant J+15 (\"décision en attente\"). Plus aucun prospect oublié, conversion +15-25 % vs gestion manuelle.</p>
+              <p><strong>3. Calculer la marge par compte en temps réel.</strong> Le CRM propreté relie le contrat signé au planning des agents et aux heures pointées : la marge brute par compte se calcule automatiquement (CA contrat - coût horaire chargé × heures réelles). Le commercial sait quels comptes prioriser pour l'upsell.</p>
+              <p><strong>4. Préparer les renouvellements annuels.</strong> Alerte automatique 90 jours avant échéance de contrat : revue commerciale, propositions d'upsell, négociation tarif aligné sur l'évolution IDCC 3043. Réduit le churn de 30-50 %.</p>
+              <p><strong>5. Centraliser les contacts par site.</strong> Gardien, syndic, facility manager, comptable client : chaque rôle a son contact, son historique d'échanges, sa fréquence de relance. Plus de \"qui appelle-t-on déjà pour ce site ?\" en pleine urgence.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">CRM propreté vs CRM généraliste : 8 critères qui font la différence</h3>
+              <p>Pour comparer objectivement, voici les 8 critères qui font basculer la décision vers un CRM propreté plutôt qu'un CRM généraliste : (1) Hiérarchie compte → sites multiple native (vs paramétrage en CRM générique) ; (2) Catalogue prestations propreté pré-configuré (vitrerie, décapage, bionettoyage) ; (3) Lien automatique devis signé → planning agents → marge ; (4) Calcul marge brute par compte en temps réel ; (5) Workflow renouvellement annuel intégré ; (6) Vocabulaire métier propreté natif (sites, fréquences, prestations) ; (7) Tarif compatible TPE/PME propreté ; (8) Onboarding court (30 min vs plusieurs semaines pour HubSpot).</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Quand basculer d'Excel/WhatsApp vers un CRM propreté ?</h3>
+              <p>Le seuil pratique : dès <strong>10-15 clients récurrents et 30-40 sites cumulés</strong>, la gestion Excel + WhatsApp craque (versions multiples, oublis de relance, perte de contacts). Le coût d'un CRM propreté (gratuit en bêta Proprely, ~50-100 €/mois après) est largement compensé par les gains de productivité commerciale et la réduction du churn. Voir notre article <Link to="/blog/trouver-clients-b2b-nettoyage" className="text-blue-600 font-semibold hover:underline">trouver des clients B2B nettoyage : 5 canaux qui marchent</Link> pour structurer votre acquisition.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir le sujet : <Link to="/blog/ameliorer-rentabilite-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">améliorer la rentabilité d'une société de nettoyage : 5 leviers 2026</Link> · <Link to="/blog/calculer-rentabilite-client-nettoyage" className="text-blue-600 font-semibold hover:underline">calculer la rentabilité par client en nettoyage</Link> · <Link to="/blog/kpi-societe-nettoyage-2026" className="text-blue-600 font-semibold hover:underline">12 KPI société de nettoyage à suivre en 2026</Link> · <Link to="/fonctionnalites/gestion-sites-clients-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel gestion sites et clients nettoyage</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">guide complet logiciel société de nettoyage 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
