@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Download, ArrowRight, CheckCircle } from 'lucide-react'
 import { trackEvent } from '../lib/analytics'
+import { trackPixelLead } from '../lib/pixels'
 
 type Props = {
   filePath: string
@@ -55,6 +56,7 @@ export default function LeadMagnetForm({ filePath, resourceSlug, resourceTitle }
       email_domain: cleanEmail.split('@')[1] || '',
       company: cleanCompany,
     })
+    trackPixelLead({ content_name: resourceTitle, content_category: 'lead_magnet' })
 
     await sendLead({
       email: cleanEmail,

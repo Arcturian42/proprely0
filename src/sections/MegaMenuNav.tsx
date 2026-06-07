@@ -127,6 +127,18 @@ export default function MegaMenuNav({ showHomeAccent = true }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileSection, setMobileSection] = useState<string | null>(null)
   const navRef = useRef<HTMLDivElement>(null)
+  const closeTimer = useRef<number | null>(null)
+
+  const scheduleClose = () => {
+    if (closeTimer.current) window.clearTimeout(closeTimer.current)
+    closeTimer.current = window.setTimeout(() => setOpenMenu(null), 180)
+  }
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      window.clearTimeout(closeTimer.current)
+      closeTimer.current = null
+    }
+  }
 
   useEffect(() => {
     if (!openMenu && !mobileOpen) return
@@ -181,10 +193,17 @@ export default function MegaMenuNav({ showHomeAccent = true }: Props) {
 
         <div className="hidden lg:flex items-center gap-1 text-sm text-slate-600 font-medium">
           {MENUS.map((menu) => (
-            <div key={menu.label} className="relative">
+            <div
+              key={menu.label}
+              className="relative"
+              onMouseEnter={() => {
+                cancelClose()
+                setOpenMenu(menu.label)
+              }}
+              onMouseLeave={scheduleClose}
+            >
               <button
                 onClick={() => setOpenMenu(openMenu === menu.label ? null : menu.label)}
-                onMouseEnter={() => setOpenMenu(menu.label)}
                 className={`px-3 py-2 rounded-lg hover:bg-slate-50 hover:text-slate-900 transition-colors inline-flex items-center gap-1 ${
                   openMenu === menu.label ? 'text-slate-900 bg-slate-50' : ''
                 }`}
@@ -197,7 +216,8 @@ export default function MegaMenuNav({ showHomeAccent = true }: Props) {
 
               {openMenu === menu.label && (
                 <div
-                  onMouseLeave={() => setOpenMenu(null)}
+                  onMouseEnter={cancelClose}
+                  onMouseLeave={scheduleClose}
                   className="absolute top-full left-0 mt-1 bg-white border border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 p-6 w-[640px] z-50"
                 >
                   <div className="grid grid-cols-2 gap-x-8 gap-y-2">

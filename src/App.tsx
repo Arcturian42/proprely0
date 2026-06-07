@@ -4,6 +4,7 @@ import { useRoute } from './lib/useRoute'
 import ScrollProgress from './components/ScrollProgress'
 import CookieBanner from './components/CookieBanner'
 import { initAnalytics, trackPageView } from './lib/analytics'
+import { initPixels, trackPixelPageView } from './lib/pixels'
 
 const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
 const BlogIndex = lazy(() => import('./pages/BlogIndex'))
@@ -39,6 +40,7 @@ const StickyCTAMobile = lazy(() => import('./sections/StickyCTAMobile'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
+const SecuriteRGPD = lazy(() => import('./pages/SecuriteRGPD'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -151,6 +153,10 @@ const META: Record<string, RouteMeta> = {
     title: "Application mobile agents nettoyage : sans app · Proprely",
     description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite.",
   },
+  '/securite-rgpd': {
+    title: 'Sécurité & RGPD · Proprely',
+    description: "Sécurité et conformité RGPD chez Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables en un email.",
+  },
 }
 
 
@@ -196,6 +202,7 @@ function App() {
 
   useEffect(() => {
     initAnalytics()
+    initPixels()
   }, [])
 
   useEffect(() => {
@@ -216,6 +223,7 @@ function App() {
       setRobots(undefined)
     }
     trackPageView(route)
+    trackPixelPageView()
   }, [route])
 
   // Dé-doublonnage du JSON-LD. Chaque page prérendue embarque un bloc
@@ -267,6 +275,7 @@ function App() {
   else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
+  else if (route === '/securite-rgpd' || route === '/securite-rgpd/') content = <SecuriteRGPD />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />

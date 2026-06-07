@@ -1481,6 +1481,46 @@ const cguHtml = buildHtml({
 writePage('/cgu', cguHtml)
 generated.push('/cgu')
 
+const securiteRgpdBody = `
+  <h1>Sécurité &amp; conformité RGPD chez Proprely</h1>
+  <p>Vos données métier — clients, sites, agents, contrats — sont parmi les plus sensibles que vous traitez. Voici comment Proprely les protège.</p>
+  <h2>Les 6 piliers de notre sécurité</h2>
+  <ul>
+    <li><strong>Hébergement européen</strong> : données hébergées en France et en UE, sans transfert hors UE sans clauses contractuelles types.</li>
+    <li><strong>Chiffrement bout en bout</strong> : TLS 1.3 en transit, AES-256 au repos, clés rotées et gérées en HSM.</li>
+    <li><strong>Contrôle d'accès strict</strong> : authentification renforcée, journalisation complète, principe du moindre privilège.</li>
+    <li><strong>Conformité RGPD by design</strong> : registre des traitements, DPA à la demande, durées de conservation paramétrées, exports 1-clic.</li>
+    <li><strong>Transparence opérationnelle</strong> : vous gardez la propriété de vos données, export CSV/Excel à tout moment, pas de lock-in.</li>
+    <li><strong>Surveillance et sauvegardes</strong> : sauvegardes chiffrées quotidiennes, rétention 30 jours, surveillance 24/7.</li>
+  </ul>
+  <h2>Sous-traitants techniques</h2>
+  <p>Liste complète et à jour de nos sous-traitants : Hostinger / Hetzner (hébergement applicatif UE), Vercel (site marketing UE), Cloudflare (CDN UE), Google GA4 (mesure anonymisée UE, opt-in), Fillout (formulaires UE), Brevo à venir (emails France).</p>
+  <h2>Vos droits RGPD</h2>
+  <p>Vous disposez de 6 droits sur vos données personnelles : accès, rectification, effacement, portabilité, opposition / limitation, retrait de consentement. Tous activables à <a href="mailto:dpo@proprely.fr">dpo@proprely.fr</a>, réponse sous 30 jours maximum.</p>
+  <h2>DPA et certifications</h2>
+  <p>Un Data Processing Agreement (DPA) au sens de l'article 28 du RGPD est disponible sur demande. Proprely applique les principes ISO 27001 sans certification formelle en phase de bêta privée ; la feuille de route post-bêta inclut une certification ISO 27001 puis une qualification SecNumCloud quand l'échelle le justifiera.</p>
+`.trim()
+
+const securiteRgpdHtml = buildHtml({
+  url: '/securite-rgpd',
+  title: 'Sécurité & RGPD · Proprely',
+  description: "Sécurité et conformité RGPD chez Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables en un email.",
+  schemas: [
+    webpageSchema(
+      'Sécurité & RGPD Proprely',
+      "Hébergement européen, chiffrement, DPA, sous-traitants, droits RGPD.",
+      `${ORIGIN}/securite-rgpd/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Sécurité & RGPD', item: `${ORIGIN}/securite-rgpd/` },
+      ]
+    ),
+  ],
+  bodyHtml: securiteRgpdBody,
+})
+writePage('/securite-rgpd', securiteRgpdHtml)
+generated.push('/securite-rgpd')
+
 const featureIndexBody = `
   <h1>Fonctionnalités logiciel nettoyage</h1>
   <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>
