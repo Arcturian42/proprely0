@@ -1521,6 +1521,42 @@ const securiteRgpdHtml = buildHtml({
 writePage('/securite-rgpd', securiteRgpdHtml)
 generated.push('/securite-rgpd')
 
+const casClientsBody = `
+  <h1>Cas clients : ils pilotent leur société de nettoyage avec Proprely</h1>
+  <p>Des dirigeants de société de nettoyage B2B qui ont remplacé Excel, WhatsApp et Word par un cockpit unique. Voici leurs défis avant Proprely, ce qu'ils ont mis en place et les résultats mesurés.</p>
+  <h2>Récits en cours de collecte</h2>
+  <p>Nous recueillons actuellement les retours détaillés de nos premières sociétés fondatrices : situation avant Proprely, mise en place, résultats chiffrés à 30, 60 et 90 jours. Les premiers cas clients publiés sous peu.</p>
+  <p>En attendant, vous pouvez <a href="${ORIGIN}/audit-gratuit/">prendre un audit gratuit</a> avec le fondateur ou échanger avec lui directement à <a href="mailto:contact@proprely.fr">contact@proprely.fr</a>.</p>
+  <h2>Vous êtes déjà membre fondateur ?</h2>
+  <p>On adorerait raconter votre passage à Proprely. 20 minutes d'échange, rédaction par nous, validation écrite avant publication. En contrepartie : mise en avant sur cette page, lien vers votre société, et un mois de support prioritaire offert.</p>
+  <h2>Pourquoi les premiers fondateurs nous rejoignent</h2>
+  <ul>
+    <li><strong>Conçu avec eux</strong> : chaque fonctionnalité est cadrée avec des dirigeants de société de nettoyage. Pas de menu inutile, pas de jargon SaaS générique.</li>
+    <li><strong>Onboarding 30 min</strong> : le fondateur vous accompagne en visio, importe votre Excel et vos contacts agents. Vous repartez avec un cockpit opérationnel.</li>
+    <li><strong>Tarif fondateur à vie</strong> : les 30 premières sociétés conservent leur tarif privilégié après la bêta. Pas d'augmentation arbitraire post-lancement.</li>
+  </ul>
+`.trim()
+
+const casClientsHtml = buildHtml({
+  url: '/cas-clients',
+  title: 'Cas clients : ils pilotent leur société de nettoyage avec Proprely',
+  description: "Retours détaillés de sociétés de nettoyage B2B fondatrices Proprely : défi initial, mise en place, résultats chiffrés (heures gagnées, marge, litiges).",
+  schemas: [
+    webpageSchema(
+      'Cas clients Proprely',
+      "Retours de sociétés de nettoyage B2B qui pilotent leur activité avec Proprely.",
+      `${ORIGIN}/cas-clients/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Cas clients', item: `${ORIGIN}/cas-clients/` },
+      ]
+    ),
+  ],
+  bodyHtml: casClientsBody,
+})
+writePage('/cas-clients', casClientsHtml)
+generated.push('/cas-clients')
+
 const featureIndexBody = `
   <h1>Fonctionnalités logiciel nettoyage</h1>
   <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>
