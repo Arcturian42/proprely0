@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { CheckCircle, ArrowRight, Award, Shield, Users, Calculator, HelpCircle } from 'lucide-react'
+import { useEffect } from 'react'
+import { CheckCircle, ArrowRight, Award, Shield, Users, Calculator, HelpCircle, TrendingDown, TrendingUp } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -50,9 +51,141 @@ const faqs = [
     q: "Pourquoi limiter à 30 sociétés fondatrices ?",
     a: "Parce que chaque société fondatrice bénéficie d'un onboarding et d'un support personnalisé par le fondateur. Au-delà, la qualité du suivi se dégraderait. Une fois les 30 places prises, la bêta se referme jusqu'au lancement public.",
   },
+  {
+    q: "Le tarif sera-t-il aligné sur Organilog, Progiclean ou PROPRET ?",
+    a: "L'objectif est de proposer un tarif plus accessible et plus lisible que les outils legacy du marché, sans setup à plusieurs milliers d'euros ni surcoût par module. La grille définitive sera publiée et notifiée aux fondateurs en avance.",
+  },
+  {
+    q: "Y a-t-il des frais de setup ou d'intégration ?",
+    a: "Non. L'onboarding 30 min avec le fondateur est inclus, sans frais. Aucun consultant intégrateur, aucun setup à 2 000 € comme on en voit ailleurs. Vous importez votre Excel actuel et on configure ensemble votre cockpit.",
+  },
+  {
+    q: "Que comprend le support pendant la bêta ?",
+    a: "Support prioritaire en direct par le fondateur, par email et messagerie. Délai de réponse cible : moins de 4 h ouvrées. Les membres fondateurs ont une ligne directe.",
+  },
+  {
+    q: "Puis-je migrer mes données depuis Excel ou un autre logiciel ?",
+    a: "Oui. Pendant l'onboarding 30 min, le fondateur importe vos clients, sites, agents, plannings et historiques depuis n'importe quel format Excel/CSV. La migration depuis Organilog, Progiclean ou PROPRET est également supportée via export CSV.",
+  },
+  {
+    q: "Le tarif fondateur reste-t-il valable si j'ajoute des agents ?",
+    a: "Oui. Le tarif fondateur est conservé à vie quelle que soit votre croissance pendant la durée de votre contrat. Si vous passez de 5 à 50 agents, le tarif fondateur s'applique sur l'ensemble.",
+  },
 ]
 
+const COST_COMPARISON = [
+  {
+    label: "Logiciel / abonnement",
+    excel: "0 €",
+    proprely: "Bêta : 0 €",
+    proprelyDetail: "Tarif fondateur publié en fin de bêta",
+  },
+  {
+    label: "Temps dispersion (admin, copier-coller, recherches)",
+    excel: "6 à 10 h / semaine",
+    proprely: "1 à 2 h / semaine",
+    proprelyDetail: "Saisie unique, données qui circulent entre modules",
+  },
+  {
+    label: "Coût horaire dirigeant chargé",
+    excel: "~ 45 €/h",
+    proprely: "~ 45 €/h",
+    proprelyDetail: "Identique — mais 5x moins d'heures consommées",
+  },
+  {
+    label: "Coût annuel de la dispersion",
+    excel: "12 600 à 21 000 €",
+    proprely: "~ 3 000 €",
+    proprelyDetail: "9 000 à 18 000 € récupérés par an",
+  },
+  {
+    label: "Litiges syndic / client sans preuve de passage",
+    excel: "3 à 8 / an",
+    proprely: "≈ 0",
+    proprelyDetail: "QR + photos + signature standardisés",
+  },
+  {
+    label: "Marge invisible perdue (devis sous-tarifés)",
+    excel: "−2 à −5 points",
+    proprely: "+2 à +5 points",
+    proprelyDetail: "Devis IA + suivi marge temps réel",
+  },
+  {
+    label: "Risque URSSAF (heures complémentaires non tracées)",
+    excel: "Élevé",
+    proprely: "Maîtrisé",
+    proprelyDetail: "Pointage GPS + calcul majorations IDCC 3043",
+  },
+]
+
+function injectPricingSchema() {
+  const id = 'pricing-schema'
+  document.getElementById(id)?.remove()
+  const today = new Date().toISOString().slice(0, 10)
+  const schemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: 'Proprely',
+      description:
+        "Logiciel de gestion pour société de nettoyage B2B : planning agents, devis, preuve de passage, marge par client.",
+      url: 'https://proprely.fr/tarifs/',
+      brand: { '@type': 'Brand', name: 'Proprely' },
+      offers: {
+        '@type': 'Offer',
+        name: 'Membre fondateur — bêta privée',
+        priceCurrency: 'EUR',
+        price: '0',
+        availability: 'https://schema.org/LimitedAvailability',
+        url: 'https://proprely.fr/tarifs/',
+        validFrom: '2026-01-01',
+        description: `Accès gratuit pendant la bêta privée. Tarif fondateur conservé à vie après le lancement public. ${FOUNDER_SPOTS.total - FOUNDER_SPOTS.taken} places restantes sur ${FOUNDER_SPOTS.total}.`,
+        eligibleQuantity: {
+          '@type': 'QuantitativeValue',
+          maxValue: FOUNDER_SPOTS.total,
+        },
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Tarifs Proprely',
+      url: 'https://proprely.fr/tarifs/',
+      datePublished: '2026-01-01',
+      dateModified: today,
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
+          { '@type': 'ListItem', position: 2, name: 'Tarifs', item: 'https://proprely.fr/tarifs/' },
+        ],
+      },
+    },
+  ]
+  const script = document.createElement('script')
+  script.type = 'application/ld+json'
+  script.id = id
+  script.text = JSON.stringify(schemas)
+  document.head.appendChild(script)
+}
+
 export default function Pricing() {
+  useEffect(() => {
+    injectPricingSchema()
+    return () => {
+      document.getElementById('pricing-schema')?.remove()
+    }
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <PageNav />
@@ -209,6 +342,75 @@ export default function Pricing() {
               <h2 className="text-base sm:text-lg font-semibold text-slate-700">Les premiers fondateurs ont déjà signé</h2>
             </div>
             <SocialProof variant="indicators" />
+          </div>
+        </section>
+
+        <section className="py-16 sm:py-20 border-t border-slate-100 bg-gradient-to-b from-white to-slate-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-10">
+              <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Comparatif chiffré</p>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+                Combien Proprely vous fait économiser vs Excel + WhatsApp
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Ordres de grandeur observés en propreté B2B pour une société de 5 à 30 agents. Les montants varient selon votre coût horaire dirigeant et votre niveau de dispersion actuel.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+              <table className="w-full text-sm">
+                <thead className="bg-slate-50 border-b border-slate-200">
+                  <tr>
+                    <th className="text-left p-4 font-bold text-slate-700">Poste</th>
+                    <th className="text-left p-4 font-bold text-slate-700">
+                      <span className="block text-xs uppercase tracking-wider text-slate-400 mb-1">Sans logiciel</span>
+                      Excel + WhatsApp
+                    </th>
+                    <th className="text-left p-4 font-bold text-slate-700">
+                      <span className="block text-xs uppercase tracking-wider text-blue-600 mb-1">Avec Proprely</span>
+                      Cockpit unique
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COST_COMPARISON.map((row) => (
+                    <tr key={row.label} className="border-b border-slate-100 last:border-b-0">
+                      <td className="p-4 font-semibold text-slate-900 align-top">{row.label}</td>
+                      <td className="p-4 text-slate-700 align-top">
+                        <span className="inline-flex items-center gap-1.5">
+                          <TrendingUp size={12} className="text-amber-600 shrink-0" />
+                          <span>{row.excel}</span>
+                        </span>
+                      </td>
+                      <td className="p-4 align-top">
+                        <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-700">
+                          <TrendingDown size={12} className="text-emerald-600 shrink-0" />
+                          <span>{row.proprely}</span>
+                        </span>
+                        <div className="text-xs text-slate-500 mt-1 leading-relaxed">{row.proprelyDetail}</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                to="/calculateur-roi"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white rounded-xl px-6 py-3 font-bold text-sm hover:bg-slate-800 transition-colors"
+              >
+                <Calculator size={14} />
+                Calculer mon économie sur mon activité
+              </Link>
+              <Link
+                to="/proprely-vs-excel"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3 font-bold text-sm hover:bg-slate-50 transition-colors"
+              >
+                Comparatif détaillé Proprely vs Excel
+                <ArrowRight size={14} />
+              </Link>
+            </div>
           </div>
         </section>
 
