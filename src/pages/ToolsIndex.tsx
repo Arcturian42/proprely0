@@ -175,6 +175,30 @@ export default function ToolsIndex() {
             <NewsletterSignup source="tools_index" />
           </div>
         </section>
+
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Guide outils gestion société nettoyage</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 leading-tight">
+              4 calculateurs gratuits pour piloter votre société de nettoyage en 2026
+            </h2>
+            <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4 text-base sm:text-lg">
+              <p>Piloter une société de nettoyage B2B sans outils chiffrés, c'est piloter à l'aveugle. Proprely met à disposition gratuitement (sans inscription) 4 calculateurs interactifs qui répondent aux 4 questions économiques les plus structurantes du métier : quel prix pratiquer au m², quelle est la rentabilité d'un contrat, quel est le ROI d'une digitalisation, quel est le coût horaire chargé d'un agent. Ces outils sont conçus pour les TPE/PME 3-50 agents qui veulent prendre des décisions éclairées sans investir dans un logiciel métier complet.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Calculateur prix nettoyage au m² 2026</h3>
+              <p>Estimation interactive du prix de nettoyage de bureaux selon : surface, type de local (bureaux standards, médical, restauration), zone géographique (densité urbaine), fréquence d'intervention (quotidien, 3×/sem, hebdo). Renvoie une fourchette de prix m² alignée sur le marché 2026, avec ajustements pour technicité et horaires décalés. Idéal pour qualifier un prospect avant devis détaillé. Voir aussi notre <Link to="/blog/tarif-nettoyage-bureaux-m2-2026" className="text-blue-600 font-semibold hover:underline">grille complète tarif nettoyage bureaux au m² 2026</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Simulateur de rentabilité contrat de nettoyage</h3>
+              <p>Calcul de la marge brute et de la marge nette d'un contrat de nettoyage en 1 minute. Inputs : CA annuel du contrat, heures consommées, coût horaire chargé de vos agents, quote-part frais de structure (12-15 % typique). Renvoie : marge brute, marge nette, résultat horaire — avec verdict couleur (vert/orange/rouge) selon le seuil de rentabilité. Indispensable avant de signer un nouveau contrat pour vérifier la marge cible. Voir aussi notre <Link to="/blog/calculer-rentabilite-client-nettoyage" className="text-blue-600 font-semibold hover:underline">méthode complète pour calculer la rentabilité par client</Link>.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Calculateur ROI société de nettoyage</h3>
+              <p>Estimation chiffrée du coût caché de la dispersion (Excel + WhatsApp + Word + papier) vs un cockpit unifié. Inputs : nombre d'agents, nombre de sites, heures hebdomadaires de gestion administrative actuelle. Renvoie : heures perdues par an, coût en euros (selon taux horaire dirigeant), gain potentiel en passant à un logiciel métier. Outil utile pour le business case interne avant un investissement logiciel.</p>
+
+              <h3 className="text-xl font-bold text-slate-900 mt-8">Pour aller plus loin</h3>
+              <p>Approfondir : <Link to="/blog/cout-horaire-charge-agent-nettoyage" className="text-blue-600 font-semibold hover:underline">coût horaire chargé agent nettoyage 2026 : méthode</Link> · <Link to="/blog/fixer-prix-nettoyage" className="text-blue-600 font-semibold hover:underline">prix nettoyage 2026 : règle des 3× + grille tarifaire</Link> · <Link to="/blog/ameliorer-rentabilite-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">améliorer la rentabilité société de nettoyage : 5 leviers 2026</Link> · <Link to="/blog/kpi-societe-nettoyage-2026" className="text-blue-600 font-semibold hover:underline">12 KPI société de nettoyage à suivre en 2026</Link> · <Link to="/ressources" className="text-blue-600 font-semibold hover:underline">modèles Excel gratuits (devis, planning, suivi heures)</Link> · <Link to="/logiciel-societe-nettoyage" className="text-blue-600 font-semibold hover:underline">logiciel société de nettoyage : guide complet 2026</Link>.</p>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

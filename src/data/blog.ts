@@ -4064,6 +4064,375 @@ Suivre ces 12 KPI manuellement sur Excel demande typiquement 4-6 heures par mois
 
 Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
   },
+  {
+    slug: 'indemnite-transport-proprete-2026',
+    title: "Indemnité transport propreté 2026 : montant, calcul et remboursement",
+    excerpt: "Indemnité transport propreté 2026 (IDCC 3043) : barèmes, calcul, conditions, remboursement employeur. Tableaux par zone et par mode de transport.",
+    date: '7 juin 2026',
+    dateModified: '7 juin 2026',
+    readTime: '9 min',
+    tag: 'Conformité',
+    tldr: "L'indemnité transport dans la propreté (IDCC 3043) en 2026 comprend deux dispositifs cumulables : (1) le remboursement obligatoire de 50 % du titre de transport public (Navigo, abonnement train, bus, métro), valable partout en France ; (2) la prime de transport conventionnelle propreté qui couvre l'usage de véhicule personnel ou les déplacements non couverts par les transports en commun. Montant moyen 2026 : 75-150 €/mois selon zone et trajet. Cumulable avec la prime de mobilité durable (forfait vélo, covoiturage).",
+    quickSummary: [
+      "Remboursement transport public 50 % obligatoire (loi française, applicable tous secteurs).",
+      "Prime de transport conventionnelle propreté : variable selon accord d'entreprise (50-100 €/mois moyenne).",
+      "Forfait mobilité durable (vélo, covoiturage) : jusqu'à 800 €/an exonéré.",
+      "Cumul possible entre les 3 dispositifs.",
+      "Calcul mensuel sur base réelle (jours travaillés ou prorata temps partiel).",
+      "Exonération sociale + fiscale dans la limite des plafonds URSSAF.",
+    ],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'grille-salaire-nettoyage-2026-idcc-3043', 'cout-horaire-charge-agent-nettoyage'],
+    faq: [
+      { q: "Quelle est l'indemnité transport en propreté en 2026 ?", a: "Trois dispositifs cumulables : (1) Remboursement obligatoire 50 % du titre de transport public (Navigo, abonnement train, bus, métro) — applicable partout en France ; (2) Prime de transport conventionnelle propreté variable selon accord d'entreprise (50-100 €/mois moyenne, plus en grande couronne ou zones rurales) ; (3) Forfait mobilité durable (vélo, covoiturage) jusqu'à 800 €/an. Le montant total typique pour un agent francilien : 75-150 €/mois." },
+      { q: "Le remboursement 50 % du Navigo est-il obligatoire dans la propreté ?", a: "Oui, c'est une obligation légale (Code du travail article L3261-2) applicable à toutes les entreprises françaises, y compris en propreté. L'employeur rembourse 50 % du prix du titre d'abonnement (Pass Navigo, abonnements train SNCF/TER, abonnements bus/tram/métro régionaux), sur présentation du justificatif. Le remboursement est mensuel, exonéré de cotisations sociales et d'impôt sur le revenu." },
+      { q: "Comment se calcule la prime de transport propreté conventionnelle ?", a: "La prime conventionnelle propreté n'a pas de barème national unique : elle est définie par accord d'entreprise (ou de branche locale). Méthode typique : barème kilométrique × distance domicile-travail × jours travaillés / mois. Exemple : 0,25 €/km × 15 km AR × 22 jours = 82,50 €/mois. Conditions fréquentes : transports en commun non praticables (horaires nuit, zones non desservies), ou trajet > seuil défini par accord (souvent 5-10 km)." },
+      { q: "Peut-on cumuler les 3 dispositifs (Navigo 50 % + prime transport + forfait mobilité durable) ?", a: "Oui, mais avec un plafond cumulé pour bénéficier de l'exonération sociale et fiscale. En 2026, le plafond cumulé est de 800 €/an (forfait mobilité durable + prime transport pour usage véhicule personnel). Au-delà, l'excédent devient soumis à cotisations et impôt. Le remboursement 50 % du transport public est exonéré sans plafond." },
+      { q: "Le forfait mobilité durable est-il obligatoire ?", a: "Non, il est optionnel pour l'employeur, mais incité fiscalement (exonération totale dans la limite de 800 €/an). Couvre : vélo personnel ou électrique, covoiturage (chauffeur ou passager), véhicules en libre-service (vélo, trottinette), véhicules à hydrogène ou électriques personnels. Mise en place par accord d'entreprise ou DUE. De plus en plus utilisé dans la propreté pour fidéliser les agents et améliorer l'attractivité RH." },
+      { q: "Comment justifier l'indemnité transport pour l'URSSAF ?", a: "Conservation des justificatifs pendant 3 ans minimum : (1) Photocopie du titre de transport public (Navigo, abonnement) ou attestation d'abonnement ; (2) Pour la prime transport véhicule personnel : déclaration sur l'honneur de l'agent + carte grise (preuve propriété) + relevé kilométrique trimestriel ; (3) Pour le forfait mobilité durable : attestation employeur + déclaration agent. Audit URSSAF type : contrôle aléatoire 1-2 % des entreprises/an." },
+      { q: "L'indemnité transport rentre-t-elle dans le coût horaire chargé d'un agent ?", a: "Oui. Pour un agent francilien type 2026 : remboursement Navigo (~38 €/mois) + prime transport optionnelle (~50-100 €/mois) = 88-138 €/mois soit 0,55-0,90 €/h sur base 151,67 h. À intégrer dans le coût horaire chargé pour le calcul de marge par client et la tarification. Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage)." },
+      { q: "Que se passe-t-il pour les agents en temps partiel ?", a: "Le remboursement 50 % du transport public est intégral si le titre couvre les jours travaillés (pas de prorata). La prime de transport conventionnelle est généralement prorata du temps de présence (jours réellement travaillés vs jours ouvrés du mois). Le forfait mobilité durable est aussi prorata. Une bonne pratique : préciser le mode de calcul dans le contrat de travail dès l'embauche." },
+    ],
+    content: `## Les 3 dispositifs d'indemnité transport en propreté 2026
+
+En 2026, un agent de nettoyage en France peut bénéficier de **3 dispositifs cumulables** pour les frais de transport domicile-travail :
+
+| Dispositif | Statut | Montant moyen | Conditions |
+| --- | --- | --- | --- |
+| Remboursement 50 % transport public | **Obligatoire** | 38-50 €/mois (Navigo IDF) | Sur présentation du titre d'abonnement |
+| Prime transport conventionnelle propreté | Selon accord | 50-100 €/mois | Usage véhicule personnel ou transports non praticables |
+| Forfait mobilité durable | Optionnel | Jusqu'à 800 €/an | Vélo, covoiturage, véhicule libre-service |
+
+**Total typique pour un agent francilien :** 75-150 €/mois selon mode de transport et zone.
+
+## Dispositif 1 — Remboursement 50 % du transport public (obligation légale)
+
+### Cadre juridique
+Article L3261-2 du Code du travail : tout employeur français doit rembourser 50 % du prix de l'abonnement de transport public utilisé par le salarié pour son trajet domicile-travail.
+
+### Modalités
+- **Sur présentation** : titre d'abonnement (Pass Navigo, abonnement SNCF/TER, abonnements bus/métro/tram régionaux)
+- **Mensuel** : remboursement chaque mois sur la fiche de paie
+- **Exonération totale** : pas de cotisations sociales, pas d'impôt sur le revenu
+
+### Exemples 2026 par zone
+
+| Zone | Abonnement | Coût agent | Remboursement employeur |
+| --- | --- | --- | --- |
+| Île-de-France | Navigo annuel | 86,40 €/mois | 43,20 €/mois |
+| Lyon | TCL annuel | 64,60 €/mois | 32,30 €/mois |
+| Marseille | RTM mensuel | 53 €/mois | 26,50 €/mois |
+| Bordeaux | TBM mensuel | 50,50 €/mois | 25,25 €/mois |
+| Toulouse | Tisséo annuel | 47,50 €/mois | 23,75 €/mois |
+| Lille | Ilévia mensuel | 70 €/mois | 35 €/mois |
+
+**Note :** ces tarifs évoluent annuellement (généralement en août pour la rentrée). Vérifier les barèmes en vigueur.
+
+## Dispositif 2 — Prime de transport conventionnelle propreté
+
+### Quand s'applique-t-elle ?
+La prime de transport conventionnelle propreté est définie par **accord d'entreprise** (ou de branche locale). Elle vise les situations où :
+- Les transports en commun ne sont pas praticables (horaires nuit, zones rurales non desservies)
+- L'agent utilise son véhicule personnel (voiture, deux-roues)
+- Le trajet domicile-travail dépasse un seuil défini par accord (souvent 5-10 km)
+
+### Calcul typique
+**Formule courante :** Barème kilométrique × Distance domicile-travail aller-retour × Jours travaillés / mois
+
+**Exemple :** Agent en zone rurale, 15 km AR, 22 jours/mois, barème 0,25 €/km :
+- Calcul : 0,25 × 15 × 22 = **82,50 €/mois**
+
+### Barèmes 2026 indicatifs
+
+| Distance AR | Barème €/km | Jours/mois | Prime mensuelle |
+| --- | --- | --- | --- |
+| 5-10 km | 0,15-0,20 € | 22 | 16-44 € |
+| 10-20 km | 0,20-0,30 € | 22 | 44-132 € |
+| 20-40 km | 0,25-0,35 € | 22 | 110-308 € |
+| 40+ km | 0,30-0,40 € | 22 | 264-352 € |
+
+**Note :** ces barèmes sont indicatifs et dépendent strictement de l'accord d'entreprise applicable.
+
+## Dispositif 3 — Forfait mobilité durable (FMD)
+
+### Cadre
+Créé en 2020, renforcé en 2024-2026, le forfait mobilité durable permet à l'employeur de couvrir les frais des modes de transport alternatifs :
+
+- **Vélo** personnel ou électrique (acquisition, entretien, accessoires)
+- **Covoiturage** (chauffeur ou passager)
+- **Véhicules en libre-service** (vélo, trottinette électrique, autopartage)
+- **Véhicules à hydrogène ou électriques** personnels (location, recharge)
+
+### Plafond 2026
+- **800 €/an** par salarié, totalement exonéré de cotisations sociales et d'impôt
+- Cumul avec remboursement transport public possible (plafond global différent à vérifier annuellement)
+
+### Mise en place
+- Accord d'entreprise OU décision unilatérale de l'employeur (DUE)
+- Conditions d'attribution claires (justificatifs demandés)
+- Montant uniforme par salarié ou variable selon distance
+
+### Pourquoi c'est intéressant en propreté
+La propreté souffre d'une attractivité RH faible. Un FMD bien communiqué peut différencier l'employeur sur le marché du travail : "chez nous, votre vélo est financé jusqu'à 800 €/an". Argument fort en recrutement et en fidélisation.
+
+## Cumul des 3 dispositifs : comment ça marche
+
+**Exemple complet — Agent francilien 2026 :**
+
+| Dispositif | Montant mensuel | Exonération |
+| --- | --- | --- |
+| Remboursement 50 % Pass Navigo | 43,20 € | Totale |
+| Prime transport pour week-end/nuit | 30,00 € (sur jours hors RER) | Dans plafond cumulé 800 €/an |
+| Forfait mobilité durable (vélo personnel) | 30,00 € | Dans plafond cumulé 800 €/an |
+| **Total mensuel** | **103,20 €** | |
+
+**Plafond cumulé prime transport + FMD :** 800 €/an exonéré (montant 2026, à vérifier). Au-delà : excédent soumis à cotisations sociales et impôt.
+
+## Justification URSSAF
+
+### Documents à conserver (3 ans minimum)
+- **Remboursement transport public** : copie du titre d'abonnement (Navigo, abonnement) ou attestation employeur
+- **Prime transport véhicule personnel** : déclaration sur l'honneur agent + carte grise + relevé kilométrique trimestriel
+- **Forfait mobilité durable** : attestation employeur précisant le mode (vélo, covoiturage…) + déclaration agent
+
+### Risques en cas de contrôle URSSAF
+- **Remboursement non justifié** : requalification en avantage en nature (cotisations + impôt rétroactifs)
+- **Cumul au-delà du plafond non déclaré** : redressement sur la partie excédentaire
+- **Prime transport non conventionnelle versée sans accord** : risque de requalification
+
+## Impact sur le coût horaire chargé d'un agent
+
+Pour un agent francilien type 2026 avec cumul classique (Navigo 50 % + prime transport modeste) :
+
+| Poste | Montant |
+| --- | --- |
+| Remboursement Navigo 50 % | 43 €/mois |
+| Prime transport | 50 €/mois |
+| **Total transport** | **93 €/mois** |
+| **Impact /heure (151,67 h)** | **0,61 €/h** |
+
+À intégrer dans votre **coût horaire chargé** pour la tarification précise des contrats. Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage).
+
+## Bonnes pratiques pour les dirigeants
+
+### 1. Auditer vos pratiques actuelles
+Beaucoup de TPE/PME propreté ne respectent pas strictement les obligations légales (Navigo 50 %). Risque URSSAF + risque social (mauvaise image).
+
+### 2. Formaliser par accord d'entreprise
+Au-delà du minimum légal, formaliser votre politique transport (prime, FMD) par un accord d'entreprise ou DUE clair. Évite les contestations individuelles.
+
+### 3. Communiquer comme avantage RH
+Mettre en avant la politique transport dans vos offres d'emploi et entretiens. Différenciateur fort sur un marché du travail tendu.
+
+### 4. Automatiser le calcul mensuel
+Avec un logiciel métier nettoyage moderne, le calcul de l'indemnité transport est automatisé chaque mois sur la base des jours réellement travaillés. Évite les erreurs et les rattrapages.
+
+## Pour aller plus loin
+
+- [Convention collective propreté 2026 (IDCC 3043) : salaires + PDF](/blog/convention-collective-nettoyage-idcc-3043)
+- [Grille salaire nettoyage 2026 IDCC 3043 : tableau complet](/blog/grille-salaire-nettoyage-2026-idcc-3043)
+- [Coût horaire chargé agent nettoyage 2026 : méthode](/blog/cout-horaire-charge-agent-nettoyage)
+- [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage)
+- [Fidéliser les agents : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover)
+- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
+
+Pour automatiser le calcul mensuel des indemnités transport et préparer la paie sans erreur, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+  },
+  {
+    slug: 'modele-planning-agents-nettoyage-excel',
+    title: "Modèle planning agents nettoyage Excel : template gratuit 2026",
+    excerpt: "Template Excel gratuit pour le planning de vos agents de nettoyage : multi-sites, semaine, mensuel. Téléchargement direct + guide d'utilisation.",
+    date: '7 juin 2026',
+    dateModified: '7 juin 2026',
+    readTime: '9 min',
+    tag: 'Outils',
+    tldr: "Un modèle de planning agents nettoyage sur Excel est viable pour une TPE 1-5 agents en démarrage. Au-delà de 5-8 agents et 8-10 sites, les limites d'Excel deviennent bloquantes : pas de mise à jour temps réel, pas d'accès mobile agent, pas d'alertes, pas de gestion des remplacements. Proprely propose 3 modèles Excel téléchargeables gratuits (planning semaine, planning multi-sites, suivi des heures) pour démarrer, et un logiciel métier gratuit en bêta pour passer au niveau supérieur.",
+    quickSummary: [
+      "Excel viable pour TPE 1-5 agents en démarrage.",
+      "Limites apparaissent dès 5-8 agents et 8-10 sites : pas de mobile, pas de temps réel, pas d'alertes.",
+      "3 modèles Proprely téléchargeables gratuits : planning semaine, planning multi-sites, suivi heures.",
+      "Comparatif Excel vs logiciel métier : ROI bascule en faveur du logiciel dès 5-8 agents.",
+      "Bonnes pratiques : 1 onglet par semaine, codes couleur par agent, ligne récap heures.",
+      "Pour passer à l'échelle : logiciel métier moderne avec import depuis Excel.",
+    ],
+    relatedSlugs: ['logiciel-planning-nettoyage-2026', 'erreurs-planning-nettoyage', 'gerer-agents-plusieurs-sites'],
+    faq: [
+      { q: "Où télécharger un modèle Excel planning agents nettoyage gratuit ?", a: "Proprely propose 3 modèles Excel téléchargeables gratuits sur sa page [Ressources](/ressources) : (1) modèle planning hebdomadaire agents (semaine type) ; (2) modèle planning multi-sites (vue agents × sites) ; (3) modèle suivi des heures par agent. Pas d'inscription requise, téléchargement direct au format .xlsx. Idéal pour démarrer une TPE propreté." },
+      { q: "À partir de combien d'agents Excel devient insuffisant ?", a: "Empiriquement : 5-8 agents et 8-10 sites = limite de viabilité d'Excel pour la propreté. Au-delà, les limites deviennent bloquantes : pas de mise à jour temps réel partagée (un seul utilisateur à la fois), pas d'accès mobile agent, pas d'alertes automatiques, pas de gestion des remplacements proposés, pas de calcul automatique des marges par client. Le coût d'erreur Excel (oublis, doubles affectations, heures sous-déclarées) dépasse alors le coût d'un logiciel métier." },
+      { q: "Quels sont les 3 onglets indispensables d'un planning Excel agents nettoyage ?", a: "Pour un modèle Excel viable : (1) Onglet \"Planning semaine\" — colonnes jours × lignes agents, cellules avec sites affectés et horaires ; (2) Onglet \"Agents\" — fiche par agent avec contrat, charge horaire cible, spécialités ; (3) Onglet \"Sites\" — liste des clients/sites avec fréquence et horaires demandés. Compléments utiles : onglet \"Heures du mois\" pour la préparation paie, onglet \"Remplaçants\" pour la brigade tournante." },
+      { q: "Comment partager un planning Excel avec les agents ?", a: "Trois options : (1) Imprimer le planning hebdomadaire et l'afficher en local ou le distribuer en début de semaine ; (2) Envoyer le fichier Excel par email aux agents (problème : pas de mise à jour en temps réel) ; (3) Héberger sur Google Sheets ou OneDrive partagé (mieux pour le temps réel, mais limite UX mobile). Aucune de ces options ne remplace un logiciel métier avec accès mobile natif par lien web." },
+      { q: "Quels sont les risques d'utiliser Excel comme planning agents ?", a: "Cinq risques principaux : (1) Versions multiples non synchronisées (1 fichier par chef d'équipe = chaos garanti) ; (2) Pas d'alerte automatique si oubli ; (3) Pas de calcul automatique des majorations heures (IDCC 3043) → risque URSSAF ; (4) Difficile à scaler au-delà de 5-8 agents (formules cassent, fichier devient lent) ; (5) Pas de preuve de passage liée au planning (critère éliminatoire des appels d'offres syndics/facility 2026)." },
+      { q: "Comment migrer mon planning Excel vers un logiciel métier ?", a: "Avec un logiciel métier moderne comme Proprely : (1) Vous exportez vos onglets Excel en CSV (5 min) ; (2) Onboarding 30 min avec le fondateur Proprely qui importe vos sites, agents et planning ; (3) Le logiciel est opérationnel à la fin de l'appel. Vos agents accèdent à leur planning sur leur téléphone via un lien web (sans app à installer)." },
+    ],
+    content: `## Excel ou logiciel métier ? Le seuil de bascule
+
+Le planning Excel est viable pour une **TPE 1-5 agents en démarrage**. C'est même recommandé : pas d'investissement, prise en main immédiate, suffisant pour le volume.
+
+Mais dès **5-8 agents et 8-10 sites**, les limites deviennent structurellement bloquantes :
+
+| Limitation Excel | Impact concret |
+| --- | --- |
+| Pas de mise à jour temps réel partagée | Un seul utilisateur à la fois, sinon versions concurrentes |
+| Pas d'accès mobile agent natif | Agent doit recevoir un PDF imprimé ou consulter un email |
+| Pas d'alertes automatiques | Oublis non détectés avant le client |
+| Pas de calcul automatique des majorations heures | Risque URSSAF (IDCC 3043) |
+| Pas de preuve de passage liée | Critère éliminatoire des appels d'offres syndics/facility 2026 |
+| Pas de gestion automatique des remplacements | Recherche manuelle stressante en cas d'absence |
+| Pas de calcul de marge par client | Vous découvrez les déficitaires en fin d'année |
+
+**Règle pratique :** restez sur Excel jusqu'à 5-8 agents, migrez vers un logiciel métier dès le passage à l'étape suivante.
+
+## 3 modèles Excel gratuits Proprely
+
+Proprely propose **3 modèles Excel téléchargeables gratuits** sur sa page [Ressources](/ressources). Pas d'inscription requise, téléchargement direct au format .xlsx.
+
+### Modèle 1 — Planning hebdomadaire agents
+**Format :** semaine type 7 jours × N agents.
+
+**Onglets inclus :**
+- Vue planning (jours en colonnes, agents en lignes)
+- Liste des sites/clients (référence)
+- Récapitulatif heures par agent (formules automatiques)
+
+**Idéal pour :** TPE 1-5 agents avec 5-10 sites récurrents.
+
+### Modèle 2 — Planning multi-sites
+**Format :** matrice agents × sites avec fréquences.
+
+**Onglets inclus :**
+- Mapping agents/sites par jour de la semaine
+- Liste des fréquences (quotidien, 2×/semaine, hebdo, mensuel)
+- Vue récapitulative charge par agent
+
+**Idéal pour :** TPE 5-8 agents avec 10-15 sites multi-fréquences.
+
+### Modèle 3 — Suivi des heures par agent
+**Format :** journal mensuel par agent avec calcul majorations.
+
+**Onglets inclus :**
+- Saisie quotidienne heures par agent
+- Calcul automatique heures complémentaires/supplémentaires
+- Récapitulatif mensuel pour la paie
+
+**Idéal pour :** préparation paie mensuelle conforme IDCC 3043.
+
+## Comment structurer son propre planning Excel (si vous voulez le faire vous-même)
+
+### Onglets indispensables (le minimum vital)
+
+**1. Planning semaine (onglet principal)**
+- Colonnes : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche
+- Lignes : 1 ligne par agent
+- Cellules : site affecté + horaire (ex : "Atrium 6h-10h")
+- Codes couleur : 1 couleur par client pour visualisation rapide
+
+**2. Agents (référentiel)**
+- Nom, prénom, contact
+- Type contrat (CDI temps plein, CDI temps partiel, CDD)
+- Charge horaire contractuelle hebdomadaire
+- Spécialités (vitrerie, décapage, bionettoyage…)
+- Zone résidentielle (pour optimisation tournée)
+
+**3. Sites (référentiel)**
+- Nom du client / site
+- Adresse complète + code accès
+- Contact gardien/syndic + téléphone
+- Fréquence et horaires demandés
+- Tarif négocié (pour calcul marge ultérieur)
+
+### Onglets recommandés (pour passer le cap)
+
+**4. Heures du mois**
+- Saisie quotidienne des heures réalisées par chaque agent
+- Formules de calcul : heures normales, complémentaires, supplémentaires, nuit, dimanche, jours fériés
+- Récapitulatif pour transmission paie
+
+**5. Remplaçants (brigade tournante)**
+- Liste des 2-3 remplaçants flexibles
+- Disponibilités et spécialités
+- Téléphones d'urgence
+
+**6. Marge par client**
+- CA facturé annuel par client
+- Heures réelles consommées
+- Coût horaire chargé × heures = coût direct
+- Marge brute = (CA - coût direct) / CA
+
+## Bonnes pratiques Excel pour le planning nettoyage
+
+### Codes couleur cohérents
+- 1 couleur par client → repérage visuel rapide
+- Code couleur statut : vert (confirmé), orange (à confirmer), rouge (problème)
+- Code couleur charge : alerte si dépassement >110 % de la charge contractuelle
+
+### Validation des données
+- Listes déroulantes pour les sites (évite les fautes de frappe)
+- Listes déroulantes pour les agents
+- Plages de cellules verrouillées (évite les modifications accidentelles)
+
+### Formules récurrentes utiles
+- SOMME(plage) : total heures par agent par semaine
+- NB.SI(plage; "Atrium") : nombre de passages par site
+- SI(heures supérieures au seuil; "Alerte"; "OK") : alerte surcharge
+- SOMMEPROD() : marge par client (CA - coût direct)
+
+### Sauvegardes
+- Versioning par semaine (Planning_S26.xlsx, Planning_S27.xlsx)
+- Sauvegarde cloud (OneDrive, Google Drive) automatique
+- Backup mensuel sur disque externe (sécurité)
+
+## Quand basculer vers un logiciel métier ?
+
+### Signaux d'alerte
+- Vous passez plus de 2-3 h/semaine à mettre à jour le planning Excel
+- Vous avez plusieurs versions concurrentes (1 par chef d'équipe)
+- Vous oubliez de mettre à jour les agents quand changement
+- Vous avez eu 2-3 oublis de passage dans les 3 derniers mois
+- Vous perdez des appels d'offres pour manque de preuve de passage
+- Vous ne savez pas votre marge réelle par client
+
+→ **Si vous cochez 2 cases ou plus : il est temps de migrer.**
+
+### Migration vers logiciel métier
+Avec un logiciel moderne comme Proprely :
+
+1. **Exportez vos onglets Excel en CSV** (5 min)
+2. **Onboarding 30 min avec le fondateur Proprely**
+   - Import des sites, agents, plannings
+   - Configuration des spécialités, fréquences, contrats
+   - Test du planning sur écran agent (lien web mobile)
+3. **À la fin de l'appel : vous êtes opérationnel**
+4. **Test parallèle 1-2 semaines** : Excel + Proprely en même temps pour valider
+5. **Bascule complète** : abandon d'Excel, agents sur lien web mobile
+
+**Coût migration : 0 € en bêta privée Proprely. ROI typique < 30 jours.**
+
+## Comparatif Excel vs logiciel métier
+
+| Critère | Excel | Logiciel métier (Proprely) |
+| --- | --- | --- |
+| Coût | 0 € (si Microsoft 365 déjà payé) | Gratuit en bêta, ~50-200 €/mois après |
+| Temps de mise en route | 0 (déjà installé) | 30 min onboarding |
+| Mise à jour temps réel partagée | Non (1 user à la fois) | Oui (multi-users) |
+| Accès mobile agent | Non (PDF ou email) | Oui (lien web sans app) |
+| Alertes automatiques | Non | Oui (oublis, surcharge) |
+| Calcul majorations IDCC 3043 | Manuel | Automatique |
+| Preuve de passage liée | Non | Oui (QR + photos + signature) |
+| Marge par client temps réel | Manuel (formules) | Natif dashboard |
+| Gestion remplacements | Manuel (appels) | Filtre auto remplaçants pertinents |
+| Limite scaling | 5-8 agents | 50+ agents |
+
+## Pour aller plus loin
+
+- [Ressources Proprely : modèles Excel gratuits](/ressources) — téléchargement direct des 3 modèles
+- [Logiciel planning nettoyage 2026 : 7 outils recommandés](/blog/logiciel-planning-nettoyage-2026)
+- [Logiciel planning agents nettoyage : drag-and-drop + spécialités](/fonctionnalites/planning-nettoyage)
+- [7 erreurs de planning nettoyage qui coûtent du CA](/blog/erreurs-planning-nettoyage)
+- [Gérer des agents multi-sites : la méthode 2026](/blog/gerer-agents-plusieurs-sites)
+- [Proprely vs Excel : pourquoi quitter le tableur ?](/proprely-vs-excel)
+- [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
+
+Pour passer du planning Excel au logiciel métier en 30 minutes, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après. Import de votre Excel inclus.`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour
