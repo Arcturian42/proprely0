@@ -175,9 +175,68 @@ function buildHtml(meta: PageMeta): string {
   // "0 <img>" du site et donne à Google Images au moins une image par URL.
   // Alt text adapté à la page via meta.ogTitle/ogDescription.
   const fallbackImage = `<img src="${ORIGIN}/og-image.png" alt="${escapeAttr(ogTitle)} — Proprely, logiciel société de nettoyage B2B" width="1200" height="630" loading="lazy" decoding="async" />`
+
+  // Navigation statique en HTML pur pour Googlebot : reproduit les liens du
+  // mega-menu React. Sans cela, le crawler ne voit que la coquille SPA et passe
+  // à côté de la majorité des liens de navigation (qui sont rendus côté client
+  // via useState). Aligné avec src/sections/MegaMenuNav.tsx.
+  const fallbackNav = `<nav aria-label="Navigation principale">
+    <h2>Navigation Proprely</h2>
+    <h3>Solution</h3>
+    <ul>
+      <li><a href="${ORIGIN}/logiciel-societe-nettoyage/">Logiciel société de nettoyage</a></li>
+      <li><a href="${ORIGIN}/logiciel-auto-entrepreneur-nettoyage/">Logiciel auto-entrepreneur nettoyage</a></li>
+      <li><a href="${ORIGIN}/logiciel-nettoyage-medical-bionettoyage/">Logiciel nettoyage médical et bionettoyage</a></li>
+      <li><a href="${ORIGIN}/logiciel-nettoyage-copropriete-syndic/">Logiciel nettoyage copropriété et syndic</a></li>
+      <li><a href="${ORIGIN}/crm-entreprise-proprete/">CRM entreprise propreté</a></li>
+      <li><a href="${ORIGIN}/convention-collective-nettoyage/">Logiciel conforme convention IDCC 3043</a></li>
+      <li><a href="${ORIGIN}/application-mobile-agents-nettoyage/">Application mobile agents nettoyage</a></li>
+      <li><a href="${ORIGIN}/audit-gratuit/">Audit gratuit société de nettoyage</a></li>
+    </ul>
+    <h3>Fonctionnalités</h3>
+    <ul>
+      <li><a href="${ORIGIN}/fonctionnalites/planning-nettoyage/">Planning agents</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/devis-nettoyage/">Devis intelligent IA</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/gestion-agents-nettoyage/">Gestion des agents</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/preuve-passage-nettoyage/">Preuve de passage</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/facturation-nettoyage/">Facturation</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/pointage-agents-nettoyage/">Pointage GPS agents</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/suivi-interventions-nettoyage/">Suivi interventions</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/gestion-sites-clients-nettoyage/">Sites et clients</a></li>
+      <li><a href="${ORIGIN}/fonctionnalites/">Toutes les fonctionnalités</a></li>
+    </ul>
+    <h3>Comparatifs</h3>
+    <ul>
+      <li><a href="${ORIGIN}/comparatif-logiciel-nettoyage/">Comparatif logiciels nettoyage 2026</a></li>
+      <li><a href="${ORIGIN}/proprely-vs-excel/">Proprely vs Excel</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-organilog/">Proprely vs Organilog</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-progiclean/">Proprely vs Progiclean</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-propret/">Proprely vs PROPRET</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-2bepragma/">Proprely vs 2BePragma</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-synchroteam/">Proprely vs Synchroteam</a></li>
+      <li><a href="${ORIGIN}/comparatif/proprely-vs-comete-proprete/">Proprely vs Comète Propreté</a></li>
+      <li><a href="${ORIGIN}/alternative-organilog/">Alternative à Organilog</a></li>
+      <li><a href="${ORIGIN}/alternative-progiclean/">Alternative à Progiclean</a></li>
+      <li><a href="${ORIGIN}/alternative-propret/">Alternative à PROPRET</a></li>
+      <li><a href="${ORIGIN}/alternative-2bepragma/">Alternative à 2BePragma</a></li>
+    </ul>
+    <h3>Ressources</h3>
+    <ul>
+      <li><a href="${ORIGIN}/outils/">Tous les outils gratuits</a></li>
+      <li><a href="${ORIGIN}/calculateur-prix-nettoyage-m2/">Calculateur prix nettoyage m²</a></li>
+      <li><a href="${ORIGIN}/simulateur-rentabilite/">Simulateur de rentabilité</a></li>
+      <li><a href="${ORIGIN}/calculateur-roi/">Calculateur ROI</a></li>
+      <li><a href="${ORIGIN}/ressources/">Modèles Excel gratuits</a></li>
+      <li><a href="${ORIGIN}/blog/">Blog Proprely</a></li>
+      <li><a href="${ORIGIN}/tarifs/">Tarifs Proprely</a></li>
+      <li><a href="${ORIGIN}/a-propos/">À propos</a></li>
+      <li><a href="${ORIGIN}/contact/">Contact</a></li>
+      <li><a href="${ORIGIN}/beta/">Bêta privée</a></li>
+    </ul>
+  </nav>`
   html = html.replace(
     /<div class="seo-fallback" aria-hidden="true">[\s\S]*?<\/div>/,
-    `<div class="seo-fallback" aria-hidden="true">${fallbackImage}${meta.bodyHtml}</div>`
+    `<div class="seo-fallback" aria-hidden="true">${fallbackImage}${meta.bodyHtml}${fallbackNav}</div>`
   )
 
   return html

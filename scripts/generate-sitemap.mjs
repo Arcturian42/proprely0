@@ -93,7 +93,7 @@ const urls = [
   { loc: `${ORIGIN}/contact`, priority: '0.5', changefreq: 'yearly', lastmod: CONTENT_LASTMOD },
   { loc: `${ORIGIN}/fonctionnalites`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Fonctionnalités Proprely' },
   { loc: `${ORIGIN}/villes`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel nettoyage par ville' },
-  { loc: `${ORIGIN}/beta`, priority: '0.9', changefreq: 'weekly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Bêta privée Proprely' },
+  { loc: `${ORIGIN}/beta`, priority: '0.6', changefreq: 'weekly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Bêta privée Proprely' },
   { loc: `${ORIGIN}/ressources`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Ressources Proprely' },
   { loc: `${ORIGIN}/proprely-vs-excel`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Proprely vs Excel' },
   { loc: `${ORIGIN}/simulateur-rentabilite`, priority: '0.8', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Simulateur rentabilité' },
