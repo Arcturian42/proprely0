@@ -1557,6 +1557,46 @@ const casClientsHtml = buildHtml({
 writePage('/cas-clients', casClientsHtml)
 generated.push('/cas-clients')
 
+const integrationsBody = `
+  <h1>Intégrations Proprely</h1>
+  <p>Proprely s'intègre aux outils que vos sociétés de nettoyage utilisent déjà : paie, comptabilité, banque, email, calendrier, conformité Factur-X. Et reste 100 % exportable sans lock-in.</p>
+  <h2>Paie &amp; RH</h2>
+  <p><strong>Silae</strong> (disponible) — Export paie au format Silae : heures, primes, majorations IDCC 3043 prêtes à importer chaque mois.</p>
+  <h2>Comptabilité</h2>
+  <p><strong>Pennylane</strong> (en bêta) — Synchronisation des factures émises et règlements vers Pennylane. <strong>Tiime</strong> (roadmap), <strong>Indy</strong> (sur demande pour les indépendants).</p>
+  <h2>Banque pro</h2>
+  <p><strong>Qonto</strong> (en bêta) — Rapprochement des règlements clients depuis Qonto vers vos factures Proprely. <strong>Shine</strong> (sur demande), <strong>Memo Bank</strong> (roadmap Q4 2026).</p>
+  <h2>Email &amp; marketing</h2>
+  <p><strong>Brevo</strong> (disponible) — Capture des leads (newsletter + ressources) automatiquement poussée dans vos listes Brevo. Hébergement français, RGPD ready.</p>
+  <h2>Productivité</h2>
+  <p><strong>Google Calendar</strong> et <strong>Slack</strong> (roadmap) — Synchronisation des interventions et notifications critiques.</p>
+  <h2>Conformité Factur-X</h2>
+  <p><strong>Chorus Pro</strong> (en bêta) — Émission de factures électroniques au format Factur-X (XML + PDF/A-3) conforme à la réforme 2026-2027. <strong>PDP Factur-X</strong> (roadmap alignée sur le calendrier officiel).</p>
+  <h2>Export universel</h2>
+  <p>Toutes vos données (clients, sites, agents, plannings, missions, devis, factures) exportables en CSV ou Excel à tout moment. Aucun lock-in technique.</p>
+  <p>Vous voulez une intégration spécifique ? Les membres fondateurs influencent directement la roadmap. <a href="mailto:contact@proprely.fr">Contactez-nous</a> pour la demander.</p>
+`.trim()
+
+const integrationsHtml = buildHtml({
+  url: '/integrations',
+  title: 'Intégrations Proprely : Silae, Pennylane, Qonto, Brevo · Proprely',
+  description: "Toutes les intégrations Proprely : paie Silae, comptabilité Pennylane/Tiime/Indy, banque Qonto/Shine, email Brevo, Chorus Pro Factur-X.",
+  schemas: [
+    webpageSchema(
+      'Intégrations Proprely',
+      "Paie, comptabilité, banque, email, calendrier, Factur-X — toutes les intégrations Proprely.",
+      `${ORIGIN}/integrations/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Intégrations', item: `${ORIGIN}/integrations/` },
+      ]
+    ),
+  ],
+  bodyHtml: integrationsBody,
+})
+writePage('/integrations', integrationsHtml)
+generated.push('/integrations')
+
 const featureIndexBody = `
   <h1>Fonctionnalités logiciel nettoyage</h1>
   <p>Proprely centralise quatre modules connectés pour piloter une société de propreté B2B : planning des agents, devis, gestion d'équipe, preuve de passage. Tout dans un seul outil, pensé pour le métier.</p>
