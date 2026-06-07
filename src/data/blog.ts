@@ -3681,6 +3681,389 @@ Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPR
 
 [Candidater à la bêta privée Proprely](/beta) · [Voir le module planning en détail](/fonctionnalites/planning-nettoyage) · [Comparatif complet des logiciels 2026](/blog/comparatif-logiciels-nettoyage-2026)`,
   },
+  {
+    slug: 'grille-salaire-nettoyage-2026-idcc-3043',
+    title: "Grille salaire nettoyage 2026 (IDCC 3043) : tableau complet par coefficient",
+    excerpt: "Grille salariale propreté 2026 : salaires minima par coefficient AS1 à MP5, primes, majorations heures, transport. Tableau officiel IDCC 3043 + calculs.",
+    date: '7 juin 2026',
+    dateModified: '7 juin 2026',
+    readTime: '11 min',
+    tag: 'Conformité',
+    tldr: "La grille salariale de la convention collective propreté (IDCC 3043) en 2026 démarre à 11,99 €/h brut pour un agent de service propreté AS1 et atteint 23,07 €/h brut pour un maîtrise propreté MP5. La grille couvre 17 coefficients répartis sur 3 filières (agents de service, agents qualifiés, maîtrise). À cela s'ajoutent les primes obligatoires (transport, panier, salissure, ancienneté) et les majorations heures (complémentaires, supplémentaires, nuit, dimanche, fériés).",
+    quickSummary: [
+      "17 coefficients sur 3 filières : agents de service (AS1-AS3), agents qualifiés (AQS1-AQS3 + ASP, ATQS, CE), maîtrise (MP1-MP5).",
+      "Salaire minimum 2026 : 11,99 €/h brut (AS1) à 23,07 €/h brut (MP5).",
+      "Primes obligatoires : transport, panier (à partir de 6h travaillées), salissure, ancienneté à partir de 4 ans.",
+      "Heures complémentaires majorées 10 % (1-8h au-delà du contrat partiel), 25 % au-delà.",
+      "Heures supplémentaires majorées 25 % (35-43h), 50 % (au-delà).",
+      "Heures de nuit (21h-6h) et dimanche : majorations selon accord d'entreprise.",
+    ],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
+    faq: [
+      { q: "Quel est le salaire minimum 2026 dans la propreté (IDCC 3043) ?", a: "Le salaire minimum 2026 dans la convention collective propreté est de 11,99 €/h brut pour un agent de service propreté niveau AS1, soit 1 819 €/mois brut pour un temps plein 151,67h. Cette grille évolue annuellement par accord de branche (FEP / OPPBTP), généralement en janvier ou février." },
+      { q: "Combien gagne un agent qualifié de service propreté (ASP) en 2026 ?", a: "Un agent qualifié de service propreté (coefficient ASP) gagne au minimum 12,42 €/h brut en 2026, soit environ 1 884 €/mois brut pour un temps plein. Avec primes (panier, transport, salissure) et ancienneté, le coût horaire chargé pour l'employeur atteint typiquement 19-21 €/h." },
+      { q: "Quels sont les 17 coefficients de la convention collective propreté ?", a: "La grille IDCC 3043 comprend 17 coefficients répartis sur 3 filières : (1) Filière agents de service : AS1 (11,99 €), AS2 (12,06 €), AS3 (12,18 €) ; (2) Filière agents qualifiés : AQS1 (12,18 €), AQS2 (12,30 €), AQS3 (12,42 €), ASP (12,42 €), ATQS (13,32 €), CE (chef d'équipe, 14,30 €) ; (3) Filière maîtrise : MP1 (15,20 €), MP2 (16,40 €), MP3 (17,80 €), MP4 (20,15 €), MP5 (23,07 €). Tarifs janvier 2026, à jour de l'accord de branche." },
+      { q: "Comment sont majorées les heures complémentaires dans la propreté ?", a: "Pour les agents à temps partiel (60-70 % des effectifs dans le secteur), les heures complémentaires sont majorées à 10 % pour les 1 à 8 premières heures au-delà de la durée contractuelle, puis 25 % au-delà. Important : ces majorations s'appliquent dans la limite de 1/3 de la durée contractuelle (ne pas dépasser sans risque de requalification en temps plein)." },
+      { q: "Quelles primes sont obligatoires dans la convention propreté ?", a: "Quatre primes obligatoires en 2026 : (1) Prime de panier ~7,30 €/jour dès 6h travaillées en continu hors restauration sur site ; (2) Prime de transport selon zone tarifaire (souvent 50 % du Pass Navigo ou équivalent) ; (3) Prime de salissure selon nature du travail (vitrerie, décapage, bionettoyage) ; (4) Prime d'ancienneté à partir de 4 ans (3-5-7 % selon ancienneté). Ces primes s'ajoutent au salaire de base et sont intégrées au coût horaire chargé." },
+      { q: "Quel est le coût horaire chargé d'un agent au SMIC propreté en 2026 ?", a: "Pour un agent AS1 (11,99 €/h brut) en 2026, le coût horaire chargé pour l'employeur (salaire brut + charges patronales ~42 % + congés payés 10 % + primes 1-1,50 €/h) atteint 18-20 €/h en coût direct, et 21-23 €/h en coût complet (avec absentéisme moyen secteur de 8-10 %, encadrement, matériel)." },
+      { q: "Comment calculer une fiche de paie type dans la propreté ?", a: "Pour un agent AS1 à temps plein 35h hebdo (151,67h/mois) au taux horaire 11,99 € : Salaire brut de base = 1 819 €. Ajout primes mensuelles typiques (panier 22j × 7,30 € = 161 €, transport ~75 €, salissure ~30 €) = +266 €. Total brut ~2 085 €. Charges salariales (~22 %) = -459 €. Net avant impôt = ~1 626 €. À cela s'ajoutent les heures complémentaires/supplémentaires majorées si effectuées." },
+      { q: "La grille salaire propreté augmente-t-elle chaque année ?", a: "Oui, généralement annuellement par accord de branche signé entre la FEP (Fédération des Entreprises de Propreté) et les syndicats salariés (CGT, CFDT, FO, CFE-CGC, CFTC). L'accord est publié au Bulletin Officiel du Travail et entre en vigueur au 1er janvier (parfois février). Augmentation moyenne 2020-2026 : +2,5 à +3,5 % par an, en accélération depuis l'inflation 2022-2023." },
+      { q: "Quelle est la différence entre AS1 et ASP dans la grille ?", a: "AS1 (agent de service propreté niveau 1) est le coefficient d'entrée pour un agent débutant sans qualification spécifique : nettoyage courant, sanitaires, vidage poubelles. ASP (agent qualifié de service propreté) est un coefficient supérieur exigeant une qualification : connaissance des produits chimiques, méthodes spécifiques, autonomie. Écart salaire 2026 : +0,43 €/h brut (+~65 €/mois temps plein)." },
+    ],
+    content: `## La grille salariale propreté 2026 en 1 tableau
+
+La grille salariale 2026 de la convention collective des entreprises de propreté (IDCC 3043) est publiée par accord de branche entre la FEP et les syndicats salariés. Elle s'applique à environ **500 000 salariés** sur le territoire français.
+
+| Coefficient | Intitulé | Salaire horaire brut 2026 | Mensuel brut 151,67h |
+| --- | --- | --- | --- |
+| AS1 | Agent de service propreté niveau 1 | 11,99 € | 1 819 € |
+| AS2 | Agent de service propreté niveau 2 | 12,06 € | 1 829 € |
+| AS3 | Agent de service propreté niveau 3 | 12,18 € | 1 847 € |
+| AQS1 | Agent qualifié niveau 1 | 12,18 € | 1 847 € |
+| AQS2 | Agent qualifié niveau 2 | 12,30 € | 1 866 € |
+| AQS3 | Agent qualifié niveau 3 | 12,42 € | 1 884 € |
+| ASP | Agent qualifié de service propreté | 12,42 € | 1 884 € |
+| ATQS | Agent technique qualifié de service | 13,32 € | 2 020 € |
+| CE | Chef d'équipe propreté | 14,30 € | 2 169 € |
+| MP1 | Maîtrise propreté niveau 1 | 15,20 € | 2 305 € |
+| MP2 | Maîtrise propreté niveau 2 | 16,40 € | 2 487 € |
+| MP3 | Maîtrise propreté niveau 3 | 17,80 € | 2 700 € |
+| MP4 | Maîtrise propreté niveau 4 | 20,15 € | 3 056 € |
+| MP5 | Maîtrise propreté niveau 5 | 23,07 € | 3 499 € |
+
+> Source : accord de branche FEP / syndicats salariés (janvier 2026). Cette grille évolue annuellement — à vérifier sur le site Légifrance pour la version officielle.
+
+## Les 3 filières de la grille IDCC 3043
+
+La convention collective des entreprises de propreté structure les emplois en **3 filières principales**, avec des passerelles entre filières selon l'ancienneté et la qualification.
+
+### Filière 1 — Agents de service (AS1 à AS3)
+Coefficients d'entrée pour les agents sans qualification spécifique préalable. Tâches : nettoyage courant des bureaux, sanitaires, sols, vidage poubelles, dépoussiérage. L'évolution AS1 → AS2 → AS3 dépend de l'ancienneté et de la qualité du travail constaté.
+
+### Filière 2 — Agents qualifiés (AQS1 à CE)
+Coefficients exigeant une qualification : connaissance des produits chimiques (norme HACCP en restauration), maîtrise des méthodes spécifiques (vitrerie en hauteur, décapage, remise en état post-chantier), autonomie sur site. CE (chef d'équipe) encadre 3-10 agents avec responsabilité opérationnelle.
+
+### Filière 3 — Maîtrise (MP1 à MP5)
+Coefficients d'encadrement et de management : inspecteurs, chefs de site, responsables d'exploitation, directeurs d'agence. La progression MP1 → MP5 reflète le niveau de responsabilité (budget, effectif géré, autonomie commerciale).
+
+## Les primes obligatoires dans la propreté en 2026
+
+Aux salaires de la grille s'ajoutent **4 primes obligatoires** dans la convention IDCC 3043 :
+
+| Prime | Montant 2026 | Conditions |
+| --- | --- | --- |
+| Prime de panier | ~7,30 €/jour | Dès 6h travaillées en continu hors restauration sur site |
+| Prime de transport | Variable (souvent 50 % Pass Navigo en IDF) | Trajet domicile-travail facturé par l'agent |
+| Prime de salissure | 0,40 à 1,20 €/h | Selon nature du travail (vitrerie, décapage, bionettoyage) |
+| Prime d'ancienneté | 3 % (4-7 ans), 5 % (7-15 ans), 7 % (15+ ans) | Calculée sur salaire de base |
+
+Ces primes peuvent représenter **150 à 300 €/mois** par agent temps plein selon le mix.
+
+## Majorations heures dans la convention propreté
+
+### Heures complémentaires (temps partiel)
+Pour les agents à temps partiel (60-70 % des effectifs dans le secteur) :
+
+| Plage | Majoration |
+| --- | --- |
+| 1 à 8 premières heures au-delà du contrat | +10 % |
+| Au-delà de 8 heures | +25 % |
+| Limite légale | 1/3 de la durée contractuelle (sinon requalification temps plein) |
+
+### Heures supplémentaires (temps plein)
+Pour les agents à 35h/semaine :
+
+| Plage | Majoration |
+| --- | --- |
+| 35h à 43h | +25 % |
+| Au-delà de 43h | +50 % |
+| Repos compensateur obligatoire | Au-delà du contingent annuel (220h par défaut) |
+
+### Heures de nuit et dimanche
+| Type | Majoration typique |
+| --- | --- |
+| Heures de nuit (21h-6h) | +20 à +50 % selon accord d'entreprise |
+| Dimanche | +50 à +100 % selon accord |
+| Jours fériés travaillés | +100 % + repos compensateur d'1 jour |
+
+## Calcul d'un coût horaire chargé en 2026
+
+Pour un agent AS1 (11,99 €/h brut) en 2026, le coût horaire chargé pour l'employeur se décompose :
+
+| Poste | Montant /h |
+| --- | --- |
+| Salaire brut | 11,99 € |
+| Charges patronales (~42 %) | 5,04 € |
+| Congés payés (10 %) | 1,20 € |
+| Primes (panier, transport, salissure) | 1,00 à 1,50 € |
+| **Sous-total coût direct** | **~19 à 20 €** |
+| Absentéisme moyen secteur (8-10 %) | 1,50 à 2,00 € |
+| Encadrement (8-15 % masse salariale) | 1,00 à 2,00 € |
+| **Coût horaire chargé complet** | **~21 à 23 €** |
+
+Voir aussi : [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) pour le détail.
+
+## Évolution de la grille 2020-2026
+
+La grille salariale propreté a connu une revalorisation continue depuis 2020, accélérée par l'inflation 2022-2023.
+
+| Année | AS1 (€/h brut) | Évolution |
+| --- | --- | --- |
+| 2020 | 10,15 € | — |
+| 2021 | 10,25 € | +1,0 % |
+| 2022 | 10,57 € | +3,1 % |
+| 2023 | 11,52 € | +9,0 % (rattrapage inflation) |
+| 2024 | 11,72 € | +1,7 % |
+| 2025 | 11,88 € | +1,4 % |
+| 2026 | 11,99 € | +0,9 % |
+
+L'évolution 2020-2026 représente **+18 %** sur 6 ans, principalement due au rattrapage 2023.
+
+## Implications pour votre société de nettoyage
+
+### 1. Recalculez vos coûts horaires chargés chaque janvier
+La grille évolue annuellement. Sans mise à jour de votre coût horaire chargé, vos devis sortent automatiquement avec des marges sous-estimées de 2-3 % par an.
+
+### 2. Vérifiez la conformité de vos fiches de paie
+La grille s'applique en plancher. Vérifiez systématiquement que vos coefficients agents et leurs taux horaires sont à jour de l'accord 2026 — un audit URSSAF sur ce sujet peut coûter cher.
+
+### 3. Reportez la hausse dans vos contrats clients
+Vos contrats récurrents doivent intégrer une clause de révision annuelle indexée sur la convention IDCC 3043. Sans cette clause, l'augmentation de la grille rogne votre marge de 1-3 points chaque année.
+
+### 4. Anticipez l'évolution des primes
+Les primes représentent jusqu'à 15 % de la masse salariale. Une augmentation de la prime de transport (50 % du Pass Navigo qui augmente à chaque hausse SNCF/RATP) doit être anticipée dans vos coûts.
+
+## Pour aller plus loin
+
+- [Convention collective propreté IDCC 3043 : le guide complet 2026](/blog/convention-collective-nettoyage-idcc-3043) — analyse de l'article 7, primes détaillées, formation, pénibilité.
+- [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage) — comment automatiser le calcul des heures et majorations.
+- [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) — la méthode complète pour calculer le vrai coût d'une heure d'agent.
+- [Logiciel pointage GPS agents de nettoyage](/fonctionnalites/pointage-agents-nettoyage) — comment Proprely calcule automatiquement les majorations IDCC 3043 et prépare la paie en 2 clics.
+- [Guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage) — la vue d'ensemble du cockpit Proprely.
+
+Pour automatiser la conformité IDCC 3043 (calcul automatique des majorations, export paie Silae), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+  },
+  {
+    slug: 'kpi-societe-nettoyage-2026',
+    title: "KPI société de nettoyage : 12 indicateurs à suivre en 2026",
+    excerpt: "Les 12 KPI essentiels pour piloter une société de nettoyage B2B : marge par client, turnover, DSO, taux de signature devis, absentéisme. Tableau de bord type.",
+    date: '7 juin 2026',
+    dateModified: '7 juin 2026',
+    readTime: '10 min',
+    tag: 'Stratégie',
+    tldr: "Les 12 KPI essentiels pour piloter une société de nettoyage B2B en 2026 se répartissent sur 4 axes : commercial (taux de signature devis, panier moyen, churn clients), RH (turnover, absentéisme, charge horaire), opérationnel (taux de respect planning, contestation clients, qualité), financier (marge brute par client, DSO, LTV). Suivre ces 12 indicateurs chaque mois fait la différence entre une société qui pilote et une société qui subit.",
+    quickSummary: [
+      "4 axes de KPI : commercial, RH, opérationnel, financier — 12 indicateurs principaux à suivre mensuellement.",
+      "KPI le plus critique : marge brute par client en temps réel (8/10 dirigeants la découvrent en fin d'année avec 2 ans de retard).",
+      "Turnover moyen secteur : 35 %/an. En dessous de 25 %, vous êtes structurellement plus rentable.",
+      "DSO (Days Sales Outstanding) cible : <30 jours. Au-delà de 45 jours = problème de cash flow.",
+      "Taux de signature devis cible : >40 %. En dessous = problème de qualification prospect ou prix mal positionné.",
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'fideliser-agents-nettoyage-turnover', 'cout-horaire-charge-agent-nettoyage'],
+    faq: [
+      { q: "Quels sont les KPI à suivre dans une société de nettoyage B2B ?", a: "Les 12 KPI essentiels se répartissent en 4 axes : commercial (taux signature devis, panier moyen contrat, churn clients), RH (turnover annuel, absentéisme, charge horaire moyenne), opérationnel (taux respect planning, taux contestation clients, taux qualité), financier (marge brute par client, DSO, lifetime value client, coût horaire chargé). À suivre mensuellement dans un tableau de bord unique." },
+      { q: "Quel est le KPI le plus important pour une société de nettoyage ?", a: "La marge brute par client en temps réel. C'est l'indicateur qui révèle quels clients vous rapportent vraiment et lesquels plombent votre P&L. 8 dirigeants sur 10 le découvrent en fin d'année avec 12-24 mois de retard, ce qui les empêche de réagir. Le suivre en continu permet de renégocier ou sortir les contrats déficitaires avant qu'ils ne fassent perdre 6-12 mois de croissance." },
+      { q: "Quel taux de turnover dans la propreté en 2026 ?", a: "Le taux de turnover moyen dans la propreté française est de ~35 %/an en 2026 (variant de 20 % chez les sociétés bien gérées à 50 %+ chez les mal gérées). Un agent qui part coûte typiquement 3 500 à 5 000 € entre recrutement, formation et perte de productivité initiale. Cible saine : <25 %/an. Au-delà de 40 %, la société est structurellement déficitaire sur le poste RH." },
+      { q: "Comment calculer le DSO (Days Sales Outstanding) ?", a: "DSO = (créances clients TTC / chiffre d'affaires TTC) × nombre de jours de la période. Sur l'année : DSO = (créances totales / CA annuel TTC) × 365. Cible saine pour une PME nettoyage B2B : <30 jours. Au-delà de 45 jours, vous avez un problème de cash flow qui nécessite d'agir sur les relances et les conditions de paiement contractuelles." },
+      { q: "Quel taux de signature devis viser ?", a: "Pour une société de nettoyage B2B bien positionnée, le taux de signature devis cible est >40 % (40 % des devis envoyés se transforment en contrats signés). En dessous de 30 %, il y a soit un problème de qualification prospect (vous chiffrez n'importe qui), soit un problème de pricing (trop cher ou trop bas suspect), soit un problème de relance (devis envoyé puis oublié). Avec un devis IA optimisé, le taux peut monter à 50-65 %." },
+      { q: "Comment mesurer la qualité d'une prestation de nettoyage ?", a: "Trois KPI qualité à suivre : (1) Taux de respect planning = (interventions réalisées dans le créneau / interventions planifiées) × 100. Cible >95 % ; (2) Taux de contestation client = (contestations clients / interventions) × 100. Cible <2 % ; (3) Score satisfaction client (NPS ou enquête simple) — mesure mensuelle ou trimestrielle. La preuve de passage standardisée (QR + photos) divise typiquement les contestations par 5-10." },
+      { q: "Quel absentéisme est acceptable dans la propreté ?", a: "Le taux d'absentéisme moyen secteur est de 8-10 % en 2026 (vs 4-5 % tous secteurs confondus). C'est lié à la pénibilité physique (TMS, chutes), à la précarité (temps partiels subis, multi-employeurs) et au turnover élevé. Cible saine : <7 %. Au-delà de 12 %, la rentabilité est structurellement attaquée — chaque point d'absentéisme ajoute 1,50 à 2,50 € au coût horaire chargé." },
+      { q: "Comment calculer la LTV (lifetime value) d'un client ?", a: "LTV client = marge brute mensuelle moyenne × durée moyenne de rétention en mois. Exemple : un client qui rapporte 800 € de marge brute mensuelle et reste 36 mois en moyenne → LTV = 28 800 €. Cette donnée permet de calibrer combien investir en acquisition (CAC < LTV/3 typiquement). Pour la propreté B2B, la LTV cible est généralement entre 15 000 € et 50 000 € selon le segment (TPE clients vs grands comptes)." },
+    ],
+    content: `## Pourquoi 8 dirigeants sur 10 pilotent à l'aveugle
+
+La majorité des sociétés de nettoyage B2B en France gèrent leur activité sans tableau de bord chiffré. Le dirigeant connaît son CA mensuel, parfois sa marge brute annuelle, et c'est tout. Conséquence : les décisions importantes (sortir un client déficitaire, augmenter les prix, embaucher) se prennent à l'intuition, avec souvent 6-18 mois de retard.
+
+Les sociétés qui pilotent leurs **12 KPI essentiels chaque mois** prennent les bonnes décisions plus tôt — c'est mécaniquement la différence entre 12 % de croissance annuelle et 30 % de croissance annuelle, à effectif égal.
+
+## Les 4 axes de pilotage d'une société de nettoyage
+
+| Axe | KPI principaux | Fréquence de suivi |
+| --- | --- | --- |
+| Commercial | Taux signature devis, panier moyen, churn clients | Mensuelle |
+| RH | Turnover, absentéisme, charge horaire moyenne | Mensuelle |
+| Opérationnel | Respect planning, contestations, qualité | Hebdomadaire |
+| Financier | Marge par client, DSO, LTV, coût horaire chargé | Mensuelle |
+
+## Axe 1 — KPI commercial
+
+### KPI 1. Taux de signature devis
+**Formule** : (Devis signés sur la période / Devis envoyés sur la période) × 100
+
+| Performance | Taux |
+| --- | --- |
+| Excellent | >50 % |
+| Bon | 40 à 50 % |
+| Acceptable | 30 à 40 % |
+| Préoccupant | <30 % |
+
+Un taux <30 % signale généralement : prospects mal qualifiés, prix mal positionné, ou processus de relance défaillant. Un module de devis IA peut faire passer ce taux de 30-40 % à 45-65 % en croisant les bons signaux.
+
+### KPI 2. Panier moyen par contrat
+**Formule** : CA total des contrats signés sur la période / Nombre de contrats signés sur la période
+
+| Segment client | Panier moyen indicatif 2026 |
+| --- | --- |
+| Bureaux tertiaires (TPE 1-3 sites) | 400-1 500 €/mois |
+| Bureaux tertiaires (PME multi-sites) | 1 500-5 000 €/mois |
+| Copropriétés syndic | 300-900 €/mois |
+| Hôtellerie (15-50 chambres) | 2 000-6 000 €/mois |
+| Cabinets médicaux | 600-2 000 €/mois |
+| Bionettoyage médical | 3 000-15 000 €/mois |
+
+Augmenter le panier moyen est souvent plus rentable que prospecter de nouveaux clients (CAC plus faible, LTV plus élevée).
+
+### KPI 3. Taux de churn clients
+**Formule** : (Clients perdus sur la période / Clients début de période) × 100
+
+| Performance | Taux annuel |
+| --- | --- |
+| Excellent | <5 % |
+| Bon | 5 à 10 % |
+| Acceptable | 10 à 15 % |
+| Préoccupant | >15 % |
+
+Le churn dans la propreté est généralement lié soit à un défaut qualité (preuve de passage défaillante, contestation non gérée), soit à un prix sous-tarifé renégocié au renouvellement. Suivre cet indicateur révèle les patterns.
+
+## Axe 2 — KPI RH
+
+### KPI 4. Taux de turnover annuel
+**Formule** : (Départs sur l'année / Effectif moyen) × 100
+
+| Performance | Taux |
+| --- | --- |
+| Excellent | <20 % |
+| Bon | 20 à 25 % |
+| Moyen secteur | 30 à 40 % |
+| Préoccupant | >40 % |
+
+Le turnover coûte 3 500 à 5 000 € par départ (recrutement, formation, perte de productivité initiale, surcharge des agents restants). Une société à 40 % de turnover sur 15 agents perd 24 000 à 36 000 €/an juste sur ce poste. Voir [6 leviers concrets pour réduire le turnover](/blog/fideliser-agents-nettoyage-turnover).
+
+### KPI 5. Taux d'absentéisme
+**Formule** : (Heures d'absence / Heures théoriques travaillées) × 100
+
+| Performance | Taux |
+| --- | --- |
+| Excellent | <5 % |
+| Bon | 5 à 7 % |
+| Moyen secteur | 8 à 10 % |
+| Préoccupant | >12 % |
+
+Chaque point d'absentéisme ajoute 1,50 à 2,50 €/h au coût horaire chargé (remplacements, maintien de salaire, désorganisation). À 10 % d'absentéisme, c'est 15-25 € par jour par agent absent qui rogne votre marge.
+
+### KPI 6. Charge horaire moyenne par agent
+**Formule** : Heures réalisées / Heures contractuelles × 100
+
+| Performance | Ratio |
+| --- | --- |
+| Optimal | 95 à 105 % |
+| Sous-charge | <90 % (gaspillage masse salariale) |
+| Surcharge | >110 % (risque burn-out, départs) |
+
+Le pilotage de la charge horaire prévient les départs : un agent à 130 % de sa charge contractuelle pendant 3 mois consécutifs démissionne dans 70 % des cas. Une alerte automatique sur 110 % protège votre équipe.
+
+## Axe 3 — KPI opérationnel
+
+### KPI 7. Taux de respect planning
+**Formule** : (Interventions réalisées dans le créneau / Interventions planifiées) × 100
+
+| Performance | Taux |
+| --- | --- |
+| Excellent | >97 % |
+| Bon | 95 à 97 % |
+| Acceptable | 90 à 95 % |
+| Préoccupant | <90 % |
+
+En dessous de 95 %, vous perdez des clients par retards/oublis. Au-dessus de 97 %, vous avez probablement un planning sur-dimensionné (gaspillage masse salariale).
+
+### KPI 8. Taux de contestation client
+**Formule** : (Contestations clients / Interventions facturées) × 100
+
+| Performance | Taux |
+| --- | --- |
+| Excellent | <1 % |
+| Bon | 1 à 2 % |
+| Acceptable | 2 à 4 % |
+| Préoccupant | >4 % |
+
+La preuve de passage standardisée (QR + photos avant-après + signature) divise typiquement ce taux par 5 à 10. Voir [logiciel preuve de passage nettoyage](/fonctionnalites/preuve-passage-nettoyage).
+
+### KPI 9. Score qualité (NPS ou enquête)
+Mesure de la satisfaction client via NPS (Net Promoter Score) ou enquête mensuelle simple. NPS cible pour une société propreté B2B : >40. Au-dessous de 20, le risque de churn explose dans les 6-12 mois.
+
+## Axe 4 — KPI financier
+
+### KPI 10. Marge brute par client (TEMPS RÉEL)
+**Formule** : (CA contrat - Coût horaire chargé × Heures réelles passées sur le contrat) / CA contrat × 100
+
+**LE KPI le plus important.** Sans cette donnée, vous facturez à l'aveugle et découvrez les contrats déficitaires en fin d'exercice.
+
+| Performance | Marge brute |
+| --- | --- |
+| Excellent | >35 % |
+| Bon | 25 à 35 % |
+| Acceptable | 18 à 25 % |
+| Préoccupant | <18 % |
+
+Tout contrat en dessous de 18 % de marge brute doit être renégocié dans les 90 jours, ou sorti.
+
+### KPI 11. DSO (Days Sales Outstanding)
+**Formule** : (Créances clients TTC / CA TTC) × 365
+
+| Performance | Jours |
+| --- | --- |
+| Excellent | <25 jours |
+| Bon | 25 à 30 jours |
+| Acceptable | 30 à 45 jours |
+| Préoccupant | >45 jours |
+
+Un DSO >45 jours = problème de cash flow latent. À corriger par : relances structurées automatiques (J+15, J+30), conditions de paiement plus strictes dans les nouveaux contrats, escompte 1-2 % pour paiement à 8 jours.
+
+### KPI 12. LTV (Lifetime Value) client
+**Formule** : Marge brute mensuelle moyenne × Durée moyenne de rétention en mois
+
+| Segment | LTV indicative |
+| --- | --- |
+| Petit client TPE (1-2 sites, panier 500 €) | 5 000 à 15 000 € |
+| Client PME (3-10 sites, panier 2 000 €) | 30 000 à 80 000 € |
+| Grand compte (facility manager, syndic national) | 100 000 € à 500 000 €+ |
+
+La LTV calibre le budget d'acquisition : règle générale, CAC (Coût d'Acquisition Client) < LTV / 3. Pour un client PME à 60 000 € de LTV, vous pouvez dépenser jusqu'à 20 000 € en acquisition (commercial, marketing) et rester rentable.
+
+## Tableau de bord type — récapitulatif 12 KPI
+
+| KPI | Cible | Fréquence |
+| --- | --- | --- |
+| Taux signature devis | >40 % | Mensuelle |
+| Panier moyen contrat | Selon segment | Mensuelle |
+| Churn clients | <10 %/an | Trimestrielle |
+| Turnover agents | <25 %/an | Trimestrielle |
+| Absentéisme | <7 % | Mensuelle |
+| Charge horaire moyenne | 95-105 % | Hebdomadaire |
+| Respect planning | >95 % | Hebdomadaire |
+| Contestations clients | <2 % | Mensuelle |
+| Score qualité (NPS) | >40 | Trimestrielle |
+| Marge brute par client | >25 % | Mensuelle |
+| DSO | <30 jours | Mensuelle |
+| LTV client | Selon segment | Trimestrielle |
+
+## Comment automatiser ce pilotage
+
+Suivre ces 12 KPI manuellement sur Excel demande typiquement 4-6 heures par mois — temps qui ne crée aucune valeur. Un cockpit unifié calcule ces KPI en temps réel à partir de vos données opérationnelles (planning, pointage, contrats, factures).
+
+[Proprely](/logiciel-societe-nettoyage) affiche nativement sur le dashboard d'accueil : marge par client en temps réel, charge horaire par agent, taux de respect planning, alertes absentéisme et surmenage. Pour les KPI commerciaux (taux signature devis, panier moyen) et financiers (DSO, LTV), le cockpit pousse les données vers vos outils complémentaires (Pennylane, Tiime, Excel d'analyse).
+
+## Pour aller plus loin
+
+- [Fixer ses prix dans le nettoyage : méthode 2026](/blog/fixer-prix-nettoyage) — pour optimiser le KPI marge brute.
+- [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) — l'input clé du KPI marge.
+- [Réduire l'absentéisme agents nettoyage](/blog/reduire-absenteisme-agents-nettoyage) — 5 leviers concrets pour le KPI absentéisme.
+- [Fidéliser les agents : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover) — pour piloter le KPI turnover.
+- [Logiciel suivi interventions nettoyage](/fonctionnalites/suivi-interventions-nettoyage) — pour le KPI respect planning.
+- [Guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage) — vue d'ensemble du cockpit.
+
+Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour

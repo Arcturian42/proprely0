@@ -64,6 +64,7 @@ const featureSlugs = extractField(resolve(root, 'src/data/features.ts'), 'slug')
 const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
 const resourceSlugs = extractField(resolve(root, 'src/data/resources.ts'), 'slug')
 const comparisonSlugs = extractField(resolve(root, 'src/data/comparisons.ts'), 'slug')
+const alternativeSlugs = extractField(resolve(root, 'src/data/alternatives.ts'), 'slug')
 
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
@@ -107,6 +108,15 @@ const urls = [
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
   { loc: `${ORIGIN}/outils`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Outils gratuits Proprely' },
   { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
+  { loc: `${ORIGIN}/audit-gratuit`, priority: '0.9', changefreq: 'monthly', lastmod: CONTENT_LASTMOD, image: DEFAULT_OG_IMAGE, imageTitle: 'Audit gratuit société de nettoyage' },
+  ...alternativeSlugs.map((slug) => ({
+    loc: `${ORIGIN}/${slug}`,
+    priority: '0.8',
+    changefreq: 'monthly',
+    lastmod: CONTENT_LASTMOD,
+    image: DEFAULT_OG_IMAGE,
+    imageTitle: `Alternative ${slug.replace('alternative-', '')}`,
+  })),
   ...comparisonSlugs.map((slug) => ({
     loc: `${ORIGIN}/comparatif/${slug}`,
     priority: '0.8',

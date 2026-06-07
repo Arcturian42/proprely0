@@ -31,6 +31,8 @@ const MedicalBionetLanding = lazy(() => import('./pages/MedicalBionetLanding'))
 const CoproSyndicLanding = lazy(() => import('./pages/CoproSyndicLanding'))
 const MobileAgentLanding = lazy(() => import('./pages/MobileAgentLanding'))
 const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
+const AlternativePage = lazy(() => import('./pages/AlternativePage'))
+const AuditGratuit = lazy(() => import('./pages/AuditGratuit'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
@@ -263,6 +265,8 @@ function App() {
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
+  else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
+  else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />
   else if (route.startsWith('/blog/')) content = <BlogPost slug={route.slice(6).replace(/\/$/, '')} />
   else if (route === '/beta/merci' || route === '/beta/merci/') content = <ThankYou />
   else if (route === '/beta' || route === '/beta/') content = <Beta />
