@@ -218,6 +218,56 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/audit-gratuit/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Audit gratuit société de nettoyage</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/alternative-organilog/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Alternative organilog</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/alternative-progiclean/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Alternative progiclean</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/alternative-propret/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Alternative propret</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/alternative-2bepragma/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Alternative 2bepragma</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-organilog/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -245,6 +295,16 @@
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Comparatif proprely vs propret</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/comparatif/proprely-vs-2bepragma/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Comparatif proprely vs 2bepragma</image:title>
     </image:image>
   </url>
   <url>
@@ -315,6 +375,46 @@
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Fonctionnalité : preuve passage nettoyage</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/fonctionnalites/gestion-sites-clients-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : gestion sites clients nettoyage</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/fonctionnalites/suivi-interventions-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : suivi interventions nettoyage</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/fonctionnalites/pointage-agents-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : pointage agents nettoyage</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/fonctionnalites/facturation-nettoyage/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Fonctionnalité : facturation nettoyage</image:title>
     </image:image>
   </url>
   <url>
@@ -715,6 +815,26 @@
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Article : logiciel planning nettoyage 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/grille-salaire-nettoyage-2026-idcc-3043/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : grille salaire nettoyage 2026 idcc 3043</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/kpi-societe-nettoyage-2026/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : kpi societe nettoyage 2026</image:title>
     </image:image>
   </url>
 </urlset>

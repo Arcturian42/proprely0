@@ -2319,6 +2319,170 @@ for (const c of comparisons) {
   generated.push(url)
 }
 
+// Pages "Alternative à X" — content marketing pages générées à partir de
+// src/data/alternatives.ts. Body HTML riche pour SEO (tableau, raisons,
+// migration, FAQ) + schemas WebPage / BreadcrumbList / FAQPage.
+const { alternatives } = await import('../src/data/alternatives.ts')
+for (const a of alternatives) {
+  const url = `/${a.slug}`
+  const altUrl = `${ORIGIN}${url}/`
+  const reasonsHtml = a.reasonsToLeave
+    .map((r, i) => `<h3>${i + 1}. ${escapeHtml(r.title)}</h3><p>${escapeHtml(r.description)}</p>`)
+    .join('')
+  const tableHtml = a.quickTable
+    .map(
+      (r) =>
+        `<tr><td>${escapeHtml(r.criterion)}</td><td>${escapeHtml(r.competitor)}</td><td>${escapeHtml(r.proprely)}</td></tr>`,
+    )
+    .join('')
+  const stepsHtml = a.migrationSteps
+    .map((s, i) => `<h3>Étape ${i + 1} — ${escapeHtml(s.title)}</h3><p>${escapeHtml(s.description)}</p>`)
+    .join('')
+  const faqHtml = a.faq
+    .map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`)
+    .join('')
+
+  const bodyHtml = `
+    <h1>${escapeHtml(a.title)}</h1>
+    <aside><p><strong>Réponse-flash :</strong> ${escapeHtml(a.tldr)}</p></aside>
+    <h2>${a.reasonsToLeave.length} raisons concrètes de chercher une alternative à ${escapeHtml(a.competitorName)}</h2>
+    ${reasonsHtml}
+    <h2>${escapeHtml(a.competitorName)} vs Proprely : tableau comparatif</h2>
+    <table>
+      <thead><tr><th>Critère</th><th>${escapeHtml(a.competitorName)}</th><th>Proprely</th></tr></thead>
+      <tbody>${tableHtml}</tbody>
+    </table>
+    <h2>Comment migrer de ${escapeHtml(a.competitorName)} vers Proprely en ${a.migrationSteps.length} étapes</h2>
+    ${stepsHtml}
+    <h2>Questions fréquentes sur la migration depuis ${escapeHtml(a.competitorName)}</h2>
+    ${faqHtml}
+    <p><a href="${ORIGIN}/beta/">Candidater à la bêta privée Proprely</a> · ${
+      a.comparisonSlug ? `<a href="${ORIGIN}/comparatif/${a.comparisonSlug}/">Comparatif détaillé Proprely vs ${escapeHtml(a.competitorName)}</a>` : ''
+    }</p>
+  `.trim()
+
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: a.title,
+      description: a.metaDescription,
+      url: altUrl,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-01-01',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      abstract: a.tldr,
+      mentions: a.competitorUrl
+        ? [{ '@type': 'Organization', name: a.competitorName, url: a.competitorUrl }]
+        : [{ '@type': 'Organization', name: a.competitorName }],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Comparatif', item: `${ORIGIN}/comparatif-logiciel-nettoyage/` },
+        { '@type': 'ListItem', position: 3, name: `Alternative à ${a.competitorName}`, item: altUrl },
+      ],
+    },
+    faqSchema(a.faq),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: a.metaTitle,
+    description: a.metaDescription,
+    ogTitle: a.title,
+    ogDescription: a.metaDescription,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
+
+// Page /audit-gratuit/ — page de conversion principale (offre d'appel).
+const auditGratuitBody = `
+  <h1>Audit gratuit de votre société de nettoyage : 30 minutes avec le fondateur</h1>
+  <p>30 minutes en visio avec le fondateur Proprely pour identifier vos pertes de temps et d'argent, et chiffrer le ROI d'une digitalisation. Audit offert, sans engagement. Pour TPE/PME de 3 à 50 agents.</p>
+
+  <h2>5 livrables concrets à la fin des 30 minutes</h2>
+  <ul>
+    <li><strong>Cartographie de vos outils actuels</strong> — Excel, WhatsApp, Word, Google Agenda, papier… on liste tout et on identifie où l'info se perd entre les outils.</li>
+    <li><strong>Chiffrage du temps perdu en gestion</strong> — combien d'heures par semaine consacrez-vous (vous et vos chefs d'équipe) à la gestion ? On calcule en euros.</li>
+    <li><strong>Identification des contrats sous-tarifés</strong> — on regarde 2-3 contrats avec vous et on chiffre la marge brute réelle. Souvent : surprise désagréable.</li>
+    <li><strong>Diagnostic risque RH / turnover</strong> — quel est votre taux de turnover ? Vos agents les plus chargés sont-ils protégés ?</li>
+    <li><strong>Roadmap de digitalisation chiffrée</strong> — à la fin de l'audit, vous repartez avec une roadmap claire : que digitaliser en priorité, dans quel ordre, quel ROI attendre.</li>
+  </ul>
+
+  <h2>Comment ça se passe</h2>
+  <h3>Étape 1 — Vous demandez votre audit</h3>
+  <p>Formulaire en 2 minutes. Vous précisez votre nombre d'agents, votre activité et vos disponibilités.</p>
+  <h3>Étape 2 — On vous propose 3 créneaux sous 24 h ouvrées</h3>
+  <p>Vous choisissez celui qui vous arrange. Le lien Google Meet vous est envoyé automatiquement.</p>
+  <h3>Étape 3 — 30 min d'échange avec le fondateur</h3>
+  <p>On parcourt vos outils actuels, on chiffre le temps perdu, on regarde 2-3 contrats pour la marge, on diagnostique le risque RH.</p>
+  <h3>Étape 4 — Roadmap chiffrée envoyée par email</h3>
+  <p>Sous 48 h, vous recevez un email récapitulatif : ce qu'on a identifié, les priorités, le ROI estimé. Vous décidez de la suite. Sans engagement.</p>
+
+  <h2>Questions fréquentes sur l'audit gratuit</h2>
+  <h3>Combien coûte l'audit ?</h3>
+  <p>0 €, c'est offert par Proprely. Notre objectif : vous aider à identifier ce qui vous coûte du temps et de l'argent, que vous deveniez client ou non.</p>
+  <h3>Combien de temps ça prend ?</h3>
+  <p>30 minutes en visio (Google Meet ou téléphone). On peut faire plus court (20 min) ou plus long (45 min) selon votre disponibilité.</p>
+  <h3>Qui fait l'audit ?</h3>
+  <p>Paul Munier, fondateur de Proprely. Pas un commercial, pas un junior.</p>
+  <h3>Et si vous me proposez Proprely à la fin ?</h3>
+  <p>Nous pouvons vous proposer de candidater à la bêta privée (30 places fondateurs) si votre profil correspond. Sans engagement. Si Proprely ne convient pas, nous orientons honnêtement vers d'autres solutions du marché.</p>
+
+  <p><a href="${ORIGIN}/beta/">Demander mon audit gratuit</a> — Réponse sous 24 h ouvrées.</p>
+`.trim()
+
+const auditGratuitFaq = [
+  { q: "Combien coûte l'audit gratuit Proprely ?", a: "0 €, c'est offert par Proprely. Notre objectif : vous aider à identifier ce qui vous coûte du temps et de l'argent, que vous deveniez client ou non." },
+  { q: "Combien de temps prend l'audit ?", a: "30 minutes en visio. On peut faire plus court (20 min) ou plus long (45 min) selon votre disponibilité et la complexité de votre activité." },
+  { q: "Qui réalise l'audit ?", a: "Paul Munier, fondateur de Proprely. Pas un commercial, pas un junior. L'audit fait partie de notre démarche : comprendre les vraies douleurs avant de proposer une solution." },
+  { q: "Que dois-je préparer ?", a: "Rien d'obligatoire. Si vous avez 5 minutes : ayez en tête le nombre d'agents, le nombre de sites/clients, et 1-2 contrats sur lesquels vous voulez creuser la marge." },
+  { q: "Et si vous me proposez Proprely à la fin ?", a: "Nous pouvons vous proposer de candidater à la bêta privée si votre profil correspond. Sans engagement. Si Proprely ne convient pas, nous orientons honnêtement vers d'autres solutions du marché." },
+  { q: "Faut-il être une grosse société pour bénéficier de l'audit ?", a: "Non. Nous faisons l'audit dès 3 agents, et jusqu'à 50 agents. Au-delà, nous orientons vers des solutions ERP métier plus adaptées." },
+]
+
+const auditGratuitHtml = buildHtml({
+  url: '/audit-gratuit',
+  title: 'Audit gratuit de votre société de nettoyage : 30 min · Proprely',
+  description: "30 minutes pour identifier vos pertes de temps et d'argent, et chiffrer le ROI d'une digitalisation. Audit offert avec le fondateur Proprely, sans engagement.",
+  schemas: [
+    webpageSchema(
+      'Audit gratuit société de nettoyage',
+      "Audit de 30 minutes avec le fondateur Proprely : identification des pertes de temps, chiffrage du ROI, recommandations adaptées.",
+      `${ORIGIN}/audit-gratuit/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Audit gratuit', item: `${ORIGIN}/audit-gratuit/` },
+      ]
+    ),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Audit gratuit société de nettoyage',
+      description: "Audit de 30 minutes avec le fondateur Proprely : identification des pertes de temps, chiffrage du ROI d'une digitalisation, recommandations adaptées à votre taille.",
+      provider: { '@id': `${ORIGIN}/#organization` },
+      areaServed: { '@type': 'Country', name: 'France' },
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+      },
+    },
+    faqSchema(auditGratuitFaq),
+  ],
+  bodyHtml: auditGratuitBody,
+})
+writePage('/audit-gratuit', auditGratuitHtml)
+generated.push('/audit-gratuit')
+
 // === Page À propos ===
 const aboutBody = `
   <h1>Libérer les dirigeants du nettoyage de la dispersion administrative</h1>

@@ -234,6 +234,74 @@ export const comparisons: ComparisonPage[] = [
       { q: "L'application mobile PROPRET est-elle un avantage par rapport au lien web Proprely ?", a: "Cela dépend de votre équipe. App native = meilleure expérience hors-ligne et notifications push. Lien web = zéro installation, fonctionne sur n'importe quel téléphone (y compris vieux modèles ou partagés), pas de mise à jour à pousser, mise en route en 30 secondes par agent. Les deux modèles ont leur logique." },
     ],
   },
+  {
+    slug: 'proprely-vs-2bepragma',
+    competitorName: '2BePragma',
+    competitorUrl: 'https://www.2bepragma.com',
+    title: 'Proprely vs 2BePragma : comparatif 2026 pour société de nettoyage',
+    metaTitle: 'Proprely vs 2BePragma 2026 : comparatif honnête · Proprely',
+    metaDescription: "Comparatif Proprely vs 2BePragma en 2026 : fonctionnalités, tarifs, mobile, marge par client. Quand passer à l'échelle ? Lequel pour votre société de nettoyage B2B ?",
+    tldr: "2BePragma est un éditeur français spécialisé propreté avec une approche métier complète orientée PME structurées. Proprely est un cockpit nouvelle génération (2025-2026) conçu pour les TPE/PME 3-50 agents qui veulent un outil rapide à déployer et mobile-first. Choisissez 2BePragma si vous êtes une PME structurée à fort volume ; Proprely si vous êtes une TPE/PME en croissance qui veut un outil opérationnel léger.",
+    competitorPitch: "2BePragma est un éditeur français de logiciels métier pour la propreté, présent sur le marché depuis plusieurs années. Le produit couvre les besoins opérationnels des sociétés de nettoyage B2B (planning, devis, facturation, qualité) avec une orientation PME structurées.",
+    whoChooses: {
+      proprely: [
+        "TPE/PME B2B en croissance (3-50 agents)",
+        "Recherche un outil rapide à déployer (30 min onboarding)",
+        "Priorité au mobile-first pour les agents (lien web, pas d'app à installer)",
+        "Pilotage par la marge client en temps réel",
+        "Tarif transparent (gratuit en bêta, tarif fondateur à vie après)",
+        "Interface design 2025-2026 aérée",
+      ],
+      competitor: [
+        "PME structurée 30-100+ agents",
+        "Besoin d'un module qualité audits formels",
+        "Capacité d'investir plusieurs jours en paramétrage et formation",
+        "Préférence pour un éditeur métier établi",
+        "Volume important d'interventions ponctuelles (>500/mois)",
+      ],
+    },
+    comparisonTable: [
+      { criterion: "Cible principale", proprely: "TPE/PME B2B 3-50 agents", competitor: "PME structurée 30-100+ agents", edge: 'equal' },
+      { criterion: "Temps d'onboarding", proprely: "30 minutes avec le fondateur", competitor: "Plusieurs jours à semaines (intégrateur)", edge: 'proprely' },
+      { criterion: "Mobile agent", proprely: "Lien web, pas d'installation", competitor: "App mobile dédiée", edge: 'proprely' },
+      { criterion: "Spécialités agents (vitrerie, moquette, décapage)", proprely: "Natif", competitor: "À paramétrer", edge: 'proprely' },
+      { criterion: "Preuve de passage standardisée", proprely: "Natif (QR + photos + signature)", competitor: "Disponible (à configurer)", edge: 'proprely' },
+      { criterion: "Marge par client temps réel", proprely: "Natif sur dashboard", competitor: "Module reporting/BI", edge: 'proprely' },
+      { criterion: "Devis IA propriétaire", proprely: "Natif (9 facteurs croisés, 3 scénarios)", competitor: "Non (devis classique)", edge: 'proprely' },
+      { criterion: "Module qualité audits formels", proprely: "Preuve de passage + historique", competitor: "Module qualité dédié", edge: 'competitor' },
+      { criterion: "Convention collective IDCC 3043", proprely: "Conformité grille salaires intégrée", competitor: "Paramétrage manuel", edge: 'proprely' },
+      { criterion: "Tarification (TPE 5 agents)", proprely: "Gratuit bêta, tarif fondateur à vie", competitor: "Devis sur mesure", edge: 'proprely' },
+      { criterion: "Interface", proprely: "Design 2025-2026 (aérée, mobile-first)", competitor: "Interface mature métier", edge: 'proprely' },
+      { criterion: "Hébergement", proprely: "Pur cloud UE", competitor: "Cloud / on-premise selon contrat", edge: 'equal' },
+      { criterion: "Export données 1-clic", proprely: "Oui (CSV/Excel)", competitor: "Export disponible (process)", edge: 'proprely' },
+    ],
+    keyDifferences: [
+      {
+        title: "TPE/PME en croissance vs PME structurée",
+        description: "2BePragma cible historiquement les PME structurées du secteur propreté, avec un périmètre fonctionnel qui s'adresse à des équipes internes RH/qualité/admin dédiées. Proprely a fait le choix de cibler les TPE/PME en croissance (3-50 agents) qui n'ont pas ces équipes internes et veulent un cockpit léger, rapide à déployer. Si vous êtes 30+ agents avec une vraie structure interne, 2BePragma est plus aligné. Si vous êtes 3-30 agents, Proprely est plus rapide à déployer et moins chargé en fonctionnalités non utilisées.",
+      },
+      {
+        title: "30 minutes vs plusieurs jours d'onboarding",
+        description: "Le déploiement de 2BePragma demande typiquement plusieurs jours à plusieurs semaines (paramétrage, formation, import des données). Proprely se déploie en 30 minutes lors d'un appel avec le fondateur : sites, agents, fréquences configurés ensemble. C'est une question de profondeur fonctionnelle mais aussi de cible (TPE vs PME structurée).",
+      },
+      {
+        title: "Devis IA propriétaire : un avantage structurel pour Proprely",
+        description: "Proprely intègre nativement un module de devis intelligent par IA (algorithme propriétaire qui croise 9 facteurs et propose 3 scénarios optimisés). Sur les retours bêta : +20-35 % de taux de conversion, +2-5 points de marge nette. 2BePragma propose un module devis classique (template + grille tarifaire). Pour une société en phase de structuration commerciale, c'est un facteur de différenciation important.",
+      },
+      {
+        title: "Tarification",
+        description: "2BePragma fonctionne sur devis sur mesure, généralement adapté à des budgets PME établies. Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices) avec tarif fondateur conservé à vie. Profils budget différents : Proprely vise les budgets TPE/PME en croissance, 2BePragma les PME structurées.",
+      },
+    ],
+    faq: [
+      { q: "Quelle est la différence principale entre Proprely et 2BePragma ?", a: "2BePragma cible les PME structurées (30+ agents) avec un périmètre fonctionnel large nécessitant plusieurs jours de paramétrage. Proprely cible les TPE/PME (3-50 agents) avec un cockpit léger déployable en 30 minutes. Proprely intègre en plus un module de devis IA propriétaire et la marge par client en temps réel sur le dashboard." },
+      { q: "Quand basculer de 2BePragma à Proprely (ou inversement) ?", a: "Si vous êtes une TPE/PME en croissance (3-30 agents) et que 2BePragma vous semble lourd ou cher pour vos besoins, basculez vers Proprely. À l'inverse, si vous êtes 50+ agents avec des besoins qualité audits formels, RH/paie internalisée et GED avancée, 2BePragma peut être mieux dimensionné qu'un cockpit léger comme Proprely." },
+      { q: "Combien coûte 2BePragma ?", a: "2BePragma fonctionne sur devis sur mesure selon le nombre d'utilisateurs, les modules retenus et le mode de déploiement. Le ticket d'entrée est conçu pour des PME établies, plus élevé qu'un SaaS pur cloud pour TPE." },
+      { q: "Peut-on migrer de 2BePragma à Proprely ?", a: "Oui pour les données opérationnelles (clients, sites, agents, plannings). 2BePragma permet l'export au format CSV/Excel. Pendant l'onboarding Proprely (30 min avec le fondateur), nous importons et reconstituons votre organisation." },
+      { q: "Proprely a-t-il un module qualité comme 2BePragma ?", a: "Proprely intègre la preuve de passage native (QR + photos + signature + horodatage) et l'historique complet par site. Pour un module qualité plus formel (audits planifiés, plans d'action qualité, scoring), 2BePragma propose une couverture plus large. Selon vos exigences clients (syndics, facility managers), l'écart peut être structurant ou marginal." },
+      { q: "Le devis IA de Proprely fonctionne-t-il pour tous les types de prestations ?", a: "Oui pour les prestations récurrentes courantes : bureaux tertiaires, copropriétés, hôtellerie, retail, cabinets médicaux avec bionettoyage, industriel léger. Pour les prestations très spécialisées (salles propres ISO classe 7-8, décontamination amiante), l'IA fournit une estimation de base et propose une revue manuelle." },
+    ],
+  },
 ]
 
 export function getComparison(slug: string): ComparisonPage | undefined {
