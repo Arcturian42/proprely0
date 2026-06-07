@@ -9,6 +9,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup'
 import Link from '../components/Link'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { trackEvent } from '../lib/analytics'
+import { trackEngagement } from '../lib/funnel'
 import { BETA_FORM_URL } from '../config'
 
 const META = {
@@ -165,6 +166,13 @@ export default function PriceCalculator() {
     if (surface <= 0) return
     const handle = window.setTimeout(() => {
       trackEvent('price_calc_used', {
+        local_type: localType,
+        zone,
+        frequency,
+        surface,
+      })
+      trackEngagement('calculator_result', {
+        calculator: 'price_m2',
         local_type: localType,
         zone,
         frequency,

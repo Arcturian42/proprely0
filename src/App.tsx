@@ -5,6 +5,7 @@ import ScrollProgress from './components/ScrollProgress'
 import CookieBanner from './components/CookieBanner'
 import { initAnalytics, trackPageView } from './lib/analytics'
 import { initPixels, trackPixelPageView } from './lib/pixels'
+import { installFunnelTracking, trackFunnelStep } from './lib/funnel'
 
 const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
 const BlogIndex = lazy(() => import('./pages/BlogIndex'))
@@ -219,6 +220,8 @@ function App() {
   useEffect(() => {
     initAnalytics()
     initPixels()
+    installFunnelTracking()
+    trackFunnelStep('visit', { path: window.location.pathname })
   }, [])
 
   useEffect(() => {

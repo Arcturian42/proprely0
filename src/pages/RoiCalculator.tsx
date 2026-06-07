@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, Euro, TrendingUp, Calendar } from 'lucide-react'
 import PageNav from '../components/PageNav'
@@ -8,6 +8,7 @@ import ExitIntentPopup from '../components/ExitIntentPopup'
 import MegaCTABanner from '../sections/MegaCTABanner'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
+import { trackEngagement } from '../lib/funnel'
 
 const PROPRELY_TIME_SAVING = 0.6
 const WEEKS_PER_YEAR = 47
@@ -58,6 +59,20 @@ export default function RoiCalculator() {
   const yearlyLostEuros = useMemo(() => yearlyLost * hourlyCost, [yearlyLost, hourlyCost])
   const yearlyHoursSaved = useMemo(() => Math.round(yearlyLost * PROPRELY_TIME_SAVING), [yearlyLost])
   const yearlySaved = useMemo(() => Math.round(yearlyHoursSaved * hourlyCost), [yearlyHoursSaved, hourlyCost])
+
+  // Track engagement quand les sliders se stabilisent (debounced 1.5 s)
+  useEffect(() => {
+    const handle = window.setTimeout(() => {
+      trackEngagement('calculator_result', {
+        calculator: 'roi',
+        agents,
+        admin_hours_per_week: adminHoursPerWeek,
+        hourly_cost: hourlyCost,
+        yearly_saved_euros: yearlySaved,
+      })
+    }, 1500)
+    return () => window.clearTimeout(handle)
+  }, [agents, adminHoursPerWeek, hourlyCost, yearlySaved])
   const workDaysSaved = useMemo(() => Math.round(yearlyHoursSaved / 7), [yearlyHoursSaved])
 
   return (

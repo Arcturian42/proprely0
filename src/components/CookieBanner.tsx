@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Cookie, X } from 'lucide-react'
 import { getConsent, setConsent, enableAnalytics } from '../lib/analytics'
 import { initPixels } from '../lib/pixels'
+import { installFunnelTracking } from '../lib/funnel'
 import Link from './Link'
 
 export default function CookieBanner() {
@@ -14,6 +15,7 @@ export default function CookieBanner() {
     if (choice === 'granted') {
       enableAnalytics()
       initPixels()
+      installFunnelTracking()
     } else setConsent('denied')
     setVisible(false)
   }
