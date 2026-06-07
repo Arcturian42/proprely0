@@ -228,6 +228,26 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/auteurs/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Auteurs Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/auteurs/paul-munier/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Paul Munier — Auteur Proprely</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/outils/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>

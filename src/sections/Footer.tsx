@@ -120,6 +120,7 @@ export default function Footer() {
               <li><Link to="/tarifs" className={`${linkClass} font-semibold`}>Tarifs</Link></li>
               <li><Link to="/beta" className={linkClass}>Bêta privée</Link></li>
               <li><Link to="/a-propos" className={linkClass}>À propos</Link></li>
+              <li><Link to="/auteurs/paul-munier" className={linkClass}>Auteurs</Link></li>
               <li><Link to="/cas-clients" className={linkClass}>Cas clients</Link></li>
               <li><Link to="/integrations" className={linkClass}>Intégrations</Link></li>
               <li><Link to="/securite-rgpd" className={linkClass}>Sécurité & RGPD</Link></li>
