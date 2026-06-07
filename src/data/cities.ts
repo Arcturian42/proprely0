@@ -23,6 +23,9 @@ export type CityPage = {
   population: string
   title: string
   subtitle: string
+  /** Réponse-flash 40-80 mots optimisée pour Generative Engines
+   *  (ChatGPT, Perplexity, AI Overviews). Affichée en tête de page. */
+  tldr?: string
   metaDescription: string
   keywords: string[]
   marketIntro: string
@@ -115,6 +118,7 @@ export const cities: CityPage[] = [
     population: '2,1 millions d\'habitants intra-muros, 12 millions en région',
     title: "Logiciel nettoyage Paris : cockpit métier B2B",
     subtitle: "Conçu pour les contraintes parisiennes : rotations matinales serrées, multi-sites tertiaires, copropriétés haussmanniennes, turnover agents élevé. Pilotez clients, agents, plannings et devis depuis un seul écran.",
+    tldr: "Pour gérer une société de nettoyage à Paris en 2026, Proprely centralise plannings, agents, devis et preuve de passage sur un cockpit unique adapté aux contraintes parisiennes : rotations matinales avant 8h dans le tertiaire, 50 000+ copropriétés haussmanniennes avec PV automatique pour les syndics, turnover agents > 35 %. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Paris et IDF : planning, agents, devis, preuve de passage. Cockpit B2B francilien. Bêta gratuite.",
     keywords: ['logiciel nettoyage Paris', 'logiciel propreté Île-de-France', 'gestion société nettoyage Paris', 'planning agents nettoyage Paris'],
     marketIntro: "L'Île-de-France concentre près d'un tiers du marché français de la propreté B2B. Les dirigeants de sociétés de nettoyage parisiennes affrontent un cocktail unique : des rotations matinales avant 8h sur de la tour tertiaire, des copropriétés haussmanniennes avec gardiens, des cabinets de la rive gauche aux protocoles stricts, et un turnover agents qui dépasse régulièrement les 35% annuels.",
@@ -161,6 +165,7 @@ export const cities: CityPage[] = [
     population: '520 000 habitants, 1,4 million dans la métropole',
     title: "Logiciel nettoyage Lyon : cockpit Rhône-Alpes",
     subtitle: "Conçu pour la réalité lyonnaise : forte densité tertiaire, secteur médical et pharmaceutique exigeant, immobilier de bureaux en croissance (Confluence, Part-Dieu, Vaise). Centralisez clients, agents, plannings et devis dans un seul outil.",
+    tldr: "Pour gérer une société de nettoyage à Lyon en 2026, Proprely propose un cockpit unique adapté au tertiaire de Part-Dieu, Confluence et Vaise, au médical/pharmaceutique exigeant (HCL, biotechs) et aux contraintes IDCC 3043. Planning multi-sites, preuve de passage, marge par client en temps réel. Bêta privée gratuite, hébergement européen.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Lyon et Rhône-Alpes : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Lyon', 'logiciel propreté Rhône-Alpes', 'gestion société nettoyage Lyon', 'planning agents nettoyage Lyon'],
     marketIntro: "Lyon est le deuxième marché français de la propreté B2B après l'Île-de-France. La métropole concentre un tissu unique en France : un quartier d'affaires Part-Dieu en expansion permanente, un pôle santé majeur (Hospices Civils, Centre Léon Bérard, cluster pharmaceutique), une presqu'île tertiaire dense, et un écosystème industriel/biotech à Gerland et Confluence. Les sociétés de nettoyage lyonnaises naviguent entre ces univers aux exigences très différentes.",
@@ -207,6 +212,7 @@ export const cities: CityPage[] = [
     population: '870 000 habitants, 1,9 million dans la métropole',
     title: "Logiciel nettoyage Marseille : cockpit PACA",
     subtitle: "Conçu pour la réalité marseillaise : tertiaire en mutation (Euroméditerranée, La Joliette), hôtellerie touristique saisonnière, copropriétés bord de mer avec contraintes sel et humidité. Centralisez clients, agents, plannings et devis.",
+    tldr: "Pour gérer une société de nettoyage à Marseille en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte PACA en tête : tertiaire en mutation à Euroméditerranée et La Joliette, hôtellerie saisonnière intense l'été, copropriétés bord de mer avec contraintes sel et humidité. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Marseille et en PACA : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Marseille', 'logiciel propreté PACA', 'gestion société nettoyage Marseille', 'planning agents nettoyage Marseille'],
     marketIntro: "Marseille et la métropole Aix-Marseille-Provence forment le troisième pôle français de la propreté B2B. Le marché y présente des spécificités méditerranéennes uniques : un quartier d'affaires en pleine mutation (Euroméditerranée, La Joliette), une hôtellerie-restauration touristique avec saisonnalité marquée, des copropriétés en bord de mer aux contraintes spécifiques (sel, humidité, calcaire), et un tissu de PME tertiaires dispersées sur plusieurs centres économiques.",
@@ -254,6 +260,7 @@ export const cities: CityPage[] = [
     population: '260 000 habitants, 820 000 dans la métropole',
     title: "Logiciel nettoyage Bordeaux : cockpit Gironde",
     subtitle: "Conçu pour la réalité bordelaise : tertiaire en croissance (Euratlantique, Bassins à flot), copropriétés du croissant haussmannien, hôtellerie œnotouristique, cabinets médicaux du Triangle d'Or. Centralisez clients, agents, plannings et devis.",
+    tldr: "Pour gérer une société de nettoyage à Bordeaux en 2026, Proprely propose un cockpit unique adapté au tertiaire d'Euratlantique et des Bassins à flot, aux copropriétés du croissant haussmannien et à l'hôtellerie œnotouristique. Planning multi-sites, preuve de passage, conformité IDCC 3043, marge par contrat. Bêta privée gratuite.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Bordeaux et Nouvelle-Aquitaine : planning, agents, devis, preuve de passage. Bêta gratuite.",
     keywords: ['logiciel nettoyage Bordeaux', 'logiciel propreté Gironde', 'gestion société nettoyage Bordeaux', 'planning agents nettoyage Bordeaux'],
     marketIntro: "Bordeaux Métropole figure parmi les marchés français de la propreté B2B en plus forte croissance. La capitale girondine concentre un tissu varié : un quartier d'affaires Euratlantique qui sort de terre depuis 2010, des Bassins à flot reconvertis en pôle tertiaire moderne, un croissant haussmannien classé UNESCO, le Triangle d'Or commerçant et résidentiel haut de gamme, et un œnotourisme qui irrigue toute la métropole. Les sociétés de nettoyage bordelaises composent avec cette diversité.",
@@ -301,6 +308,7 @@ export const cities: CityPage[] = [
     population: '500 000 habitants, 1,5 million dans la métropole',
     title: "Logiciel nettoyage Toulouse : cockpit Occitanie",
     subtitle: "Conçu pour la réalité toulousaine : pôle aéronautique géant (Airbus, Thales), tertiaire en croissance (Compans-Caffarelli, Andromède), copropriétés du Capitole, cabinets médicaux. Centralisez clients, agents, plannings et devis dans un seul outil.",
+    tldr: "Pour gérer une société de nettoyage à Toulouse en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Occitanie en tête : pôle aéronautique Airbus/Thales aux protocoles stricts, tertiaire en croissance à Compans-Caffarelli et Andromède, copropriétés du Capitole. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Toulouse et Occitanie : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Toulouse', 'logiciel propreté Occitanie', 'gestion société nettoyage Toulouse', 'planning agents nettoyage Toulouse'],
     marketIntro: "Toulouse Métropole est le quatrième marché français de la propreté B2B et l'un des plus dynamiques. La ville rose concentre un tissu unique : capitale européenne de l'aéronautique (Airbus, ATR, Thales, Safran et leurs centaines de sous-traitants), un quartier tertiaire en expansion (Compans-Caffarelli, Andromède, La Cartoucherie), un centre historique brique rose classé, et un pôle santé majeur autour du CHU Purpan/Rangueil. Les sociétés de nettoyage toulousaines opèrent dans des environnements aux exigences très contrastées.",
@@ -348,6 +356,7 @@ export const cities: CityPage[] = [
     population: '320 000 habitants, 670 000 dans la métropole',
     title: "Logiciel nettoyage Nantes : cockpit Pays de la Loire",
     subtitle: "Conçu pour la réalité nantaise : tertiaire en croissance (Île de Nantes, EuroNantes), tissu industriel maritime, copropriétés du centre, hôtellerie et tourisme culturel. Centralisez clients, agents, plannings et devis.",
+    tldr: "Pour gérer une société de nettoyage à Nantes en 2026, Proprely propose un cockpit unique adapté au tertiaire de l'Île de Nantes et EuroNantes, au tissu industriel maritime, et aux copropriétés du centre-ville. Planning multi-sites, preuve de passage, marge par client, conformité IDCC 3043. Bêta privée gratuite.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Nantes et Pays de la Loire : planning, agents, devis, preuve de passage. Bêta gratuite.",
     keywords: ['logiciel nettoyage Nantes', 'logiciel propreté Loire-Atlantique', 'gestion société nettoyage Nantes', 'planning agents nettoyage Nantes'],
     marketIntro: "Nantes Métropole est l'un des marchés français de la propreté B2B en plus forte croissance démographique et économique. La cité des ducs concentre un mix unique : un quartier d'affaires en pleine mutation sur l'Île de Nantes, un tertiaire EuroNantes adossé à la gare, un tissu industriel maritime hérité des chantiers (Naval Group, Airbus Atlantic), un centre historique commerçant, une scène culturelle dynamique (Machines de l'Île, Voyage à Nantes) et une demande qui dépasse l'offre sur la plupart des segments propreté.",
@@ -395,6 +404,7 @@ export const cities: CityPage[] = [
     population: '236 000 habitants, 1,2 million dans la métropole',
     title: "Logiciel nettoyage Lille : cockpit Hauts-de-France",
     subtitle: "Conçu pour la réalité lilloise : Euralille tertiaire, frontière belge avec sociétés cross-border, copropriétés du Vieux-Lille, pôle hospitalier CHRU. Centralisez clients, agents, plannings et devis dans un seul outil.",
+    tldr: "Pour gérer une société de nettoyage à Lille en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Hauts-de-France en tête : tertiaire d'Euralille, frontière belge avec sociétés cross-border, copropriétés du Vieux-Lille, pôle hospitalier CHRU exigeant bionettoyage. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Lille et Hauts-de-France : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Lille', 'logiciel propreté Nord', 'gestion société nettoyage Hauts-de-France', 'planning agents nettoyage Lille'],
     marketIntro: "Lille est la capitale économique du Nord et un marché de la propreté B2B sous-estimé en France. La métropole concentre Euralille (3ème quartier d'affaires français hors région parisienne après La Défense et La Part-Dieu), un pôle universitaire majeur (Université de Lille, Centrale Lille, EDHEC, IESEG), le CHRU de Lille (1er CHU français en taille), un tissu industriel hérité (textile, agroalimentaire), une proximité frontalière unique avec la Belgique, et un centre historique classé. Les sociétés de nettoyage lilloises composent avec ces univers très différents.",
@@ -442,6 +452,7 @@ export const cities: CityPage[] = [
     population: '340 000 habitants, 1 million dans la métropole Nice Côte d\'Azur',
     title: "Logiciel nettoyage Nice : cockpit Côte d'Azur",
     subtitle: "Conçu pour la réalité niçoise : hôtellerie de luxe Promenade des Anglais, tourisme international, événementiel récurrent, copropriétés résidentielles bord de mer, contraintes climatiques (sel, soleil). Centralisez clients, agents, plannings et devis.",
+    tldr: "Pour gérer une société de nettoyage à Nice en 2026, Proprely propose un cockpit unique adapté à l'hôtellerie de luxe Promenade des Anglais, au tourisme international saisonnier, à l'événementiel récurrent et aux copropriétés bord de mer (contraintes sel, soleil). Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Nice et Côte d'Azur : planning, agents, devis, preuve de passage. Luxe et tourisme. Bêta gratuite.",
     keywords: ['logiciel nettoyage Nice', 'logiciel propreté Côte d\'Azur', 'gestion société nettoyage Nice', 'planning agents nettoyage Côte d\'Azur'],
     marketIntro: "Nice et la métropole Nice Côte d'Azur constituent un marché de la propreté B2B très particulier en France : l'hôtellerie de luxe internationale y domine (Negresco, Hyatt Regency, palaces de la Promenade des Anglais et de Cannes), l'événementiel récurrent porte une demande pulsée (Festival de Cannes, Monaco Grand Prix, salons MIPIM/MIPCOM), les copropriétés résidentielles de luxe bord de mer imposent des prestations haut de gamme, et les contraintes climatiques (salinité, soleil intense, humidité) influencent produits et fréquences.",
@@ -489,6 +500,7 @@ export const cities: CityPage[] = [
     population: '290 000 habitants, 510 000 dans l\'Eurométropole',
     title: "Logiciel nettoyage Strasbourg : cockpit Alsace",
     subtitle: "Conçu pour la réalité strasbourgeoise : capitale européenne (Parlement, Conseil de l'Europe), pôle pharmaceutique, frontière allemande, copropriétés du centre UNESCO. Centralisez clients, agents, plannings et devis dans un seul outil.",
+    tldr: "Pour gérer une société de nettoyage à Strasbourg en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Alsace en tête : institutions européennes aux protocoles stricts, pôle pharmaceutique exigeant bionettoyage, frontière allemande, copropriétés du centre UNESCO. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Strasbourg et Grand Est : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Strasbourg', 'logiciel propreté Alsace', 'gestion société nettoyage Grand Est', 'planning agents nettoyage Strasbourg'],
     marketIntro: "Strasbourg est un marché de la propreté B2B unique en France : capitale européenne (Parlement européen, Conseil de l'Europe, Cour des Droits de l'Homme), siège d'institutions internationales avec sécurité renforcée, pôle pharmaceutique majeur (Lilly, Novartis, sous-traitants), frontière allemande avec sociétés opérant sur Strasbourg-Kehl, centre historique classé UNESCO, port autonome (3ème port fluvial européen), et tissu universitaire dense.",
@@ -536,6 +548,7 @@ export const cities: CityPage[] = [
     population: '300 000 habitants, 500 000 dans la métropole',
     title: "Logiciel nettoyage Montpellier : cockpit Hérault",
     subtitle: "Conçu pour la réalité montpelliéraine : croissance démographique forte, pôle universitaire (1ère ville étudiante par habitant), tertiaire émergent (Port Marianne, Odysseum), tourisme méditerranéen, cabinets médicaux du Triangle. Centralisez clients, agents, plannings et devis.",
+    tldr: "Pour gérer une société de nettoyage à Montpellier en 2026, Proprely propose un cockpit unique adapté à la croissance démographique forte, au pôle universitaire 1ère ville étudiante par habitant, au tertiaire émergent de Port Marianne et Odysseum, et aux cabinets médicaux du Triangle. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Montpellier et l'Hérault : planning, agents, devis, preuve de passage. Bêta gratuite.",
     keywords: ['logiciel nettoyage Montpellier', 'logiciel propreté Hérault', 'gestion société nettoyage Montpellier', 'planning agents nettoyage Montpellier'],
     marketIntro: "Montpellier est l'une des villes françaises en plus forte croissance démographique (+1,2 %/an), portée par l'attractivité universitaire et la qualité de vie méditerranéenne. La métropole concentre Port Marianne et Odysseum (quartiers tertiaires émergents), un pôle universitaire majeur (Université de Montpellier, plus ancienne faculté de médecine d'Europe), des cabinets médicaux du Triangle, une économie touristique côtière (Palavas-les-Flots, Carnon, La Grande-Motte à proximité), et un centre historique classé. Les sociétés de nettoyage montpelliéraines surfent sur cette croissance.",
@@ -583,6 +596,7 @@ export const cities: CityPage[] = [
     population: '220 000 habitants, 460 000 dans la métropole',
     title: "Logiciel nettoyage Rennes : cockpit Bretagne",
     subtitle: "Conçu pour la réalité rennaise : pôle tech français majeur (b<>com, Orange Labs, Technicolor), universités Rennes 1 et 2, copropriétés du centre médiéval, tissu agroalimentaire. Centralisez clients, agents, plannings et devis dans un seul outil.",
+    tldr: "Pour gérer une société de nettoyage à Rennes en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Bretagne en tête : pôle tech (b<>com, Orange Labs), universités Rennes 1 et 2, copropriétés du centre médiéval, tissu agroalimentaire exigeant HACCP. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Rennes et Bretagne : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
     keywords: ['logiciel nettoyage Rennes', 'logiciel propreté Bretagne', 'gestion société nettoyage Rennes', 'planning agents nettoyage Ille-et-Vilaine'],
     marketIntro: "Rennes est un pôle économique en forte croissance, capitale de la Bretagne et l'un des principaux pôles tech français : b<>com (Institut de Recherche Technologique sur le numérique), Orange Labs, Technicolor, et un écosystème de scaleups en pleine expansion. La métropole concentre également un pôle universitaire majeur (Rennes 1 et 2, plus de 70 000 étudiants), un centre historique médiéval avec ses maisons à pans de bois, un tissu agroalimentaire breton (Lactalis, Cooperl, Triballat à proximité), et une qualité de vie qui attire les entreprises.",
