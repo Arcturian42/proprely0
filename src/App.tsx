@@ -46,6 +46,7 @@ const CasClientsPage = lazy(() => import('./pages/CasClientsPage'))
 const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage'))
 const AuthorPage = lazy(() => import('./pages/AuthorPage'))
 const AuthorIndex = lazy(() => import('./pages/AuthorIndex'))
+const RoadmapPage = lazy(() => import('./pages/RoadmapPage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -299,6 +300,7 @@ function App() {
   else if (route === '/integrations' || route === '/integrations/') content = <IntegrationsPage />
   else if (route === '/auteurs' || route === '/auteurs/') content = <AuthorIndex />
   else if (route.startsWith('/auteurs/')) content = <AuthorPage slug={route.slice(9).replace(/\/$/, '')} />
+  else if (route === '/roadmap' || route === '/roadmap/' || route === '/changelog' || route === '/changelog/') content = <RoadmapPage />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />
