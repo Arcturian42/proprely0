@@ -3,20 +3,19 @@ import { Mail, CheckCircle, ArrowRight } from 'lucide-react'
 import { trackEvent } from '../lib/analytics'
 import { trackPixelLead } from '../lib/pixels'
 
-// Endpoint configurable via env (Brevo/Mailchimp/ConvertKit/Fillout webhook).
-// Si non défini, l'email n'est PAS envoyé mais l'event GA et le succès UI le sont.
-// Permet de capturer la valeur du formulaire en attendant le branchement réel.
+// Endpoint Brevo via la fonction serverless interne /api/subscribe.
+// La clé API Brevo est stockée côté serveur (BREVO_API_KEY), jamais exposée
+// au bundle client. Override possible via VITE_SUBSCRIBE_ENDPOINT en dev.
 const ENDPOINT = (import.meta as unknown as {
-  env: { VITE_NEWSLETTER_ENDPOINT?: string }
-}).env.VITE_NEWSLETTER_ENDPOINT
+  env: { VITE_SUBSCRIBE_ENDPOINT?: string }
+}).env.VITE_SUBSCRIBE_ENDPOINT || '/api/subscribe'
 
 async function sendSubscription(payload: { email: string; source: string }) {
-  if (!ENDPOINT) return
   try {
     await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({ ...payload, type: 'newsletter' }),
     })
   } catch {
     // Silent : on n'empêche jamais l'UX de succès même si le backend rate.
