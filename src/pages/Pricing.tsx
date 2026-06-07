@@ -8,6 +8,7 @@ import { FOUNDER_SPOTS, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
 import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
 import SocialProof from '../components/SocialProof'
+import TrustSeals from '../components/TrustSeals'
 import { trackEvent } from '../lib/analytics'
 
 const founderBenefits = [
@@ -342,6 +343,7 @@ export default function Pricing() {
               <h2 className="text-base sm:text-lg font-semibold text-slate-700">Les premiers fondateurs ont déjà signé</h2>
             </div>
             <SocialProof variant="indicators" />
+            <TrustSeals variant="strip" className="mt-6" />
           </div>
         </section>
 

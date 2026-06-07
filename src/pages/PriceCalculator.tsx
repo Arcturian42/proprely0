@@ -5,6 +5,7 @@ import PageNav from '../components/PageNav'
 import MegaCTABanner from '../sections/MegaCTABanner'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import ExitIntentPopup from '../components/ExitIntentPopup'
 import Link from '../components/Link'
 import NewsletterSignup from '../components/NewsletterSignup'
 import { trackEvent } from '../lib/analytics'
@@ -481,6 +482,11 @@ export default function PriceCalculator() {
       </main>
 
       <Footer />
+      <ExitIntentPopup
+        source="price_calculator_m2"
+        title="Vous chiffrez vos devis au m² ? Continuez avec nos analyses"
+        subtitle="Tarifs marché, marges réelles, comparatifs concurrents : une analyse propreté B2B par semaine. Désinscription en 1 clic."
+      />
     </div>
   )
 }

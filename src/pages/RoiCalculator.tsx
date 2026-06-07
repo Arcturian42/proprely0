@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Euro, TrendingUp, Calendar } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import ExitIntentPopup from '../components/ExitIntentPopup'
 import MegaCTABanner from '../sections/MegaCTABanner'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
@@ -205,6 +206,11 @@ export default function RoiCalculator() {
       </main>
 
       <Footer />
+      <ExitIntentPopup
+        source="roi_calculator"
+        title="Avant de partir — recevez nos analyses propreté B2B"
+        subtitle="Une fois par semaine, des analyses chiffrées sur la marge, l'IDCC 3043 et les comparatifs logiciels. Pour les dirigeants qui veulent piloter."
+      />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { ArrowRight, Clock, BookOpen } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import NewsletterSlideIn from '../components/NewsletterSlideIn'
 import { posts } from '../data/blog'
 import Link from '../components/Link'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -158,6 +159,7 @@ export default function BlogIndex() {
       </main>
 
       <Footer />
+      <NewsletterSlideIn source="blog_index_slidein" />
     </div>
   )
 }

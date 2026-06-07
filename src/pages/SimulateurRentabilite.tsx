@@ -6,6 +6,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import MegaCTABanner from '../sections/MegaCTABanner'
 import Footer from '../sections/Footer'
+import ExitIntentPopup from '../components/ExitIntentPopup'
 import Link from '../components/Link'
 
 const META = {
@@ -448,6 +449,11 @@ export default function SimulateurRentabilite() {
       </main>
 
       <Footer />
+      <ExitIntentPopup
+        source="simulateur_rentabilite"
+        title="Vous calculez votre marge ? Continuez avec nos analyses"
+        subtitle="Une analyse propreté B2B chaque semaine (marge, IDCC 3043, comparatifs, prix au m²). Désinscription en 1 clic."
+      />
     </div>
   )
 }
