@@ -1,15 +1,18 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, BookOpen, Calculator, Home, Tag } from 'lucide-react'
+import { ArrowRight, BookOpen, Calculator, Home, Sparkles, Award, MessageSquareQuote } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
 
 const links = [
-  { icon: Home, label: 'Accueil', desc: 'Découvrir le cockpit', href: '/' },
-  { icon: Tag, label: 'Tarifs', desc: 'Gratuit pendant la bêta', href: '/tarifs' },
-  { icon: Calculator, label: 'Calculateur ROI', desc: 'Combien vous perdez par an', href: '/calculateur-roi' },
-  { icon: BookOpen, label: 'Blog', desc: 'Analyses pour les dirigeants du nettoyage', href: '/blog' },
+  { icon: Home, label: 'Logiciel société de nettoyage', desc: 'Le guide complet 2026', href: '/logiciel-societe-nettoyage' },
+  { icon: Award, label: 'Comparatif logiciels 2026', desc: '6 outils notés sur 13 critères', href: '/comparatif-logiciel-nettoyage' },
+  { icon: MessageSquareQuote, label: 'Audit gratuit 30 min', desc: 'Diagnostic offert par le fondateur', href: '/audit-gratuit' },
+  { icon: Calculator, label: '4 outils gratuits', desc: 'Prix m², rentabilité, ROI', href: '/outils' },
+  { icon: BookOpen, label: 'Blog Proprely', desc: '33 articles pour dirigeants nettoyage', href: '/blog' },
 ]
 
 export default function NotFound() {
@@ -87,6 +90,26 @@ export default function NotFound() {
                 <ArrowRight size={14} className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
               </Link>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="mt-10"
+          >
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: '404_page' })}
+              className="group inline-flex items-center justify-center gap-2 bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97]"
+            >
+              <Sparkles size={14} />
+              Rejoindre la bêta gratuite
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-xs text-slate-500 mt-3">30 places fondateurs · Sans carte bancaire · Onboarding 30 min</p>
           </motion.div>
         </div>
       </main>
