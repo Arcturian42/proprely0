@@ -3,8 +3,9 @@ import { CheckCircle, ArrowRight, Award, Shield, Users, Calculator, HelpCircle }
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
-import { FOUNDER_SPOTS, remainingSpots, BETA_FORM_URL } from '../config'
+import { FOUNDER_SPOTS, BETA_FORM_URL } from '../config'
 import Link from '../components/Link'
+import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
 import { trackEvent } from '../lib/analytics'
 
 const founderBenefits = [
@@ -51,8 +52,6 @@ const faqs = [
 ]
 
 export default function Pricing() {
-  const remaining = remainingSpots()
-
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <PageNav />
@@ -88,10 +87,9 @@ export default function Pricing() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-2"
+              className="mb-2"
             >
-              <Award size={14} className="text-amber-600" />
-              <span>{remaining} places fondatrices restantes sur {FOUNDER_SPOTS.total}</span>
+              <RemainingSpotsBadge variant="banner" />
             </motion.div>
           </div>
         </section>
@@ -302,7 +300,9 @@ export default function Pricing() {
               Candidater à la bêta
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200 ease-[var(--ease-out)]" />
             </a>
-            <p className="text-xs text-slate-400 mt-4">{remaining} places fondatrices restantes</p>
+            <p className="text-xs text-slate-400 mt-4">
+              <RemainingSpotsBadge variant="inline" className="!text-slate-400 !font-normal" /> · Aucune carte bancaire demandée
+            </p>
           </div>
         </section>
       </main>

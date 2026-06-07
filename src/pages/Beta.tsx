@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowLeft, Flame, Shield, Sparkles, Calendar, CheckCircle } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Shield, Sparkles, Calendar, CheckCircle } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Footer from '../sections/Footer'
 import FounderOffer from '../sections/FounderOffer'
@@ -8,8 +8,9 @@ import ProductStatus from '../sections/ProductStatus'
 import Credibilite from '../sections/Credibilite'
 import FounderForm from '../sections/FounderForm'
 import FAQ from '../sections/FAQ'
-import { FOUNDER_SPOTS, remainingSpots } from '../config'
+import { FOUNDER_SPOTS } from '../config'
 import Link from '../components/Link'
+import RemainingSpotsBadge from '../components/RemainingSpotsBadge'
 
 const META = {
   title: 'Bêta privée Proprely : devenez membre fondateur · 30 places',
@@ -60,8 +61,6 @@ function injectSchema() {
 }
 
 export default function Beta() {
-  const remaining = remainingSpots()
-
   useEffect(() => {
     document.title = META.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', META.description)
@@ -130,10 +129,9 @@ export default function Beta() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 rounded-full px-4 py-1.5 text-xs sm:text-sm font-bold mb-6"
+              className="mb-6"
             >
-              <Flame size={14} className="text-amber-600" />
-              <span>{remaining} places restantes sur {FOUNDER_SPOTS.total}</span>
+              <RemainingSpotsBadge variant="banner" />
             </motion.div>
 
             <motion.div
