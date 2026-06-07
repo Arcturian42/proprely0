@@ -4,6 +4,7 @@ import { ArrowRight, ArrowLeft, Clock, ChevronDown, Sparkles, HelpCircle, Zap, L
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
+import NewsletterSlideIn from '../components/NewsletterSlideIn'
 import NotFound from './NotFound'
 import { getPost, getRelatedPosts, getAdjacentPosts, extractTOC } from '../data/blog'
 import type { BlogPost as BlogPostType, BlogFAQ } from '../data/blog'
@@ -540,6 +541,7 @@ export default function BlogPost({ slug }: Props) {
       </main>
 
       <Footer />
+      <NewsletterSlideIn source={`blog_post_${slug}_slidein`} />
     </div>
   )
 }
