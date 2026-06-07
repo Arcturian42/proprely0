@@ -618,9 +618,14 @@ for (const rawCity of cities) {
     <p>Pour calibrer votre tarification au m², consultez le <a href="${ORIGIN}/blog/tarif-nettoyage-bureaux-m2-2026/">guide complet du tarif nettoyage bureaux 2026</a>.</p>`
     : ''
 
+  const tldrHtml = c.tldr
+    ? `<aside><strong>À retenir :</strong> ${escapeHtml(c.tldr)}</aside>`
+    : ''
+
   const bodyHtml = `
     <h1>${escapeHtml(c.title)}</h1>
     <p>${escapeHtml(c.subtitle)}</p>
+    ${tldrHtml}
     <h2>Le marché de la propreté B2B à ${escapeHtml(c.city)}</h2>
     <p>${escapeHtml(c.marketIntro)}</p>
     <ul>${marketBulletsHtml}</ul>
@@ -3217,8 +3222,10 @@ for (const rawC of cities) {
   lf.push('')
   lf.push(`### ${c.title}`)
   lf.push(`URL : ${ORIGIN}/villes/${c.slug}/`)
+  if (c.tldr) lf.push(`Réponse-flash : ${c.tldr}`)
   lf.push(c.subtitle)
   lf.push(c.marketIntro)
+  if (c.faq?.length) for (const q of c.faq) lf.push(`- ${q.q} — ${q.a}`)
 }
 lf.push('')
 lf.push('## Comparatifs concurrents')
@@ -3233,6 +3240,95 @@ for (const cmp of comparisons) {
 const llmsFullContent = lf.join('\n') + '\n'
 writeFileSync(resolve(distDir, 'llms-full.txt'), llmsFullContent)
 console.log(`✓ llms-full.txt généré (${llmsFullContent.length} caractères)`)
+
+// === llms.txt : index synthétique régénéré à chaque build ====================
+// Auto-sync avec les sources (posts, features, cities, comparisons, alternatives,
+// guides). Évite la dérive du fichier statique public/llms.txt.
+const lx: string[] = []
+lx.push('# Proprely')
+lx.push('')
+lx.push('> Le cockpit métier des sociétés de nettoyage B2B en France. Vos clients, sites, agents, plannings, devis et preuve de passage dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.')
+lx.push('')
+lx.push("Proprely est un logiciel SaaS B2B français conçu pour les sociétés de nettoyage de 3 à 50 agents. Il centralise dans une seule interface : la gestion des clients et sites, le suivi des agents et leurs spécialités (vitrerie, moquette, décapage, remise en état), le planning et l'affectation 1-clic, la preuve de passage par QR code et photos avant-après, les devis et factures avec signature électronique, les documents (contrats, fiches sécurité, attestations URSSAF, certifications) et le pilotage de la rentabilité avec marge par client en temps réel.")
+lx.push('')
+lx.push("Le produit est actuellement en **bêta privée**, réservée à 30 sociétés fondatrices sélectionnées. L'accès est **gratuit** pendant toute la durée de la bêta, sans carte bancaire, sans engagement. Les membres fondateurs gardent un **tarif privilégié à vie** après le lancement public. Hébergement européen, conformité RGPD, chiffrement en transit et au repos, export des données en 1 clic.")
+lx.push('')
+lx.push("Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plusieurs sites clients : bureaux, syndics, hôtels, cabinets médicaux, copropriétés). Le produit n'est pas conçu pour le nettoyage particulier domestique (B2C), ni pour les grands groupes industriels (>200 agents).")
+lx.push('')
+lx.push('Éditeur : Pershing Global Solutions LTD. Contact : contact@proprely.fr.')
+lx.push('')
+
+lx.push('## Pages principales')
+lx.push('')
+lx.push('- [Accueil](https://proprely.fr/) : présentation du cockpit, problème adressé, solution, programme fondateurs')
+lx.push('- [Logiciel société de nettoyage — guide complet 2026](https://proprely.fr/logiciel-societe-nettoyage/) : guide pilier, critères de choix, ROI')
+lx.push('- [Comparatif logiciels nettoyage 2026](https://proprely.fr/comparatif-logiciel-nettoyage/) : 6 outils notés sur 13 critères')
+lx.push('- [Fonctionnalités](https://proprely.fr/fonctionnalites/) : les modules produit en détail')
+lx.push('- [Solutions](https://proprely.fr/solution/) : par contexte et par douleur métier')
+lx.push('- [Intégrations](https://proprely.fr/integrations/) : Silae, Pennylane, Qonto, Brevo, Chorus Pro Factur-X')
+lx.push('- [Tarifs](https://proprely.fr/tarifs/) : gratuit pendant la bêta, tarif fondateur à vie')
+lx.push('- [Sécurité & RGPD](https://proprely.fr/securite-rgpd/) : hébergement européen, DPA, droits RGPD')
+lx.push('- [Cas clients](https://proprely.fr/cas-clients/) : retours des fondateurs')
+lx.push('- [Roadmap](https://proprely.fr/roadmap/) : ce qui est livré, en cours, à venir')
+lx.push('- [Auteurs](https://proprely.fr/auteurs/) : qui écrit sur le blog')
+lx.push('- [Audit gratuit 30 min](https://proprely.fr/audit-gratuit/) : diagnostic avec le fondateur')
+lx.push('- [Bêta privée — devenir membre fondateur](https://proprely.fr/beta/) : candidature aux 30 places')
+lx.push('- [À propos](https://proprely.fr/a-propos/) : mission, engagements, éditeur')
+lx.push('- [Contact](https://proprely.fr/contact/)')
+lx.push('- [Contenu intégral pour LLM](https://proprely.fr/llms-full.txt) : texte complet des articles')
+lx.push('')
+
+lx.push(`## Fonctionnalités (${features.length} modules)`)
+lx.push('')
+for (const rawF of features) {
+  const f = getFeature(rawF.slug) ?? rawF
+  lx.push(`- [${f.title}](${ORIGIN}/fonctionnalites/${f.slug}/) : ${f.subtitle}`)
+}
+lx.push('')
+
+lx.push(`## Villes desservies (${cities.length} pages locales)`)
+lx.push('')
+for (const rawC of cities) {
+  const c = getCity(rawC.slug) ?? rawC
+  if (c.tldr) {
+    lx.push(`- [${c.title}](${ORIGIN}/villes/${c.slug}/) : ${c.tldr}`)
+  } else {
+    lx.push(`- [${c.title}](${ORIGIN}/villes/${c.slug}/) : ${c.subtitle}`)
+  }
+}
+lx.push('')
+
+lx.push(`## Comparatifs concurrents (${comparisons.length} face-à-face)`)
+lx.push('')
+for (const cmp of comparisons) {
+  lx.push(`- [${cmp.title}](${ORIGIN}/comparatif/${cmp.slug}/) : ${cmp.tldr.slice(0, 200)}${cmp.tldr.length > 200 ? '…' : ''}`)
+}
+lx.push('')
+
+lx.push(`## Articles de blog (${posts.length} articles)`)
+lx.push('')
+for (const rawP of posts) {
+  const p = getPost(rawP.slug) ?? rawP
+  lx.push(`- [${p.title}](${ORIGIN}/blog/${p.slug}/) — ${p.tag} · ${p.readTime}`)
+}
+lx.push('')
+
+lx.push('## Outils gratuits')
+lx.push('')
+lx.push('- [Calculateur prix nettoyage au m²](https://proprely.fr/calculateur-prix-nettoyage-m2/) : estimation interactive selon surface, type local, zone, fréquence')
+lx.push('- [Calculateur ROI](https://proprely.fr/calculateur-roi/) : heures et euros perdus en gestion dispersée')
+lx.push('- [Simulateur de rentabilité par contrat](https://proprely.fr/simulateur-rentabilite/) : marge brute en 1 minute')
+lx.push('- [Tous les outils](https://proprely.fr/outils/)')
+lx.push('')
+
+lx.push('## Ressources & modèles')
+lx.push('')
+lx.push('- [Toutes les ressources](https://proprely.fr/ressources/) : modèles Excel téléchargeables (devis, planning, suivi heures)')
+lx.push('')
+
+const llmsContent = lx.join('\n') + '\n'
+writeFileSync(resolve(distDir, 'llms.txt'), llmsContent)
+console.log(`✓ llms.txt régénéré (${llmsContent.length} caractères, ${features.length} fonctionnalités + ${cities.length} villes + ${comparisons.length} comparatifs + ${posts.length} articles)`)
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

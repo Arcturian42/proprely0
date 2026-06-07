@@ -193,6 +193,20 @@ export default function CityPage({ slug }: Props) {
               {city.subtitle}
             </motion.p>
 
+            {city.tldr && (
+              <motion.aside
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.18 }}
+                className="bg-gradient-to-br from-blue-50 to-sky-50 border border-blue-100 rounded-2xl p-5 sm:p-6 mb-8 max-w-3xl mx-auto text-left"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700">À retenir</span>
+                </div>
+                <p className="text-sm sm:text-base text-slate-800 leading-relaxed">{city.tldr}</p>
+              </motion.aside>
+            )}
+
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
