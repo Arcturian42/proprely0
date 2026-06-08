@@ -1692,6 +1692,7 @@ const paulMunierHtml = buildHtml({
   url: '/auteurs/paul-munier',
   title: 'Paul Munier — Business Developer chez Proprely · Auteur',
   description: "Paul Munier accompagne les dirigeants de société de nettoyage chez Proprely. Expertises : IDCC 3043, planning multi-sites, preuve de passage, pilotage de marge.",
+  ogImage: '/og/auteurs-paul-munier.png',
   schemas: [
     webpageSchema(
       'Paul Munier — Auteur Proprely',

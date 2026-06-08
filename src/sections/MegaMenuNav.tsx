@@ -103,11 +103,11 @@ const RESOURCES_MENU: MenuConfig = {
       ],
     },
     {
-      heading: 'Modèles & guides',
+      heading: 'Contenu & guides',
       links: [
-        { to: '/ressources', label: 'Modèles Excel', desc: 'Devis, planning, suivi heures' },
-        { to: '/blog/grille-salaire-nettoyage-2026-idcc-3043', label: 'Grille salaire 2026', desc: 'Tableau complet IDCC 3043' },
-        { to: '/blog/convention-collective-nettoyage-idcc-3043', label: 'Convention IDCC 3043', desc: 'Guide salaires + PDF' },
+        { to: '/blog', label: 'Blog Proprely', desc: '34 articles propreté B2B' },
+        { to: '/ressources', label: 'Modèles Excel gratuits', desc: 'Devis, planning, suivi heures' },
+        { to: '/blog/grille-salaire-nettoyage-2026-idcc-3043', label: 'Grille salaire 2026', desc: 'Tableau IDCC 3043' },
         { to: '/blog/creer-societe-nettoyage', label: 'Créer une société', desc: 'Guide 10 étapes 2026' },
       ],
     },
@@ -115,7 +115,32 @@ const RESOURCES_MENU: MenuConfig = {
   footerLink: { to: '/blog', label: 'Voir tous les articles du blog' },
 }
 
-const MENUS: MenuConfig[] = [SOLUTIONS_MENU, FEATURES_MENU, COMPARATIFS_MENU, RESOURCES_MENU]
+const ENTREPRISE_MENU: MenuConfig = {
+  label: 'Entreprise',
+  columns: [
+    {
+      heading: 'Trust',
+      links: [
+        { to: '/cas-clients', label: 'Cas clients', desc: 'Retours détaillés des fondateurs' },
+        { to: '/securite-rgpd', label: 'Sécurité & RGPD', desc: 'Hébergement UE, DPA, droits' },
+        { to: '/integrations', label: 'Intégrations', desc: 'Silae, Pennylane, Qonto, Brevo' },
+        { to: '/roadmap', label: 'Roadmap publique', desc: 'Ce qui arrive, ce qui a été livré' },
+      ],
+    },
+    {
+      heading: 'À propos',
+      links: [
+        { to: '/a-propos', label: 'Notre mission', desc: 'Édité par Pershing Global Solutions' },
+        { to: '/auteurs/paul-munier', label: 'Paul Munier', desc: 'Business Developer & rédacteur' },
+        { to: '/contact', label: 'Contact', desc: 'contact@proprely.fr' },
+        { to: '/audit-gratuit', label: 'Audit gratuit 30 min', desc: 'Avec le fondateur' },
+      ],
+    },
+  ],
+  footerLink: { to: '/a-propos', label: "Voir la page à propos" },
+}
+
+const MENUS: MenuConfig[] = [SOLUTIONS_MENU, FEATURES_MENU, COMPARATIFS_MENU, RESOURCES_MENU, ENTREPRISE_MENU]
 
 type Props = {
   /** Si true, ajoute un retour à l'accueil (utilisé sur les pages internes) */
