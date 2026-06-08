@@ -39,6 +39,21 @@ export const AUTHORS: Record<string, Author> = {
       'Preuve de passage et conformité syndic',
     ],
   },
+  'lucas-mafo': {
+    slug: 'lucas-mafo',
+    name: 'Lucas Mafo',
+    jobTitle: 'Spécialiste verticales propreté & rédacteur',
+    linkedin: 'https://www.linkedin.com/in/lucasmafo/',
+    bio: "Spécialiste des verticales métier de la propreté chez Proprely (industriel, vitrerie, datacenter, bionettoyage laboratoire, après-sinistre). Lucas traite les segments à protocoles techniques (HACCP, EN bionettoyage, salles blanches, contamination biologique) à partir d'entretiens avec des dirigeants spécialisés et de la documentation INRS.",
+    knowsAbout: [
+      'Nettoyage industriel et HACCP',
+      'Vitrerie spécialisée et travaux en hauteur',
+      'Bionettoyage médical et laboratoire',
+      'Salles blanches et environnements contrôlés',
+      'Décontamination après sinistre',
+      'Nettoyage datacenter et environnements sensibles',
+    ],
+  },
 }
 
 export const DEFAULT_AUTHOR_SLUG = 'paul-munier'

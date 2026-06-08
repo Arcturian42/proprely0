@@ -13,16 +13,44 @@ type Props = {
 // Override possible via VITE_SUBSCRIBE_ENDPOINT en dev.
 const ENDPOINT = (import.meta as unknown as { env: { VITE_SUBSCRIBE_ENDPOINT?: string } }).env.VITE_SUBSCRIBE_ENDPOINT || '/api/subscribe'
 
-async function sendLead(payload: { email: string; company: string; resource: string; resourceTitle: string }) {
+type LeadResult =
+  | { ok: true }
+  | { ok: false; reason: 'network' | 'http' | 'not_configured' | 'brevo_error' | 'unknown'; status?: number }
+
+async function sendLead(payload: { email: string; company: string; resource: string; resourceTitle: string }): Promise<LeadResult> {
+  let res: Response
   try {
-    await fetch(ENDPOINT, {
+    res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ ...payload, type: 'lead_magnet' }),
     })
-  } catch {
-    // Silent — analytics event toujours tracké, le download n'est pas bloqué.
+  } catch (err) {
+    console.error('[lead_magnet] Network error', err)
+    return { ok: false, reason: 'network' }
   }
+
+  type Body = { ok?: boolean; stored?: boolean; reason?: string; error?: string }
+  let data: Body | null = null
+  try {
+    data = (await res.json()) as Body
+  } catch {
+    /* may not be JSON */
+  }
+
+  if (!res.ok) {
+    console.error('[lead_magnet] Server error', res.status, data ?? '<no body>')
+    if (data?.reason === 'not_configured') return { ok: false, reason: 'not_configured' }
+    if (data?.error === 'brevo_error') return { ok: false, reason: 'brevo_error', status: res.status }
+    return { ok: false, reason: 'http', status: res.status }
+  }
+
+  if (data && (data.ok === false || data.stored === false)) {
+    console.warn('[lead_magnet] Server returned ok=false', data)
+    return { ok: false, reason: 'not_configured' }
+  }
+
+  return { ok: true }
 }
 
 function triggerDownload(filePath: string, filename: string) {
