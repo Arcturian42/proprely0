@@ -38,6 +38,7 @@ function loadMetaPixel() {
     if (f.fbq) return
     const n = function (...args: unknown[]) {
       // @ts-expect-error fbq dynamic
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions, prefer-spread
       n.callMethod ? n.callMethod.apply(n, args) : n.queue!.push(args)
     } as Window['fbq']
     if (!f._fbq) f._fbq = n

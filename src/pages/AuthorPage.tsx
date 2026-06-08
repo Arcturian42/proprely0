@@ -103,6 +103,49 @@ const EXTENDED_BIOS: Record<string, {
     ],
     location: 'France · entretiens avec des dirigeants spécialisés sur chaque verticale',
   },
+  'emilie-colin': {
+    intro:
+      "Emilie pilote les sujets sales & marketing pour les dirigeants de société de nettoyage qui veulent passer d'un commercial subi (bouche-à-oreille, appels d'offres irréguliers) à un commercial pro-actif et mesurable. Elle s'appuie sur les benchmarks 2026 du marché (taux de réponse cold email, CPL LinkedIn vs Google Ads, ROI inbound) et sur les retours terrain des dirigeants Proprely.",
+    paragraphs: [
+      "Growth marketing & acquisition B2B chez Proprely, Emilie Colin couvre les sujets sales et marketing à destination des dirigeants de TPE/PME nettoyage en France : prospection LinkedIn (Sales Navigator, social selling, séquences outbound), cold email B2B (cadences multi-canal, scripts personnalisés), Google Ads et LinkedIn Ads (CPL, ROI, segmentation ICP), inbound marketing (contenu SEO, lead nurturing), et acquisition par marchés publics (BOAMP, France Marchés).",
+      "Sa méthode : croiser les benchmarks marché 2026 publiés par des sources sérieuses (Hubspot, LinkedIn Sales Solutions, Plezi, Lemlist, baromètres DataProspects et Lumo Data) avec les retours terrain des dirigeants en croissance que Proprely accompagne. Aucun contenu publié sans validation d'au moins un cas réel observé chez un fondateur de la bêta privée.",
+      "Sa conviction : 80 % des sociétés de nettoyage B2B sous-investissent dans le commercial (prospection irrégulière, pas de CRM, pas de pipeline) parce qu'elles pensent que le métier se vend par bouche-à-oreille. Vrai sur 0-3 ans, devient bloquant au-delà. Le déclencheur typique : passer de 8-12 clients à 25-50 clients sans structure commerciale = plafond de verre à 1,5-2 M€ de CA.",
+    ],
+    expertise: [
+      {
+        title: "Prospection LinkedIn B2B",
+        desc: "Sales Navigator, social selling, séquences outbound, taux de réponse benchmark, copywriting messages.",
+      },
+      {
+        title: "Cold email B2B et cadences multi-canal",
+        desc: "Cadences 5-7 emails, multi-canal (email + LinkedIn + phone), break-up email, RGPD email B2B.",
+      },
+      {
+        title: "Google Ads et LinkedIn Ads B2B",
+        desc: "Search Network, Lead Gen Forms LinkedIn, CPL benchmark France, ICP segmentation, attribution.",
+      },
+      {
+        title: "Inbound marketing et SEO B2B",
+        desc: "Stratégie de contenu, blog SEO, lead magnets, marketing automation, nurturing.",
+      },
+      {
+        title: "Social selling et personal branding LinkedIn",
+        desc: "Posts engageants, Social Selling Index (SSI), comments stratégiques, méthode 4-1-1.",
+      },
+      {
+        title: "Appels d'offres et marchés publics propreté",
+        desc: "BOAMP, France Marchés, alertes mots-clés, mémoire technique, qualification AO.",
+      },
+    ],
+    approach: [
+      "Benchmarks 2026 croisés avec retours terrain dirigeants Proprely en bêta.",
+      "Sources citées : Hubspot, LinkedIn Sales Solutions, Plezi, Lemlist, DataProspects, Lumo Data, BOAMP.",
+      "Aucun chiffre publié sans source vérifiable.",
+      "Méthodes testées sur 1 cas réel minimum avant publication.",
+      "Distinction explicite entre B2B (LinkedIn dominant) et B2C (TikTok/Insta dominants).",
+    ],
+    location: 'France · benchmarks marché + entretiens dirigeants en croissance Proprely',
+  },
 }
 
 function injectSchema(slug: string) {
