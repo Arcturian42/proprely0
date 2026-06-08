@@ -90,9 +90,31 @@ export function Confidentialite() {
       </ul>
       <p>Pour exercer ces droits : <strong>contact@proprely.fr</strong> (réponse sous 1 mois maximum).</p>
 
-      <h3>8. Cookies</h3>
+      <h3>8. Cookies et traceurs</h3>
       <p>
-        Le site proprely.fr utilise uniquement des cookies fonctionnels strictement nécessaires à son fonctionnement. Aucun cookie publicitaire, aucun tracker tiers, aucune mesure d'audience.
+        Le site <strong>proprely.fr</strong> utilise par défaut uniquement des cookies fonctionnels strictement nécessaires à son fonctionnement (état de connexion, préférences d'affichage). Aucun cookie de mesure d'audience, de profilage ou publicitaire n'est posé tant que vous n'avez pas cliqué <strong>« Accepter »</strong> sur le bandeau de consentement affiché lors de votre première visite.
+      </p>
+      <p>
+        Si vous cliquez « Accepter », nous activons les services tiers suivants pour comprendre comment vous utilisez le site et améliorer Proprely :
+      </p>
+      <ul>
+        <li><strong>Google Analytics 4</strong> (Google Ireland Ltd) — mesure d'audience anonymisée (IP tronquée, Consent Mode v2).</li>
+        <li><strong>Meta Pixel</strong> (Meta Platforms Ireland Ltd) — mesure de l'efficacité des campagnes Facebook / Instagram.</li>
+        <li><strong>LinkedIn Insight Tag</strong> (LinkedIn Ireland Unlimited Company) — mesure de l'efficacité des campagnes LinkedIn.</li>
+        <li><strong>Microsoft Clarity & Microsoft Advertising</strong> (Microsoft Corporation) — voir paragraphe dédié ci-dessous.</li>
+      </ul>
+      <p>
+        Vous pouvez à tout moment révoquer votre consentement en effaçant les cookies de votre navigateur, ou nous écrire à <strong>contact@proprely.fr</strong>.
+      </p>
+
+      <h4>8.1. Microsoft Clarity et Microsoft Advertising</h4>
+      <p>
+        We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our products/services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of products/services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft collects and uses your data, visit the <a href="https://www.microsoft.com/fr-fr/privacy/privacystatement" target="_blank" rel="noopener noreferrer"><strong>Microsoft Privacy Statement</strong></a>.
+      </p>
+      <p>
+        <em>
+          Traduction : nous utilisons Microsoft Clarity et Microsoft Advertising pour collecter des métriques comportementales, des heatmaps et des enregistrements de session afin d'améliorer nos produits et services et de mesurer nos campagnes publicitaires. Ces données d'usage sont collectées via des cookies first-party et third-party et d'autres technologies de tracking pour évaluer la popularité de nos contenus, optimiser le site, prévenir la fraude et personnaliser nos publicités. Pour en savoir plus sur la manière dont Microsoft collecte et utilise vos données, consultez la <a href="https://www.microsoft.com/fr-fr/privacy/privacystatement" target="_blank" rel="noopener noreferrer">déclaration de confidentialité Microsoft</a>.
+        </em>
       </p>
 
       <h3>9. Sécurité</h3>

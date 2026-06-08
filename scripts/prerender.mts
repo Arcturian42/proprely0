@@ -1467,8 +1467,11 @@ const privacyBody = `
   <p>12 mois en cas de non-sélection. 3 ans à des fins de prospection après fin de contrat (sauf opposition), 10 ans pour obligations légales.</p>
   <h2>Vos droits</h2>
   <p>Conformément au RGPD : accès, rectification, effacement, limitation, opposition, portabilité, réclamation auprès de la CNIL. Pour exercer ces droits : contact@proprely.fr (réponse sous 1 mois).</p>
-  <h2>Cookies</h2>
-  <p>Le site utilise des cookies fonctionnels strictement nécessaires et, si vous y consentez, un cookie de mesure d'audience Google Analytics.</p>
+  <h2>Cookies et traceurs</h2>
+  <p>Le site proprely.fr utilise par défaut uniquement des cookies fonctionnels strictement nécessaires à son fonctionnement. Aucun cookie de mesure d'audience, de profilage ou publicitaire n'est posé tant que vous n'avez pas cliqué « Accepter » sur le bandeau de consentement.</p>
+  <p>Si vous cliquez « Accepter », les services tiers suivants sont activés : Google Analytics 4 (Google Ireland), Meta Pixel (Meta Platforms Ireland), LinkedIn Insight Tag (LinkedIn Ireland), Microsoft Clarity et Microsoft Advertising (Microsoft Corporation).</p>
+  <h3>Microsoft Clarity et Microsoft Advertising</h3>
+  <p>We partner with Microsoft Clarity and Microsoft Advertising to capture how you use and interact with our website through behavioral metrics, heatmaps, and session replay to improve and market our products/services. Website usage data is captured using first and third-party cookies and other tracking technologies to determine the popularity of products/services and online activity. Additionally, we use this information for site optimization, fraud/security purposes, and advertising. For more information about how Microsoft collects and uses your data, visit the <a href="https://www.microsoft.com/fr-fr/privacy/privacystatement">Microsoft Privacy Statement</a>.</p>
 `.trim()
 
 const privacyHtml = buildHtml({
