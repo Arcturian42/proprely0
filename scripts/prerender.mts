@@ -255,8 +255,8 @@ function buildHtml(meta: PageMeta): string {
     </ul>
   </nav>`
   html = html.replace(
-    /<div class="seo-fallback" aria-hidden="true">[\s\S]*?<\/div>/,
-    `<div class="seo-fallback" aria-hidden="true">${fallbackImage}${meta.bodyHtml}${fallbackNav}</div>`
+    /<aside class="seo-fallback"[^>]*>[\s\S]*?<\/aside>/,
+    `<aside class="seo-fallback" aria-label="Résumé et liens utiles">${fallbackImage}${meta.bodyHtml}${fallbackNav}</aside>`
   )
 
   return html
@@ -430,9 +430,12 @@ for (const rawPost of posts) {
   if (p.faq?.length) schemas.push(faqSchema(p.faq))
   if (p.howTo) schemas.push(howToSchema(p.howTo))
 
+  // Suffix " · Proprely" conditionnel : seulement si le titre est court
+  // (sinon on dépasse 60 chars = title tronqué dans les SERP Google).
+  const titleSuffix = p.title.length > 49 ? '' : ' · Proprely'
   const html = buildHtml({
     url,
-    title: `${p.title} · Proprely`,
+    title: `${p.title}${titleSuffix}`,
     description: p.excerpt,
     ogImage: `/og/blog-${p.slug}.png`,
     schemas,
@@ -540,9 +543,10 @@ for (const rawFeature of features) {
     })
   }
 
+  const fTitleSuffix = f.title.length > 49 ? '' : ' · Proprely'
   const html = buildHtml({
     url,
-    title: `${f.title} · Proprely`,
+    title: `${f.title}${fTitleSuffix}`,
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
@@ -732,9 +736,10 @@ for (const rawCity of cities) {
     faqSchema(c.faq),
   ]
 
+  const cTitleSuffix = c.title.length > 49 ? '' : ' · Proprely'
   const html = buildHtml({
     url,
-    title: `${c.title} · Proprely`,
+    title: `${c.title}${cTitleSuffix}`,
     description: c.metaDescription,
     ogTitle: c.title,
     ogDescription: c.metaDescription,
