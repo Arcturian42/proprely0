@@ -54,6 +54,22 @@ export const AUTHORS: Record<string, Author> = {
       'Nettoyage datacenter et environnements sensibles',
     ],
   },
+  'emilie-colin': {
+    slug: 'emilie-colin',
+    name: 'Emilie Colin',
+    jobTitle: 'Growth marketing & acquisition B2B',
+    linkedin: 'https://www.linkedin.com/in/emiliecolin/',
+    bio: "Spécialiste de l'acquisition B2B chez Proprely. Emilie traite les sujets sales & marketing à destination des dirigeants de société de nettoyage qui veulent générer plus de leads qualifiés : prospection LinkedIn, cold email, Google Ads, LinkedIn Ads, inbound marketing, social selling, branding et stratégie de contenu. Ses contenus s'appuient sur les benchmarks 2026 (taux de réponse cold email 3-6 %, CPL LinkedIn vs Google Ads, ROI inbound 6-18 mois) et des entretiens directs avec dirigeants en croissance.",
+    knowsAbout: [
+      'Prospection LinkedIn B2B et Sales Navigator',
+      'Cold email B2B et cadences multi-canal',
+      'Google Ads et LinkedIn Ads pour service B2B',
+      'Inbound marketing et stratégie de contenu SEO',
+      'Social selling B2B et personal branding LinkedIn',
+      'Acquisition par appels d\'offres BOAMP et marchés publics',
+      'CRM B2B et qualification des leads',
+    ],
+  },
 }
 
 export const DEFAULT_AUTHOR_SLUG = 'paul-munier'

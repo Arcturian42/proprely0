@@ -13,6 +13,7 @@ export type Testimonial = {
 }
 
 /** Indicateurs trust 100 % vérifiables, pas de fabrication */
+// eslint-disable-next-line react-refresh/only-export-components
 export const TRUST_INDICATORS = [
   { icon: Users, value: `${FOUNDER_SPOTS.taken}/${FOUNDER_SPOTS.total}`, label: 'Places fondateurs prises' },
   { icon: MapPin, value: 'France', label: 'Conçu en France, hébergement UE' },
@@ -21,6 +22,7 @@ export const TRUST_INDICATORS = [
 
 /** Témoignages à remplir avec de vrais retours validés écrit par les fondateurs.
  *  Placeholder désactivé tant que `quote` est vide. */
+// eslint-disable-next-line react-refresh/only-export-components
 export const TESTIMONIALS: Testimonial[] = [
   // Exemple de structure — remplace par les vrais retours :
   // {

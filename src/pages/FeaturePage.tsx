@@ -67,6 +67,7 @@ export default function FeaturePage({ slug }: Props) {
     if (!feature) return
     const url = `https://proprely.fr/fonctionnalites/${feature.slug}/`
     const title = `${feature.title} · Proprely`
+    // eslint-disable-next-line react-hooks/immutability
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', feature.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', feature.title)

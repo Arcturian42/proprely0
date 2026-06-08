@@ -376,7 +376,7 @@ function App() {
     if (route.startsWith('/auteurs/')) return 'author'
     if (route === '/ressources' || route === '/ressources/' || route.startsWith('/ressources/')) return 'ressource'
     if (route === '/outils' || route === '/outils/') return 'outils'
-    return route.replace(/^\/+|\/+$/g, '').replace(/[\/-]/g, '_') || 'unknown'
+    return route.replace(/^\/+|\/+$/g, '').replace(/[/-]/g, '_') || 'unknown'
   })()
 
   if (route === '/') {

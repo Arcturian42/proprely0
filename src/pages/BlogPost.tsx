@@ -311,6 +311,7 @@ export default function BlogPost({ slug }: Props) {
     // quand un article est cannibalisé par une landing page sur le même mot-clé.
     const canonicalUrl = post.canonicalUrl ?? url
     const title = `${post.title} · Proprely`
+    // eslint-disable-next-line react-hooks/immutability
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', post.excerpt)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title)

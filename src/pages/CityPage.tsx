@@ -136,6 +136,7 @@ export default function CityPage({ slug }: Props) {
     if (!city) return
     const url = `https://proprely.fr/villes/${city.slug}/`
     const title = `${city.title} · Proprely`
+    // eslint-disable-next-line react-hooks/immutability
     document.title = title
     document.querySelector('meta[name="description"]')?.setAttribute('content', city.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', city.title)

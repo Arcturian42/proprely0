@@ -84,6 +84,7 @@ export default function ResourceDetail({ slug }: Props) {
   useEffect(() => {
     if (!r) return
     const url = `https://proprely.fr/ressources/${r.slug}/`
+    // eslint-disable-next-line react-hooks/immutability
     document.title = r.metaTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', r.metaDescription)
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', r.title)
