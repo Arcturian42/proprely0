@@ -6,6 +6,7 @@ import { getAuthor } from '../src/config.ts'
 import { features, getFeature } from '../src/data/features.ts'
 import { cities, getCity } from '../src/data/cities.ts'
 import { resources } from '../src/data/resources.ts'
+import { glossary } from '../src/data/glossary.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -311,6 +312,17 @@ function blogPostingSchema(p: typeof posts[number] & { tldr?: string; authorSlug
   if (p.tldr) {
     schema.abstract = p.tldr
   }
+  // SpeakableSpecification : signal AEO pour assistants vocaux (Google Assistant,
+  // Alexa). Indique quelles parties de la page peuvent être lues à voix haute
+  // comme réponse à une requête vocale. On cible H1 + TL;DR + résumé.
+  schema.speakable = {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'aside p strong + br + *', 'aside > p:first-child'],
+    xpath: [
+      '/html/head/title',
+      '//meta[@name="description"]/@content',
+    ],
+  }
   return schema
 }
 
@@ -361,6 +373,11 @@ function webpageSchema(title: string, description: string, url: string, crumbs: 
         name: c.name,
         item: c.item,
       })),
+    },
+    // Signal AEO assistants vocaux : H1 et 1er paragraphe résumé
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'aside > p:first-child'],
     },
   }
 }
@@ -550,6 +567,7 @@ for (const rawFeature of features) {
     description: f.metaDescription,
     ogTitle: f.title,
     ogDescription: f.metaDescription,
+    ogImage: `/og/fonctionnalites-${f.slug}.png`,
     schemas,
     bodyHtml,
   })
@@ -743,6 +761,7 @@ for (const rawCity of cities) {
     description: c.metaDescription,
     ogTitle: c.title,
     ogDescription: c.metaDescription,
+    ogImage: `/og/villes-${c.slug}.png`,
     schemas,
     bodyHtml,
   })
@@ -2667,6 +2686,7 @@ for (const c of comparisons) {
     description: c.metaDescription,
     ogTitle: c.title,
     ogDescription: c.metaDescription,
+    ogImage: `/og/comparatif-${c.slug}.png`,
     schemas,
     bodyHtml,
   })
@@ -2750,6 +2770,7 @@ for (const a of alternatives) {
     description: a.metaDescription,
     ogTitle: a.title,
     ogDescription: a.metaDescription,
+    ogImage: `/og/${a.slug}.png`,
     schemas,
     bodyHtml,
   })
@@ -2992,6 +3013,7 @@ for (const g of guides) {
     description: g.metaDescription,
     ogTitle: g.title,
     ogDescription: g.metaDescription,
+    ogImage: `/og/guides-${g.slug}.png`,
     schemas,
     bodyHtml,
   })
@@ -3368,9 +3390,30 @@ lx.push('')
 lx.push('- [Toutes les ressources](https://proprely.fr/ressources/) : modèles Excel téléchargeables (devis, planning, suivi heures)')
 lx.push('')
 
+// Section "Définitions clés" : extraits courts du glossaire propreté B2B
+// pour permettre une citation one-shot par les LLM (ChatGPT, Perplexity).
+// Sélection des termes les plus citables (réglementaires, conformité, financier).
+lx.push(`## Définitions clés (${glossary.length} termes au glossaire)`)
+lx.push('')
+lx.push('Source canonique : https://proprely.fr/glossaire/')
+lx.push('')
+const KEY_GLOSSARY_CATEGORIES: ReadonlyArray<string> = [
+  'Convention IDCC 3043',
+  'Réglementaire',
+  'Conformité 2026',
+  'Financier',
+]
+for (const term of glossary) {
+  if (!KEY_GLOSSARY_CATEGORIES.includes(term.category)) continue
+  lx.push(`- **${term.term}** : ${term.short}`)
+}
+lx.push('')
+lx.push('[Voir le glossaire complet](https://proprely.fr/glossaire/) — 41 termes propreté B2B avec sources officielles et définitions étendues.')
+lx.push('')
+
 const llmsContent = lx.join('\n') + '\n'
 writeFileSync(resolve(distDir, 'llms.txt'), llmsContent)
-console.log(`✓ llms.txt régénéré (${llmsContent.length} caractères, ${features.length} fonctionnalités + ${cities.length} villes + ${comparisons.length} comparatifs + ${posts.length} articles)`)
+console.log(`✓ llms.txt régénéré (${llmsContent.length} caractères, ${features.length} fonctionnalités + ${cities.length} villes + ${comparisons.length} comparatifs + ${posts.length} articles + ${glossary.length} termes glossaire)`)
 
 console.log(`✓ Prerender : ${generated.length} pages statiques générées`)
 generated.forEach((u) => console.log(`  ${u}`))

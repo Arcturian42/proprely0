@@ -17,6 +17,11 @@ RewriteRule ^ressources/simulateur-rentabilite/?$ /simulateur-rentabilite/ [R=30
 RewriteRule ^ressources/calculateur-prix-nettoyage-m2/?$ /calculateur-prix-nettoyage-m2/ [R=301,L]
 RewriteRule ^ressources/calculateur-roi-nettoyage/?$ /calculateur-roi/ [R=301,L]
 
+# Alias EN/legacy : consolident vers les URLs canoniques FR.
+# Évite la cannibalisation /glossary vs /glossaire et /changelog vs /roadmap.
+RewriteRule ^glossary/?$ /glossaire/ [R=301,L]
+RewriteRule ^changelog/?$ /roadmap/ [R=301,L]
+
 # If a real file or directory exists, serve it as-is
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

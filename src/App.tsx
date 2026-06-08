@@ -53,8 +53,8 @@ type RouteMeta = { title: string; description: string; robots?: string }
 
 const META: Record<string, RouteMeta> = {
   '/': {
-    title: 'Logiciel société de nettoyage : planning, devis, clients · Proprely',
-    description: "Logiciel de gestion pour société de nettoyage B2B : clients, agents, planning, devis, preuve de passage. Bêta privée gratuite.",
+    title: 'Logiciel société de nettoyage 2026 : planning, devis · Proprely',
+    description: "Logiciel de gestion société de nettoyage B2B : planning agents, devis, preuve de passage, marge par client. Bêta gratuite — places fondateurs.",
   },
   '/calculateur-roi': {
     title: 'Calculateur ROI société de nettoyage · Proprely',
@@ -305,8 +305,8 @@ function App() {
   else if (route === '/integrations' || route === '/integrations/') content = <IntegrationsPage />
   else if (route === '/auteurs' || route === '/auteurs/') content = <AuthorIndex />
   else if (route.startsWith('/auteurs/')) content = <AuthorPage slug={route.slice(9).replace(/\/$/, '')} />
-  else if (route === '/roadmap' || route === '/roadmap/' || route === '/changelog' || route === '/changelog/') content = <RoadmapPage />
-  else if (route === '/glossaire' || route === '/glossaire/' || route === '/glossary' || route === '/glossary/') content = <GlossairePage />
+  else if (route === '/roadmap' || route === '/roadmap/') content = <RoadmapPage />
+  else if (route === '/glossaire' || route === '/glossaire/') content = <GlossairePage />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />

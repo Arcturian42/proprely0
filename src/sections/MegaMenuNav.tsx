@@ -84,6 +84,8 @@ const COMPARATIFS_MENU: MenuConfig = {
         { to: '/comparatif/proprely-vs-2bepragma', label: 'Proprely vs 2BePragma' },
         { to: '/comparatif/proprely-vs-synchroteam', label: 'Proprely vs Synchroteam' },
         { to: '/comparatif/proprely-vs-comete-proprete', label: 'Proprely vs Comète Propreté' },
+        { to: '/comparatif/proprely-vs-sevensoft', label: 'Proprely vs Sevensoft' },
+        { to: '/comparatif/proprely-vs-maglia', label: 'Proprely vs Maglia' },
       ],
     },
   ],

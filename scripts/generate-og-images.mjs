@@ -222,4 +222,85 @@ for (const p of KEY_PAGES) {
 }
 console.log(`✓ ${pageCount} OG images landing générées dans public/og/`)
 
-console.log(`\nTotal : ${blogCount + pageCount} images OG. Place : public/og/`)
+// 3) Comparatifs : 1 image par comparatif
+function extractField(filePath, field) {
+  const content = readFileSync(filePath, 'utf8')
+  const re = new RegExp(`${field}:\\s*['"\`]([^'"\`]+)['"\`]`, 'g')
+  return [...content.matchAll(re)].map((m) => m[1])
+}
+
+const comparisonSlugs = extractField(resolve(root, 'src/data/comparisons.ts'), 'slug')
+let comparisonCount = 0
+for (const slug of comparisonSlugs) {
+  const competitor = slug.replace('proprely-vs-', '').replace(/-/g, ' ')
+  const Competitor = competitor.charAt(0).toUpperCase() + competitor.slice(1)
+  const svg = pageOgSvg({
+    title: `Proprely vs ${Competitor} : le comparatif honnête 2026`,
+    kicker: 'Comparatif',
+  })
+  render(svg, `comparatif-${slug}.png`)
+  comparisonCount++
+}
+console.log(`✓ ${comparisonCount} OG images comparatifs générées`)
+
+// 4) Alternatives
+const alternativeSlugs = extractField(resolve(root, 'src/data/alternatives.ts'), 'slug')
+let alternativeCount = 0
+for (const slug of alternativeSlugs) {
+  const competitor = slug.replace('alternative-', '').replace(/-/g, ' ')
+  const Competitor = competitor.charAt(0).toUpperCase() + competitor.slice(1)
+  const svg = pageOgSvg({
+    title: `Alternative à ${Competitor} : Proprely en 2026`,
+    kicker: 'Alternative',
+  })
+  render(svg, `${slug}.png`)
+  alternativeCount++
+}
+console.log(`✓ ${alternativeCount} OG images alternatives générées`)
+
+// 5) Villes : 1 image par ville
+const citySlugs = extractField(resolve(root, 'src/data/cities.ts'), 'slug')
+let cityCount = 0
+for (const slug of citySlugs) {
+  const City = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')
+  const svg = pageOgSvg({
+    title: `Logiciel société de nettoyage à ${City}`,
+    kicker: `Logiciel nettoyage ${City}`,
+  })
+  render(svg, `villes-${slug}.png`)
+  cityCount++
+}
+console.log(`✓ ${cityCount} OG images villes générées`)
+
+// 6) Fonctionnalités
+const featureSlugs = extractField(resolve(root, 'src/data/features.ts'), 'slug')
+let featureCount = 0
+for (const slug of featureSlugs) {
+  const feature = slug.replace(/-/g, ' ')
+  const Feature = feature.charAt(0).toUpperCase() + feature.slice(1)
+  const svg = pageOgSvg({
+    title: `${Feature} : la fonctionnalité Proprely`,
+    kicker: 'Fonctionnalité',
+  })
+  render(svg, `fonctionnalites-${slug}.png`)
+  featureCount++
+}
+console.log(`✓ ${featureCount} OG images fonctionnalités générées`)
+
+// 7) Guides
+const guideSlugs = extractField(resolve(root, 'src/data/guides.ts'), 'slug')
+let guideCount = 0
+for (const slug of guideSlugs) {
+  const phrase = slug.replace(/-/g, ' ')
+  const Phrase = phrase.charAt(0).toUpperCase() + phrase.slice(1)
+  const svg = pageOgSvg({
+    title: `${Phrase} — Guide Proprely 2026`,
+    kicker: 'Guide',
+  })
+  render(svg, `guides-${slug}.png`)
+  guideCount++
+}
+console.log(`✓ ${guideCount} OG images guides générées`)
+
+const total = blogCount + pageCount + comparisonCount + alternativeCount + cityCount + featureCount + guideCount
+console.log(`\nTotal : ${total} images OG. Place : public/og/`)
