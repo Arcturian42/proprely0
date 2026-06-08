@@ -109,6 +109,7 @@ export default function Footer() {
               <li><Link to="/simulateur-rentabilite" className={linkClass}>Simulateur rentabilité</Link></li>
               <li><Link to="/ressources" className={linkClass}>Modèles Excel gratuits</Link></li>
               <li><Link to="/guides/quel-logiciel-societe-nettoyage" className={linkClass}>Guides réponse directe</Link></li>
+              <li><Link to="/glossaire" className={linkClass}>Glossaire métier</Link></li>
               <li><Link to="/blog/grille-salaire-nettoyage-2026-idcc-3043" className={linkClass}>Grille salaire 2026</Link></li>
               <li><Link to="/blog/creer-societe-nettoyage" className={linkClass}>Créer une société</Link></li>
             </ul>

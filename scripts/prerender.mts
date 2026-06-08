@@ -1670,6 +1670,42 @@ const authorsIndexHtml = buildHtml({
 writePage('/auteurs', authorsIndexHtml)
 generated.push('/auteurs')
 
+// Bloc HTML pour /glossaire — utile aux crawlers IA pour citer le sens des termes
+const glossaireBody = `
+  <h1>Glossaire propreté B2B</h1>
+  <p>Tous les termes métier des sociétés de nettoyage français : convention IDCC 3043, marchés publics, finance, conformité 2026. Définitions précises, sources officielles.</p>
+  <h2>Convention IDCC 3043</h2>
+  <p><strong>IDCC 3043</strong> : Convention collective nationale des entreprises de propreté et services associés. <strong>AS1</strong> : agent de service niveau 1 (SMIC propreté à 11,99 €/h brut en 2026). <strong>Article 7</strong> : transfert automatique des agents au repreneur d'un marché de nettoyage (sous conditions de 6 mois d'affectation). <strong>Prime de panier, transport, salissure</strong> : primes conventionnelles obligatoires.</p>
+  <h2>Marchés publics et appels d'offres</h2>
+  <p><strong>BOAMP</strong> : plateforme officielle de publication des marchés publics. <strong>CCTP</strong> : Cahier des Clauses Techniques Particulières (prestations attendues). <strong>CCAP</strong> : conditions contractuelles. <strong>RC</strong> : Règlement de Consultation (critères de notation). <strong>Mémoire technique</strong> : document central de réponse, 40-60 % de la note.</p>
+  <h2>Financier</h2>
+  <p><strong>Coût horaire chargé (CHC)</strong> : coût complet d'une heure d'agent, 19-23 €/h pour un AS1 en 2026. <strong>Marge brute</strong> : 25-35 % visée. <strong>Marge nette</strong> : 12-18 % visée. <strong>Quote-part frais de structure</strong> : à intégrer dans tout devis.</p>
+  <h2>Conformité 2026</h2>
+  <p><strong>Factur-X</strong> : format de facture électronique mixte (PDF/A-3 + XML). <strong>Chorus Pro</strong> : plateforme officielle pour les marchés publics. <strong>PDP</strong> : Plateforme de Dématérialisation Partenaire (dès 2027). <strong>RGPD</strong> : règlement européen sur la protection des données.</p>
+  <h2>Métier</h2>
+  <p><strong>Bionettoyage</strong> : nettoyage-désinfection en milieu médical. <strong>Preuve de passage</strong> : QR code, photos, signature. <strong>Remise en état</strong> : nettoyage approfondi après chantier. <strong>Décapage</strong> : élimination des couches d'émulsion sur sols durs.</p>
+`.trim()
+
+const glossaireHtml = buildHtml({
+  url: '/glossaire',
+  title: 'Glossaire propreté B2B : 40+ termes définis · Proprely',
+  description: "Glossaire métier des sociétés de nettoyage B2B : IDCC 3043, AS1, article 7, bionettoyage, CCTP, coût horaire chargé, Factur-X, RGPD.",
+  schemas: [
+    webpageSchema(
+      'Glossaire propreté B2B',
+      "Définitions des termes utilisés dans les sociétés de nettoyage françaises.",
+      `${ORIGIN}/glossaire/`,
+      [
+        { name: 'Accueil', item: `${ORIGIN}/` },
+        { name: 'Glossaire', item: `${ORIGIN}/glossaire/` },
+      ]
+    ),
+  ],
+  bodyHtml: glossaireBody,
+})
+writePage('/glossaire', glossaireHtml)
+generated.push('/glossaire')
+
 const paulMunierBody = `
   <h1>Paul Munier — Business Developer &amp; rédacteur</h1>
   <p>Business Developer chez Proprely depuis le lancement de la bêta privée, Paul Munier accompagne chaque mois plusieurs dirigeants de société de nettoyage dans leur passage d'Excel + WhatsApp vers un cockpit métier intégré. Ces échanges nourrissent directement les articles publiés sur le blog Proprely.</p>
