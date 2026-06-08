@@ -39,6 +39,7 @@ const AuditGratuit = lazy(() => import('./pages/AuditGratuit'))
 const GuidePage = lazy(() => import('./pages/GuidePage'))
 const SolutionHub = lazy(() => import('./pages/SolutionHub'))
 const StickyCTAMobile = lazy(() => import('./sections/StickyCTAMobile'))
+const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ToolsIndex = lazy(() => import('./pages/ToolsIndex'))
 const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
@@ -338,6 +339,46 @@ function App() {
   const stickyExcluded = ['/beta', '/beta/', '/beta/merci', '/beta/merci/', '/audit-gratuit', '/audit-gratuit/', '/contact', '/contact/']
   const showStickyCTA = !stickyExcluded.includes(route)
 
+  // Exit Intent global : exclu sur les pages déjà conversion-first ET sur
+  // les pages légales (où c'est intrusif et hors contexte). Les 3 calculateurs
+  // (/calculateur-roi, /simulateur-rentabilite, /calculateur-prix-nettoyage-m2)
+  // ont déjà leur propre ExitIntentPopup ciblé, on les exclut aussi du global
+  // pour éviter le doublon.
+  const exitExcluded = [
+    '/beta', '/beta/', '/beta/merci', '/beta/merci/',
+    '/audit-gratuit', '/audit-gratuit/',
+    '/contact', '/contact/',
+    '/mentions-legales', '/mentions-legales/',
+    '/confidentialite', '/confidentialite/',
+    '/cgu', '/cgu/',
+    '/calculateur-roi', '/calculateur-roi/',
+    '/simulateur-rentabilite', '/simulateur-rentabilite/',
+    '/calculateur-prix-nettoyage-m2', '/calculateur-prix-nettoyage-m2/',
+  ]
+  const showExitIntent = !exitExcluded.includes(route)
+
+  // Source du tracking dérivée du segment de route, pour pouvoir filtrer
+  // les performances exit_intent par type de page dans GA4.
+  const exitIntentSource = (() => {
+    if (route === '/') return 'home'
+    if (route.startsWith('/blog/')) return 'blog_post'
+    if (route === '/blog' || route === '/blog/') return 'blog_index'
+    if (route.startsWith('/comparatif/')) return 'comparatif'
+    if (route === '/comparatif-logiciel-nettoyage' || route === '/comparatif-logiciel-nettoyage/') return 'comparatif_hub'
+    if (route.startsWith('/alternative-')) return 'alternative'
+    if (route.startsWith('/guides/')) return 'guide'
+    if (route.startsWith('/villes/')) return 'ville'
+    if (route === '/villes' || route === '/villes/') return 'villes_index'
+    if (route.startsWith('/fonctionnalites/')) return 'fonctionnalite'
+    if (route === '/fonctionnalites' || route === '/fonctionnalites/') return 'fonctionnalites_index'
+    if (route.startsWith('/integrations/')) return 'integration'
+    if (route === '/integrations' || route === '/integrations/') return 'integrations_index'
+    if (route.startsWith('/auteurs/')) return 'author'
+    if (route === '/ressources' || route === '/ressources/' || route.startsWith('/ressources/')) return 'ressource'
+    if (route === '/outils' || route === '/outils/') return 'outils'
+    return route.replace(/^\/+|\/+$/g, '').replace(/[\/-]/g, '_') || 'unknown'
+  })()
+
   if (route === '/') {
     return (
       <div className="w-full bg-white">
@@ -346,6 +387,11 @@ function App() {
         {showStickyCTA && (
           <Suspense fallback={null}>
             <StickyCTAMobile />
+          </Suspense>
+        )}
+        {showExitIntent && (
+          <Suspense fallback={null}>
+            <ExitIntentPopup source={exitIntentSource} />
           </Suspense>
         )}
         <CookieBanner />
@@ -360,6 +406,11 @@ function App() {
       {showStickyCTA && (
         <Suspense fallback={null}>
           <StickyCTAMobile />
+        </Suspense>
+      )}
+      {showExitIntent && (
+        <Suspense fallback={null}>
+          <ExitIntentPopup source={exitIntentSource} />
         </Suspense>
       )}
       <CookieBanner />
