@@ -17,6 +17,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import ProductScreenshots from '../components/ProductScreenshots'
 import { features } from '../data/features'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
@@ -285,6 +286,24 @@ export default function FeatureIndex() {
                 )
               })}
             </div>
+          </div>
+        </section>
+
+        {/* PRODUCT SCREENSHOTS */}
+        <section className="py-14 sm:py-20 border-t border-slate-100 bg-gradient-to-b from-white via-slate-50 to-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-10 text-center mx-auto">
+              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100">
+                Aperçu produit
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3 leading-tight">
+                Le cockpit Proprely en 5 écrans
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Cliquez sur un onglet pour visualiser chaque module produit en situation réelle.
+              </p>
+            </div>
+            <ProductScreenshots />
           </div>
         </section>
 
