@@ -43,6 +43,19 @@
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments) };
     </script>
 
+    <!-- Google Tag Manager (GTM-MCQVLM46).
+         Placé APRÈS le bloc gtag('consent','default',...) ci-dessus pour que
+         le Consent Mode v2 soit déjà dans dataLayer quand GTM démarre. Les tags
+         déclenchés depuis GTM (GA4, Meta, LinkedIn, etc.) respecteront donc le
+         consentement par défaut (denied) et ne se débloqueront qu'au clic
+         "Accepter" via gtag('consent','update',...) dans src/lib/analytics.ts. -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MCQVLM46');</script>
+    <!-- End Google Tag Manager -->
+
     <title>Logiciel société de nettoyage 2026 : planning, devis · Proprely</title>
     <meta name="description" content="Logiciel de gestion société de nettoyage B2B : planning agents, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs." />
     <meta name="author" content="Proprely" />
@@ -372,6 +385,11 @@
     </style>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) — fallback pour utilisateurs JS désactivé -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCQVLM46"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <a href="#root" class="skip-link">Aller au contenu principal</a>
     <div id="root"></div>
     <aside class="seo-fallback" aria-label="Résumé et liens utiles">
