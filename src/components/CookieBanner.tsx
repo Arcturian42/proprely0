@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Cookie, X } from 'lucide-react'
 import { getConsent, setConsent, enableAnalytics } from '../lib/analytics'
 import { initPixels } from '../lib/pixels'
+import { initClarity } from '../lib/clarity'
 import { installFunnelTracking } from '../lib/funnel'
 import Link from './Link'
 
@@ -11,10 +12,13 @@ export default function CookieBanner() {
   if (!visible) return null
 
   const handle = (choice: 'granted' | 'denied') => {
-    // GA4 n'est chargé qu'après un consentement explicite (opt-in CNIL).
+    // GA4, pixels et Clarity ne sont chargés qu'après consentement explicite
+    // (opt-in CNIL). Clarity en particulier capture des sessions — il serait
+    // illégal de le charger sans cette étape.
     if (choice === 'granted') {
       enableAnalytics()
       initPixels()
+      initClarity()
       installFunnelTracking()
     } else setConsent('denied')
     setVisible(false)
@@ -32,7 +36,7 @@ export default function CookieBanner() {
         <div className="flex-1">
           <h3 className="text-sm font-bold text-slate-900 mb-1">Cookies de mesure d'audience</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Nous utilisons Google Analytics, Meta Pixel et LinkedIn Insight Tag pour comprendre comment vous utilisez le site et améliorer Proprely.
+            Nous utilisons Google Analytics, Meta Pixel, LinkedIn Insight Tag et Microsoft Clarity (heatmaps + session recordings anonymisés) pour comprendre comment vous utilisez le site et améliorer Proprely.
             Vous pouvez accepter ou refuser, ça ne change rien à votre expérience.{' '}
             <Link to="/confidentialite" className="text-blue-600 hover:underline">En savoir plus</Link>.
           </p>

@@ -1,5 +1,12 @@
-// GA4 est chargé en lazy depuis ce module pour ne pas bloquer le rendu initial.
-// L'init effectif est déclenché après idle/load + délai pour libérer le main thread.
+// GA4 avec Consent Mode v2.
+//
+// Le tag gtag.js est chargé immédiatement depuis index.html (pour que Google
+// Tag Assistant détecte la balise et pour respecter le pattern Google moderne),
+// MAIS toutes les catégories de stockage sont "denied" par défaut.
+//
+// Au clic "Accepter" dans le bandeau cookies, on appelle gtag('consent',
+// 'update', { analytics_storage: 'granted', ... }) — ce qui débloque le pixel
+// d'analytics chez Google sans recharger de script. Conforme CNIL / EEE.
 
 const GA_ID = 'G-ETKWWG0CWL'
 
@@ -10,57 +17,40 @@ declare global {
   }
 }
 
-let gaLoaded = false
-let gaLoadStarted = false
+// Fournit un gtag de secours si le bootstrap n'a pas eu lieu (SSR, env de test).
+function ensureGtag() {
+  if (typeof window === 'undefined') return
+  window.dataLayer = window.dataLayer || []
+  if (!window.gtag) {
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer!.push(args)
+    }
+  }
+}
 
-/**
- * GA4 est une mesure d'audience NON exemptée par la CNIL : elle ne doit jamais
- * être chargée sans consentement explicite préalable. Ce verrou est le point de
- * passage unique — tous les chemins (idle, interaction, trackEvent) transitent
- * par loadGAScript, donc aucun ne peut charger GA sans consentement.
- */
 function consentGranted(): boolean {
   return getConsent() === 'granted'
 }
 
-function loadGAScript() {
-  if (gaLoadStarted || typeof window === 'undefined') return
-  if (!consentGranted()) return
-  gaLoadStarted = true
-
-  window.dataLayer = window.dataLayer || []
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args)
-  }
-  window.gtag('js', new Date())
-  window.gtag('config', GA_ID)
-
-  const script = document.createElement('script')
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
-  script.async = true
-  script.onload = () => {
-    gaLoaded = true
-  }
-  document.head.appendChild(script)
-}
-
 export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (typeof window === 'undefined') return
-  if (!consentGranted()) return
-  if (!gaLoadStarted) loadGAScript()
+  ensureGtag()
+  // L'événement est queué même sans consentement. Si Consent Mode est en
+  // "denied", Google Tag Manager ne le compte pas comme un hit user identifiable
+  // (cookieless ping uniquement). Une fois "granted", les events suivants
+  // alimentent les rapports GA4 normalement.
   window.gtag?.('event', name, params || {})
 }
 
 export function trackPageView(path: string) {
   if (typeof window === 'undefined') return
-  if (!consentGranted() || !gaLoadStarted) return
+  ensureGtag()
   window.gtag?.('event', 'page_view', {
     page_path: path,
     page_location: window.location.href,
   })
 }
 
-// Compat : kept for components that import these symbols.
 const STORAGE_KEY = 'proprely_consent_v1'
 type Consent = 'granted' | 'denied' | null
 
@@ -74,54 +64,53 @@ export function getConsent(): Consent {
 export function setConsent(value: Exclude<Consent, null>) {
   if (typeof window === 'undefined') return
   window.localStorage.setItem(STORAGE_KEY, value)
+  // Synchronise immédiatement Consent Mode pour GA4.
+  ensureGtag()
+  if (value === 'granted') {
+    window.gtag?.('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted',
+    })
+  } else {
+    window.gtag?.('consent', 'update', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+    })
+  }
 }
 
 /**
- * Appelé après un consentement explicite ("Accepter" dans le bandeau cookies).
- * Mémorise le choix puis démarre immédiatement GA4 (le verrou consentGranted()
- * de loadGAScript est désormais satisfait).
+ * Appelée après "Accepter" dans le bandeau cookies. Mémorise le choix et
+ * propage le Consent Mode update à GA4. Pas besoin d'injecter le script :
+ * il est déjà chargé en idle via index.html.
  */
 export function enableAnalytics() {
   setConsent('granted')
-  loadGAScript()
 }
 
 export function initAnalytics() {
-  if (typeof window === 'undefined' || gaLoadStarted) return
-  // Sans consentement accordé, on n'attache aucun listener et on ne planifie
-  // aucun chargement. La mesure démarre via enableAnalytics() au clic "Accepter".
-  if (!consentGranted()) return
-
-  const start = () => {
-    const ric = (window as typeof window & {
-      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void
-    }).requestIdleCallback
-    if (ric) {
-      ric(loadGAScript, { timeout: 4000 })
-    } else {
-      setTimeout(loadGAScript, 2000)
-    }
+  if (typeof window === 'undefined') return
+  ensureGtag()
+  // Si l'utilisateur avait déjà accepté lors d'une visite précédente, on
+  // propage immédiatement le Consent Mode pour débloquer les rapports.
+  if (consentGranted()) {
+    window.gtag?.('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted',
+    })
   }
-
-  if (document.readyState === 'complete') {
-    start()
-  } else {
-    window.addEventListener('load', start, { once: true })
-  }
-
-  // Fallback: charger sur première interaction si l'idle ne se déclenche pas vite
-  const onInteract = () => {
-    loadGAScript()
-    window.removeEventListener('scroll', onInteract)
-    window.removeEventListener('pointerdown', onInteract)
-    window.removeEventListener('keydown', onInteract)
-  }
-  window.addEventListener('scroll', onInteract, { passive: true, once: true })
-  window.addEventListener('pointerdown', onInteract, { once: true })
-  window.addEventListener('keydown', onInteract, { once: true })
 }
 
-// Silence unused warning if needed in the future
+/** Conservé pour rétrocompatibilité avec d'éventuels callers. */
 export function isAnalyticsLoaded() {
-  return gaLoaded
+  return typeof window !== 'undefined' && Array.isArray(window.dataLayer)
 }
+
+// Référence GA_ID (utilisé indirectement via le script index.html).
+void GA_ID

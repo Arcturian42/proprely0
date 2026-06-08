@@ -22,6 +22,12 @@ RewriteRule ^ressources/calculateur-roi-nettoyage/?$ /calculateur-roi/ [R=301,L]
 RewriteRule ^glossary/?$ /glossaire/ [R=301,L]
 RewriteRule ^changelog/?$ /roadmap/ [R=301,L]
 
+# Compatibilité endpoint serverless : Hostinger ne fait pas tourner les
+# fonctions Vercel Node.js d'/api/. On route /api/subscribe vers son équivalent
+# PHP qui appelle Brevo (public/api/subscribe.php). Sans cette règle,
+# l'inscription newsletter tombait en 404 silencieux.
+RewriteRule ^api/subscribe/?$ /api/subscribe.php [L,QSA]
+
 # If a real file or directory exists, serve it as-is
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d

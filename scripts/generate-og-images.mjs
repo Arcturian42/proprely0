@@ -287,6 +287,41 @@ for (const slug of featureSlugs) {
 }
 console.log(`✓ ${featureCount} OG images fonctionnalités générées`)
 
+// 7bis) Pages détail intégrations
+function extractIntegrationDetailSlugs() {
+  const content = readFileSync(resolve(root, 'src/data/integrations.ts'), 'utf8')
+  const slugs = []
+  const blockRe = /slug:\s*['"`]([^'"`]+)['"`][\s\S]*?(?=\n\s*\{|\n\]|$)/g
+  let m
+  while ((m = blockRe.exec(content)) !== null) {
+    const block = m[0]
+    if (/detail:\s*\{/.test(block)) slugs.push(m[1])
+  }
+  return slugs
+}
+
+const integrationSlugs = extractIntegrationDetailSlugs()
+let integrationCount = 0
+for (const slug of integrationSlugs) {
+  const Name = slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')
+  const svg = pageOgSvg({
+    title: `${Name} × Proprely`,
+    kicker: 'Intégration',
+  })
+  render(svg, `integrations-${slug}.png`)
+  integrationCount++
+}
+// Index intégrations (utilisée par /integrations/)
+{
+  const svg = pageOgSvg({
+    title: 'Intégrations Proprely : Silae, Pennylane, Qonto, Brevo',
+    kicker: 'Intégrations',
+  })
+  render(svg, `integrations.png`)
+  integrationCount++
+}
+console.log(`✓ ${integrationCount} OG images intégrations générées`)
+
 // 7) Guides
 const guideSlugs = extractField(resolve(root, 'src/data/guides.ts'), 'slug')
 let guideCount = 0
@@ -302,5 +337,5 @@ for (const slug of guideSlugs) {
 }
 console.log(`✓ ${guideCount} OG images guides générées`)
 
-const total = blogCount + pageCount + comparisonCount + alternativeCount + cityCount + featureCount + guideCount
+const total = blogCount + pageCount + comparisonCount + alternativeCount + cityCount + featureCount + guideCount + integrationCount
 console.log(`\nTotal : ${total} images OG. Place : public/og/`)

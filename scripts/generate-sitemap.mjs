@@ -68,6 +68,22 @@ const comparisonSlugs = extractField(resolve(root, 'src/data/comparisons.ts'), '
 const alternativeSlugs = extractField(resolve(root, 'src/data/alternatives.ts'), 'slug')
 const guideSlugs = extractField(resolve(root, 'src/data/guides.ts'), 'slug')
 
+// Intégrations avec page détaillée : on extrait les entrées qui ont un champ
+// `detail:` rempli. La regex repère les blocs slug + detail (multilign).
+function extractIntegrationDetailSlugs(filePath) {
+  const content = readFileSync(filePath, 'utf8')
+  // On cherche les slugs suivis (dans le même bloc) d'un champ detail: { ... }
+  const slugs = []
+  const blockRe = /slug:\s*['"`]([^'"`]+)['"`][\s\S]*?(?=\n\s*\{|\n\]|$)/g
+  let m
+  while ((m = blockRe.exec(content)) !== null) {
+    const block = m[0]
+    if (/detail:\s*\{/.test(block)) slugs.push(m[1])
+  }
+  return slugs
+}
+const integrationDetailSlugs = extractIntegrationDetailSlugs(resolve(root, 'src/data/integrations.ts'))
+
 const mostRecentBlog = blogPosts
   .map((p) => p.lastmod)
   .filter(Boolean)
@@ -236,6 +252,14 @@ const urls = [
     lastmod: CITY_LM,
     image: DEFAULT_OG_IMAGE,
     imageTitle: `Logiciel nettoyage ${slug.charAt(0).toUpperCase() + slug.slice(1)}`,
+  })),
+  ...integrationDetailSlugs.map((slug) => ({
+    loc: `${ORIGIN}/integrations/${slug}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: INTEG_LM,
+    image: DEFAULT_OG_IMAGE,
+    imageTitle: `Intégration ${slug.charAt(0).toUpperCase() + slug.slice(1)} × Proprely`,
   })),
   ...blogPosts.map((p) => ({
     loc: `${ORIGIN}/blog/${p.slug}`,

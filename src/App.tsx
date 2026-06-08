@@ -5,6 +5,7 @@ import ScrollProgress from './components/ScrollProgress'
 import CookieBanner from './components/CookieBanner'
 import { initAnalytics, trackPageView } from './lib/analytics'
 import { initPixels, trackPixelPageView } from './lib/pixels'
+import { initClarity } from './lib/clarity'
 import { installFunnelTracking, trackFunnelStep } from './lib/funnel'
 
 const RoiCalculator = lazy(() => import('./pages/RoiCalculator'))
@@ -44,6 +45,7 @@ const PriceCalculator = lazy(() => import('./pages/PriceCalculator'))
 const SecuriteRGPD = lazy(() => import('./pages/SecuriteRGPD'))
 const CasClientsPage = lazy(() => import('./pages/CasClientsPage'))
 const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage'))
+const IntegrationDetailPage = lazy(() => import('./pages/IntegrationDetailPage'))
 const AuthorPage = lazy(() => import('./pages/AuthorPage'))
 const AuthorIndex = lazy(() => import('./pages/AuthorIndex'))
 const RoadmapPage = lazy(() => import('./pages/RoadmapPage'))
@@ -180,6 +182,14 @@ const META: Record<string, RouteMeta> = {
     title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
     description: "Les auteurs du blog Proprely : profils, expertises et méthode éditoriale. Aucun article publié sans cadrage avec un dirigeant en exercice.",
   },
+  '/integrations/qonto': {
+    title: 'Intégration Qonto × Proprely : rapprochement automatique',
+    description: "Intégration Qonto × Proprely : règlements clients rapprochés automatiquement avec vos factures de nettoyage. DSO en temps réel, alertes paiement, fin du pointage manuel.",
+  },
+  '/integrations/pennylane': {
+    title: 'Intégration Pennylane × Proprely : compta nettoyage auto',
+    description: "Intégration Pennylane × Proprely : factures de nettoyage poussées en temps réel, rapprochement bancaire automatisé, expert-comptable connecté. Compta sans double saisie.",
+  },
 }
 
 
@@ -226,6 +236,7 @@ function App() {
   useEffect(() => {
     initAnalytics()
     initPixels()
+    initClarity()
     installFunnelTracking()
     trackFunnelStep('visit', { path: window.location.pathname })
   }, [])
@@ -303,6 +314,7 @@ function App() {
   else if (route === '/securite-rgpd' || route === '/securite-rgpd/') content = <SecuriteRGPD />
   else if (route === '/cas-clients' || route === '/cas-clients/') content = <CasClientsPage />
   else if (route === '/integrations' || route === '/integrations/') content = <IntegrationsPage />
+  else if (route.startsWith('/integrations/')) content = <IntegrationDetailPage slug={route.slice(14).replace(/\/$/, '')} />
   else if (route === '/auteurs' || route === '/auteurs/') content = <AuthorIndex />
   else if (route.startsWith('/auteurs/')) content = <AuthorPage slug={route.slice(9).replace(/\/$/, '')} />
   else if (route === '/roadmap' || route === '/roadmap/') content = <RoadmapPage />

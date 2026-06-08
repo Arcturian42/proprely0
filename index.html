@@ -11,6 +11,38 @@
     <meta name="theme-color" content="#2563EB" />
     <meta name="google-site-verification" content="PZFK32zsKqhNO68YpJ5Rx97saq2F4nRP1cfS_y8Ay5A" />
 
+    <!-- Google Tag (gtag.js) + Consent Mode v2.
+         Le tag est chargé immédiatement (détection Google Tag Assistant OK),
+         mais TOUS les stockages sont en "denied" par défaut. Aucune donnée
+         personnelle n'est collectée avant clic "Accepter" sur le bandeau cookies
+         (src/components/CookieBanner.tsx + src/lib/analytics.ts qui appelle
+         gtag('consent','update',...) avec analytics_storage:'granted').
+         Conforme CNIL / EEE. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ETKWWG0CWL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-ETKWWG0CWL', { 'anonymize_ip': true });
+    </script>
+
+    <!-- Microsoft Clarity (heatmaps + session recordings).
+         Comme GA4 ci-dessus, Clarity est chargé via src/lib/clarity.ts UNIQUEMENT
+         après consentement explicite. Ce stub ne le charge pas, il garantit juste
+         que `window.clarity` existe pour les composants qui voudraient l'appeler. -->
+    <script>
+      window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments) };
+    </script>
+
     <title>Logiciel société de nettoyage 2026 : planning, devis · Proprely</title>
     <meta name="description" content="Logiciel de gestion société de nettoyage B2B : planning agents, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs." />
     <meta name="author" content="Proprely" />

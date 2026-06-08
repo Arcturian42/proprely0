@@ -60,6 +60,49 @@ const EXTENDED_BIOS: Record<string, {
     ],
     location: 'France · entretiens hebdomadaires avec les fondateurs Proprely',
   },
+  'lucas-mafo': {
+    intro:
+      "Lucas couvre les verticales techniques de la propreté chez Proprely : industriel, vitrerie spécialisée, datacenter, bionettoyage laboratoire, après-sinistre. Ses articles s'adressent aux dirigeants de sociétés de nettoyage qui se positionnent sur des segments à protocoles formels (HACCP, EN bionettoyage, salles blanches, contamination biologique).",
+    paragraphs: [
+      "Spécialiste des verticales métier propreté chez Proprely, Lucas Mafo traite les segments techniques où les protocoles et la traçabilité sont des prérequis commerciaux : nettoyage industriel (HACCP agroalimentaire, ICPE), vitrerie spécialisée (travaux en hauteur, façades), bionettoyage médical et laboratoire (NF EN 14885, ISO 14644 salles blanches), nettoyage datacenter (zones sensibles, antistatique) et décontamination après sinistre (incendie, dégât des eaux, biologique).",
+      "Sa méthode : entretiens systématiques avec des dirigeants de sociétés de nettoyage positionnées sur ces verticales, croisés avec la documentation officielle (INRS, ANSES, ISO, AFNOR, normes EN). Aucun article publié sans validation par un opérationnel en exercice sur la verticale concernée.",
+      "Lucas s'appuie aussi sur les retours de la bêta privée Proprely pour identifier les besoins logiciels spécifiques de ces verticales (traçabilité protocole, photos avant-après datées sur zones critiques, conformité documentaire pour audits clients).",
+    ],
+    expertise: [
+      {
+        title: "Nettoyage industriel et HACCP",
+        desc: "Agroalimentaire, ICPE, protocoles HACCP, zones à risque, fréquences et traçabilité.",
+      },
+      {
+        title: "Vitrerie spécialisée et travaux en hauteur",
+        desc: "Façades vitrées, nacelles, cordistes, équipements de protection individuelle, conformité Code du travail.",
+      },
+      {
+        title: "Bionettoyage médical et laboratoire",
+        desc: "Hôpitaux, EHPAD, laboratoires d'analyses, normes NF EN 14885, traçabilité produits CMR, désinfection ciblée.",
+      },
+      {
+        title: "Salles blanches et environnements contrôlés",
+        desc: "ISO 14644, pharmacie, semi-conducteurs, contrôles particulaires, équipements et tenues spécifiques.",
+      },
+      {
+        title: "Décontamination après sinistre",
+        desc: "Incendie, dégât des eaux, contamination biologique, prise en charge assurance, expertise contradictoire.",
+      },
+      {
+        title: "Nettoyage datacenter",
+        desc: "Zones sensibles, antistatique, sols techniques, protocoles d'accès sécurisé, périodicité.",
+      },
+    ],
+    approach: [
+      "Aucun article publié sans validation par un opérationnel en exercice sur la verticale.",
+      "Sources officielles citées (INRS, ANSES, ISO, AFNOR, normes EN, Code du travail).",
+      "Ordres de grandeur tarifaires basés sur la grille IDCC 3043 + primes spécifiques par verticale.",
+      "Mises à jour quand un référentiel ou une norme évolue (révision EN, mise à jour ISO).",
+      "Aucune fabrication, aucune affiliation cachée.",
+    ],
+    location: 'France · entretiens avec des dirigeants spécialisés sur chaque verticale',
+  },
 }
 
 function injectSchema(slug: string) {

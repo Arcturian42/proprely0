@@ -7,6 +7,7 @@ import { features, getFeature } from '../src/data/features.ts'
 import { cities, getCity } from '../src/data/cities.ts'
 import { resources } from '../src/data/resources.ts'
 import { glossary } from '../src/data/glossary.ts'
+import { integrations, STATUS_LABEL } from '../src/data/integrations.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -3231,6 +3232,149 @@ const priceHtml = buildHtml({
 })
 writePage('/calculateur-prix-nettoyage-m2', priceHtml)
 generated.push('/calculateur-prix-nettoyage-m2')
+
+// ─── Index intégrations + pages détail ────────────────────────────────
+// /integrations/ : page index avec toutes les intégrations groupées par catégorie.
+// /integrations/{slug}/ : pages détail pour les intégrations avec `detail`.
+const integrationsByCategory = new Map<string, typeof integrations>()
+for (const integ of integrations) {
+  if (!integrationsByCategory.has(integ.category)) integrationsByCategory.set(integ.category, [])
+  integrationsByCategory.get(integ.category)!.push(integ)
+}
+
+const integrationsIndexBody = `
+  <h1>Intégrations Proprely : votre cockpit nettoyage parle à votre stack</h1>
+  <p>Vos données opérationnelles (clients, agents, plannings, devis, factures) ne devraient pas être enfermées dans un seul outil. Proprely se connecte à votre paie (Silae), votre comptabilité (Pennylane, Tiime, Indy), votre banque pro (Qonto, Shine), votre email marketing (Brevo) et la conformité Factur-X 2026-2027 (Chorus Pro et PDP).</p>
+  ${[...integrationsByCategory.entries()].map(([cat, integs]) => `
+    <h2>${escapeHtml(cat)}</h2>
+    <ul>${integs.map((i) => `
+      <li>
+        ${i.detail ? `<a href="${ORIGIN}/integrations/${i.slug}/"><strong>${escapeHtml(i.name)}</strong></a>` : `<strong>${escapeHtml(i.name)}</strong>`}
+        (${escapeHtml(STATUS_LABEL[i.status])}) — ${escapeHtml(i.description)}
+      </li>
+    `).join('')}</ul>
+  `).join('')}
+  <h2>Aucun lock-in technique</h2>
+  <p>Toutes vos données restent exportables en CSV / Excel à tout moment, sans intervention technique. Les intégrations sont des facilitateurs, pas des verrous.</p>
+`.trim()
+
+const integrationsIndexHtml = buildHtml({
+  url: '/integrations',
+  title: 'Intégrations Proprely : Silae, Pennylane, Qonto, Brevo · Proprely',
+  description: "Toutes les intégrations Proprely : paie Silae, comptabilité Pennylane/Tiime/Indy, banque Qonto/Shine, email Brevo, Chorus Pro Factur-X. Cockpit nettoyage qui parle à votre stack.",
+  ogImage: '/og/integrations.png',
+  schemas: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Intégrations Proprely',
+      description: "Intégrations natives du cockpit Proprely : paie, comptabilité, banque pro, email, conformité Factur-X.",
+      url: `${ORIGIN}/integrations/`,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-07',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      hasPart: integrations.map((i) => ({
+        '@type': 'WebPage',
+        name: `Intégration ${i.name}`,
+        description: i.description,
+        ...(i.detail ? { url: `${ORIGIN}/integrations/${i.slug}/` } : {}),
+      })),
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+          { '@type': 'ListItem', position: 2, name: 'Intégrations', item: `${ORIGIN}/integrations/` },
+        ],
+      },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h1 + p'],
+      },
+    },
+  ],
+  bodyHtml: integrationsIndexBody,
+})
+writePage('/integrations', integrationsIndexHtml)
+generated.push('/integrations')
+
+for (const integ of integrations) {
+  if (!integ.detail) continue
+  const url = `/integrations/${integ.slug}`
+  const detailUrl = `${ORIGIN}${url}/`
+  const d = integ.detail
+
+  const useCasesHtml = d.useCases
+    .map((uc) => `<h3>${escapeHtml(uc.title)}</h3><p>${escapeHtml(uc.description)}</p>`)
+    .join('')
+  const howItWorksHtml = d.howItWorks
+    .map((s, k) => `<h3>${k + 1}. ${escapeHtml(s.step)}</h3><p>${escapeHtml(s.description)}</p>`)
+    .join('')
+  const faqHtmlInt = d.faq
+    .map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`)
+    .join('')
+  const relatedHtmlInt = d.relatedLinks?.length
+    ? `<h2>À lire aussi</h2><ul>${d.relatedLinks.map((r) => `<li><a href="${ORIGIN}${r.to}/">${escapeHtml(r.label)}</a></li>`).join('')}</ul>`
+    : ''
+
+  const bodyHtml = `
+    <h1>${escapeHtml(integ.name)} × Proprely</h1>
+    <p>${escapeHtml(d.heroPitch)}</p>
+    <aside><p><strong>Réponse-flash :</strong> ${escapeHtml(d.tldr)}</p></aside>
+    <h2>Ce que ${escapeHtml(integ.name)} × Proprely vous permet de faire</h2>
+    ${useCasesHtml}
+    <h2>Comment ça marche</h2>
+    ${howItWorksHtml}
+    <h2>Questions fréquentes sur ${escapeHtml(integ.name)} × Proprely</h2>
+    ${faqHtmlInt}
+    ${relatedHtmlInt}
+  `.trim()
+
+  const schemas: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: d.metaTitle,
+      description: d.metaDescription,
+      url: detailUrl,
+      inLanguage: 'fr-FR',
+      datePublished: '2026-06-08',
+      dateModified: TODAY,
+      isPartOf: { '@type': 'WebSite', '@id': `${ORIGIN}/#website` },
+      abstract: d.tldr,
+      mentions: integ.website
+        ? [{ '@type': 'Organization', name: integ.name, url: integ.website }]
+        : [{ '@type': 'Organization', name: integ.name }],
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'aside > p:first-of-type'],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${ORIGIN}/` },
+        { '@type': 'ListItem', position: 2, name: 'Intégrations', item: `${ORIGIN}/integrations/` },
+        { '@type': 'ListItem', position: 3, name: `${integ.name} × Proprely`, item: detailUrl },
+      ],
+    },
+    faqSchema(d.faq),
+  ]
+
+  const html = buildHtml({
+    url,
+    title: d.metaTitle,
+    description: d.metaDescription,
+    ogTitle: d.metaTitle,
+    ogDescription: d.metaDescription,
+    ogImage: `/og/integrations-${integ.slug}.png`,
+    schemas,
+    bodyHtml,
+  })
+  writePage(url, html)
+  generated.push(url)
+}
 
 // === llms-full.txt : corpus intégral pour les moteurs génératifs (GEO) ===
 // Au-delà de l'index llms.txt, on expose le TEXTE COMPLET des articles +

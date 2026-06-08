@@ -10,16 +10,45 @@ const ENDPOINT = (import.meta as unknown as {
   env: { VITE_SUBSCRIBE_ENDPOINT?: string }
 }).env.VITE_SUBSCRIBE_ENDPOINT || '/api/subscribe'
 
-async function sendSubscription(payload: { email: string; source: string }) {
+type SubscribeResult =
+  | { ok: true }
+  | { ok: false; reason: 'network' | 'http' | 'not_configured' | 'brevo_error' | 'unknown'; status?: number }
+
+async function sendSubscription(payload: { email: string; source: string }): Promise<SubscribeResult> {
+  let res: Response
   try {
-    await fetch(ENDPOINT, {
+    res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({ ...payload, type: 'newsletter' }),
     })
-  } catch {
-    // Silent : on n'empêche jamais l'UX de succès même si le backend rate.
+  } catch (err) {
+    console.error('[newsletter] Network error', err)
+    return { ok: false, reason: 'network' }
   }
+
+  type Body = { ok?: boolean; stored?: boolean; reason?: string; error?: string }
+  let data: Body | null = null
+  try {
+    data = (await res.json()) as Body
+  } catch {
+    /* may not be JSON (e.g. 404 HTML page) */
+  }
+
+  if (!res.ok) {
+    console.error('[newsletter] Server error', res.status, data ?? '<no body>')
+    if (data?.reason === 'not_configured') return { ok: false, reason: 'not_configured' }
+    if (data?.error === 'brevo_error') return { ok: false, reason: 'brevo_error', status: res.status }
+    return { ok: false, reason: 'http', status: res.status }
+  }
+
+  // res.ok mais payload signale stored:false ou ok:false → on remonte une erreur.
+  if (data && (data.ok === false || data.stored === false)) {
+    console.warn('[newsletter] Server returned ok=false', data)
+    return { ok: false, reason: 'not_configured' }
+  }
+
+  return { ok: true }
 }
 
 type Variant = 'default' | 'compact' | 'inline'
@@ -41,6 +70,7 @@ export default function NewsletterSignup({
 }: Props) {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [errorMsg, setErrorMsg] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
   const defaultTitle = title ?? "Une analyse propreté B2B chaque semaine"
@@ -51,6 +81,7 @@ export default function NewsletterSignup({
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     if (!email.trim() || loading) return
+    setErrorMsg(null)
     setLoading(true)
 
     const cleanEmail = email.trim().toLowerCase()
@@ -59,7 +90,19 @@ export default function NewsletterSignup({
       email_domain: cleanEmail.split('@')[1] || '',
     })
     trackPixelLead({ content_name: 'newsletter', content_category: source })
-    await sendSubscription({ email: cleanEmail, source })
+    const result = await sendSubscription({ email: cleanEmail, source })
+
+    if (!result.ok) {
+      const friendly =
+        result.reason === 'not_configured'
+          ? "L'inscription n'est pas encore opérationnelle. Écrivez-nous à contact@proprely.fr, on vous ajoute manuellement."
+          : result.reason === 'network'
+            ? "Connexion impossible. Vérifiez votre connexion et réessayez."
+            : "Une erreur est survenue. Réessayez dans un instant ou écrivez à contact@proprely.fr."
+      setErrorMsg(friendly)
+      setLoading(false)
+      return
+    }
 
     setSubmitted(true)
     setLoading(false)
@@ -85,25 +128,30 @@ export default function NewsletterSignup({
 
   if (variant === 'inline') {
     return (
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="votre@email.fr"
-          className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors"
-          aria-label="Adresse email"
-        />
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-blue-600 text-white rounded-xl px-5 py-3 font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-60 inline-flex items-center justify-center gap-2 shrink-0"
-        >
-          {loading ? '…' : buttonLabel}
-          {!loading && <ArrowRight size={14} />}
-        </button>
-      </form>
+      <div>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="votre@email.fr"
+            className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors"
+            aria-label="Adresse email"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-blue-600 text-white rounded-xl px-5 py-3 font-bold text-sm hover:bg-blue-700 transition-colors disabled:opacity-60 inline-flex items-center justify-center gap-2 shrink-0"
+          >
+            {loading ? '…' : buttonLabel}
+            {!loading && <ArrowRight size={14} />}
+          </button>
+        </form>
+        {errorMsg && (
+          <p role="alert" className="text-xs text-rose-700 mt-2">{errorMsg}</p>
+        )}
+      </div>
     )
   }
 
@@ -146,6 +194,9 @@ export default function NewsletterSignup({
           {!loading && <ArrowRight size={14} />}
         </button>
       </form>
+      {errorMsg && (
+        <p role="alert" className="text-xs text-rose-700 mt-3">{errorMsg}</p>
+      )}
     </div>
   )
 }
