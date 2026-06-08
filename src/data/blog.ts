@@ -30,6 +30,509 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'article-7-idcc-3043-transfert-personnel',
+    title: "Article 7 IDCC 3043 : transfert du personnel en pratique 2026",
+    excerpt: "Reprise d'un marché, perte d'un site, fusion : tout ce qu'il faut savoir sur le transfert automatique des agents de nettoyage prévu par l'article 7 de la convention collective propreté.",
+    date: '8 juin 2026',
+    readTime: '11 min',
+    tag: 'Réglementaire',
+    tldr: "L'article 7 de l'IDCC 3043 impose le transfert automatique des agents de nettoyage au repreneur d'un marché : agent affecté principalement au site (>30 %), CDI, 6 mois d'ancienneté minimum, maintien intégral du salaire, des avantages et de l'ancienneté. Pour le repreneur : due diligence RH avant chiffrage (liste, ancienneté, absentéisme). Pour l'entreprise sortante : pas d'option de garder l'agent sauf reclassement effectif.",
+    quickSummary: [
+      "Transfert automatique au repreneur si : CDI, affectation principale (>30 %), 6 mois d'ancienneté minimum.",
+      "Maintien intégral : salaire brut, ancienneté, primes acquises, congés non pris, mutuelle.",
+      "Le repreneur a 5 jours pour notifier les agents par lettre recommandée AR.",
+      "Refus d'un agent = démission (sans indemnités) sauf modification substantielle prouvée.",
+      "Pour le repreneur : due diligence RH avant chiffrage (liste personnel, contrats, ancienneté, absentéisme, conflits).",
+      "Pour le sortant : pas d'option de garder l'agent sauf reclassement effectif et accepté par écrit.",
+      "Litige fréquent : qualification d'affectation principale. Le juge regarde le temps réel passé, pas le contrat.",
+    ],
+    relatedSlugs: ['repondre-appel-offres-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'cout-horaire-charge-agent-nettoyage'],
+    faq: [
+      { q: "Qu'est-ce que l'article 7 de l'IDCC 3043 ?", a: "L'article 7 (anciennement annexe 7) de la convention collective propreté impose, en cas de perte d'un marché et reprise par un concurrent, le transfert automatique des agents affectés au site. Conditions cumulatives : agent en CDI, affecté principalement (>30 % de son temps) au site repris, depuis 6 mois minimum. Maintien intégral de l'ancienneté, du salaire, des primes acquises et des avantages." },
+      { q: "Le repreneur peut-il refuser de reprendre certains agents ?", a: "Non, le transfert est automatique et obligatoire dès lors que les conditions sont remplies. Le repreneur ne peut pas trier : il prend la liste complète des agents éligibles. Sa seule marge de manœuvre est de licencier ultérieurement pour motif réel et sérieux (économique, professionnel, faute), mais le coût est à sa charge." },
+      { q: "Que se passe-t-il si un agent refuse le transfert ?", a: "Le refus de l'agent est qualifié de démission (sans indemnités) sauf s'il prouve une modification substantielle de son contrat (mutation géographique importante, changement d'horaires non prévu, baisse de rémunération). En pratique, les refus sont rares quand les conditions de travail sont maintenues à l'identique." },
+      { q: "Comment fait-on la due diligence RH avant de reprendre un marché ?", a: "Demander à l'entreprise sortante (ou via le donneur d'ordre s'il joue le jeu) : (1) liste des agents éligibles avec ancienneté et taux d'affectation, (2) contrats et avenants, (3) primes acquises non versées, (4) historique absentéisme 12 mois, (5) éventuels procès en cours. Sans cette due diligence, le coût réel du marché est inconnu et le chiffrage est aveugle." },
+      { q: "Quels sont les délais et formalités du transfert ?", a: "Le repreneur a 5 jours ouvrables à compter de la prise d'effet pour notifier chaque agent par lettre recommandée avec AR (rappel : ancienneté, salaire, primes maintenues). L'entreprise sortante remet les documents (certificat de travail, attestation Pôle emploi, solde de tout compte) pour les éléments antérieurs. Aucune rupture, aucune réembauche : continuité juridique pure." },
+      { q: "L'article 7 s'applique-t-il aux marchés publics ?", a: "Oui, sans exception. La convention collective IDCC 3043 s'applique à toutes les entreprises de propreté indépendamment du donneur d'ordre. Pour un marché public repris, le repreneur doit notifier les agents éligibles selon les mêmes règles. La DGAFP a confirmé l'applicabilité dans plusieurs avis." },
+      { q: "Comment chiffrer un marché avec article 7 ?", a: "Trois étapes : (1) obtenir la liste personnel transférable avec ancienneté, contrats, primes acquises ; (2) recalculer le coût horaire chargé en intégrant ces éléments (l'agent à 15 ans d'ancienneté ne coûte pas comme un nouvel embauché) ; (3) prévoir un coussin de 5-10 % pour les surprises (litiges, absences chroniques non révélées). Un marché chiffré sans cette due diligence est dangereux." },
+      { q: "Quel risque si le repreneur ignore l'article 7 ?", a: "Très élevé. L'agent peut saisir les prud'hommes pour requalification en licenciement sans cause réelle (le repreneur n'ayant pas exécuté son obligation de transfert). Sanctions : indemnités de licenciement, dommages-intérêts (6 à 24 mois de salaire), réintégration possible. Plusieurs jurisprudences ont condamné des repreneurs pour des sommes >100 000 €." },
+    ],
+    content: `## Pourquoi l'article 7 est central dans la propreté B2B
+
+La convention collective de la propreté (IDCC 3043) est l'une des rares en France à prévoir un transfert automatique du personnel en cas de changement de prestataire sur un site. C'est une particularité du secteur, justifiée par la mobilité forte des marchés (rotations rapides, appels d'offres récurrents) et la précarité historique des agents.
+
+**Pour le repreneur**, c'est une contrainte forte mais aussi une opportunité : les agents qui connaissent le site, les protocoles et les habitudes du client sont plus efficaces dès le jour 1.
+
+**Pour l'entreprise sortante**, c'est l'impossibilité de "garder" un bon agent sauf à pouvoir le reclasser réellement sur un autre site.
+
+**Pour le client final**, c'est la garantie d'une continuité de service sans rupture brutale.
+
+## Les 3 conditions cumulatives du transfert
+
+L'article 7 impose le transfert si **et seulement si** les trois conditions suivantes sont remplies :
+
+| Condition | Détail |
+|---|---|
+| **Type de contrat** | CDI uniquement (CDD non concernés, ni intérim) |
+| **Affectation** | Principalement au site repris (>30 % du temps de travail) |
+| **Ancienneté** | 6 mois minimum d'affectation continue au site |
+
+Les **CDD** ne sont pas transférés et continuent jusqu'à leur terme avec l'entreprise sortante (ou rompus avec indemnités si le contrat le prévoit).
+
+Les **agents affectés à plusieurs sites** sont transférés uniquement si le site repris représente >30 % de leur temps. Sinon, ils restent dans l'effectif de l'entreprise sortante.
+
+## Ce qui est maintenu (intégralement)
+
+Le transfert est **continuité juridique pure**, pas une nouvelle embauche :
+
+- **Ancienneté** complète depuis l'embauche d'origine
+- **Salaire** brut horaire et mensuel
+- **Primes acquises** (panier, transport, salissure, ancienneté)
+- **Congés non pris** (le repreneur les solde ou les verse en fin de période)
+- **Mutuelle** d'entreprise (ou équivalente)
+- **Statut conventionnel** (niveau de la grille IDCC 3043)
+- **Dispositifs collectifs en cours** (intéressement, PEE si applicables)
+
+Le repreneur peut **harmoniser** ces éléments à la hausse (jamais à la baisse) en accord écrit avec l'agent.
+
+## Les délais et formalités
+
+| Étape | Délai | Acteur |
+|---|---|---|
+| Notification du transfert | 5 jours ouvrables avant prise d'effet | Repreneur (LRAR à chaque agent) |
+| Remise des documents | À la fin du contrat sortant | Entreprise sortante (certificat travail, attestation Pôle emploi, solde de tout compte pour éléments antérieurs) |
+| Information CSE | Avant transfert si concerné | Les deux entreprises |
+| Mise à jour du DUERP | Sous 30 jours | Repreneur |
+
+La notification au format LRAR est **non négociable** : elle protège juridiquement le repreneur en cas de contestation ultérieure.
+
+## La due diligence RH avant de chiffrer
+
+C'est l'étape critique pour tout dirigeant qui veut **chiffrer correctement** un marché soumis à l'article 7. Voici les informations à obtenir absolument **avant** de remettre une offre :
+
+### 1. Liste des agents éligibles
+- Prénom, nom (anonymisable pour le devis)
+- Date d'embauche d'origine
+- Date d'affectation au site
+- Type de contrat (CDI exclusivement)
+- Pourcentage d'affectation au site
+
+### 2. Contrats et avenants
+- Volume horaire hebdomadaire contractuel
+- Heures complémentaires régulières (souvent un piège : un temps partiel à 20h qui en fait 28 est en réalité un temps complet déguisé)
+- Avenants en cours (mutations, augmentations)
+
+### 3. Coût horaire chargé réel par agent
+- Salaire brut + ancienneté
+- Primes acquises (panier, transport, salissure)
+- Charges patronales (~42 %)
+- **Total** : permet de calculer le coût horaire chargé site-spécifique
+
+Voir le détail du calcul dans notre guide [coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage).
+
+### 4. Historique RH 12 mois
+- Absentéisme par agent (un agent à 15 % absentéisme coûte +1,80 €/h "caché")
+- Conflits en cours, procédures disciplinaires
+- Avertissements et sanctions
+
+### 5. Éléments contractuels
+- Primes ou avantages exceptionnels accordés
+- Engagements de formation à honorer
+- Dispositifs collectifs (intéressement, PEE)
+
+## Comment obtenir cette information ?
+
+Trois canaux possibles :
+
+1. **L'entreprise sortante directement** : rare qu'elle joue le jeu, sauf si elle perd le marché de toute façon et veut soigner la sortie.
+2. **Le donneur d'ordre (client)** : peut imposer la transmission via le CCAP de l'appel d'offres. C'est le cas le plus fréquent en marchés publics.
+3. **Demande légale formelle** : article L1224-2 du Code du travail oblige les deux entreprises à coopérer. En cas de refus, recours au TJ.
+
+Dans tous les cas, **chiffrer un marché article 7 sans cette information, c'est s'engager les yeux bandés**.
+
+## Les 3 pièges classiques
+
+### Piège 1 : sous-estimer le coût ancienneté
+Un agent transféré avec 15 ans d'ancienneté coûte significativement plus cher qu'un nouvel embauché : salaire de base +5-10 %, primes d'ancienneté, indemnité de licenciement en cas de rupture (1/4 de mois par année). Le chiffrage doit intégrer ce coût pour ne pas se retrouver en perte.
+
+### Piège 2 : ignorer l'absentéisme révélé après transfert
+Sans historique 12 mois, un repreneur découvre un agent à 25 % d'absentéisme après quelques semaines. Coût : 2-3 € de plus par heure facturée, sans compter la désorganisation. Cause directe de marchés "rentables sur le papier" devenus perdants.
+
+### Piège 3 : refuser un agent en croyant qu'on peut
+Le transfert est **automatique** et **obligatoire**. Tenter de "trier" en refusant un agent = requalification en licenciement sans cause réelle, indemnités de 6 à 24 mois de salaire, possible réintégration. Plusieurs jurisprudences ont condamné des repreneurs pour des sommes >100 000 €.
+
+## Le piège côté sortant : la tentation de garder un bon agent
+
+Côté entreprise sortante, l'article 7 interdit de "garder" un agent qui devrait être transféré, sauf à pouvoir prouver un **reclassement effectif** sur un autre site avec accord écrit de l'agent.
+
+Tenter de retenir un agent sans cette procédure expose à :
+- Action prud'homale du repreneur (perte de personnel transférable)
+- Sanctions URSSAF si requalification suspectée
+- Litige avec le client final qui s'attend à une continuité de service
+
+## L'outillage logiciel pour ne pas se planter
+
+Le suivi article 7 demande des données précises et tracées :
+
+- **Pourcentage d'affectation par agent et par site** : nécessite un planning historique exact, pas une approximation Excel
+- **Compteur d'heures cumulé** par agent / par site
+- **Historique absentéisme** par agent
+- **Documents** (contrats, avenants, certificats médicaux) liés à chaque agent
+
+Un logiciel métier comme [Proprely](/logiciel-societe-nettoyage) trace ces éléments automatiquement, ce qui devient critique dès qu'on a plusieurs sites et plusieurs marchés en rotation. Pour les structures sur Excel, le risque d'erreur sur l'article 7 est élevé.
+
+## En résumé
+
+L'article 7 est un dispositif **incontournable** pour toute société de nettoyage qui répond à des appels d'offres avec reprise. Il n'est ni facultatif ni négociable. Mais bien géré, il devient un avantage : continuité opérationnelle pour le client, équipe connaissant le site dès le jour 1, et levier de croissance.
+
+**Pour le repreneur** : due diligence RH obligatoire avant chiffrage. Mieux vaut renoncer à un marché mal documenté que le signer en aveugle.
+
+**Pour le sortant** : pas d'option de garder un bon agent sauf reclassement effectif. Mieux vaut anticiper la rotation et valoriser les agents performants sur des sites pérennes.
+
+Pour un audit gratuit de votre due diligence RH avant un prochain appel d'offres, [réservez 30 minutes avec le fondateur](/audit-gratuit).`,
+  },
+  {
+    slug: 'reprise-marche-nettoyage-due-diligence',
+    title: "Reprise d'un marché de nettoyage : la due diligence en 7 points",
+    excerpt: "Avant de chiffrer un marché de nettoyage soumis à l'article 7, 7 éléments à vérifier impérativement pour ne pas s'engager en aveugle : liste personnel, ancienneté, absentéisme, historique litiges, état du matériel, consommables, dispositifs collectifs.",
+    date: '8 juin 2026',
+    readTime: '9 min',
+    tag: 'Stratégie',
+    tldr: "Avant de chiffrer une reprise de marché de nettoyage, vérifier 7 éléments : (1) liste agents transférables et ancienneté (article 7), (2) absentéisme 12 mois, (3) contrats et avenants, (4) primes acquises non versées, (5) procès en cours / litiges agents, (6) état du matériel sur place, (7) dispositifs collectifs (intéressement, PEE). Une reprise mal documentée = marge négative garantie.",
+    quickSummary: [
+      "Liste agents transférables : prénom, ancienneté, contrat, % affectation, salaire brut + primes acquises.",
+      "Absentéisme 12 mois agent par agent : un agent >15 % coûte +1,80 €/h caché.",
+      "Avenants et heures complémentaires régulières : un temps partiel à 20h qui en fait 28 est un piège.",
+      "Primes acquises non versées : panier, transport, salissure, ancienneté à intégrer dans le passif RH.",
+      "Procès en cours : litiges agents non révélés = dette latente au repreneur.",
+      "État du matériel sur place : qui possède quoi (entreprise sortante, client, repreneur).",
+      "Dispositifs collectifs (intéressement, PEE) à honorer si en cours.",
+    ],
+    relatedSlugs: ['article-7-idcc-3043-transfert-personnel', 'repondre-appel-offres-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
+    faq: [
+      { q: "Qu'est-ce que la due diligence RH dans la reprise d'un marché nettoyage ?", a: "C'est l'ensemble des vérifications à mener avant de signer une offre sur un marché soumis à l'article 7 de l'IDCC 3043. L'objectif : connaître le coût réel des agents transférables (ancienneté, primes, absentéisme) pour chiffrer juste et éviter une marge négative sur un marché en apparence rentable." },
+      { q: "Comment obtenir les informations RH de l'entreprise sortante ?", a: "Trois canaux : (1) demande directe à l'entreprise sortante (rare qu'elle joue le jeu sauf si elle perd le marché de toute façon), (2) via le donneur d'ordre qui peut l'imposer via le CCAP, (3) demande légale formelle (article L1224-2). En marchés publics, c'est généralement transmis via le DCE. En marchés privés, c'est négocié au cas par cas." },
+      { q: "Quel impact d'un absentéisme caché de 15 % ?", a: "Pour un site de 100 h/mois facturées : 15 % d'absentéisme = 15 h de remplacement à organiser, soit 15 h × 22 €/h CHC = 330 €/mois de surcoût caché. Sur un marché à 4 000 €/mois et 20 % de marge brute attendue (800 €), c'est −41 % de marge directement effacés. Sans cette due diligence, le marché devient perdant après la signature." },
+      { q: "Qu'inclut une analyse des heures complémentaires ?", a: "Identifier les agents en temps partiel qui font régulièrement des heures complémentaires (majorées +10 % les 10 premières %, +25 % au-delà). Un agent contractuellement à 20h/sem mais effectuant 28h = +30 % d'heures à 110-125 % du tarif normal. Reprendre ce contrat sans le recalculer = passer à côté de plusieurs centaines d'euros par mois et par agent. C'est la cause n°1 de surprises post-signature." },
+      { q: "Comment estimer la dette latente prud'homale ?", a: "Demander la liste des contentieux en cours et terminés sur les 24 derniers mois sur le site. Les contentieux récurrents (heures complémentaires non payées, primes manquantes, harcèlement) sont des signaux d'une mauvaise gestion antérieure. Le repreneur n'hérite pas des contentieux passés mais récupère un climat social dégradé qui peut générer de nouveaux conflits coûteux." },
+      { q: "Quel rôle pour le donneur d'ordre dans la due diligence ?", a: "Idéalement, le donneur d'ordre impose dans son DCE la transmission des informations RH par l'entreprise sortante au repreneur. Cela évite l'asymétrie d'information et permet une concurrence saine. En 2026, c'est de plus en plus fréquent dans les appels d'offres publics et chez les grands comptes. Demandez-le explicitement si ce n'est pas prévu." },
+    ],
+    content: `## Le piège du marché "rentable" qui devient perdant
+
+Une reprise de marché de nettoyage **soumise à l'article 7** est un exercice à hauts risques. Sur le papier, le chiffrage paraît correct : surface, fréquences, prix au m², marge théorique de 20-25 %.
+
+En réalité, les éléments **invisibles** font basculer la marge :
+- Agents avec 12 ans d'ancienneté (salaire +8 %)
+- Temps partiel à 20h qui en fait 28h (heures complémentaires majorées)
+- Absentéisme caché à 18 % (remplacements à organiser)
+- Primes acquises non versées que le repreneur doit honorer
+- Contentieux prud'homal latent dont le repreneur récupère le climat
+
+Sans **due diligence RH structurée** avant le chiffrage, le marché signé devient perdant en 3 mois.
+
+Voici les **7 points** à vérifier impérativement avant de remettre une offre.
+
+## 1. Liste des agents transférables
+
+Demander la liste anonymisable des agents éligibles à l'article 7 avec :
+
+- Identifiant interne ou initiales
+- **Date d'embauche d'origine** (détermine l'ancienneté)
+- **Date d'affectation au site** (vérifie les 6 mois)
+- **Type de contrat** : CDI uniquement
+- **Pourcentage d'affectation au site** (>30 % requis)
+- Volume horaire hebdomadaire contractuel
+- Salaire brut horaire et mensuel
+- Niveau IDCC 3043 (AS1 / AS2 / AS3 / ATQS…)
+
+Cette liste doit être validée par l'entreprise sortante ou le donneur d'ordre. Une liste incomplète ou imprécise = chiffrage à l'aveugle.
+
+## 2. Absentéisme 12 mois agent par agent
+
+Le taux d'absentéisme caché est **la première cause de pertes** sur les reprises mal chiffrées.
+
+Demander :
+- Taux d'absentéisme par agent sur 12 mois glissants
+- Type d'absence (maladie ordinaire, accident travail, longue durée)
+- Récurrence (un agent à 5 absences courtes vs un agent en burn-out)
+
+**Calcul d'impact concret** pour un site de 100 h/mois facturées :
+- Absentéisme à 5 % : 5 h × 22 € CHC = 110 €/mois de surcoût
+- Absentéisme à 15 % : 15 h × 22 € = 330 €/mois
+- Absentéisme à 25 % : 25 h × 22 € = 550 €/mois
+
+Sur un marché à 4 000 €/mois avec marge brute cible 800 € (20 %), un absentéisme à 25 % **efface 68 % de la marge** sans que ce soit prévu au chiffrage.
+
+## 3. Contrats et avenants — surtout les heures complémentaires
+
+Sur les temps partiels (60-70 % des effectifs propreté), les heures complémentaires sont **majorées** :
+- +10 % pour les 10 premiers % au-delà du contrat
+- +25 % au-delà de 10 % du contrat
+
+**Cas concret** : un agent contractuellement à 20 h/sem mais qui en fait régulièrement 28 h :
+- 8 h supplémentaires par semaine
+- 2 h majorées à +10 %, 6 h majorées à +25 %
+- Coût horaire moyen sur les heures complémentaires : ~+18 % par rapport au contrat
+
+Sur un mois : 8 h × 4 sem × 1,18 × 12 € = ~452 € de surcoût "caché" par rapport au chiffrage basé sur le contrat seul.
+
+Voir le détail dans notre guide [calcul des heures agents nettoyage](/blog/calcul-heures-agents-nettoyage).
+
+## 4. Primes acquises non versées
+
+L'IDCC 3043 prévoit plusieurs primes obligatoires :
+- Prime de panier (~7 €/jour si >6h travaillées)
+- Prime de transport (forfait journalier)
+- Prime de salissure (selon conditions)
+- Prime d'ancienneté (au-delà de 5 ans)
+
+À l'arrivée du repreneur, certaines primes peuvent ne pas avoir été versées par l'entreprise sortante (mauvaise gestion ou volonté de "soigner" la marge avant la perte du marché).
+
+**Risque pour le repreneur** : si un agent réclame ces primes dans les semaines suivantes, le tribunal peut considérer qu'elles sont dues par le repreneur en vertu de la continuité juridique. Cas peu fréquent mais réel.
+
+**Action** : demander un audit des bulletins de salaire des 6 derniers mois (anonymisables) pour vérifier que les primes ont bien été versées.
+
+## 5. Procès en cours et historique des litiges
+
+Demander la liste des **contentieux en cours et terminés** sur les 24 derniers mois sur le site :
+
+- Heures complémentaires non payées
+- Primes contestées
+- Sanctions disciplinaires contestées
+- Harcèlement (urgent : risque réputationnel)
+- Accidents du travail avec litige
+
+Un site avec **3 contentieux récurrents** sur 24 mois signale une mauvaise gestion antérieure. Le repreneur n'hérite pas des contentieux passés (sauf cas exceptionnels) mais récupère **un climat social dégradé** qui peut générer de nouveaux conflits.
+
+## 6. État du matériel et propriété
+
+Souvent négligé. Trois cas possibles :
+
+| Matériel | Propriétaire | Action repreneur |
+|---|---|---|
+| Aspirateurs, chariots | Entreprise sortante (souvent) | Acheter ou louer son propre matériel |
+| Autolaveuse, monobrosse | Client final (parfois) | Vérifier état et continuité d'usage |
+| Consommables stockés | À répartir | Prévoir achat initial |
+| EPI agents | Repreneur dès le jour 1 | Achat immédiat avec budget agents |
+
+**Action** : faire un inventaire physique 15 jours avant la prise d'effet, avec photos. Sinon, attendez-vous à une dépense imprévue de 1 500 à 5 000 € en matériel et consommables dans le premier mois.
+
+## 7. Dispositifs collectifs en cours
+
+Si l'entreprise sortante avait mis en place :
+- **Intéressement** ou **participation** : à recalculer prorata temporis si année non close
+- **Plan d'Épargne Entreprise (PEE)** : à honorer si les agents y cotisaient
+- **Mutuelle d'entreprise spécifique** : à maintenir ou remplacer par équivalente sans baisse de garanties
+- **Engagements de formation** : CQP en cours, OPCO à reprendre
+
+Ces éléments ne se voient pas dans la masse salariale apparente, mais peuvent représenter **+3 à +6 % de coût caché**.
+
+## Le récapitulatif chiffré
+
+Pour un marché à **4 000 €/mois** repris avec article 7, voici ce qu'une due diligence sommaire vs complète change :
+
+| Poste | Sans DD | Avec DD | Écart |
+|---|---|---|---|
+| Coût horaire chargé moyen | 21 €/h | 23 €/h | +9 % |
+| Absentéisme intégré | 5 % | 15 % | +330 € caché |
+| Heures complémentaires | Non | +18 % | +452 € caché |
+| Primes acquises | Non | +200 € one-shot | +200 € |
+| Matériel achat | Non | 1 500 € one-shot | +125 €/mois |
+| **Marge nette estimée** | **+18 %** | **−2 %** | **−20 pts** |
+
+Sans due diligence, le marché paraît rentable à 18 % de marge. Avec, on découvre qu'il est en réalité légèrement perdant à −2 %.
+
+## Comment systématiser la due diligence ?
+
+1. **Checklist standard** appliquée à chaque appel d'offres avec reprise
+2. **Délai de 5 jours minimum** entre réception du DCE et remise de l'offre, le temps de demander les infos manquantes
+3. **Refus de chiffrer** si les infos critiques (ancienneté, absentéisme, contrats) ne sont pas fournies. Mieux vaut renoncer qu'engager en aveugle.
+4. **Outillage logiciel** pour stocker la due diligence par marché et la réutiliser à l'identique aux prochains renouvellements
+
+Un [logiciel métier propreté](/logiciel-societe-nettoyage) comme Proprely permet de tracer la due diligence par marché et de la rattacher au contrat correspondant.
+
+## En résumé
+
+La due diligence RH n'est **pas optionnelle** sur un marché article 7. C'est la condition sine qua non pour chiffrer juste et préserver la marge.
+
+**7 points à vérifier systématiquement** :
+1. Liste agents transférables (ancienneté, %, contrat, salaire)
+2. Absentéisme 12 mois par agent
+3. Avenants et heures complémentaires régulières
+4. Primes acquises non versées
+5. Contentieux en cours et historique
+6. État et propriété du matériel
+7. Dispositifs collectifs en cours
+
+Pour un audit gratuit de votre process de chiffrage avant un prochain appel d'offres, [réservez 30 minutes avec le fondateur](/audit-gratuit).`,
+  },
+  {
+    slug: 'factur-x-societe-nettoyage-2027',
+    title: "Factur-X 2027 : ce qui change pour les sociétés de nettoyage",
+    excerpt: "La réforme de la facturation électronique entre en vigueur progressivement entre 2026 et 2027. Pour une société de nettoyage, ce qu'il faut savoir : calendrier exact, PDP à choisir, Factur-X vs PPF, impact sur Chorus Pro et les marchés publics.",
+    date: '8 juin 2026',
+    readTime: '10 min',
+    tag: 'Conformité',
+    tldr: "La réforme de la facturation électronique en France impose progressivement entre 2026 et 2027 l'usage de factures électroniques au format Factur-X (PDF/A-3 + XML). Calendrier : 1er septembre 2026 (réception obligatoire pour toutes les entreprises, émission pour les grandes), 2027 (émission pour ETI/PME). Pour une société de nettoyage : choisir une PDP (gratuite ou payante), s'assurer que le logiciel de facturation émet du Factur-X, et préparer la transition Chorus Pro pour les marchés publics. Sanctions : amende 15 €/facture non conforme.",
+    quickSummary: [
+      "Calendrier officiel : 1er sept 2026 = réception obligatoire pour toutes, émission pour grandes entreprises.",
+      "2027 : émission obligatoire pour ETI puis PME (échelonnement progressif).",
+      "Format obligatoire : Factur-X (PDF lisible humain + XML structuré machine).",
+      "Chaque entreprise doit choisir une PDP (Plateforme de Dématérialisation Partenaire) ou utiliser le PPF.",
+      "Pour les marchés publics : Chorus Pro reste la plateforme officielle, format Factur-X obligatoire.",
+      "Sanctions : amende 15 €/facture non conforme, plafonnée à 15 000 €/an.",
+      "Action concrète : vérifier que votre logiciel facturation supporte Factur-X, sinon migrer avant fin 2026.",
+    ],
+    relatedSlugs: ['repondre-appel-offres-nettoyage', 'gestion-societe-nettoyage-outils'],
+    faq: [
+      { q: "Qu'est-ce que la réforme Factur-X 2026-2027 ?", a: "C'est la généralisation progressive de la facture électronique en France entre entreprises (B2B). Toutes les factures inter-entreprises devront être au format Factur-X (PDF/A-3 contenant un XML structuré) et transiter par une PDP (Plateforme de Dématérialisation Partenaire) ou le Portail Public de Facturation (PPF). L'objectif gouvernemental : lutter contre la fraude TVA et simplifier les obligations déclaratives." },
+      { q: "Quel est le calendrier exact pour ma société de nettoyage ?", a: "Phase 1 (1er sept 2026) : toutes les entreprises doivent pouvoir RECEVOIR des factures électroniques. Les grandes entreprises (>5 000 salariés ou CA >1,5 Md€) doivent EMETTRE en Factur-X. Phase 2 (1er sept 2027 pour ETI, puis échelonné pour PME) : émission obligatoire pour les autres. Une société de nettoyage TPE/PME doit être prête à recevoir dès septembre 2026 et à émettre courant 2027." },
+      { q: "Qu'est-ce qu'une PDP et comment la choisir ?", a: "Une PDP (Plateforme de Dématérialisation Partenaire) est un prestataire privé enregistré par la DGFiP, chargé de transmettre les factures électroniques entre entreprises. Chaque entreprise doit choisir une PDP (gratuite ou payante selon les services) ou utiliser le portail public PPF. La liste officielle est publiée sur impots.gouv.fr. Critères de choix : intégration avec votre logiciel de facturation, fonctionnalités (validation TVA, archivage légal 10 ans), coût (0 à 50 €/mois selon volume), interface utilisateur." },
+      { q: "Mon logiciel de facturation actuel est-il compatible Factur-X ?", a: "Vérifiez auprès de votre éditeur. La plupart des logiciels SaaS modernes (depuis 2023) supportent Factur-X. Les vieux logiciels (avant 2020) ou les solutions sur Excel ne le supportent pas. Demandez la fiche technique : capacité à émettre PDF/A-3 + XML conforme à la norme française. Si votre logiciel n'est pas compatible, prévoyez une migration avant fin 2026 ou utilisez un convertisseur (mais à terme la migration s'impose)." },
+      { q: "Quel impact sur les marchés publics avec Chorus Pro ?", a: "Chorus Pro reste obligatoire pour facturer les marchés publics. Mais à partir du 1er sept 2026, le format Factur-X devient progressivement obligatoire en réception. Si vous facturez des marchés publics (mairies, hôpitaux, universités), votre logiciel doit pouvoir émettre du Factur-X et le déposer sur Chorus Pro. Beaucoup de PDP intègrent un connecteur Chorus Pro pour automatiser le dépôt." },
+      { q: "Quelles sont les sanctions en cas de non-conformité ?", a: "Selon la loi de finances 2024 : amende administrative de 15 € par facture émise dans un format non conforme, plafonnée à 15 000 € par an. Et amende de 250 € par opération non transmise correctement à la PDP/PPF, plafonnée à 45 000 €/an. Au-delà des sanctions financières, le client peut refuser une facture non conforme = retard de paiement et perte de trésorerie." },
+    ],
+    content: `## La réforme la plus structurante depuis Sarbanes-Oxley
+
+La facture électronique généralisée est l'une des réformes administratives les plus structurantes pour les entreprises françaises depuis la loi sur la transparence financière de 2002 (Sarbanes-Oxley en France via la LSF).
+
+Pour les sociétés de nettoyage B2B, qui émettent typiquement entre 20 et 500 factures par mois (récurrentes + ponctuelles), c'est un changement structurel. Bien préparé : automatisation, gain de temps, paiement plus rapide. Mal préparé : risque de sanctions et de paiements bloqués.
+
+## Le calendrier officiel (loi de finances 2024)
+
+Après plusieurs reports, le calendrier définitif a été stabilisé :
+
+| Date | Phase | Concerne |
+|---|---|---|
+| **1er septembre 2026** | Réception obligatoire | **TOUTES** les entreprises (TPE / PME / ETI / GE) |
+| **1er septembre 2026** | Émission obligatoire | Grandes entreprises (>5 000 salariés ou CA >1,5 Md€) |
+| **1er septembre 2027** | Émission obligatoire | ETI (250-4 999 salariés ou CA 50 M€ - 1,5 Md€) |
+| **2027-2028 (échelonné)** | Émission obligatoire | PME et TPE |
+
+Pour une **société de nettoyage typique** (TPE/PME) :
+- Dès septembre 2026 : prête à **recevoir** des factures Factur-X (de vos fournisseurs).
+- Courant 2027 : prête à **émettre** vos factures clients en Factur-X.
+
+## Le format Factur-X : PDF + XML
+
+Factur-X est le format adopté par la France et l'Allemagne (équivalent ZUGFeRD outre-Rhin). Il combine :
+
+- Un **PDF/A-3** lisible humainement (le PDF de facture classique, à archiver)
+- Un **fichier XML** structuré intégré au PDF, lisible par les machines
+
+L'XML contient toutes les données structurées de la facture : émetteur, destinataire, lignes de prestation, TVA, montants. Cela permet aux logiciels comptables des deux côtés (émetteur et destinataire) de traiter automatiquement la facture sans saisie manuelle.
+
+**Pour vous (émetteur)** : votre logiciel de facturation génère le Factur-X automatiquement à partir du devis signé.
+
+**Pour votre client (destinataire)** : son logiciel comptable lit l'XML et intègre la facture en 1 clic dans son grand livre, avec contrôle automatique de la TVA.
+
+## PDP vs PPF : quelle plateforme ?
+
+Toutes les factures électroniques doivent transiter par une **plateforme certifiée** :
+
+### Option 1 : Une PDP (Plateforme de Dématérialisation Partenaire)
+- Prestataire privé enregistré par la DGFiP
+- Liste officielle publiée sur impots.gouv.fr
+- Fonctionnalités enrichies : archivage légal 10 ans, validation TVA, connecteurs comptables, dépôt Chorus Pro
+- Coût : 0 à 50 €/mois selon le volume
+
+### Option 2 : Le PPF (Portail Public de Facturation)
+- Plateforme publique gérée par l'État (Chorus Pro est son grand frère pour les marchés publics)
+- Gratuit
+- Fonctionnalités minimales : envoi/réception, archivage
+- À privilégier si très petit volume et budget contraint
+
+**Recommandation pour une société de nettoyage typique** : choisir une PDP intégrée à votre logiciel de facturation. L'investissement (20-50 €/mois) est largement compensé par le gain de temps et la fiabilité.
+
+## Comment choisir sa PDP : 5 critères
+
+1. **Intégration native** avec votre logiciel de facturation
+   - Vérifiez auprès de votre éditeur quelles PDP sont déjà connectées (généralement 2-3 partenaires).
+
+2. **Connecteur Chorus Pro** automatique
+   - Si vous facturez des marchés publics, c'est essentiel pour automatiser le dépôt.
+
+3. **Validation TVA temps réel**
+   - La PDP doit vérifier la TVA intracommunautaire de chaque client.
+
+4. **Archivage légal 10 ans**
+   - Obligation fiscale française. Doit être inclus dans le service.
+
+5. **Tarification**
+   - Modèles : forfait mensuel, à la facture, ou freemium jusqu'à X factures/mois.
+   - Pour une société de nettoyage à 100 factures/mois : viser 20-30 €/mois HT.
+
+## Impact sur Chorus Pro pour les marchés publics
+
+Chorus Pro est la **plateforme officielle gérée par l'État** pour les factures destinées aux personnes publiques (collectivités, État, hôpitaux, universités). Elle reste obligatoire pour tout marché public quel que soit le montant.
+
+À partir du 1er septembre 2026, le format Factur-X devient progressivement obligatoire en réception sur Chorus Pro. Les éditeurs intègrent un connecteur direct pour automatiser le dépôt depuis votre logiciel de facturation.
+
+**En pratique** :
+- Si vous facturez des [marchés publics](/blog/repondre-appel-offres-nettoyage), votre logiciel doit pouvoir émettre du Factur-X **et** le déposer sur Chorus Pro
+- Beaucoup de PDP intègrent un connecteur Chorus Pro pour automatiser
+- Le dépôt manuel via formulaire web reste possible mais à éviter (coût en temps)
+
+## Plan d'action concret pour une société de nettoyage
+
+### Étape 1 — D'ici juin 2026 (3 mois)
+- Vérifier que votre logiciel de facturation supporte Factur-X (demande à l'éditeur)
+- Si pas compatible : commencer la migration (1-2 mois)
+- Identifier 2-3 PDP candidates compatibles avec votre stack
+
+### Étape 2 — D'ici septembre 2026 (réception obligatoire)
+- Configurer la PDP choisie pour recevoir les factures fournisseurs
+- Tester la réception d'au moins une facture entrante
+- Vérifier l'intégration dans votre comptabilité (Tiime, Pennylane, Indy...)
+
+### Étape 3 — D'ici septembre 2027 (émission obligatoire pour ETI)
+- Si votre société est dans la tranche ETI (>250 salariés) : émettre obligatoirement en Factur-X
+- Si PME : préparer la transition, échelonnement précis publié par décret en 2026
+
+### Étape 4 — Courant 2027-2028 (PME)
+- Le calendrier précis pour TPE/PME sera publié par décret
+- Anticipation recommandée pour éviter le coup de feu
+
+## Les pièges à éviter
+
+### Piège 1 : attendre la dernière minute
+Le marché des PDP sera saturé en août 2026. Choisir et configurer en juin = transition tranquille. Choisir en août = délai impossible.
+
+### Piège 2 : choisir une PDP non intégrée à son logiciel
+Si vous facturez sur Excel ou un vieux logiciel, vous devrez saisir la facture deux fois (logiciel + PDP). Insupportable à 100 factures/mois.
+
+### Piège 3 : ignorer Chorus Pro pour les marchés publics
+Beaucoup d'éditeurs vous diront "nous gérons Factur-X". Mais sans connecteur Chorus Pro, vous restez à 5-10 min de dépôt manuel par facture publique = perte de temps massive.
+
+### Piège 4 : sous-estimer la formation interne
+Une PDP correctement utilisée demande 1-2 heures de formation par utilisateur. Prévoyez le temps.
+
+## Le coût caché de la non-conformité
+
+Au-delà des sanctions administratives (15 € par facture non conforme, plafonné à 15 000 €/an), les conséquences pratiques sont plus douloureuses :
+
+- **Refus de paiement** par le client : la facture non conforme = paiement bloqué jusqu'à régularisation
+- **Retard de trésorerie** : 30-60 jours de DSO additionnel
+- **Risque commercial** : un client fâché ne renouvelle pas le contrat
+- **Charge administrative** : régularisation manuelle, échanges multiples, perte de temps
+
+Pour une société de nettoyage à 100 factures/mois et 4 000 €/facture moyenne, une non-conformité sur 10 % des factures = **40 000 €/mois bloqués en trésorerie**, soit potentiellement 6 mois de marge brute.
+
+## En résumé
+
+La réforme Factur-X 2026-2027 n'est **pas une option**. Pour une société de nettoyage B2B :
+
+1. **Vérifier la compatibilité** de votre logiciel de facturation actuel (avant juin 2026)
+2. **Choisir une PDP** intégrée à votre stack (avant septembre 2026)
+3. **Tester la réception** d'au moins une facture entrante (avant septembre 2026)
+4. **Préparer l'émission** Factur-X (avant échéance applicable à votre taille)
+5. **Surveiller Chorus Pro** si vous facturez des marchés publics
+
+Les sociétés bien préparées y gagneront en automatisation, fiabilité et trésorerie. Les autres subiront amendes, blocages et stress administratif.
+
+Pour vérifier la compatibilité Factur-X de votre logiciel actuel et préparer la transition, [réservez un audit gratuit 30 min](/audit-gratuit) avec le fondateur Proprely.`,
+  },
+  {
     slug: 'creer-societe-nettoyage',
     title: "Créer une société de nettoyage en 2026 : le guide complet en 10 étapes",
     excerpt: "Statut juridique, code APE 8121Z, convention IDCC 3043, assurance RC pro, premier matériel, recrutement, prospection : la méthode complète pour lancer une société de nettoyage B2B rentable en 2026.",
