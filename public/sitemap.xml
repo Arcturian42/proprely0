@@ -238,6 +238,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://proprely.fr/glossaire/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Glossaire propreté B2B</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://proprely.fr/auteurs/paul-munier/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>

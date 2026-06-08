@@ -47,6 +47,7 @@ const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage'))
 const AuthorPage = lazy(() => import('./pages/AuthorPage'))
 const AuthorIndex = lazy(() => import('./pages/AuthorIndex'))
 const RoadmapPage = lazy(() => import('./pages/RoadmapPage'))
+const GlossairePage = lazy(() => import('./pages/GlossairePage'))
 
 type RouteMeta = { title: string; description: string; robots?: string }
 
@@ -170,6 +171,10 @@ const META: Record<string, RouteMeta> = {
   '/roadmap': {
     title: 'Roadmap et changelog Proprely — Ce qui arrive · Proprely',
     description: "Roadmap publique Proprely : ce qui a été livré, ce qui est en cours, ce qui arrive. Transparence totale sur les évolutions du cockpit nettoyage.",
+  },
+  '/glossaire': {
+    title: 'Glossaire propreté B2B : 40+ termes définis · Proprely',
+    description: "Glossaire métier des sociétés de nettoyage B2B : IDCC 3043, AS1, article 7, bionettoyage, CCTP, coût horaire chargé, Factur-X, RGPD.",
   },
   '/auteurs': {
     title: 'Auteurs Proprely — Qui écrit sur le blog · Proprely',
@@ -301,6 +306,7 @@ function App() {
   else if (route === '/auteurs' || route === '/auteurs/') content = <AuthorIndex />
   else if (route.startsWith('/auteurs/')) content = <AuthorPage slug={route.slice(9).replace(/\/$/, '')} />
   else if (route === '/roadmap' || route === '/roadmap/' || route === '/changelog' || route === '/changelog/') content = <RoadmapPage />
+  else if (route === '/glossaire' || route === '/glossaire/' || route === '/glossary' || route === '/glossary/') content = <GlossairePage />
   else if (route.startsWith('/comparatif/')) content = <ComparisonPage slug={route.slice(12).replace(/\/$/, '')} />
   else if (route === '/audit-gratuit' || route === '/audit-gratuit/') content = <AuditGratuit />
   else if (route.startsWith('/alternative-')) content = <AlternativePage slug={route.slice(1).replace(/\/$/, '')} />
