@@ -30,8 +30,129 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'agents-nettoyage-whatsapp-adoption-logiciel',
+    title: "Mes agents ne connaissent que WhatsApp : adoption logiciel ?",
+    excerpt: "Pour 80 % des sociétés de nettoyage B2B, la première objection à un logiciel métier est l'adoption par les agents terrain. Ce qu'on observe vraiment en 2026, les chiffres d'adoption par type d'interface, et 5 conseils concrets pour réussir le déploiement.",
+    date: "8 juin 2026",
+    readTime: "8 min",
+    tag: "Stratégie",
+    authorSlug: 'paul-munier',
+    tldr: "L'adoption d'un logiciel métier par des agents de nettoyage qui n'utilisent que WhatsApp est en moyenne de 90-100 % en 1 semaine si l'interface est mobile-first par lien web sans app à installer (modèle Proprely). Elle tombe à 50-70 % avec une app native à installer (modèle ERP historique). Les 3 facteurs décisifs : pas d'installation, pas de création de compte, mode hors-ligne automatique. La courbe d'apprentissage agent typique : 5 minutes pour ouvrir le planning, 1 prestation pour valider une preuve de passage, 1 semaine pour intégrer la routine.",
+    quickSummary: [
+      "Adoption typique mobile-first lien web : 90-100 % en 1 semaine",
+      "Adoption typique app native à installer : 50-70 % en 1 mois",
+      "3 facteurs décisifs : pas d'install, pas de compte, mode hors-ligne",
+      "Courbe d'apprentissage : 5 minutes pour ouvrir, 1 semaine pour intégrer",
+      "5 conseils concrets pour réussir le déploiement",
+    ],
+    content: `## L'objection numéro 1 contre les logiciels métier nettoyage
+
+Quand on discute avec un dirigeant de société de nettoyage qui hésite à basculer d'Excel + WhatsApp vers un logiciel métier, **8 fois sur 10 la même question revient** : "Mes agents ne connaissent que WhatsApp. Ils vont jamais y arriver."
+
+C'est une objection légitime. Les équipes terrain en propreté sont souvent intergénérationnelles, multilingues, avec des téléphones personnels modestes (parfois partagés), parfois pas d'adresse email régulière. Toute friction technique = adoption qui s'écroule.
+
+## Ce qu'on observe vraiment en 2026 : chiffres d'adoption
+
+Sur les retours croisés bêta Proprely + études internes des concurrents (PROPRET, Progiclean, Organilog, Synchroteam), les **taux d'adoption agents varient massivement selon le modèle d'interface** :
+
+| Type d'interface | Adoption à 1 semaine | Adoption à 1 mois | Adoption stable |
+|---|---|---|---|
+| Lien web mobile-first (modèle Proprely) | 85-100 % | 95-100 % | 95-100 % |
+| App native à installer (modèle ERP historique) | 30-50 % | 50-70 % | 60-80 % |
+| Portail web responsive avec login complexe | 40-60 % | 60-75 % | 65-80 % |
+| WhatsApp + Excel partagé Drive (statu quo) | 95-100 % | 95-100 % | 95-100 % |
+
+**Le statu quo Excel + WhatsApp gagne souvent**. C'est ça la vraie concurrence — pas Organilog, pas Synchroteam, pas PROPRET. C'est **rien faire**, parce que l'équipe l'utilise déjà.
+
+## Les 3 facteurs qui font la différence
+
+### Facteur 1 — Pas d'installation d'app
+
+Une app native obligatoire = friction massive. Les agents doivent : trouver le Play Store ou App Store, avoir assez de place sur leur téléphone (souvent saturé), créer un compte développeur Apple (pour iOS), accepter les permissions, faire la mise à jour quand elle sort.
+
+Un lien web mobile = aucune friction. Le dirigeant envoie un SMS ou un WhatsApp avec un lien : *"Salut Marie, voici ton planning de la semaine, c'est plus simple qu'Excel : [lien]"*. L'agent clique, voit son planning, terminé.
+
+### Facteur 2 — Pas de création de compte
+
+Une création de compte (email + mot de passe) est un point de rupture sur 40 % des agents en propreté B2B. Beaucoup n'ont pas d'email régulier, ne se souviennent pas de leurs mots de passe, partagent le téléphone avec un conjoint.
+
+Le bon modèle : **lien magique unique par agent**, persistent dans le navigateur. Pas de mot de passe à retenir. Une seule chose à apprendre : "Mon planning est dans le lien que le patron m'a envoyé."
+
+### Facteur 3 — Mode hors-ligne automatique
+
+Les agents travaillent souvent dans des sous-sols (parkings, locaux techniques), des bâtiments mal couverts (hôpitaux blindés, médical, datacenters). Si le logiciel ne fonctionne pas hors-ligne, l'agent revient au papier ou à WhatsApp pour les notes.
+
+Le bon modèle : tout fonctionne hors-ligne (consultation planning, validation preuve de passage, photos, signature client), synchronisation automatique au retour du réseau.
+
+## La courbe d'apprentissage réelle d'un agent
+
+Sur les retours bêta Proprely (modèle lien web mobile) :
+
+- **Jour 1, 5 minutes** : l'agent ouvre son planning, voit ses 4 missions de la semaine.
+- **Jour 1, 1 prestation** : l'agent fait sa première preuve de passage (QR code sur place, 3 photos avant-après, signature du client). Durée totale : 90 secondes.
+- **Jour 2-3** : l'agent intègre le check-in/check-out de chaque mission dans sa routine.
+- **Jour 7** : l'agent utilise le logiciel comme avant il utilisait WhatsApp. La transition est faite.
+
+Cette courbe explique pourquoi l'adoption tient à 95-100 % à 1 semaine quand le modèle est bien conçu.
+
+## 5 conseils concrets pour réussir le déploiement
+
+### Conseil 1 — Annoncer la bascule comme un soulagement, pas une contrainte
+
+Le pitch agent réussi : *"Marie, j'arrête de t'envoyer des Excel et des WhatsApp avec ton planning. À partir de lundi, tu cliques sur un lien et tu vois ton planning de la semaine, c'est plus simple."*
+
+Le pitch agent raté : *"On va digitaliser tout ça, tu vas devoir installer une app, créer un compte, faire une formation."*
+
+### Conseil 2 — Faire 1 démo en physique avec chaque agent (5 min)
+
+Avant la bascule, **prenez 5 minutes en face-à-face avec chaque agent**. Ouvrez le logiciel sur son téléphone à lui. Faites-le valider une preuve de passage fictive. Une fois qu'un agent l'a fait avec ses propres doigts, il l'a intégré.
+
+### Conseil 3 — Garder WhatsApp + Excel en lecture seule pendant 2 semaines
+
+Ne supprimez pas du jour au lendemain. Pendant 2 semaines, les agents ont accès aux deux. Au bout de 2 semaines, ils ne reviennent plus sur Excel parce que le logiciel est plus rapide. **Vous archivez Excel à ce moment-là, pas avant**.
+
+### Conseil 4 — Désigner un "agent champion" qui aide les autres
+
+Repérez l'agent le plus à l'aise avec le téléphone (souvent un jeune, parfois un agent qui aime apprendre). Faites-en l'ambassadeur. Il aidera les autres en pause-café, plus efficacement qu'une formation formelle.
+
+### Conseil 5 — Ne pas paniquer sur les 1-2 agents qui résistent
+
+Sur 10-15 agents, vous aurez 1-2 résistances dures (souvent les plus anciens). C'est normal. **Ne forcez pas immédiatement**. Maintenez WhatsApp pour ces 1-2 agents pendant 1 mois. Au bout d'un mois, en voyant que tous les autres trouvent ça plus simple, ils basculent.
+
+Si après 1 mois, ils refusent toujours, vous avez un autre problème — pas un problème de logiciel.
+
+## Le vrai indicateur d'un logiciel bien conçu
+
+Le test à faire en démo : **est-ce qu'un agent qui n'utilise QUE WhatsApp peut consulter son planning de la semaine en moins de 30 secondes sur son téléphone à lui, sans rien installer ni créer ?**
+
+Si oui, l'adoption va passer.
+
+Si non, peu importe les fonctionnalités du logiciel, **vous allez perdre 30-50 % de vos agents à l'adoption**, et vous reviendrez à Excel + WhatsApp dans les 3 mois.
+
+C'est le critère structurel — pas une question de prix, de fonctionnalités ou de notoriété de l'éditeur.
+
+## Conclusion : oui, vos agents sauront utiliser un logiciel métier
+
+Si vous choisissez un logiciel **mobile-first par lien web sans installation** (modèle Proprely), vos agents sauront l'utiliser, même ceux qui ne connaissent que WhatsApp. Adoption typique 90-100 % en 1 semaine, sans formation longue.
+
+Si vous choisissez un logiciel à app native obligatoire avec création de compte (modèle ERP historique), prévoyez une bataille de 1-3 mois pour l'adoption, avec des résistances persistantes. Pas impossible, juste plus coûteux en temps et en énergie.
+
+Le choix du logiciel = 50 % du succès du déploiement. Les 50 % restants, c'est l'accompagnement (les 5 conseils ci-dessus).`,
+    faq: [
+      { q: "Mes agents ne connaissent que WhatsApp, vont-ils savoir utiliser Proprely ?", a: "Oui. Proprely fonctionne sur mobile par un lien web (pas d'application à installer, pas de compte à créer). Vos agents reçoivent un lien par SMS ou WhatsApp, cliquent, voient leur planning. Adoption typique 90-100 % en 1 semaine sur les retours bêta privée, contre 50-70 % en 1 mois pour les apps natives à installer." },
+      { q: "Faut-il faire une formation aux agents pour utiliser le logiciel ?", a: "Avec un logiciel mobile-first par lien web (Proprely), 5 minutes par agent suffisent — démonstration en face-à-face sur leur téléphone à eux. Avec une app native à installer, prévoir 30-60 min par agent (installation, création compte, première utilisation accompagnée)." },
+      { q: "Que faire si certains agents refusent d'utiliser le logiciel ?", a: "Maintenez WhatsApp en parallèle pour ces 1-2 agents résistants pendant 1 mois. Quand ils voient que tous les autres trouvent ça plus simple, ils basculent. Si après 1 mois ils refusent toujours, vous avez un autre problème managérial — pas un problème de logiciel." },
+      { q: "Faut-il un smartphone pour utiliser un logiciel de nettoyage ?", a: "Oui mais n'importe quel smartphone avec un navigateur récent (Chrome, Safari, Edge) — y compris des téléphones d'entrée de gamme à 100 €. Pour un logiciel mobile-first par lien web (Proprely), pas besoin d'iPhone récent ou Android récent." },
+      { q: "Le logiciel fonctionne-t-il sans réseau ?", a: "Oui sur les logiciels modernes (Proprely). Tout fonctionne hors-ligne (consultation planning, preuve de passage, photos, signature client), synchronisation automatique au retour du réseau. Crucial pour les sous-sols, parkings et bâtiments mal couverts." },
+      { q: "Combien de temps avant que les agents s'habituent au logiciel ?", a: "Avec un mobile-first par lien web : 5 minutes pour ouvrir le planning, 1 prestation pour valider une preuve de passage (90 secondes), 1 semaine pour intégrer la routine. Adoption stable à partir du 7e jour pour 95-100 % des agents." },
+      { q: "Le passage à un logiciel demande-t-il d'arrêter WhatsApp et Excel ?", a: "Non, pas immédiatement. Gardez WhatsApp + Excel en lecture seule pendant 2 semaines. Au bout de 2 semaines, les agents ne reviennent plus sur Excel parce que le logiciel est plus rapide. Vous archivez Excel à ce moment-là, pas avant. Cette transition progressive lisse l'adoption." },
+      { q: "Le logiciel marche-t-il pour des agents qui ne lisent pas le français couramment ?", a: "Oui sur Proprely : l'interface est conçue avec des pictogrammes (calendrier, photo, signature) et des couleurs claires. Pour des équipes mixtes français/portugais/arabe, l'apprentissage visuel suffit pour 95 % des cas d'usage quotidiens. La signature client reste en français (validée par le client lui-même, pas l'agent)." },
+    ],
+    relatedSlugs: ['fideliser-agents-nettoyage-turnover', 'digitaliser-entreprise-nettoyage-5-etapes', 'gestion-societe-nettoyage-outils'],
+  },
+  {
     slug: 'article-7-idcc-3043-transfert-personnel',
-    title: "Article 7 IDCC 3043 : transfert du personnel en pratique 2026",
+    title: "Article 7 IDCC 3043 : transfert personnel propreté",
     excerpt: "Reprise d'un marché, perte d'un site, fusion : tout ce qu'il faut savoir sur le transfert automatique des agents de nettoyage prévu par l'article 7 de la convention collective propreté.",
     date: '8 juin 2026',
     readTime: '11 min',
@@ -193,7 +314,7 @@ Pour un audit gratuit de votre due diligence RH avant un prochain appel d'offres
   },
   {
     slug: 'reprise-marche-nettoyage-due-diligence',
-    title: "Reprise d'un marché de nettoyage : la due diligence en 7 points",
+    title: "Reprise marché nettoyage : due diligence en 7 points",
     excerpt: "Avant de chiffrer un marché de nettoyage soumis à l'article 7, 7 éléments à vérifier impérativement pour ne pas s'engager en aveugle : liste personnel, ancienneté, absentéisme, historique litiges, état du matériel, consommables, dispositifs collectifs.",
     date: '8 juin 2026',
     readTime: '9 min',
@@ -368,7 +489,7 @@ Pour un audit gratuit de votre process de chiffrage avant un prochain appel d'of
   },
   {
     slug: 'factur-x-societe-nettoyage-2027',
-    title: "Factur-X 2027 : ce qui change pour les sociétés de nettoyage",
+    title: "Factur-X 2027 : ce qui change pour le nettoyage",
     excerpt: "La réforme de la facturation électronique entre en vigueur progressivement entre 2026 et 2027. Pour une société de nettoyage, ce qu'il faut savoir : calendrier exact, PDP à choisir, Factur-X vs PPF, impact sur Chorus Pro et les marchés publics.",
     date: '8 juin 2026',
     readTime: '10 min',
@@ -534,7 +655,7 @@ Pour vérifier la compatibilité Factur-X de votre logiciel actuel et préparer 
   },
   {
     slug: 'creer-societe-nettoyage',
-    title: "Créer une société de nettoyage en 2026 : le guide complet en 10 étapes",
+    title: "Créer une société de nettoyage : guide 10 étapes 2026",
     excerpt: "Statut juridique, code APE 8121Z, convention IDCC 3043, assurance RC pro, premier matériel, recrutement, prospection : la méthode complète pour lancer une société de nettoyage B2B rentable en 2026.",
     date: '7 juin 2026',
     readTime: '15 min',
@@ -4442,7 +4563,7 @@ Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPR
   },
   {
     slug: 'grille-salaire-nettoyage-2026-idcc-3043',
-    title: "Grille salaire nettoyage 2026 (IDCC 3043) : tableau complet par coefficient",
+    title: "Grille salaire propreté 2026 IDCC 3043 : tableau complet",
     excerpt: "Grille salariale propreté 2026 : salaires minima par coefficient AS1 à MP5, primes, majorations heures, transport. Tableau officiel IDCC 3043 + calculs.",
     date: '7 juin 2026',
     dateModified: '7 juin 2026',
@@ -4604,7 +4725,7 @@ Pour automatiser la conformité IDCC 3043 (calcul automatique des majorations, e
   },
   {
     slug: 'kpi-societe-nettoyage-2026',
-    title: "KPI société de nettoyage : 12 indicateurs à suivre en 2026",
+    title: "KPI société de nettoyage : 12 indicateurs à suivre",
     excerpt: "Les 12 KPI essentiels pour piloter une société de nettoyage B2B : marge par client, turnover, DSO, taux de signature devis, absentéisme. Tableau de bord type.",
     date: '7 juin 2026',
     dateModified: '7 juin 2026',
@@ -4825,7 +4946,7 @@ Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta priv�
   },
   {
     slug: 'indemnite-transport-proprete-2026',
-    title: "Indemnité transport propreté 2026 : montant, calcul et remboursement",
+    title: "Indemnité transport propreté 2026 : montant et calcul",
     excerpt: "Indemnité transport propreté 2026 (IDCC 3043) : barèmes, calcul, conditions, remboursement employeur. Tableaux par zone et par mode de transport.",
     date: '7 juin 2026',
     dateModified: '7 juin 2026',
@@ -4998,7 +5119,7 @@ Pour automatiser le calcul mensuel des indemnités transport et préparer la pai
   },
   {
     slug: 'modele-planning-agents-nettoyage-excel',
-    title: "Modèle planning agents nettoyage Excel : template gratuit 2026",
+    title: "Modèle planning agents nettoyage Excel : gratuit",
     excerpt: "Template Excel gratuit pour le planning de vos agents de nettoyage : multi-sites, semaine, mensuel. Téléchargement direct + guide d'utilisation.",
     date: '7 juin 2026',
     dateModified: '7 juin 2026',

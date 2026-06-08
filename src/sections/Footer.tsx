@@ -3,7 +3,7 @@ import Link from '../components/Link'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
-const linkClass = 'text-slate-400 hover:text-white text-sm transition-colors'
+const linkClass = 'text-slate-300 hover:text-white text-sm transition-colors'
 const headingClass = 'text-white font-bold text-xs uppercase tracking-wider mb-4'
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
                 Bêta privée
               </span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-md">
+            <p className="text-slate-300 text-sm leading-relaxed max-w-md">
               Le cockpit métier des sociétés de nettoyage B2B : clients, agents, planning, devis, preuve de passage, rentabilité — au même endroit.
             </p>
           </div>
@@ -93,6 +93,8 @@ export default function Footer() {
               <li><Link to="/comparatif/proprely-vs-2bepragma" className={linkClass}>vs 2BePragma</Link></li>
               <li><Link to="/comparatif/proprely-vs-synchroteam" className={linkClass}>vs Synchroteam</Link></li>
               <li><Link to="/comparatif/proprely-vs-comete-proprete" className={linkClass}>vs Comète Propreté</Link></li>
+              <li><Link to="/comparatif/proprely-vs-sevensoft" className={linkClass}>vs Sevensoft</Link></li>
+              <li><Link to="/comparatif/proprely-vs-maglia" className={linkClass}>vs Maglia</Link></li>
               <li><Link to="/alternative-organilog" className={`${linkClass} font-semibold`}>Alternatives →</Link></li>
             </ul>
           </div>
@@ -176,10 +178,10 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-400 text-xs">
             © {new Date().getFullYear()} Proprely — Édité par Pershing Global Solutions LTD. Tous droits réservés.
           </p>
-          <div className="flex items-center flex-wrap gap-x-4 gap-y-2 text-xs text-slate-500">
+          <div className="flex items-center flex-wrap gap-x-4 gap-y-2 text-xs text-slate-400">
             <Link to="/mentions-legales" className="hover:text-slate-300 transition-colors">Mentions légales</Link>
             <Link to="/confidentialite" className="hover:text-slate-300 transition-colors">Confidentialité</Link>
             <Link to="/cgu" className="hover:text-slate-300 transition-colors">CGU</Link>

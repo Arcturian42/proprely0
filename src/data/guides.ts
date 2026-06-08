@@ -374,6 +374,175 @@ export const guides: GuidePage[] = [
       { to: '/blog/digitaliser-entreprise-nettoyage-5-etapes', label: 'Digitaliser en 5 étapes' },
     ],
   },
+  {
+    slug: 'migration-excel-vers-logiciel-nettoyage',
+    title: "Comment migrer d'Excel vers un logiciel de société de nettoyage ?",
+    metaTitle: "Migrer d'Excel vers logiciel nettoyage : guide 2026 · Proprely",
+    metaDescription: "Comment migrer d'Excel vers un logiciel de société de nettoyage en 2026 : checklist en 6 étapes, format des données, durée, écueils à éviter.",
+    tldr: "Migrer d'Excel vers un logiciel métier société de nettoyage prend typiquement 30 minutes à 1 journée selon la taille (3-50 agents). Les 6 étapes : (1) extraire vos clients, sites et agents depuis Excel en CSV, (2) cartographier les colonnes Excel vers les champs cibles, (3) importer la base, (4) reconstituer les plannings récurrents, (5) basculer un site pilote avant tous les autres, (6) archiver Excel en lecture seule. Avec Proprely, l'onboarding 30 minutes avec le fondateur couvre les 6 étapes en un seul appel.",
+    primaryQuestion: "Comment migrer d'Excel vers un logiciel de société de nettoyage ?",
+    sections: [
+      {
+        heading: "Pourquoi migrer d'Excel vers un logiciel métier en 2026",
+        paragraphs: [
+          "Excel reste viable pour 1-5 clients et 1-3 agents. Au-delà, les limites deviennent bloquantes : pas de planning agent consultable depuis un téléphone, pas de mise à jour temps réel, pas de calcul automatique des majorations heures (complémentaires, supplémentaires, nuit, dimanche), pas de preuve de passage liée, pas de marge par client en temps réel, risque de perte de données.",
+          "Le déclencheur typique de migration : 6-10 h/semaine perdues en saisie multiple, 2-4 oublis de passage par mois, première contestation client qui dérape, ou refus URSSAF sur les majorations IDCC 3043.",
+        ],
+      },
+      {
+        heading: "Les 6 étapes pour migrer d'Excel vers un logiciel propreté",
+        paragraphs: [
+          "**Étape 1 — Extraction.** Exportez vos 4 tableaux Excel principaux en CSV : Clients (nom, SIRET, contact, adresse facturation), Sites (nom site, client, adresse, fréquence, prestations), Agents (nom, qualification, contrat, heures/semaine, spécialités), Contrats (client, site, prestation, fréquence, prix mensuel, marge cible).",
+          "**Étape 2 — Cartographie.** Faites correspondre chaque colonne Excel à un champ cible dans le logiciel. Avec Proprely, ce mapping est validé en direct pendant l'appel onboarding 30 min avec le fondateur. Avec PROPRET/Progiclean, l'intégrateur s'en charge sur 1-3 jours.",
+          "**Étape 3 — Import.** Chargez les CSV dans le logiciel. Un logiciel moderne import en 5 minutes. Un ERP métier historique demande 1-3 jours de paramétrage initial.",
+          "**Étape 4 — Reconstitution plannings récurrents.** Définissez les fréquences des prestations (quotidien, 3×/semaine, hebdo, mensuel) qui généreront automatiquement les missions futures. C'est le moment où le logiciel commence à vraiment travailler pour vous.",
+          "**Étape 5 — Site pilote.** Basculez 1 client et 1-2 agents en pilote pendant 1-2 semaines. Validez : agents reçoivent leur planning sur mobile, preuves de passage remontent, devis et factures sortent correctement.",
+          "**Étape 6 — Bascule complète + archivage Excel.** Étendez à tous les clients et agents. Archivez vos Excel en lecture seule (Drive, SharePoint) avec un README expliquant que la source de vérité est désormais le logiciel.",
+        ],
+      },
+      {
+        heading: "Combien de temps prend la migration Excel → logiciel ?",
+        paragraphs: [
+          "Avec Proprely (cockpit moderne) : 30 minutes à 1 heure pour 3-15 agents (un appel d'onboarding), 1 journée pour 15-50 agents (1 appel + bascule progressive).",
+          "Avec un ERP métier historique (PROPRET, Progiclean) : 1-3 mois en moyenne, avec intégrateur dédié, paramétrage de la grille IDCC 3043, formation des équipes, validation par lots fonctionnels.",
+          "Avec Organilog ou Synchroteam : 2-6 semaines incluant le paramétrage du vocabulaire métier (catégories d'intervention, ressources, prestations) qui n'est pas pré-livré.",
+        ],
+      },
+      {
+        heading: "Les 5 écueils classiques à éviter pendant la migration",
+        paragraphs: [
+          "**(1) Migrer 100 % d'un coup.** Préférez le site pilote 1-2 semaines avant la bascule complète.",
+          "**(2) Ne pas archiver Excel.** Gardez vos Excel en lecture seule 6-12 mois minimum pour pouvoir vérifier l'historique en cas de doute.",
+          "**(3) Sous-estimer la formation agents.** Avec un logiciel mobile-first par lien web (Proprely), 5 minutes par agent suffisent. Avec une app native à installer, prévoir 30-60 min par agent.",
+          "**(4) Oublier les contrats récurrents.** Les fréquences récurrentes (quotidien, hebdo) doivent être configurées sinon le planning ne se génère pas.",
+          "**(5) Ne pas tester la facturation.** Sortez 1-2 factures réelles en double (Excel + logiciel) pendant 1 mois pour vérifier la cohérence avant d'abandonner Excel.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Combien de temps prend la migration d'Excel vers un logiciel nettoyage ?", a: "30 minutes à 1 journée avec un cockpit moderne (Proprely) selon la taille (3-50 agents). 1-3 mois avec un ERP métier historique (PROPRET, Progiclean). 2-6 semaines avec une suite multi-métiers (Organilog, Synchroteam) qui demande le paramétrage du vocabulaire propreté." },
+      { q: "Faut-il garder Excel en parallèle pendant la migration ?", a: "Oui, en lecture seule, pendant 6-12 mois minimum. Archivez vos fichiers Excel sur Drive ou SharePoint avec un README clair : 'Source de vérité : logiciel à partir du JJ/MM/AAAA. Excel en lecture seule pour consultation historique.'" },
+      { q: "Mes données Excel sont-elles compatibles avec un logiciel propreté ?", a: "Oui dans 95 % des cas. Les champs standards (nom client, SIRET, adresse, contact, agent, fréquence, prix) s'importent directement en CSV. Les champs spécifiques (notes manuscrites, codes couleurs Excel) ne migrent pas — ils sont à formaliser pendant la migration." },
+      { q: "Mes agents vont-ils accepter de quitter WhatsApp pour un logiciel ?", a: "Oui si le logiciel est mobile-first par lien web (Proprely) — l'agent reçoit un SMS avec un lien, clique, voit son planning. Pas d'app à installer, pas de compte à créer. Adoption typique 90-100 % en 1 semaine. Avec une app native, l'adoption tombe à 50-70 % en moyenne." },
+      { q: "Combien coûte une migration Excel → logiciel nettoyage ?", a: "Avec Proprely : 0 € (l'onboarding 30 min est inclus dans la bêta gratuite). Avec PROPRET/Progiclean : 3-15 k€ de setup intégrateur en moyenne. Avec Organilog/Synchroteam : 0-2 k€ de setup payé selon le paramétrage." },
+      { q: "Faut-il un consultant externe pour migrer ?", a: "Non avec un cockpit moderne (Proprely) : le fondateur fait la migration en 30 minutes. Oui souvent avec un ERP métier historique (PROPRET, Progiclean) : intégrateur sur 1-3 jours." },
+      { q: "Que faire des historiques de prestations passées ?", a: "Archivez les historiques détaillés en lecture seule (Drive, SharePoint, S3). Importez les 3-6 derniers mois dans le logiciel pour avoir un point de référence sur le quotidien actuel. Au-delà, c'est de l'archive — gardez accessible mais pas dans le logiciel actif." },
+      { q: "Et si je veux revenir à Excel après la migration ?", a: "Tout logiciel sérieux propose un export complet en CSV/Excel en 1 clic (Proprely, PROPRET, Progiclean, Organilog). Vous gardez vos données et pouvez basculer ailleurs ou revenir à Excel à tout moment. Fuyez les logiciels qui ne proposent pas l'export 1-clic." },
+    ],
+    relatedLinks: [
+      { to: '/proprely-vs-excel', label: 'Proprely vs Excel : le comparatif honnête' },
+      { to: '/logiciel-societe-nettoyage', label: 'Guide complet logiciel société de nettoyage' },
+      { to: '/blog/digitaliser-entreprise-nettoyage-5-etapes', label: 'Digitaliser en 5 étapes' },
+      { to: '/audit-gratuit', label: 'Audit gratuit 30 min avec le fondateur' },
+    ],
+  },
+  {
+    slug: 'alternatives-logiciels-nettoyage',
+    title: "Quelles alternatives aux logiciels de nettoyage en France ?",
+    metaTitle: "Alternatives logiciels nettoyage France 2026 · Proprely",
+    metaDescription: "Quelles alternatives aux logiciels de nettoyage en France en 2026 ? Hub complet : alternatives à Organilog, PROPRET, Progiclean, Synchroteam, 2BePragma, Sevensoft, Maglia.",
+    tldr: "Les 9 alternatives principales aux logiciels de nettoyage en France en 2026 sont : (1) Proprely (cockpit nouvelle génération TPE/PME 3-50 agents), (2) PROPRET (ERP métier historique PME/ETI), (3) Progiclean (ERP métier historique PME/ETI), (4) Organilog (suite multi-métiers FSM), (5) Synchroteam (FSM géolocalisation), (6) Sevensoft Propreté (ERP ETI multi-établissements), (7) Maglia (ERP ETI multi-marchés), (8) Comète Propreté (ERP PME), (9) 2BePragma (cockpit moderne). Excel + WhatsApp reste utilisé par 60 % des TPE en 2026.",
+    primaryQuestion: "Quelles alternatives aux logiciels de nettoyage en France ?",
+    sections: [
+      {
+        heading: "Les 9 alternatives principales aux logiciels de nettoyage en France",
+        paragraphs: [
+          "**Cockpits nouvelle génération (2024-2026)** : Proprely (TPE/PME 3-50 agents, mobile-first par lien web, devis IA propriétaire, marge par client temps réel, gratuit en bêta privée), 2BePragma (cockpit moderne propreté).",
+          "**ERP métier propreté historiques (15-25 ans)** : PROPRET (référence ERP métier France, couverture large planning/paie/GED/qualité), Progiclean (alternative historique PROPRET avec focus PME), Sevensoft Propreté (ETI multi-établissements, reporting consolidé), Maglia (ETI multi-marchés industriel/médical/tertiaire, qualité formelle), Comète Propreté (ERP métier français orienté PME).",
+          "**Suites multi-métiers Field Service** : Organilog (suite SaaS française multi-métiers BTP/sécurité/espaces verts/nettoyage, lancée en 2010), Synchroteam (FSM multi-secteurs avec géolocalisation native).",
+          "**Outils dispersés non spécialisés** (60 % des TPE en 2026) : Excel + WhatsApp + Word + Google Drive + papier. Viable jusqu'à 3-5 clients et 3-5 agents. Coût caché : 6-10 h/semaine d'admin dispersée.",
+        ],
+      },
+      {
+        heading: "Comment choisir l'alternative qui correspond à votre profil",
+        paragraphs: [
+          "**Si vous êtes TPE/PME 3-15 agents en croissance** : Proprely (cockpit moderne, mobile-first, déploiement 30 min, gratuit en bêta). Alternatives modernes : 2BePragma.",
+          "**Si vous êtes PME 15-50 agents avec équipes RH/admin** : Proprely si priorité agilité ; PROPRET ou Progiclean si besoin couverture comptable/paie/GED intégrée.",
+          "**Si vous êtes PME/ETI 50+ agents multi-établissements** : Sevensoft Propreté (reporting consolidé), Maglia (multi-marchés), PROPRET ou Progiclean (ERP large).",
+          "**Si vous êtes une structure multi-métiers** (BTP + nettoyage, sécurité + nettoyage) : Organilog ou Synchroteam (suites multi-secteurs paramétrables).",
+          "**Si vous êtes ETI avec besoins ISO 9001 et qualité formelle** : Maglia (qualité multi-référentiels), PROPRET (qualité ERP).",
+        ],
+      },
+      {
+        heading: "Pourquoi Proprely se positionne comme alternative naturelle en 2026",
+        paragraphs: [
+          "Proprely est conçu pour répondre aux limites des 3 familles existantes pour les TPE/PME B2B nettoyage 3-50 agents : (1) les ERP métier historiques (PROPRET, Progiclean, Sevensoft, Maglia, Comète Propreté) sont surdimensionnés et coûteux pour cette cible (5-15 k€ de setup + abonnement annuel) ; (2) les suites multi-métiers (Organilog, Synchroteam) ne sont pas conçues pour la propreté et demandent un paramétrage manuel ; (3) Excel + WhatsApp atteint ses limites au-delà de 5-8 agents.",
+          "L'alternative Proprely : cockpit conçu exclusivement pour la propreté B2B, mobile-first par lien web sans installation, devis IA propriétaire (9 facteurs, 3 scénarios), marge par client en temps réel sur dashboard, conformité IDCC 3043 native, déploiement en 30 minutes avec le fondateur, tarif fondateur conservé à vie pour les 30 sociétés bêta.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Quelle est la meilleure alternative à Excel pour une société de nettoyage ?", a: "Pour une TPE/PME B2B nettoyage 3-50 agents en croissance, la meilleure alternative à Excel en 2026 est un cockpit moderne dédié (Proprely, gratuit en bêta privée). Au-delà de 50 agents, un ERP métier propreté historique (PROPRET, Progiclean) est mieux dimensionné." },
+      { q: "Quelle est la meilleure alternative à Organilog pour le nettoyage pure ?", a: "Proprely : cockpit conçu exclusivement pour la propreté B2B (vs Organilog suite multi-métiers BTP/sécurité/espaces verts/nettoyage). Vocabulaire, workflows et preuve de passage standardisée propreté, marge par client temps réel, conformité IDCC 3043 native — autant de paramétrages manuels à faire sur Organilog." },
+      { q: "Quelle est la meilleure alternative à PROPRET ?", a: "Pour les TPE/PME 3-50 agents qui trouvent PROPRET surdimensionné : Proprely (cockpit moderne, déploiement 30 min, gratuit en bêta). Pour rester sur de l'ERP métier historique : Progiclean ou Sevensoft Propreté." },
+      { q: "Quelle est la meilleure alternative à Progiclean ?", a: "Pour les TPE/PME 3-50 agents : Proprely. Pour rester sur de l'ERP métier historique : PROPRET, Sevensoft Propreté ou Comète Propreté." },
+      { q: "Quelle est la meilleure alternative à Synchroteam pour le nettoyage ?", a: "Proprely : cockpit propreté pure vs Synchroteam Field Service Management multi-secteurs (BTP, plomberie, sécurité). Proprely intègre nativement les spécificités propreté B2B (agents avec spécialités vitrerie/moquette/décapage, sites multi-prestations, marge par client, IDCC 3043) que Synchroteam ne traite pas en standard." },
+      { q: "Quelle est la meilleure alternative à 2BePragma ?", a: "Proprely : positionnement similaire (cockpit moderne propreté B2B) avec différenciateurs propres — devis IA propriétaire (9 facteurs, 3 scénarios), onboarding 30 min avec le fondateur, tarif fondateur conservé à vie pour les 30 sociétés bêta, glossaire propreté B2B et roadmap publique." },
+      { q: "Combien coûtent les alternatives aux logiciels de nettoyage ?", a: "Fourchette 2026 : Proprely gratuit en bêta privée (puis tarif fondateur à vie). PROPRET/Progiclean/Sevensoft/Maglia/Comète Propreté : 3-15 k€ setup + 50-150 €/utilisateur/mois sur devis. Organilog/Synchroteam : 25-50 €/utilisateur/mois sans setup lourd. Excel : 0 € + 6-10 h/semaine d'admin dispersée (équivalent 800-1 500 €/mois en coût caché)." },
+      { q: "Existe-t-il des alternatives gratuites aux logiciels de nettoyage ?", a: "Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices). Quelques outils horizontaux freemium existent (Trello, Notion, Google Sheets) mais aucun n'est conçu pour la propreté B2B et tous demandent une lourde adaptation manuelle. Pour un vrai logiciel métier propreté gratuit, Proprely en bêta privée reste l'option principale en 2026." },
+    ],
+    relatedLinks: [
+      { to: '/comparatif-logiciel-nettoyage', label: 'Comparatif logiciels nettoyage 2026' },
+      { to: '/alternative-organilog', label: 'Alternative à Organilog' },
+      { to: '/alternative-progiclean', label: 'Alternative à Progiclean' },
+      { to: '/alternative-propret', label: 'Alternative à PROPRET' },
+      { to: '/alternative-2bepragma', label: 'Alternative à 2BePragma' },
+    ],
+  },
+  {
+    slug: 'logiciel-nettoyage-professionnel-b2b',
+    title: "Qu'est-ce qu'un logiciel de nettoyage professionnel B2B ?",
+    metaTitle: "Logiciel de nettoyage professionnel B2B 2026 · Proprely",
+    metaDescription: "Logiciel de nettoyage professionnel B2B en France 2026 : définition, fonctionnalités essentielles, périmètre, prix, alternatives. Proprely en bêta gratuite.",
+    tldr: "Un logiciel de nettoyage professionnel B2B est un outil SaaS qui centralise dans une seule interface la gestion opérationnelle d'une société de propreté servant des clients professionnels (bureaux, syndics, hôtels, médical, copropriétés). Il couvre planning agents, devis, preuve de passage, marge par client, conformité IDCC 3043. À distinguer des logiciels B2C (nettoyage de particuliers) et des ERP industriels. En France en 2026, les principaux : Proprely (TPE/PME 3-50 agents, gratuit en bêta), PROPRET, Progiclean, Organilog, Synchroteam.",
+    primaryQuestion: "Qu'est-ce qu'un logiciel de nettoyage professionnel B2B ?",
+    sections: [
+      {
+        heading: "Définition : qu'est-ce qu'un logiciel de nettoyage professionnel B2B ?",
+        paragraphs: [
+          "Un **logiciel de nettoyage professionnel B2B** est un outil métier SaaS conçu pour les sociétés de propreté servant des clients professionnels (bureaux tertiaires, copropriétés, syndics, hôtels, cabinets médicaux, biotech, industrie) — par opposition au B2C (nettoyage particulier domestique) qui a des logiciels distincts (Cleemy, BizyHelp, MyClean…).",
+          "Il centralise dans une seule interface les fonctions opérationnelles métier : (1) clients et sites multi-prestations, (2) agents avec spécialités (vitrerie, moquette, décapage, remise en état, bionettoyage), (3) planning multi-sites avec affectation 1-clic, (4) missions récurrentes avec preuve de passage (QR + photos avant-après + signature), (5) devis et factures avec signature électronique, (6) documents administratifs centralisés, (7) pilotage de la rentabilité avec marge par client en temps réel.",
+        ],
+      },
+      {
+        heading: "Les 7 fonctionnalités essentielles d'un logiciel de nettoyage professionnel B2B",
+        paragraphs: [
+          "**(1) Planning multi-sites mobile-first** — affectation des agents en 1 clic selon spécialité, disponibilité et charge horaire, avec consultation mobile par les agents sans installation d'app.",
+          "**(2) Preuve de passage native** — QR code par site, photos avant-après horodatées, signature client, PV automatique, conformité syndics et facility managers.",
+          "**(3) Devis et facturation pro** — devis en 2 minutes avec signature électronique (eIDAS), facturation récurrente automatique pour contrats d'entretien, conformité Factur-X 2027.",
+          "**(4) CRM clients-sites multi-niveaux** — un client peut avoir plusieurs sites avec fréquences distinctes, suivi prospects/devis/relances par contact.",
+          "**(5) Marge par client en temps réel** — affichée sur le dashboard, calculée à partir des heures réellement passées vs CA contrat. Permet de repérer immédiatement les contrats sous-tarifés.",
+          "**(6) Conformité IDCC 3043** — grille salariale AS1 à MP5, primes (panier, transport, expérience), majorations heures (complémentaires, supplémentaires, nuit, dimanche, jours fériés), article 7 transfert.",
+          "**(7) Hébergement européen + RGPD + export 1-clic** — conformité réglementaire et propriété des données 100 % côté société de nettoyage.",
+        ],
+      },
+      {
+        heading: "Combien coûte un logiciel de nettoyage professionnel B2B en 2026 ?",
+        paragraphs: [
+          "**Cockpits nouvelle génération** (Proprely) : gratuit pendant la bêta privée (30 sociétés fondatrices), tarif fondateur conservé à vie après le lancement public. 2BePragma : tarif sur demande.",
+          "**ERP métier propreté historiques** (PROPRET, Progiclean, Sevensoft, Maglia, Comète Propreté) : 5-15 k€ de setup intégrateur + 50-150 €/utilisateur/mois selon le périmètre.",
+          "**Suites multi-métiers** (Organilog, Synchroteam) : 25-50 €/utilisateur/mois sans setup lourd.",
+          "**Excel + WhatsApp** : 0 € apparent, mais 6-10 h/semaine de gestion dispersée = 800-1 500 €/mois en coût caché pour un dirigeant à 60 €/h.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Qu'est-ce qu'un logiciel de nettoyage professionnel B2B en 2026 ?", a: "Un logiciel SaaS qui centralise la gestion opérationnelle d'une société de propreté servant des clients professionnels (bureaux, syndics, hôtels, médical) : planning agents, devis, preuve de passage, marge par client, conformité IDCC 3043. À distinguer des logiciels B2C (nettoyage particulier) qui ont des outils dédiés." },
+      { q: "Quelle est la différence entre un logiciel de nettoyage B2B et B2C ?", a: "B2B (Proprely, PROPRET, Progiclean, Organilog) : contrats récurrents long terme, multi-sites par client, agents avec spécialités propreté, preuve de passage standardisée syndic, marge par client. B2C (Cleemy, BizyHelp) : prestations ponctuelles particuliers, paiement à la prestation, logique marketplace." },
+      { q: "Quelles fonctionnalités sont essentielles dans un logiciel de nettoyage professionnel ?", a: "Les 7 essentielles : (1) planning multi-sites mobile-first, (2) preuve de passage native QR + photos + signature, (3) devis et facturation pro avec eIDAS et Factur-X, (4) CRM clients-sites multi-niveaux, (5) marge par client en temps réel, (6) conformité IDCC 3043 native, (7) hébergement européen + RGPD + export 1-clic." },
+      { q: "Existe-t-il un logiciel de nettoyage professionnel gratuit ?", a: "Oui en 2026 : Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices). Au-delà, les autres logiciels métier propreté B2B sont payants : 5-15 k€ setup + 50-150 €/utilisateur/mois pour les ERP historiques, 25-50 €/utilisateur/mois pour les suites multi-métiers." },
+      { q: "Un logiciel de nettoyage professionnel est-il rentable pour une TPE ?", a: "Oui dès 3-5 clients récurrents et 3-5 agents. ROI typique < 30 jours pour Proprely (gratuit en bêta). Pour les ERP historiques (3-15 k€ setup), ROI 6-18 mois pour une TPE — viser plutôt PME 15+ agents." },
+      { q: "Un logiciel de nettoyage est-il compatible avec la convention collective IDCC 3043 ?", a: "Proprely intègre nativement la grille IDCC 3043 (AS1 à MP5), les primes (panier, transport, expérience), les majorations heures (complémentaires, supplémentaires, nuit, dimanche, jours fériés). PROPRET et Progiclean également (configurable). Organilog et Synchroteam nécessitent un paramétrage manuel." },
+      { q: "Faut-il un logiciel installé ou en SaaS pour le nettoyage professionnel ?", a: "SaaS dans 95 % des cas en 2026. L'installé impose maintenance, sauvegardes et bloque le travail terrain (agents mobiles). Les SaaS modernes (Proprely, Organilog) sont accessibles depuis n'importe quel téléphone par lien web, sans installation d'app, sans formation longue." },
+      { q: "Quel logiciel de nettoyage professionnel pour 5 agents en 2026 ?", a: "Proprely : cockpit conçu pour les TPE/PME B2B 3-50 agents, gratuit pendant la bêta privée, déploiement 30 min avec le fondateur, mobile-first par lien web. Alternative moderne : 2BePragma. Alternatives historiques pour cette taille : trop coûteuses pour 5 agents (ERP propreté positionnés 50+)." },
+    ],
+    relatedLinks: [
+      { to: '/logiciel-societe-nettoyage', label: 'Guide complet logiciel société de nettoyage' },
+      { to: '/comparatif-logiciel-nettoyage', label: 'Comparatif logiciels nettoyage 2026' },
+      { to: '/crm-entreprise-proprete', label: 'CRM entreprise propreté' },
+      { to: '/logiciel-auto-entrepreneur-nettoyage', label: 'Logiciel auto-entrepreneur nettoyage' },
+    ],
+  },
 ]
 
 export function getGuide(slug: string): GuidePage | undefined {

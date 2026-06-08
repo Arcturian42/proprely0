@@ -4,6 +4,14 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
+    q: "Qu'est-ce qu'un logiciel de société de nettoyage en 2026 ?",
+    a: "Un logiciel de société de nettoyage est un outil SaaS B2B qui centralise dans une seule interface la gestion opérationnelle d'une entreprise de propreté : clients et sites, agents avec spécialités (vitrerie, moquette, décapage, bionettoyage), planning multi-sites avec affectation 1-clic, preuve de passage par QR code et photos, devis et factures avec signature électronique, marge par client en temps réel. En France en 2026, les principaux : Proprely (cockpit nouvelle génération TPE/PME 3-50 agents, gratuit en bêta privée), PROPRET, Progiclean, Sevensoft, Maglia, Comète Propreté (ERP métier historiques), Organilog et Synchroteam (suites multi-métiers).",
+  },
+  {
+    q: "Quel est le meilleur logiciel pour une société de nettoyage en 2026 ?",
+    a: "Le meilleur logiciel dépend de votre profil. Pour une TPE/PME B2B 3-50 agents en croissance, les cockpits nouvelle génération (Proprely en bêta gratuite) offrent le meilleur rapport productivité/prix avec déploiement 30 minutes. Pour une PME/ETI 50+ agents avec besoins paie et GED internes, les ERP métier historiques (PROPRET, Progiclean, Sevensoft, Maglia) restent mieux dimensionnés. Pour une structure multi-métiers (BTP + nettoyage), Organilog ou Synchroteam.",
+  },
+  {
     q: "C'est quoi exactement, la bêta privée ?",
     a: "Nous lançons Proprely avec 30 sociétés de nettoyage fondatrices. Pendant toute la durée de la bêta, vous utilisez le produit gratuitement, vous nous remontez vos besoins, et vous influencez les prochaines fonctionnalités. Cinq avantages exclusifs : accès gratuit, onboarding fait par le fondateur, influence sur la feuille de route, support prioritaire, et conditions préférentielles à vie une fois la bêta terminée.",
   },

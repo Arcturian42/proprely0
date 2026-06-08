@@ -76,6 +76,22 @@ html { scroll-behavior: smooth; }
 
 .seo-fallback { position: absolute; left: -10000px; top: 0; width: 1px; height: 1px; overflow: hidden; }
 
+/* Skip-link a11y : visible uniquement au focus clavier */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: #2563EB;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 1rem; outline: 2px solid #fff; outline-offset: 2px; }
+
 @media (prefers-reduced-motion: reduce) {
   .animate-blob-1, .animate-blob-2, .animate-blob-3, .animate-shimmer, .animate-ping-3x { animation: none; }
   html { scroll-behavior: auto; }
