@@ -100,8 +100,8 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Modèle de devis nettoyage](https://proprely.fr/ressources/modele-devis-nettoyage) : template Excel professionnel prêt à l'emploi
 - [Modèle de planning agents nettoyage](https://proprely.fr/ressources/modele-planning-agents-nettoyage) : Excel hebdomadaire multi-agents
 - [Modèle de suivi des heures agents](https://proprely.fr/ressources/modele-suivi-heures-agents) : Excel avec calcul coût horaire chargé
-- [Calculateur ROI dispersion](https://proprely.fr/ressources/calculateur-roi) : combien la gestion dispersée vous coûte
-- [Simulateur de rentabilité contrat](https://proprely.fr/ressources/simulateur-rentabilite) : marge brute d'un contrat en 1 minute
+- [Calculateur ROI dispersion](https://proprely.fr/calculateur-roi/) : combien la gestion dispersée vous coûte
+- [Simulateur de rentabilité contrat](https://proprely.fr/simulateur-rentabilite/) : marge brute d'un contrat en 1 minute
 
 ## Programme membres fondateurs
 

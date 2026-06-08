@@ -311,12 +311,37 @@
     </script>
 
     <style>
-      .seo-fallback { position: absolute; left: -10000px; top: 0; width: 1px; height: 1px; overflow: hidden; }
+      /* Bloc seo-fallback visible : sert à la fois aux crawlers (contenu sémantique
+         visible et indexable) et aux utilisateurs (résumé textuel de la page).
+         Placé hors de #root pour ne pas être effacé au montage de React. */
+      .seo-fallback {
+        max-width: 64rem;
+        margin: 4rem auto 0;
+        padding: 2.5rem 1.5rem;
+        border-top: 1px solid #E2E8F0;
+        color: #475569;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+      }
+      .seo-fallback h1, .seo-fallback h2 {
+        color: #0F172A;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 1.5rem 0 0.5rem;
+      }
+      .seo-fallback h1 { font-size: 1.5rem; }
+      .seo-fallback h2 { font-size: 1.125rem; margin-top: 1.5rem; }
+      .seo-fallback p { margin: 0.5rem 0; }
+      .seo-fallback ul { margin: 0.5rem 0 0.5rem 1.5rem; }
+      .seo-fallback li { margin: 0.25rem 0; }
+      .seo-fallback a { color: #2563EB; text-decoration: none; }
+      .seo-fallback a:hover { text-decoration: underline; }
+      .seo-fallback img { display: none; }
     </style>
   </head>
   <body>
-    <div id="root">
-      <div class="seo-fallback" aria-hidden="true">
+    <div id="root"></div>
+    <aside class="seo-fallback" aria-label="Résumé et liens utiles">
         <img src="/og-image.png" alt="Proprely — cockpit métier pour société de nettoyage B2B (planning, agents, devis, preuve de passage, marge par client)" width="1200" height="630" />
         <h1>Logiciel de gestion pour société de nettoyage. Sans Excel, sans WhatsApp, sans nuits blanches.</h1>
         <p>Vos clients, sites, agents, plannings et devis dans un seul outil — pensé avec des dirigeants du nettoyage, pour des dirigeants du nettoyage.</p>
@@ -380,8 +405,7 @@ claude/kind-einstein-d9YlH
         </ul>
         <h2>FAQ</h2>
         <p>Bêta privée gratuite, accès réservé aux 30 premières entreprises sélectionnées. Conçu en France. Hébergement européen RGPD. Vos données restent les vôtres, exportables à tout moment.</p>
-      </div>
-    </div>
+    </aside>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -8,6 +8,15 @@ ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteBase /
 
+# ─── Redirections 301 historiques ────────────────────────────────────
+# URLs incorrectes générées par l'ancien llms.txt statique
+# (/ressources/calculateur-roi pointait vers une page inexistante).
+# 301 vers les vraies URLs racine pour ne pas perdre le jus SEO.
+RewriteRule ^ressources/calculateur-roi/?$ /calculateur-roi/ [R=301,L]
+RewriteRule ^ressources/simulateur-rentabilite/?$ /simulateur-rentabilite/ [R=301,L]
+RewriteRule ^ressources/calculateur-prix-nettoyage-m2/?$ /calculateur-prix-nettoyage-m2/ [R=301,L]
+RewriteRule ^ressources/calculateur-roi-nettoyage/?$ /calculateur-roi/ [R=301,L]
+
 # If a real file or directory exists, serve it as-is
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
