@@ -4,6 +4,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import RoadmapVision from '../components/RoadmapVision'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 import {
@@ -185,6 +186,9 @@ export default function RoadmapPage() {
             </div>
           </div>
         </section>
+
+        {/* VISION STRATÉGIQUE (5 phases marketing) */}
+        <RoadmapVision />
 
         {/* TABS + FILTER */}
         <section className="border-y border-slate-100 bg-white sticky top-14 sm:top-16 z-30">
