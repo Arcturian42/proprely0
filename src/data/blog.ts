@@ -5258,7 +5258,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
       { q: "Comment fonctionne la prime d'expérience ?", a: "À partir de 4 ans d'ancienneté chez le même employeur, l'agent bénéficie d'une prime d'expérience versée mensuellement. Montant variable selon l'accord d'entreprise. Souvent forfaitaire (30-80 €/mois pour 4-10 ans, jusqu'à 150 €/mois au-delà de 15 ans). Vérifier votre accord d'entreprise ou la dernière révision IDCC 3043." },
       { q: "Quelles obligations RSE et formation impose la convention ?", a: "La branche impose 0,55% de la masse salariale en formation (CDI/CDD) à partir de 11 salariés. Plan annuel de formation à présenter au CSE. Égalité professionnelle homme/femme (rapport annuel). Pénibilité (exposition produits chimiques) : suivi médical renforcé pour les agents exposés aux produits CMR." },
     ],
-    relatedSlugs: ['calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    relatedSlugs: ['grille-salaires-proprete-2026', 'indemnite-transport-proprete-2026', 'heures-complementaires-nettoyage', 'calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
     content: `## L'essentiel à connaître sur la convention collective propreté IDCC 3043
 
 La Convention collective nationale des entreprises de propreté et services associés, identifiée sous le numéro **IDCC 3043**, régit environ 500 000 salariés en France. Si vous dirigez une société de nettoyage B2B (codes NAF 81.21Z, 81.22Z, 81.29A, 81.29B), elle s'applique obligatoirement à vos contrats de travail.
@@ -7512,6 +7512,335 @@ Avec un logiciel moderne comme Proprely :
 
 Pour passer du planning Excel au logiciel métier en 30 minutes, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après. Import de votre Excel inclus.`,
   },
+  {
+    slug: 'grille-salaires-proprete-2026',
+    title: "Grille salaires propreté 2026 : taux horaires CCN 3043",
+    excerpt: "Grille salariale propreté 2026 (CCN 3043) : AS1 11,99€/h, ASP 12,42€/h, ATQS 13,32€/h. Tableau complet par niveau, évolution 2024-2026, coefficient.",
+    date: '9 juin 2026',
+    readTime: '7 min',
+    tag: 'Conformité',
+    quickSummary: [
+      "La grille IDCC 3043 fixe les minima conventionnels pour ~500 000 salariés en France au 1er janvier 2026.",
+      "AS1 (débutant) : 11,99 €/h brut · ASP : 12,42 €/h · ATQS : 13,32 €/h · Chef d'équipe : 14,20 €/h · Inspecteur : 16,80 €/h.",
+      "Évolution 2024 → 2026 : +2,9 % à +3,4 % selon le niveau, en ligne avec l'inflation.",
+      "Les niveaux d'encadrement intermédiaire progressent légèrement plus vite que les niveaux d'entrée.",
+      "Ces montants sont des planchers : la réalité du marché (Paris, IDF, spécialités) impose souvent +5 à +15 %.",
+      "Anticipez +3 % minimum sur votre masse salariale chaque année pour rester aligné.",
+    ],
+    faq: [
+      { q: "Quel est le salaire minimum d'un agent de propreté en 2026 ?", a: "Niveau AS1 (Agent de Service Propreté débutant) : 11,99 €/h brut au 1er janvier 2026, soit ~1 818 € brut/mois pour 35h hebdo. Au-dessus du SMIC général grâce à l'accord de branche." },
+      { q: "Combien gagne un agent qualifié (ASP) en 2026 ?", a: "Niveau ASP (Agent de Service Propreté qualifié, coefficient 150) : 12,42 €/h brut, soit ~1 884 € brut/mois en base 35h. Réservé aux agents ayant validé leurs compétences (vitrerie, machine, protocoles)." },
+      { q: "Quel taux horaire pour un chef d'équipe propreté en 2026 ?", a: "Chef d'équipe (coefficient 195) : 14,20 €/h brut minimum, soit ~2 153 € brut/mois base 35h. La réalité du marché tourne autour de 15-17 €/h selon zone et taille d'équipe encadrée." },
+      { q: "La grille évolue-t-elle chaque année ?", a: "Oui. Un accord de branche révise la grille chaque année, généralement au 1er janvier. La progression 2024 → 2026 a été de +2,9 % à +3,4 % selon les niveaux. Anticipez +3 % minimum sur votre masse salariale annuelle." },
+      { q: "Peut-on payer en dessous de la grille ?", a: "Non. Les montants conventionnels sont des planchers absolus. Tout salaire en dessous expose à un redressement URSSAF et un risque prud'homal. Vous pouvez et devez parfois payer au-dessus selon le marché local et les spécialités." },
+      { q: "Où trouver la grille officielle à jour ?", a: "La grille officielle est publiée sur le site du Ministère du Travail (Légifrance), sur le portail de la branche propreté (FEP — Fédération des entreprises de propreté), et reprise dans notre guide complet de la convention IDCC 3043." },
+    ],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Grille salariale propreté 2026 (IDCC 3043) — l'essentiel
+
+La grille salariale de la convention collective nationale des entreprises de propreté (**IDCC 3043**) fixe les minima conventionnels pour environ 500 000 salariés en France. Au **1er janvier 2026**, voici les taux horaires bruts en vigueur.
+
+| Niveau | Coefficient | Taux horaire brut 2026 | Salaire brut mensuel base 35h |
+| ------ | ----------- | ---------------------- | ----------------------------- |
+| AS1 (Agent Service Propreté débutant) | 110 | 11,99 € | 1 818 € |
+| AS2 | 130 | 12,15 € | 1 842 € |
+| ASP (Agent Service Propreté qualifié) | 150 | 12,42 € | 1 884 € |
+| ATQS (Agent Très Qualifié Service) | 175 | 13,32 € | 2 020 € |
+| Chef d'équipe | 195 | 14,20 € | 2 153 € |
+| Inspecteur / Responsable secteur | 235 | 16,80 € | 2 548 € |
+
+**Attention** : ces montants sont des **planchers**. Le marché impose souvent +5 à +15 % selon la zone (Paris, IDF) et la spécialité (vitrerie hauteur, décapage, bionettoyage).
+
+## Évolution de la grille 2024 → 2025 → 2026
+
+| Niveau | 2024 | 2025 | 2026 | Évolution 2024→2026 |
+| ------ | ---- | ---- | ---- | ------------------- |
+| AS1 | 11,65 € | 11,82 € | 11,99 € | +2,9 % |
+| AS2 | 11,78 € | 11,96 € | 12,15 € | +3,1 % |
+| ASP | 12,05 € | 12,24 € | 12,42 € | +3,1 % |
+| ATQS | 12,90 € | 13,11 € | 13,32 € | +3,3 % |
+| Chef d'équipe | 13,75 € | 13,98 € | 14,20 € | +3,3 % |
+| Inspecteur | 16,25 € | 16,52 € | 16,80 € | +3,4 % |
+
+**Lecture** : la grille suit globalement l'inflation française (~2,8 %/an). Les niveaux d'encadrement progressent légèrement plus vite, signal de tension RH sur l'encadrement intermédiaire. Anticipez +3 % minimum sur votre masse salariale chaque année.
+
+## Calculer le coût horaire chargé d'un agent
+
+Le taux horaire brut n'est qu'une partie du coût réel pour l'employeur. Pour un AS1 à 11,99 €/h en 2026, le coût horaire chargé tourne autour de **18-20 €/h** une fois ajoutés :
+
+- Charges patronales (~42 % du brut)
+- Congés payés et RTT (~10 %)
+- Primes conventionnelles obligatoires (panier, transport, salissure)
+- Mutuelle obligatoire
+- Provision pour absentéisme et turnover
+
+Pour le détail méthodologique, voir notre guide [coût horaire chargé d'un agent de nettoyage](/blog/cout-horaire-charge-agent-nettoyage).
+
+## Au-delà de la grille : ce qui se paye vraiment sur le marché
+
+Les grilles minimales conventionnelles ne reflètent pas le marché réel. En 2026, voici les fourchettes constatées sur le terrain pour un AS1 / ASP qualifié :
+
+- **Paris / Île-de-France** : +8 à +12 % sur la grille (tension RH, coût de la vie)
+- **Lyon, Marseille, Bordeaux** : +3 à +8 % sur la grille
+- **Province** : à la grille ou très légèrement au-dessus
+- **Spécialités techniques** (vitrerie hauteur, décapage, médical) : +10 à +20 %
+- **Horaires décalés** (avant 6h, après 21h, week-end) : +20 à +50 % en majoration
+
+## Sanctions en cas de non-respect de la grille
+
+Payer en dessous des minima conventionnels expose à :
+
+- **Redressement URSSAF** sur les cotisations manquantes (3 ans rétroactif, majorations 5-25 %)
+- **Risque prud'homal** : l'agent peut saisir le conseil pour rappel de salaire (3 ans)
+- **Perte de marché** : les donneurs d'ordres B2B (syndics, foncières) demandent les attestations URSSAF et peuvent rompre le contrat
+- **Article 7 difficile** : en cas de transfert de marché, le repreneur conteste les bases salariales sous-évaluées
+
+## Convention collective propreté : voir aussi
+
+Pour le guide complet de la convention IDCC 3043 (article 7, majorations, primes, jours fériés), consulter notre [guide convention collective propreté 2026](/blog/convention-collective-nettoyage-idcc-3043).
+
+Pour automatiser le calcul des salaires et heures conformes IDCC 3043 dans votre société, voir [Proprely : logiciel conforme convention collective propreté](/convention-collective-nettoyage). La grille AS1 à MP5 et les majorations sont intégrées au module gestion des agents — vous ne pouvez plus vous tromper sur les minima ou les heures complémentaires.
+
+[Candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, conforme IDCC 3043 dès le premier jour.`,
+  },
+  {
+    slug: 'indemnite-transport-proprete-2026',
+    title: "Indemnité transport propreté 2026 : calcul + obligations",
+    excerpt: "Indemnité de transport propreté 2026 : calcul, montants conventionnels, prime de transport IDCC 3043, obligations employeur, articulation URSSAF.",
+    date: '9 juin 2026',
+    readTime: '6 min',
+    tag: 'Conformité',
+    quickSummary: [
+      "Trois dispositifs distincts : prime de transport IDCC 3043, remboursement abonnement public obligatoire, forfait mobilités durables optionnel.",
+      "Prime de transport conventionnelle propreté : forfaitaire, due aux agents avec domicile-travail non desservi facilement par les transports en commun.",
+      "Remboursement obligatoire 50 % de l'abonnement transport public domicile-travail, exonéré de cotisations dans la limite légale.",
+      "Forfait mobilités durables (vélo, covoiturage) : optionnel mais en croissance, jusqu'à 800 €/an exonérés.",
+      "Cumulable avec le remboursement transport public dans la limite de 900 € par an et par salarié en 2026.",
+      "Erreurs fréquentes : oubli de la prime conventionnelle, mauvais traitement URSSAF, défaut de justificatif.",
+    ],
+    faq: [
+      { q: "Qu'est-ce que la prime de transport propreté ?", a: "C'est une indemnité conventionnelle prévue par la CCN propreté (IDCC 3043) pour compenser les frais de transport domicile-travail quand le lieu de travail n'est pas desservi par les transports publics. Forfaitaire, versée aux agents éligibles selon les critères de l'accord de branche en vigueur." },
+      { q: "Est-elle obligatoire pour tous les agents ?", a: "Non. Elle est due aux agents qui remplissent les conditions conventionnelles (notamment desserte du lieu de travail par les transports en commun aux horaires de la mission). Vérifiez chaque mission individuellement : un agent en bureau central CBD n'y a généralement pas droit, mais un agent en zone industrielle ou pour des horaires décalés (avant 6h ou après 21h) le sera." },
+      { q: "Faut-il rembourser 50 % de l'abonnement Navigo/TER ?", a: "Oui, c'est une obligation légale (article L3261-2 du Code du travail) applicable à tous les employeurs, indépendamment de la convention collective. Le remboursement de 50 % du coût de l'abonnement transport public domicile-travail est obligatoire et exonéré de cotisations sociales et d'impôt dans la limite du tarif le plus économique." },
+      { q: "Peut-on cumuler prime conventionnelle, abonnement public et forfait mobilités ?", a: "Oui, sous plafonds. Le forfait mobilités durables (vélo, covoiturage, trottinette électrique) est exonéré jusqu'à 800 €/an. Cumulé avec le remboursement transport public, le plafond global d'exonération est de 900 €/an en 2026. La prime de transport conventionnelle propreté suit son propre régime, parfois soumise à cotisations selon le montant et la justification." },
+      { q: "Quel régime URSSAF pour la prime de transport ?", a: "Selon le caractère et le montant. Si la prime conventionnelle reste dans la limite du barème URSSAF (exonération soumise à conditions de distance et d'horaires), elle est exonérée de cotisations. Au-delà, ou si les conditions ne sont pas réunies, elle est soumise à cotisations comme un complément de salaire. Documenter précisément les conditions d'attribution." },
+      { q: "Comment justifier la prime en cas de contrôle URSSAF ?", a: "Conserver : (1) la fiche de paie mentionnant la prime, (2) la justification de l'éligibilité de l'agent (horaire de mission incompatible avec transports publics, adresse domicile-travail, zone non desservie), (3) la copie de l'accord de branche ou d'entreprise appliqué, (4) idéalement un état mensuel par agent. Sans dossier solide, le contrôleur requalifie en salaire imposable." },
+    ],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'grille-salaires-proprete-2026', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
+    content: `## Les 3 dispositifs de prise en charge du transport agents propreté
+
+Pour un dirigeant de société de nettoyage en 2026, trois dispositifs coexistent pour la prise en charge des frais de transport des agents. Bien les distinguer est essentiel pour éviter les redressements URSSAF et appliquer correctement la convention collective IDCC 3043.
+
+### 1. Remboursement obligatoire 50 % abonnement transport public
+
+Imposé par l'article L3261-2 du Code du travail. Applicable à **tous les employeurs** quelle que soit la convention collective, dès qu'un agent utilise un abonnement de transport public (Navigo, TER, Tram, Métro régional) pour son trajet domicile-travail.
+
+- Taux minimum : **50 % du coût de l'abonnement** le plus économique correspondant à la liaison
+- Exonéré de cotisations sociales et d'impôt sur le revenu dans la limite réglementaire
+- Versement mensuel sur présentation du justificatif d'abonnement
+- Pas de condition de distance ou d'horaire
+
+### 2. Prime de transport conventionnelle IDCC 3043
+
+Spécifique à la branche propreté, prévue par la convention collective. Elle complète le dispositif légal pour les agents qui se déplacent dans des conditions où le transport public n'est pas une option pratique (horaires très tôt ou très tard, zones mal desservies, mobilité quotidienne entre plusieurs sites).
+
+- Caractère **forfaitaire**, montant fixé par accord de branche
+- Conditions d'éligibilité à vérifier précisément (lieu de mission, horaires)
+- Régime URSSAF favorable si conditions de distance/horaire remplies, taxable sinon
+
+### 3. Forfait mobilités durables (optionnel mais en croissance)
+
+Dispositif national 2020, étendu en 2026. Permet à l'employeur de verser un forfait exonéré pour l'usage de modes durables : vélo personnel, vélo en location longue durée, trottinette électrique personnelle, covoiturage.
+
+- Plafond d'exonération : **800 €/an et par salarié** en 2026
+- Cumulable avec le remboursement transport public dans la limite globale de **900 €/an**
+- Versement annuel ou mensuel, sur justificatif (achat vélo, attestation covoiturage)
+
+## Comment calculer la prime de transport conventionnelle
+
+La prime de transport propreté (IDCC 3043) est forfaitaire mais conditionnelle. Voici la méthode pour décider si elle est due :
+
+1. **Identifier le lieu de mission de l'agent** — adresse précise et horaires d'intervention
+2. **Vérifier l'existence d'un transport public** desservant ce lieu aux horaires de mission
+3. **Si pas de transport public adapté** : la prime est due selon le montant prévu par l'accord d'entreprise ou de branche
+4. **Si transport public adapté disponible** : la prime conventionnelle n'est généralement pas due (seul le remboursement obligatoire 50 % s'applique)
+
+**Erreur fréquente** : verser systématiquement la prime conventionnelle à tous les agents sans vérification. Conséquence : URSSAF requalifie en complément de salaire imposable, redressement sur 3 ans.
+
+## Articulation avec la grille salariale 2026
+
+La prime de transport n'est pas intégrée au salaire de base — elle s'ajoute aux minima de la [grille salariale propreté 2026](/blog/grille-salaires-proprete-2026). Pour un AS1 à 11,99 €/h base 35h (1 818 € brut/mois), la prime conventionnelle vient en supplément, hors charges si conditions remplies.
+
+Attention : la prime ne dispense **pas** de l'obligation légale de remboursement 50 % de l'abonnement public si l'agent en utilise un.
+
+## Articulation avec les heures et majorations
+
+Quand un agent travaille en horaires décalés (5h-9h matinaux, 19h-22h tertiaires), trois éléments distincts se cumulent :
+
+- Majoration heures de nuit (+20 % si 21h-6h selon IDCC 3043)
+- Indemnité de transport (souvent due puisque transports publics indisponibles)
+- Remboursement abonnement public (si l'agent en utilise un en complément)
+
+Voir aussi : [calcul des heures agents nettoyage 2026](/blog/calcul-heures-agents-nettoyage).
+
+## Documentation à conserver pour la défense URSSAF
+
+En cas de contrôle, conserver pour chaque agent percevant une prime de transport conventionnelle :
+
+- Adresse précise du lieu de mission et horaires
+- Étude de la desserte transport public (capture Google Maps, horaires RATP/SNCF)
+- Justificatif de l'accord d'entreprise ou de branche appliqué
+- Bulletins de paie mentionnant la prime ligne par ligne
+- État mensuel récapitulatif par agent
+
+Sans dossier solide, l'URSSAF requalifie systématiquement la prime en complément de salaire imposable.
+
+## Automatiser le calcul indemnités transport
+
+[Proprely](/) intègre nativement le calcul des indemnités de transport conformes à la CCN 3043 : pour chaque mission, l'outil croise lieu, horaires et règles conventionnelles pour générer le bon montant. Vous évitez les oublis (prime non versée à un agent éligible) et les sur-versements (URSSAF qui requalifie).
+
+[Candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, conforme IDCC 3043 dès le premier jour. Voir aussi le [guide complet convention collective propreté 2026](/blog/convention-collective-nettoyage-idcc-3043).`,
+  },
+  {
+    slug: 'heures-complementaires-nettoyage',
+    title: "Heures complémentaires nettoyage : majorations CCN 3043",
+    excerpt: "Heures complémentaires nettoyage 2026 : majorations IDCC 3043, calcul pour temps partiel, plafond 1/3, sanctions URSSAF, méthode employeur.",
+    date: '9 juin 2026',
+    readTime: '7 min',
+    tag: 'Conformité',
+    quickSummary: [
+      "60-70 % des agents propreté sont à temps partiel — les heures complémentaires sont la norme du quotidien.",
+      "CCN 3043 majore les 8 premières heures complémentaires à +10 %, au-delà à +25 %.",
+      "Plafond conventionnel : 1/3 de la durée contractuelle hebdomadaire (ex. 30h contrat = 10h compl. max).",
+      "Distinction critique avec les heures supplémentaires (réservées aux temps complets, +25 % puis +50 %).",
+      "Oubli courant : majorer systématiquement les heures complémentaires des temps partiels — risque URSSAF sur 3 ans.",
+      "Logiciel métier (Proprely) calcule automatiquement majoration et plafond IDCC 3043.",
+    ],
+    faq: [
+      { q: "Quelle est la différence entre heures complémentaires et heures supplémentaires ?", a: "Les heures complémentaires concernent les temps partiels (au-delà du contrat, sous le seuil 35h). Les heures supplémentaires concernent les temps complets (au-delà de 35h hebdo)." },
+      { q: "Quelle majoration pour les heures complémentaires en propreté ?", a: "CCN 3043 : +10 % pour les 8 premières heures complémentaires hebdomadaires, puis +25 % au-delà. Ces majorations sont conventionnelles, supérieures au minimum légal (10 % uniforme)." },
+      { q: "Quelle majoration pour les heures supplémentaires (temps complet) ?", a: "+25 % de la 36e à la 43e heure incluse, +50 % à partir de la 44e heure. Identiques au régime légal général en l'absence d'accord d'entreprise dérogatoire." },
+      { q: "Y a-t-il un plafond aux heures complémentaires ?", a: "Oui : 1/3 de la durée contractuelle hebdomadaire. Exemple : agent en contrat 30h → maximum 10h complémentaires/semaine. Au-delà : risque de requalification en CDI temps plein avec rappel de salaire." },
+      { q: "Que se passe-t-il en cas de contrôle URSSAF ?", a: "Les heures complémentaires non majorées sont systématiquement redressées sur 3 ans avec majorations (5-25 %) et intérêts de retard. C'est le contrôle le plus fréquent en propreté car le secteur emploie majoritairement des temps partiels." },
+      { q: "Comment éviter les erreurs de calcul ?", a: "Trois bonnes pratiques : (1) déclarer toutes les heures réellement effectuées dans le logiciel paie, (2) automatiser la majoration via un logiciel métier conforme CCN 3043, (3) auditer chaque mois un échantillon de bulletins pour vérifier la cohérence." },
+    ],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'grille-salaires-proprete-2026', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
+    content: `## Pourquoi les heures complémentaires sont critiques en propreté
+
+Dans le nettoyage B2B, **60 à 70 % des agents sont à temps partiel** : multi-sites, rotations matinales, créneaux de 2-3h. Les heures complémentaires (au-delà du contrat, sous 35h) sont la norme du quotidien, pas l'exception.
+
+Conséquence : si vous ne maîtrisez pas les règles de la CCN 3043 sur ce point, vous accumulez chaque mois des erreurs de paie qui se transforment en redressement URSSAF lors du contrôle.
+
+## Heures complémentaires (temps partiel) — règles CCN 3043
+
+### Définition
+
+Heures réalisées au-delà de la durée contractuelle hebdomadaire, mais sous le seuil de 35h.
+
+### Majoration conventionnelle
+
+| Plage | Majoration |
+| ----- | ---------- |
+| 1 à 8h complémentaires/semaine | +10 % |
+| Au-delà de 8h complémentaires/semaine | +25 % |
+
+Ces taux sont **conventionnels CCN 3043**, supérieurs au minimum légal (10 % uniforme prévu par le Code du travail).
+
+### Plafond conventionnel
+
+**Maximum 1/3 de la durée contractuelle hebdomadaire.**
+
+Exemples concrets :
+- Contrat 24h → maximum 8h complémentaires/semaine
+- Contrat 30h → maximum 10h complémentaires/semaine
+- Contrat 33h → maximum 11h complémentaires/semaine
+
+**Dépassement régulier** : risque de requalification du contrat en temps plein 35h avec rappel de salaire sur 3 ans + cotisations.
+
+## Heures supplémentaires (temps complet)
+
+### Définition
+
+Heures réalisées au-delà de 35h hebdomadaires par un agent en temps plein.
+
+### Majoration
+
+| Plage | Majoration |
+| ----- | ---------- |
+| 36e à 43e heure incluse | +25 % |
+| À partir de la 44e heure | +50 % |
+
+Régime identique au minimum légal en l'absence d'accord d'entreprise dérogatoire.
+
+## Cas pratiques de calcul
+
+### Cas 1 — Agent ASP à 30h/sem qui fait 36h une semaine
+
+- Heures complémentaires : 6h (de la 31e à la 36e)
+- Majoration : 6h × 10 % (toutes dans la première plage de 8h)
+- Rémunération : 30h × 12,42 € + 6h × 12,42 € × 1,10 = 372,60 € + 81,97 € = **454,57 € brut** (semaine)
+- Vérification plafond 1/3 : 30 × 1/3 = 10h max → 6h ≤ 10h, plafond respecté ✓
+
+### Cas 2 — Agent AS1 à 24h/sem qui fait 34h sur deux semaines consécutives
+
+- Heures complémentaires : 10h par semaine → **dépasse le plafond 1/3** (24 × 1/3 = 8h)
+- Conséquence : URSSAF peut requalifier le contrat en 35h temps plein si la situation se répète, avec rappel salaire 3 ans + cotisations
+- Action correcte : soit limiter à 32h (24 + 8), soit passer l'agent à 35h temps complet
+
+### Cas 3 — Agent en temps complet 35h qui fait 45h sur une semaine
+
+- Heures sup : 10h (8 à +25 % et 2 à +50 %)
+- Majoration : (8 × 11,99 € × 0,25) + (2 × 11,99 € × 0,50) = 23,98 € + 11,99 € = **35,97 € de majoration** (en plus du salaire brut des 10 heures à 11,99 €/h)
+
+## Erreurs courantes constatées en contrôle URSSAF
+
+1. **Oubli pur de la majoration** sur les heures complémentaires — paye à taux normal
+2. **Majoration légale (10 %) au lieu de conventionnelle** sur les 8 premières heures (perte = 0, c'est conforme) MAIS pas de passage à +25 % au-delà
+3. **Dépassement régulier du plafond 1/3** sans passer le contrat en temps complet
+4. **Confusion entre heures complémentaires et supplémentaires** sur les bulletins de paie
+5. **Heures non déclarées** : payées en chèque ou en espèces, jamais sur le bulletin → URSSAF + prud'hommes garantis
+
+Sur une société de 10 agents temps partiel cumulant 5h complémentaires/semaine en moyenne, le redressement sur 3 ans atteint facilement **15 000 à 25 000 €** avec majorations et cotisations.
+
+## Articulation avec les autres majorations
+
+Les heures complémentaires se cumulent avec les autres majorations CCN 3043 quand applicable :
+
+- Heures de nuit (21h-6h) : +20 % en plus
+- Heures de dimanche : +100 %
+- Heures de jour férié travaillé : +100 %
+
+Pour une heure complémentaire effectuée la nuit (ex. agent à 30h sur créneau 4h-7h dépassant son contrat) : majoration cumulée 10 % (complémentaire) + 20 % (nuit, partie 4h-6h).
+
+## Articulation avec la grille salariale
+
+Les majorations s'appliquent au taux horaire de base de l'agent, lui-même indexé sur la [grille salariale propreté 2026](/blog/grille-salaires-proprete-2026). Pour un ASP à 12,42 €/h :
+
+- 1 heure complémentaire première plage : 12,42 € × 1,10 = 13,66 €
+- 1 heure complémentaire deuxième plage : 12,42 € × 1,25 = 15,53 €
+- 1 heure supplémentaire 36-43 (si temps complet) : 12,42 € × 1,25 = 15,53 €
+- 1 heure supplémentaire 44+ : 12,42 € × 1,50 = 18,63 €
+
+## Méthode employeur — 3 étapes
+
+### 1. Suivi rigoureux des heures effectuées
+
+Pointage par site, par mission, par agent. Pas de pointage = pas de preuve = pas de défense en cas de contrôle.
+
+### 2. Calcul automatique des majorations conformément CCN 3043
+
+Soit dans le logiciel de paie (vérifier que les règles IDCC 3043 sont à jour), soit dans le logiciel métier en amont (Proprely calcule la majoration et l'envoie au logiciel paie).
+
+### 3. Audit mensuel sur échantillon
+
+Vérifier chaque mois 3-5 bulletins de paie au hasard : les heures correspondent-elles au planning, les majorations sont-elles correctes, le plafond 1/3 est-il respecté ?
+
+## Automatiser pour éliminer les erreurs
+
+[Proprely](/) intègre nativement les règles d'heures complémentaires et supplémentaires de la CCN 3043 : calcul automatique de la majoration, alerte si un agent approche du plafond 1/3, export prêt pour le logiciel de paie. Vous éliminez 95 % des erreurs de calcul et vous documentez tout en cas de contrôle URSSAF.
+
+[Candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, conforme IDCC 3043. Voir aussi le [guide convention collective propreté 2026](/blog/convention-collective-nettoyage-idcc-3043) et la [grille salariale propreté 2026](/blog/grille-salaires-proprete-2026).`,
+  },
 ]
 
 // TL;DR (réponse-flash) par article, séparé du tableau principal pour
@@ -7519,6 +7848,12 @@ Pour passer du planning Excel au logiciel métier en 30 minutes, [candidater à 
 // l'intention de recherche, optimisé pour les Generative Engines
 // (ChatGPT, Perplexity, Google AI Overviews, Gemini).
 const POST_TLDR: Record<string, string> = {
+  'grille-salaires-proprete-2026':
+    "La grille salariale propreté 2026 (CCN IDCC 3043) fixe les minima conventionnels pour ~500 000 salariés en France. Taux horaires bruts au 1er janvier 2026 : AS1 11,99 €/h, AS2 12,15 €/h, ASP 12,42 €/h, ATQS 13,32 €/h, chef d'équipe 14,20 €/h, inspecteur 16,80 €/h. Évolution 2024-2026 : +2,9 % à +3,4 % selon le niveau. Ces montants sont des planchers — le marché impose souvent +5 à +15 % en zone tendue ou sur spécialités.",
+  'indemnite-transport-proprete-2026':
+    "Trois dispositifs coexistent pour la prise en charge du transport des agents propreté en 2026 : (1) remboursement obligatoire 50 % de l'abonnement transport public (loi, tous employeurs), (2) prime de transport conventionnelle CCN 3043 forfaitaire pour les agents dont le lieu de mission n'est pas desservi par les transports en commun, (3) forfait mobilités durables optionnel (jusqu'à 800 €/an exonérés). Plafond cumulé d'exonération : 900 €/an par salarié.",
+  'heures-complementaires-nettoyage':
+    "60-70 % des agents propreté sont à temps partiel, les heures complémentaires sont la norme. CCN IDCC 3043 : majoration +10 % sur les 8 premières heures complémentaires hebdomadaires, +25 % au-delà. Plafond : 1/3 de la durée contractuelle (ex. 30h contrat = 10h compl. max). Au-delà, risque de requalification temps complet. Ne pas confondre avec heures supplémentaires (temps complets, +25 % puis +50 %).",
   'fixer-prix-nettoyage':
     "Pour fixer le prix d'une prestation de nettoyage B2B, multipliez votre coût horaire chargé par 3 (fourchette saine : 2,8 à 3,2). Pour un agent au SMIC en 2026, le coût horaire chargé est de 18-20 €, soit un prix de vente cible de 54-60 €/h. Ajustez ensuite selon 4 facteurs : technicité (×4-5), horaires décalés (+30-60 %), accessibilité (+10-20 %), ponctualité (+20-30 %).",
   'gestion-societe-nettoyage-outils':

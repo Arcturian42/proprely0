@@ -33,7 +33,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/blog/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -119,7 +119,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif-logiciel-nettoyage/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -439,7 +439,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-organilog/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -449,7 +449,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-progiclean/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -459,7 +459,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-propret/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -469,7 +469,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-2bepragma/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -479,7 +479,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-synchroteam/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -489,7 +489,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-comete-proprete/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -499,7 +499,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-sevensoft/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -509,7 +509,7 @@
   </url>
   <url>
     <loc>https://proprely.fr/comparatif/proprely-vs-maglia/</loc>
-    <lastmod>2026-06-08</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -1245,6 +1245,36 @@
     <image:image>
       <image:loc>https://proprely.fr/og-image.png</image:loc>
       <image:title>Article : modele planning agents nettoyage excel</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/grille-salaires-proprete-2026/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : grille salaires proprete 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/indemnite-transport-proprete-2026/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : indemnite transport proprete 2026</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://proprely.fr/blog/heures-complementaires-nettoyage/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://proprely.fr/og-image.png</image:loc>
+      <image:title>Article : heures complementaires nettoyage</image:title>
     </image:image>
   </url>
 </urlset>

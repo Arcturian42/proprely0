@@ -6,7 +6,31 @@
     <atom:link href="https://proprely.fr/rss.xml" rel="self" type="application/rss+xml" />
     <description>Analyses, retours d'expérience et bonnes pratiques pour les dirigeants de sociétés de nettoyage B2B. Productivité, RGPD, outils, prix, fidélisation.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 08 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Grille salaires propreté 2026 : taux horaires CCN 3043</title>
+      <link>https://proprely.fr/blog/grille-salaires-proprete-2026/</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/grille-salaires-proprete-2026/</guid>
+      <description>Grille salariale propreté 2026 (CCN 3043) : AS1 11,99€/h, ASP 12,42€/h, ATQS 13,32€/h. Tableau complet par niveau, évolution 2024-2026, coefficient.</description>
+      <category>Conformité</category>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Indemnité transport propreté 2026 : calcul + obligations</title>
+      <link>https://proprely.fr/blog/indemnite-transport-proprete-2026/</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/indemnite-transport-proprete-2026/</guid>
+      <description>Indemnité de transport propreté 2026 : calcul, montants conventionnels, prime de transport IDCC 3043, obligations employeur, articulation URSSAF.</description>
+      <category>Conformité</category>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Heures complémentaires nettoyage : majorations CCN 3043</title>
+      <link>https://proprely.fr/blog/heures-complementaires-nettoyage/</link>
+      <guid isPermaLink="true">https://proprely.fr/blog/heures-complementaires-nettoyage/</guid>
+      <description>Heures complémentaires nettoyage 2026 : majorations IDCC 3043, calcul pour temps partiel, plafond 1/3, sanctions URSSAF, méthode employeur.</description>
+      <category>Conformité</category>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
     <item>
       <title>Prospection LinkedIn société de nettoyage B2B 2026</title>
       <link>https://proprely.fr/blog/prospection-linkedin-societe-nettoyage-b2b-2026/</link>
@@ -243,7 +267,7 @@
       <title>Convention propreté 2026 (IDCC 3043) : salaires + PDF</title>
       <link>https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043/</link>
       <guid isPermaLink="true">https://proprely.fr/blog/convention-collective-nettoyage-idcc-3043/</guid>
-      <description>Grille salariale 2026 : AS1 à 11,99€/h, ASP 12,42€/h. Calcul heures, article 7, primes, transport. Téléchargez la convention IDCC 3043 (500 000 salariés).</description>
+      <description>Grille salariale 2026 : AS1 11,99€/h, ASP 12,42€/h. Heures, article 7, primes, transport. Téléchargez la convention IDCC 3043.</description>
       <category>Conformité</category>
       <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
     </item>
