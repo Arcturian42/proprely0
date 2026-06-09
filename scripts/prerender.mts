@@ -934,7 +934,7 @@ const pricingFaqs = [
 const pricingHtml = buildHtml({
   url: '/tarifs',
   title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
-  description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
+  description: "Tarifs Proprely 2026 : gratuit pendant la bêta, tarif fondateur conservé à vie. Découvrez nos engagements et ce que coûte la gestion sans logiciel.",
   ogImage: '/og/tarifs.png',
   schemas: [
     webpageSchema(
@@ -2196,6 +2196,7 @@ generated.push('/simulateur-rentabilite')
 
 const softwareLandingBody = `
   <h1>Logiciel pour société de nettoyage B2B</h1>
+  <p><strong>Réponse rapide</strong> — Un logiciel pour société de nettoyage B2B (ou logiciel entreprise de propreté) centralise dans un seul cockpit : clients et sites, agents et planning, devis et facturation, preuve de passage, CRM et marge par client. En France en 2026, le marché se répartit en trois familles : ERP métier historiques (PROPRET, Progiclean, 50+ agents), suites multi-métiers (Organilog), et SaaS verticaux nouvelle génération mobile-first (dont Proprely, 3-50 agents). Compter 15-60 €/utilisateur/mois sur les SaaS verticaux, 100 €+ sur les ERP. <strong>Proprely est gratuit pendant la bêta privée</strong> (30 places fondateurs) avec tarif fondateur conservé à vie ensuite.</p>
   <p>Proprely est le logiciel de gestion pensé pour les sociétés de nettoyage B2B françaises : planning des agents, devis, preuve de passage, CRM et pilotage de la rentabilité dans un seul cockpit. Ce guide complet 2026 détaille les fonctionnalités essentielles, comment choisir, et un comparatif honnête avec Excel, PROPRET et Progiclean.</p>
 
   <h2>Pourquoi les sociétés de nettoyage ont besoin d'un logiciel dédié</h2>
@@ -2488,6 +2489,7 @@ generated.push('/comparatif-logiciel-nettoyage')
 
 const autoEntrepreneurBody = `
   <h1>Logiciel auto-entrepreneur nettoyage : gérer seul sans se perdre</h1>
+  <p><strong>Réponse rapide</strong> — Pour un auto-entrepreneur en nettoyage (micro-entrepreneur, indépendant, solo), le bon logiciel est utile dès 3 à 5 clients récurrents et couvre 5 fonctions : devis professionnels à votre charte (2 min), signature électronique, planning mobile sans application à installer, facturation automatique des contrats récurrents, export comptable CSV. Compter 0 à 30 €/mois sur le marché ; Proprely est gratuit pendant la bêta privée et bascule sans rupture en mode multi-agents quand vous embauchez. Gain typique : 1 à 3 heures d'administration récupérées par semaine.</p>
   <p>Un logiciel métier pour auto-entrepreneur en nettoyage doit couvrir le minimum vital : devis professionnels à votre charte, signature électronique, planning visible sur téléphone, facturation automatique des contrats récurrents, suivi des heures pour votre comptable. Proprely fait tout ça gratuitement pendant la bêta privée, et vous récupérez 1 à 3 heures par semaine sur l'administration.</p>
 
   <h2>Le quotidien d'un auto-entrepreneur en nettoyage</h2>
@@ -2549,6 +2551,7 @@ generated.push('/logiciel-auto-entrepreneur-nettoyage')
 
 const crmBody = `
   <h1>CRM entreprise propreté : suivez clients, sites et prospects</h1>
+  <p><strong>Réponse rapide</strong> — Un CRM pour entreprise de propreté doit gérer la spécificité métier « un client = plusieurs sites avec des fréquences distinctes ». Les CRM généralistes (HubSpot, Salesforce, Pipedrive) ne couvrent pas ce modèle nativement : pas de notion de site client, pas de catalogue prestations propreté, pas de lien automatique prospect → planning agents, pas de visibilité sur la marge par client en temps réel, et un tarif élevé (40 à 200 €/utilisateur/mois). Un CRM intégré dans un cockpit métier (comme Proprely) résout ces angles morts à un coût bien inférieur — gratuit pendant la bêta privée.</p>
   <p>Un CRM pour entreprise de propreté doit gérer une spécificité fondamentale : un client = plusieurs sites avec des fréquences distinctes. Les CRM généralistes (HubSpot, Salesforce, Pipedrive) ne couvrent pas ce modèle. Proprely intègre nativement comptes + sites multiples + pipeline devis + planning agents + marge par client en temps réel — dans un seul cockpit, gratuit pendant la bêta privée.</p>
 
   <h2>Pourquoi HubSpot ou Salesforce ne suffit pas en propreté B2B</h2>

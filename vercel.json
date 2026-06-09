@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/sitemap/xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap/xml/",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

@@ -5238,7 +5238,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
     title: "Convention propreté 2026 (IDCC 3043) : salaires + PDF",
-    excerpt: "Grille salariale 2026 : AS1 à 11,99€/h, ASP 12,42€/h. Calcul heures, article 7, primes, transport. Téléchargez la convention IDCC 3043 (500 000 salariés).",
+    excerpt: "Grille salariale 2026 : AS1 11,99€/h, ASP 12,42€/h. Heures, article 7, primes, transport. Téléchargez la convention IDCC 3043.",
     date: '20 mai 2026',
     readTime: '12 min',
     tag: 'Conformité',

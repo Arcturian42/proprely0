@@ -45,7 +45,7 @@ export const comparisons: ComparisonPage[] = [
     competitorUrl: 'https://www.organilog.com',
     title: 'Proprely vs Organilog : comparatif 2026 pour société de nettoyage',
     metaTitle: 'Proprely vs Organilog 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs Organilog en 2026 : fonctionnalités, tarifs, mobile, preuve de passage, marge par client. Lequel choisir pour une société de nettoyage B2B française ?",
+    metaDescription: "Comparatif Proprely vs Organilog 2026 : fonctionnalités, tarifs, mobile, preuve de passage, marge par client. Lequel choisir pour le nettoyage B2B ?",
     tldr: "Organilog est un logiciel multi-métiers (BTP, sécurité, espaces verts, nettoyage…) avec une approche généraliste, tandis que Proprely est conçu exclusivement pour les sociétés de nettoyage B2B françaises. Choisissez Organilog si vous gérez plusieurs métiers en parallèle ; choisissez Proprely si vous voulez un outil avec le vocabulaire, les workflows et la preuve de passage adaptés à la propreté B2B (spécialités agents, marge par client, syndics).",
     competitorPitch: "Organilog est une suite SaaS française multi-métiers de gestion d'interventions, lancée en 2010. Le produit cible les sociétés de services terrain : BTP, sécurité, espaces verts, nettoyage, plomberie, électricité.",
     whoChooses: {
@@ -175,7 +175,7 @@ export const comparisons: ComparisonPage[] = [
     competitorUrl: 'https://www.propret.com',
     title: 'Proprely vs PROPRET : comparatif 2026 pour société de nettoyage',
     metaTitle: 'Proprely vs PROPRET 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs PROPRET en 2026 : fonctionnalités, tarifs, ergonomie, mobile, marge par client. Lequel choisir pour une société de nettoyage B2B française ?",
+    metaDescription: "Comparatif Proprely vs PROPRET 2026 : fonctionnalités, tarifs, ergonomie, mobile, marge par client. Lequel choisir pour le nettoyage B2B ?",
     tldr: "PROPRET est un éditeur historique du marché français des logiciels propreté, présent depuis les années 1990, avec une base installée importante chez les PME du secteur. Proprely est un cockpit nouvelle génération (2025-2026) conçu mobile-first pour les TPE/PME B2B. Choisissez PROPRET si vous êtes une PME établie qui valorise un éditeur historique. Choisissez Proprely si vous voulez une interface 2026, mobile-first, déployable en 30 minutes.",
     competitorPitch: "PROPRET est un logiciel de gestion pour entreprises de propreté édité depuis les années 1990 en France. Le produit est historiquement présent chez les PME du secteur, avec un périmètre couvrant devis, planning, suivi qualité et facturation.",
     whoChooses: {
@@ -240,7 +240,7 @@ export const comparisons: ComparisonPage[] = [
     competitorUrl: 'https://www.2bepragma.com',
     title: 'Proprely vs 2BePragma : comparatif 2026 pour société de nettoyage',
     metaTitle: 'Proprely vs 2BePragma 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs 2BePragma en 2026 : fonctionnalités, tarifs, mobile, marge par client. Quand passer à l'échelle ? Lequel pour votre société de nettoyage B2B ?",
+    metaDescription: "Comparatif Proprely vs 2BePragma 2026 : fonctionnalités, tarifs, mobile, marge par client. Quand passer à l'échelle ? Verdict pour le nettoyage B2B.",
     tldr: "2BePragma est un éditeur français spécialisé propreté avec une approche métier complète orientée PME structurées. Proprely est un cockpit nouvelle génération (2025-2026) conçu pour les TPE/PME 3-50 agents qui veulent un outil rapide à déployer et mobile-first. Choisissez 2BePragma si vous êtes une PME structurée à fort volume ; Proprely si vous êtes une TPE/PME en croissance qui veut un outil opérationnel léger.",
     competitorPitch: "2BePragma est un éditeur français de logiciels métier pour la propreté, présent sur le marché depuis plusieurs années. Le produit couvre les besoins opérationnels des sociétés de nettoyage B2B (planning, devis, facturation, qualité) avec une orientation PME structurées.",
     whoChooses: {
@@ -308,7 +308,7 @@ export const comparisons: ComparisonPage[] = [
     competitorUrl: 'https://www.synchroteam.com',
     title: 'Proprely vs Synchroteam : comparatif 2026 pour société de nettoyage',
     metaTitle: 'Proprely vs Synchroteam 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs Synchroteam en 2026 : spécialisation propreté vs field service générique, mobile, marge par client, tarifs. Lequel choisir pour le nettoyage B2B ?",
+    metaDescription: "Comparatif Proprely vs Synchroteam 2026 : spécialisation propreté vs field service générique, mobile, marge, tarifs. Verdict pour le nettoyage B2B.",
     tldr: "Synchroteam est une solution SaaS de gestion d'interventions multi-secteurs (BTP, sécurité, plomberie, électricité, nettoyage) avec une forte composante géolocalisation et planification de tournées. Proprely est conçu exclusivement pour les sociétés de nettoyage B2B (3-50 agents) avec vocabulaire métier natif et marge par client en temps réel. Choisissez Synchroteam si vous gérez plusieurs métiers avec géolocalisation intensive ; choisissez Proprely si vous êtes pure propreté et voulez un cockpit métier dédié.",
     competitorPitch: "Synchroteam est une solution SaaS française de gestion d'interventions et de field service management, lancée en 2012. Le produit cible les sociétés de services terrain (BTP, maintenance, plomberie, sécurité, espaces verts, nettoyage) avec une approche multi-métiers et une forte composante géolocalisation/tournées.",
     whoChooses: {

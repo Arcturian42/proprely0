@@ -74,7 +74,7 @@ const META: Record<string, RouteMeta> = {
   },
   '/tarifs': {
     title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
-    description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
+    description: "Tarifs Proprely 2026 : gratuit pendant la bêta, tarif fondateur conservé à vie. Découvrez nos engagements et ce que coûte la gestion sans logiciel.",
   },
   '/contact': {
     title: 'Contact · Proprely',
@@ -120,8 +120,8 @@ const META: Record<string, RouteMeta> = {
     description: "Calculez en 1 minute la marge brute, marge nette et résultat horaire d'un contrat de nettoyage. Verdict immédiat, cibles par typologie.",
   },
   '/logiciel-societe-nettoyage': {
-    title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
-    description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
+    title: 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely',
+    description: "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026.",
   },
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
@@ -165,7 +165,7 @@ const META: Record<string, RouteMeta> = {
   },
   '/securite-rgpd': {
     title: 'Sécurité & RGPD · Proprely',
-    description: "Sécurité et conformité RGPD chez Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables en un email.",
+    description: "Sécurité & RGPD Proprely : hébergement européen, chiffrement TLS 1.3 + AES-256, DPA, sous-traitants, droits RGPD activables par email.",
   },
   '/cas-clients': {
     title: 'Cas clients : ils pilotent leur société de nettoyage avec Proprely',
@@ -185,11 +185,11 @@ const META: Record<string, RouteMeta> = {
   },
   '/integrations/qonto': {
     title: 'Intégration Qonto × Proprely : rapprochement automatique',
-    description: "Intégration Qonto × Proprely : règlements clients rapprochés automatiquement avec vos factures de nettoyage. DSO en temps réel, alertes paiement, fin du pointage manuel.",
+    description: "Intégration Qonto × Proprely : règlements clients rapprochés automatiquement avec vos factures nettoyage. DSO en temps réel, alertes paiement.",
   },
   '/integrations/pennylane': {
     title: 'Intégration Pennylane × Proprely : compta nettoyage auto',
-    description: "Intégration Pennylane × Proprely : factures de nettoyage poussées en temps réel, rapprochement bancaire automatisé, expert-comptable connecté. Compta sans double saisie.",
+    description: "Intégration Pennylane × Proprely : factures nettoyage poussées en temps réel, rapprochement bancaire automatisé, expert-comptable connecté.",
   },
 }
 
