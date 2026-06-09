@@ -934,7 +934,7 @@ const pricingFaqs = [
 const pricingHtml = buildHtml({
   url: '/tarifs',
   title: 'Tarifs Proprely 2026 — Gratuit pendant la bêta · Proprely',
-  description: "Proprely est gratuit pendant toute la durée de la bêta privée. Découvrez la politique tarifaire, les engagements membres fondateurs et ce que coûte vraiment la gestion sans logiciel.",
+  description: "Tarifs Proprely 2026 : gratuit pendant la bêta, tarif fondateur conservé à vie. Découvrez nos engagements et ce que coûte la gestion sans logiciel.",
   ogImage: '/og/tarifs.png',
   schemas: [
     webpageSchema(
