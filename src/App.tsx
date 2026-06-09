@@ -120,8 +120,8 @@ const META: Record<string, RouteMeta> = {
     description: "Calculez en 1 minute la marge brute, marge nette et résultat horaire d'un contrat de nettoyage. Verdict immédiat, cibles par typologie.",
   },
   '/logiciel-societe-nettoyage': {
-    title: 'Logiciel société de nettoyage B2B : guide complet 2026 · Proprely',
-    description: "Logiciel de gestion pour société de nettoyage B2B : planning, devis, preuve de passage, CRM, rentabilité. Bêta gratuite — 14 places.",
+    title: 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely',
+    description: "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026.",
   },
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
