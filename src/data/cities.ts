@@ -38,6 +38,10 @@ export type CityPage = {
   relatedBlogSlugs?: string[]
   /** Slugs de fonctionnalités liées (pour maillage interne ville → feature) */
   relatedFeatureSlugs?: string[]
+  /** Slugs de villes voisines / de la même région (maillage interne ville → ville).
+   *  Transforme le réseau de pages villes en grappe interconnectée plutôt qu'en
+   *  pages isolées : meilleure découverte par le crawler et distribution du PageRank. */
+  relatedCitySlugs?: string[]
 }
 
 /**
@@ -116,7 +120,7 @@ export const cities: CityPage[] = [
     city: 'Paris',
     region: 'Île-de-France',
     population: '2,1 millions d\'habitants intra-muros, 12 millions en région',
-    title: "Logiciel nettoyage Paris : cockpit métier B2B",
+    title: "Logiciel société de nettoyage Paris & IDF",
     subtitle: "Conçu pour les contraintes parisiennes : rotations matinales serrées, multi-sites tertiaires, copropriétés haussmanniennes, turnover agents élevé. Pilotez clients, agents, plannings et devis depuis un seul écran.",
     tldr: "Pour gérer une société de nettoyage à Paris en 2026, Proprely centralise plannings, agents, devis et preuve de passage sur un cockpit unique adapté aux contraintes parisiennes : rotations matinales avant 8h dans le tertiaire, 50 000+ copropriétés haussmanniennes avec PV automatique pour les syndics, turnover agents > 35 %. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Paris et IDF : planning, agents, devis, preuve de passage. Cockpit B2B francilien. Bêta gratuite.",
@@ -163,7 +167,7 @@ export const cities: CityPage[] = [
     city: 'Lyon',
     region: 'Auvergne-Rhône-Alpes',
     population: '520 000 habitants, 1,4 million dans la métropole',
-    title: "Logiciel nettoyage Lyon : cockpit Rhône-Alpes",
+    title: "Logiciel société de nettoyage Lyon (Rhône)",
     subtitle: "Conçu pour la réalité lyonnaise : forte densité tertiaire, secteur médical et pharmaceutique exigeant, immobilier de bureaux en croissance (Confluence, Part-Dieu, Vaise). Centralisez clients, agents, plannings et devis dans un seul outil.",
     tldr: "Pour gérer une société de nettoyage à Lyon en 2026, Proprely propose un cockpit unique adapté au tertiaire de Part-Dieu, Confluence et Vaise, au médical/pharmaceutique exigeant (HCL, biotechs) et aux contraintes IDCC 3043. Planning multi-sites, preuve de passage, marge par client en temps réel. Bêta privée gratuite, hébergement européen.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Lyon et Rhône-Alpes : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -210,7 +214,7 @@ export const cities: CityPage[] = [
     city: 'Marseille',
     region: 'Provence-Alpes-Côte d\'Azur',
     population: '870 000 habitants, 1,9 million dans la métropole',
-    title: "Logiciel nettoyage Marseille : cockpit PACA",
+    title: "Logiciel société de nettoyage Marseille & PACA",
     subtitle: "Conçu pour la réalité marseillaise : tertiaire en mutation (Euroméditerranée, La Joliette), hôtellerie touristique saisonnière, copropriétés bord de mer avec contraintes sel et humidité. Centralisez clients, agents, plannings et devis.",
     tldr: "Pour gérer une société de nettoyage à Marseille en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte PACA en tête : tertiaire en mutation à Euroméditerranée et La Joliette, hôtellerie saisonnière intense l'été, copropriétés bord de mer avec contraintes sel et humidité. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Marseille et en PACA : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -258,7 +262,7 @@ export const cities: CityPage[] = [
     city: 'Bordeaux',
     region: 'Nouvelle-Aquitaine',
     population: '260 000 habitants, 820 000 dans la métropole',
-    title: "Logiciel nettoyage Bordeaux : cockpit Gironde",
+    title: "Logiciel société de nettoyage Bordeaux (Gironde)",
     subtitle: "Conçu pour la réalité bordelaise : tertiaire en croissance (Euratlantique, Bassins à flot), copropriétés du croissant haussmannien, hôtellerie œnotouristique, cabinets médicaux du Triangle d'Or. Centralisez clients, agents, plannings et devis.",
     tldr: "Pour gérer une société de nettoyage à Bordeaux en 2026, Proprely propose un cockpit unique adapté au tertiaire d'Euratlantique et des Bassins à flot, aux copropriétés du croissant haussmannien et à l'hôtellerie œnotouristique. Planning multi-sites, preuve de passage, conformité IDCC 3043, marge par contrat. Bêta privée gratuite.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Bordeaux et Nouvelle-Aquitaine : planning, agents, devis, preuve de passage. Bêta gratuite.",
@@ -306,7 +310,7 @@ export const cities: CityPage[] = [
     city: 'Toulouse',
     region: 'Occitanie',
     population: '500 000 habitants, 1,5 million dans la métropole',
-    title: "Logiciel nettoyage Toulouse : cockpit Occitanie",
+    title: "Logiciel société de nettoyage Toulouse (31)",
     subtitle: "Conçu pour la réalité toulousaine : pôle aéronautique géant (Airbus, Thales), tertiaire en croissance (Compans-Caffarelli, Andromède), copropriétés du Capitole, cabinets médicaux. Centralisez clients, agents, plannings et devis dans un seul outil.",
     tldr: "Pour gérer une société de nettoyage à Toulouse en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Occitanie en tête : pôle aéronautique Airbus/Thales aux protocoles stricts, tertiaire en croissance à Compans-Caffarelli et Andromède, copropriétés du Capitole. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Toulouse et Occitanie : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -354,7 +358,7 @@ export const cities: CityPage[] = [
     city: 'Nantes',
     region: 'Pays de la Loire',
     population: '320 000 habitants, 670 000 dans la métropole',
-    title: "Logiciel nettoyage Nantes : cockpit Pays de la Loire",
+    title: "Logiciel société de nettoyage Nantes (44)",
     subtitle: "Conçu pour la réalité nantaise : tertiaire en croissance (Île de Nantes, EuroNantes), tissu industriel maritime, copropriétés du centre, hôtellerie et tourisme culturel. Centralisez clients, agents, plannings et devis.",
     tldr: "Pour gérer une société de nettoyage à Nantes en 2026, Proprely propose un cockpit unique adapté au tertiaire de l'Île de Nantes et EuroNantes, au tissu industriel maritime, et aux copropriétés du centre-ville. Planning multi-sites, preuve de passage, marge par client, conformité IDCC 3043. Bêta privée gratuite.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Nantes et Pays de la Loire : planning, agents, devis, preuve de passage. Bêta gratuite.",
@@ -402,7 +406,7 @@ export const cities: CityPage[] = [
     city: 'Lille',
     region: 'Hauts-de-France',
     population: '236 000 habitants, 1,2 million dans la métropole',
-    title: "Logiciel nettoyage Lille : cockpit Hauts-de-France",
+    title: "Logiciel société de nettoyage Lille (Nord)",
     subtitle: "Conçu pour la réalité lilloise : Euralille tertiaire, frontière belge avec sociétés cross-border, copropriétés du Vieux-Lille, pôle hospitalier CHRU. Centralisez clients, agents, plannings et devis dans un seul outil.",
     tldr: "Pour gérer une société de nettoyage à Lille en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Hauts-de-France en tête : tertiaire d'Euralille, frontière belge avec sociétés cross-border, copropriétés du Vieux-Lille, pôle hospitalier CHRU exigeant bionettoyage. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Lille et Hauts-de-France : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -450,7 +454,7 @@ export const cities: CityPage[] = [
     city: 'Nice',
     region: 'Provence-Alpes-Côte d\'Azur',
     population: '340 000 habitants, 1 million dans la métropole Nice Côte d\'Azur',
-    title: "Logiciel nettoyage Nice : cockpit Côte d'Azur",
+    title: "Logiciel société de nettoyage Nice & Côte d'Azur",
     subtitle: "Conçu pour la réalité niçoise : hôtellerie de luxe Promenade des Anglais, tourisme international, événementiel récurrent, copropriétés résidentielles bord de mer, contraintes climatiques (sel, soleil). Centralisez clients, agents, plannings et devis.",
     tldr: "Pour gérer une société de nettoyage à Nice en 2026, Proprely propose un cockpit unique adapté à l'hôtellerie de luxe Promenade des Anglais, au tourisme international saisonnier, à l'événementiel récurrent et aux copropriétés bord de mer (contraintes sel, soleil). Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Nice et Côte d'Azur : planning, agents, devis, preuve de passage. Luxe et tourisme. Bêta gratuite.",
@@ -498,7 +502,7 @@ export const cities: CityPage[] = [
     city: 'Strasbourg',
     region: 'Grand Est',
     population: '290 000 habitants, 510 000 dans l\'Eurométropole',
-    title: "Logiciel nettoyage Strasbourg : cockpit Alsace",
+    title: "Logiciel société de nettoyage Strasbourg (67)",
     subtitle: "Conçu pour la réalité strasbourgeoise : capitale européenne (Parlement, Conseil de l'Europe), pôle pharmaceutique, frontière allemande, copropriétés du centre UNESCO. Centralisez clients, agents, plannings et devis dans un seul outil.",
     tldr: "Pour gérer une société de nettoyage à Strasbourg en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Alsace en tête : institutions européennes aux protocoles stricts, pôle pharmaceutique exigeant bionettoyage, frontière allemande, copropriétés du centre UNESCO. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Strasbourg et Grand Est : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -546,7 +550,7 @@ export const cities: CityPage[] = [
     city: 'Montpellier',
     region: 'Occitanie',
     population: '300 000 habitants, 500 000 dans la métropole',
-    title: "Logiciel nettoyage Montpellier : cockpit Hérault",
+    title: "Logiciel société de nettoyage Montpellier (34)",
     subtitle: "Conçu pour la réalité montpelliéraine : croissance démographique forte, pôle universitaire (1ère ville étudiante par habitant), tertiaire émergent (Port Marianne, Odysseum), tourisme méditerranéen, cabinets médicaux du Triangle. Centralisez clients, agents, plannings et devis.",
     tldr: "Pour gérer une société de nettoyage à Montpellier en 2026, Proprely propose un cockpit unique adapté à la croissance démographique forte, au pôle universitaire 1ère ville étudiante par habitant, au tertiaire émergent de Port Marianne et Odysseum, et aux cabinets médicaux du Triangle. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Montpellier et l'Hérault : planning, agents, devis, preuve de passage. Bêta gratuite.",
@@ -594,7 +598,7 @@ export const cities: CityPage[] = [
     city: 'Rennes',
     region: 'Bretagne',
     population: '220 000 habitants, 460 000 dans la métropole',
-    title: "Logiciel nettoyage Rennes : cockpit Bretagne",
+    title: "Logiciel société de nettoyage Rennes (35)",
     subtitle: "Conçu pour la réalité rennaise : pôle tech français majeur (b<>com, Orange Labs, Technicolor), universités Rennes 1 et 2, copropriétés du centre médiéval, tissu agroalimentaire. Centralisez clients, agents, plannings et devis dans un seul outil.",
     tldr: "Pour gérer une société de nettoyage à Rennes en 2026, Proprely centralise plannings, agents et preuve de passage avec le contexte Bretagne en tête : pôle tech (b<>com, Orange Labs), universités Rennes 1 et 2, copropriétés du centre médiéval, tissu agroalimentaire exigeant HACCP. Bêta privée gratuite, conforme IDCC 3043.",
     metaDescription: "Logiciel de gestion pour société de nettoyage à Rennes et Bretagne : planning, agents, devis, preuve de passage. Cockpit B2B. Bêta gratuite.",
@@ -689,6 +693,25 @@ const CITY_RELATIONS: Record<string, { blogs: string[]; features: string[] }> = 
   },
 }
 
+/**
+ * Maillage interne ville → villes voisines (même région ou proximité
+ * géographique). 4 liens par ville pour interconnecter la grappe sans créer
+ * de sur-optimisation. Centralisé hors des objets ville pour la lisibilité.
+ */
+const CITY_NEARBY: Record<string, string[]> = {
+  paris:       ['lille', 'rennes', 'nantes', 'strasbourg'],
+  lyon:        ['marseille', 'montpellier', 'nice', 'strasbourg'],
+  marseille:   ['nice', 'montpellier', 'lyon', 'toulouse'],
+  bordeaux:    ['toulouse', 'nantes', 'montpellier', 'rennes'],
+  toulouse:    ['bordeaux', 'montpellier', 'marseille', 'nantes'],
+  nantes:      ['rennes', 'bordeaux', 'paris', 'lille'],
+  lille:       ['paris', 'strasbourg', 'rennes', 'nantes'],
+  nice:        ['marseille', 'montpellier', 'lyon', 'toulouse'],
+  strasbourg:  ['lyon', 'lille', 'paris', 'nantes'],
+  montpellier: ['marseille', 'toulouse', 'nice', 'lyon'],
+  rennes:      ['nantes', 'paris', 'bordeaux', 'lille'],
+}
+
 export function getCity(slug: string): CityPage | undefined {
   const city = cities.find((c) => c.slug === slug)
   if (!city) return undefined
@@ -700,6 +723,7 @@ export function getCity(slug: string): CityPage | undefined {
     ...city,
     relatedBlogSlugs: city.relatedBlogSlugs ?? rel?.blogs,
     relatedFeatureSlugs: city.relatedFeatureSlugs ?? rel?.features,
+    relatedCitySlugs: city.relatedCitySlugs ?? CITY_NEARBY[slug],
     geo: city.geo ?? (geo ? { latitude: geo.latitude, longitude: geo.longitude } : undefined),
     wikidata: city.wikidata ?? geo?.wikidata,
     department: city.department ?? geo?.department,
