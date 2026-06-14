@@ -5,7 +5,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import NotFound from './NotFound'
-import { getCity } from '../data/cities'
+import { getCity, cities } from '../data/cities'
 import type { CityPage as CityPageType } from '../data/cities'
 import { getPost } from '../data/blog'
 import { getFeature } from '../data/features'
@@ -95,6 +95,24 @@ function injectCitySchema(city: CityPageType) {
     localBusinessSchema,
     {
       '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: `Proprely — logiciel société de nettoyage à ${city.city}`,
+      description: city.metaDescription,
+      url,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      image: 'https://proprely.fr/og-image.png',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        description: 'Bêta privée gratuite',
+      },
+      areaServed: cityAreaServed,
+      provider: { '@id': 'https://proprely.fr/#organization' },
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://proprely.fr/' },
@@ -130,6 +148,10 @@ export default function CityPage({ slug }: Props) {
   const relatedFeatures = (city?.relatedFeatureSlugs ?? [])
     .map((s) => getFeature(s))
     .filter((f): f is NonNullable<ReturnType<typeof getFeature>> => Boolean(f))
+    .slice(0, 4)
+  const nearbyCities = (city?.relatedCitySlugs ?? [])
+    .map((s) => cities.find((c) => c.slug === s))
+    .filter((c): c is CityPageType => Boolean(c))
     .slice(0, 4)
 
   useEffect(() => {
@@ -484,6 +506,43 @@ export default function CityPage({ slug }: Props) {
                   </div>
                 </div>
               )}
+            </div>
+          </section>
+        )}
+
+        {nearbyCities.length > 0 && (
+          <section className="py-14 sm:py-20 border-t border-slate-100">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin size={16} className="text-blue-600" />
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Autres villes</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-6 tracking-tight">
+                Proprely dans d'autres villes
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {nearbyCities.map((c) => (
+                  <Link
+                    key={c.slug}
+                    to={`/villes/${c.slug}`}
+                    className="group block bg-white rounded-2xl border border-slate-100 p-5 hover:border-blue-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5"
+                  >
+                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 mb-1.5">
+                      <MapPin size={12} />
+                      {c.region}
+                    </div>
+                    <h3 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
+                      Logiciel société de nettoyage à {c.city}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6">
+                <Link to="/villes" className="inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 hover:text-blue-700">
+                  Voir toutes les villes desservies
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           </section>
         )}

@@ -117,6 +117,34 @@ const RESOURCES_MENU: MenuConfig = {
   footerLink: { to: '/blog', label: 'Voir tous les articles du blog' },
 }
 
+const VILLES_MENU: MenuConfig = {
+  label: 'Villes',
+  columns: [
+    {
+      heading: 'Grandes métropoles',
+      links: [
+        { to: '/villes/paris', label: 'Paris & Île-de-France', desc: 'Tertiaire dense, copropriétés' },
+        { to: '/villes/lyon', label: 'Lyon (Rhône)', desc: 'Part-Dieu, Confluence' },
+        { to: '/villes/marseille', label: 'Marseille (PACA)', desc: 'Euroméditerranée, saisonnalité' },
+        { to: '/villes/bordeaux', label: 'Bordeaux (Gironde)', desc: 'Euratlantique, viticole' },
+        { to: '/villes/toulouse', label: 'Toulouse (Occitanie)', desc: 'Aérospatial, ESD' },
+      ],
+    },
+    {
+      heading: 'Autres villes',
+      links: [
+        { to: '/villes/nantes', label: 'Nantes', desc: 'Pays de la Loire' },
+        { to: '/villes/lille', label: 'Lille', desc: 'Hauts-de-France, cross-border' },
+        { to: '/villes/nice', label: 'Nice', desc: 'Côte d’Azur, tourisme' },
+        { to: '/villes/strasbourg', label: 'Strasbourg', desc: 'Grand Est, RGPD renforcé' },
+        { to: '/villes/montpellier', label: 'Montpellier', desc: 'Hérault, santé & tech' },
+        { to: '/villes/rennes', label: 'Rennes', desc: 'Bretagne, tech & agro' },
+      ],
+    },
+  ],
+  footerLink: { to: '/villes', label: 'Voir toutes les villes desservies' },
+}
+
 const ENTREPRISE_MENU: MenuConfig = {
   label: 'Entreprise',
   columns: [
@@ -142,7 +170,7 @@ const ENTREPRISE_MENU: MenuConfig = {
   footerLink: { to: '/a-propos', label: "Voir la page à propos" },
 }
 
-const MENUS: MenuConfig[] = [SOLUTIONS_MENU, FEATURES_MENU, COMPARATIFS_MENU, RESOURCES_MENU, ENTREPRISE_MENU]
+const MENUS: MenuConfig[] = [SOLUTIONS_MENU, FEATURES_MENU, COMPARATIFS_MENU, VILLES_MENU, RESOURCES_MENU, ENTREPRISE_MENU]
 
 type Props = {
   /** Si true, ajoute un retour à l'accueil (utilisé sur les pages internes) */

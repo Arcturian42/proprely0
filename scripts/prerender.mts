@@ -242,6 +242,16 @@ function buildHtml(meta: PageMeta): string {
       <li><a href="${ORIGIN}/alternative-propret/">Alternative à PROPRET</a></li>
       <li><a href="${ORIGIN}/alternative-2bepragma/">Alternative à 2BePragma</a></li>
     </ul>
+    <h3>Villes</h3>
+    <ul>
+      <li><a href="${ORIGIN}/villes/">Toutes les villes desservies</a></li>
+      ${cities
+        .map(
+          (cc) =>
+            `<li><a href="${ORIGIN}/villes/${cc.slug}/">Logiciel société de nettoyage à ${escapeHtml(cc.city)}</a></li>`,
+        )
+        .join('\n      ')}
+    </ul>
     <h3>Ressources</h3>
     <ul>
       <li><a href="${ORIGIN}/outils/">Tous les outils gratuits</a></li>
@@ -626,6 +636,24 @@ for (const rawCity of cities) {
     </ul>`
     : ''
 
+  const nearbyCities = (c.relatedCitySlugs ?? [])
+    .map((s) => cities.find((cc) => cc.slug === s))
+    .filter((cc): cc is NonNullable<typeof cc> => Boolean(cc))
+    .slice(0, 4)
+  const nearbyCitiesHtml = nearbyCities.length
+    ? `
+    <h2>Proprely dans d'autres villes</h2>
+    <ul>
+      ${nearbyCities
+        .map(
+          (cc) =>
+            `<li><a href="${ORIGIN}/villes/${cc.slug}/"><strong>Logiciel société de nettoyage à ${escapeHtml(cc.city)}</strong></a> (${escapeHtml(cc.region)})</li>`,
+        )
+        .join('')}
+      <li><a href="${ORIGIN}/villes/">Voir toutes les villes desservies</a></li>
+    </ul>`
+    : ''
+
   const neighborhoodsHtml = c.neighborhoods?.length
     ? `
     <h2>Quartiers d'affaires et zones tertiaires à ${escapeHtml(c.city)}</h2>
@@ -662,6 +690,7 @@ for (const rawCity of cities) {
     ${fitHtml}
     ${relatedFeaturesHtml}
     ${relatedPostsHtml}
+    ${nearbyCitiesHtml}
     <h2>Questions fréquentes sur ${escapeHtml(c.city)}</h2>
     ${faqHtml}
   `.trim()
@@ -743,6 +772,24 @@ for (const rawCity of cities) {
       },
     },
     localBusinessSchema,
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: `Proprely — logiciel société de nettoyage à ${c.city}`,
+      description: c.metaDescription,
+      url: cityUrl,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      image: `${ORIGIN}/og-image.png`,
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        description: 'Bêta privée gratuite',
+      },
+      areaServed: cityAreaServed,
+      provider: { '@id': `${ORIGIN}/#organization` },
+    },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
