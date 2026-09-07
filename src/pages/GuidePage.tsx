@@ -8,6 +8,21 @@ import NotFound from './NotFound'
 import { getGuide } from '../data/guides'
 import type { GuidePage as GuidePageType } from '../data/guides'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
+import { trackEvent } from '../lib/analytics'
+
+function renderGuideParagraph(p: string): string {
+  return p
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label: string, href: string) => {
+      const safeHref = String(href).replace(/"/g, '&quot;')
+      const external = /^https?:\/\//.test(href)
+      const attrs = external
+        ? ' target="_blank" rel="noopener noreferrer"'
+        : ''
+      return `<a href="${safeHref}" class="text-blue-700 font-semibold underline underline-offset-2 hover:text-blue-800"${attrs}>${label}</a>`
+    })
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>')
+}
 
 function injectGuideSchema(g: GuidePageType) {
   const id = 'guide-schema'
@@ -134,7 +149,7 @@ export default function GuidePage({ slug }: Props) {
                   <p
                     key={j}
                     dangerouslySetInnerHTML={{
-                      __html: p.replace(/\*\*(.+?)\*\*/g, '<strong class="text-slate-900 font-bold">$1</strong>'),
+                      __html: renderGuideParagraph(p),
                     }}
                   />
                 ))}
@@ -197,18 +212,28 @@ export default function GuidePage({ slug }: Props) {
               Bêta privée gratuite
             </div>
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight mb-5 leading-tight">
-              Une question concrète sur votre société de nettoyage ?
+              Passez au cockpit propreté — candidature bêta
             </h2>
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
-              30 minutes en visio avec le fondateur Proprely pour identifier vos pertes de temps et d'argent. Audit offert, sans engagement.
+              Proprely s&apos;adresse aux dirigeants de sociétés de nettoyage qui veulent relier planning, preuves de passage et facturation récurrente — sans empiler Excel, WhatsApp et Word.
             </p>
-            <Link
-              to="/audit-gratuit"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('beta_cta_click', { location: 'guide_page', guide: g.slug })}
               className="group bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
             >
-              Demander mon audit gratuit
+              Candidater à la bêta privée
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
+            <p className="mt-5 text-sm text-slate-400">
+              Soft :{' '}
+              <Link to="/beta" className="text-sky-300 underline underline-offset-2 hover:text-sky-200">
+                voir l&apos;offre bêta sur proprely.fr
+              </Link>
+              {' '}(contexte places / ICP — même formulaire côté site).
+            </p>
           </div>
         </section>
       </main>
