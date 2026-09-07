@@ -58,7 +58,7 @@ const columns: Column[] = [
       'Tableau de bord avancé',
       'Connexion native Pennylane & Qonto',
       'Synchronisation Google Calendar',
-      'Application mobile PWA',
+      'App Android (Play Store) · iOS bientôt · web OK',
       'Export comptable & facturation agréée',
     ],
   },

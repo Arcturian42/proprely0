@@ -78,7 +78,7 @@ const MODULES: ModuleDef[] = [
     name: 'Planning & agents',
     tagline: 'Le terrain organisé en 1 clic',
     description:
-      "Planning visuel drag-and-drop, affectation selon spécialité et charge horaire, pointage GPS mobile sans app, compteur d'heures automatique, export paie Silae. Vos agents savent où aller. Vous savez qui fait quoi.",
+      "Planning visuel drag-and-drop, affectation selon spécialité et charge horaire, pointage GPS mobile (app ou web), compteur d'heures automatique, export paie Silae. Vos agents savent où aller. Vous savez qui fait quoi.",
     icon: Calendar,
     accent: 'from-emerald-500 to-teal-400',
     ringBg: 'bg-emerald-50',
@@ -104,7 +104,7 @@ const MODULES: ModuleDef[] = [
 
 const VALUE_PROPS = [
   { icon: Workflow, title: 'Modules connectés', desc: "Un devis signé devient un contrat, qui crée des missions au planning, qui génèrent des preuves de passage, qui alimentent la facturation. Aucun double-saisie." },
-  { icon: Smartphone, title: 'Mobile sans installation', desc: "Vos agents reçoivent un lien web. Ils ouvrent leur planning, pointent et valident la preuve depuis leur téléphone. Aucune app Android/iOS à installer." },
+  { icon: Smartphone, title: 'Mobile : app ou web', desc: "App Android gratuite sur le Play Store (optionnelle), iOS bientôt, ou lien web. Planning, pointage, preuve de passage. Aucun coût par agent." },
   { icon: Zap, title: 'Setup en 30 minutes', desc: "Onboarding direct avec le fondateur. Import de vos clients, sites, agents, fréquences en une visio. Vous repartez avec un cockpit opérationnel." },
   { icon: Shield, title: 'Hébergement européen, RGPD', desc: "Données hébergées en France, conformité RGPD, export 1-clic à tout moment dans des formats standards. Aucun lock-in." },
   { icon: LineChart, title: 'Marge par client en temps réel', desc: "Heures réelles vs facturé, coûts directs et indirects, alertes dérive. Vous voyez quels contrats portent votre rentabilité." },
@@ -133,7 +133,7 @@ const FAQS = [
   },
   {
     q: 'Mes agents doivent-ils télécharger une application ?',
-    a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning, le pointage et la preuve de passage s'affichent dans son navigateur. Pas d'installation, pas de blocage Android/iOS, fonctionne en 4G dégradée. C'est un choix stratégique : 100 % d'adoption en moins d'une journée.",
+    a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent.",
   },
   {
     q: "L'IA du module devis est-elle une vraie IA ou un simple calcul ?",
@@ -145,7 +145,7 @@ const FAQS = [
   },
   {
     q: 'Comment se compare Proprely aux autres logiciels nettoyage (Organilog, Progiclean, PROPRET) ?',
-    a: "Organilog est multi-métiers (BTP, sécurité, espaces verts) avec une UX généraliste. Progiclean et PROPRET sont propreté-natifs mais sur des architectures legacy avec des apps à installer et des UX datées. Proprely est conçu nouvelle génération : web sans app pour les agents, IA pour les devis, marge par client en temps réel, modules connectés sans double saisie. Le bon choix dépend de votre taille : Proprely est calibré TPE/PME B2B 3-50 agents.",
+    a: "Organilog est multi-métiers (BTP, sécurité, espaces verts) avec une UX généraliste. Progiclean et PROPRET sont propreté-natifs mais sur des architectures legacy avec des apps à installer et des UX datées. Proprely est conçu nouvelle génération : app Android optionnelle + web, IA pour les devis, marge par client en temps réel, modules connectés sans double saisie. Le bon choix dépend de votre taille : Proprely est calibré TPE/PME B2B 3-50 agents.",
   },
 ]
 

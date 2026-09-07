@@ -32,7 +32,7 @@ const essentialFeatures = [
 ]
 
 const coreFeatures = [
-  { icon: Calendar, slug: 'planning-nettoyage', title: 'Planning agents', desc: "Affectation 1-clic selon spécialités et charge, planning mobile pour chaque agent sans application à installer." },
+  { icon: Calendar, slug: 'planning-nettoyage', title: 'Planning agents', desc: "Affectation 1-clic selon spécialités et charge, planning mobile : app Android gratuite (optionnelle) ou lien web. iOS bientôt." },
   { icon: FileText, slug: 'devis-nettoyage', title: 'Devis professionnels', desc: "Devis en 2 minutes depuis votre catalogue, signature électronique native, suivi commercial automatique." },
   { icon: Users, slug: 'gestion-agents-nettoyage', title: 'Gestion des agents', desc: "Profils, spécialités, charge horaire, alertes surmenage, compteur d'heures pour la paie en 2 clics." },
   { icon: QrCode, slug: 'preuve-passage-nettoyage', title: 'Preuve de passage', desc: "QR code par site, photos avant-après horodatées, signature client, PV automatique envoyé au gestionnaire." },
@@ -49,7 +49,7 @@ const sizeSegments = [
 // "Comment choisir son logiciel de nettoyage" — les critères qui comptent.
 const choosingCriteria = [
   "Conçu spécifiquement pour la propreté B2B (un client = plusieurs sites, spécialités agents), pas un outil généraliste adapté",
-  "Planning multi-sites réellement mobile-first, accessible par les agents sans application à installer",
+  "Planning multi-sites réellement mobile-first : app Android gratuite (optionnelle) ou lien web · iOS bientôt · 0 € / agent",
   "Preuve de passage standardisée (QR code + photos avant-après + signature) pour sécuriser vos contrats",
   "Marge par client en temps réel, calculée sur les heures réellement passées",
   "Devis professionnels rapides avec signature électronique et catalogue de prestations",
@@ -74,11 +74,11 @@ const competitorTable = [
     proprely: { v: 'Drag-and-drop moderne', status: 'ok' },
   },
   {
-    criteria: "Mobile-first agents (sans app à installer)",
+    criteria: "Mobile agents (app ou web, 0 €/agent)",
     excel: { v: 'Non', status: 'bad' },
     propret: { v: 'Application native', status: 'warn' },
     progiclean: { v: 'Application native', status: 'warn' },
-    proprely: { v: 'Lien web, aucune installation', status: 'ok' },
+    proprely: { v: 'App Android + web · iOS bientôt · 0 €/agent', status: 'ok' },
   },
   {
     criteria: "Preuve de passage QR + photos + signature",
@@ -121,11 +121,11 @@ const faq = [
   { q: "Qu'est-ce qu'un logiciel pour société de nettoyage ?", a: "C'est un outil qui centralise dans une seule interface les fonctions opérationnelles d'une société de propreté B2B : clients et sites, agents et spécialités, planning et affectation, missions avec preuve de passage, devis et factures, documents et pilotage de la marge. Pour une TPE/PME de 3 à 50 agents, il remplace le mille-feuille Excel + WhatsApp + Word + Google Drive utilisé en parallèle." },
   { q: "Quel est le meilleur logiciel pour une société de nettoyage en 2026 ?", a: "Tout dépend de votre taille. Pour 3-50 agents en croissance ou en structuration, les SaaS verticaux modernes (dont Proprely) offrent le meilleur rapport productivité/prix avec mobile-first natif et preuve de passage. Au-delà de 50 agents, des logiciels métier historiques (PROPRET, Progiclean) ou ERP couvrent davantage la couche comptable mais avec une UX plus dense." },
   { q: "Combien coûte un logiciel pour société de nettoyage ?", a: "De 15 à 60 €/utilisateur/mois pour la plupart des SaaS verticaux, à 100+ €/utilisateur pour les ERP. Proprely est gratuit pendant la bêta privée (30 places fondateurs), tarif fondateur conservé à vie après." },
-  { q: "Mes agents doivent-ils installer une application ?", a: "Pas avec Proprely. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone, le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne en 4G dégradée." },
+  { q: "Mes agents doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
   { q: "Peut-on remplacer Excel et WhatsApp complètement ?", a: "Oui pour la gestion quotidienne : clients/sites, agents, planning, missions, devis, factures, documents. WhatsApp peut rester pour les échanges informels — mais l'opérationnel passe par Proprely et tout est tracé." },
   { q: "Quelle taille d'entreprise est concernée ?", a: "Proprely est conçu pour les sociétés de 3 à 50 agents. Dès que vous gérez plusieurs sites et plusieurs agents, vous avez besoin de centraliser. La bêta est ouverte aux structures en croissance comme aux entreprises établies." },
   { q: "Mes données sont-elles sécurisées ?", a: "Hébergement européen, chiffrement en transit et au repos, conformité RGPD. Vous restez propriétaire de vos données à 100% et vous pouvez les exporter en 1 clic à tout moment." },
-  { q: "Quelle est la différence entre Proprely et PROPRET ou Progiclean ?", a: "PROPRET et Progiclean sont les acteurs historiques (10-15 ans) avec une couverture fonctionnelle large mais une UX datée et un mobile via app native. Proprely est un SaaS de nouvelle génération (2026) conçu mobile-first par lien web, avec preuve de passage native et marge par client en surface. Voir notre comparatif détaillé : /comparatif-logiciel-nettoyage." },
+  { q: "Quelle est la différence entre Proprely et PROPRET ou Progiclean ?", a: "PROPRET et Progiclean sont les acteurs historiques (10-15 ans) avec une couverture fonctionnelle large mais une UX datée et un mobile via app native. Proprely est un SaaS de nouvelle génération (2026) conçu mobile-first (app Android optionnelle + web), avec preuve de passage native et marge par client en surface. Voir notre comparatif détaillé : /comparatif-logiciel-nettoyage." },
 ]
 
 function injectSchema() {
@@ -367,7 +367,7 @@ export default function SoftwareLanding() {
                 Proprely n'est pas un logiciel généraliste sur lequel on aurait collé un module nettoyage : c'est un cockpit conçu dès l'origine pour la propreté B2B, avec des dirigeants du secteur. Les sept briques essentielles y sont réunies et connectées — un prospect signé devient un client avec ses sites, ses sites alimentent le planning, le planning nourrit le compteur d'heures, et les heures révèlent la marge par client en temps réel.
               </p>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-                Le produit est mobile-first pour les agents (un simple lien web, sans application à installer), hébergé en Europe et conforme au RGPD. Voici les quatre modules à explorer en priorité :
+                Le produit est mobile-first pour les agents (app Android gratuite optionnelle ou lien web · iOS bientôt), hébergé en Europe et conforme au RGPD. Voici les quatre modules à explorer en priorité :
               </p>
             </div>
 

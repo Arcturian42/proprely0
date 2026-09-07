@@ -31,7 +31,7 @@ const personas = [
     icon: MapPin,
     title: "Multi-sites en grande ville",
     range: "Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes",
-    description: "Vous opérez sur plusieurs métropoles ou plusieurs zones d'une grande ville. Optimisation des tournées, fiches site avec protocoles spécifiques, planning consultable agents sur leur téléphone sans app.",
+    description: "Vous opérez sur plusieurs métropoles ou plusieurs zones d'une grande ville. Optimisation des tournées, fiches site avec protocoles spécifiques, planning consultable sur mobile (app ou web).",
     target: '/villes',
     cta: 'Voir les pages villes',
   },

@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Mes agents vont-ils devoir installer une application ?",
-    a: "Non. Vos agents reçoivent un lien, ouvrent leur planning dans leur navigateur, et c'est tout. L'interface est conçue pour être prise en main sans formation, accessible à des équipes intergénérationnelles.",
+    a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent.",
   },
   {
     q: "Mes données sont-elles sécurisées ?",

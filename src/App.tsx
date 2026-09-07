@@ -160,8 +160,8 @@ const META: Record<string, RouteMeta> = {
     description: "Logiciel pour société de nettoyage qui travaille avec des syndics : preuve de passage QR, PV automatique, facturation récurrente. Bêta gratuite.",
   },
   '/application-mobile-agents-nettoyage': {
-    title: "Application mobile agents nettoyage : sans app · Proprely",
-    description: "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite.",
+    title: "Application mobile agents nettoyage : app Android gratuite · Proprely",
+    description: "App mobile pour agents de nettoyage : planning, pointage, preuve de passage. Android sur le Play Store (gratuite, optionnelle), iOS bientôt, ou lien web. Aucun coût par agent. Bêta privée.",
   },
   '/securite-rgpd': {
     title: 'Sécurité & RGPD · Proprely',

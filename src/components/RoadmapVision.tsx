@@ -48,7 +48,7 @@ const PHASES: Phase[] = [
     statusLabel: 'Prochaine étape',
     promise: 'Mes agents sont connectés. Ma trésorerie est visible.',
     capabilities: [
-      'App mobile agent sans installation (lien web)',
+      'App Android live · iOS bientôt · web optionnel',
       'Pointage GPS, photos et checklists terrain',
       'Connexion banque pro et visibilité financière temps réel',
     ],

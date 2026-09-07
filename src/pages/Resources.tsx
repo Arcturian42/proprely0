@@ -225,7 +225,7 @@ export default function Resources() {
 
         <MegaCTABanner
           title="Les modèles Excel sont gratuits. Le cockpit complet aussi (pour les 30 fondateurs)."
-          subtitle="Excel atteint vite ses limites passé 5-8 agents. Proprely centralise planning, devis, agents, preuve de passage et marge par client — sans installation, sans engagement. Bêta privée gratuite."
+          subtitle="Excel atteint vite ses limites passé 5-8 agents. Proprely centralise planning, devis, agents, preuve de passage et marge par client — app Android optionnelle ou web, sans engagement. Bêta privée gratuite."
           ctaLabel="Rejoindre la bêta — 30 places"
           location="resources_mega_cta"
         />
