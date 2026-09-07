@@ -50,6 +50,21 @@ function injectComparisonSchema(c: ComparisonPageType) {
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'Proprely',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, Android',
+      description: c.metaDescription,
+      url: 'https://proprely.fr/',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        description: 'Bêta privée 0 € · pas de facturation par agent',
+      },
+    },
   ]
   const script = document.createElement('script')
   script.type = 'application/ld+json'

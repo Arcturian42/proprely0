@@ -38,6 +38,22 @@ function injectFeatureSchema(feature: FeaturePageType) {
       },
     },
   ]
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Proprely',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web, Android',
+    description: feature.metaDescription,
+    url: 'https://proprely.fr/',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'EUR',
+      description: 'Bêta privée 0 € · pas de facturation par agent',
+    },
+    featureList: [feature.title],
+  })
   if (feature.faq?.length) {
     schemas.push({
       '@context': 'https://schema.org',

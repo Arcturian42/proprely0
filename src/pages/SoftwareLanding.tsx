@@ -5,7 +5,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
-import { FOUNDER_SPOTS, remainingSpots } from '../config'
+import { FOUNDER_SPOTS, remainingSpots, BETA_FORM_URL } from '../config'
 
 const URL = 'https://proprely.fr/logiciel-societe-nettoyage/'
 const TITLE = 'Logiciel société nettoyage : bêta 0€ · 0€/agent · guide 2026'
@@ -256,21 +256,32 @@ export default function SoftwareLanding() {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-3 justify-center"
             >
-              <Link
-                to="/beta"
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/25 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
               >
-                Candidater à la bêta gratuite
+                Candidater à la bêta (Fillout)
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <Link
-                to="/comparatif-logiciel-nettoyage"
+                to="/comparatif/proprely-vs-kliner"
                 className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2"
               >
-                Voir le comparatif détaillé
+                Voir vs Kliner
               </Link>
             </motion.div>
-            <p className="text-xs text-slate-500 mt-4">{remaining} places restantes sur {FOUNDER_SPOTS.total} · Gratuit pendant la bêta</p>
+            <p className="text-xs text-slate-500 mt-4">
+              {remaining} places restantes sur {FOUNDER_SPOTS.total} · 0 €/agent ·{' '}
+              <Link to="/beta" className="text-blue-700 font-semibold underline underline-offset-2">offre bêta</Link>
+              {' · '}
+              <Link to="/fonctionnalites/planning-nettoyage" className="text-blue-700 font-semibold underline underline-offset-2">planning</Link>
+              {' · '}
+              <Link to="/fonctionnalites/preuve-passage-nettoyage" className="text-blue-700 font-semibold underline underline-offset-2">preuve</Link>
+              {' · '}
+              <Link to="/comparatif/proprely-vs-sevensoft" className="text-blue-700 font-semibold underline underline-offset-2">vs Sevensoft</Link>
+            </p>
           </div>
         </section>
 
