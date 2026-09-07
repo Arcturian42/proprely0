@@ -317,9 +317,26 @@ export default function FeaturePage({ slug }: Props) {
           </div>
         </section>
 
-        {(related.length > 0 || relatedBlogs.length > 0) && (
+        {((feature.relatedLinks?.length ?? 0) > 0 || related.length > 0 || relatedBlogs.length > 0) && (
           <section className="bg-slate-50 py-14 sm:py-20 border-t border-slate-100">
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
+              {(feature.relatedLinks?.length ?? 0) > 0 && (
+                <>
+                  <h2 className="text-xl font-black text-slate-900 mb-6">Pour aller plus loin</h2>
+                  <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                    {feature.relatedLinks!.map((l) => (
+                      <Link
+                        key={l.to}
+                        to={l.to}
+                        className="group text-left bg-white rounded-2xl border border-slate-100 p-5 hover:border-blue-200 hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 active:scale-[0.99] transition-[border-color,box-shadow,transform] duration-200 ease-[var(--ease-out)]"
+                      >
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-blue-700 mb-2">Comparatif</div>
+                        <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">{l.label}</h3>
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
               {related.length > 0 && (
                 <>
                   <h2 className="text-xl font-black text-slate-900 mb-6">Découvrir d'autres fonctionnalités</h2>
