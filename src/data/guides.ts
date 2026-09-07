@@ -549,8 +549,8 @@ export const guides: GuidePage[] = [
 {
     slug: 'facturation-electronique-proprete-2026',
     title: "Facturation électronique pour société de nettoyage : guide de démarrage 2026–2027",
-    metaTitle: "Facturation électronique nettoyage 2026 : guide TPE/PME",
-    metaDescription: "Réception e-factures dès sept. 2026, émission PME en 2027. Checklist concrète pour sociétés de nettoyage 3–50 agents. Guide démarrage Proprely.",
+    metaTitle: "Facturation électronique nettoyage 2026 : checklist · 0€/agent",
+    metaDescription: "E-facture propreté 2026 : checklist TPE/PME 3–50 agents. Bêta Proprely 0€ · pas de factu/user · app Android optionnelle.",
     tldr: "Selon le calendrier officiel de la réforme, depuis le 1er septembre 2026, toute entreprise assujettie à la TVA doit pouvoir recevoir des factures électroniques via une plateforme agréée. Les grandes entreprises et ETI doivent aussi émettre et transmettre le e-reporting à cette date. Les PME, TPE et micro-entreprises — le cas typique d'une société de nettoyage de 3 à 50 agents — doivent être prêtes à émettre et au e-reporting au 1er septembre 2027. Ce guide répond à la question terrain « par où je commence dans mon ops nettoyage ? », du devis à la facture récurrente.",
     primaryQuestion: "Comment démarrer la facturation électronique en société de nettoyage ?",
     sections: [
