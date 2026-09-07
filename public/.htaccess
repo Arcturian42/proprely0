@@ -8,6 +8,12 @@ ErrorDocument 404 /404.html
 RewriteEngine On
 RewriteBase /
 
+# Force HTTPS FIRST (before file/404 rules). Previously this block sat AFTER
+# the `-f/-d` short-circuit, so HTTP requests for existing prerendered files
+# were never redirected — worsens mixed TLS signals on Hostinger.
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # ─── Redirections 301 historiques ────────────────────────────────────
 # URLs incorrectes générées par l'ancien llms.txt statique
 # (/ressources/calculateur-roi pointait vers une page inexistante).
@@ -55,11 +61,6 @@ RewriteRule ^ - [R=404,L]
 # 304 Not Modified et économise du budget de crawl).
 FileETag MTime Size
 
-# Force HTTPS
-<IfModule mod_rewrite.c>
-  RewriteCond %{HTTPS} off
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
 
 # GZIP compression
 <IfModule mod_deflate.c>
