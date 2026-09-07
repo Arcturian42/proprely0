@@ -441,8 +441,8 @@ export const comparisons: ComparisonPage[] = [
     competitorName: 'Sevensoft Propreté',
     competitorUrl: 'https://www.sevensoft.fr',
     title: 'Proprely vs Sevensoft Propreté : comparatif 2026',
-    metaTitle: 'Proprely vs Sevensoft 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs Sevensoft Propreté en 2026 : ERP multi-établissements vs cockpit TPE/PME. Fonctionnalités, tarifs, onboarding. Lequel choisir ?",
+    metaTitle: 'Proprely vs Sevensoft : ERP ETI vs cockpit 3–50 · 2026',
+    metaDescription: "Proprely vs Sevensoft Propreté : ERP multi-agences vs cockpit TPE/PME 3–50 agents. Onboarding 30 min, 0 €/agent en bêta, devis IA. Comparatif BoFu honnête.",
     tldr: "Sevensoft Propreté est un ERP métier français orienté ETI multi-établissements (50+ agents, reporting consolidé). Proprely est un cockpit nouvelle génération conçu pour les TPE/PME 3-50 agents, mobile-first, déployé en 30 minutes. Choisissez Sevensoft si vous gérez plusieurs agences et besoin de reporting consolidé multi-sites ; choisissez Proprely si vous êtes une TPE/PME en croissance qui veut centraliser sans projet ERP.",
     competitorPitch: "Sevensoft Propreté est un éditeur français spécialisé dans les logiciels métier propreté, avec une cible historique d'ETI multi-établissements et une couverture ERP large (planning, devis, facturation, qualité, reporting consolidé).",
     whoChooses: {
@@ -493,6 +493,10 @@ export const comparisons: ComparisonPage[] = [
         title: "Cockpit opérationnel vs reporting consolidé",
         description: "L'avantage central de Sevensoft est le reporting consolidé inter-agences (CA par établissement, marge globale, indicateurs RH groupe). C'est inutile si vous êtes mono-établissement. Proprely affiche la marge par client en temps réel sur le dashboard — utile au quotidien pour TPE/PME en croissance.",
       },
+      {
+        title: "Budget TPE : 0 €/agent (bêta) vs devis ERP ETI",
+        description: "Sevensoft se positionne sur des budgets ETI (setup + abonnement sur devis). Proprely en bêta privée : 0 €, agents inclus (app Android optionnelle ou web), sans facturation par agent, tarif fondateur à vie après. Si vous comparez pour 5–20 agents mono-établissement, le ticket n'est pas le même ordre de grandeur — validez toujours le devis Sevensoft auprès de l'éditeur.",
+      },
     ],
     faq: [
       { q: "Quelle est la différence principale entre Proprely et Sevensoft Propreté ?", a: "Sevensoft est un ERP métier propreté français ciblé ETI 50+ agents multi-établissements avec reporting consolidé. Proprely est un cockpit nouvelle génération ciblé TPE/PME 3-50 agents mono-établissement avec devis IA et marge par client temps réel. Pas la même cible, pas le même budget, pas le même temps de déploiement." },
@@ -501,6 +505,8 @@ export const comparisons: ComparisonPage[] = [
       { q: "Peut-on migrer de Sevensoft à Proprely ?", a: "Oui pour les données opérationnelles (clients, sites, agents, plannings). L'export Sevensoft s'effectue au format CSV/Excel. Pendant l'onboarding Proprely (30 min), nous importons et reconstituons votre organisation. La migration est viable si vous décidez de simplifier l'outillage." },
       { q: "Quand basculer de Sevensoft à Proprely ?", a: "Si vous êtes une TPE/PME mono-établissement (3-50 agents) et que Sevensoft vous semble surdimensionné, basculez vers Proprely. À l'inverse, si vous êtes 50+ agents multi-établissements avec besoins de reporting consolidé, Sevensoft reste mieux dimensionné." },
       { q: "Proprely gère-t-il le multi-établissements ?", a: "Pas aujourd'hui : Proprely est mono-établissement pour la bêta privée. La roadmap publique inclut un module multi-entités prévu en 2027. Si vous gérez 2+ agences indépendantes avec consolidation groupe, Sevensoft reste plus adapté." },
+      { q: "Proprely est-il moins cher que Sevensoft pour une TPE ?", a: "En bêta privée, Proprely est gratuit (0 €/agent). Sevensoft est sur devis, généralement calibré ETI. Après lancement public, comparez le tarif fondateur Proprely au devis Sevensoft pour votre effectif — sans inventer un prix éditeur non public." },
+      { q: "Comment candidater à la bêta Proprely depuis ce comparatif ?", a: "Utilisez le formulaire Fillout de candidature (bouton « Candidater à la bêta » sur cette page) ou le soft link /beta/. Places fondateurs limitées — sociétés de nettoyage B2B France environ 3–50 agents." },
     ],
   },
   {

@@ -77,7 +77,10 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['gestion-agents-nettoyage', 'preuve-passage-nettoyage'],
     relatedBlogSlugs: ['logiciel-planning-nettoyage-2026', 'fideliser-agents-nettoyage-turnover', 'calcul-heures-agents-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
-    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Planning mobile app ou web : différence avec Kliner' }],
+    relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Planning mobile app ou web : différence avec Kliner' },
+      { to: '/comparatif/proprely-vs-sevensoft', label: 'Cockpit TPE vs ERP Sevensoft (multi-agences)' },
+    ],
   },
   {
     slug: 'devis-nettoyage',
@@ -129,6 +132,7 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['planning-nettoyage', 'gestion-agents-nettoyage'],
     relatedBlogSlugs: ['devis-nettoyage-intelligent-ia', 'ia-nettoyage-b2b-transformations-2026', 'fixer-prix-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-sevensoft', label: 'Devis IA Proprely vs module devis Sevensoft' }],
   },
   {
     slug: 'gestion-agents-nettoyage',
@@ -211,7 +215,10 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['planning-nettoyage', 'gestion-agents-nettoyage'],
     relatedBlogSlugs: ['logiciel-societe-nettoyage-criteres', 'rgpd-societe-nettoyage-2026'],
-    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Preuve de passage Proprely vs approche Kliner' }],
+    relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Preuve de passage Proprely vs approche Kliner' },
+      { to: '/comparatif/proprely-vs-sevensoft', label: 'Preuve de passage vs module Sevensoft' },
+    ],
   },
   {
     slug: 'gestion-sites-clients-nettoyage',
@@ -344,7 +351,10 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['gestion-agents-nettoyage', 'planning-nettoyage'],
     relatedBlogSlugs: ['calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'cout-horaire-charge-agent-nettoyage'],
-    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Pointage sans surcoût par agent — vs Kliner' }],
+    relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Pointage sans surcoût par agent — vs Kliner' },
+      { to: '/comparatif/proprely-vs-sevensoft', label: '0 euro/agent en beta vs budget ERP Sevensoft' },
+    ],
   },
   {
     slug: 'facturation-nettoyage',
