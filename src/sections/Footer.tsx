@@ -95,6 +95,7 @@ export default function Footer() {
               <li><Link to="/comparatif/proprely-vs-comete-proprete" className={linkClass}>vs Comète Propreté</Link></li>
               <li><Link to="/comparatif/proprely-vs-sevensoft" className={linkClass}>vs Sevensoft</Link></li>
               <li><Link to="/comparatif/proprely-vs-maglia" className={linkClass}>vs Maglia</Link></li>
+              <li><Link to="/comparatif/proprely-vs-kliner" className={linkClass}>vs Kliner</Link></li>
               <li><Link to="/alternative-organilog" className={`${linkClass} font-semibold`}>Alternatives →</Link></li>
             </ul>
           </div>
