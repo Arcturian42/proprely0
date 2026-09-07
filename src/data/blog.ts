@@ -30,6 +30,113 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'recruter-saisonnier-proprete',
+    title: "Recruter un saisonnier en propreté : mode d’emploi",
+    excerpt: "Saisonnier en société de nettoyage : formalités (angle Bercy n°516), pics d’activité, onboarding 48 h et planning multi-sites. Guide dirigeants 3–50 agents.",
+    date: "7 septembre 2026",
+    dateModified: "7 septembre 2026",
+    readTime: "8 min",
+    tag: "RH & conformité",
+    tldr: "Pics d’activité, absences et nouveaux sites poussent au saisonnier en propreté B2B. Au-delà des formalités (angle Bercy Infos n°516), l’enjeu ops est de monter un agent vite sur le planning sans perdre la preuve de passage ni noyer l’équipe dans WhatsApp. Cadrez le besoin, un onboarding 48 h, et le pilotage titulaires + saisonniers — vérifiez toujours le cadre légal via service-public / votre conseil. Pas de durées ni quotas inventés ici.",
+    quickSummary: [
+      "Saisonnier = réponse aux pics, pas un substitut au vivier titulaire",
+      "Formalités haut niveau (Bercy n°516) : vérifier sources officielles",
+      "Onboarding 48 h : sites, protocoles, preuve, mobile app optionnelle / web",
+      "Pilotage : charge titulaires vs saisonniers visible sur le planning",
+      "Proprely aide planning/agents — pas un conseil juridique RH",
+    ],
+    faq: [
+      { q: "Saisonnier vs CDD classique : quelle différence (haut niveau) ?", a: "Le contrat saisonnier répond à un besoin lié à la saisonnalité de l’activité ; le CDD classique couvre d’autres motifs (remplacement, accroissement temporaire, etc.). Les règles, durées et cas d’usage dépendent du Code du travail et de votre situation. Faites qualifier le bon motif par votre conseil / expert-comptable — cet article ne tranche pas votre cas." },
+      { q: "Peut-on réembaucher un saisonnier d’une saison à l’autre ?", a: "Souvent oui dans la pratique du secteur, sous conditions légales et contractuelles. Anticipez la disponibilité et gardez une fiche agent propre (compétences sites, EPI, historique qualité) pour accélérer le retour. Vérifiez le cadre applicable avec votre conseil." },
+      { q: "Comment former vite à la preuve de passage ?", a: "Jour 1 : binôme sur 1–2 sites simples, protocole photo/QR, exemple de « bon » vs « insuffisant ». Jour 2 : l’agent fait la preuve sous supervision courte. N’envoyez pas seul sur un client exigeant avant validation qualité." },
+      { q: "Que faire si le volume de sites double vite ?", a: "Recruter des saisonniers ne suffit pas : il faut un planning lisible, des protocoles par typologie de site, et un responsable qui arbitre les priorités. Sans ça, vous multipliez les no-shows et les litiges client. Structurez d’abord le cockpit ops." },
+      { q: "Faut-il une app native pour les saisonniers ?", a: "Non obligatoire. Un lien web ou une app Android optionnelle gratuite suffit si le planning et la preuve de passage sont clairs. L’adoption chute si l’outil impose un setup lourd pour 3 semaines de mission." },
+      { q: "Comment Proprely aide sur les pics saisonniers ?", a: "Proprely centralise agents, planning multi-sites, missions et preuves de passage. Vous voyez qui couvre quoi pendant le pic. Ce n’est pas un SIRH ni un conseil en droit du travail saisonnier." },
+    ],
+    relatedSlugs: ['embauche-apprenti-entreprise-nettoyage', 'fideliser-agents-nettoyage-turnover', 'heures-supplementaires-agents-nettoyage', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    content: `## Réponse-flash
+
+En société de nettoyage B2B, le **saisonnier** arrive surtout pour les **pics** (été, surcroît, nouveaux sites) et les **trous** d’effectif. L’actualité Bercy Infos n°516 rappelle le cadre du travail saisonnier — utile pour un dirigeant 3–50 agents.
+
+Le vrai enjeu ops n’est pas seulement le contrat : c’est **monter un agent vite** sur le planning, avec preuve de passage et protocoles, **sans** noyer titulaires et saisonniers dans un fil WhatsApp.
+
+Ce guide est **opérationnel**. Ce n’est **pas** un avis juridique. Vérifiez toujours [service-public.fr](https://www.service-public.fr), la CCN **IDCC 3043** et votre conseil. **Aucun** montant, durée maximale ou quota inventé ici.
+
+## Cadre saisonnier (haut niveau)
+
+Angle Bercy Infos n°516 : le travail saisonnier a ses spécificités (motif, rythme d’activité). En pratique, avant de signer :
+
+1. **Qualifier le besoin** : pic saisonnier réel vs remplacement vs accroissement temporaire (motifs différents).
+2. **Passer par votre conseil** pour le type de contrat adapté.
+3. **Anticiper paie / DPAE / suivi** avec le cabinet — pas improvisé la veille du 1er site.
+
+Les allègements ou clarifications administratives aident. Ils ne remplacent pas un process recrutement + onboarding.
+
+## Cas d’usage propreté B2B
+
+- **Été / congés** : titulaires absents, sites récurrents à tenir.
+- **Surcroît client** : remise en état, livraisons, événements, ouverture de locaux.
+- **Nouveaux sites** gagnés d’un coup : besoin de bras avant de stabiliser l’effectif.
+- **Remplacements courts** répétés : parfois le saisonnier revient d’une saison à l’autre (vivier).
+
+Dans tous les cas : sans planning clair, le saisonnier « disparaît » dans le bruit WhatsApp.
+
+## Checklist recrutement express
+
+1. Fiche de poste courte (sites types, horaires, EPI, mobilité).
+2. Entretien terrain (ponctualité, compréhension consignes, français / pictogrammes OK).
+3. Documents + DPAE / contrat via le process habituel du cabinet.
+4. Accès planning (lien web ou app Android optionnelle) **avant** J1.
+5. Tuteur / référent nommé (même 30 min/jour les 48 premières heures).
+
+## Onboarding 48 h
+
+**Jour 1**
+
+- EPI, sécurité produits, accès sites.
+- 1–2 sites simples en binôme.
+- Preuve de passage : standard photo/QR montré, puis reproduit.
+
+**Jour 2**
+
+- Sites un cran plus complexes sous supervision courte.
+- Brief « qui appeler » si client bloque / matériel manque.
+- Point 15 min : OK pour autonomie partielle ou pas.
+
+Objectif : **utile sur le planning** sans casser la qualité des titulaires.
+
+## Pilotage charge titulaires + saisonniers
+
+- Affichez **qui est où** (pas un tableau Excel version 12).
+- Évitez de surcharger les meilleurs titulaires en « tuteurs fantômes » sur 6 saisonniers.
+- Séparez clairement les sites **critiques** (titulaires) vs **montée en charge** (saisonnier + contrôle).
+- Fin de mission : noter compétences / incidents pour la **réembauche** saison suivante.
+
+## Comment Proprely aide
+
+Proprely : **planning**, **agents**, **missions**, **preuve de passage** (app Android gratuite optionnelle ou web ; iOS bientôt). Pendant un pic, vous réduisez les « qui devait être sur le site B ? ».
+
+**Limite honnête :** pas un logiciel de paie, pas un simulateur de droits saisonniers, pas un cabinet RH.
+
+## Pour aller plus loin
+
+- [Planning agents](/fonctionnalites/planning-nettoyage)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+- [Application mobile agents](/application-mobile-agents-nettoyage)
+- [Embauche apprenti](/blog/embauche-apprenti-entreprise-nettoyage)
+- [Fidéliser les agents](/blog/fideliser-agents-nettoyage-turnover)
+
+## Candidater à la bêta
+
+Vous préparez un pic (été, nouveaux sites) et voulez un planning lisible pour titulaires + saisonniers ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
     slug: 'embauche-apprenti-entreprise-nettoyage',
     title: "Embauche apprenti entreprise nettoyage : formalités & ops",
     excerpt: "Embaucher un apprenti en société de nettoyage : formalités allégées (angle Bercy), tutorat terrain, planning multi-sites et onboarding. Guide dirigeants 3–50 agents.",
