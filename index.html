@@ -81,6 +81,10 @@
     <meta name="twitter:image" content="https://proprely.fr/og-image.png" />
     <meta name="twitter:image:alt" content="Proprely — Le cockpit métier des sociétés de nettoyage" />
 
+    <!-- Preconnect analytics/CDN tiers : réduit latence TLS sur 1er hit GTM/GA (Consent Mode v2 reste denied until accept) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" as="style" onload="this.rel='stylesheet'" />

@@ -159,6 +159,7 @@ const TOOLS_LM = lastmodFor(['src/pages/ToolsIndex.tsx'])
 const PRICE_LM = lastmodFor(['src/pages/PriceCalculator.tsx'])
 const AUDIT_LM = lastmodFor(['src/pages/AuditGratuit.tsx'])
 const SOLUTION_LM = lastmodFor(['src/pages/SolutionHub.tsx'])
+const ROADMAP_LM = lastmodFor(['src/pages/RoadmapPage.tsx', 'src/components/RoadmapVision.tsx'])
 const ALT_LM = lastmodFor(['src/data/alternatives.ts', 'src/pages/AlternativePage.tsx'])
 const GUIDE_LM = lastmodFor(['src/data/guides.ts', 'src/pages/GuidePage.tsx'])
 const FEATURE_LM = lastmodFor(['src/data/features.ts', 'src/pages/FeaturePage.tsx'])
@@ -198,6 +199,7 @@ const urls = [
   { loc: `${ORIGIN}/calculateur-prix-nettoyage-m2`, priority: '0.9', changefreq: 'monthly', lastmod: PRICE_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Calculateur prix nettoyage bureaux au m²' },
   { loc: `${ORIGIN}/audit-gratuit`, priority: '0.9', changefreq: 'monthly', lastmod: AUDIT_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Audit gratuit société de nettoyage' },
   { loc: `${ORIGIN}/solution`, priority: '0.8', changefreq: 'monthly', lastmod: SOLUTION_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Solution gestion société de nettoyage B2B 2026' },
+  { loc: `${ORIGIN}/roadmap`, priority: '0.6', changefreq: 'weekly', lastmod: ROADMAP_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Roadmap publique Proprely' },
   ...alternativeSlugs.map((slug) => ({
     loc: `${ORIGIN}/${slug}`,
     priority: '0.8',
