@@ -30,6 +30,103 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'heures-supplementaires-agents-nettoyage',
+    title: "Heures supplémentaires agents nettoyage : cadrer sans litige",
+    excerpt: "Heures supplémentaires (et non autorisées) en société de nettoyage : cadre pratique pour dirigeants 3–50 agents, checklist d’autorisation, pointage et export paie. Angle Bercy Infos n°514.",
+    date: "7 septembre 2026",
+    dateModified: "7 septembre 2026",
+    readTime: "8 min",
+    tag: "RH & conformité",
+    tldr: "En société de nettoyage B2B, les heures supplémentaires naissent surtout des remplacements et urgences multi-sites. Sans process d’autorisation et sans trace fiable du temps travaillé, le dirigeant multiplie litiges paie et tension d’équipe. Cadrez qui autorise quoi, pointez systématiquement, exportez proprement vers la paie — et citez toujours le Code du travail / la CCN IDCC 3043 via votre conseil. Angle éditorial : Bercy Infos n°514.",
+    quickSummary: [
+      "Priorité ops : qui autorise les heures, où c’est écrit, comment on pointe",
+      "WhatsApp + feuille papier = zone grise (contestations fréquentes)",
+      "Pointage horodaté + export paie réduit les erreurs de majoration",
+      "Proprely aide au cadrage ops ; ce n’est pas un conseil juridique",
+      "CTA bêta : candidature Fillout pour structurer planning + pointage",
+    ],
+    faq: [
+      { q: "Une heure faite sans accord doit-elle être payée ?", a: "Le droit du travail protège en général le salarié qui a effectué du travail ; la question de l’autorisation et des majorations dépend du cadre légal et de la CCN. En pratique, un dirigeant qui laisse le flou paie souvent deux fois : en conflictualité et en régularisation. Faites valider votre process par votre conseil / expert-comptable." },
+      { q: "Qui peut autoriser les heures supplémentaires dans une TPE de nettoyage ?", a: "Typiquement le dirigeant ou le responsable d’exploitation. L’essentiel est que la règle soit écrite, connue des agents, et appliquée avant la paie — pas reconstruite a posteriori depuis les messages WhatsApp." },
+      { q: "Quelle différence entre heures complémentaires et heures supplémentaires ?", a: "Sur un temps partiel, on parle souvent d’heures complémentaires (au-delà du contrat) ; sur un temps plein, d’heures supplémentaires. Les majorations et plafonds diffèrent selon le Code du travail et l’IDCC 3043. Utilisez votre logiciel de paie / votre cabinet pour le calcul exact." },
+      { q: "Le pointage mobile suffit-il comme preuve ?", a: "Un pointage horodaté (QR / mobile) renforce fortement la traçabilité, surtout multi-sites. Ce n’est pas un substitut à une autorisation claire ni à un bulletin de paie conforme. Combinez process RH + trace ops." },
+      { q: "Comment anticiper les pics d’heures (absences, urgences clients) ?", a: "Ayez un vivier de remplacements, un planning visible par les agents, et une règle simple : pas d’heure « surprise » sans validation. Les pics non pilotés sont la première source d’heures non cadrées en propreté." },
+      { q: "Comment Proprely aide sans remplacer mon avocat ?", a: "Proprely structure le planning, le pointage mobile (app Android optionnelle ou web), le calcul d’heures / majorations selon paramétrage IDCC, et l’export vers la paie (ex. Silae). La qualification juridique et le bulletin restent du ressort de votre conseil / logiciel de paie." },
+    ],
+    relatedSlugs: ['calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'fideliser-agents-nettoyage-turnover', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    content: `## Réponse-flash
+
+En société de nettoyage, les **heures supplémentaires** (et le cas des heures « faites » sans autorisation claire) naissent surtout des **remplacements**, des **urgences client** et du **multi-sites**. L’actualité Bercy Infos n°514 rappelle l’enjeu : mal cadrées, ces heures coûtent cher — en paie, en climat social, parfois en contrôle.
+
+Ce guide est **opérationnel** pour un dirigeant ou un responsable d’exploitation (3–50 agents). Ce n’est **pas** un avis juridique. Vérifiez toujours le Code du travail, la convention collective **IDCC 3043** et votre conseil (avocat / expert-comptable / logiciel de paie).
+
+## Ce que « heures non autorisées » veut dire en pratique
+
+Sur le terrain, trois situations se mélangent souvent :
+
+1. **Heure demandée par l’agent** (« je termine le site, j’ai pris 45 min de plus ») sans validation préalable.
+2. **Heure imposée par le flux** (absence non remplacée, client qui bloque l’accès, mission rallongée) sans process de validation.
+3. **Heure « négociée » sur WhatsApp** — visible nulle part au moment de la paie.
+
+Dans les trois cas, le risque n’est pas seulement « payer ou pas » : c’est **ne plus savoir ce qui a été réellement travaillé**, donc ne plus piloter la marge par site.
+
+## Spécificités d’une société de nettoyage B2B
+
+- **Multi-sites** : un agent enchaîne 2–4 sites ; le temps de trajet et le temps de travail se confondent facilement si le process est oral.
+- **Temps partiels nombreux** : attention au vocabulaire **heures complémentaires** vs **heures supplémentaires** (à faire qualifier par votre paie / CCN).
+- **Absences dernière minute** : sans vivier de remplacements, le dirigeant « autorise » tout après coup.
+- **Clients exigeants** (syndics, médical) : une heure de plus non tracée peut aussi créer un litige commercial (« vous n’avez pas fini » / « vous avez dépassé »).
+
+## Risques si le process est flou
+
+Sans inventer de montants d’amende ni de cas particuliers :
+
+- Contestations de paie et turnover.
+- Erreurs de majoration (nuit, dimanche, jours fériés, complémentaires).
+- Difficulté à expliquer un contrôle (URSSAF / litige) faute de traces.
+- Marge site faussée → vous sous-tariferez le prochain contrat.
+
+La bonne posture : **prévenir** (règle d’autorisation) + **prouver** (pointage) + **payer juste** (export paie).
+
+## Checklist dirigeant — TPE/PME 3–50 agents
+
+1. **Écrire la règle** : qui peut autoriser une heure au-delà du planning (dirigeant / responsable d’exploitation uniquement, par exemple).
+2. **La communiquer** aux agents (réunion + message unique — pas 12 versions WhatsApp).
+3. **Lier l’autorisation au planning** : une heure hors créneau = demande avant exécution, sauf urgence définie.
+4. **Pointer systématiquement** arrivée / départ (QR ou mobile) — app Android optionnelle ou web.
+5. **Revoir les heures avant paie** : 1 créneau fixe chaque fin de mois (30–45 min).
+6. **Exporter** vers le logiciel de paie / le cabinet (CSV Silae, etc.).
+7. **Archiver** planning + pointages + validations (durée : selon vos obligations — à caler avec le conseil).
+
+## Comment Proprely aide (ops, pas juridique)
+
+Proprely est un cockpit propreté : planning, agents, **pointage mobile**, calcul d’heures et majorations selon paramétrage, **export paie**. L’objectif : sortir du trio Excel + WhatsApp + feuille papier.
+
+- Les agents voient leur planning sur mobile (**app Android gratuite optionnelle** ou lien web ; iOS bientôt).
+- Le pointage horodate les passages ; la géoloc peut être optionnelle.
+- Vous réduisez les « heures fantômes » avant qu’elles n’arrivent en paie.
+
+**Limite honnête :** Proprely ne remplace pas votre avocat, votre CCN annotée, ni votre logiciel de paie. Il structure la donnée pour que ces outils travaillent juste.
+
+## Pour aller plus loin
+
+- [Calcul des heures agents nettoyage](/blog/calcul-heures-agents-nettoyage)
+- [Pointage GPS agents](/fonctionnalites/pointage-agents-nettoyage)
+- [Planning agents](/fonctionnalites/planning-nettoyage)
+- [Convention collective IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez cadrer planning + pointage avant le prochain cycle de paie ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
     slug: 'prospection-linkedin-societe-nettoyage-b2b-2026',
     title: "Prospection LinkedIn société de nettoyage B2B 2026",
     excerpt: "LinkedIn est le canal n°1 pour acquérir des décideurs B2B en France en 2026 (45,6 % des décideurs B2B le citent comme média le plus persuasif d'achat). Pour une société de nettoyage, c'est l'opportunité de toucher facility managers, office managers, syndics et dirigeants PME sans dépendre du bouche-à-oreille. Guide complet : Sales Navigator, social selling, séquences outbound, benchmarks 2026.",
