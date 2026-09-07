@@ -30,6 +30,112 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'embauche-apprenti-entreprise-nettoyage',
+    title: "Embauche apprenti entreprise nettoyage : formalités & ops",
+    excerpt: "Embaucher un apprenti en société de nettoyage : formalités allégées (angle Bercy), tutorat terrain, planning multi-sites et onboarding. Guide dirigeants 3–50 agents.",
+    date: "7 septembre 2026",
+    dateModified: "7 septembre 2026",
+    readTime: "8 min",
+    tag: "RH & conformité",
+    tldr: "L’apprentissage nourrit le vivier d’agents en propreté B2B. Les formalités ont été allégées (angle Bercy Infos n°514), mais le succès dépend du maître d’apprentissage et d’un planning qui absorbe les semaines école sans casser les sites. Cadrez tutorat, onboarding (EPI, protocoles, preuve de passage) et charge multi-sites — vérifiez toujours service-public / OPCO / votre conseil. Ce n’est pas un avis juridique ni un montant d’aides.",
+    quickSummary: [
+      "Formalités allégées ≠ succès terrain : le tutorat décide",
+      "Planning multi-sites : absorber les jours CFA sans trous client",
+      "Onboarding : EPI, protocoles site, preuve de passage encadrée",
+      "Pièges : tuteur surchargé, apprenti seul trop tôt, aides non vérifiées",
+      "Proprely aide agents/planning/missions — pas un SIRH ni un conseil RH",
+    ],
+    faq: [
+      { q: "Peut-on embaucher un apprenti en TPE de nettoyage ?", a: "Oui, sous conditions (âge, diplôme visé, entreprise éligible, maître d’apprentissage). Les TPE propreté le font souvent pour constituer un vivier. Vérifiez l’éligibilité et les aides auprès de votre OPCO / service-public.fr — ne vous fiez pas à un montant lu sur un blog." },
+      { q: "Combien de temps de tutorat prévoir en propreté ?", a: "Le cadre légal fixe des obligations de suivi ; en pratique, comptez du temps réel chaque semaine (brief planning, accompagnement sur 1–2 sites, débrief). Un tuteur déjà surchargé sur 8 sites ne tiendra pas. Dimensionnez la charge avant la signature." },
+      { q: "L’apprenti peut-il faire la preuve de passage seul ?", a: "Pas dès J1. Tant que les protocoles site et la qualité ne sont pas maîtrisés, gardez une supervision (binôme ou validation responsable). La preuve de passage (photos / QR) documente le passage — elle ne remplace pas le contrôle qualité ni la formation." },
+      { q: "Comment gérer les semaines école / entreprise ?", a: "Bloquez le calendrier CFA dans le planning dès l’embauche. Préparez des remplacements sur les sites critiques. Évitez d’affecter l’apprenti seul sur un client exigeant la veille d’une semaine école." },
+      { q: "Quelles aides à l’apprentissage demander ?", a: "Les dispositifs évoluent. Consultez service-public.fr, votre OPCO et votre expert-comptable pour les montants et conditions à jour. Cet article ne liste volontairement aucun chiffre d’aide." },
+      { q: "Comment Proprely aide sans remplacer un SIRH ?", a: "Proprely structure fiches agents, planning multi-sites, missions et preuves de passage (app Android optionnelle ou web). Le contrat d’apprentissage, la paie et les déclarations restent hors scope — cabinet / logiciel RH / OPCO." },
+    ],
+    relatedSlugs: ['heures-supplementaires-agents-nettoyage', 'fideliser-agents-nettoyage-turnover', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    content: `## Réponse-flash
+
+Embaucher un **apprenti** en société de nettoyage, c’est nourrir le vivier d’agents tout en formant aux gestes métier. L’actualité Bercy Infos n°514 rappelle que les **formalités** d’apprentissage ont été allégées — utile pour une TPE/PME 3–50 agents.
+
+Le vrai sujet terrain n’est pas le formulaire : c’est le **maître d’apprentissage**, le **planning** qui absorbe les semaines CFA, et un **onboarding** assez solide pour ne pas envoyer un débutant seul sur un site critique.
+
+Ce guide est **opérationnel**. Ce n’est **pas** un avis juridique ni un simulateur d’aides. Vérifiez toujours [service-public.fr](https://www.service-public.fr), votre OPCO, la CCN **IDCC 3043** et votre conseil (expert-comptable / avocat).
+
+## Formalités clés (haut niveau)
+
+Sans inventer de montants ni de délais figés :
+
+1. **Contrat d’apprentissage** (cerfa / procédure en vigueur) via le CFA / OPCO selon le parcours.
+2. **Maître d’apprentissage** désigné, avec le temps et les compétences pour suivre.
+3. **Déclarations / affiliations** selon votre situation (à caler avec le cabinet).
+4. **Visite médicale / suivi** selon les règles applicables à votre effectif et au poste.
+
+Les allègements administratifs (angle Bercy) réduisent la friction papier. Ils ne remplacent pas un process RH clair ni un planning réaliste.
+
+## Rôle du maître d’apprentissage en propreté
+
+En multi-sites, le tuteur n’est pas « un titre sur le contrat » :
+
+- Il **explique** les protocoles (bureaux, parties communes, sites sensibles).
+- Il **accompagne** les premières preuves de passage et le rapport qualité.
+- Il **arbitre** quand un client demande un geste hors procédure.
+- Il **signale** trop tôt si le niveau n’est pas là — avant un litige client.
+
+Choisissez un tuteur qui a de la bande passante, pas seulement le meilleur technicien déjà saturé.
+
+## Impact planning multi-sites
+
+L’apprenti alterne **entreprise / CFA**. Conséquences concrètes :
+
+- Sites récurrents : prévoir **remplacement** les semaines école.
+- Ne pas « coller » l’apprenti sur 4 sites critiques dès le mois 1.
+- Trajets + temps de formation terrain = charge réelle > heures affichées.
+- Alignez le planning visible agents (mobile) pour éviter les no-shows WhatsApp.
+
+## Onboarding terrain (EPI, protocoles, preuve)
+
+Checklist dirigeant / responsable d’exploitation :
+
+1. EPI et consignes sécurité (produits, hauteur, accès).
+2. Protocoles par typologie de site (pas un PDF unique illisible).
+3. Binôme sur 2–4 semaines selon complexité.
+4. Preuve de passage : photos / QR **après** validation des standards qualité.
+5. Point hebdo tuteur (15–20 min) : sites OK / points bloquants.
+
+## Pièges fréquents
+
+- Signer pour une **aide** sans vérifier les conditions à jour.
+- Tuteur **invisible** (trop de sites, trop d’urgences).
+- Apprenti **seul** trop tôt sur un client exigeant (syndic, médical, food).
+- Planning Excel + WhatsApp : les semaines CFA « oubliées » → client mécontent.
+- Confondre preuve de passage et formation qualité.
+
+## Comment Proprely aide (ops, pas SIRH)
+
+Proprely structure **agents**, **planning**, **missions** et **preuves de passage** (app Android gratuite optionnelle ou web ; iOS bientôt). Objectif : voir qui est où, quelles semaines sont chargées, et ce qui a été fait sur site.
+
+**Limite honnête :** ce n’est pas un logiciel de paie, ni un portail OPCO, ni un conseil en droit de l’apprentissage. Il réduit le chaos ops pendant que votre cabinet gère le cadre RH.
+
+## Pour aller plus loin
+
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+- [Planning agents](/fonctionnalites/planning-nettoyage)
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage)
+- [Fidéliser les agents / turnover](/blog/fideliser-agents-nettoyage-turnover)
+- [Heures supplémentaires agents](/blog/heures-supplementaires-agents-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez structurer agents + planning avant d’intégrer un apprenti (ou le prochain) ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
     slug: 'heures-supplementaires-agents-nettoyage',
     title: "Heures supplémentaires agents nettoyage : cadrer sans litige",
     excerpt: "Heures supplémentaires (et non autorisées) en société de nettoyage : cadre pratique pour dirigeants 3–50 agents, checklist d’autorisation, pointage et export paie. Angle Bercy Infos n°514.",
