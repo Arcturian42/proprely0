@@ -239,8 +239,8 @@ export const comparisons: ComparisonPage[] = [
     competitorName: '2BePragma',
     competitorUrl: 'https://www.2bepragma.com',
     title: 'Proprely vs 2BePragma : comparatif 2026 pour société de nettoyage',
-    metaTitle: 'Proprely vs 2BePragma 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs 2BePragma 2026 : fonctionnalités, tarifs, mobile, marge par client. Quand passer à l'échelle ? Verdict pour le nettoyage B2B.",
+    metaTitle: 'Proprely vs 2BePragma : PME vs cockpit 3–50 · 2026',
+    metaDescription: "Proprely vs 2BePragma : PME structurée vs cockpit TPE/PME 3–50 agents. Onboarding 30 min, 0 €/agent en bêta, devis IA. Comparatif BoFu honnête.",
     tldr: "2BePragma est un éditeur français spécialisé propreté avec une approche métier complète orientée PME structurées. Proprely est un cockpit nouvelle génération (2025-2026) conçu pour les TPE/PME 3-50 agents qui veulent un outil rapide à déployer et mobile-first. Choisissez 2BePragma si vous êtes une PME structurée à fort volume ; Proprely si vous êtes une TPE/PME en croissance qui veut un outil opérationnel léger.",
     competitorPitch: "2BePragma est un éditeur français de logiciels métier pour la propreté, présent sur le marché depuis plusieurs années. Le produit couvre les besoins opérationnels des sociétés de nettoyage B2B (planning, devis, facturation, qualité) avec une orientation PME structurées.",
     whoChooses: {
@@ -292,6 +292,10 @@ export const comparisons: ComparisonPage[] = [
         title: "Tarification",
         description: "2BePragma fonctionne sur devis sur mesure, généralement adapté à des budgets PME établies. Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices) avec tarif fondateur conservé à vie. Profils budget différents : Proprely vise les budgets TPE/PME en croissance, 2BePragma les PME structurées.",
       },
+      {
+        title: "Budget TPE : 0 €/agent (bêta) vs devis PME structurée",
+        description: "2BePragma fonctionne sur devis sur mesure (budgets PME établies). Proprely en bêta privée : 0 €, agents inclus (app Android optionnelle ou web), sans facturation par agent, tarif fondateur à vie après. Pour 5–20 agents, comparez toujours le devis 2BePragma réel au tarif fondateur Proprely — sans inventer un prix éditeur non public.",
+      },
     ],
     faq: [
       { q: "Quelle est la différence principale entre Proprely et 2BePragma ?", a: "2BePragma cible les PME structurées (30+ agents) avec un périmètre fonctionnel large nécessitant plusieurs jours de paramétrage. Proprely cible les TPE/PME (3-50 agents) avec un cockpit léger déployable en 30 minutes. Proprely intègre en plus un module de devis IA propriétaire et la marge par client en temps réel sur le dashboard." },
@@ -300,6 +304,8 @@ export const comparisons: ComparisonPage[] = [
       { q: "Peut-on migrer de 2BePragma à Proprely ?", a: "Oui pour les données opérationnelles (clients, sites, agents, plannings). 2BePragma permet l'export au format CSV/Excel. Pendant l'onboarding Proprely (30 min avec le fondateur), nous importons et reconstituons votre organisation." },
       { q: "Proprely a-t-il un module qualité comme 2BePragma ?", a: "Proprely intègre la preuve de passage native (QR + photos + signature + horodatage) et l'historique complet par site. Pour un module qualité plus formel (audits planifiés, plans d'action qualité, scoring), 2BePragma propose une couverture plus large. Selon vos exigences clients (syndics, facility managers), l'écart peut être structurant ou marginal." },
       { q: "Le devis IA de Proprely fonctionne-t-il pour tous les types de prestations ?", a: "Oui pour les prestations récurrentes courantes : bureaux tertiaires, copropriétés, hôtellerie, retail, cabinets médicaux avec bionettoyage, industriel léger. Pour les prestations très spécialisées (salles propres ISO classe 7-8, décontamination amiante), l'IA fournit une estimation de base et propose une revue manuelle." },
+      { q: "Proprely est-il moins cher que 2BePragma pour une TPE ?", a: "En bêta privée, Proprely est gratuit (0 €/agent). 2BePragma est sur devis PME. Après lancement public, comparez le tarif fondateur Proprely au devis 2BePragma pour votre effectif." },
+      { q: "Comment candidater à la bêta Proprely depuis ce comparatif ?", a: "Utilisez le formulaire Fillout (bouton « Candidater à la bêta » sur cette page) ou le soft link /beta/. Places fondateurs limitées — sociétés de nettoyage B2B France environ 3–50 agents." },
     ],
   },
   {

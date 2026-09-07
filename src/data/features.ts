@@ -80,6 +80,7 @@ export const features: FeaturePage[] = [
     relatedLinks: [
       { to: '/comparatif/proprely-vs-kliner', label: 'Planning mobile app ou web : différence avec Kliner' },
       { to: '/comparatif/proprely-vs-sevensoft', label: 'Cockpit TPE vs ERP Sevensoft (multi-agences)' },
+      { to: '/comparatif/proprely-vs-2bepragma', label: 'Cockpit TPE vs 2BePragma (PME structurée)' },
     ],
   },
   {
@@ -132,7 +133,8 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['planning-nettoyage', 'gestion-agents-nettoyage'],
     relatedBlogSlugs: ['devis-nettoyage-intelligent-ia', 'ia-nettoyage-b2b-transformations-2026', 'fixer-prix-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
-    relatedLinks: [{ to: '/comparatif/proprely-vs-sevensoft', label: 'Devis IA Proprely vs module devis Sevensoft' }],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-sevensoft', label: 'Devis IA Proprely vs module devis Sevensoft' },
+      { to: '/comparatif/proprely-vs-2bepragma', label: 'Devis IA vs module devis 2BePragma' }],
   },
   {
     slug: 'gestion-agents-nettoyage',
@@ -218,6 +220,7 @@ export const features: FeaturePage[] = [
     relatedLinks: [
       { to: '/comparatif/proprely-vs-kliner', label: 'Preuve de passage Proprely vs approche Kliner' },
       { to: '/comparatif/proprely-vs-sevensoft', label: 'Preuve de passage vs module Sevensoft' },
+      { to: '/comparatif/proprely-vs-2bepragma', label: 'Preuve de passage vs audits 2BePragma' },
     ],
   },
   {
@@ -354,6 +357,7 @@ export const features: FeaturePage[] = [
     relatedLinks: [
       { to: '/comparatif/proprely-vs-kliner', label: 'Pointage sans surcoût par agent — vs Kliner' },
       { to: '/comparatif/proprely-vs-sevensoft', label: '0 euro/agent en beta vs budget ERP Sevensoft' },
+      { to: '/comparatif/proprely-vs-2bepragma', label: '0 €/agent vs devis 2BePragma' },
     ],
   },
   {
