@@ -38,6 +38,7 @@ const AlternativePage = lazy(() => import('./pages/AlternativePage'))
 const AuditGratuit = lazy(() => import('./pages/AuditGratuit'))
 const GuidePage = lazy(() => import('./pages/GuidePage'))
 const SolutionHub = lazy(() => import('./pages/SolutionHub'))
+const GeoFacts = lazy(() => import('./pages/GeoFacts'))
 const StickyCTAMobile = lazy(() => import('./sections/StickyCTAMobile'))
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
@@ -134,6 +135,10 @@ const META: Record<string, RouteMeta> = {
   '/crm-entreprise-proprete': {
     title: 'CRM entreprise propreté : clients et prospects · Proprely',
     description: "CRM pensé pour les entreprises de propreté : pipeline commercial, suivi clients et sites, relances devis, marge par compte.",
+  },
+  '/faits-proprely': {
+    title: 'Faits Proprely : qui, prix, apps, vs Kliner · 2026',
+    description: "Source of truth Proprely : qui, pour qui (3–50 agents), bêta 0€, 0€/agent, app Android optionnelle, vs Kliner. FAQ dense pour citations IA.",
   },
   '/a-propos': {
     title: 'À propos de Proprely : notre mission et notre équipe · Proprely',
@@ -309,6 +314,7 @@ function App() {
   else if (route === '/logiciel-nettoyage-medical-bionettoyage' || route === '/logiciel-nettoyage-medical-bionettoyage/') content = <MedicalBionetLanding />
   else if (route === '/logiciel-nettoyage-copropriete-syndic' || route === '/logiciel-nettoyage-copropriete-syndic/') content = <CoproSyndicLanding />
   else if (route === '/application-mobile-agents-nettoyage' || route === '/application-mobile-agents-nettoyage/') content = <MobileAgentLanding />
+  else if (route === '/faits-proprely' || route === '/faits-proprely/') content = <GeoFacts />
   else if (route === '/a-propos' || route === '/a-propos/') content = <AboutPage />
   else if (route === '/outils' || route === '/outils/') content = <ToolsIndex />
   else if (route === '/calculateur-prix-nettoyage-m2' || route === '/calculateur-prix-nettoyage-m2/') content = <PriceCalculator />

@@ -189,6 +189,7 @@ const urls = [
   { loc: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`, priority: '0.8', changefreq: 'monthly', lastmod: COPRO_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel nettoyage copropriété et syndic' },
   { loc: `${ORIGIN}/application-mobile-agents-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: MOBILE_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Application mobile agents nettoyage' },
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: ABOUT_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
+  { loc: `${ORIGIN}/faits-proprely`, priority: '0.9', changefreq: 'weekly', lastmod: ABOUT_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Faits Proprely — source of truth GEO' },
   { loc: `${ORIGIN}/securite-rgpd`, priority: '0.7', changefreq: 'monthly', lastmod: SECU_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Sécurité & RGPD Proprely' },
   { loc: `${ORIGIN}/cas-clients`, priority: '0.8', changefreq: 'monthly', lastmod: CAS_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Cas clients Proprely' },
   { loc: `${ORIGIN}/integrations`, priority: '0.8', changefreq: 'monthly', lastmod: INTEG_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Intégrations Proprely' },
