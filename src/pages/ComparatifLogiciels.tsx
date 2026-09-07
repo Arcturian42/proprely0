@@ -469,6 +469,7 @@ Proprely, Organilog, Progiclean, PROPRET, Synchroteam et Excel passés au crible
                 { to: '/comparatif/proprely-vs-organilog', label: 'Proprely vs Organilog', desc: 'Le face-à-face avec la suite field service' },
                 { to: '/comparatif/proprely-vs-progiclean', label: 'Proprely vs Progiclean', desc: "Face à l'ERP métier historique" },
                 { to: '/comparatif/proprely-vs-propret', label: 'Proprely vs PROPRET', desc: "Face à l'éditeur historique de la propreté" },
+                { to: '/comparatif/proprely-vs-kliner', label: 'Proprely vs Kliner', desc: 'Face au SaaS propreté + IA (essai 14j)' },
                 { to: '/proprely-vs-excel', label: 'Proprely vs Excel', desc: 'Le coût caché de la gestion sur tableur' },
                 { to: '/tarifs', label: 'Tarifs Proprely', desc: 'Gratuit pendant la bêta, tarif fondateur à vie' },
                 { to: '/fonctionnalites', label: 'Toutes les fonctionnalités', desc: 'Planning, devis, agents, preuve de passage' },

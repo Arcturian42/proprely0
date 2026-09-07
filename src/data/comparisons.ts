@@ -570,6 +570,74 @@ export const comparisons: ComparisonPage[] = [
       { q: "Proprely gère-t-il le bionettoyage médical ?", a: "Oui. Proprely intègre les protocoles de bionettoyage médical, la traçabilité des produits CMR et la conformité aux normes EN — couvert sur la page produit dédiée. Pour des exigences ISO 9001 formelles avec audit interne, Maglia reste plus adapté." },
     ],
   },
+  {
+    slug: 'proprely-vs-kliner',
+    competitorName: 'Kliner',
+    competitorUrl: 'https://kliner.me',
+    title: 'Proprely vs Kliner : comparatif 2026 pour société de nettoyage',
+    metaTitle: 'Proprely vs Kliner 2026 : comparatif honnête · Proprely',
+    metaDescription: "Comparatif Proprely vs Kliner 2026 : cible, prix, essai, mobile, preuve de passage, IA, PTI, onboarding. Lequel choisir pour une TPE/PME propreté B2B ?",
+    tldr: "Kliner est un SaaS propreté déjà commercialisé avec essai gratuit 14 jours, tarif public (39 €/mois + 4 €/utilisateur) et un positionnement fort sur l'IA et le terrain (PTI, géofencing). Proprely est un cockpit métier vertical en bêta privée pour les TPE/PME B2B de 3 à 50 agents : accès gratuit pour 30 sociétés fondatrices, onboarding 30 minutes avec le fondateur, focus sur la preuve de passage, la marge par client et un déploiement sans application à installer. Choisissez Kliner si vous voulez un essai self-serve immédiat et des modules terrain avancés (PTI) ; Proprely si vous voulez un outil léger, accompagné, et influencer la feuille de route.",
+    competitorPitch: "Kliner est un SaaS français dédié aux entreprises de nettoyage et multiservices. Il met en avant le planning, la facturation, le contrôle qualité, une application terrain, un assistant IA (Copilote / Autopilot) et des modules comme le PTI et le géofencing, avec un essai 14 jours et une grille tarifaire publique.",
+    whoChooses: {
+      proprely: [
+        "TPE/PME B2B nettoyage 3-50 agents encore sur Excel / WhatsApp",
+        "Besoin de preuve de passage native (QR + photos + signature) pour syndics / médical",
+        "Volonté d'un onboarding accompagné 30 min avec le fondateur",
+        "Budget 0 € pendant la bêta + tarif fondateur à vie",
+        "Mobile agents via lien web, sans application à installer",
+        "Envie d'influencer la roadmap produit dès le départ",
+      ],
+      competitor: [
+        "Besoin immédiat d'un essai self-serve 14 jours sans candidature",
+        "Priorité au PTI / géofencing / app native terrain",
+        "Budget SaaS déjà validé (~40–150 €/mois selon utilisateurs)",
+        "Souhaite l'IA Copilote / Autopilot tout de suite",
+        "Structure qui veut un positionnement TPE→ETI plus large",
+      ],
+    },
+    comparisonTable: [
+      { criterion: "Cible principale", proprely: "TPE/PME B2B 3-50 agents", competitor: "TPE à ETI (positionnement large)", edge: 'equal' },
+      { criterion: "Accès / essai", proprely: "Bêta privée accompagnée (candidature)", competitor: "Essai 14 jours self-serve", edge: 'competitor' },
+      { criterion: "Tarification publique", proprely: "0 € en bêta + tarif fondateur à vie", competitor: "39 €/mois + 4 €/utilisateur (+ IA Pro ~79 €)", edge: 'proprely' },
+      { criterion: "Mobile agents", proprely: "Lien web, pas d'app à installer", competitor: "Application mobile native (annoncée)", edge: 'competitor' },
+      { criterion: "Preuve de passage", proprely: "Native QR + photos + signature + PV auto", competitor: "Checklists qualité / photos", edge: 'proprely' },
+      { criterion: "Marge par client temps réel", proprely: "Natif sur dashboard", competitor: "Analytics & marges (annoncé)", edge: 'equal' },
+      { criterion: "IA", proprely: "Devis assisté (module produit)", competitor: "Copilote + Autopilot (addon)", edge: 'competitor' },
+      { criterion: "PTI / géofencing", proprely: "Non positionné comme cœur de produit", competitor: "Point fort marketing", edge: 'competitor' },
+      { criterion: "Onboarding", proprely: "30 min avec le fondateur", competitor: "Self-serve ~5–15 min", edge: 'proprely' },
+      { criterion: "Influence produit", proprely: "Feuille de route ouverte aux fondateurs", competitor: "Roadmap éditeur", edge: 'proprely' },
+      { criterion: "Spécialisation propreté B2B", proprely: "Cockpit vertical 100 % propreté", competitor: "Propreté + multiservices", edge: 'proprely' },
+      { criterion: "Hébergement / RGPD", proprely: "Europe, export 1 clic", competitor: "Claims conformité RGPD", edge: 'equal' },
+    ],
+    keyDifferences: [
+      {
+        title: "Bêta fondateur accompagnée vs essai self-serve",
+        description: "Kliner propose un essai 14 jours en libre-service : idéal si vous voulez tester seul immédiatement. Proprely est en bêta privée : candidature, onboarding 30 minutes avec le fondateur, places limitées et tarif fondateur conservé à vie. Moins de friction côté Kliner ; plus d'accompagnement et d'influence produit côté Proprely.",
+      },
+      {
+        title: "Preuve de passage native vs modules terrain avancés",
+        description: "Proprely standardise la preuve de passage (QR, photos avant/après, signature, PV) pour les clients exigeants (syndics, médical). Kliner met davantage en avant PTI, géofencing et application terrain. Le bon choix dépend de votre douleur n°1 : preuve client vs protection / localisation agents.",
+      },
+      {
+        title: "Prix : fondateur gratuit vs grille publique",
+        description: "Pendant la bêta, Proprely est à 0 € avec tarif fondateur figé ensuite. Kliner affiche une grille claire (39 € + 4 €/utilisateur, option IA). Si vous structurez votre outil maintenant avec un budget serré, la bêta Proprely est un avantage ; si vous préférez un prix public et un essai immédiat, Kliner est plus lisible.",
+      },
+      {
+        title: "IA : devis assisté vs Copilote / Autopilot",
+        description: "Kliner commercialise un assistant IA (Copilote / Autopilot) en option. Proprely concentre l'IA sur le devis et le cockpit opérationnel. Ne choisissez pas sur le mot « IA » seul : regardez si vous avez besoin d'automatiser le terrain ou d'accélérer devis + marge.",
+      },
+    ],
+    faq: [
+      { q: "Proprely est-il une alternative à Kliner ?", a: "Oui pour les TPE/PME B2B de 3 à 50 agents qui veulent un cockpit léger, une preuve de passage native et un onboarding accompagné. Non si vous avez besoin de PTI / géofencing natifs dès le jour 1 ou d'un essai self-serve sans candidature." },
+      { q: "Proprely est-il moins cher que Kliner ?", a: "Pendant la bêta privée, oui : Proprely est gratuit. Kliner facture environ 39 €/mois + 4 € par utilisateur (plus option IA). Après le lancement public, comparez le tarif fondateur Proprely à la grille Kliner selon votre nombre d'utilisateurs." },
+      { q: "Quelle est la différence principale entre Proprely et Kliner ?", a: "Kliner est un SaaS commercialisé avec essai 14 jours, grille publique et focus IA/PTI. Proprely est un cockpit vertical en bêta privée pour 3–50 agents, avec onboarding fondateur, preuve de passage native et marge par client, sans app à installer." },
+      { q: "Faut-il installer une application pour les agents ?", a: "Avec Proprely, les agents ouvrent un lien web mobile-first (pas d'installation). Kliner met en avant une application mobile native. Web = moins de friction de déploiement ; native = expérience terrain parfois plus poussée (hors-ligne, PTI)." },
+      { q: "Qui devrait choisir Kliner plutôt que Proprely ?", a: "Les structures qui veulent démarrer seules en 14 jours, avec PTI/géofencing et une IA Copilote/Autopilot, et qui ont déjà un budget SaaS mensuel validé." },
+      { q: "Peut-on migrer de Kliner vers Proprely ?", a: "En principe oui pour les données opérationnelles exportables (clients, sites, agents, plannings) au format CSV/Excel. L'onboarding Proprely (30 min) sert à importer et reconstituer l'organisation. Vérifiez toujours les exports disponibles dans votre compte Kliner." },
+    ],
+  },
+
 ]
 
 export function getComparison(slug: string): ComparisonPage | undefined {
