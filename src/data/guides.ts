@@ -543,6 +543,79 @@ export const guides: GuidePage[] = [
       { to: '/logiciel-auto-entrepreneur-nettoyage', label: 'Logiciel auto-entrepreneur nettoyage' },
     ],
   },
+{
+    slug: 'facturation-electronique-proprete-2026',
+    title: "Facturation électronique pour société de nettoyage : guide de démarrage 2026–2027",
+    metaTitle: "Facturation électronique nettoyage 2026 : guide TPE/PME",
+    metaDescription: "Réception e-factures dès sept. 2026, émission PME en 2027. Checklist concrète pour sociétés de nettoyage 3–50 agents. Guide démarrage Proprely.",
+    tldr: "Selon le calendrier officiel de la réforme, depuis le 1er septembre 2026, toute entreprise assujettie à la TVA doit pouvoir recevoir des factures électroniques via une plateforme agréée. Les grandes entreprises et ETI doivent aussi émettre et transmettre le e-reporting à cette date. Les PME, TPE et micro-entreprises — le cas typique d'une société de nettoyage de 3 à 50 agents — doivent être prêtes à émettre et au e-reporting au 1er septembre 2027. Ce guide répond à la question terrain « par où je commence dans mon ops nettoyage ? », du devis à la facture récurrente.",
+    primaryQuestion: "Comment démarrer la facturation électronique en société de nettoyage ?",
+    sections: [
+      {
+        heading: "Calendrier pour une société de nettoyage TPE/PME",
+        paragraphs: [
+          "Selon le calendrier officiel de la réforme (à confirmer sur [economie.gouv.fr](https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises) et [impots.gouv.fr](https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique)) : **1er septembre 2026** — toutes les entreprises assujetties à la TVA doivent **recevoir** des factures électroniques via une plateforme agréée / circuit conforme ; à la même date, les grandes entreprises et **ETI** doivent aussi **émettre** et transmettre le **e-reporting**. **1er septembre 2027** — les **PME / TPE / micro** doivent **émettre** et assurer le e-reporting.",
+          "**Lecture « société de nettoyage 3–50 agents ».** Priorité immédiate (2026) : la **réception**. Vos fournisseurs (produits, EPI, sous-traitance, logiciels, loyer…) et certains clients grands comptes peuvent déjà vous envoyer des e-factures. Sans capacité de réception, vous bloquez le circuit d'achat et la compta. Priorité structurante (d'ici sept. 2027) : l'**émission**. Vos factures clients B2B (bureaux, syndics, hôtels, cabinets…) devront sortir dans le circuit électronique — pas un PDF collé dans un mail « parce que c'est numérique ». E-reporting : transmission de certaines données de transaction / paiement à l'administration, selon les textes — à traiter avec votre expert-comptable / plateforme, pas « à la main sur Excel ».",
+          "**Sanctions.** Des sanctions sont prévues par les textes en cas de non-respect ; montants et modalités évoluent — **à vérifier** auprès de votre conseil et des sources officielles. En pratique : cartographiez vos flux (fournisseurs + clients), désignez une plateforme agréée (ou une solution compatible raccordée), et alignez votre logiciel métier pour que la facture parte du **contrat / des passages réalisés**, pas d'un Word isolé. Pour le détail formats / échéances Factur-X : [Factur-X société de nettoyage 2027](/blog/factur-x-societe-nettoyage-2027/).",
+        ],
+      },
+      {
+        heading: "Ce qui change dans la chaîne ops nettoyage",
+        paragraphs: [
+          "La réforme ne crée pas votre métier : elle force la **traçabilité et le format** de la facture. Pour une société de propreté, la chaîne critique reste : **Devis → contrat → planification → passage (preuve) → facture récurrente → relance → export compta / paie**.",
+          "**Avant vs avec une ops saine.** Devis : Word / PDF email → devis signé qui devient contrat (même référentiel client / site / prestations / TVA). Contrat : classeur + oublis de reconduction → source de vérité pour la facturation périodique. Passage : WhatsApp « c'est fait » → preuve de passage (horodatage, photos, signature / QR) pour justifier la facture. Facture : resaisie Excel / Word → facture structurée (ex. Factur-X) émise via circuit plateforme, alignée sur le contrat. Relances : mail libre → relances datées et traçables. Compta / paie : double saisie → export comptable (Pennylane, CSV…) ; heures / pointage → export paie (ex. Silae) **séparé** de la facture client mais dans le même cockpit.",
+          "**Points de friction typiques (3–50 agents).** Client grand compte / ETI qui exige déjà le circuit e-facture alors que vous êtes encore en PDF mail. Facturation multi-sites (un contrat groupe, plusieurs sites) : besoin de ventilation claire — la preuve de passage par site aide à défendre la facture. TVA 10 % / 20 % selon nature de prestation / client : le format électronique n'enlève pas l'obligation d'avoir les bons taux et mentions. Sous-traitance : vous êtes aussi **récepteur** de factures ; la réception 2026 n'est pas un détail. Marchés publics : circuit distinct via **Chorus Pro** — ne pas confondre avec le B2B privé.",
+          "La réforme pénalise surtout les process **éclatés** (devis ici, planning là, facture ailleurs). Un cockpit métier propreté réduit les ressaisies : c'est là que Proprely se positionne.",
+        ],
+      },
+      {
+        heading: "Vocabulaire simple : Factur-X, PDP, Chorus Pro",
+        paragraphs: [
+          "**Factur-X.** Format de facture électronique **hybride** : un PDF lisible + un fichier de données structurées (XML). C'est l'un des formats retenus dans le cadre français. Pour le détail : [glossaire Factur-X](/glossaire/factur-x/) et [article Factur-X 2027](/blog/factur-x-societe-nettoyage-2027/).",
+          "**PDP / plateforme agréée (PA).** Intermédiaire **agréé** par l'administration pour émettre, transmettre et recevoir les factures électroniques et certaines données. Le vocabulaire officiel évolue (« plateforme agréée ») : l'idée métier reste « passer par un acteur reconnu, pas envoyer un PDF solo ». Voir [glossaire PDP](/glossaire/pdp/).",
+          "**PPF.** Historiquement le portail public envisagé dans l'architecture de la réforme. Le dispositif a évolué ; **ne pas fonder votre choix outil sur une ancienne slide PPF**. Basez-vous sur la liste des plateformes agréées et la doc DGFiP / economie.gouv à jour.",
+          "**Chorus Pro.** Plateforme de facturation des **marchés publics** (État, collectivités…). Si vous facturez le public, Chorus Pro reste un sujet distinct du B2B privé — [glossaire Chorus Pro](/glossaire/chorus-pro/).",
+          "**E-invoicing vs e-reporting.** E-invoicing = échange de la facture électronique entre entreprises (via plateforme). E-reporting = transmission de données de transaction / paiement à l'administration, selon les cas prévus par les textes. **Solution compatible** : logiciel métier ou de facturation **raccordé** à une plateforme agréée, sans être lui-même la plateforme — utile pour une TPE propreté qui veut un outil vertical (planning + factures) plutôt qu'un portail générique seul.",
+        ],
+      },
+      {
+        heading: "Checklist concrète — société 3 à 50 agents",
+        paragraphs: [
+          "**Phase A — Réception (échéance 1er sept. 2026 — déjà en vigueur selon le calendrier officiel).** Identifier le statut de l'entreprise (micro / TPE / PME vs ETI) avec le comptable. Lister les flux entrants : fournisseurs récurrents, sous-traitants, loyers, abonnements logiciels, centrales d'achat. Choisir / désigner une plateforme agréée (ou solution compatible raccordée) et vérifier son statut sur la liste officielle (impots.gouv.fr). Donner l'adresse de facturation électronique à vos principaux fournisseurs. Définir le process interne réception (qui ouvre / valide / comptabilise). Tester la réception sur 1–2 fournisseurs pilotes. Aligner l'archivage avec le cabinet.",
+          "**Phase B — Émission (échéance 1er sept. 2027 pour PME/TPE/micro).** Cartographier les clients : B2B privé vs public (Chorus) ; grands comptes déjà exigeants en e-facture. Fiabiliser la source de facture : contrat / prestations / sites / TVA — plus de resaisie depuis un devis PDF perdu. Caler la facturation récurrente (dates, contact compta client, mentions légales, pénalités). Chaîne preuve → facture : passages réalisés / litiges documentés avant relance agressive. Export comptable attendu par le cabinet (Pennylane, CSV…). Caler l'e-reporting avec plateforme + expert-comptable. Former une personne « référente facturation ». Prévoir un plan B continuité : en phase de démarrage, une facture hors circuit ne doit pas être ignorée si l'opération est réelle ; régulariser ensuite (suivre le guide pratique DGFiP).",
+          "**Phase C — Gouvernance (continu).** Revue trimestrielle des impayés / DSO. Mise à jour des conditions générales / mentions facture si besoin (avec conseil). Veille : economie.gouv.fr + newsletter Bercy Infos — sans dépendre d'un article blog figé.",
+        ],
+      },
+      {
+        heading: "Comment Proprely aide",
+        paragraphs: [
+          "Proprely est un **cockpit de gestion pour sociétés de nettoyage B2B en France** (planning, agents, sites, devis, preuves de passage, facturation, pointage). L'objectif n'est pas d'être « un portail e-facture générique », mais de relier **l'ops terrain** à **la facture** pour les structures de **3 à 50 agents**.",
+          "**Forces produit concrètes.** Facturation **récurrente** calée sur le contrat (après devis signé). **Relances** structurées (ex. J+15 / J+30) pour réduire les retards de paiement. **Export comptable** vers l'écosystème du cabinet (ex. Pennylane ; CSV / formats standards selon config). Chaîne **devis → contrat → passages → facture** dans le même outil. **Preuve de passage** (QR, photos, signature…) pour sécuriser le dialogue client quand une facture est contestée. Pilotage des factures émises / encaissées / en retard dans le cockpit. App mobile Android optionnelle ; pas de facturation par utilisateur agent.",
+          "**Réforme e-facture — positionnement honnête.** Proprely prépare sa conformité facturation électronique (formats structurés type Factur-X, raccordement plateforme / Chorus selon les cas d'usage). À date : **préparation / conformité en cours de finalisation**. Les forces actuelles mises en avant sont la facturation récurrente, les relances et l'export comptable, dans un cockpit propreté — pas « 100 % conforme dès le jour J » ni « aucune action à prévoir ».",
+          "**Ce que Proprely n'est pas.** Pas un remplaçant de votre expert-comptable ni de la plateforme agréée choisie. Pas un ERP paie/GED complet type PROPRET pour +50 agents très structurés. Pas un outil « facturation seule » type Henrri/Bizyness sans planning ni preuve de passage. En résumé : Proprely vous aide à **arriver prêts** sur le fond (données contrats, récurrence, relances, exports) pendant que la couche réglementaire e-facture se finalise — puis à candidater à la bêta pour influencer la feuille de route avec d'autres dirigeants propreté.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Faut-il déjà émettre des factures électroniques si je suis une TPE de nettoyage ?", a: "Selon le calendrier officiel de la réforme, l'obligation d'émission pour les PME, TPE et micro-entreprises est fixée au 1er septembre 2027. En revanche, la réception concerne toutes les entreprises assujetties à la TVA depuis le 1er septembre 2026. Vérifiez votre catégorie (et tout grand compte qui impose déjà ses règles) sur economie.gouv.fr / avec votre comptable." },
+      { q: "Une facture PDF envoyée par email suffit-elle ?", a: "Non pour l'obligation de facturation électronique au sens de la réforme : le circuit passe par une plateforme agréée (ou solution compatible raccordée) et un format structuré reconnu (ex. Factur-X). Un PDF mail reste courant en transition, mais ce n'est pas l'objectif cible. Voir le guide pratique DGFiP pour la phase de démarrage et la continuité de traitement." },
+      { q: "Qu'est-ce que je dois faire en premier dans ma société de nettoyage ?", a: "1) Capacité de réception et choix de plateforme ; 2) cartographie clients / fournisseurs ; 3) fiabiliser contrats + facturation récurrente + TVA ; 4) caler export comptable ; 5) planifier l'émission avant 2027. La checklist de ce guide détaille les cases à cocher." },
+      { q: "Factur-X, PDP et Chorus Pro : je dois tout activer ?", a: "Pas forcément tout, tout de suite. Factur-X = format. PDP / plateforme agréée = circuit B2B. Chorus Pro = surtout marchés publics. Une société 100 % privée B2B priorise plateforme + format ; une société qui facture des collectivités ajoute Chorus." },
+      { q: "La preuve de passage a-t-elle un lien avec la facture électronique ?", a: "Pas un lien réglementaire direct « preuve = Factur-X », mais un lien ops et commercial fort : en propreté, les litiges portent souvent sur « prestation non faite / mal faite ». Une preuve horodatée sécurise la facture et les relances — surtout en multi-sites." },
+      { q: "Proprely est-il déjà 100 % conforme Factur-X / PDP ?", a: "Proprely prépare sa conformité e-facture (feuille de route / finalisation). Les forces actuelles mises en avant sont la facturation récurrente, les relances et l'export comptable, dans un cockpit propreté. Ne pas lire cette page comme une attestation « 100 % conforme / prêt jour J »." },
+      { q: "Que risque-je si je ne suis pas prêt ?", a: "Des sanctions sont prévues par les textes ; modalités à vérifier sur les sources officielles et avec votre conseil. Au-delà du risque juridique : blocage fournisseurs, friction grands comptes, ressaisie comptable, trésorerie dégradée si les factures partent en retard." },
+      { q: "Comment candidater pour tester Proprely ?", a: "Remplissez le formulaire de candidature Fillout : https://pershingsolution.fillout.com/t/rBPhgNm42Lus. Pour le contexte offre (places fondateurs, ICP), voir aussi la page bêta — sur le site, les CTA pointent vers le même formulaire. Profil recherché : société de nettoyage B2B France, environ 3–50 agents, déjà quelques sites clients, aujourd'hui sur Excel / WhatsApp / Word." },
+    ],
+    relatedLinks: [
+      { to: '/blog/factur-x-societe-nettoyage-2027', label: 'Factur-X pour société de nettoyage (2027) — calendrier & formats' },
+      { to: '/fonctionnalites/facturation-nettoyage', label: 'Logiciel facturation nettoyage' },
+      { to: '/glossaire/factur-x', label: 'Glossaire Factur-X' },
+      { to: '/glossaire/pdp', label: 'Glossaire PDP' },
+      { to: '/glossaire/chorus-pro', label: 'Glossaire Chorus Pro' },
+      { to: '/beta', label: 'Page offre bêta Proprely' },
+      { to: '/comparatif/proprely-vs-kliner', label: 'Proprely vs Kliner' },
+    ],
+  },
 ]
 
 export function getGuide(slug: string): GuidePage | undefined {
