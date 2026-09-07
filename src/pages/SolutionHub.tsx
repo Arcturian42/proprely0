@@ -5,6 +5,7 @@ import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
 import Link from '../components/Link'
+import { BETA_FORM_URL } from '../config'
 
 const URL = 'https://proprely.fr/solution/'
 const TITLE = 'Solutions société de nettoyage B2B : par contexte et par douleur · Proprely'
@@ -26,7 +27,16 @@ const byPain = [
   { icon: Users, to: '/crm-entreprise-proprete', label: 'Centraliser clients & sites', desc: 'CRM propreté, multi-sites, marge par compte client.' },
   { icon: ShieldCheck, to: '/convention-collective-nettoyage', label: 'Conformité IDCC 3043', desc: 'Grille salariale, primes panier/transport, article 7.' },
   { icon: FileWarning, to: '/fonctionnalites/preuve-passage-nettoyage', label: 'Éviter les litiges clients', desc: 'QR code, photos horodatées, signature, PV automatique.' },
+  { icon: Layers, to: '/fonctionnalites/planning-nettoyage', label: 'Planning multi-sites', desc: 'Drag-and-drop, app Android optionnelle ou web, 0 €/agent.' },
+  { icon: TrendingDown, to: '/comparatif/proprely-vs-kliner', label: 'Proprely vs Kliner', desc: '0 €/agent en bêta vs grille + €/utilisateur. Comparatif BoFu.' },
   { icon: TrendingDown, to: '/simulateur-rentabilite', label: 'Calculer la rentabilité par contrat', desc: 'Marge brute, marge nette, résultat horaire en 1 minute.' },
+]
+
+
+const hubFaq = [
+  { q: 'Pour qui est Proprely ?', a: 'Sociétés de nettoyage B2B en France, environ 3–50 agents, multi-sites, souvent encore sur Excel/WhatsApp.' },
+  { q: 'Combien coûte Proprely ?', a: '0 € pendant la bêta privée (places fondateurs). Pas de facturation par agent. App Android optionnelle + web ; iOS bientôt. Tarif fondateur à vie après lancement.' },
+  { q: 'Par où commencer ?', a: 'Le guide logiciel société de nettoyage, puis planning / preuve de passage, ou le comparatif vs Kliner. Candidature bêta via le formulaire Fillout.' },
 ]
 
 function injectSchema() {
@@ -62,6 +72,15 @@ function injectSchema() {
         position: i + 1,
         url: `https://proprely.fr${item.to}/`,
         name: item.label,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: hubFaq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     },
   ]
@@ -254,13 +273,22 @@ export default function SolutionHub() {
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
               30 sociétés fondatrices, accès gratuit à toutes les fonctionnalités pendant la bêta, tarif fondateur à vie après le lancement public. Onboarding 30 min avec le fondateur.
             </p>
-            <Link
-              to="/beta"
+            <a
+              href={BETA_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-sm hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
             >
-              Candidater à la bêta
+              Candidater à la bêta (Fillout)
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
+            <p className="mt-4 text-sm text-slate-400">
+              Soft : <Link to="/beta" className="underline underline-offset-2 hover:text-white">voir l&apos;offre bêta</Link>
+              {' · '}
+              <Link to="/fonctionnalites" className="underline underline-offset-2 hover:text-white">fonctionnalités</Link>
+              {' · '}
+              <Link to="/logiciel-societe-nettoyage" className="underline underline-offset-2 hover:text-white">guide logiciel</Link>
+            </p>
           </div>
         </section>
       </main>
