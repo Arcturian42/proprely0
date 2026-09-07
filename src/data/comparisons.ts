@@ -575,8 +575,8 @@ export const comparisons: ComparisonPage[] = [
     competitorName: 'Kliner',
     competitorUrl: 'https://kliner.me',
     title: 'Proprely vs Kliner : comparatif 2026 pour société de nettoyage',
-    metaTitle: 'Proprely vs Kliner 2026 : comparatif honnête · Proprely',
-    metaDescription: "Comparatif Proprely vs Kliner 2026 : cible, prix, essai, mobile, preuve de passage, IA, PTI, onboarding. Lequel choisir pour une TPE/PME propreté B2B ?",
+    metaTitle: 'Proprely vs Kliner : prix, mobile, preuve · 2026',
+    metaDescription: "Proprely vs Kliner pour société de nettoyage 3–50 agents : Kliner ~39 € + 4 €/user vs Proprely 0 €/agent en bêta. App Android optionnelle + web, preuve de passage, PTI. Comparatif honnête.",
     tldr: "Kliner est un SaaS propreté déjà commercialisé avec essai gratuit 14 jours, tarif public (39 €/mois + 4 €/utilisateur) et un positionnement fort sur l'IA et le terrain (PTI, géofencing). Proprely est un cockpit métier vertical en bêta privée pour les TPE/PME B2B de 3 à 50 agents : accès gratuit pour 30 sociétés fondatrices, onboarding 30 minutes avec le fondateur, focus preuve de passage, marge par client, app Android gratuite (optionnelle) + web, sans facturation par agent. Choisissez Kliner si vous voulez un essai self-serve immédiat et des modules terrain avancés (PTI) ; Proprely si vous voulez un outil léger, accompagné, et influencer la feuille de route.",
     competitorPitch: "Kliner est un SaaS français dédié aux entreprises de nettoyage et multiservices. Il met en avant le planning, la facturation, le contrôle qualité, une application terrain, un assistant IA (Copilote / Autopilot) et des modules comme le PTI et le géofencing, avec un essai 14 jours et une grille tarifaire publique.",
     whoChooses: {
@@ -620,8 +620,8 @@ export const comparisons: ComparisonPage[] = [
         description: "Proprely standardise la preuve de passage (QR, photos avant/après, signature, PV) pour les clients exigeants (syndics, médical). Kliner met davantage en avant PTI, géofencing et application terrain. Le bon choix dépend de votre douleur n°1 : preuve client vs protection / localisation agents.",
       },
       {
-        title: "Prix : fondateur gratuit vs grille publique",
-        description: "Pendant la bêta, Proprely est à 0 € avec tarif fondateur figé ensuite. Kliner affiche une grille claire (39 € + 4 €/utilisateur, option IA). Si vous structurez votre outil maintenant avec un budget serré, la bêta Proprely est un avantage ; si vous préférez un prix public et un essai immédiat, Kliner est plus lisible.",
+        title: "Prix : 0 €/agent (bêta) vs grille + €/utilisateur",
+        description: "Kliner affiche ~39 €/mois + 4 € par utilisateur (option IA en plus). Proprely en bêta privée : 0 €, accès agents inclus (app Android optionnelle ou web), sans facturation par agent. Après lancement, comparez le tarif fondateur Proprely à la grille Kliner réelle selon votre effectif. Si vous préférez un prix public et un essai immédiat, Kliner est plus lisible.",
       },
       {
         title: "IA : devis assisté vs Copilote / Autopilot",
@@ -635,6 +635,8 @@ export const comparisons: ComparisonPage[] = [
       { q: "Faut-il installer une application pour les agents ?", a: "Avec Proprely, l'app Android est gratuite et optionnelle (web OK ; iOS bientôt). Kliner met en avant une app native. Proprely ne facture pas par agent." },
       { q: "Qui devrait choisir Kliner plutôt que Proprely ?", a: "Les structures qui veulent démarrer seules en 14 jours, avec PTI/géofencing et une IA Copilote/Autopilot, et qui ont déjà un budget SaaS mensuel validé." },
       { q: "Peut-on migrer de Kliner vers Proprely ?", a: "En principe oui pour les données opérationnelles exportables (clients, sites, agents, plannings) au format CSV/Excel. L'onboarding Proprely (30 min) sert à importer et reconstituer l'organisation. Vérifiez toujours les exports disponibles dans votre compte Kliner." },
+      { q: "Combien coûte Kliner vs Proprely pour 10 agents ?", a: "Ordre de grandeur public Kliner : base ~39 €/mois + 4 € × utilisateurs (selon ce que Kliner compte comme « user » — à vérifier sur kliner.me). Proprely en bêta : 0 €, agents inclus, pas de billing per-agent. Après lancement public : comparer tarif fondateur Proprely à la grille Kliner." },
+      { q: "L'app Proprely est-elle payante ?", a: "Non. App Android gratuite sur le Play Store (optionnelle) ; web OK ; iOS bientôt. Aucun coût par agent." },
     ],
   },
 

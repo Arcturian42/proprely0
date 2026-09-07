@@ -170,6 +170,13 @@ export default function ComparisonPage({ slug }: Props) {
                 Calculer mon économie
               </Link>
             </motion.div>
+            <p className="mt-4 text-sm text-slate-500 text-center">
+              Soft :{' '}
+              <Link to="/beta" className="text-blue-700 font-semibold underline underline-offset-2 hover:text-blue-800">
+                voir l&apos;offre bêta
+              </Link>
+              {' '}(même formulaire Fillout)
+            </p>
           </div>
         </section>
 

@@ -295,6 +295,7 @@ export default function MobileAgentLanding() {
               <li>📸 <Link to="/fonctionnalites/preuve-passage-nettoyage" className="text-blue-700 font-semibold hover:underline">Preuve de passage mobile : QR + photos + signature</Link></li>
               <li>👥 <Link to="/fonctionnalites/gestion-agents-nettoyage" className="text-blue-700 font-semibold hover:underline">Gestion agents : profils, spécialités, alertes</Link></li>
               <li>📊 <Link to="/blog/calcul-heures-agents-nettoyage" className="text-blue-700 font-semibold hover:underline">Calcul des heures agents : méthode et coût 2026</Link></li>
+              <li>⚖️ <Link to="/comparatif/proprely-vs-kliner" className="text-blue-700 font-semibold hover:underline">Proprely vs Kliner — app optionnelle vs app native</Link></li>
               <li>📖 <Link to="/blog/comparatif-logiciels-nettoyage-2026" className="text-blue-700 font-semibold hover:underline">Comparatif logiciels métier nettoyage 2026</Link></li>
             </ul>
           </div>

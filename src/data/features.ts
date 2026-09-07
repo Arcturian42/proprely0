@@ -25,6 +25,8 @@ export type FeaturePage = {
   faq: FeatureFAQ[]
   relatedSlugs: string[]
   relatedBlogSlugs?: string[]
+  /** Liens internes hors fonctionnalités (comparatifs, guides) */
+  relatedLinks?: { to: string; label: string }[]
   /** Étapes HowTo (schema.org) pour aider Google et les LLMs à comprendre
    * comment utiliser la fonctionnalité. Mapping centralisé en bas de fichier. */
   howTo?: FeatureHowTo
@@ -75,6 +77,7 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['gestion-agents-nettoyage', 'preuve-passage-nettoyage'],
     relatedBlogSlugs: ['logiciel-planning-nettoyage-2026', 'fideliser-agents-nettoyage-turnover', 'calcul-heures-agents-nettoyage', 'comparatif-logiciels-nettoyage-2026'],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Planning mobile app ou web : différence avec Kliner' }],
   },
   {
     slug: 'devis-nettoyage',
@@ -208,6 +211,7 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['planning-nettoyage', 'gestion-agents-nettoyage'],
     relatedBlogSlugs: ['logiciel-societe-nettoyage-criteres', 'rgpd-societe-nettoyage-2026'],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Preuve de passage Proprely vs approche Kliner' }],
   },
   {
     slug: 'gestion-sites-clients-nettoyage',
@@ -340,6 +344,7 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['gestion-agents-nettoyage', 'planning-nettoyage'],
     relatedBlogSlugs: ['calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'cout-horaire-charge-agent-nettoyage'],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Pointage sans surcoût par agent — vs Kliner' }],
   },
   {
     slug: 'facturation-nettoyage',
@@ -385,6 +390,7 @@ export const features: FeaturePage[] = [
     ],
     relatedSlugs: ['devis-nettoyage', 'gestion-sites-clients-nettoyage'],
     relatedBlogSlugs: ['logiciel-devis-nettoyage-gratuit', 'fixer-prix-nettoyage'],
+    relatedLinks: [{ to: '/comparatif/proprely-vs-kliner', label: 'Coût / utilisateur : Proprely vs Kliner' }],
   },
 ]
 

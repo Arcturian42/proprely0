@@ -73,6 +73,7 @@ export const guides: GuidePage[] = [
       { q: "Peut-on migrer d'un logiciel à un autre facilement ?", a: "Oui pour les données opérationnelles (clients, sites, agents, plannings) au format CSV/Excel. Les SaaS modernes proposent l'export 1-clic. Les ERP métier demandent parfois une procédure plus longue (1-3 jours). Pour les fonctions paie/GED intégrées dans un ERP que vous quittez, prévoir une solution externe (Silae, Drive)." },
     ],
     relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Proprely vs Kliner — comparatif 2026' },
       { to: '/logiciel-societe-nettoyage', label: 'Guide complet logiciel société de nettoyage' },
       { to: '/comparatif-logiciel-nettoyage', label: 'Comparatif logiciels nettoyage 2026' },
       { to: '/blog/logiciel-societe-nettoyage-criteres', label: 'Critères de choix logiciel nettoyage' },
@@ -310,6 +311,7 @@ export const guides: GuidePage[] = [
       { q: "Le tarif évolue-t-il dans le temps ?", a: "SaaS modernes : généralement stable avec hausses annuelles modérées (3-5 %). Proprely garantit un tarif fondateur conservé à vie aux 30 bêta-testeurs, à l'abri de toute hausse future. ERP métier : tarif renégocié annuellement, hausses possibles selon évolution de votre périmètre." },
     ],
     relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Exemple grille : Kliner 39 € + 4 €/user vs bêta Proprely' },
       { to: '/tarifs', label: 'Tarifs Proprely' },
       { to: '/comparatif-logiciel-nettoyage', label: 'Comparatif logiciels nettoyage 2026' },
       { to: '/calculateur-roi', label: 'Calculateur ROI logiciel nettoyage' },
@@ -482,6 +484,7 @@ export const guides: GuidePage[] = [
       { q: "Existe-t-il des alternatives gratuites aux logiciels de nettoyage ?", a: "Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices). Quelques outils horizontaux freemium existent (Trello, Notion, Google Sheets) mais aucun n'est conçu pour la propreté B2B et tous demandent une lourde adaptation manuelle. Pour un vrai logiciel métier propreté gratuit, Proprely en bêta privée reste l'option principale en 2026." },
     ],
     relatedLinks: [
+      { to: '/comparatif/proprely-vs-kliner', label: 'Proprely vs Kliner' },
       { to: '/comparatif-logiciel-nettoyage', label: 'Comparatif logiciels nettoyage 2026' },
       { to: '/alternative-organilog', label: 'Alternative à Organilog' },
       { to: '/alternative-progiclean', label: 'Alternative à Progiclean' },
