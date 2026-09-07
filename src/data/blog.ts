@@ -30,6 +30,112 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'assurances-professionnelles-societe-nettoyage',
+    title: "Assurances pro société de nettoyage : points clés",
+    excerpt: "RC pro et assurances pour société de nettoyage B2B : risques terrain, garanties à revoir avec le courtier, preuve de passage en litige. Angle Bercy Infos n°515.",
+    date: "7 septembre 2026",
+    dateModified: "7 septembre 2026",
+    readTime: "8 min",
+    tag: "RH & conformité",
+    tldr: "Sites tiers, matériel client, parfois hauteur ou locaux sensibles : le risque en propreté B2B est réel. Bercy Infos n°515 rappelle de revoir ses garanties professionnelles. Côté ops, la traçabilité (preuve de passage, suivi d’interventions) complète l’assurance — elle ne la remplace pas. Discutez toujours couverture et exclusions avec assureur ou courtier. Cet article ne constitue aucune garantie de couverture.",
+    quickSummary: [
+      "Risques typiques : dégâts site client, vols signalés, accidents agents",
+      "Garanties à revoir avec courtier — pas de liste magique universelle",
+      "Bercy n°515 : rappel de revoir ses assurances pro (haut niveau)",
+      "Preuve de passage = dossier utile, pas un substitut à la police",
+      "Proprely trace l’ops — ce n’est pas une assurance",
+    ],
+    faq: [
+      { q: "La RC pro suffit-elle partout ?", a: "Pas forcément. Selon vos activités (hauteur, locaux médicaux, sous-traitance, flotte, locaux propres), d’autres garanties peuvent être nécessaires. Seul votre assureur / courtier peut dire ce qui couvre votre situation réelle." },
+      { q: "Faut-il déclarer la sous-traitance ?", a: "En général, oui : une sous-traitance non déclarée ou mal encadrée est un classique de litige / refus. Vérifiez les clauses de votre contrat et informez votre courtier dès que vous sous-traitez des sites." },
+      { q: "La preuve de passage sert-elle en sinistre ?", a: "Elle peut aider à documenter ce qui a été fait, quand, et par qui (photos, horodatage, site). Elle ne remplace pas la déclaration de sinistre ni l’expertise. Conservez les traces selon les conseils de votre assureur / conseil." },
+      { q: "Quels premiers réflexes ops après un incident sur site client ?", a: "Sécuriser personnes et zone, informer le client selon process, photographier / noter les faits, prévenir le responsable, contacter assureur / courtier selon vos consignes. N’improvisez pas d’aveux de responsabilité sur WhatsApp." },
+      { q: "Proprely remplace-t-il une assurance ?", a: "Non. Proprely structure planning, interventions et preuves de passage. L’assurance et la gestion de sinistre restent chez votre assureur / courtier." },
+      { q: "À quelle fréquence revoir ses garanties ?", a: "À chaque changement matériel (nouveaux sites sensibles, sous-traitance, croissance d’effectif, nouveaux métiers) et au renouvellement annuel — au minimum. Bercy Infos n°515 insiste sur le fait de ne pas laisser dormir des contrats obsolètes." },
+    ],
+    relatedSlugs: ['recruter-saisonnier-proprete', 'embauche-apprenti-entreprise-nettoyage', 'heures-supplementaires-agents-nettoyage'],
+    content: `## Réponse-flash
+
+Une société de nettoyage B2B intervient chez des **tiers** : bureaux, parties communes, parfois sites plus sensibles. Matériel client, accès, hauteur, produits — le **risque** est réel. Bercy Infos n°515 rappelle aux dirigeants de **revoir leurs assurances professionnelles**.
+
+Côté ops, la **preuve de passage** et le suivi d’interventions aident à documenter le terrain. Elles **complètent** l’assurance ; elles ne la remplacent pas.
+
+Ce guide est **opérationnel** pour un dirigeant 3–50 agents. **Aucune** promesse de couverture. Discutez toujours avec votre **assureur ou courtier**.
+
+## Risques typiques propreté B2B
+
+Sans exhaustivité :
+
+- Dégât ou tache sur un bien du client (sol, mobilier, équipement).
+- Incident pendant l’intervention (glissade, produit mal utilisé).
+- Litige « passage non fait » / qualité contestée.
+- Vol ou disparition signalée sur site (souvent conflictuel).
+- Sous-traitance ou agent intérimaire mal encadrés.
+- Accès / clés / badges (responsabilité opérationnelle + parfois assurance).
+
+Chaque société a un profil différent : votre police doit coller à **vos** sites, pas à un modèle générique lu en ligne.
+
+## Familles de garanties à discuter (générique)
+
+À aborder avec assureur / courtier — **pas** une checklist exhaustive ni un conseil de souscription :
+
+- **Responsabilité civile professionnelle** (RC pro) et / ou exploitation.
+- Multirisque locaux / matériel de l’entreprise (si pertinent).
+- Flotte / véhicules de service.
+- Protection juridique.
+- Garanties liées à des activités spécifiques (à déclarer explicitement).
+
+Demandez clairement : **exclusions**, franchises, plafonds, obligations de déclaration (sous-traitance, nouveaux métiers).
+
+## Angle Bercy Infos n°515
+
+Le message utile pour un dirigeant TPE/PME : ne pas laisser des contrats **obsolètes** par rapport à l’activité réelle (nouveaux sites, montée en charge, sous-traitance). Revoyez à froid, pas seulement après sinistre.
+
+Pas d’URL tokenisée ici — passez par votre courtier et les sources officielles / votre contrat.
+
+## Preuve de passage et dossier litige
+
+En cas de contestation client ou de sinistre, un dossier ops propre aide :
+
+- Qui était affecté, quel créneau, quel site.
+- Preuves horodatées (photos / QR) si votre process le prévoit.
+- Consignes site et écarts signalés.
+
+**Limite :** la preuve documente ; l’assureur instruit. Ne confondez pas les deux.
+
+## Checklist avant l’appel assureur / courtier
+
+1. Liste des **typologies de sites** (bureaux, parties communes, sensibles…).
+2. Effectif agents + recours intérim / sous-traitance.
+3. Matériel et produits utilisés (hauteur, mono-brosse, etc. si pertinent).
+4. Process clés / alarmes / consignes.
+5. Sinistres ou near-miss des 24–36 derniers mois (même « petits »).
+6. Questions précises : sous-traitance, plafonds, exclusions qualité / vol.
+
+## Comment Proprely aide — pas une assurance
+
+Proprely centralise **planning**, **suivi d’interventions** et **preuve de passage** (app Android optionnelle gratuite ou web ; iOS bientôt). Objectif : moins de flou « qui a fait quoi » le jour J.
+
+**Limite honnête :** Proprely n’est **pas** une assurance, n’indemnise pas, et ne conseille pas de police. Parlez couverture uniquement à votre assureur / courtier.
+
+## Pour aller plus loin
+
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage)
+- [Suivi des interventions](/fonctionnalites/suivi-interventions-nettoyage)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+- [Recruter un saisonnier](/blog/recruter-saisonnier-proprete)
+
+## Candidater à la bêta
+
+Vous voulez une traçabilité ops propre (planning + preuves) en complément de votre cadre assureur ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
     slug: 'recruter-saisonnier-proprete',
     title: "Recruter un saisonnier en propreté : mode d’emploi",
     excerpt: "Saisonnier en société de nettoyage : formalités (angle Bercy n°516), pics d’activité, onboarding 48 h et planning multi-sites. Guide dirigeants 3–50 agents.",
