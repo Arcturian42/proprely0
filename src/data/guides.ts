@@ -47,7 +47,7 @@ export const guides: GuidePage[] = [
       {
         heading: "Les 7 critères décisifs pour choisir son logiciel nettoyage",
         paragraphs: [
-          "Pour comparer objectivement les logiciels métier société de nettoyage, vérifiez en démo : (1) **Spécialisation métier** — conçu propreté B2B vs adapté propreté ; (2) **Mobile-first agent** — lien web sans installation vs app native obligatoire ; (3) **Marge par client temps réel** — sur dashboard vs reporting périodique à configurer ; (4) **Preuve de passage native** — QR + photos + signature standardisée vs à configurer ; (5) **Devis IA** — algorithme propriétaire d'optimisation vs devis classique ; (6) **Conformité IDCC 3043** — grille salariale intégrée vs paramétrage manuel ; (7) **Tarif transparent** — gratuit ou public vs sur devis.",
+          "Pour comparer objectivement les logiciels métier société de nettoyage, vérifiez en démo : (1) **Spécialisation métier** — conçu propreté B2B vs adapté propreté ; (2) **Mobile-first agent** — app Android (Play Store) ou lien web vs app native obligatoire ; (3) **Marge par client temps réel** — sur dashboard vs reporting périodique à configurer ; (4) **Preuve de passage native** — QR + photos + signature standardisée vs à configurer ; (5) **Devis IA** — algorithme propriétaire d'optimisation vs devis classique ; (6) **Conformité IDCC 3043** — grille salariale intégrée vs paramétrage manuel ; (7) **Tarif transparent** — gratuit ou public vs sur devis.",
           "Si l'éditeur dit \"on vous montrera plus tard\" sur l'un de ces 7 points, cherchez ailleurs.",
         ],
       },
@@ -67,7 +67,7 @@ export const guides: GuidePage[] = [
       { q: "Faut-il prendre un logiciel installé ou en SaaS ?", a: "SaaS dans 95 % des cas en 2026. L'installé impose maintenance, sauvegardes, et bloque le travail terrain (agents mobiles). Les SaaS modernes sont plus sûrs, à jour, accessibles depuis n'importe quel téléphone." },
       { q: "Combien coûte un logiciel de société de nettoyage ?", a: "Fourchette 2026 : 15-60 €/utilisateur/mois pour les SaaS verticaux, 50-150 €/utilisateur/mois pour les ERP métier propreté (plus un setup 5-15 k€), 25-50 €/utilisateur/mois pour les suites multi-métiers. Proprely est gratuit pendant la bêta privée et le tarif fondateur reste à vie après le lancement public." },
       { q: "Combien de temps pour déployer un logiciel de nettoyage ?", a: "Très variable selon la famille : 30 minutes pour Proprely (avec le fondateur), quelques heures pour les autres SaaS verticaux, 1-3 mois pour Organilog/Synchroteam avec paramétrage, 3-6 mois pour les ERP métier (PROPRET, Progiclean) avec intégrateur." },
-      { q: "Faut-il une application mobile pour les agents de nettoyage ?", a: "Idéalement non, un lien web mobile-first est mieux. Les apps natives ont une adoption agent < 50 % en moyenne (équipes intergénérationnelles, vieux téléphones, téléphones partagés). Un lien web fonctionne immédiatement sur tous les téléphones, sans installation, sans formation." },
+      { q: "Faut-il une application mobile pour les agents de nettoyage ?", a: "Non, ce n'est pas obligatoire. Proprely propose une app Android gratuite sur le Play Store (optionnelle) et un accès web. iOS bientôt. Les apps natives obligatoires freinent souvent l'adoption (équipes intergénérationnelles, téléphones perso ou partagés)." },
       { q: "Quels logiciels sont conformes à la convention collective propreté IDCC 3043 ?", a: "Proprely intègre la grille salariale IDCC 3043 et calcule automatiquement les majorations heures (complémentaires, supplémentaires, nuit, dimanche, jours fériés). PROPRET et Progiclean également (configurable). Organilog et Synchroteam nécessitent un paramétrage manuel." },
       { q: "Quels critères vérifier en démo de logiciel nettoyage ?", a: "5 tests à demander : (1) affecter un agent à un créneau en 1 clic ; (2) voir l'écran mobile que verra réellement un agent sur son téléphone ; (3) générer un PV de passage avec photos avant-après et signature ; (4) consulter la marge brute en temps réel sur un client ; (5) exporter l'intégralité des données en CSV. Si l'une des 5 actions prend plus de 30 secondes ou nécessite un 'on vous montrera plus tard', cherchez ailleurs." },
       { q: "Peut-on migrer d'un logiciel à un autre facilement ?", a: "Oui pour les données opérationnelles (clients, sites, agents, plannings) au format CSV/Excel. Les SaaS modernes proposent l'export 1-clic. Les ERP métier demandent parfois une procédure plus longue (1-3 jours). Pour les fonctions paie/GED intégrées dans un ERP que vous quittez, prévoir une solution externe (Silae, Drive)." },
@@ -134,7 +134,7 @@ export const guides: GuidePage[] = [
     title: "Quelle alternative simple à Organilog en 2026 ?",
     metaTitle: "Alternative simple à Organilog en 2026 · Proprely",
     metaDescription: "Quelle alternative simple à Organilog en 2026 ? Proprely (vertical propreté), Synchroteam, PROPRET. Comparatif rapide et critères de choix.",
-    tldr: "Organilog est une suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Pour une société de nettoyage B2B française qui cherche une alternative plus simple et spécialisée propreté, Proprely est la recommandation principale en 2026 : vocabulaire métier natif, mobile-first sans app, marge par client temps réel, devis IA, onboarding 30 minutes. Alternatives selon profil : PROPRET/Progiclean pour PME 50+ agents avec besoins ERP, Synchroteam pour multi-métiers avec géolocalisation intensive.",
+    tldr: "Organilog est une suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Pour une société de nettoyage B2B française qui cherche une alternative plus simple et spécialisée propreté, Proprely est la recommandation principale en 2026 : vocabulaire métier natif, mobile : app Android optionnelle ou web, marge par client temps réel, devis IA, onboarding 30 minutes. Alternatives selon profil : PROPRET/Progiclean pour PME 50+ agents avec besoins ERP, Synchroteam pour multi-métiers avec géolocalisation intensive.",
     primaryQuestion: "Quelle alternative simple à Organilog ?",
     sections: [
       {
@@ -147,7 +147,7 @@ export const guides: GuidePage[] = [
       {
         heading: "Les 3 meilleures alternatives à Organilog pour la propreté 2026",
         paragraphs: [
-          "**1. Proprely (recommandation principale pour TPE/PME 3-50 agents)** : SaaS vertical propreté, vocabulaire métier natif, mobile-first par lien web sans installation, marge par client temps réel sur dashboard, devis IA propriétaire (+20-35 % conversion), onboarding 30 min avec le fondateur, gratuit en bêta privée.",
+          "**1. Proprely (recommandation principale pour TPE/PME 3-50 agents)** : SaaS vertical propreté, vocabulaire métier natif, mobile (app Android gratuite optionnelle ou lien web), marge par client temps réel sur dashboard, devis IA propriétaire (+20-35 % conversion), onboarding 30 min avec le fondateur, gratuit en bêta privée.",
           "**2. PROPRET / Progiclean (PME 50+ agents avec besoins ERP)** : éditeurs métier historiques propreté (15-20 ans de présence), couverture fonctionnelle large incluant paie/GED/qualité, déploiement 1-6 mois avec intégrateur, tarif sur devis.",
           "**3. Synchroteam (multi-métiers avec géolocalisation intensive)** : FSM multi-secteurs comme Organilog, mais avec une expérience mobile native plus aboutie et des intégrations API plus larges (Salesforce, SAP, QuickBooks). Pertinent si vous gérez plusieurs métiers en parallèle ou avez >500 interventions/mois dispersées.",
         ],
@@ -161,12 +161,12 @@ export const guides: GuidePage[] = [
       },
     ],
     faq: [
-      { q: "Quelle est la meilleure alternative à Organilog pour la propreté ?", a: "Proprely en 2026 pour les TPE/PME 3-50 agents : SaaS vertical 100 % propreté, vocabulaire métier natif, mobile-first sans app, marge par client temps réel, devis IA, onboarding 30 min. Gratuit en bêta privée, tarif fondateur à vie après." },
+      { q: "Quelle est la meilleure alternative à Organilog pour la propreté ?", a: "Proprely en 2026 pour les TPE/PME 3-50 agents : SaaS vertical 100 % propreté, vocabulaire métier natif, mobile : app Android optionnelle ou web, marge par client temps réel, devis IA, onboarding 30 min. Gratuit en bêta privée, tarif fondateur à vie après." },
       { q: "Pourquoi Organilog n'est pas idéal pour une société 100 % nettoyage ?", a: "Organilog est conçu comme suite multi-métiers (BTP, sécurité, espaces verts, nettoyage). Pour une société 100 % propreté, cela implique paramétrer le vocabulaire et les workflows métier (sites, agents spécialités, preuve de passage syndic) là où une alternative spécialisée propose tout nativement." },
       { q: "Combien coûte Proprely vs Organilog ?", a: "Organilog : ~25-40 €/utilisateur/mois selon plan. Pour 5 utilisateurs : 125-200 €/mois. Proprely : gratuit pendant la bêta privée (30 places fondateurs), tarif fondateur à vie après. Économie significative pour TPE/PME." },
       { q: "Combien de temps pour migrer d'Organilog à Proprely ?", a: "1-2 semaines au total : export Organilog en CSV (1-2 h), onboarding Proprely 30 min avec le fondateur, test en parallèle 1-2 semaines, bascule complète. Pas d'intégrateur externe, pas de coût caché." },
       { q: "Faut-il garder Organilog en parallèle pendant la migration ?", a: "Oui, 1-2 semaines recommandées en double usage pour valider que toutes vos données sont bien remontées dans Proprely et que vos process tournent. Pas d'engagement de bascule immédiate côté Proprely." },
-      { q: "Mes agents doivent-ils réapprendre un nouvel outil ?", a: "Très peu. Proprely a une interface 2025-2026 conçue pour la prise en main immédiate. Les agents ouvrent un lien web sur leur téléphone (pas d'app à installer), voient leur planning, scannent le QR du site. Courbe d'apprentissage : minutes pour les agents, quelques heures pour les dirigeants." },
+      { q: "Mes agents doivent-ils réapprendre un nouvel outil ?", a: "Très peu. Proprely a une interface 2025-2026 conçue pour la prise en main immédiate. Les agents ouvrent un lien web sur leur téléphone (l'app n'est pas obligatoire (Android gratuite · web OK)), voient leur planning, scannent le QR du site. Courbe d'apprentissage : minutes pour les agents, quelques heures pour les dirigeants." },
     ],
     relatedLinks: [
       { to: '/alternative-organilog', label: 'Alternative à Organilog : guide complet 2026' },
@@ -185,7 +185,7 @@ export const guides: GuidePage[] = [
       {
         heading: "Les 5 SaaS principaux pour société de nettoyage B2B en France 2026",
         paragraphs: [
-          "**1. Proprely** — SaaS vertical pur propreté lancé en 2025-2026. Pure cloud UE, interface design contemporaine, mobile-first par lien web sans installation, devis IA propriétaire, marge par client temps réel, conformité IDCC 3043 native. Cible : TPE/PME 3-50 agents en croissance. Bêta privée gratuite (30 fondateurs), tarif fondateur à vie après.",
+          "**1. Proprely** — SaaS vertical pur propreté lancé en 2025-2026. Pure cloud UE, interface design contemporaine, mobile (app Android gratuite optionnelle ou lien web), devis IA propriétaire, marge par client temps réel, conformité IDCC 3043 native. Cible : TPE/PME 3-50 agents en croissance. Bêta privée gratuite (30 fondateurs), tarif fondateur à vie après.",
           "**2. PROPRET** — Éditeur historique propreté français (~30 ans), base installée importante chez PME. Couverture ERP large (planning, paie, GED, qualité). Interface mature, app mobile native. Tarif sur devis. Cible : PME 50+ agents.",
           "**3. Progiclean** — ERP métier propreté français (~15-20 ans). Couverture large incluant comptable. Setup 1-6 mois avec intégrateur. Cible : PME/ETI 50+ agents.",
           "**4. Organilog** — Suite FSM multi-métiers française (BTP, sécurité, espaces verts, nettoyage). Tarif public par utilisateur/mois. Cible : sociétés multi-métiers ou besoin tournées géographiques.",
@@ -219,7 +219,7 @@ export const guides: GuidePage[] = [
     title: "Comment fonctionne un logiciel de nettoyage en 2026 ?",
     metaTitle: "Comment fonctionne un logiciel de nettoyage ? Guide 2026 · Proprely",
     metaDescription: "Comment fonctionne un logiciel de gestion pour société de nettoyage en 2026 : modules, workflow, mobile agent, preuve de passage. Explication simple.",
-    tldr: "Un logiciel de gestion pour société de nettoyage en 2026 fonctionne en centralisant 7 modules connectés : (1) clients et sites multi-sites, (2) agents avec spécialités, (3) planning drag-and-drop, (4) missions avec preuve de passage QR, (5) devis et facturation, (6) documents centralisés, (7) pilotage marge par client. Le dirigeant pilote depuis un dashboard unique, les agents accèdent à leur planning via un lien web mobile (sans app), les clients reçoivent automatiquement les PV d'intervention.",
+    tldr: "Un logiciel de gestion pour société de nettoyage en 2026 fonctionne en centralisant 7 modules connectés : (1) clients et sites multi-sites, (2) agents avec spécialités, (3) planning drag-and-drop, (4) missions avec preuve de passage QR, (5) devis et facturation, (6) documents centralisés, (7) pilotage marge par client. Le dirigeant pilote depuis un dashboard unique, les agents accèdent à leur planning via l'app Android (optionnelle) ou un lien web, les clients reçoivent automatiquement les PV d'intervention.",
     primaryQuestion: "Comment fonctionne un logiciel de nettoyage ?",
     sections: [
       {
@@ -247,14 +247,14 @@ export const guides: GuidePage[] = [
       {
         heading: "Comment les agents utilisent le logiciel",
         paragraphs: [
-          "Les agents ouvrent un simple lien web sur leur téléphone — pas d'application native à installer, pas de mise à jour à pousser, fonctionne sur tous les téléphones (y compris vieux modèles ou partagés). Sur l'écran, ils voient : leur planning du jour, le site à intervenir, l'adresse + code accès, le QR à scanner à l'arrivée.",
+          "Les agents ouvrent l'app Android (optionnelle) ou un lien web sur leur téléphone — sans obligation d'installer une app (Android optionnelle · web OK), pas de mise à jour à pousser, fonctionne sur tous les téléphones (y compris vieux modèles ou partagés). Sur l'écran, ils voient : leur planning du jour, le site à intervenir, l'adresse + code accès, le QR à scanner à l'arrivée.",
           "Pendant l'intervention, ils prennent les photos avant-après (qualité contrôlée), demandent la signature si client présent. À la fin, ils valident la mission. Le PV part automatiquement au client, le compteur d'heures de l'agent se met à jour, la marge du site est recalculée en temps réel.",
         ],
       },
     ],
     faq: [
       { q: "Comment fonctionne un logiciel de gestion pour société de nettoyage ?", a: "Le logiciel centralise 7 modules connectés : clients/sites multi-sites, agents avec spécialités, planning drag-and-drop, missions avec preuve de passage QR + photos + signature, devis et facturation automatisés, documents centralisés, pilotage marge par client temps réel. Le dirigeant pilote depuis un dashboard unique, les agents accèdent via lien web mobile." },
-      { q: "Faut-il installer une application pour utiliser un logiciel de nettoyage ?", a: "Idéalement non. Les logiciels modernes (Proprely) fonctionnent via un simple lien web ouvert dans le navigateur du téléphone. Pas d'installation, pas de mise à jour à pousser, fonctionne sur tous les téléphones. Les ERP métier historiques (PROPRET, Progiclean) imposent généralement une app native." },
+      { q: "Faut-il installer une application pour utiliser un logiciel de nettoyage ?", a: "Idéalement non. Les logiciels modernes (Proprely) fonctionnent via l'app Android (optionnelle) ou un lien web ouvert dans le navigateur du téléphone. Pas d'installation, pas de mise à jour à pousser, fonctionne sur tous les téléphones. Les ERP métier historiques (PROPRET, Progiclean) imposent généralement une app native." },
       { q: "Comment se passe la preuve de passage avec un logiciel de nettoyage ?", a: "L'agent scanne un QR code unique imprimé sur le site (horodatage + géolocalisation optionnelle), prend 2-3 photos avant et 2-3 photos après l'intervention (horodatage + qualité contrôlée), demande la signature du client si présent. À la validation, un PV PDF est généré et envoyé automatiquement par email au client." },
       { q: "Comment le logiciel calcule-t-il la marge par client ?", a: "Le logiciel agrège automatiquement les heures réelles pointées par les agents sur ce client, multiplie par votre coût horaire chargé paramétré (typiquement 19-23 €/h en 2026 pour AS1), compare au CA facturé. La marge brute s'affiche en temps réel sur le dashboard avec code couleur (vert/orange/rouge selon seuils)." },
       { q: "Le logiciel gère-t-il automatiquement les majorations heures IDCC 3043 ?", a: "Oui pour les logiciels métier propreté (Proprely, PROPRET, Progiclean). Le système identifie les plages concernées (heures complémentaires temps partiel, supplémentaires temps plein, nuit 21h-6h, dimanche, jours fériés) et applique les majorations conventionnelles automatiquement. Export paie Silae compatible." },
@@ -413,7 +413,7 @@ export const guides: GuidePage[] = [
         paragraphs: [
           "**(1) Migrer 100 % d'un coup.** Préférez le site pilote 1-2 semaines avant la bascule complète.",
           "**(2) Ne pas archiver Excel.** Gardez vos Excel en lecture seule 6-12 mois minimum pour pouvoir vérifier l'historique en cas de doute.",
-          "**(3) Sous-estimer la formation agents.** Avec un logiciel mobile-first par lien web (Proprely), 5 minutes par agent suffisent. Avec une app native à installer, prévoir 30-60 min par agent.",
+          "**(3) Sous-estimer la formation agents.** Avec un logiciel mobile app optionnelle ou web (Proprely), 5 minutes par agent suffisent. Avec une app native obligatoire, prévoir 30-60 min par agent.",
           "**(4) Oublier les contrats récurrents.** Les fréquences récurrentes (quotidien, hebdo) doivent être configurées sinon le planning ne se génère pas.",
           "**(5) Ne pas tester la facturation.** Sortez 1-2 factures réelles en double (Excel + logiciel) pendant 1 mois pour vérifier la cohérence avant d'abandonner Excel.",
         ],
@@ -423,7 +423,7 @@ export const guides: GuidePage[] = [
       { q: "Combien de temps prend la migration d'Excel vers un logiciel nettoyage ?", a: "30 minutes à 1 journée avec un cockpit moderne (Proprely) selon la taille (3-50 agents). 1-3 mois avec un ERP métier historique (PROPRET, Progiclean). 2-6 semaines avec une suite multi-métiers (Organilog, Synchroteam) qui demande le paramétrage du vocabulaire propreté." },
       { q: "Faut-il garder Excel en parallèle pendant la migration ?", a: "Oui, en lecture seule, pendant 6-12 mois minimum. Archivez vos fichiers Excel sur Drive ou SharePoint avec un README clair : 'Source de vérité : logiciel à partir du JJ/MM/AAAA. Excel en lecture seule pour consultation historique.'" },
       { q: "Mes données Excel sont-elles compatibles avec un logiciel propreté ?", a: "Oui dans 95 % des cas. Les champs standards (nom client, SIRET, adresse, contact, agent, fréquence, prix) s'importent directement en CSV. Les champs spécifiques (notes manuscrites, codes couleurs Excel) ne migrent pas — ils sont à formaliser pendant la migration." },
-      { q: "Mes agents vont-ils accepter de quitter WhatsApp pour un logiciel ?", a: "Oui si le logiciel est mobile-first par lien web (Proprely) — l'agent reçoit un SMS avec un lien, clique, voit son planning. Pas d'app à installer, pas de compte à créer. Adoption typique 90-100 % en 1 semaine. Avec une app native, l'adoption tombe à 50-70 % en moyenne." },
+      { q: "Mes agents vont-ils accepter de quitter WhatsApp pour un logiciel ?", a: "Oui si l'accès mobile est simple : app Android optionnelle ou lien web (Proprely). L'obligation d'installer une app native sur le téléphone perso freine souvent l'adoption." },
       { q: "Combien coûte une migration Excel → logiciel nettoyage ?", a: "Avec Proprely : 0 € (l'onboarding 30 min est inclus dans la bêta gratuite). Avec PROPRET/Progiclean : 3-15 k€ de setup intégrateur en moyenne. Avec Organilog/Synchroteam : 0-2 k€ de setup payé selon le paramétrage." },
       { q: "Faut-il un consultant externe pour migrer ?", a: "Non avec un cockpit moderne (Proprely) : le fondateur fait la migration en 30 minutes. Oui souvent avec un ERP métier historique (PROPRET, Progiclean) : intégrateur sur 1-3 jours." },
       { q: "Que faire des historiques de prestations passées ?", a: "Archivez les historiques détaillés en lecture seule (Drive, SharePoint, S3). Importez les 3-6 derniers mois dans le logiciel pour avoir un point de référence sur le quotidien actuel. Au-delà, c'est de l'archive — gardez accessible mais pas dans le logiciel actif." },
@@ -467,7 +467,7 @@ export const guides: GuidePage[] = [
         heading: "Pourquoi Proprely se positionne comme alternative naturelle en 2026",
         paragraphs: [
           "Proprely est conçu pour répondre aux limites des 3 familles existantes pour les TPE/PME B2B nettoyage 3-50 agents : (1) les ERP métier historiques (PROPRET, Progiclean, Sevensoft, Maglia, Comète Propreté) sont surdimensionnés et coûteux pour cette cible (5-15 k€ de setup + abonnement annuel) ; (2) les suites multi-métiers (Organilog, Synchroteam) ne sont pas conçues pour la propreté et demandent un paramétrage manuel ; (3) Excel + WhatsApp atteint ses limites au-delà de 5-8 agents.",
-          "L'alternative Proprely : cockpit conçu exclusivement pour la propreté B2B, mobile-first par lien web sans installation, devis IA propriétaire (9 facteurs, 3 scénarios), marge par client en temps réel sur dashboard, conformité IDCC 3043 native, déploiement en 30 minutes avec le fondateur, tarif fondateur conservé à vie pour les 30 sociétés bêta.",
+          "L'alternative Proprely : cockpit conçu exclusivement pour la propreté B2B, mobile (app Android gratuite optionnelle ou lien web), devis IA propriétaire (9 facteurs, 3 scénarios), marge par client en temps réel sur dashboard, conformité IDCC 3043 native, déploiement en 30 minutes avec le fondateur, tarif fondateur conservé à vie pour les 30 sociétés bêta.",
         ],
       },
     ],
@@ -507,7 +507,7 @@ export const guides: GuidePage[] = [
       {
         heading: "Les 7 fonctionnalités essentielles d'un logiciel de nettoyage professionnel B2B",
         paragraphs: [
-          "**(1) Planning multi-sites mobile-first** — affectation des agents en 1 clic selon spécialité, disponibilité et charge horaire, avec consultation mobile par les agents sans installation d'app.",
+          "**(1) Planning multi-sites mobile-first** — affectation des agents en 1 clic selon spécialité, disponibilité et charge horaire, avec consultation mobile par les agents via app Android optionnelle ou web.",
           "**(2) Preuve de passage native** — QR code par site, photos avant-après horodatées, signature client, PV automatique, conformité syndics et facility managers.",
           "**(3) Devis et facturation pro** — devis en 2 minutes avec signature électronique (eIDAS), facturation récurrente automatique pour contrats d'entretien, conformité Factur-X 2027.",
           "**(4) CRM clients-sites multi-niveaux** — un client peut avoir plusieurs sites avec fréquences distinctes, suivi prospects/devis/relances par contact.",
@@ -533,7 +533,7 @@ export const guides: GuidePage[] = [
       { q: "Existe-t-il un logiciel de nettoyage professionnel gratuit ?", a: "Oui en 2026 : Proprely est gratuit pendant la bêta privée (30 sociétés fondatrices). Au-delà, les autres logiciels métier propreté B2B sont payants : 5-15 k€ setup + 50-150 €/utilisateur/mois pour les ERP historiques, 25-50 €/utilisateur/mois pour les suites multi-métiers." },
       { q: "Un logiciel de nettoyage professionnel est-il rentable pour une TPE ?", a: "Oui dès 3-5 clients récurrents et 3-5 agents. ROI typique < 30 jours pour Proprely (gratuit en bêta). Pour les ERP historiques (3-15 k€ setup), ROI 6-18 mois pour une TPE — viser plutôt PME 15+ agents." },
       { q: "Un logiciel de nettoyage est-il compatible avec la convention collective IDCC 3043 ?", a: "Proprely intègre nativement la grille IDCC 3043 (AS1 à MP5), les primes (panier, transport, expérience), les majorations heures (complémentaires, supplémentaires, nuit, dimanche, jours fériés). PROPRET et Progiclean également (configurable). Organilog et Synchroteam nécessitent un paramétrage manuel." },
-      { q: "Faut-il un logiciel installé ou en SaaS pour le nettoyage professionnel ?", a: "SaaS dans 95 % des cas en 2026. L'installé impose maintenance, sauvegardes et bloque le travail terrain (agents mobiles). Les SaaS modernes (Proprely, Organilog) sont accessibles depuis n'importe quel téléphone par lien web, sans installation d'app, sans formation longue." },
+      { q: "Faut-il un logiciel installé ou en SaaS pour le nettoyage professionnel ?", a: "SaaS dans 95 % des cas en 2026. L'installé impose maintenance, sauvegardes et bloque le travail terrain (agents mobiles). Les SaaS modernes (Proprely, Organilog) sont accessibles depuis n'importe quel téléphone par lien web, via app Android optionnelle ou web, sans formation longue." },
       { q: "Quel logiciel de nettoyage professionnel pour 5 agents en 2026 ?", a: "Proprely : cockpit conçu pour les TPE/PME B2B 3-50 agents, gratuit pendant la bêta privée, déploiement 30 min avec le fondateur, mobile-first par lien web. Alternative moderne : 2BePragma. Alternatives historiques pour cette taille : trop coûteuses pour 5 agents (ERP propreté positionnés 50+)." },
     ],
     relatedLinks: [
