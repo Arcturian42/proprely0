@@ -148,14 +148,14 @@ export const cities: CityPage[] = [
       { title: "Pression sur les prix et marges qui s'effritent", description: "La concurrence est intense, les appels d'offres sont serrés, et sans visibilité sur la marge réelle par client, vous facturez à l'aveugle. Une grille de prix incohérente, et c'est tout votre carnet qui glisse vers la perte." },
     ],
     proprelyFit: [
-      { title: "Planning multi-sites pensé pour les contraintes franciliennes", description: "Affectation en 1 clic selon proximité (RER/métro), spécialité et charge horaire. Vos agents consultent leur tournée sur leur téléphone, sans application à installer." },
+      { title: "Planning multi-sites pensé pour les contraintes franciliennes", description: "Affectation en 1 clic selon proximité (RER/métro), spécialité et charge horaire. Vos agents consultent leur tournée sur mobile (app Android gratuite optionnelle ou lien web · iOS bientôt)." },
       { title: "Preuve de passage acceptée par les syndics", description: "QR code sur site, photos avant-après, signature client. Le PV est généré automatiquement et envoyé au syndic gestionnaire sans intervention manuelle." },
       { title: "Suivi du turnover et fidélisation des agents", description: "Compteur d'heures automatique, alertes surmenage, historique des spécialités et formations. Vous identifiez les agents à risque de départ avant qu'ils ne partent." },
       { title: "Marge par client en temps réel", description: "Chaque heure facturée vs chaque heure réelle, par client et par site. Vous voyez immédiatement quel contrat est rentable et lequel ronge votre rentabilité." },
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage parisiennes ?", a: "Oui. Proprely a été conçu avec et pour des dirigeants de sociétés de nettoyage B2B françaises, dont une majorité opère en région parisienne. Multi-sites, rotations matinales et nocturnes, exigences syndic, hôtellerie : les cas d'usage franciliens sont au cœur du produit." },
-      { q: "Mes agents parisiens doivent-ils installer une application sur leur téléphone ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne sur 4G capricieuse dans le métro." },
+      { q: "Mes agents parisiens doivent-ils installer une application sur leur téléphone ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely pour une société parisienne ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Peut-on gérer plusieurs équipes réparties sur Paris et la petite couronne ?", a: "Oui. Proprely est conçu pour les organisations multi-sites avec plusieurs équipes. Vue d'ensemble par agent, par client, par jour ou par zone géographique." },
       { q: "Proprely gère-t-il les exigences des syndics parisiens ?", a: "Oui. Preuve de passage standardisée (QR, photos, signature), PV automatiques envoyés au syndic gestionnaire, historique complet par site. Les principaux formats demandés par les grands syndics sont supportés." },
@@ -206,7 +206,7 @@ export const cities: CityPage[] = [
       { q: "Combien coûte Proprely à Lyon ?", a: "Gratuit pendant la bêta privée pour les 30 sociétés fondatrices sélectionnées. Tarif fondateur conservé à vie après le lancement. Pas de carte bancaire demandée, pas d'engagement." },
       { q: "Peut-on gérer les sites entre Lyon, Villeurbanne et la périphérie ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique, optimisation des tournées selon proximité. Le planning suggère les agents les plus proches du prochain site." },
       { q: "Comment se passe l'onboarding pour une société lyonnaise ?", a: "30 minutes en visio avec le fondateur. Import de vos sites, agents et fréquences. À la fin de l'appel, votre planning est opérationnel et utilisable dès le lendemain par vos équipes." },
-      { q: "Mes agents lyonnais ont-ils besoin d'installer une application ?", a: "Non. Chaque agent ouvre son planning et ses missions via un simple lien web sur son téléphone. Pas d'installation, pas de formation, fonctionne en 4G." },
+      { q: "Mes agents lyonnais ont-ils besoin d'installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
     ],
   },
   {
@@ -254,7 +254,7 @@ export const cities: CityPage[] = [
       { q: "Combien coûte Proprely à Marseille et en PACA ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Peut-on gérer les sites entre Marseille, Aix-en-Provence et Aubagne ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention, ce qui optimise les tournées sur la métropole." },
       { q: "Proprely supporte-t-il les fiches techniques par site (calcaire, sel) ?", a: "Oui. Chaque site a sa fiche détaillée avec spécificités matériaux, produits agréés, fréquences spécifiques. Le bord de mer avec ses contraintes est documenté une fois et appliqué à toutes les interventions." },
-      { q: "Mes agents marseillais ont-ils besoin d'une application ?", a: "Non. Chaque agent ouvre son planning et ses missions via un lien web sur son téléphone. Pas d'installation, pas de formation, fonctionne en 4G y compris dans les calanques." },
+      { q: "Mes agents marseillais ont-ils besoin d'une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
     ],
   },
   {
@@ -298,7 +298,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Bordeaux ?", a: "Oui. Proprely a été conçu pour la diversité des marchés régionaux français. À Bordeaux, le mix tertiaire neuf / patrimoine haussmannien / œnotourisme est entièrement supporté : multi-sites, fiches par bâtiment, agents saisonniers gérés comme des fixes, preuve de passage acceptée par les principaux syndics." },
-      { q: "Mes agents bordelais doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne en 4G y compris dans le Médoc." },
+      { q: "Mes agents bordelais doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Bordeaux et en Gironde ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Comment Proprely gère-t-il la saisonnalité œnotouristique ?", a: "Le planning gère les agents saisonniers comme des fixes (profils, spécialités, disponibilités). Vue charge horaire mensuelle pour anticiper les pics mai-octobre et les grands événements bordelais. Remplacements suggérés automatiquement en cas d'absence." },
       { q: "Peut-on gérer des sites entre Bordeaux centre, Mérignac et Pessac ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention, ce qui optimise les tournées sur la métropole." },
@@ -346,7 +346,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Toulouse ?", a: "Oui. Proprely supporte les spécificités toulousaines : sites aéronautiques avec protocoles ISO et habilitations agents, copropriétés du centre historique, pôle santé avec bionettoyage, tertiaire en croissance, étalement géographique sur la métropole." },
-      { q: "Mes agents toulousains doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne en 4G y compris sur les sites industriels de Blagnac." },
+      { q: "Mes agents toulousains doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Toulouse et en Occitanie ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Proprely gère-t-il les habilitations agents pour les sites aéronautiques ?", a: "Oui. Chaque agent a un profil avec ses spécialités et ses habilitations (bionettoyage, accès aéronautique, formation produits). Le planning propose en priorité les agents qualifiés pour chaque mission. Historique conservé pour les audits ISO." },
       { q: "Peut-on gérer des sites entre Toulouse, Blagnac, Colomiers et Labège ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention, ce qui optimise les tournées sur la métropole." },
@@ -394,7 +394,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Nantes ?", a: "Oui. Proprely supporte les spécificités nantaises : mix industriel maritime / tertiaire neuf, sites Naval Group et Airbus Atlantic avec protocoles, tertiaire Île de Nantes et EuroNantes, copropriétés du centre, dispersion géographique sur la métropole." },
-      { q: "Mes agents nantais doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne en 4G y compris dans les sites industriels de Saint-Herblain ou Rezé." },
+      { q: "Mes agents nantais doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Nantes et en Loire-Atlantique ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Proprely gère-t-il les habilitations pour les sites Naval Group ou Airbus Atlantic ?", a: "Oui. Chaque agent a un profil avec ses spécialités et ses habilitations. Le planning propose en priorité les agents qualifiés pour chaque mission industrielle. Historique conservé pour les audits clients." },
       { q: "Peut-on gérer des sites entre Nantes, Saint-Herblain, Rezé et Carquefou ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention." },
@@ -442,7 +442,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Lille ?", a: "Oui. Proprely supporte les spécificités lilloises : mix tertiaire Euralille / médical CHRU / universitaire / agroalimentaire industriel, copropriétés du Vieux-Lille avec syndics nationaux, étalement géographique Lille-Roubaix-Tourcoing-Villeneuve, et même les agents qui interviennent à la frontière belge." },
-      { q: "Mes agents lillois doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Le planning et les missions s'affichent dans son navigateur. Pas d'installation, pas de formation, fonctionne en 4G y compris dans les sous-sols du CHRU." },
+      { q: "Mes agents lillois doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Lille et dans les Hauts-de-France ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public. Pas de carte bancaire, pas d'engagement." },
       { q: "Proprely gère-t-il les protocoles HACCP pour les sites agroalimentaires ?", a: "Oui. Chaque site agroalimentaire a sa fiche avec protocoles HACCP, produits agréés, agents habilités. Preuve de passage avec photos et signature pour traçabilité. Historique conservé pour les audits clients." },
       { q: "Peut-on gérer des sites entre Lille, Roubaix, Tourcoing et Villeneuve d'Ascq ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention, ce qui optimise les tournées sur la métropole." },
@@ -490,7 +490,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Nice ?", a: "Oui. Proprely supporte les spécificités niçoises : hôtellerie de luxe, événementiel international, copropriétés bord de mer avec contraintes sel/calcaire, saisonnalité forte, tissu tertiaire Méridia/Sophia-Antipolis." },
-      { q: "Mes agents niçois doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Pas d'installation, pas de formation, fonctionne en 4G y compris en zone littorale." },
+      { q: "Mes agents niçois doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Nice et sur la Côte d'Azur ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public." },
       { q: "Comment Proprely gère-t-il la saisonnalité touristique forte ?", a: "Le planning gère les agents saisonniers comme des fixes (profils, spécialités, disponibilités). Vue charge horaire mensuelle pour anticiper les pics. Remplacements suggérés automatiquement. Vous absorbez la haute saison sans perdre votre organisation." },
       { q: "Proprely gère-t-il les événementiels type Festival de Cannes ou GP Monaco ?", a: "Oui. Constitution rapide d'équipes ponctuelles, briefing partagé, planning consolidé multi-sites, preuve de passage par site et par intervention. Idéal pour les opérations événementielles intensives." },
@@ -538,7 +538,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Strasbourg ?", a: "Oui. Proprely supporte les spécificités strasbourgeoises : institutions européennes avec habilitations agents, pôle pharmaceutique GMP, centre UNESCO avec contraintes patrimoniales, cross-border avec l'Allemagne, et tertiaire/universitaire classique." },
-      { q: "Mes agents strasbourgeois doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Pas d'installation, pas de formation. Fonctionne en 4G y compris dans les sous-sols du Parlement européen." },
+      { q: "Mes agents strasbourgeois doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Strasbourg et en Alsace ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public." },
       { q: "Proprely gère-t-il les habilitations agents pour les institutions européennes ?", a: "Oui. Chaque agent a un profil avec ses habilitations et son historique de formation. Le planning propose en priorité les agents qualifiés. Idéal pour les audits sécurité du Parlement européen ou du Conseil de l'Europe." },
       { q: "Proprely supporte-t-il les protocoles GMP pour Lilly et Novartis ?", a: "Oui. Fiches site avec protocoles GMP détaillés, produits agréés, agents formés salles blanches. Preuve de passage avec photos et signature. Conforme aux exigences de traçabilité des donneurs d'ordre pharmaceutiques." },
@@ -586,7 +586,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Montpellier ?", a: "Oui. Proprely supporte les spécificités montpelliéraines : croissance forte du tertiaire (Port Marianne, Odysseum), pôle médical CHU et cabinets, copropriétés du centre historique, saisonnalité côtière proche, et étalement géographique sur la métropole." },
-      { q: "Mes agents montpelliérains doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Pas d'installation, pas de formation. Fonctionne en 4G y compris en zone côtière dégradée." },
+      { q: "Mes agents montpelliérains doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Montpellier et dans l'Hérault ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public." },
       { q: "Comment Proprely gère-t-il la saisonnalité côtière ?", a: "Le planning gère les agents saisonniers comme des fixes. Vue charge horaire mensuelle pour anticiper les pics mai-septembre sur Palavas, Carnon, La Grande-Motte. Remplacements suggérés automatiquement." },
       { q: "Peut-on gérer des sites entre Montpellier, Lattes, Castelnau et la côte ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site." },
@@ -634,7 +634,7 @@ export const cities: CityPage[] = [
     ],
     faq: [
       { q: "Proprely est-il adapté aux sociétés de nettoyage à Rennes ?", a: "Oui. Proprely supporte les spécificités rennaises : mix tertiaire tech (b<>com, Technicolor, scaleups) / médical CHU / universitaire / agroalimentaire HACCP, copropriétés du centre médiéval avec syndics nationaux, étalement géographique sur la métropole." },
-      { q: "Mes agents rennais doivent-ils installer une application ?", a: "Non. Chaque agent reçoit un lien web qu'il ouvre sur son téléphone. Pas d'installation, pas de formation. Fonctionne en 4G y compris dans les sites industriels de Cesson-Sévigné." },
+      { q: "Mes agents rennais doivent-ils installer une application ?", a: "Non, ce n'est pas obligatoire. Ils peuvent utiliser l'app Android gratuite (Play Store) — iOS bientôt — ou ouvrir leur lien dans le navigateur. L'app est un plus, pas une contrainte. Et vous ne payez pas par agent." },
       { q: "Combien coûte Proprely à Rennes et en Ille-et-Vilaine ?", a: "Gratuit pendant toute la durée de la bêta privée pour les 30 sociétés sélectionnées comme membres fondatrices. Tarif fondateur conservé à vie après le lancement public." },
       { q: "Proprely gère-t-il les protocoles HACCP pour Lactalis ou Cooperl ?", a: "Oui. Chaque site agroalimentaire a sa fiche avec protocoles HACCP, produits agréés, agents habilités. Preuve de passage avec photos et signature pour traçabilité. Historique conservé pour les audits clients." },
       { q: "Peut-on gérer des sites entre Rennes, Chantepie, Cesson-Sévigné et Saint-Grégoire ?", a: "Oui. Multi-sites illimités, vue par agent ou par zone géographique. Le planning suggère les agents les plus proches du prochain site selon leur dernière intervention." },

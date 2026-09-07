@@ -31,7 +31,7 @@ const SOLUTIONS_MENU: MenuConfig = {
       heading: 'Par douleur métier',
       links: [
         { to: '/proprely-vs-excel', label: 'Remplacer Excel & WhatsApp', desc: 'Centraliser planning, agents et clients' },
-        { to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App mobile, sans installation' },
+        { to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App Android gratuite · ou web' },
         { to: '/crm-entreprise-proprete', label: 'Centraliser clients & sites', desc: 'CRM propreté, marge par client' },
         { to: '/convention-collective-nettoyage', label: 'Conformité IDCC 3043', desc: 'Grille salariale, article 7' },
       ],

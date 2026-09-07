@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, CheckCircle, Smartphone, Zap, ShieldCheck, QrCode, HelpCircle, Sparkles, BookOpen, X } from 'lucide-react'
+import { ArrowRight, CheckCircle, Smartphone, Zap, ShieldCheck, QrCode, HelpCircle, Sparkles, BookOpen, X, ExternalLink } from 'lucide-react'
 import PageNav from '../components/PageNav'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../sections/Footer'
@@ -8,15 +8,16 @@ import Link from '../components/Link'
 import { BETA_FORM_URL } from '../config'
 import { trackEvent } from '../lib/analytics'
 
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.proprely.app'
 const URL = 'https://proprely.fr/application-mobile-agents-nettoyage/'
-const TITLE = "Application mobile agents nettoyage : sans app · Proprely"
-const DESCRIPTION = "Application mobile pour agents de nettoyage : planning, pointage, preuve de passage via lien web — aucune app à installer. Bêta gratuite."
+const TITLE = "Application mobile agents nettoyage : app Android gratuite · Proprely"
+const DESCRIPTION = "App mobile pour agents de nettoyage : planning, pointage, preuve de passage. Android sur le Play Store (gratuite, optionnelle), iOS bientôt, ou lien web. Aucun coût par agent. Bêta privée."
 
 const benefits = [
-  { icon: Zap, title: "Zéro installation, zéro mise à jour", desc: "L'agent ouvre un lien web depuis son téléphone, c'est tout. Pas d'application à télécharger sur Play Store ou App Store, pas de compte créer, pas de mises à jour à pousser. La version est toujours la dernière, sans intervention." },
-  { icon: Smartphone, title: "Fonctionne sur tout téléphone récent", desc: "Android 8+ et iPhone iOS 13+, smartphone d'entrée de gamme ou haut de gamme : tant qu'il a un navigateur, ça fonctionne. Pas de blocage Android/iOS, pas de problème de stockage saturé." },
-  { icon: ShieldCheck, title: "Sécurisé même si le téléphone est perdu", desc: "Le lien est nominatif et révocable depuis le cockpit dirigeant. Si un agent quitte la société ou perd son téléphone, son accès est coupé en 5 secondes. Aucune donnée client stockée localement sur le téléphone." },
-  { icon: QrCode, title: "Connexion réseau dégradée gérée", desc: "L'agent peut consulter son planning en mode dégradé (cache navigateur) et valider sa mission. Les photos de preuve de passage sont stockées localement le temps de retrouver de la 4G correcte, puis envoyées en arrière-plan." },
+  { icon: Smartphone, title: "App Android gratuite sur le Play Store", desc: "Téléchargement optionnel (com.proprely.app). Planning, pointage, preuve de passage (QR, photos, signature) dans une expérience native. iOS arrive bientôt." },
+  { icon: Zap, title: "Le web reste OK", desc: "Pas d'obligation d'installer quoi que ce soit : chaque agent peut ouvrir son lien personnel dans le navigateur. Idéal pour un essai rapide ou un téléphone partagé." },
+  { icon: ShieldCheck, title: "Aucun coût par agent", desc: "L'accès terrain est inclus. Pas de facturation par utilisateur agent — contrairement aux grilles « +X € / user »." },
+  { icon: QrCode, title: "Accès révocable, données maîtrisées", desc: "Lien / compte nominatif coupés en quelques secondes depuis le cockpit si un agent part ou perd son téléphone." },
 ]
 
 const features = [
@@ -38,12 +39,12 @@ const challenges = [
 ]
 
 const faq = [
-  { q: "Quelle application mobile pour les agents de nettoyage ?", a: "Proprely propose une application mobile pour agents de nettoyage qui ne nécessite aucune installation : chaque agent reçoit un lien web personnel qu'il ouvre dans le navigateur de son téléphone. Il accède immédiatement à son planning de la semaine, peut pointer son arrivée et son départ, déclencher la preuve de passage (QR + photos avant-après + signature client), signaler une absence ou un incident, et consulter son compteur d'heures en temps réel. Compatible Android 8+ et iOS 13+, fonctionne en 4G dégradée." },
-  { q: "L'application mobile Proprely est-elle gratuite ?", a: "Oui. L'accès agent est inclus dans tous les abonnements Proprely (et donc gratuit pendant la bêta privée pour les 30 sociétés fondatrices). Vous payez par site ou par utilisateur dirigeant — pas par agent. Vous pouvez ajouter autant d'agents que nécessaire sans surcoût." },
-  { q: "Pourquoi pas d'application native à installer ?", a: "Trois raisons : (1) les agents de nettoyage refusent souvent d'installer une app pro sur leur téléphone perso, (2) les apps natives saturent le stockage des téléphones d'entrée de gamme, (3) chaque mise à jour casse l'app pour une partie des utilisateurs (problème compatibilité Android/iOS). Le lien web supprime ces trois frictions. Les meilleures solutions 2026 vont toutes vers le web mobile responsive plutôt que vers les apps natives métier." },
-  { q: "L'application fonctionne-t-elle hors connexion ?", a: "Mode dégradé oui, hors ligne complet non. L'agent peut consulter son planning en cache navigateur, pointer ses heures et prendre les photos de preuve de passage même en 4G capricieuse — les données sont stockées temporairement dans le navigateur puis envoyées en arrière-plan dès qu'une connexion correcte est retrouvée. Pour une utilisation 100 % hors ligne (zones blanches complètes), une app native dédiée serait nécessaire." },
-  { q: "Que se passe-t-il si un agent perd son téléphone ?", a: "Vous coupez son accès en 5 secondes depuis le cockpit dirigeant : son lien personnel devient inactif et plus aucune donnée client n'est accessible depuis son téléphone. Aucune donnée client sensible (planning, photos, signatures) n'est stockée localement sur le téléphone de manière persistante — le cache est nettoyé automatiquement après 7 jours d'inactivité." },
-  { q: "Mes agents qui ne sont pas à l'aise avec le numérique vont-ils s'en sortir ?", a: "Oui. L'interface utilise un vocabulaire métier accessible, des icônes claires et une seule action principale par écran. Le retour terrain de la bêta indique que les agents non-natifs du numérique (40-60 ans, équipes intergénérationnelles) prennent la main en 5 à 10 minutes. L'absence d'installation supprime la première barrière. Si nécessaire, le dirigeant peut faire la première intervention avec l'agent." },
+  { q: "Quelle application mobile pour les agents de nettoyage ?", a: "Proprely propose une app Android gratuite sur le Play Store (iOS bientôt), plus un accès web. Planning, pointage, preuve de passage (QR + photos + signature), absences / incidents, compteur d'heures. L'app est optionnelle." },
+  { q: "L'application mobile Proprely est-elle gratuite ?", a: "Oui. App gratuite · accès agent inclus dans la bêta / l'offre. Pas de facturation par agent." },
+  { q: "Faut-il installer l'application ?", a: "Non, ce n'est pas obligatoire. App Android recommandée pour le confort terrain ; le lien web fonctionne aussi. iOS en approche." },
+  { q: "Pourquoi proposer une app et le web ?", a: "Certains agents préfèrent une app native ; d'autres refusent d'installer une app pro. Proprely laisse le choix, sans surcoût par tête." },
+  { q: "Fonctionne-t-elle hors connexion ?", a: "Mode dégradé / cache selon canal (app vs navigateur). Ne pas attendre un offline total sans validation produit." },
+  { q: "Que se passe-t-il si un agent perd son téléphone ?", a: "Révocation de l'accès depuis le cockpit en quelques secondes." },
 ]
 
 function injectSchema() {
@@ -73,17 +74,19 @@ function injectSchema() {
       '@context': 'https://schema.org',
       '@type': 'MobileApplication',
       name: 'Proprely — application agent terrain',
-      description: DESCRIPTION,
+      description: "App Android gratuite (optionnelle) pour agents de nettoyage : planning, pointage, preuve de passage. iOS bientôt · web OK · aucun coût par agent.",
       url: URL,
-      operatingSystem: 'Web (Android 8+, iOS 13+, navigateur récent)',
+      operatingSystem: 'Android',
       applicationCategory: 'BusinessApplication',
+      downloadUrl: PLAY_STORE_URL,
+      installUrl: PLAY_STORE_URL,
       publisher: { '@id': 'https://proprely.fr/#organization' },
       offers: {
         '@type': 'Offer',
         price: '0',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
-        description: 'Accès agent inclus dans tous les abonnements Proprely, gratuit pendant la bêta privée.',
+        description: 'App gratuite · accès agent inclus · pas de facturation par agent. Web disponible ; iOS bientôt.',
       },
     },
     {
@@ -139,7 +142,7 @@ export default function MobileAgentLanding() {
               className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider mb-5"
             >
               <Smartphone size={12} />
-              Mobile-first sans app
+              Android · Play Store · iOS bientôt · Web OK
             </motion.div>
 
             <motion.h1
@@ -148,8 +151,8 @@ export default function MobileAgentLanding() {
               transition={{ duration: 0.5, delay: 0.05 }}
               className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6"
             >
-              Application mobile pour agents de nettoyage :<br />
-              <span className="text-blue-600">aucune app à installer</span>
+              Application mobile pour vos agents de nettoyage —{" "}
+              <span className="text-blue-600">app ou web, au choix</span>
             </motion.h1>
 
             <motion.p
@@ -158,7 +161,7 @@ export default function MobileAgentLanding() {
               transition={{ duration: 0.4, delay: 0.12 }}
               className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              Pour équiper vos agents de nettoyage en mobile, Proprely fournit un simple lien web personnel : planning, pointage, preuve de passage, signalement d'absence et compteur d'heures dans le navigateur du téléphone. Aucune application à installer, aucune mise à jour à pousser, aucune formation longue.
+              Proprely équipe vos agents sur le terrain avec une app Android gratuite (déjà sur le Play Store), une version iOS bientôt, et un accès web qui reste disponible. L'app est un plus : personne n'est forcé de l'installer. Et vous ne payez pas par agent.
             </motion.p>
 
             <motion.div
@@ -177,23 +180,28 @@ export default function MobileAgentLanding() {
                 Candidater à la bêta
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link
-                to="/fonctionnalites/planning-nettoyage"
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('play_store_click', { location: 'mobile_hero' })}
                 className="bg-white border border-slate-200 text-slate-700 rounded-xl px-6 py-3.5 font-semibold text-sm hover:border-slate-300 hover:bg-slate-50 transition-colors inline-flex items-center justify-center gap-2"
               >
-                Voir le planning desktop
-              </Link>
+                Télécharger sur Google Play
+                <ExternalLink size={14} />
+              </a>
             </motion.div>
+            <p className="text-xs text-slate-500 mt-4">iOS bientôt · ou continuer sur le web · 0 € / agent</p>
           </div>
         </section>
 
         <section className="py-14 sm:py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
-              Pourquoi les apps natives échouent sur le terrain nettoyage
+              L'app pro sur téléphone perso : la douleur reste réelle
             </h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
-              Vous avez peut-être déjà essayé une application mobile native pour vos agents. Si c'est le cas, vous avez probablement rencontré ces frictions :
+              Beaucoup d'agents refusent encore d'installer une énième app métier. Chez Proprely, l'app est optionnelle et gratuite ; le web suffit si l'équipe refuse l'install.
             </p>
             <ul className="space-y-3">
               {challenges.map((c, i) => (
@@ -214,10 +222,10 @@ export default function MobileAgentLanding() {
                 Notre approche
               </div>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight mb-4">
-                Un lien web personnel = une application mobile
+                App Android gratuite, web OK, aucun coût par agent
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Chaque agent ouvre son lien, et c'est tout. Les 4 bénéfices structurants :
+                Les agents travaillent sur mobile : app Android gratuite (iOS bientôt) ou lien web — au choix. L'app est optionnelle. Aucun coût par agent.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
@@ -251,7 +259,7 @@ export default function MobileAgentLanding() {
                 Ce que vos agents peuvent faire depuis leur téléphone
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                6 actions essentielles, accessibles depuis le lien web personnel — sans formation longue.
+                6 actions essentielles, dans l'app Android ou via le lien web — sans formation longue.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
@@ -318,22 +326,34 @@ export default function MobileAgentLanding() {
         <section className="py-14 sm:py-20 border-t border-slate-100 bg-slate-950 text-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight mb-5 leading-tight">
-              Équipez vos agents en 30 minutes — sans installer d'app
+              Équipez vos agents en 30 minutes — app optionnelle
             </h2>
             <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
-              30 sociétés fondatrices, accès gratuit pendant la bêta, tarif privilégié à vie. Onboarding 30 min : chaque agent reçoit son lien personnel à la fin de l'appel.
+              30 sociétés fondatrices, accès gratuit pendant la bêta, tarif privilégié à vie. Onboarding 30 min : chaque agent reçoit son accès (app Android ou lien web) à la fin de l'appel.
             </p>
-            <a
-              href={BETA_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent('beta_cta_click', { location: 'mobile_footer' })}
-              className="group bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center gap-2"
-            >
-              Candidater à la bêta
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <p className="text-xs text-slate-400 mt-4">Gratuit · Sans carte bancaire · Réponse sous 24h</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={BETA_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('beta_cta_click', { location: 'mobile_footer' })}
+                className="group bg-blue-600 text-white rounded-xl px-8 py-4 font-bold text-base hover:bg-blue-700 transition-[background-color,box-shadow,transform] duration-200 ease-[var(--ease-out)] shadow-lg shadow-blue-600/30 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.97] inline-flex items-center justify-center gap-2"
+              >
+                Candidater à la bêta
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent('play_store_click', { location: 'mobile_footer' })}
+                className="bg-white/10 border border-white/20 text-white rounded-xl px-6 py-4 font-semibold text-sm hover:bg-white/15 transition-colors inline-flex items-center justify-center gap-2"
+              >
+                Télécharger sur Google Play
+                <ExternalLink size={14} />
+              </a>
+            </div>
+            <p className="text-xs text-slate-400 mt-4">Gratuit · Sans carte bancaire · iOS bientôt · 0 € / agent</p>
           </div>
         </section>
       </main>

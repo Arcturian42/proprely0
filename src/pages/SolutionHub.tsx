@@ -22,7 +22,7 @@ const bySector = [
 
 const byPain = [
   { icon: Layers, to: '/proprely-vs-excel', label: 'Remplacer Excel & WhatsApp', desc: 'Centraliser planning, agents et clients. Fini la dispersion.' },
-  { icon: Smartphone, to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App mobile sans installation, preuve de passage, pointage GPS.' },
+  { icon: Smartphone, to: '/application-mobile-agents-nettoyage', label: 'Suivre les agents sur le terrain', desc: 'App Android gratuite · ou web · preuve de passage, pointage GPS.' },
   { icon: Users, to: '/crm-entreprise-proprete', label: 'Centraliser clients & sites', desc: 'CRM propreté, multi-sites, marge par compte client.' },
   { icon: ShieldCheck, to: '/convention-collective-nettoyage', label: 'Conformité IDCC 3043', desc: 'Grille salariale, primes panier/transport, article 7.' },
   { icon: FileWarning, to: '/fonctionnalites/preuve-passage-nettoyage', label: 'Éviter les litiges clients', desc: 'QR code, photos horodatées, signature, PV automatique.' },
