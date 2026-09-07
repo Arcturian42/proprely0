@@ -32,7 +32,7 @@ export const posts: BlogPost[] = [
   {
     slug: 'assurances-professionnelles-societe-nettoyage',
     title: "Assurances pro société de nettoyage : points clés",
-    excerpt: "RC pro et assurances pour société de nettoyage B2B : risques terrain, garanties à revoir avec le courtier, preuve de passage en litige. Angle Bercy Infos n°515.",
+    excerpt: "Assurances pro société de nettoyage : RC, litiges, preuve de passage. Guide dirigeant (Bercy n°515). Bêta Proprely 0€ · 0€/agent.",
     date: "7 septembre 2026",
     dateModified: "7 septembre 2026",
     readTime: "8 min",
@@ -138,7 +138,7 @@ Places fondateurs limitées — société de nettoyage B2B France, environ 3–5
   {
     slug: 'recruter-saisonnier-proprete',
     title: "Recruter un saisonnier en propreté : mode d’emploi",
-    excerpt: "Saisonnier en société de nettoyage : formalités (angle Bercy n°516), pics d’activité, onboarding 48 h et planning multi-sites. Guide dirigeants 3–50 agents.",
+    excerpt: "Recruter un saisonnier en propreté : formalités, onboarding 48 h, planning. Guide 3–50 agents. Bêta Proprely 0€ · 0€/agent.",
     date: "7 septembre 2026",
     dateModified: "7 septembre 2026",
     readTime: "8 min",
@@ -245,7 +245,7 @@ Places fondateurs limitées — société de nettoyage B2B France, environ 3–5
   {
     slug: 'embauche-apprenti-entreprise-nettoyage',
     title: "Embauche apprenti entreprise nettoyage : formalités & ops",
-    excerpt: "Embaucher un apprenti en société de nettoyage : formalités allégées (angle Bercy), tutorat terrain, planning multi-sites et onboarding. Guide dirigeants 3–50 agents.",
+    excerpt: "Embauche apprenti nettoyage : formalités, tutorat, planning. Guide 3–50 agents (Bercy). Bêta Proprely 0€ · app Android optionnelle.",
     date: "7 septembre 2026",
     dateModified: "7 septembre 2026",
     readTime: "8 min",
@@ -351,7 +351,7 @@ Places fondateurs limitées — société de nettoyage B2B France, environ 3–5
   {
     slug: 'heures-supplementaires-agents-nettoyage',
     title: "Heures supplémentaires agents nettoyage : cadrer sans litige",
-    excerpt: "Heures supplémentaires (et non autorisées) en société de nettoyage : cadre pratique pour dirigeants 3–50 agents, checklist d’autorisation, pointage et export paie. Angle Bercy Infos n°514.",
+    excerpt: "Heures supp agents nettoyage : autorisation, pointage, export paie. Guide 3–50 agents (Bercy n°514). Bêta Proprely 0€ · 0€/agent.",
     date: "7 septembre 2026",
     dateModified: "7 septembre 2026",
     readTime: "8 min",

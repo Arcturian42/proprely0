@@ -581,7 +581,7 @@ export const comparisons: ComparisonPage[] = [
     competitorName: 'Kliner',
     competitorUrl: 'https://kliner.me',
     title: 'Proprely vs Kliner : comparatif 2026 pour société de nettoyage',
-    metaTitle: 'Proprely vs Kliner : prix, mobile, preuve · 2026',
+    metaTitle: 'Proprely vs Kliner : 0€/agent vs 4€/user · 2026',
     metaDescription: "Proprely vs Kliner pour société de nettoyage 3–50 agents : Kliner ~39 € + 4 €/user vs Proprely 0 €/agent en bêta. App Android optionnelle + web, preuve de passage, PTI. Comparatif honnête.",
     tldr: "Kliner est un SaaS propreté déjà commercialisé avec essai gratuit 14 jours, tarif public (39 €/mois + 4 €/utilisateur) et un positionnement fort sur l'IA et le terrain (PTI, géofencing). Proprely est un cockpit métier vertical en bêta privée pour les TPE/PME B2B de 3 à 50 agents : accès gratuit pour 30 sociétés fondatrices, onboarding 30 minutes avec le fondateur, focus preuve de passage, marge par client, app Android gratuite (optionnelle) + web, sans facturation par agent. Choisissez Kliner si vous voulez un essai self-serve immédiat et des modules terrain avancés (PTI) ; Proprely si vous voulez un outil léger, accompagné, et influencer la feuille de route.",
     competitorPitch: "Kliner est un SaaS français dédié aux entreprises de nettoyage et multiservices. Il met en avant le planning, la facturation, le contrôle qualité, une application terrain, un assistant IA (Copilote / Autopilot) et des modules comme le PTI et le géofencing, avec un essai 14 jours et une grille tarifaire publique.",

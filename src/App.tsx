@@ -56,8 +56,8 @@ type RouteMeta = { title: string; description: string; robots?: string }
 
 const META: Record<string, RouteMeta> = {
   '/': {
-    title: 'Logiciel société de nettoyage 2026 : planning, devis · Proprely',
-    description: "Logiciel de gestion société de nettoyage B2B : planning agents, devis, preuve de passage, marge par client. Bêta gratuite — places fondateurs.",
+    title: 'Logiciel société de nettoyage : bêta 0€ · pas de factu/user · Proprely',
+    description: "Cockpit nettoyage B2B 3–50 agents : planning, devis, preuve. Bêta 0€, 0€/agent, app Android optionnelle + web. Candidater.",
   },
   '/calculateur-roi': {
     title: 'Calculateur ROI société de nettoyage · Proprely',
@@ -120,8 +120,8 @@ const META: Record<string, RouteMeta> = {
     description: "Calculez en 1 minute la marge brute, marge nette et résultat horaire d'un contrat de nettoyage. Verdict immédiat, cibles par typologie.",
   },
   '/logiciel-societe-nettoyage': {
-    title: 'Logiciel société nettoyage B2B 2026 : guide + essai · Proprely',
-    description: "Logiciel de gestion société de nettoyage B2B : planning, devis, preuve de passage, marge par client. Bêta gratuite — 14 places fondateurs. Guide 2026.",
+    title: 'Logiciel société nettoyage : bêta 0€ · 0€/agent · guide 2026',
+    description: "Logiciel société de nettoyage B2B : planning, devis, preuve, marge. Bêta 0€ · pas de factu/user · app Android optionnelle. Guide 2026.",
   },
   '/comparatif-logiciel-nettoyage': {
     title: 'Comparatif logiciels nettoyage 2026 : lequel choisir ? · Proprely',
