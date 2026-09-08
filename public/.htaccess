@@ -14,6 +14,34 @@ RewriteBase /
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# ─── URLs parasites : 410 Gone ───────────────────────────────────────
+# Search Console remonte ~6 600 pages en « Server error (5xx) », toutes de
+# la forme https://proprely.fr/?prizes/<nombre> (ex. ?prizes/130010131).
+# Le site n'a jamais généré ces URLs : ce sont des liens de spam externes
+# qui pointent vers le domaine.
+#
+# Sans cette règle, ces URLs répondent 200 : la query est ignorée et « / »
+# sert la home (vérifié sur Apache 2.4 avec ce fichier). Les 5xx ne
+# viennent donc pas d'ici mais de la couche d'hébergement, qui sature sous
+# le crawl de ces milliers d'URLs parasites. Et comme Google réessaie
+# indéfiniment un 5xx — contrairement à un 404/410 qu'il finit par
+# abandonner — le compteur ne redescend jamais et le budget de crawl part
+# dans le vide au détriment des vraies pages.
+#
+# Renvoyer 410 casse ce cercle : Google retire ces URLs, la charge de crawl
+# retombe, et la saturation qui produit les 5xx disparaît avec elle.
+#
+# Signature retenue : une chaîne de requête qui contient un « / » mais
+# aucun « = ». Le site ne produit jamais ça, et aucun paramètre légitime
+# n'y ressemble (utm_*, gclid, fbclid contiennent tous un « = », y compris
+# quand leur valeur contient un slash). Couvre aussi les rotations futures
+# du mot-clé de spam, « prizes » n'étant pas codé en dur.
+#
+# 410 plutôt que 404 : Google traite le 410 comme une suppression
+# définitive et sort l'URL de son index plus vite.
+RewriteCond %{QUERY_STRING} ^[^=]*/[^=]*$
+RewriteRule ^ - [G,L]
+
 # ─── Redirections 301 historiques ────────────────────────────────────
 # URLs incorrectes générées par l'ancien llms.txt statique
 # (/ressources/calculateur-roi pointait vers une page inexistante).
@@ -38,6 +66,21 @@ RewriteRule ^api/subscribe/?$ /api/subscribe.php [L,QSA]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
+
+# Garde-fou anti-boucle sur la page d'erreur.
+# 404.html est produit par scripts/prerender.mts dans dist/ et n'est pas
+# versionné dans public/. S'il manque après un envoi sur le serveur, la
+# règle R=404 ci-dessous déclenche l'ErrorDocument, qui redemande
+# /404.html, qui ne matche pas -f, qui retombe sur R=404 : la requête
+# boucle jusqu'à la limite de récursion interne.
+# Mesuré sur Apache 2.4.58 : la réponse reste un 404, mais chaque URL
+# inconnue écrit une erreur « Request exceeded the limit of 10 internal
+# redirects » dans le log. Sur un serveur configuré différemment, la même
+# boucle se solde par un 500.
+# En sortant /404.html du rewrite, la boucle disparaît (vérifié : plus
+# aucune occurrence dans le log) et le pire cas devient un 404 servi par
+# la page d'erreur par défaut d'Apache.
+RewriteRule ^404\.html$ - [L]
 
 # Otherwise, return a real HTTP 404 (Apache will serve /404.html via ErrorDocument)
 RewriteRule ^ - [R=404,L]
