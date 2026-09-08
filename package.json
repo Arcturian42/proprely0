@@ -10,6 +10,7 @@
     "build:og": "node scripts/generate-og-images.mjs",
     "build:sitemap": "node scripts/generate-sitemap.mjs",
     "seo:indexnow": "node scripts/submit-indexnow.mjs",
+    "seo:diagnose": "node scripts/diagnose-live.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
