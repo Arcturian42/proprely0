@@ -1,7 +1,7 @@
 /**
  * Diagnostic « site piraté ou pas » pour proprely.fr.
  *
- * Répond à trois questions que Google Search Console ne tranche pas seule :
+ * Répond à quatre questions que Google Search Console ne tranche pas seule :
  *
  *   1. Le serveur fait-il du CLOAKING ? (réponse différente pour un visiteur,
  *      pour Googlebot, pour un mobile, ou pour un clic venant de Google).
@@ -12,7 +12,10 @@
  *      URLs inconnues explique à lui seul des milliers de « Server error (5xx) »
  *      dans GSC, parce que Google réessaie indéfiniment au lieu d'oublier l'URL.
  *
- *   3. Les URLs réelles du sitemap répondent-elles toutes 200 ?
+ *   3. Les URLs `?prizes/<nombre>` que GSC remonte par milliers servent-elles
+ *      du contenu de spam depuis le serveur, ou juste la home ?
+ *
+ *   4. Les URLs réelles du sitemap répondent-elles toutes 200 ?
  *
  * Aucune dépendance : Node 18+ suffit (fetch natif).
  *
@@ -125,28 +128,106 @@ async function testCloaking() {
     console.log(`    Le site n'est pas joignable depuis ce réseau, ou un proxy/VPN`)
     console.log(`    intercepte les requêtes. Relancer depuis une connexion directe`)
     console.log(`    avant de conclure quoi que ce soit.`)
-    return null
+    return { verdict: null }
   }
+
+  const reference = valides.find((r) => r.statut === 200)
 
   if (hotes.size > 1) {
     console.log(`  ✗ ALERTE : le site n'atterrit pas sur le même domaine selon le profil`)
     console.log(`    domaines vus : ${[...hotes].join(', ')}`)
     console.log(`    → signature classique d'une redirection malveillante.`)
-    return false
+    return { verdict: false, reference }
   }
   if (empreintes.size > 1) {
     console.log(`  ⚠ Le contenu diffère selon le profil (${empreintes.size} versions).`)
     console.log(`    Peut être légitime (rendu mobile), à vérifier si les titres diffèrent.`)
-    return true
+    return { verdict: true, reference }
   }
   console.log(`  ✓ Réponse identique pour les 4 profils, sur ${[...hotes][0]}.`)
   console.log(`    Aucun cloaking détecté.`)
+  return { verdict: true, reference }
+}
+
+/**
+ * 2. Les URLs de spam remontées par Search Console.
+ *
+ * GSC liste ~1 000 exemples, tous de la forme `https://proprely.fr/?prizes/<nombre>`,
+ * crawlés fin août 2026. « prizes » est un vocabulaire de spam loterie/concours.
+ *
+ * Le point décisif : `?prizes/123` est une CHAÎNE DE REQUÊTE sur `/`, pas un
+ * chemin. Un site statique sain sert donc la home à l'identique, quelle que
+ * soit la query. Trois issues possibles, trois diagnostics opposés :
+ *
+ *   - même empreinte que la home  → le site est sain. Ces URLs sont des liens
+ *     de spam externes pointant vers le domaine : rien n'est compromis chez toi.
+ *   - contenu DIFFÉRENT de la home → des pages de spam sont servies depuis ton
+ *     serveur : compromission confirmée.
+ *   - 5xx → le serveur s'écroule sur ces requêtes (probable saturation des
+ *     ressources de l'hébergement mutualisé sous le crawl de Google).
+ */
+async function testSpam(reference) {
+  console.log('\n━━━ 2. URLS DE SPAM SIGNALÉES PAR SEARCH CONSOLE ━━━\n')
+
+  if (!reference) {
+    console.log('  ⚠ Home injoignable : test non exécuté.')
+    return null
+  }
+
+  // Échantillon repris tel quel des exemples affichés par GSC.
+  const urls = [
+    `${ORIGIN}/?prizes/130010131`,
+    `${ORIGIN}/?prizes/238271575`,
+    `${ORIGIN}/?prizes/54552000`,
+    `${ORIGIN}/?prizes/${Date.now()}`, // inventée : ne peut venir que du serveur
+  ]
+
+  const vus = []
+  for (const url of urls) {
+    const r = await suivre(url, { 'User-Agent': UA_GOOGLEBOT })
+    if (r.erreur) {
+      console.log(`  ✗ ${url}\n      ${r.erreur}`)
+      continue
+    }
+    vus.push(r)
+    const meme = r.empreinte === reference.empreinte
+    const marque = r.statut >= 500 ? '✗' : meme ? '✓' : '✗'
+    console.log(`  ${marque} ${r.statut}  ${url}`)
+    console.log(`      titre    : ${r.titre || '(aucun)'}`)
+    console.log(`      empreinte: ${r.empreinte} ${meme ? '= home' : '≠ HOME'}`)
+    if (r.chaine.length > 1) afficherChaine(r.chaine)
+  }
+
+  if (vus.length === 0) return null
+
+  if (vus.some((r) => r.statut >= 500)) {
+    console.log('')
+    console.log('  ✗ Le serveur renvoie 5xx sur ces URLs.')
+    console.log('    C\'est ce que Google constate : 6 589 pages en « Server error ».')
+    console.log('    Cause probable : saturation des ressources de l\'hébergement')
+    console.log('    mutualisé sous le crawl de ces milliers d\'URLs parasites.')
+    return false
+  }
+
+  if (vus.some((r) => r.empreinte !== reference.empreinte)) {
+    console.log('')
+    console.log('  ✗ ALERTE : ces URLs servent un contenu DIFFÉRENT de la home.')
+    console.log('    Des pages de spam sont servies depuis ton serveur.')
+    console.log('    → compromission confirmée, voir les actions d\'urgence.')
+    return false
+  }
+
+  console.log('')
+  console.log('  ✓ Ces URLs renvoient la home à l\'identique.')
+  console.log('    Ton serveur ne sert AUCUN contenu de spam : le site n\'est pas')
+  console.log('    compromis. Ce sont des liens de spam externes qui pointent vers')
+  console.log('    le domaine. Correctif : balise canonique + règle ignorant la query.')
   return true
 }
 
-/** 2. Le comportement sur URL inconnue : 404 attendu, 5xx = la cause des 6 589. */
+/** 3. Le comportement sur URL inconnue : 404 attendu, 5xx = compteur qui gonfle. */
 async function test404() {
-  console.log('\n━━━ 2. RÉPONSE SUR URL INEXISTANTE (cause probable des 5xx) ━━━\n')
+  console.log('\n━━━ 3. RÉPONSE SUR URL INEXISTANTE ━━━\n')
 
   const bidons = [
     `${ORIGIN}/cette-page-n-existe-pas-${Date.now()}/`,
@@ -181,9 +262,9 @@ async function test404() {
   return !bug5xx
 }
 
-/** 3. Les vraies pages du site répondent-elles 200 ? */
+/** 4. Les vraies pages du site répondent-elles 200 ? */
 async function testSitemap(limite) {
-  console.log(`\n━━━ 3. URLS RÉELLES DU SITEMAP (échantillon de ${limite}) ━━━\n`)
+  console.log(`\n━━━ 4. URLS RÉELLES DU SITEMAP (échantillon de ${limite}) ━━━\n`)
 
   const chemin = resolve(root, 'public/sitemap.xml')
   if (!existsSync(chemin)) {
@@ -220,7 +301,8 @@ async function main() {
 
   console.log(`Diagnostic ${ORIGIN} — ${new Date().toISOString()}`)
 
-  const cloakingOk = await testCloaking()
+  const { verdict: cloakingOk, reference } = await testCloaking()
+  const spamOk = await testSpam(reference)
   const erreurOk = await test404()
   const sitemapOk = await testSitemap(limite)
 
@@ -235,6 +317,7 @@ async function main() {
   }
 
   console.log(`  ${cloakingOk ? '✓' : '✗'} Pas de redirection masquée`)
+  console.log(`  ${spamOk === null ? '⚠' : spamOk ? '✓' : '✗'} URLs ?prizes/ : aucun contenu de spam servi`)
   console.log(`  ${erreurOk ? '✓' : '✗'} URLs inconnues en 404 (et non 5xx)`)
   console.log(`  ${sitemapOk ? '✓' : '✗'} Pages réelles en 200`)
   console.log('')
@@ -242,6 +325,8 @@ async function main() {
   if (!cloakingOk) {
     console.log('  → Priorité : piratage probable. Inspecter les fichiers du serveur')
     console.log('    (public_html : .htaccess, *.php récents) et changer tous les accès.')
+  } else if (spamOk === false) {
+    console.log('  → Priorité : voir le détail de la section 2 ci-dessus.')
   } else if (!erreurOk) {
     console.log('  → Priorité : bug de routage serveur, pas un piratage.')
     console.log('    Corriger le 5xx sur URL inconnue vide les 6 589 erreurs de GSC.')
@@ -249,7 +334,7 @@ async function main() {
     console.log('  → Le serveur répond correctement sur tous les profils testés.')
   }
 
-  process.exitCode = cloakingOk && erreurOk && sitemapOk ? 0 : 1
+  process.exitCode = cloakingOk && spamOk !== false && erreurOk && sitemapOk ? 0 : 1
 }
 
 main().catch((err) => {
