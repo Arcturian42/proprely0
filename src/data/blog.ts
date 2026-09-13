@@ -5653,7 +5653,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention IDCC 3043 2026 : grille + PDF officiel",
+    title: "Convention IDCC 3043 2026 : grille et PDF officiel",
     excerpt: "IDCC 3043 : grille 2026, article 7, primes. PDF officiel Légifrance/FEP, pas un scan pirate. Checklist dirigeant 3–50 agents.",
     date: '20 mai 2026',
     dateModified: '13 septembre 2026',
@@ -7787,7 +7787,7 @@ Avec un logiciel métier nettoyage moderne, le calcul de l'indemnité transport 
 
 ## Pour aller plus loin
 
-- [Convention IDCC 3043 2026 : grille + PDF officiel](/blog/convention-collective-nettoyage-idcc-3043)
+- [Convention IDCC 3043 2026 : grille et PDF officiel](/blog/convention-collective-nettoyage-idcc-3043)
 - [Grille salaire nettoyage 2026 : AS1 11,99 €/h (IDCC)](/blog/grille-salaire-nettoyage-2026-idcc-3043)
 - [Coût horaire chargé agent nettoyage 2026 : méthode](/blog/cout-horaire-charge-agent-nettoyage)
 - [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage)
