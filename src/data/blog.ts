@@ -5653,11 +5653,13 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
   },
   {
     slug: 'convention-collective-nettoyage-idcc-3043',
-    title: "Convention propreté 2026 (IDCC 3043) : salaires + PDF",
-    excerpt: "Grille salariale 2026 : AS1 11,99€/h, ASP 12,42€/h. Heures, article 7, primes, transport. Téléchargez la convention IDCC 3043.",
+    title: "Convention IDCC 3043 2026 : grille et PDF officiel",
+    excerpt: "IDCC 3043 : grille 2026, article 7, primes. PDF officiel Légifrance/FEP, pas un scan pirate. Checklist dirigeant 3–50 agents.",
     date: '20 mai 2026',
+    dateModified: '13 septembre 2026',
     readTime: '12 min',
     tag: 'Conformité',
+    tldr: "La CCN propreté (IDCC 3043) s'applique aux sociétés de nettoyage de droit privé en France. En 2026, le plancher AS1 est à 11,99 €/h brut (grille révisée par accord de branche). Au-delà des minima : majorations (complémentaires, nuit, dimanche, fériés), article 7 (transfert d'agents en cas de changement de prestataire), primes. Pour le texte : Légifrance et publications de branche (FEP, BO Travail). Pas de PDF pirate. Ce guide est opérationnel, pas un avis juridique.",
     quickSummary: [
       "IDCC 3043 — Convention collective des entreprises de propreté — régit ~500 000 salariés en France.",
       "Grille salariale 2026 : agent service propreté niveau AS1 à 11,99 €/h, ASP à 12,42 €/h, ATQS à 13,32 €/h.",
@@ -5665,6 +5667,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
       "Article 7 : transfert automatique du personnel en cas de perte de marché. Obligation légale, pas une option.",
       "Prime d'expérience à partir de 4 ans d'ancienneté chez le même employeur.",
       "Heures de nuit (21h-6h) majorées à 20%, dimanche à 100%, jours fériés à 100%.",
+      "PDF et texte consolidé : Légifrance / FEP / BO Travail uniquement. Pas de scan trouvé sur un forum.",
     ],
     faq: [
       { q: "Quelle convention collective s'applique aux entreprises de nettoyage ?", a: "La Convention collective nationale des entreprises de propreté et services associés (IDCC 3043), créée par accord du 26 juillet 2011 et étendue par arrêté ministériel. Elle s'applique à toutes les entreprises de propreté de droit privé en France (code NAF 81.21Z, 81.22Z, 81.29A, 81.29B principalement)." },
@@ -5673,8 +5676,10 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
       { q: "Les heures de nuit, dimanche et jours fériés sont-elles majorées ?", a: "Oui. Heures de nuit (21h à 6h) : +20%. Dimanche : +100% du taux horaire. Jours fériés travaillés : +100% (ou repos compensateur double si négocié). Ces majorations sont obligatoires dans la branche, indépendamment de votre contrat de travail." },
       { q: "Comment fonctionne la prime d'expérience ?", a: "À partir de 4 ans d'ancienneté chez le même employeur, l'agent bénéficie d'une prime d'expérience versée mensuellement. Montant variable selon l'accord d'entreprise. Souvent forfaitaire (30-80 €/mois pour 4-10 ans, jusqu'à 150 €/mois au-delà de 15 ans). Vérifier votre accord d'entreprise ou la dernière révision IDCC 3043." },
       { q: "Quelles obligations RSE et formation impose la convention ?", a: "La branche impose 0,55% de la masse salariale en formation (CDI/CDD) à partir de 11 salariés. Plan annuel de formation à présenter au CSE. Égalité professionnelle homme/femme (rapport annuel). Pénibilité (exposition produits chimiques) : suivi médical renforcé pour les agents exposés aux produits CMR." },
+      { q: "Où télécharger le PDF officiel de la convention IDCC 3043 ?", a: "Uniquement sur les sources officielles : texte consolidé et arrêtés d'extension sur Légifrance, accords de salaires au Bulletin officiel des conventions collectives / BO Travail, et les publications de la FEP (Fédération des Entreprises de Propreté). Nous n'hébergeons pas de PDF. Un fichier trouvé sur un forum, un Drive partagé ou un site « téléchargement convention » est souvent périmé, incomplet, parfois malveillant. Recoupez toujours le texte en vigueur sur Légifrance. Ce n'est pas un avis juridique." },
+      { q: "Pourquoi éviter un PDF « convention nettoyage » trouvé sur Google ?", a: "Parce que la CCN et les avenants salariaux évoluent. Un scan 2023 ou 2024 fait passer à côté d'un accord étendu. En contrôle ou en litige, c'est le texte officiel publié qui compte, pas un PDF anonyme. Demandez aussi à votre expert-comptable / conseil la version qu'ils utilisent." },
     ],
-    relatedSlugs: ['calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    relatedSlugs: ['grille-salaire-nettoyage-2026-idcc-3043', 'indemnite-transport-proprete-2026', 'calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
     content: `## L'essentiel à connaître sur la convention collective propreté IDCC 3043
 
 La Convention collective nationale des entreprises de propreté et services associés, identifiée sous le numéro **IDCC 3043**, régit environ 500 000 salariés en France. Si vous dirigez une société de nettoyage B2B (codes NAF 81.21Z, 81.22Z, 81.29A, 81.29B), elle s'applique obligatoirement à vos contrats de travail.
@@ -5797,25 +5802,50 @@ Les agents exposés aux produits CMR (cancérogènes, mutagènes, reprotoxiques 
 - D'une formation aux risques chimiques documentée
 - D'une fiche d'exposition individuelle conservée 50 ans
 
+## Checklist dirigeant (souple, pas un audit juridique)
+
+À passer avec votre expert-comptable / conseil. Ce n'est **pas** une liste exhaustive ni un avis juridique.
+
+1. Confirmer que votre activité relève bien de l'**IDCC 3043** (codes NAF, objet social).
+2. Recouper la **grille en vigueur** sur Légifrance et le dernier accord de branche étendu (pas un PDF trouvé sur Google).
+3. Vérifier les **majorations** des temps partiels (heures complémentaires) avant la prochaine paie.
+4. Cartographier les marchés exposés à l'**article 7** (affectation principale, ancienneté).
+5. Tracer les heures sur un [planning lisible](/fonctionnalites/planning-nettoyage/) et un [pointage horodaté](/fonctionnalites/pointage-agents-nettoyage/) avant l'export paie.
+6. Archiver la version du texte que vous appliquez (date de l'accord, source officielle).
+
 ## Comment Proprely facilite la conformité convention collective propreté
 
 Plusieurs points de la convention nécessitent un suivi précis difficile à tenir sur Excel :
 
 - **Calcul des heures complémentaires majorées** : Proprely calcule automatiquement les majorations selon le taux horaire et le contrat
-- **Suivi des transferts article 7** : fiches agents avec ancienneté, marché d'affectation, % de temps — exportables en CSV pour due diligence
+- **Planning et pointage** : le [planning agents](/fonctionnalites/planning-nettoyage/) et le [pointage GPS](/fonctionnalites/pointage-agents-nettoyage/) donnent la trace des heures avant l'export paie
+- **Suivi des transferts article 7** : fiches agents avec ancienneté, marché d'affectation, % de temps, exportables en CSV pour due diligence
 - **Suivi formation et pénibilité** : champ "formations" et "expositions" sur chaque profil agent
 - **Reporting paie** : export mensuel des heures par agent avec majorations, prêt pour votre logiciel paie ou comptable
 
-Pour voir comment Proprely intègre la conformité IDCC 3043 en pratique : [logiciel propreté conforme convention collective IDCC 3043](/convention-collective-nettoyage). [Découvrir le module gestion des agents](/fonctionnalites/gestion-agents-nettoyage). Pour structurer le calcul des heures : [guide complet](/blog/calcul-heures-agents-nettoyage). Pour fidéliser et limiter le turnover (et donc les transferts subis) : [6 leviers concrets](/blog/fideliser-agents-nettoyage-turnover).
+**Limite honnête :** Proprely structure l'ops (planning, pointage, export). Il ne remplace pas votre CCN annotée, votre avocat, ni votre logiciel de paie.
+
+Pour voir comment Proprely intègre la conformité IDCC 3043 en pratique : [logiciel propreté conforme convention collective IDCC 3043](/convention-collective-nettoyage). [Découvrir le module gestion des agents](/fonctionnalites/gestion-agents-nettoyage). Pour structurer le calcul des heures : [guide complet](/blog/calcul-heures-agents-nettoyage). Pour fidéliser et limiter le turnover (et donc les transferts subis) : [6 leviers concrets](/blog/fideliser-agents-nettoyage-turnover). Voir aussi la [grille salaire 2026](/blog/grille-salaire-nettoyage-2026-idcc-3043) et l'[indemnité transport](/blog/indemnite-transport-proprete-2026).
 
 ## Sources officielles convention collective IDCC 3043
 
-- Convention collective IDCC 3043 sur Légifrance
-- Arrêté d'extension du 23 juillet 2012
-- Accords annuels de branche (révision salaires) — publiés au BO Travail
-- Site officiel FEP (Fédération des Entreprises de Propreté)
+Pas de PDF pirate, pas de scan anonyme, pas de Drive partagé.
 
-Pour aller plus loin, [candidater à la bêta privée Proprely](/beta) : la conformité IDCC 3043 est conçue dans le produit, pas en option. Vue d'ensemble du cockpit : [guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage).`,
+- Texte consolidé **IDCC 3043** sur [Légifrance](https://www.legifrance.gouv.fr) (recherchez l'identifiant de convention)
+- Arrêté d'extension du 23 juillet 2012 et avenants ultérieurs
+- Accords annuels de branche (révision salaires) publiés au BO Travail
+- Publications de la [FEP](https://www.monde-proprete.com/) (Fédération des Entreprises de Propreté)
+
+Recoupez toujours la date de l'accord et son extension. En cas de doute, votre conseil / expert-comptable.
+
+## Candidater à la bêta
+
+Vous voulez un planning + un pointage propres avant le prochain cycle de paie IDCC 3043 ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l'offre bêta](/beta/)
+
+Places fondateurs limitées. Société de nettoyage B2B France, environ 3–50 agents. Vue d'ensemble : [guide logiciel société de nettoyage 2026](/logiciel-societe-nettoyage).`,
   },
   {
     slug: 'tarif-nettoyage-bureaux-m2-2026',
@@ -7178,13 +7208,13 @@ Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPR
   },
   {
     slug: 'grille-salaire-nettoyage-2026-idcc-3043',
-    title: "Grille salaire propreté 2026 IDCC 3043 : tableau complet",
-    excerpt: "Grille salariale propreté 2026 : salaires minima par coefficient AS1 à MP5, primes, majorations heures, transport. Tableau officiel IDCC 3043 + calculs.",
+    title: "Grille salaire nettoyage 2026 : AS1 11,99 €/h (IDCC)",
+    excerpt: "AS1 11,99 €/h à MP5. Primes, majorations, coût chargé. Recouper sur Légifrance, pas un PDF pirate. Dirigeants 3–50 agents.",
     date: '7 juin 2026',
-    dateModified: '7 juin 2026',
+    dateModified: '13 septembre 2026',
     readTime: '11 min',
     tag: 'Conformité',
-    tldr: "La grille salariale de la convention collective propreté (IDCC 3043) en 2026 démarre à 11,99 €/h brut pour un agent de service propreté AS1 et atteint 23,07 €/h brut pour un maîtrise propreté MP5. La grille couvre 17 coefficients répartis sur 3 filières (agents de service, agents qualifiés, maîtrise). À cela s'ajoutent les primes obligatoires (transport, panier, salissure, ancienneté) et les majorations heures (complémentaires, supplémentaires, nuit, dimanche, fériés).",
+    tldr: "La grille salariale de la convention collective propreté (IDCC 3043) en 2026 démarre à 11,99 €/h brut pour un agent de service propreté AS1 et atteint 23,07 €/h brut pour un maîtrise propreté MP5. La grille couvre 17 coefficients répartis sur 3 filières (agents de service, agents qualifiés, maîtrise). S'y ajoutent primes (transport, panier, salissure, ancienneté) et majorations d'heures. Les montants ci-dessous sont des planchers à recouper sur Légifrance / BO Travail : pas un PDF pirate. Pas un avis juridique.",
     quickSummary: [
       "17 coefficients sur 3 filières : agents de service (AS1-AS3), agents qualifiés (AQS1-AQS3 + ASP, ATQS, CE), maîtrise (MP1-MP5).",
       "Salaire minimum 2026 : 11,99 €/h brut (AS1) à 23,07 €/h brut (MP5).",
@@ -7193,7 +7223,7 @@ Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPR
       "Heures supplémentaires majorées 25 % (35-43h), 50 % (au-delà).",
       "Heures de nuit (21h-6h) et dimanche : majorations selon accord d'entreprise.",
     ],
-    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
+    relatedSlugs: ['convention-collective-nettoyage-idcc-3043', 'indemnite-transport-proprete-2026', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage'],
     faq: [
       { q: "Quel est le salaire minimum 2026 dans la propreté (IDCC 3043) ?", a: "Le salaire minimum 2026 dans la convention collective propreté est de 11,99 €/h brut pour un agent de service propreté niveau AS1, soit 1 819 €/mois brut pour un temps plein 151,67h. Cette grille évolue annuellement par accord de branche (FEP / OPPBTP), généralement en janvier ou février." },
       { q: "Combien gagne un agent qualifié de service propreté (ASP) en 2026 ?", a: "Un agent qualifié de service propreté (coefficient ASP) gagne au minimum 12,42 €/h brut en 2026, soit environ 1 884 €/mois brut pour un temps plein. Avec primes (panier, transport, salissure) et ancienneté, le coût horaire chargé pour l'employeur atteint typiquement 19-21 €/h." },
@@ -7204,6 +7234,8 @@ Pour les **20 % restantes** (50+ agents avec besoins paie/GED intégrés), PROPR
       { q: "Comment calculer une fiche de paie type dans la propreté ?", a: "Pour un agent AS1 à temps plein 35h hebdo (151,67h/mois) au taux horaire 11,99 € : Salaire brut de base = 1 819 €. Ajout primes mensuelles typiques (panier 22j × 7,30 € = 161 €, transport ~75 €, salissure ~30 €) = +266 €. Total brut ~2 085 €. Charges salariales (~22 %) = -459 €. Net avant impôt = ~1 626 €. À cela s'ajoutent les heures complémentaires/supplémentaires majorées si effectuées." },
       { q: "La grille salaire propreté augmente-t-elle chaque année ?", a: "Oui, généralement annuellement par accord de branche signé entre la FEP (Fédération des Entreprises de Propreté) et les syndicats salariés (CGT, CFDT, FO, CFE-CGC, CFTC). L'accord est publié au Bulletin Officiel du Travail et entre en vigueur au 1er janvier (parfois février). Augmentation moyenne 2020-2026 : +2,5 à +3,5 % par an, en accélération depuis l'inflation 2022-2023." },
       { q: "Quelle est la différence entre AS1 et ASP dans la grille ?", a: "AS1 (agent de service propreté niveau 1) est le coefficient d'entrée pour un agent débutant sans qualification spécifique : nettoyage courant, sanitaires, vidage poubelles. ASP (agent qualifié de service propreté) est un coefficient supérieur exigeant une qualification : connaissance des produits chimiques, méthodes spécifiques, autonomie. Écart salaire 2026 : +0,43 €/h brut (+~65 €/mois temps plein)." },
+      { q: "Où consulter la grille officielle 2026, sans PDF pirate ?", a: "Sur Légifrance (texte consolidé IDCC 3043 + avenants de salaires étendus) et au Bulletin officiel des conventions collectives / BO Travail. La FEP publie aussi le suivi des accords de branche. Un tableau Excel ou un PDF « grille 2026 » trouvé sur un forum n'a aucune valeur opposable : il est souvent incomplet ou antérieur au dernier arrêté d'extension. Recoupez chaque coefficient avant de figer vos bulletins. Ce n'est pas un avis juridique." },
+      { q: "Proprely publie-t-il le PDF de la grille ?", a: "Non. Nous citons des planchers à titre pédagogique et renvoyons vers Légifrance / FEP / votre conseil. Pas d'hébergement de convention, pas de scan. Pour le suivi ops des heures qui alimentent la paie : planning et pointage, puis export vers votre logiciel de paie." },
     ],
     content: `## La grille salariale propreté 2026 en 1 tableau
 
@@ -7226,7 +7258,7 @@ La grille salariale 2026 de la convention collective des entreprises de propret�
 | MP4 | Maîtrise propreté niveau 4 | 20,15 € | 3 056 € |
 | MP5 | Maîtrise propreté niveau 5 | 23,07 € | 3 499 € |
 
-> Source : accord de branche FEP / syndicats salariés (janvier 2026). Cette grille évolue annuellement — à vérifier sur le site Légifrance pour la version officielle.
+> Source : accord de branche FEP / syndicats salariés (janvier 2026). Planchers à recouper sur [Légifrance](https://www.legifrance.gouv.fr) et le BO Travail. Pas un PDF pirate, pas un scan de forum.
 
 ## Les 3 filières de la grille IDCC 3043
 
@@ -7328,15 +7360,34 @@ Vos contrats récurrents doivent intégrer une clause de révision annuelle inde
 ### 4. Anticipez l'évolution des primes
 Les primes représentent jusqu'à 15 % de la masse salariale. Une augmentation de la prime de transport (50 % du Pass Navigo qui augmente à chaque hausse SNCF/RATP) doit être anticipée dans vos coûts.
 
+## Checklist dirigeant (souple)
+
+À passer avec votre paie / expert-comptable. Pas un audit URSSAF, pas un avis juridique.
+
+1. Lister le **coefficient réel** de chaque agent (pas le titre affiché sur l'offre d'emploi).
+2. Recouper chaque taux horaire avec l'**accord étendu** publié (Légifrance / BO Travail), pas un PDF trouvé en ligne.
+3. Recalculer le **coût horaire chargé** après chaque révision de grille.
+4. Vérifier la **clause d'indexation** de vos contrats clients (sinon la hausse rogne la marge).
+5. Pointer les heures ([pointage](/fonctionnalites/pointage-agents-nettoyage/)) et les lire sur le [planning](/fonctionnalites/planning-nettoyage/) avant l'export paie.
+6. Archiver la date et la source du barème appliqué ce mois-ci.
+
 ## Pour aller plus loin
 
-- [Convention collective propreté IDCC 3043 : le guide complet 2026](/blog/convention-collective-nettoyage-idcc-3043) — analyse de l'article 7, primes détaillées, formation, pénibilité.
-- [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage) — comment automatiser le calcul des heures et majorations.
-- [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) — la méthode complète pour calculer le vrai coût d'une heure d'agent.
-- [Logiciel pointage GPS agents de nettoyage](/fonctionnalites/pointage-agents-nettoyage) — comment Proprely calcule automatiquement les majorations IDCC 3043 et prépare la paie en 2 clics.
-- [Guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage) — la vue d'ensemble du cockpit Proprely.
+- [Convention collective propreté IDCC 3043 : PDF officiel + grille](/blog/convention-collective-nettoyage-idcc-3043) : article 7, primes, formation, pénibilité, sources Légifrance/FEP.
+- [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage) : comment automatiser le calcul des heures et majorations.
+- [Coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage) : la méthode pour calculer le vrai coût d'une heure d'agent.
+- [Planning agents de nettoyage](/fonctionnalites/planning-nettoyage/) : affectation lisible avant de majorer une heure.
+- [Pointage GPS agents de nettoyage](/fonctionnalites/pointage-agents-nettoyage/) : trace horodatée pour préparer la paie.
+- [Guide complet logiciel société de nettoyage 2026](/logiciel-societe-nettoyage) : vue d'ensemble du cockpit.
 
-Pour automatiser la conformité IDCC 3043 (calcul automatique des majorations, export paie Silae), [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+## Candidater à la bêta
+
+Vous voulez relier planning, pointage et export paie sans reconstruire la grille chaque mois sur Excel ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l'offre bêta](/beta/)
+
+Places fondateurs limitées. Société de nettoyage B2B France, environ 3–50 agents.`,
   },
   {
     slug: 'kpi-societe-nettoyage-2026',
@@ -7561,13 +7612,13 @@ Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta priv�
   },
   {
     slug: 'indemnite-transport-proprete-2026',
-    title: "Indemnité transport propreté 2026 : montant et calcul",
-    excerpt: "Indemnité transport propreté 2026 (IDCC 3043) : barèmes, calcul, conditions, remboursement employeur. Tableaux par zone et par mode de transport.",
+    title: "Indemnité transport propreté 2026 : 50 % + prime CCN",
+    excerpt: "50 % transport public + prime CCN selon accord. Justificatifs, URSSAF, coût horaire. Textes officiels Légifrance, pas un PDF pirate.",
     date: '7 juin 2026',
-    dateModified: '7 juin 2026',
+    dateModified: '13 septembre 2026',
     readTime: '9 min',
     tag: 'Conformité',
-    tldr: "L'indemnité transport dans la propreté (IDCC 3043) en 2026 comprend deux dispositifs cumulables : (1) le remboursement obligatoire de 50 % du titre de transport public (Navigo, abonnement train, bus, métro), valable partout en France ; (2) la prime de transport conventionnelle propreté qui couvre l'usage de véhicule personnel ou les déplacements non couverts par les transports en commun. Montant moyen 2026 : 75-150 €/mois selon zone et trajet. Cumulable avec la prime de mobilité durable (forfait vélo, covoiturage).",
+    tldr: "L'indemnité transport dans la propreté (IDCC 3043) en 2026 combine surtout deux dispositifs : (1) le remboursement obligatoire de 50 % du titre de transport public (Navigo, abonnement train, bus, métro), valable partout en France ; (2) la prime de transport conventionnelle, définie par accord d'entreprise ou de branche locale, pour véhicule personnel ou transports non praticables. Un forfait mobilité durable peut s'ajouter. Ordre de grandeur souvent observé : 75-150 €/mois selon zone et trajet. Textes : Code du travail + CCN sur Légifrance. Pas de PDF pirate. Pas un avis juridique.",
     quickSummary: [
       "Remboursement transport public 50 % obligatoire (loi française, applicable tous secteurs).",
       "Prime de transport conventionnelle propreté : variable selon accord d'entreprise (50-100 €/mois moyenne).",
@@ -7586,6 +7637,8 @@ Pour piloter ces 12 KPI en temps réel sans Excel, [candidater à la bêta priv�
       { q: "Comment justifier l'indemnité transport pour l'URSSAF ?", a: "Conservation des justificatifs pendant 3 ans minimum : (1) Photocopie du titre de transport public (Navigo, abonnement) ou attestation d'abonnement ; (2) Pour la prime transport véhicule personnel : déclaration sur l'honneur de l'agent + carte grise (preuve propriété) + relevé kilométrique trimestriel ; (3) Pour le forfait mobilité durable : attestation employeur + déclaration agent. Audit URSSAF type : contrôle aléatoire 1-2 % des entreprises/an." },
       { q: "L'indemnité transport rentre-t-elle dans le coût horaire chargé d'un agent ?", a: "Oui. Pour un agent francilien type 2026 : remboursement Navigo (~38 €/mois) + prime transport optionnelle (~50-100 €/mois) = 88-138 €/mois soit 0,55-0,90 €/h sur base 151,67 h. À intégrer dans le coût horaire chargé pour le calcul de marge par client et la tarification. Voir [méthode complète coût horaire chargé agent nettoyage 2026](/blog/cout-horaire-charge-agent-nettoyage)." },
       { q: "Que se passe-t-il pour les agents en temps partiel ?", a: "Le remboursement 50 % du transport public est intégral si le titre couvre les jours travaillés (pas de prorata). La prime de transport conventionnelle est généralement prorata du temps de présence (jours réellement travaillés vs jours ouvrés du mois). Le forfait mobilité durable est aussi prorata. Une bonne pratique : préciser le mode de calcul dans le contrat de travail dès l'embauche." },
+      { q: "Où trouver les textes officiels sur l'indemnité transport, sans PDF pirate ?", a: "Deux couches distinctes. (1) Obligation légale 50 % : article L3261-2 du Code du travail, consultable sur Légifrance. (2) Prime conventionnelle propreté : votre accord d'entreprise / DUE, et le cas échéant les avenants IDCC 3043 publiés sur Légifrance et au BO Travail. Un PDF « indemnité transport propreté 2026 » trouvé sur un forum n'est pas une source. Nous n'hébergeons pas de scan. Vérifiez aussi les plafonds d'exonération URSSAF sur les pages officielles, ils évoluent." },
+      { q: "Faut-il un PDF de la CCN pour calculer le transport ?", a: "Non. Distinguez d'abord le 50 % légal (partout en France, justificatif d'abonnement) et la prime CCN / accord (souvent véhicule personnel, horaires nuit, zones non desservies). Le calcul mensuel s'appuie sur les jours réellement travaillés : d'où l'intérêt d'un planning et d'un pointage propres, puis d'un export vers la paie." },
     ],
     content: `## Les 3 dispositifs d'indemnité transport en propreté 2026
 
@@ -7719,18 +7772,38 @@ Au-delà du minimum légal, formaliser votre politique transport (prime, FMD) pa
 Mettre en avant la politique transport dans vos offres d'emploi et entretiens. Différenciateur fort sur un marché du travail tendu.
 
 ### 4. Automatiser le calcul mensuel
-Avec un logiciel métier nettoyage moderne, le calcul de l'indemnité transport est automatisé chaque mois sur la base des jours réellement travaillés. Évite les erreurs et les rattrapages.
+Avec un logiciel métier nettoyage moderne, le calcul de l'indemnité transport s'appuie sur les jours réellement travaillés (planning + pointage), pas sur une moyenne orale. Évite les erreurs et les rattrapages.
+
+## Checklist dirigeant (souple)
+
+À caler avec votre paie / expert-comptable. Pas un avis URSSAF.
+
+1. Séparer clairement **50 % légal** (titre de transport public) et **prime CCN / accord** (véhicule, zones non desservies).
+2. Recouper les textes sur [Légifrance](https://www.legifrance.gouv.fr) (Code du travail + IDCC 3043). Pas un PDF pirate.
+3. Collecter et **archiver les justificatifs** (abonnement, déclaration véhicule, FMD) pendant la durée conseillée par votre conseil.
+4. Formaliser la politique (accord d'entreprise ou DUE) pour éviter les contestations individuelles.
+5. Relier le calcul aux **jours travaillés** : [planning](/fonctionnalites/planning-nettoyage/) + [pointage](/fonctionnalites/pointage-agents-nettoyage/).
+6. Intégrer le transport dans le [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage) avant de chiffrer un contrat.
 
 ## Pour aller plus loin
 
-- [Convention collective propreté 2026 (IDCC 3043) : salaires + PDF](/blog/convention-collective-nettoyage-idcc-3043)
-- [Grille salaire nettoyage 2026 IDCC 3043 : tableau complet](/blog/grille-salaire-nettoyage-2026-idcc-3043)
+- [Convention IDCC 3043 2026 : grille et PDF officiel](/blog/convention-collective-nettoyage-idcc-3043)
+- [Grille salaire nettoyage 2026 : AS1 11,99 €/h (IDCC)](/blog/grille-salaire-nettoyage-2026-idcc-3043)
 - [Coût horaire chargé agent nettoyage 2026 : méthode](/blog/cout-horaire-charge-agent-nettoyage)
 - [Calcul des heures agents nettoyage : méthode et coût 2026](/blog/calcul-heures-agents-nettoyage)
 - [Fidéliser les agents : 6 leviers anti-turnover](/blog/fideliser-agents-nettoyage-turnover)
+- [Planning agents](/fonctionnalites/planning-nettoyage/)
+- [Pointage GPS agents](/fonctionnalites/pointage-agents-nettoyage/)
 - [Logiciel société de nettoyage : guide complet 2026](/logiciel-societe-nettoyage)
 
-Pour automatiser le calcul mensuel des indemnités transport et préparer la paie sans erreur, [candidater à la bêta privée Proprely](/beta) — gratuit pendant la bêta, tarif fondateur à vie après.`,
+## Candidater à la bêta
+
+Vous voulez calculer le transport sur les jours réellement travaillés, pas sur une moyenne Excel ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)  
+Soft : [voir l'offre bêta](/beta/)
+
+Places fondateurs limitées. Société de nettoyage B2B France, environ 3–50 agents.`,
   },
   {
     slug: 'modele-planning-agents-nettoyage-excel',
@@ -7968,7 +8041,7 @@ const POST_TLDR: Record<string, string> = {
   'trouver-clients-b2b-nettoyage':
     "Les 5 canaux d'acquisition B2B qui marchent en nettoyage : (1) prospection LinkedIn ciblée (office managers, syndics, DRH), (2) recommandation de clients satisfaits (programme de parrainage), (3) référencement local SEO (page ville + Google Business Profile), (4) partenariat avec syndics/facility managers, (5) appels d'offres publics (BOAMP, profils acheteurs). Le porte-à-porte et les flyers ont un ROI quasi nul en B2B.",
   'convention-collective-nettoyage-idcc-3043':
-    "La convention collective nationale de la propreté (IDCC 3043) régit ~500 000 salariés en France. Points clés 2026 : grille de salaires AS1 à MP5 (de 12,00 €/h brut à 18+ €/h), prime panier (~ 7 €/jour si plus de 6h), prime de transport (URSSAF), prime d'expérience (3-15 %), congés payés 2,5 jours/mois, durée de travail standard 35h/semaine. Tout employeur du secteur doit l'appliquer.",
+    "La CCN propreté (IDCC 3043) s'applique aux sociétés de nettoyage de droit privé en France. En 2026, le plancher AS1 est à 11,99 €/h brut. Au-delà : majorations, article 7, primes. Texte : Légifrance et publications de branche (FEP, BO Travail). Pas de PDF pirate.",
   'tarif-nettoyage-bureaux-m2-2026':
     "Le tarif de nettoyage de bureaux en France en 2026 se situe en moyenne entre 12 et 22 € HT/m²/an, soit ~1-2 €/m²/mois sur contrat annuel. Variables : surface (>500 m² = -10-20 %), fréquence (quotidien vs 3×/semaine), zone géographique (Paris/IDF +15-25 % vs province), prestations annexes (vitres, moquette), horaires (avant 7h ou après 21h = +30-60 %).",
   'digitaliser-entreprise-nettoyage-5-etapes':
@@ -7999,6 +8072,9 @@ const POST_DATE_MODIFIED: Record<string, string> = {
   'logiciel-societe-nettoyage-criteres': '21 mai 2026',
   'rgpd-societe-nettoyage-2026': '21 mai 2026',
   'comparatif-logiciels-nettoyage-2026': '3 juin 2026',
+  'convention-collective-nettoyage-idcc-3043': '13 septembre 2026',
+  'grille-salaire-nettoyage-2026-idcc-3043': '13 septembre 2026',
+  'indemnite-transport-proprete-2026': '13 septembre 2026',
 }
 
 export function getPost(slug: string): BlogPost | undefined {
