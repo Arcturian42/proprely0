@@ -30,6 +30,844 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'primes-idcc-3043-proprete-2026',
+    title: "Primes IDCC 3043 2026 : panier, salissure, ancienneté",
+    excerpt: "Primes IDCC 3043 2026 : panier, salissure, ancienneté. Conditions haut niveau, suivi ops, sources Légifrance/FEP. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "10 min",
+    tag: "Conformité",
+    tldr: "En propreté (IDCC 3043), panier, salissure et ancienneté / expérience s’ajoutent à la grille. Conditions et montants : texte officiel et avenants (Légifrance, FEP, BO Travail), pas un PDF de forum. Côté ops : qui a droit à quoi, quels jours / sites, export paie propre. Vérifiez le texte en vigueur et votre conseil. Ce n’est pas un barème officiel.",
+    quickSummary: [
+      "Trois familles à cadrer : panier, salissure, ancienneté / expérience",
+      "Barèmes : texte officiel IDCC 3043 + avenants, pas un scan pirate",
+      "Ops : qui, quel jour, quel site — avant l’export paie",
+      "AS1 11,99 €/h (2026) : les primes s’ajoutent au plancher, elles ne le remplacent pas",
+      "Proprely aide à tracer le terrain ; le bulletin reste chez le cabinet / logiciel de paie",
+    ],
+    faq: [
+      { q: "Quelles primes vise-t-on en IDCC 3043 ?", a: "Les plus discutées au quotidien sont la prime de panier (souvent liée à une durée continue et à l’impossibilité de rentrer déjeuner), la prime de salissure (tâches particulièrement salissantes), et la prime d’ancienneté / d’expérience (mécanisme à partir d’une ancienneté chez le même employeur, souvent citée à 4 ans). S’y ajoutent d’autres éléments (transport, majorations) traités ailleurs. La liste exacte et les conditions sont dans le texte consolidé et les avenants — Légifrance / FEP — pas dans un article de blog." },
+      { q: "Où trouver le barème officiel 2026 ?", a: "Uniquement sur les sources officielles : texte consolidé IDCC 3043 sur Légifrance, accords de branche étendus au BO Travail, publications de la FEP (Fédération des Entreprises de Propreté). Nous n’hébergeons aucun PDF. Un fichier trouvé sur un Drive, un forum ou un site « téléchargement convention » est souvent périmé. Recoupez la date d’extension. Ce n’est pas un avis juridique." },
+      { q: "Le panier est-il dû dès 6 heures ?", a: "Dans la pratique de branche, le panier est souvent associé à une durée continue (ordre de grandeur déjà cité ailleurs : au-delà de 6 h) et à l’absence de restauration sur site / impossibilité de rentrer. Les seuils, exclusions et montants se lisent dans le texte en vigueur et votre accord. Ne copiez pas un montant lu sur un blog sans le recouper. Votre paie / conseil tranche le cas concret (coupure, multi-sites, restauration client)." },
+      { q: "La salissure est-elle automatique pour tous les agents ?", a: "Non. Elle vise en général des conditions particulièrement salissantes (ex. remise en état, certaines tâches industrielles), pas le nettoyage courant de bureaux. La qualification de la tâche, le montant et le cumul avec le panier dépendent du texte et de votre organisation. Documentez le type d’intervention (planning + preuve de passage), puis laissez la paie appliquer la règle validée par votre conseil." },
+      { q: "Ancienneté et expérience : c’est la même chose ?", a: "Dans la CCN propreté, on parle souvent de prime d’expérience à partir d’une ancienneté chez le même employeur (seuil déjà cité : 4 ans). Les montants ne sont pas à inventer ici : la convention d’entreprise, l’accord de branche et le bulletin doivent coller au texte officiel. Conservez la date d’entrée et l’historique d’affectation (utile aussi en article 7). Faites valider le calcul par le cabinet." },
+      { q: "Faut-il intégrer les primes au coût horaire chargé ?", a: "Oui pour piloter la marge. Notre méthode coût horaire chargé les inclut déjà dans un ordre de grandeur (environ 1 à 1,50 €/h selon l’organisation, en plus du brut AS1 11,99 € et des charges). Sans ça, vous sous-tariferez le prochain contrat. Voir le guide coût horaire et la grille 2026 — toujours recouper les montants officiels." },
+      { q: "Comment suivre les primes sans Excel + WhatsApp ?", a: "Trois traces : (1) contrat / coefficient / date d’entrée ; (2) jours et durées réellement travaillés (pointage) ; (3) nature des sites / tâches (planning + preuve). Vous validez un état avant paie, vous exportez. Proprely structure ces traces ; il ne remplace pas le logiciel de paie ni l’interprétation juridique." },
+      { q: "Proprely calcule-t-il un barème officiel ?", a: "Non. Proprely aide à paramétrer ce que vous et votre cabinet avez validé (contrat, types de jours, export). Les minima et primes se lisent sur Légifrance / FEP / votre CCN annotée. En cas d’écart, c’est le texte officiel et le bulletin qui primment, pas un écran ops." },
+    ],
+    relatedSlugs: ['grille-salaire-nettoyage-2026-idcc-3043', 'convention-collective-nettoyage-idcc-3043', 'indemnite-transport-proprete-2026', 'cout-horaire-charge-agent-nettoyage', 'heures-complementaires-temps-partiel-proprete'],
+    content: `## Réponse-flash
+
+En société de nettoyage B2B, le salaire de **grille** (plancher **AS1 11,99 €/h** brut en 2026, déjà cité dans nos articles CCN) n’est qu’une partie du coût. S’y ajoutent des **primes** prévues par la convention **IDCC 3043** : surtout **panier**, **salissure**, **ancienneté / expérience**, et le volet **transport** (traité à part).
+
+Ce guide est **opérationnel** pour un dirigeant ou un responsable d’exploitation (3–50 agents). Il n’invente **aucun** barème. Les montants et conditions se lisent sur [Légifrance](https://www.legifrance.gouv.fr) (texte consolidé IDCC 3043), les accords étendus (BO Travail) et les publications de la [FEP](https://www.monde-proprete.com/). **Pas de PDF pirate.** Ce n’est **pas** un avis juridique.
+
+## Pourquoi les primes pèsent en TPE propreté
+
+- Elles bougent **chaque jour** (durée, type de site, restauration possible ou non).
+- Les **temps partiels** (majoritaires dans le secteur) multiplient les cas limites.
+- Un oubli répété se voit en **paie**, en climat social, parfois en contrôle.
+- Oubliées du **devis**, elles mangent la [marge par site](/blog/augmenter-marge-site-nettoyage).
+
+La bonne posture : **qualifier** (qui a droit), **prouver** (planning + pointage), **payer** (export cabinet), **recouper** le texte officiel.
+
+## Panier — conditions haut niveau
+
+Dans la pratique de branche, le panier est souvent lié à :
+
+1. Une **durée continue** de travail (ordre de grandeur déjà utilisé dans nos guides : au-delà de **6 h**).
+2. L’**impossibilité** de regagner le domicile pour le repas, ou l’absence de restauration sur site.
+
+Montants : ne les copiez pas depuis un article. Un ordre de grandeur **déjà cité** dans notre [grille 2026](/blog/grille-salaire-nettoyage-2026-idcc-3043) et le glossaire (~7 € / jour) n’est **pas** un barème officiel. Recoupez avenant + URSSAF (exonération éventuelle dans la limite des plafonds).
+
+Pièges ops :
+
+- Agent sur **2 sites** le matin + l’après-midi : la « journée » n’est pas toujours une durée continue.
+- Client qui **offre** une salle de pause / ticket : votre conseil dit si le panier reste dû.
+- Validation a posteriori sur WhatsApp : trop tard pour une paie propre.
+
+## Salissure — ne pas généraliser
+
+La salissure vise des **conditions particulièrement salissantes**, pas le tertiaire courant. Exemples de discussion avec le conseil (sans liste magique) : remise en état, certaines interventions industrielles, tâches très exposées.
+
+Ops :
+
+- Marquer la **typologie** de mission sur le planning (bureaux vs chantier vs industriel).
+- Garder une **preuve de passage** si le client conteste la nature du travail.
+- Ne pas « aligner tout le monde au forfait » sans regarder le texte et l’accord.
+
+Les fourchettes déjà mentionnées ailleurs dans nos contenus (horaire ou journalier) restent des **ordres de grandeur**. Le montant applicable est celui du texte / de votre accord.
+
+## Ancienneté / expérience
+
+La CCN prévoit un mécanisme d’**expérience** souvent présenté à partir de **4 ans chez le même employeur**. Les montants (forfait ou pourcentage) se lisent dans le texte, l’accord d’entreprise et le dernier avenant — pas dans un tableau recopié.
+
+À tracer côté RH / ops :
+
+- Date d’entrée, ruptures, reprises.
+- Affectation principale (utile aussi pour l’[article 7](/blog/article-7-idcc-3043-transfert-personnel)).
+- Changement de coefficient ([grille](/blog/grille-salaire-nettoyage-2026-idcc-3043)).
+
+Ne confondez pas « ancienneté chez vous » et « ancienneté reprise » en transfert de marché : votre conseil qualifie.
+
+## Transport : renvoyer au bon article
+
+Le **remboursement 50 %** des titres de transport public et la prime / indemnité conventionnelle sont un sujet à part. Voir [indemnité transport propreté 2026](/blog/indemnite-transport-proprete-2026). Ne mélangez pas panier et Navigo dans le même filet Excel.
+
+## Comment suivre sans inventer un barème
+
+1. **Figer la règle écrite** avec le cabinet (qui a droit, quels justificatifs, quel export).
+2. **Pointer** arrivée / départ — [pointage](/fonctionnalites/pointage-agents-nettoyage).
+3. **Planifier** la nature du site — [planning](/fonctionnalites/planning-nettoyage).
+4. **Revoir 30–45 min** avant paie : exceptions, oublis, jours fériés.
+5. **Exporter** vers Silae / le cabinet. Archiver planning + pointages.
+
+Si le barème change (avenant), vous mettez à jour le paramétrage **après** lecture du texte officiel, pas après un screenshot LinkedIn.
+
+## Checklist ops dirigeant
+
+1. Identifier les agents concernés (contrat, coefficient, date d’entrée).
+2. Recouper le texte **IDCC 3043** sur Légifrance + dernier accord étendu (FEP / BO Travail).
+3. Écrire 10 lignes internes : panier / salissure / expérience — qui décide en cas de doute.
+4. Lier les jours travaillés au [pointage](/fonctionnalites/pointage-agents-nettoyage) et au [calcul d’heures](/blog/calcul-heures-agents-nettoyage).
+5. Intégrer un ordre de grandeur primes dans le [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage) avant de [fixer un prix](/blog/fixer-prix-nettoyage).
+6. Interdire les PDF « convention nettoyage » anonymes. Source = Légifrance / FEP.
+7. Candidater à un outil qui centralise traces ops : [Fillout bêta](https://pershingsolution.fillout.com/t/rBPhgNm42Lus).
+
+## Comment Proprely aide — pas un barème officiel
+
+Proprely structure **planning**, **pointage**, fiches agents (ancienneté, sites) et **export** vers la paie. Objectif : savoir qui a travaillé quel jour, sur quel type de site, assez tôt pour la paie.
+
+**Limite honnête :** ce n’est pas Légifrance, pas un avocat, pas un logiciel de paie. Les montants officiels restent sur le texte consolidé et le bulletin.
+
+## Sources officielles
+
+- [Légifrance](https://www.legifrance.gouv.fr) — IDCC 3043, Code du travail
+- [FEP / monde-proprete.com](https://www.monde-proprete.com/)
+- Accords de branche au BO Travail
+- Votre expert-comptable / avocat
+
+## Pour aller plus loin
+
+- [Grille salaire propreté 2026](/blog/grille-salaire-nettoyage-2026-idcc-3043)
+- [Convention IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043)
+- [Heures complémentaires temps partiel](/blog/heures-complementaires-temps-partiel-proprete)
+- [Indemnité transport](/blog/indemnite-transport-proprete-2026)
+- [Coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage)
+- [Pointage agents](/fonctionnalites/pointage-agents-nettoyage)
+- [Planning agents](/fonctionnalites/planning-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez tracer jours, sites et export paie sans reconstruire les primes sur WhatsApp ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'heures-complementaires-temps-partiel-proprete',
+    title: "Heures complémentaires temps partiel propreté (IDCC)",
+    excerpt: "Heures complémentaires temps partiel propreté : +10 % / +25 %, autorisation, pointage, export paie. Piège URSSAF. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "10 min",
+    tag: "Conformité",
+    tldr: "La majorité des agents de propreté sont à temps partiel. Au-delà du contrat, on parle d’heures complémentaires (pas d’heures supplémentaires de temps plein). La CCN IDCC 3043, déjà citée dans nos guides, majore souvent +10 % sur une première plage puis +25 % au-delà, dans une limite liée à la durée contractuelle. Sans autorisation claire et sans pointage, la paie et l’URSSAF deviennent un angle mort. Vérifiez Code du travail + texte officiel. Ce n’est pas un avis juridique.",
+    quickSummary: [
+      "Temps partiel = heures complémentaires ; temps plein = heures supplémentaires",
+      "Majorations déjà utilisées ici : +10 % puis +25 % (IDCC 3043) — à recouper",
+      "Plafond souvent cité : 1/3 de la durée contractuelle (requalification possible)",
+      "Process : qui autorise, pointage, revue avant paie, export cabinet",
+      "Proprely structure la trace ; le bulletin reste hors scope",
+    ],
+    faq: [
+      { q: "Heures complémentaires ou heures supplémentaires ?", a: "Sur un temps partiel, les heures au-delà de la durée contractuelle sont en principe des heures complémentaires. Sur un temps plein (35 h), on parle d’heures supplémentaires. Les taux et plafonds diffèrent. Voir aussi notre article heures supplémentaires. Votre logiciel de paie / cabinet qualifie le bulletin. Ne mélangez pas les deux colonnes dans Excel." },
+      { q: "Quelles majorations en IDCC 3043 ?", a: "Nos articles CCN et grille utilisent déjà : +10 % pour une première plage (souvent 1 à 8 h au-delà du contrat), puis +25 % au-delà. Recoupez le texte consolidé sur Légifrance et le paramétrage de votre paie. Ce n’est pas un barème recopié pour votre cas. Les majorations nuit / dimanche / fériés se cumulent selon les règles applicables — à faire valider." },
+      { q: "Quel plafond avant requalification en temps plein ?", a: "Un plafond souvent cité dans la branche (et dans nos guides) est d’un tiers de la durée contractuelle. Un 24 h qui fait régulièrement 32 h n’est plus un « petit complément ». Le risque n’est pas seulement le taux : c’est la requalification et le rappel. Faites chiffrer par le conseil ; n’inventez pas le seuil de votre cas." },
+      { q: "Une heure faite sans accord doit-elle être payée ?", a: "Le travail effectué est en général dû. Le sujet, c’est d’avoir une règle d’autorisation avant, et une trace après. Sinon vous payez deux fois : en régularisation et en conflit. Même logique que pour les heures supplémentaires : process écrit + pointage + revue paie." },
+      { q: "Pourquoi l’URSSAF s’intéresse aux temps partiels propreté ?", a: "Parce que 60–70 % des effectifs du secteur sont à temps partiel (chiffre déjà utilisé dans nos guides). L’oubli de majoration sur des volumes petits mais répétés se cumule. Sans inventer de montant d’amende : le contrôle porte souvent sur la cohérence contrat / heures / bulletins. La traçabilité (planning + pointage + export) est votre dossier." },
+      { q: "Comment autoriser sans tuer la réactivité terrain ?", a: "Désignez 1 ou 2 personnes (dirigeant / exploitation). Urgence définie (absence non remplacée, accès client bloqué). Le reste : demande avant exécution, visible sur le planning. WhatsApp peut alerter ; il ne constitue pas l’autorisation ni la preuve d’heures." },
+      { q: "Le pointage mobile suffit-il ?", a: "Il horodate arrivée / départ et réduit les heures fantômes. Il ne remplace ni l’autorisation, ni le contrat, ni le bulletin. Combinez règle RH + [pointage](/fonctionnalites/pointage-agents-nettoyage) + export. Géoloc optionnelle ; app Android optionnelle ou lien web." },
+      { q: "Comment Proprely aide sans remplacer la paie ?", a: "Planning, pointage, consolidation des heures et majorations selon paramétrage, export (ex. Silae). La qualification juridique et le net à payer restent chez votre conseil / logiciel de paie. Voir aussi [calcul des heures](/blog/calcul-heures-agents-nettoyage)." },
+    ],
+    relatedSlugs: ['heures-supplementaires-agents-nettoyage', 'calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'primes-idcc-3043-proprete-2026', 'grille-salaire-nettoyage-2026-idcc-3043'],
+    content: `## Réponse-flash
+
+En propreté B2B, **la majorité des agents sont à temps partiel**. Dès qu’ils dépassent le contrat, vous n’êtes plus sur le régime des [heures supplémentaires](/blog/heures-supplementaires-agents-nettoyage) de temps plein : vous êtes sur des **heures complémentaires**.
+
+La CCN **IDCC 3043**, déjà détaillée dans nos guides, prévoit des **majorations** souvent présentées ainsi : **+10 %** sur une première plage, **+25 %** au-delà. Un **plafond** lié à la durée du contrat (souvent cité : **1/3**) limite le « complément » habituel. Ce guide cadre le **process** (autorisation, pointage, paie). Ce n’est **pas** un avis juridique. Texte : [Légifrance](https://www.legifrance.gouv.fr), [FEP](https://www.monde-proprete.com/), Code du travail, votre cabinet.
+
+## Le piège classique
+
+Un agent à **24 h** « dépanne » deux soirs par semaine. Personne ne majore. Le client est content. Six mois plus tard : rappel, tension, dossier à reconstituer depuis WhatsApp.
+
+Ce n’est pas un cas rare. Nos articles CCN le disent déjà : oublier les complémentaires des temps partiels est le **réflexe** d’une TPE trop occupée. Le coût n’est pas qu’un taux : c’est la **marge site** faussée et un contrôle plus pénible.
+
+## Complémentaires vs supplémentaires (haut niveau)
+
+| Situation | Vocabulaire habituel | Point d’attention |
+| --- | --- | --- |
+| Contrat < durée légale / conventionnelle de référence | Heures **complémentaires** | Majorations CCN + plafond / avenant |
+| Temps plein (réf. 35 h déjà utilisée ici) | Heures **supplémentaires** | +25 % / +50 % selon plages déjà citées |
+| Nuit, dimanche, férié | Majorations spécifiques | Se cumulent selon les règles — à valider |
+
+Ne décidez pas le libellé du bulletin « au feeling ». Le [calcul des heures](/blog/calcul-heures-agents-nettoyage) et le logiciel de paie doivent parler le même langage.
+
+## Majorations déjà utilisées dans nos contenus
+
+Sans republier un PDF :
+
+- **+10 %** : première plage au-delà du contrat (souvent présentée comme 1 à 8 h).
+- **+25 %** : au-delà de cette plage.
+- **Limite** souvent citée : ne pas dépasser **1/3** de la durée contractuelle sans regarder le risque de **requalification**.
+
+Recoupez sur Légifrance et le paramétrage paie. Les chiffres **AS1 11,99 €/h** (2026) servent de plancher de grille, pas de calcul automatique de votre dossier.
+
+## Autorisation + pointage : le process TPE
+
+Même trame que pour les heures supp, adaptée au partiel :
+
+1. **Écrire** qui autorise (dirigeant / exploitation uniquement).
+2. **Lier** la demande au [planning](/fonctionnalites/planning-nettoyage) avant le créneau, sauf urgence définie.
+3. **Pointer** systématiquement — [pointage](/fonctionnalites/pointage-agents-nettoyage) (Android optionnel ou web ; iOS bientôt).
+4. **Revue** avant paie (30–45 min).
+5. **Exporter** vers le cabinet. Archiver.
+
+WhatsApp peut dire « Marie, tu prends le site de 18 h ? ». Il ne dit pas le taux, ni le cumul du mois, ni le plafond.
+
+## Spécificités multi-sites
+
+- Trajet entre deux sites ≠ heure travaillée par magie : votre conseil + CCN + usage.
+- Un « petit » dépassage sur **4 sites** fait une semaine hors contrat.
+- Absences : le remplacement partiel est la première source de complémentaires non cadrées. Voir [réduire l’absentéisme](/blog/reduire-absenteisme-agents-nettoyage).
+
+## Checklist dirigeant
+
+1. Lister les contrats partiels (durée hebdo, sites principaux).
+2. Recouper majorations + plafond sur **IDCC 3043** (Légifrance / FEP) avec le cabinet.
+3. Interdire les heures hors planning sans validation (sauf urgence écrite).
+4. Pointer arrivée / départ. Pas de feuille volante seule.
+5. Alerter si un agent s’approche du plafond / d’une requalification.
+6. Intégrer le coût majoré dans le [coût horaire](/blog/cout-horaire-charge-agent-nettoyage) et la [marge site](/blog/augmenter-marge-site-nettoyage).
+7. Préparer l’export paie — pas une reco à la main le 28 du mois.
+
+## Comment Proprely aide
+
+Cockpit : planning, pointage, consolidation, export. Vous voyez le réalisé vs le contractuel **avant** le bulletin.
+
+**Limite :** pas un avocat, pas l’URSSAF, pas Silae. Paramétrez ce que votre conseil a validé.
+
+## Sources
+
+- [Légifrance](https://www.legifrance.gouv.fr) — Code du travail + IDCC 3043
+- [FEP](https://www.monde-proprete.com/)
+- [service-public.fr](https://www.service-public.fr) — temps partiel
+- Votre expert-comptable / avocat
+
+## Pour aller plus loin
+
+- [Heures supplémentaires](/blog/heures-supplementaires-agents-nettoyage)
+- [Calcul des heures](/blog/calcul-heures-agents-nettoyage)
+- [Convention IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043)
+- [Primes IDCC 3043](/blog/primes-idcc-3043-proprete-2026)
+- [Pointage](/fonctionnalites/pointage-agents-nettoyage)
+- [Planning](/fonctionnalites/planning-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez voir les complémentaires avant qu’elles n’arrivent en paie ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'versement-mobilite-societe-nettoyage',
+    title: "Versement mobilité employeur : sociétés de nettoyage multi-sites",
+    excerpt: "Versement mobilité employeur en propreté multi-sites : charge, établissements, villes. Sources URSSAF. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "10 min",
+    tag: "Conformité",
+    tldr: "Le versement mobilité est une contribution employeur assise sur la masse salariale, due lorsque l’établissement est situé dans une zone où une autorité organisatrice l’a institué. Le taux n’est pas national : il dépend du territoire. En propreté multi-villes, l’erreur classique est de n’appliquer qu’un taux « siège » ou d’oublier un établissement. Recoupez URSSAF et votre cabinet. Cet article n’invente aucun taux ni seuil figé. Ce n’est pas un avis fiscal.",
+    quickSummary: [
+      "Contribution employeur locale, pas une « taxe agent » au forfait unique",
+      "Taux = AOM / territoire — à lire sur les sources officielles, pas un blog",
+      "Multi-sites : cartographier établissements et zones, pas seulement les clients",
+      "À intégrer au coût chargé avant de tarifer un contrat hors de votre ville",
+      "Proprely pilote l’ops ; le calcul de cotisation reste au cabinet / URSSAF",
+    ],
+    faq: [
+      { q: "C’est quoi le versement mobilité ?", a: "C’est une contribution à la charge de l’employeur, assise sur les rémunérations, destinée au financement des mobilités du territoire. Elle a succédé au versement transport dans le langage courant. L’existence et le taux dépendent de la décision de l’autorité organisatrice de la mobilité (AOM) sur une zone. Consultez l’URSSAF et les publications officielles — pas un tableau recopié ici." },
+      { q: "Toutes les sociétés de nettoyage le paient-elles ?", a: "Non automatiquement. Cela dépend notamment de l’implantation des établissements, de l’effectif au sens des textes, et de l’institution du versement sur la zone. Une TPE hors zone n’est pas dans la même situation qu’une agence en métropole. Votre expert-comptable / URSSAF tranche. Nous n’inventons pas le seuil applicable à votre dossier." },
+      { q: "Le taux est-il le même à Paris, Lyon, une ville moyenne ?", a: "Non. Chaque territoire fixe le sien (dans le cadre légal). C’est précisément pour cela que cet article ne publie pas de barème ville par ville : il serait déjà faux demain. Demandez le taux en vigueur pour chaque établissement à votre cabinet ou via les outils officiels URSSAF / collectivités." },
+      { q: "On paie sur le siège ou sur chaque site client ?", a: "Le versement est en principe lié aux **établissements de l’employeur** et aux règles d’affectation des salariés, pas à « chaque client nettoyé ». En propreté, la tentation est de confondre adresse client et établissement. C’est un point technique : faites qualifier sièges, agences, établissements secondaires et lieux de travail par votre conseil. Ne déclarez pas au feeling." },
+      { q: "Quel impact sur le coût d’un contrat multi-villes ?", a: "Même sans chiffre inventé : si la charge employeur n’est pas la même selon l’établissement qui porte les salaires, votre [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage) change. Un contrat « gagné » à 80 km avec un taux oublié rogne la [marge](/blog/augmenter-marge-site-nettoyage). Intégrez la question au chiffrage, comme les [indemnités transport](/blog/indemnite-transport-proprete-2026)." },
+      { q: "Comment l’URSSAF contrôle-t-elle ?", a: "Sans inventer de montant de redressement : la cohérence effectif / établissements / taux déclarés. Gardez le listing des établissements, les bulletins, et l’affectation des agents. Le planning multi-sites aide l’ops ; il ne remplace pas la liasse URSSAF." },
+      { q: "Versement mobilité et remboursement Navigo : c’est lié ?", a: "Ce sont deux sujets. Le versement finance les transports du territoire (charge employeur). Le remboursement d’une partie du titre de transport du salarié est une obligation distincte (Code du travail), détaillée dans notre article indemnité transport. Ne les fusionnez pas dans une seule ligne « transport » du devis." },
+      { q: "Proprely calcule-t-il le versement mobilité ?", a: "Non. Proprely aide à voir qui travaille où (planning, sites, heures). L’assiette, le taux et la déclaration restent chez votre expert-comptable / URSSAF. C’est volontaire : nous ne remplaçons pas un logiciel social." },
+    ],
+    relatedSlugs: ['cout-horaire-charge-agent-nettoyage', 'indemnite-transport-proprete-2026', 'convention-collective-nettoyage-idcc-3043', 'augmenter-marge-site-nettoyage', 'creer-societe-nettoyage'],
+    content: `## Réponse-flash
+
+Le **versement mobilité** (souvent encore appelé versement transport) est une **charge employeur** assise sur la **masse salariale**, due lorsque vos **établissements** sont dans une zone où l’autorité organisatrice l’a mis en place. Le **taux n’est pas unique** en France.
+
+Pour une société de nettoyage **multi-villes**, le risque ops + paie est simple : appliquer le taux du **siège** à toute la masse, ou ignorer un établissement. Ce guide reste **haut niveau**. **Aucun taux**, aucun seuil inventé. Sources : [URSSAF](https://www.urssaf.fr), [Légifrance](https://www.legifrance.gouv.fr), votre cabinet. Ce n’est **pas** un avis fiscal.
+
+## Pourquoi les dirigeants propreté le sous-estiment
+
+- Les agents **bougent** ; la cotisation, elle, suit surtout le **cadre employeur** (établissements, affectations).
+- On ouvre une **deuxième ville** « pour un gros client » sans recaler les charges.
+- Le devis copie le coût chargé de l’agence historique.
+
+Résultat : marge affichée trop belle, trésorerie moins belle.
+
+## Ce qu’il faut cartographier (ops)
+
+1. **Liste des établissements** déclarés (siège, agences, secondaires).
+2. **Zone AOM** de chacun — taux à jour via cabinet / URSSAF, pas via un tableur 2023.
+3. **Affectation** des agents (qui « porte » le contrat de travail).
+4. **Projets** : nouveau département = revoir le chiffrage, comme une [ouverture de ville](/blog/societe-nettoyage-ile-de-france).
+
+Vous n’avez pas besoin d’un taux inventé pour faire cette carte. Vous avez besoin d’une **liste juste**.
+
+## Multi-sites clients ≠ multi-établissements
+
+Nettoyer 40 adresses ne crée pas 40 établissements. À l’inverse, une **agence** avec locaux, encadrement et paie locale, si : peut changer la donne.
+
+Ne tranchez pas seul. Demandez à votre expert-comptable : « Pour chaque agent, quel établissement ? Quel taux ? »
+
+## Lien avec le coût et le prix
+
+Le [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage) déjà utilisé dans nos guides (ordre de grandeur **AS1 ~19–23 €/h** selon configuration) doit **inclure** les charges patronales **réelles** de l’établissement, pas une moyenne nationale fantaisiste.
+
+Puis [fixer le prix](/blog/fixer-prix-nettoyage) et suivre la [marge par site](/blog/augmenter-marge-site-nettoyage).
+
+Le **remboursement des titres** salariés reste un autre poste : [indemnité transport](/blog/indemnite-transport-proprete-2026).
+
+## Checklist dirigeant
+
+1. Extraire la liste SIRET / établissements avec le cabinet.
+2. Noter pour chacun : commune, AOM, taux **officiel** en vigueur (date de MAJ).
+3. Vérifier l’affectation des contrats de travail vs le planning réel.
+4. Recaler le coût chargé **par agence** avant un devis hors zone.
+5. Anticiper embauches : l’effectif au sens des textes peut faire basculer une situation — à faire confirmer, sans seuil inventé ici.
+6. Archiver les taux utilisés pour chaque période (contrôle).
+7. Garder planning / heures propres pour expliquer les masses — [calcul des heures](/blog/calcul-heures-agents-nettoyage).
+
+## Comment Proprely aide — pas l’URSSAF
+
+Proprely montre **qui est sur quel site**, les heures, les agences ops. Utile pour discuter avec le cabinet (« ces agents sont rattachés où ? »).
+
+**Limite :** aucun calcul de versement mobilité, aucun taux embarqué, aucune déclaration. Pas un comparatif d’outils paie.
+
+## Sources officielles
+
+- [URSSAF](https://www.urssaf.fr) — versement mobilité / transport
+- [Légifrance](https://www.legifrance.gouv.fr)
+- Publications des AOM / collectivités
+- Votre expert-comptable
+
+Pas de PDF pirate, pas de « simulateur blog » avec un taux Paris inventé.
+
+## Pour aller plus loin
+
+- [Coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage)
+- [Indemnité transport](/blog/indemnite-transport-proprete-2026)
+- [Augmenter la marge par site](/blog/augmenter-marge-site-nettoyage)
+- [Convention IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043)
+- [Gestion des sites clients](/fonctionnalites/gestion-sites-clients-nettoyage)
+- [Planning](/fonctionnalites/planning-nettoyage)
+
+## Candidater à la bêta
+
+Vous ouvrez une deuxième ville et voulez un planning lisible avant de recaler les charges avec le cabinet ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'passeport-prevention-agents-nettoyage',
+    title: "Passeport de prévention agents de nettoyage : obligations",
+    excerpt: "Passeport de prévention / formations agents nettoyage : cadre haut niveau, preuves, planning. Sources officielles. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "10 min",
+    tag: "Conformité",
+    tldr: "Le passeport de prévention vise à retracer les formations en santé et sécurité au travail. En propreté, les agents touchent produits, machines, parfois hauteur ou sites sensibles : l’employeur doit déjà former, informer et conserver les preuves. Le passeport s’ajoute au cadre Code du travail / CCN, il ne le remplace pas. Suivez le déploiement officiel (ministère du Travail). Aucune amende inventée ici. Ce n’est pas un avis juridique.",
+    quickSummary: [
+      "Dispositif national de traçabilité des formations prévention (loi santé au travail)",
+      "En propreté : produits, machines, sites clients, parfois hauteur / médical",
+      "Ops : qui est formé à quoi, attestations, date, affectation planning",
+      "Sources : textes officiels et portail public — pas un PDF pirate « CACES »",
+      "Proprely aide à voir compétences / sites ; ce n’est pas le passeport officiel",
+    ],
+    faq: [
+      { q: "Le passeport de prévention est-il obligatoire pour toutes les TPE propreté ?", a: "Le cadre a été créé par la loi du 2 août 2021 (santé au travail) et précisé par textes d’application. Les dates, populations et modalités d’alimentation évoluent. Consultez le site du ministère du Travail / service-public et votre service de prévention (SPST). Cet article ne fige ni une date, ni une amende. En attendant, vos obligations de formation et de document unique n’ont pas disparu." },
+      { q: "Qu’est-ce qui change par rapport au classeur papier ?", a: "L’idée du passeport est un relevé **partageable** des formations prévention suivies, côté salarié et employeurs successifs. En propreté (turnover, article 7, saisonniers), c’est utile si c’est à jour. Ça ne remplace pas le livret d’accueil, le DUERP, les FDS produits, ni l’habilitation client (badge, protocole site)." },
+      { q: "Quelles formations tracer pour un agent de nettoyage ?", a: "Au minimum ce que vous imposez déjà : accueil sécurité, produits / risques chimiques selon l’exposition, machines (autolaveuse, mono-brosse), gestes et postures, parfois travail en hauteur, SST, protocoles client (alimentaire, médical). La liste exacte dépend des postes et du DUERP — pas d’une checklist blog universelle. Conservez attestations et dates." },
+      { q: "Un saisonnier de 3 semaines doit-il le même parcours ?", a: "Il a droit à une information / formation adaptée au poste avant d’être seul. Voir [recruter un saisonnier](/blog/recruter-saisonnier-proprete). N’envoyez pas un CDD sur un site chimique ou en hauteur sans preuve de formation. Le passeport, s’il est alimenté, aide le suivant ; il ne dispense pas l’onboarding J1." },
+      { q: "Dois-je héberger les attestations dans Proprely ?", a: "Vous pouvez noter formations et dates sur la fiche agent pour le planning (ne pas affecter quelqu’un non formé). Le **passeport officiel** reste le dispositif public. Proprely n’est pas l’administration. Respectez le [RGPD](/blog/rgpd-societe-nettoyage-2026) : finalité, durée, accès." },
+      { q: "Et les sites clients qui exigent leur propre habilitation ?", a: "Badge, protocole, parfois formation interne client : ça s’ajoute. Le planning doit empêcher l’affectation d’un agent non habilité. La preuve de passage documente l’intervention, pas la formation." },
+      { q: "Où lire le texte sans PDF douteux ?", a: "Légifrance (loi 2021-1018 et décrets), pages officielles du ministère du Travail, service-public.fr, votre SPST / CARSAT / branche (FEP). Pas de scan « passeport prévention PDF gratuit » sur un forum." },
+      { q: "Comment Proprely aide sans se faire passer pour l’État ?", a: "Fiches agents, champ formations, planning par compétence / site, moins d’affectations à l’aveugle. Ce n’est ni le passeport officiel, ni un organisme de formation, ni un DUERP automatisé." },
+    ],
+    relatedSlugs: ['recruter-saisonnier-proprete', 'embauche-apprenti-entreprise-nettoyage', 'rgpd-societe-nettoyage-2026', 'convention-collective-nettoyage-idcc-3043', 'bionettoyage-medical-protocoles'],
+    content: `## Réponse-flash
+
+Le **passeport de prévention** est un dispositif public pour **retracer les formations** en santé et sécurité au travail. En société de nettoyage, vos agents manipulent des **produits**, des **machines**, accèdent à des **sites tiers** — parfois hauteur, agroalimentaire, médical.
+
+La loi du **2 août 2021** a posé le cadre. Les modalités se lisent sur les **sources officielles** (ministère du Travail, Légifrance, service-public). Ce guide est **ops** : qui est formé, quoi tracer, comment éviter d’envoyer la mauvaise personne. **Aucune** amende inventée. Ce n’est **pas** un avis juridique.
+
+## Ce que le passeport ne remplace pas
+
+- Le **document unique** (DUERP) et la mise à jour des risques.
+- L’**accueil sécurité** et les Fiches de données de sécurité.
+- Les **habilitations client** (badge, protocole site).
+- Le suivi médical / renforcés selon expositions (à caler avec le SPST).
+- La CCN **IDCC 3043** (formation de branche déjà évoquée dans notre [guide CCN](/blog/convention-collective-nettoyage-idcc-3043)).
+
+C’est une **couche de traçabilité**, pas un sésame magique.
+
+## Cartographie utile en propreté (haut niveau)
+
+Sans liste exhaustive ni obligation inventée :
+
+| Famille | Exemples de discussion interne | Trace à garder |
+| --- | --- | --- |
+| Accueil | Livret, EPI, consignes accès | Date + signature / émargement |
+| Chimie | Dilution, pictogrammes, CMR éventuels | Attestation + FDS à jour |
+| Machines | Autolaveuse, mono-brosse | Formation interne ou organisme |
+| Site sensible | HACCP, bionettoyage, salle blanche | Protocole client + habilitation |
+| Secours | SST si vous l’imposez | Certificat et échéance |
+
+Le [bionettoyage](/blog/bionettoyage-medical-protocoles) et les verticales sensibles ont leurs propres exigences client : le passeport ne les « couvre » pas tout seul.
+
+## Lien planning : ne pas affecter à l’aveugle
+
+Le risque ops n’est pas le logo du passeport. C’est **Marie sur un site chimique le lundi** alors que seule Karim est formé.
+
+1. Fiche agent : formations + dates.
+2. Site : prérequis (même 3 puces).
+3. [Planning](/fonctionnalites/planning-nettoyage) : écart visible **avant** la tournée.
+4. [Saisonnier](/blog/recruter-saisonnier-proprete) / [apprenti](/blog/embauche-apprenti-entreprise-nettoyage) : binôme jusqu’à validation.
+
+## Données personnelles
+
+Attestations = données. Finalité limitée, accès limité, durée limitée. Voir [RGPD société de nettoyage](/blog/rgpd-societe-nettoyage-2026). Pas de Drive « FORMATIONS_TOUS.zip » partagé à tous les chefs d’équipe perso.
+
+## Checklist dirigeant
+
+1. Lire la page officielle du dispositif (ministère du Travail / service-public) — date de mise à jour.
+2. Recenser les formations **déjà** exigées par vos postes (DUERP).
+3. Ranger les attestations (nom, type, date, échéance).
+4. Interdire l’affectation solo sans prérequis site.
+5. Prévoir l’accueil J1 pour tout CDD / saisonnier.
+6. Pointer vers Légifrance / FEP / SPST — **pas** un PDF pirate.
+7. Décider ce que vous notez dans l’outil ops vs le portail officiel.
+
+## Comment Proprely aide — pas le passeport État
+
+Proprely : fiches [agents](/fonctionnalites/gestion-agents-nettoyage), planning, preuve de passage. Vous réduisez les affectations incohérentes.
+
+**Limite :** Proprely n’est **pas** le passeport de prévention, **pas** un organisme de formation, **pas** un avocat SST.
+
+## Sources officielles
+
+- [Légifrance](https://www.legifrance.gouv.fr) — loi n° 2021-1018 et textes d’application
+- [service-public.fr](https://www.service-public.fr)
+- Ministère du Travail (pages passeport de prévention)
+- Votre SPST / CARSAT ; [FEP](https://www.monde-proprete.com/) pour la branche
+- Code du travail (principes généraux de prévention)
+
+## Pour aller plus loin
+
+- [Recruter un saisonnier](/blog/recruter-saisonnier-proprete)
+- [Embauche apprenti](/blog/embauche-apprenti-entreprise-nettoyage)
+- [RGPD](/blog/rgpd-societe-nettoyage-2026)
+- [Convention IDCC 3043](/blog/convention-collective-nettoyage-idcc-3043)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+- [Planning](/fonctionnalites/planning-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez voir compétences et sites sur le même planning, sans classeur perdu ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'cdi-cdd-saisonnier-proprete-choix',
+    title: "CDI, CDD ou saisonnier en propreté : le choix RH",
+    excerpt: "CDI vs CDD vs saisonnier en propreté : motifs, planning, article 7. Choix dirigeant, pas un comparatif logiciel. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "11 min",
+    tag: "RH & conformité",
+    tldr: "En propreté, le CDI reste le contrat de référence pour les sites récurrents. Le CDD exige un motif légal (remplacement, accroissement temporaire, etc.). Le saisonnier répond à un rythme d’activité saisonnier, pas à un trou de planning chronique. Le mauvais motif coûte plus cher qu’un logiciel. Vérifiez Code du travail, IDCC 3043 et votre conseil. Guide de choix RH dirigeant — pas un comparatif d’outils.",
+    quickSummary: [
+      "CDI : sites récurrents, vivier, article 7 à anticiper",
+      "CDD : motif réel et limité ; pas un CDI déguisé",
+      "Saisonnier : pic saisonnier, pas un substitut au titulaire toute l’année",
+      "Ops : onboarding, planning, preuve — quel que soit le contrat",
+      "Proprely n’est pas un SIRH ni un conseil en droit du travail",
+    ],
+    faq: [
+      { q: "Quel contrat pour un nouveau marché de 12 mois ?", a: "Souvent un besoin **durable** : le CDI (temps plein ou partiel) est le réflexe à discuter avec le conseil. Un CDD « le temps de voir » sans motif solide est un risque. Si le marché est repris, l’[article 7](/blog/article-7-idcc-3043-transfert-personnel) peut imposer un transfert d’agents : le chiffrage RH se fait **avant** signature, pas après." },
+      { q: "Quand un CDD est-il justifié en nettoyage ?", a: "Motifs classiques du Code du travail : remplacement d’un salarié absent, accroissement temporaire d’activité, attente d’un CDI, etc. La liste et les durées se lisent dans les textes — pas ici. « On a trop de sites » n’est un motif que s’il est réellement temporaire et caractérisé. Votre avocat / expert-comptable qualifie." },
+      { q: "Saisonnier vs CDD d’accroissement : quelle différence ?", a: "Le saisonnier est lié à des tâches qui se répètent chaque année selon une saison. L’accroissement temporaire est un surcroît ponctuel. En propreté, l’été (congés titulaires, remises en état) ressemble parfois aux deux. Ne choisissez pas le libellé pour « faire simple ». Voir [recruter un saisonnier](/blog/recruter-saisonnier-proprete)." },
+      { q: "Peut-on enchaîner les CDD sur le même site ?", a: "Les règles de succession, de carence et de requalification existent pour éviter le CDD perpétuel. Détail : textes + conseil. Côté ops, si le site est là 11 mois / 12, posez-vous la question du CDI partiel plutôt que du patchwork." },
+      { q: "Intérim ou CDD de remplacement ?", a: "L’intérim a son propre cadre (agence, motif, égalité de traitement). Utile pour un trou très court si le vivier interne est vide. Plus cher à l’heure, parfois plus simple administrativement. Ce n’est toujours pas un sujet logiciel. Comparez le coût chargé réel, pas le taux brut affiché." },
+      { q: "Le temps partiel CDI est-il plus risqué que le CDD ?", a: "Le CDI partiel est le quotidien du secteur. Le risque n’est pas le CDI : ce sont les [heures complémentaires](/blog/heures-complementaires-temps-partiel-proprete) non cadrées et un planning qui dépasse le contrat. Un CDD mal motivé est un autre risque (requalification). Deux sujets distincts." },
+      { q: "Comment onboarder sans casser la qualité ?", a: "Même socle que nos guides saisonnier / apprenti : EPI, protocoles, binôme, preuve de passage supervisée, planning visible (web ou Android optionnel). Le contrat ne forme personne tout seul." },
+      { q: "Proprely recommande-t-il un type de contrat ?", a: "Non. Proprely structure agents, planning, missions, preuves. Le choix CDI / CDD / saisonnier et la rédaction des clauses restent votre conseil. Pas un comparatif SIRH." },
+    ],
+    relatedSlugs: ['recruter-saisonnier-proprete', 'embauche-apprenti-entreprise-nettoyage', 'heures-complementaires-temps-partiel-proprete', 'article-7-idcc-3043-transfert-personnel', 'fideliser-agents-nettoyage-turnover'],
+    content: `## Réponse-flash
+
+Dirigeant de société de nettoyage, vous n’avez pas un « problème d’outil RH » : vous avez un **besoin d’effectif** (pic, remplacement, nouveau site) et un **cadre légal**. Le **CDI** est le contrat de droit commun. Le **CDD** et le **saisonnier** sont des outils **à motif**.
+
+Ce guide aide à **choisir le bon réflexe** avant d’appeler le cabinet. **Pas** un comparatif de logiciels. **Pas** un avis juridique. Sources : [Code du travail sur Légifrance](https://www.legifrance.gouv.fr), CCN **IDCC 3043**, [service-public.fr](https://www.service-public.fr), [FEP](https://www.monde-proprete.com/).
+
+## Grille de décision (ops + motif)
+
+| Besoin terrain | Piste à discuter avec le conseil | Vigilance |
+| --- | --- | --- |
+| Site récurrent, volume stable | **CDI** (souvent partiel) | Heures complémentaires, [fidélisation](/blog/fideliser-agents-nettoyage-turnover) |
+| Titulaire absent (maladie, congés) | **CDD** remplacement ou intérim | Fin de motif = fin de contrat |
+| Nouveau marché 3 mois, vraiment borné | CDD accroissement **si** motif réel | Requalification si le besoin dure |
+| Pic d’été / saison qui revient | **Saisonnier** si saisonnalité caractérisée | Pas un cache-misère 10 mois / 12 |
+| Reprise de marché | Due diligence [article 7](/blog/article-7-idcc-3043-transfert-personnel) | Vous pouvez **hériter** d’agents en CDI |
+
+Aucune ligne de ce tableau ne remplace le motif écrit dans le contrat.
+
+## CDI : socle, pas « rigidité »
+
+Avantages ops : vivier, connaissance des sites, moins de re-formation, discours client plus simple.
+
+Contreparties : [primes d’expérience](/blog/primes-idcc-3043-proprete-2026) dans le temps, [heures complémentaires](/blog/heures-complementaires-temps-partiel-proprete) si le contrat est trop juste, et l’article 7 si vous perdez le marché.
+
+Le CDI **temps partiel** est normal dans la branche. Le piège est de signer 20 h et d’en faire 28 toutes les semaines.
+
+## CDD : le motif ou rien
+
+Questions à poser **avant** le cerfa :
+
+1. Quel **motif** exact (remplacement de qui, accroissement de quoi) ?
+2. Quelle **durée** et quelle fin (terme ou retour du titulaire) ?
+3. Peut-on **renouveler** / enchaîner — réponse du conseil, pas d’un forum.
+4. Le planning des 8 prochaines semaines justifie-t-il encore un besoin **temporaire** ?
+
+Si vous répondez « on verra bien », ce n’est probablement pas un CDD.
+
+## Saisonnier : un outil, pas une culture
+
+Nous avons déjà un mode d’emploi : [recruter un saisonnier](/blog/recruter-saisonnier-proprete). Ici, le critère est le **choix** :
+
+- Oui si l’activité a une **saison** réelle (et que vous assumez le re-recrutement).
+- Non si c’est votre façon d’éviter un CDI sur un site ouvert toute l’année.
+
+Onboarding 48 h, tuteur, preuve de passage : le contrat saisonnier ne réduit pas l’exigence qualité.
+
+## Intérim, apprentissage : satellites
+
+- **Intérim** : flexibilité courte, coût chargé souvent plus élevé, cadre propre à l’agence.
+- **Apprenti** : vivier, tutorat, semaines CFA à bloquer au planning — [guide apprenti](/blog/embauche-apprenti-entreprise-nettoyage). Pas un bouche-trou de tournée.
+
+## Checklist avant de signer
+
+1. Écrire le besoin en une phrase (remplacer X / tenir le site Y 12 mois / pic juillet).
+2. Faire **qualifier le motif** par le cabinet.
+3. Vérifier IDCC 3043 + DPAE + visite médicale selon le poste.
+4. Préparer [planning](/fonctionnalites/planning-nettoyage) + accès mobile **avant** J1.
+5. Nommer un référent (même 20 min/jour les 48 h).
+6. Tracer formations ([passeport / prévention](/blog/passeport-prevention-agents-nettoyage)).
+7. Anticiper la fin de contrat (sortie de planning, badges, preuves).
+
+## Comment Proprely aide — pas un SIRH
+
+Fiches agents, contrats **en tant que donnée ops** (dates, sites), planning mixte titulaires / CDD / saisonniers, preuves de passage.
+
+**Limite :** rédaction du contrat, paie, requalification = conseil. **Pas** un comparatif de logiciels RH.
+
+## Sources
+
+- [Légifrance](https://www.legifrance.gouv.fr) — Code du travail (CDI, CDD, saisonnier)
+- [service-public.fr](https://www.service-public.fr)
+- [FEP](https://www.monde-proprete.com/) / IDCC 3043
+- Votre avocat / expert-comptable
+
+## Pour aller plus loin
+
+- [Recruter un saisonnier](/blog/recruter-saisonnier-proprete)
+- [Embauche apprenti](/blog/embauche-apprenti-entreprise-nettoyage)
+- [Heures complémentaires](/blog/heures-complementaires-temps-partiel-proprete)
+- [Article 7](/blog/article-7-idcc-3043-transfert-personnel)
+- [Fidéliser / turnover](/blog/fideliser-agents-nettoyage-turnover)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+
+## Candidater à la bêta
+
+Vous mélangez CDI, CDD et saisonniers sur le même planning et vous voulez y voir clair ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'augmenter-marge-site-nettoyage',
+    title: "Augmenter la marge par site en société de nettoyage",
+    excerpt: "Augmenter la marge par site : prix, heures, absences, preuve de passage, renégocier, sortir les sites toxiques. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "11 min",
+    tag: "Stratégie",
+    tldr: "La marge d’une société de nettoyage se joue site par site : prix trop bas, heures réelles au-dessus du chiffrage, absences, passages contestés, contrats qu’on n’ose pas renégocier. Ce n’est pas un comparatif de logiciels. Les leviers sont le pricing, le contrôle des heures, la preuve de visite, la renegociation et l’arrêt des sites toxiques. Chiffres : uniquement des ordres de grandeur déjà utilisés dans nos guides (coût AS1, contrats déficitaires). Pas un avis financier.",
+    quickSummary: [
+      "Un site : CA − heures réelles × coût chargé − extras non facturés",
+      "Leviers : prix, heures, absences, preuve, renégocier, sortir",
+      "Ordres de grandeur déjà cités : coût AS1 ~19–23 €/h ; contrats à <18 % à revoir",
+      "Sans preuve de passage, vous perdez deux fois : litige + heures « pour apaiser »",
+      "Proprely aide à voir le réalisé ; il ne vend pas la hausse au client à votre place",
+    ],
+    faq: [
+      { q: "Comment calculer la marge d’un site ?", a: "En brut ops : (facture hors taxe du site) moins (heures réellement passées × [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage)) moins consommables / extras non refacturés. Nos guides KPI parlent déjà d’une cible de marge brute souvent visée au-dessus de ~18–25 % selon les textes internes. Recalculez avec VOS heures, pas une moyenne LinkedIn." },
+      { q: "Pourquoi 15–25 % des contrats seraient déficitaires ?", a: "C’est un ordre de grandeur déjà utilisé dans nos contenus de pilotage (retours bêta / terrain), pas une statistique nationale officielle. Le mécanisme, lui, est banal : devis figé, grille AS1 et charges qui bougent, heures complémentaires, passages « offerts ». D’où le suivi par site, pas au CA global." },
+      { q: "Faut-il augmenter tous les prix de 10 % ?", a: "Non. Augmentez d’abord les sites sous l’eau, avec un dossier (heures, preuves, scope qui a dérivé). Une clause d’indexation IDCC dans les **nouveaux** contrats évite de recommencer. Voir [fixer ses prix](/blog/fixer-prix-nettoyage). Ce n’est pas un comparatif d’outils de devis." },
+      { q: "La preuve de passage améliore-t-elle la marge ?", a: "Indirectement : moins de passages gratuits « pour se faire pardonner », moins de trop-perçus d’heures, moins de churn. La [preuve de passage](/fonctionnalites/preuve-passage-nettoyage) documente. Elle ne remplace pas un avenant si le scope a changé." },
+      { q: "Quand sortir un site plutôt que de le sauver ?", a: "Quand le client refuse toute revisite du prix / du scope, que les heures sont structurellement au-dessus du chiffrage, et que le site pourrit le moral des agents. Donnez un préavis propre. Réaffectez les heures sur des sites sains plutôt que de « remplir » le planning avec de la perte." },
+      { q: "Les absences tuent-elles plus que le prix ?", a: "Souvent les deux. Une absence, c’est remplacement parfois en [heures complémentaires](/blog/heures-complementaires-temps-partiel-proprete) majorées, qualité en baisse, heures non refacturées. Voir [absentéisme](/blog/reduire-absenteisme-agents-nettoyage). Un bon prix avec 12 % d’absence non pilotée redevient un mauvais prix." },
+      { q: "Quel rôle du planning ?", a: "Le [planning](/fonctionnalites/planning-nettoyage) montre la charge prévue ; le [pointage](/fonctionnalites/pointage-agents-nettoyage) montre le réalisé. L’écart, c’est votre marge qui part. Voir [calcul des heures](/blog/calcul-heures-agents-nettoyage)." },
+      { q: "Proprely garantit-il +X points de marge ?", a: "Non. Aucun pourcentage de gain inventé ici. L’outil rend visibles heures, sites et preuves. La décision (renégocier, sortir, recruter) reste la vôtre. Pas un comparatif de logiciels." },
+    ],
+    relatedSlugs: ['fixer-prix-nettoyage', 'calcul-heures-agents-nettoyage', 'cout-horaire-charge-agent-nettoyage', 'kpi-societe-nettoyage-2026', 'heures-complementaires-temps-partiel-proprete'],
+    content: `## Réponse-flash
+
+Augmenter la **marge par site**, ce n’est pas « trouver un logiciel moins cher ». C’est arrêter de piloter au **CA global** alors que trois contrats plombent les douze autres.
+
+Leviers : **prix**, **contrôle des heures**, **absences**, **preuve de visite**, **renégociation**, **sortie des sites toxiques**. Chiffres repris uniquement de nos guides existants (coût chargé **AS1 ~19–23 €/h**, vigilances de marge déjà publiées). Pas un comparatif d’outils. Pas une promesse de résultat.
+
+## La formule que tout le monde évite
+
+**Marge site ≈ facturation − (heures réelles × coût chargé) − extras offerts.**
+
+Si vous ne mesurez que la facture, vous pilotez un chiffre d’affaires, pas une entreprise.
+
+Le [coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage) inclut brut, charges, [primes](/blog/primes-idcc-3043-proprete-2026), transport, un ordre de grandeur d’absence. Recalculez-le quand la [grille](/blog/grille-salaire-nettoyage-2026-idcc-3043) bouge.
+
+## Levier 1 — Pricing
+
+- Revoir les sites sous l’eau en premier, dossier à l’appui.
+- Indexer les **nouveaux** contrats sur la CCN / les charges, pas « on verra l’an prochain ».
+- Méthode : [fixer ses prix](/blog/fixer-prix-nettoyage), [tarif m² bureaux](/blog/tarif-nettoyage-bureaux-m2-2026).
+
+Une remise « pour gagner le syndic » sans vitesse de production ni heures réelles est une promesse à vous-même.
+
+## Levier 2 — Contrôle des heures
+
+C’est le levier le plus immédiat :
+
+- Prévu vs réalisé : [calcul des heures](/blog/calcul-heures-agents-nettoyage).
+- Complémentaires partiel : [article dédié](/blog/heures-complementaires-temps-partiel-proprete).
+- Pointage : [fonction pointage](/fonctionnalites/pointage-agents-nettoyage).
+
+Une heure « offerte » chaque semaine sur un site à 20 € chargé, ce n’est pas du service : c’est une ligne invisible.
+
+## Levier 3 — Absences
+
+Remplacement + urgence + heure majorée + client énervé. Process : vivier, règle d’autorisation, [absentéisme](/blog/reduire-absenteisme-agents-nettoyage). Le planning doit montrer le trou **le matin**, pas le 30 au soir.
+
+## Levier 4 — Preuve de visite
+
+Sans preuve, le client doute ; vous renvoyez un agent ; vous ne refacturez pas. Avec [preuve de passage](/fonctionnalites/preuve-passage-nettoyage) (photos / QR, horodatage), vous discutez faits, pas impressions.
+
+La preuve **complète** l’assurance et le devis. Elle ne les remplace pas.
+
+## Levier 5 — Renégocier
+
+Dossier d’un site :
+
+1. Scope signé vs scope réel (fréquences, sanitaires, sorties poubelles « en plus »).
+2. Heures 8–12 dernières semaines.
+3. Qualité (constats, photos).
+4. Proposition : prix **ou** baisse de fréquence, pas les deux cadeaux.
+
+Si le client refuse tout, vous n’avez plus un problème de pédagogie. Vous avez un **choix**.
+
+## Levier 6 — Sortir les sites toxiques
+
+Signaux (déjà dans l’esprit de nos [KPI](/blog/kpi-societe-nettoyage-2026)) : marge structurellement basse, contestations, agents qui refusent le site, DSO pourri.
+
+Sortez proprement : préavis, article 7 si vous êtes sortant, réaffectation des heures. Mieux vaut 12 sites sains que 18 dont 4 vous épuisent.
+
+## Checklist 45 jours
+
+1. Lister les sites avec CA, heures (même imparfaites), coût chargé.
+2. Marquer rouge / orange / vert — sans se raconter d’histoires.
+3. Lancer pointage + preuve sur les 5 plus gros risques.
+4. Prendre 3 rendez-vous de renégociation (les plus rouges).
+5. Décider 1 sortie si le dossier est sans issue.
+6. Recaler les prochains devis sur le réalisé, pas sur l’optimisme.
+7. Tenir un rituel mensuel (même 40 min).
+
+## Comment Proprely aide — pas une baguette
+
+Planning, pointage, preuves, vue par site. Vous voyez l’écart.
+
+**Limite :** pas de promesse « +X % de marge », pas de comparatif logiciel, pas de commercial qui appelle vos clients.
+
+## Pour aller plus loin
+
+- [Fixer ses prix](/blog/fixer-prix-nettoyage)
+- [Calcul des heures](/blog/calcul-heures-agents-nettoyage)
+- [Coût horaire chargé](/blog/cout-horaire-charge-agent-nettoyage)
+- [KPI société de nettoyage](/blog/kpi-societe-nettoyage-2026)
+- [Planning](/fonctionnalites/planning-nettoyage)
+- [Pointage](/fonctionnalites/pointage-agents-nettoyage)
+- [Preuve de passage](/fonctionnalites/preuve-passage-nettoyage)
+
+## Candidater à la bêta
+
+Vous voulez voir le prévu / réalisé par site avant la prochaine renégociation ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
+    slug: 'passer-5-a-20-agents-nettoyage',
+    title: "Passer de 5 à 20 agents sans chaos planning",
+    excerpt: "Passer de 5 à 20 agents en société de nettoyage : planning, remplacements, pointage, rôles. Guide ops, pas un comparatif. Bêta Proprely.",
+    date: "13 septembre 2026",
+    dateModified: "13 septembre 2026",
+    readTime: "11 min",
+    tag: "Management",
+    tldr: "Entre 5 et 20 agents, le groupe WhatsApp et le tableur tiennent encore… jusqu’au premier pic d’absences. Le chaos n’arrive pas à 50 personnes : il arrive quand plus personne ne voit le même planning, que les saisonniers se rajoutent et que le dirigeant reste l’unique badgeuse. Ce guide décrit des rituels ops (rôles, planning unique, pointage, vivier). Pas un comparatif de logiciels. Pas de métrique inventée.",
+    quickSummary: [
+      "Le plafond n’est pas 20 CDI : c’est un planning unique + un décideur d’urgence",
+      "Rituels : figé J-2, revue absences le matin, heures avant paie",
+      "Recrutement sans onboarding = chaos décalé de 15 jours",
+      "Temps déjà cité : 3 h 30–4 h 30 / mois de calcul d’heures à 10–15 agents",
+      "Proprely est un cockpit ; Excel peut suffire un temps si la règle est unique",
+    ],
+    faq: [
+      { q: "À partir de combien d’agents Excel craque-t-il ?", a: "Pas de seuil magique. Beaucoup tiennent jusqu’à 8–12 agents tant que les sites sont stables. Ça lâche quand s’ajoutent remplacements, CDD, deux villes, et des clients qui changent les accès. Le signal, ce n’est pas un chiffre d’effectif : c’est « trois versions du planning existent lundi matin »." },
+      { q: "Faut-il un chef d’équipe dès 10 agents ?", a: "Dès que vous ne pouvez plus briefer tout le monde en 15 minutes, vous avez besoin d’un relais (même 20 h). Ce n’est pas forcément un coefficient CE : c’est un rôle (absences, qualité, preuves). Sans relais, le dirigeant reste le goulot. Voir [fidéliser](/blog/fideliser-agents-nettoyage-turnover)." },
+      { q: "Comment éviter que chaque embauche casse les tournées ?", a: "Onboarding court : 2–4 sites max, binôme, preuve supervisée, accès planning **avant** J1. Même logique que [saisonnier](/blog/recruter-saisonnier-proprete) et [CDI/CDD](/blog/cdi-cdd-saisonnier-proprete-choix). Recruter « pour occuper le lundi » sans fiche de poste = chaos." },
+      { q: "WhatsApp peut-il rester le canal d’urgence ?", a: "Oui pour « le client a fermé le parking ». Non pour le planning de la semaine, les heures et les preuves. Un canal d’alerte + une **source unique** de planning. Voir aussi [adoption vs WhatsApp](/blog/agents-nettoyage-whatsapp-adoption-logiciel)." },
+      { q: "Que mesurer pour savoir si on scale sereinement ?", a: "Respect du planning, heures hors contrat, sites sans titulaire identifié, temps dirigeant passé à recoller les absences. Nos [KPI](/blog/kpi-societe-nettoyage-2026) listent déjà respect planning et charge horaire. Pas besoin d’un dashboard à 20 courbes le premier mois." },
+      { q: "Combien de temps prend le calcul des heures à 15 agents ?", a: "Nos contenus citent déjà **3 h 30 à 4 h 30 par mois** pour 10–15 agents en méthode agenda + WhatsApp, plus si 25–30. Ce n’est pas une statistique INSEE : c’est l’ordre de grandeur que nous utilisons. Le [pointage](/fonctionnalites/pointage-agents-nettoyage) vise à raccourcir la revue, pas à supprimer le jugement." },
+      { q: "Faut-il digitaliser avant d’embaucher le 12e ?", a: "Digitaliser le **planning unique** et le **pointage** avant la vague, pas après. Un [modèle Excel](/blog/modele-planning-agents-nettoyage-excel) vaut mieux que trois WhatsApp. Un cockpit vaut mieux qu’un Excel dès que les versions divergent. Pas un comparatif d’éditeurs." },
+      { q: "Comment Proprely aide à 5–20 agents ?", a: "Un planning partagé, des fiches agents, le pointage, les preuves, un export heures. Gratuit pendant la bêta, app Android optionnelle ou web. Ce n’est pas un SIRH 200 salariés ni une promesse « zéro chaos »." },
+    ],
+    relatedSlugs: ['logiciel-planning-nettoyage-2026', 'modele-planning-agents-nettoyage-excel', 'augmenter-marge-site-nettoyage', 'fideliser-agents-nettoyage-turnover', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    content: `## Réponse-flash
+
+Passer de **5 à 20 agents**, ce n’est pas multiplier le groupe WhatsApp par quatre. C’est accepter qu’à 5 personnes **vous êtes encore le planning**, et qu’à 15 **le planning doit exister sans vous**.
+
+Le chaos arrive quand il existe **plusieurs vérités** (Excel du lundi, message de 21 h, mémoire du chef d’équipe). Ce guide décrit des **rituels**. **Pas** un comparatif de logiciels. **Pas** de métrique inventée au-delà de ce que nos articles utilisent déjà.
+
+## Ce qui casse entre 5 et 20
+
+- **Sites** : vous n’êtes plus sur « nos 6 clients », vous êtes sur des tournées qui se recouvrent.
+- **Contrats** : CDI partiels + CDD + [saisonniers](/blog/recruter-saisonnier-proprete).
+- **Absences** : la probabilité qu’il se passe quelque chose **chaque matin** augmente.
+- **Vous** : unique valideur d’heures, unique commercial, unique SAV.
+
+Le [modèle Excel](/blog/modele-planning-agents-nettoyage-excel) peut encore servir si **une seule** personne le tient et que tout le monde le consulte. Il meurt le jour où trois copies circulent.
+
+## Règle 1 — Une source de planning
+
+Choisissez **un** support : classeur unique **ou** [planning partagé](/fonctionnalites/planning-nettoyage). Les agents le voient (lien web ou Android optionnel ; iOS bientôt). Vous arrêtez les captures d’écran.
+
+Rituel : planning de la semaine **figé à J-2**. Toute modification = une personne (vous ou le relais).
+
+## Règle 2 — Un rôle d’urgence
+
+Nommez qui autorise un remplacement et une heure hors contrat — même logique que les [complémentaires](/blog/heures-complementaires-temps-partiel-proprete) et les [heures supp](/blog/heures-supplementaires-agents-nettoyage).
+
+Sans ça, 20 agents = 20 négociateurs WhatsApp.
+
+## Règle 3 — Onboarding plus étroit que le recrutement
+
+Chaque arrivée :
+
+1. 2–4 sites, pas 12.
+2. Binôme / tuteur nommé.
+3. Preuve de passage **après** standard qualité.
+4. Formations notées ([passeport / prévention](/blog/passeport-prevention-agents-nettoyage)).
+
+Mieux vaut retarder un démarrage de 48 h que d’offrir un client.
+
+## Règle 4 — Pointage avant la paie, pas après
+
+À 5 agents, vous « savez ». À 15, vous **croyez** savoir. Le [pointage](/fonctionnalites/pointage-agents-nettoyage) + une revue avant paie (déjà 30–45 min dans nos guides) protègent le climat social et la [marge](/blog/augmenter-marge-site-nettoyage).
+
+Temps déjà cité pour le calcul manuel à 10–15 agents : **3 h 30–4 h 30 / mois**. C’est du temps dirigeant, pas une fatalité.
+
+## Règle 5 — Vivier visible
+
+Liste courte : qui peut prendre quel type de site, quels jours, quel rayon. Les 20 agents ne sont pas interchangeables (vitrerie, médical, permis, langues).
+
+Le vivier évite l’intérim en urgence sur un site que personne ne connaît.
+
+## Seuil 12–15 : le relais
+
+Quand le brief du matin dépasse un quart d’heure, installez un **relais** (qualité + absences). Pas besoin d’un organigramme corporatif. Besoin d’un nom.
+
+## Checklist 90 jours (5 → 20)
+
+1. Inventaire sites × agents × compétences (même un tableau unique).
+2. Interdire la double source de planning.
+3. Rituel J-2 + point absences 8h30.
+4. Pointage sur tous les sites récurrents.
+5. Revue heures avant paie.
+6. Fiches d’accueil identiques pour CDI / CDD / saisonnier.
+7. Décider Excel tenu **ou** cockpit — une seule vérité. [Candidater Fillout](https://pershingsolution.fillout.com/t/rBPhgNm42Lus) si vous voulez tester Proprely.
+
+## Comment Proprely aide — sans promesse « scale »
+
+Cockpit 3–50 agents : planning, agents, pointage, preuves, export. Pensé pour sortir de Excel + WhatsApp.
+
+**Limite :** ça n’embauche pas à votre place, ça ne rédige pas les contrats, ça ne remplace pas un relais humain. **Pas** un comparatif vs d’autres éditeurs.
+
+## Pour aller plus loin
+
+- [Logiciel planning nettoyage](/blog/logiciel-planning-nettoyage-2026)
+- [Modèle planning Excel](/blog/modele-planning-agents-nettoyage-excel)
+- [Adoption vs WhatsApp](/blog/agents-nettoyage-whatsapp-adoption-logiciel)
+- [Augmenter la marge par site](/blog/augmenter-marge-site-nettoyage)
+- [Digitaliser en 5 étapes](/blog/digitaliser-entreprise-nettoyage-5-etapes)
+- [Planning](/fonctionnalites/planning-nettoyage)
+- [Pointage](/fonctionnalites/pointage-agents-nettoyage)
+- [Gestion des agents](/fonctionnalites/gestion-agents-nettoyage)
+
+## Candidater à la bêta
+
+Vous passez le cap 10–20 agents et voulez un planning unique avant l’hiver ?
+
+→ [Candidater à la bêta privée (Fillout)](https://pershingsolution.fillout.com/t/rBPhgNm42Lus)
+Soft : [voir l’offre bêta](/beta/)
+
+Places fondateurs limitées — société de nettoyage B2B France, environ 3–50 agents.
+`,
+  },
+  {
     slug: 'assurances-professionnelles-societe-nettoyage',
     title: "Assurances pro société de nettoyage : points clés",
     excerpt: "Assurances pro société de nettoyage : RC, litiges, preuve de passage. Guide dirigeant (Bercy n°515). Bêta Proprely 0€ · 0€/agent.",
@@ -159,7 +997,7 @@ Places fondateurs limitées — société de nettoyage B2B France, environ 3–5
       { q: "Faut-il une app native pour les saisonniers ?", a: "Non obligatoire. Un lien web ou une app Android optionnelle gratuite suffit si le planning et la preuve de passage sont clairs. L’adoption chute si l’outil impose un setup lourd pour 3 semaines de mission." },
       { q: "Comment Proprely aide sur les pics saisonniers ?", a: "Proprely centralise agents, planning multi-sites, missions et preuves de passage. Vous voyez qui couvre quoi pendant le pic. Ce n’est pas un SIRH ni un conseil en droit du travail saisonnier." },
     ],
-    relatedSlugs: ['embauche-apprenti-entreprise-nettoyage', 'fideliser-agents-nettoyage-turnover', 'heures-supplementaires-agents-nettoyage', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    relatedSlugs: ['cdi-cdd-saisonnier-proprete-choix', 'embauche-apprenti-entreprise-nettoyage', 'fideliser-agents-nettoyage-turnover', 'heures-supplementaires-agents-nettoyage'],
     content: `## Réponse-flash
 
 En société de nettoyage B2B, le **saisonnier** arrive surtout pour les **pics** (été, surcroît, nouveaux sites) et les **trous** d’effectif. L’actualité Bercy Infos n°516 rappelle le cadre du travail saisonnier — utile pour un dirigeant 3–50 agents.
@@ -372,7 +1210,7 @@ Places fondateurs limitées — société de nettoyage B2B France, environ 3–5
       { q: "Comment anticiper les pics d’heures (absences, urgences clients) ?", a: "Ayez un vivier de remplacements, un planning visible par les agents, et une règle simple : pas d’heure « surprise » sans validation. Les pics non pilotés sont la première source d’heures non cadrées en propreté." },
       { q: "Comment Proprely aide sans remplacer mon avocat ?", a: "Proprely structure le planning, le pointage mobile (app Android optionnelle ou web), le calcul d’heures / majorations selon paramétrage IDCC, et l’export vers la paie (ex. Silae). La qualification juridique et le bulletin restent du ressort de votre conseil / logiciel de paie." },
     ],
-    relatedSlugs: ['calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'fideliser-agents-nettoyage-turnover', 'agents-nettoyage-whatsapp-adoption-logiciel'],
+    relatedSlugs: ['heures-complementaires-temps-partiel-proprete', 'calcul-heures-agents-nettoyage', 'convention-collective-nettoyage-idcc-3043', 'fideliser-agents-nettoyage-turnover'],
     content: `## Réponse-flash
 
 En société de nettoyage, les **heures supplémentaires** (et le cas des heures « faites » sans autorisation claire) naissent surtout des **remplacements**, des **urgences client** et du **multi-sites**. L’actualité Bercy Infos n°514 rappelle l’enjeu : mal cadrées, ces heures coûtent cher — en paie, en climat social, parfois en contrôle.
@@ -3876,7 +4714,7 @@ Les leviers anti-absentéisme rejoignent ceux de la fidélisation : conditions d
       { q: "Faut-il facturer plus pour les prestations ponctuelles ?", a: "Oui : 20 à 30% au-dessus d'un contrat récurrent équivalent, pour couvrir la mobilisation ponctuelle et l'absence d'amortissement." },
       { q: "Quel taux de marge nette viser dans le nettoyage B2B ?", a: "15 à 20% de marge nette est la cible saine. En-dessous de 10%, votre entreprise est vulnérable au moindre imprévu (turnover, remplacement, hausse charges)." },
     ],
-    relatedSlugs: ['calcul-heures-agents-nettoyage', 'logiciel-societe-nettoyage-criteres'],
+    relatedSlugs: ['augmenter-marge-site-nettoyage', 'calcul-heures-agents-nettoyage', 'logiciel-societe-nettoyage-criteres'],
     howTo: {
       name: "Fixer le prix d'une prestation de nettoyage B2B",
       description: "Méthode en 4 étapes pour calculer un prix juste qui protège votre marge sans vous mettre hors marché.",
@@ -5679,7 +6517,7 @@ Si vous gérez aujourd'hui ces canaux dans plusieurs fichiers Excel ou WhatsApp,
       { q: "Où télécharger le PDF officiel de la convention IDCC 3043 ?", a: "Uniquement sur les sources officielles : texte consolidé et arrêtés d'extension sur Légifrance, accords de salaires au Bulletin officiel des conventions collectives / BO Travail, et les publications de la FEP (Fédération des Entreprises de Propreté). Nous n'hébergeons pas de PDF. Un fichier trouvé sur un forum, un Drive partagé ou un site « téléchargement convention » est souvent périmé, incomplet, parfois malveillant. Recoupez toujours le texte en vigueur sur Légifrance. Ce n'est pas un avis juridique." },
       { q: "Pourquoi éviter un PDF « convention nettoyage » trouvé sur Google ?", a: "Parce que la CCN et les avenants salariaux évoluent. Un scan 2023 ou 2024 fait passer à côté d'un accord étendu. En contrôle ou en litige, c'est le texte officiel publié qui compte, pas un PDF anonyme. Demandez aussi à votre expert-comptable / conseil la version qu'ils utilisent." },
     ],
-    relatedSlugs: ['grille-salaire-nettoyage-2026-idcc-3043', 'indemnite-transport-proprete-2026', 'calcul-heures-agents-nettoyage', 'fideliser-agents-nettoyage-turnover'],
+    relatedSlugs: ['primes-idcc-3043-proprete-2026', 'heures-complementaires-temps-partiel-proprete', 'grille-salaire-nettoyage-2026-idcc-3043', 'indemnite-transport-proprete-2026'],
     content: `## L'essentiel à connaître sur la convention collective propreté IDCC 3043
 
 La Convention collective nationale des entreprises de propreté et services associés, identifiée sous le numéro **IDCC 3043**, régit environ 500 000 salariés en France. Si vous dirigez une société de nettoyage B2B (codes NAF 81.21Z, 81.22Z, 81.29A, 81.29B), elle s'applique obligatoirement à vos contrats de travail.
@@ -7822,7 +8660,7 @@ Places fondateurs limitées. Société de nettoyage B2B France, environ 3–50 a
       "Bonnes pratiques : 1 onglet par semaine, codes couleur par agent, ligne récap heures.",
       "Pour passer à l'échelle : logiciel métier moderne avec import depuis Excel.",
     ],
-    relatedSlugs: ['logiciel-planning-nettoyage-2026', 'erreurs-planning-nettoyage', 'gerer-agents-plusieurs-sites'],
+    relatedSlugs: ['passer-5-a-20-agents-nettoyage', 'logiciel-planning-nettoyage-2026', 'erreurs-planning-nettoyage', 'gerer-agents-plusieurs-sites'],
     faq: [
       { q: "Où télécharger un modèle Excel planning agents nettoyage gratuit ?", a: "Proprely propose 3 modèles Excel téléchargeables gratuits sur sa page [Ressources](/ressources) : (1) modèle planning hebdomadaire agents (semaine type) ; (2) modèle planning multi-sites (vue agents × sites) ; (3) modèle suivi des heures par agent. Pas d'inscription requise, téléchargement direct au format .xlsx. Idéal pour démarrer une TPE propreté." },
       { q: "À partir de combien d'agents Excel devient insuffisant ?", a: "Empiriquement : 5-8 agents et 8-10 sites = limite de viabilité d'Excel pour la propreté. Au-delà, les limites deviennent bloquantes : pas de mise à jour temps réel partagée (un seul utilisateur à la fois), pas d'accès mobile agent, pas d'alertes automatiques, pas de gestion des remplacements proposés, pas de calcul automatique des marges par client. Le coût d'erreur Excel (oublis, doubles affectations, heures sous-déclarées) dépasse alors le coût d'un logiciel métier." },
