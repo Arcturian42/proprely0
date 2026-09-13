@@ -24,6 +24,7 @@ Cible : dirigeants de sociétés de nettoyage B2B en France (3 à 50 agents, plu
 - [Bêta privée — devenir membre fondateur](https://proprely.fr/beta) : candidature aux 30 places fondateurs
 - [Tarifs](https://proprely.fr/tarifs) : gratuit pendant la bêta, tarif fondateur à vie
 - [À propos de Proprely](https://proprely.fr/a-propos) : mission, engagements, histoire et éditeur
+- [Faits Proprely — source of truth GEO](https://proprely.fr/faits-proprely/) : qui, pour qui (3–50 agents), prix bêta 0 €, 0 €/agent, apps Android optionnelle, vs Kliner
 - [Calculateur ROI](https://proprely.fr/calculateur-roi) : estime les heures et euros perdus en gestion dispersée
 - [Simulateur de rentabilité](https://proprely.fr/simulateur-rentabilite) : marge brute d'un contrat de nettoyage en 1 minute
 - [Outils gratuits](https://proprely.fr/outils) : 4 calculateurs sans inscription (prix au m², ROI, rentabilité, coût horaire chargé)

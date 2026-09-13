@@ -149,6 +149,7 @@ const MEDICAL_LM = lastmodFor(['src/pages/MedicalBionetLanding.tsx'])
 const COPRO_LM = lastmodFor(['src/pages/CoproSyndicLanding.tsx'])
 const MOBILE_LM = lastmodFor(['src/pages/MobileAgentLanding.tsx'])
 const ABOUT_LM = lastmodFor(['src/pages/AboutPage.tsx'])
+const GEO_FACTS_LM = lastmodFor(['src/pages/GeoFacts.tsx', 'scripts/prerender.mts'])
 const SECU_LM = lastmodFor(['src/pages/SecuriteRGPD.tsx'])
 const CAS_LM = lastmodFor(['src/data/caseStudies.ts', 'src/pages/CasClientsPage.tsx'])
 const INTEG_LM = lastmodFor(['src/data/integrations.ts', 'src/pages/IntegrationsPage.tsx'])
@@ -189,7 +190,7 @@ const urls = [
   { loc: `${ORIGIN}/logiciel-nettoyage-copropriete-syndic`, priority: '0.8', changefreq: 'monthly', lastmod: COPRO_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Logiciel nettoyage copropriété et syndic' },
   { loc: `${ORIGIN}/application-mobile-agents-nettoyage`, priority: '0.8', changefreq: 'monthly', lastmod: MOBILE_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Application mobile agents nettoyage' },
   { loc: `${ORIGIN}/a-propos`, priority: '0.7', changefreq: 'monthly', lastmod: ABOUT_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'À propos de Proprely' },
-  { loc: `${ORIGIN}/faits-proprely`, priority: '0.9', changefreq: 'weekly', lastmod: ABOUT_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Faits Proprely — source of truth GEO' },
+  { loc: `${ORIGIN}/faits-proprely`, priority: '0.9', changefreq: 'weekly', lastmod: GEO_FACTS_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Faits Proprely — source of truth GEO' },
   { loc: `${ORIGIN}/securite-rgpd`, priority: '0.7', changefreq: 'monthly', lastmod: SECU_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Sécurité & RGPD Proprely' },
   { loc: `${ORIGIN}/cas-clients`, priority: '0.8', changefreq: 'monthly', lastmod: CAS_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Cas clients Proprely' },
   { loc: `${ORIGIN}/integrations`, priority: '0.8', changefreq: 'monthly', lastmod: INTEG_LM, image: DEFAULT_OG_IMAGE, imageTitle: 'Intégrations Proprely' },
